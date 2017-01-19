@@ -1,0 +1,75 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BUF_SIZE	.\types.h	4;"	d
+CODE_BUF	.\types.h	5;"	d
+DecodingBit	.\huffman.cpp	/^void DecodingBit (char* bitstr, int bit_len, char* ret)$/;"	f
+DecodingFile	.\huffman.cpp	/^void DecodingFile(Tree* tree, char* code, char* ret)$/;"	f
+EncodingBit	.\huffman.cpp	/^int EncodingBit (char* code, char* ret)$/;"	f
+EncodingFile	.\huffman.cpp	/^void EncodingFile (Tree* tree, char* str, char* ret)$/;"	f
+FreePointer	.\main.cpp	/^void FreePointer(List* list, Tree* tree)$/;"	f
+List	.\types.h	/^} List;$/;"	t	typeref:struct:_List
+ListNode	.\types.h	/^typedef struct _ListNode ListNode;$/;"	t	typeref:struct:_ListNode
+MakeHuffmanTree	.\huffman.cpp	/^void MakeHuffmanTree(Tree* tree, List* list)$/;"	f
+MakeTable	.\huffman.cpp	/^void MakeTable (List* list, char* str)$/;"	f
+ParenthesisNotationConvertToTree	.\huffman.cpp	/^void ParenthesisNotationConvertToTree(Tree* tree, char* treeStr)$/;"	f
+Tree	.\types.h	/^} Tree;$/;"	t	typeref:struct:_Tree
+TreeConvertToParenthesisNotation	.\huffman.cpp	/^char* TreeConvertToParenthesisNotation(Tree* tree)$/;"	f
+TreeNode	.\types.h	/^typedef struct _TreeNode TreeNode;$/;"	t	typeref:struct:_TreeNode
+_FILE_H_	.\file.h	2;"	d
+_HUFFMAN_H_	.\huffman.h	2;"	d
+_LIST_H_	.\list.h	2;"	d
+_List	.\types.h	/^typedef struct _List$/;"	s
+_ListNode	.\types.h	/^struct _ListNode$/;"	s
+_ProcDestroyTree	.\tree.cpp	/^void _ProcDestroyTree (TreeNode* root)$/;"	f
+_ProcEncodingFile	.\huffman.cpp	/^static void _ProcEncodingFile (TreeNode* node, char ch, char* code, char* pcode, char** ret)$/;"	f	file:
+_ProcParenthesisNotationConvertToTree	.\huffman.cpp	/^static void _ProcParenthesisNotationConvertToTree(Tree* tree, TreeNode* root, char* treeStr)$/;"	f	file:
+_SortTable	.\huffman.cpp	/^static void _SortTable (List* list)$/;"	f	file:
+_TREE_H_	.\tree.h	2;"	d
+_TYPES_H_	.\types.h	2;"	d
+_Tree	.\types.h	/^typedef struct _Tree$/;"	s
+_TreeConvertToParenthesisNotationProc	.\huffman.cpp	/^static void _TreeConvertToParenthesisNotationProc(TreeNode* node, char* ret)$/;"	f	file:
+_TreeNode	.\types.h	/^struct _TreeNode$/;"	s
+_chTable	.\types.h	/^typedef struct _chTable$/;"	s
+_swap	.\huffman.cpp	/^static void _swap(TreeNode** first, TreeNode** second)$/;"	f	file:
+addBack	.\list.cpp	/^void addBack (List* list, TreeNode* node)$/;"	f
+addFront	.\list.cpp	/^void addFront (List* list, TreeNode* node)$/;"	f
+back	.\types.h	/^	ListNode* back;$/;"	m	struct:_List
+ch	.\types.h	/^	char ch;$/;"	m	struct:_chTable
+chTable	.\types.h	/^} chTable;$/;"	t	typeref:struct:_chTable
+clearScreen	.\main.cpp	/^void clearScreen()$/;"	f
+createList	.\list.cpp	/^List* createList ()$/;"	f
+createTree	.\tree.cpp	/^Tree* createTree ()$/;"	f
+createTreeNode	.\tree.cpp	/^TreeNode* createTreeNode ()$/;"	f
+data	.\types.h	/^	TreeNode *data;$/;"	m	struct:_ListNode
+destroyList	.\list.cpp	/^void destroyList (List* list)$/;"	f
+destroyTree	.\tree.cpp	/^void destroyTree (Tree* tree)$/;"	f
+frequency	.\types.h	/^	int  frequency;$/;"	m	struct:_chTable
+front	.\types.h	/^	ListNode* front;$/;"	m	struct:_List
+getFileExtension	.\main.cpp	/^string getFileExtension(string filename)$/;"	f
+getFileWithoutExtension	.\main.cpp	/^string getFileWithoutExtension(string filename)$/;"	f
+getFront	.\list.cpp	/^TreeNode* getFront (List* list)$/;"	f
+getListSize	.\list.cpp	/^int getListSize (List* list)$/;"	f
+getMenuSelection	.\main.cpp	/^int getMenuSelection ()$/;"	f
+ind	.\huffman.cpp	/^int ind;	\/\/ index$/;"	v
+insert	.\list.cpp	/^void insert (List* list, TreeNode* node, int position)$/;"	f
+isEmpty	.\list.cpp	/^bool isEmpty (List* list)$/;"	f
+left	.\types.h	/^	TreeNode *left;$/;"	m	struct:_TreeNode
+main	.\main.cpp	/^int main(int argc, char const *argv[])$/;"	f
+next	.\types.h	/^	ListNode *next;$/;"	m	struct:_ListNode
+readFile	.\file.cpp	/^bool readFile(char* filename, char *str)$/;"	f
+readZip	.\file.cpp	/^char* readZip(char* filename, char *bit, int *bit_len)$/;"	f
+removeBack	.\list.cpp	/^void removeBack(List* list)$/;"	f
+removeFront	.\list.cpp	/^void removeFront (List* list)$/;"	f
+right	.\types.h	/^	TreeNode *right;$/;"	m	struct:_TreeNode
+root	.\types.h	/^	TreeNode* root;$/;"	m	struct:_Tree
+size	.\types.h	/^	int size;$/;"	m	struct:_List
+size	.\types.h	/^	int size;$/;"	m	struct:_Tree
+table	.\types.h	/^	chTable   table;$/;"	m	struct:_TreeNode
+unzipFile	.\main.cpp	/^void unzipFile (string inputFile, string outputFile)$/;"	f
+writeFile	.\file.cpp	/^bool writeFile(char* filename, char* str)$/;"	f
+writeZip	.\file.cpp	/^bool writeZip(char* filename, char *treeStr, char* bit, int bit_len)$/;"	f
+zipFile	.\main.cpp	/^void zipFile (string inputFile, string outputFile)$/;"	f
