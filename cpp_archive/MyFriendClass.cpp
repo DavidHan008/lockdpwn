@@ -7,9 +7,7 @@
 #include "stdafx.h"
 #include <iostream>
 
-
 using namespace std;
-
 
 class Girl;
 
@@ -27,9 +25,6 @@ public:
 
 };
 
-
-
-
 class Girl
 {
 private:
@@ -45,7 +40,6 @@ public:
 
 	friend class Boy;
 };
-
 
 void Boy::ShowYourFriendInfo(Girl &frn)
 {
