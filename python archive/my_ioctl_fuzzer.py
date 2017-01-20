@@ -8,8 +8,8 @@ from ctypes import *
 
 
 
-
 kernel32 = windll.kernel32
+
 
 
 GENERIC_READ = 0x80000000
@@ -34,7 +34,7 @@ fd.close()
 
 for device_name in device_list:
     # 해당 디바이스 이름으로의 접근이 가능한지 확인한다.
-
+    
     device_file = u"\\\\.\\%s" % device_name.split("\\")[::-1][0]
 
     print "[*] Testing for device: %s" % device_file

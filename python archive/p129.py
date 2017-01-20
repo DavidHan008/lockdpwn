@@ -1,6 +1,5 @@
 import os
 import fnmatch
-import gzip, bz2
 
 @coroutine
 def find_files(target):
@@ -10,6 +9,9 @@ def find_files(target):
             for name in fiellist:
                 if fnmatch.fnmatch(name,pattern):
                     target.send(os.path.join(path,name))
+                    
+
+import gzip, bz2
 
 @coroutine
 def opener(target):

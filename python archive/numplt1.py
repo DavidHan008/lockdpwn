@@ -1,4 +1,3 @@
-#-*-coding:utf-8-*-
 '''
  matplotlib ==> pyplot, animation을 이용해 gif파일을 만드는 예제 코드
                 cos(2pi*(x - 0.01t))
@@ -24,6 +23,6 @@ def animate(i):
 
 anim = animation.FuncAnimation(fig, animate, init_func=init, frames =200, interval = 20, blit=True)
 
-anim.save('aaa.gif', writer='imagemagick', fps=30, dpi=100)
-
+anim.save('animation.gif', writer='imagemagic', fps=30, dpi=100)
+plt.grid()
 plt.show()

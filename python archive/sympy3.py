@@ -1,4 +1,3 @@
-#-*-coding:utf-8-*-
 # sympy ==> 4x4 행렬의 역행렬을 구하는 예제코드
 from sympy import *
 from sympy.abc import a,b,c,d,e,f,g

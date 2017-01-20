@@ -7,7 +7,6 @@ def find_files(topdir,pattern):
             if fnmatch.fnmatch(name,pattern):
                 yield os.path.join(path,name)
 
-
 import gzip, bz2
 
 def opener(filenames):

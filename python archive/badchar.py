@@ -3,10 +3,8 @@ from immlib import *
 def main(args):
     imm = Debugger()
     bad_char_found = False
-
     address = int(args[0],16)
     shellcode = " "
-
     shellcode_length = len(shellcode)
     debug_shellcode = imm.readMemory(address,shellcode_length)
     debug_shellcode = debug_shellcode.encode("HEX")
@@ -17,6 +15,7 @@ def main(args):
     imm.log("In Memory Shellcode: %s " % id_shellcode[:512])
 
     count = 0
+
     while count <= shhellcode_length:
         if debug_shellcode[count] != sellcode[count]:
             imm.log("Bad Char Detected at offset %d" % count)

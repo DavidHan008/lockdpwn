@@ -5,8 +5,6 @@ import utils
 
 MAX_INSTRUCTIONS =10
 
-
-
 dangerous_functions = {
     "strcpy" : " msvcrt.dll",
     "strncpy" : "msvcrt.dll",
@@ -14,12 +12,9 @@ dangerous_functions = {
     "vsprintf"  : "msvcrt.dll",
     }
 
-
 dangerous_functions_resolved = {}
 crash_encounterd =False
 instruction_count = 0
-
-
 
 def danger_handler(dbg):
     esp_offset = 0
@@ -36,13 +31,12 @@ def danger_handler(dbg):
     "================================================================="
 
     dbg.suspend_all_treads()
-    dbg.proceess_snapshot()
+    dbg.process_snapshot()
     dbg.resume_all_threads()
 
     return DBG_CONTINUE
 
 def access_violation_handler(dbg):
-
     global crash_encountered
 
     if dbg.dbg.u.Exception.dwFirstChance:
@@ -73,7 +67,7 @@ def access_violation_handler(dbg):
 
         return DBG_EXCEPTION_NOT_HANDLED
 
-def single_step_amd;er(dbg):
+def single_step_amder(dbg):
     global instruction_count
     global crash_enountered
 

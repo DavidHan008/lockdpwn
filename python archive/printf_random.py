@@ -6,6 +6,7 @@ import random
 
 # This is our user defined callback function
 def printf_randomizer(dbg):
+    
     # Read in the value of the counter at ESP + 0x8 as a DWORD
     parameter_addr = dbg.context.Esp + 0x8
     counter = dbg.read_process_memory(parameter_addr,4)

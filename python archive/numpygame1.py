@@ -1,5 +1,4 @@
-#-*-coding:utf-8-*-
-# pygame, numpy ==> pygame으로 진자운동을 표현한 예제코드
+# pygame, numpy ==> pygame으로 진자운동을 표현한 예제코드 (RK 4차법 사용)
 import pygame
 from pygame.locals import *
 import numpy as np
@@ -17,9 +16,10 @@ gndConterY = 20
 penLength = pen_l*100*2
 
 def calcODEFunc(tVal, xVal, vVal):
-        # 여기가 핵심코드인듯
         return -pen_fm/(pen_m*pen_l*pen_l+pen_J)*vVal-pen_m*pen_g*pen_l/(pen_m*pen_l*pen_l+pen_J)*xVal
 
+# 상미분방정식 ==> 초기값이 주어진 경우 사용하는 수치해석방법
+# Runge-Kutta, RK 4차법을 활용한 코드인듯
 def solveODEusingRK4(t, x, v):
         kx1 = v
         kv1 = calcODEFunc( t, x, v )
@@ -35,16 +35,14 @@ def solveODEusingRK4(t, x, v):
 
         dx = h*(kx1 + 2*kx2 + 2*kx3 + kx4)/6
         dv = h*(kv1 + 2*kv2 + 2*kv3 + kv4)/6
-
         return x+dx, v+dv
+
 
 pygame.init()
 
 srf = pygame.display.set_mode((300,300))
-
 font = pygame.font.SysFont('Vernada.ttf', 25)
 aurthorSrf = font.render('by PinkWink', True, (50,50,50))
-
 loopFlag = True
 
 while loopFlag:

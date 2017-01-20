@@ -1,20 +1,18 @@
-# -*- coding: utf-8 -*-
+# -*- coding: cp949 -*-
 if product == "game" and type == "pirate memory" \
                and not (age < 4 or age > 8):
     print "I'll take it!"
 
-    
+
 if suffix == ".htm":
     content = "text/html"
-
 elif suffix == ".jpg":
     content = "image/jpeg"
-
 elif suffix == ".png":
     content = "image/png"
-
 else:
     raise RuntimeError("Unknown content type")
+
 
 if 'spam' in s:
     has_spam = True
@@ -23,7 +21,6 @@ else:
 
 
 has_spam = 'spam' in s
-
 
 
 f = open("foo.txt")
@@ -146,7 +143,3 @@ for name,shares,price in portfolio:
     total += shares * price
 s = set([3,5,9,10])
 t = set('Hello')
-
-
-
-

@@ -1,4 +1,5 @@
-#-*-coding:utf-8-*-
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
 '''
    matplotlib ==> plot을 이용해 sin(), cos() 그래프를 그리는 예제 코드
 '''
@@ -11,4 +12,5 @@ y2 = np.cos(t)
 
 # 그래프를 그린다
 plt.plot(t,y1,t,y2)
+plt.grid()
 plt.show()

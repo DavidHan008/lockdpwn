@@ -2,6 +2,9 @@
 import driverlib
 from immlib import *
 
+
+
+
 def main(args):
     ioctl_list = []
     device_list = []
@@ -9,8 +12,8 @@ def main(args):
     driver = driverlib.Driver()
 
     ioctl_list = driver.getIOCTLCodes()
-    
-	if not len(ioctl_list):
+
+    if not len(ioctl_list):
         return "[*] ERROR! Couldn't find any IOCTL codes."
 
     device_list = driver.getDeviceNames()
@@ -19,9 +22,13 @@ def main(args):
         return "[*] ERROR! Coudln't find any device names."
 
     #dictionary를 만들고 추출한 정보를 저장한다.
+
     master_list = {}
+
     master_list['ioctl_list'] = ioctl_list
+
     master_list['device_list'] = device_list
+
     filename = "%s.fuzz" % imm.getDebuggedName()
 
     fd = open(filename , "wb")
@@ -29,6 +36,7 @@ def main(args):
     pickle.dump(master_list,fd)
 
     fd.close()
+
 
     return "[*] SUCCESS! Saved IOCTL codes and device names to %s" % filename
 

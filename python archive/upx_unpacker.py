@@ -1,15 +1,22 @@
 ﻿from ctypes import *
 import sys
-from PyEmu import PEPyEmu
 # pyemu 의 경로를 설정한다
+
+
 sys.path.append("C:\Python27\Lib\site-packages\pyemu")
 sys.path.append("C:\Python27\Lib\site-packages\pyemu\lib")
 
+
+from PyEmu import PEPyEmu
+
 # 커맨드라인 파라미터
+
 exename = sys.argv[1]
+
 outputfile = sys.argv[2]
 
 # 에뮬레이터 객체를 초기화 한다
+
 emu = PEPyEmu()
 
 if exename:
@@ -25,13 +32,17 @@ else:
 
 # 라이브러리 핸들러를 설정한다.
 emu.set_library_handler("LoadLibraryA", loadlibrary)
+
 emu.set_library_handler("GetProcAddress", getprocaddress)
+
 emu.set_library_handler("VirtualProtect",virtualprotect)
 
 # 바이너리를 덤프하기 위해 실제 엔트리 포인트에 브레이크 포인트를 설정한다.
+
 emu.set_mnemonic_handler("jmp",jmp_handler)
 
 # 엔트리포인트부터 실행을 시작한다
+
 emu.execute(start=emu.entry_point)
 
 '''

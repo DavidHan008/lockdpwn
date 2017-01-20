@@ -19,8 +19,6 @@ startupinfo.dwFlags     = 0x1
 startupinfo.wShowWindow = 0x0
 startupinfo.cb          = sizeof(startupinfo)
 
-
-
 # First things first, fire up that second process
 # and store it's PID so that we can do our injection
 kernel32.CreateProcessA(path_to_exe,

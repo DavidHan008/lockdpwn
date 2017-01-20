@@ -1,3 +1,4 @@
+
 from string import Template
 
 def start_response(resp="text/html"):
@@ -57,6 +58,8 @@ def do_form(name,the_inputs,method="POST",text='Submit'):
 
     return(form.substitute(cgi_name=name,http_method=method,
                            list_of_inputs=inputs,submit_text=text))
+
+
 
 
 def radio_button_id(rb_name, rb_value, rb_id):

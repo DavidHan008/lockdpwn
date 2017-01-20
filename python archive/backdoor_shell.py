@@ -3,12 +3,12 @@ import sys
 
 host = '172.30.1.3'
 port = 4444
-
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind((host,port))
 server.listen(5)
 
 print "[*] Server bound to %s: %d" % (host,port)
+
 connected = False
 
 while 1:
@@ -28,7 +28,6 @@ while 1:
             break
         else:
             buffer += recv_buffer
-
     except:
         break
 

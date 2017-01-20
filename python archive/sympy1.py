@@ -1,6 +1,5 @@
-#-*-coding:utf-8-*-
 '''
-	sympy ==> 인터넷에서 퍼온 PinkWink님의 로봇 관련된 예제 코드
+sympy ==> 인터넷에서 퍼온 PinkWink님의 로봇 관련된 예제 코드
 '''
 import sympy as sp
 

@@ -1,4 +1,5 @@
-#-*-coding:utf-8-*-
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
 '''
 numpy, matplot ==> 인터넷에서 PinkWink님이 작성하신 로봇 관련된 예제코드
 '''
@@ -54,9 +55,11 @@ def update(val):
 
         ax.set_xlim([-2,2]), ax.set_ylim([-1,2]), ax.set_zlim([-2,2])
 
+
 sAngle.on_changed(update)
 
 ax.set_xlim([-2,2]), ax.set_ylim([-1,2]), ax.set_zlim([-2,2])
 ax.set_xlabel('X axis'), ax.set_ylabel('Y axis'), ax.set_zlabel('Z axis')
 ax.view_init(azim=-90, elev=90)
+plt.grid()
 plt.show()

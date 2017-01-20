@@ -1,4 +1,3 @@
-#-*-coding:utf-8-*-
 # sympy ==> sympy를 이용해 연립방정식을 푸는 예제 코드
 from sympy import Matrix, solve_linear_system
 from sympy.abc import x,y

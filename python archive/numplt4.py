@@ -1,4 +1,5 @@
-#-*-coding:utf-8-*-
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
 '''
 numpy,matplot ==> 인터넷에서 퍼온 PinkWink님의 로봇역학 관련된 예제 코드
 '''
@@ -83,10 +84,13 @@ P_atB = np.array([1, 1, 1])
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
+# 좌표계 그리기
 drawCoordinator(ax, AORG, hat_X_atA, hat_Y_atA, hat_Z_atA)
+# 검정색 선들 그리기
 drawVector(ax, P_atA, P_atB, proj=True)
 drawVector(ax, np.array([2,1,0]), P_atB, proj=True)
 
 ax.set_xlim([-0.1,2.5]), ax.set_ylim([-0.1,2.5]), ax.set_zlim([-0.1,2.5])
 ax.set_xlabel('X axis'), ax.set_ylabel('Y axis'), ax.set_zlabel('Z axis')
+plt.grid()
 plt.show()

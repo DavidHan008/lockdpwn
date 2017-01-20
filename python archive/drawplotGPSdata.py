@@ -12,12 +12,12 @@ height = []
 speed = []
 
 # 데이터파일을 열면서
-with open('C:\Users\gyurs\Downloads\gpsdata\GPSdata\gpsdata.txt','r') as f:	
+with open('./gpsdata.txt','r') as f:
 	# 첫번째 라인은 넘어가고
 	line = f.readline()
 	
 	# 나머지 라인들을 숫자화해서 배열에 추가합니다 
-	for i in range(0,130):
+	for i in range(0,132):
 		line = f.readline()
 		line = line.split(',')
 		

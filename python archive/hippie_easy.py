@@ -6,7 +6,7 @@ def getRet(imm,allocaddr,max_opcodes = 300):
     addr = allocaddr
     for a in range(0,max_opcodes):
 
-        op = imm.disasmForwar(addr)
+        op = imm.disasmForward(addr)
 
         if op.isRet():
             if op.getImmConst() == 0xC:

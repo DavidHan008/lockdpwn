@@ -6,7 +6,7 @@ from urlib2 import urlopen
 
 
 server_title = 'Which server should I use?'
-server_msg = "Please confirm the server address/name to user for your athelte's timing data:'
+server_msg = 'Please confirm the server address/name to user for your atheltes timing data:'
 timing_title = 'Enter data'
 timing_msg = 'Provide a new timing value:'
 web_server = 'http://localhost:8080'

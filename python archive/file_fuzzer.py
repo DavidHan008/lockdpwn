@@ -11,6 +11,7 @@ import getopt
 
 
 
+
 class file_fuzzer:
     def __init__(self,exe_path,ext,notify):
         self.exe_path = exe_path

@@ -1,0 +1,431 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTION	dvdInfo.h	/^enum{ACTION = 1, COMIC, SF, ROMANTIC};$/;"	e	enum:__anon3
+ARR_LEN	160524_pr1.c	3;"	d	file:
+ArrayList	ArrayList.h	/^} ArrayList;$/;"	t	typeref:struct:__ArrayList
+ArrayStack	arrayBaseStack.h	/^}ArrayStack;$/;"	t	typeref:struct:_arrayStack
+BOOK_INFO_NUM	160704_p151.c	4;"	d	file:
+BOOK_INFO_NUM	160705_p157.c	5;"	d	file:
+CHANGE	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+CList	CLinkedList.h	/^} CList;$/;"	t	typeref:struct:_CLL
+COMIC	dvdInfo.h	/^enum{ACTION = 1, COMIC, SF, ROMANTIC};$/;"	e	enum:__anon3
+CQueue	circularQueue.h	/^} CQueue;$/;"	t	typeref:struct:_cQueue
+CUS_REGIST	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+CUS_RENT_PRINT	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+CUS_SEARCH	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+DBLinkedList	DBLinkedList.h	/^} DBLinkedList;$/;"	t	typeref:struct:_DLinkedList
+DELETE	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+DIC_LEN	3.c	7;"	d	file:
+DVD_REGIST	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+DVD_RENT	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+DVD_RENT_PRINT	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+DVD_RETURN	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+DVD_SEARCH	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+Data	DBLinkedList.h	/^typedef int Data;$/;"	t
+Data	ListBaseStack.h	/^typedef int Data;$/;"	t
+Data	arrayBaseStack.h	/^typedef int Data;$/;"	t
+Data	circularQueue.h	/^typedef int Data;$/;"	t
+DeletePhoneData	phoneFunc.c	/^void DeletePhoneData()$/;"	f
+DivInt	160702_p97.c	/^int DivInt(int *a,int *b,int *c,int *d)$/;"	f
+EXIT	160705_p157.c	/^enum{SORT_TITLE=1, SORT_PUB, SORT_PRICE, EXIT};$/;"	e	enum:__anon1	file:
+EXT_SIZE	160702_p141.c	6;"	d	file:
+EXT_SIZE	160704_p133.c	6;"	d	file:
+ExtendMemForString	160702_p141.c	/^int ExtendMemForString(char **pStr, int strLen)$/;"	f
+ExtendMemForString	160704_p133.c	/^int ExtendMemForString(char **pStr, int strLen)$/;"	f
+FALSE	ArrayList.h	5;"	d
+FALSE	CLinkedList.h	5;"	d
+FALSE	DBLinkedList.h	5;"	d
+FALSE	DLinkedList.h	5;"	d
+FALSE	ListBaseStack.h	5;"	d
+FALSE	arrayBaseStack.h	5;"	d
+FALSE	circularQueue.h	10;"	d
+FInsert	DLinkedList.c	/^void FInsert(List *plist, LData data)$/;"	f
+ID	cusInfo.h	/^  char ID[ID_LEN];$/;"	m	struct:__cusInfo
+ID_LEN	cusInfo.h	12;"	d
+INPUT	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+ISBN	dvdInfo.h	/^  char ISBN[ISBN_LEN];$/;"	m	struct:__dvdInfo
+ISBN	rentInfo.h	/^  char ISBN[ISBN_LEN];$/;"	m	struct:__dvdRentInfo
+ISBN_LEN	dvdInfo.h	15;"	d
+InputPhoneData	phoneFunc.c	/^void InputPhoneData()$/;"	f
+InsertList	160705_p157.c	/^int InsertList(bookInfo *bookPtr)$/;"	f
+LCount	ArrayList.c	/^int LCount(List * plist)$/;"	f
+LCount	CLinkedList.c	/^int LCount(List *plist)$/;"	f
+LCount	DBLinkedList.c	/^int LCount(List *plist)$/;"	f
+LCount	DLinkedList.c	/^int LCount(List *plist)$/;"	f
+LData	ArrayList.h	/^typedef int LData;$/;"	t
+LData	CLinkedList.h	/^typedef int LData;$/;"	t
+LData	DLinkedList.h	/^typedef int LData;$/;"	t
+LEN	160702_p82.c	4;"	d	file:
+LEN	160704_p108.c	3;"	d	file:
+LFirst	ArrayList.c	/^int LFirst(List * plist, LData * pdata)$/;"	f
+LFirst	CLinkedList.c	/^int LFirst(List *plist, LData *pdata)$/;"	f
+LFirst	DBLinkedList.c	/^int LFirst(List *plist, LData *pdata)$/;"	f
+LFirst	DLinkedList.c	/^int LFirst(List *plist, LData *pdata)$/;"	f
+LIST_LEN	ArrayList.h	8;"	d
+LIST_NUM	phoneFunc.c	14;"	d	file:
+LInsert	ArrayList.c	/^void LInsert(List * plist, LData data)$/;"	f
+LInsert	CLinkedList.c	/^void LInsert(List *plist, LData data)$/;"	f
+LInsert	DBLinkedList.c	/^void LInsert(List *plist, LData data)$/;"	f
+LInsert	DLinkedList.c	/^void LInsert(List *plist, LData data)$/;"	f
+LInsertFront	CLinkedList.c	/^void LInsertFront(List *plist, LData data)$/;"	f
+LInsertFront	DBLinkedList.c	/^void LInsertFront(List *plist, LData data)$/;"	f
+LNext	ArrayList.c	/^int LNext(List * plist, LData * pdata)$/;"	f
+LNext	CLinkedList.c	/^int LNext(List *plist, LData *pdata)$/;"	f
+LNext	DBLinkedList.c	/^int LNext(List *plist, LData *pdata)$/;"	f
+LNext	DLinkedList.c	/^int LNext(List *plist, LData *pdata)$/;"	f
+LRemove	ArrayList.c	/^LData LRemove(List * plist)$/;"	f
+LRemove	CLinkedList.c	/^LData LRemove(List *plist)$/;"	f
+LRemove	DBLinkedList.c	/^LData LRemove(List *plist)$/;"	f
+LRemove	DLinkedList.c	/^LData LRemove(List *plist)$/;"	f
+LinkedList	DLinkedList.h	/^} LinkedList;$/;"	t	typeref:struct:_linkedList
+List	ArrayList.h	/^typedef ArrayList List;$/;"	t
+List	CLinkedList.h	/^typedef CList List;$/;"	t
+List	DBLinkedList.h	/^typedef DBLinkedList List;$/;"	t
+List	DLinkedList.h	/^typedef LinkedList List;$/;"	t
+ListInit	ArrayList.c	/^void ListInit(List * plist)$/;"	f
+ListInit	CLinkedList.c	/^void ListInit(List *plist)$/;"	f
+ListInit	DBLinkedList.c	/^void ListInit(List *plist)$/;"	f
+ListInit	DLinkedList.c	/^void ListInit(List *plist)$/;"	f
+ListStack	ListBaseStack.h	/^} ListStack;$/;"	t	typeref:struct:_listStack
+MAX_CUSTOMER	cusInfoAccess.c	13;"	d	file:
+MAX_DVD	dvdInfoAccess.c	14;"	d	file:
+MAX_LEN	2.c	4;"	d	file:
+MAX_LEN	3.c	6;"	d	file:
+MAX_LEN	4.c	5;"	d	file:
+MAX_SPRING	160519_pr4.c	4;"	d	file:
+MAX_STRING	160519_pr3.c	3;"	d	file:
+MAX_STRING	160520_pr1.c	3;"	d	file:
+MAX_STRING	160520_pr2.c	3;"	d	file:
+MAX_STRING	160520_pr3.c	4;"	d	file:
+MAX_STRING	160705_p220.c	3;"	d	file:
+MAX_STRING	160705_p223.c	3;"	d	file:
+MAX_STRING	160705_p225.c	5;"	d	file:
+MAX_STRING	160706_p235.c	5;"	d	file:
+MAX_STRING	160706_p250.c	4;"	d	file:
+NAME	4.c	/^enum{NAME=1, SCOREHIGH, SCORELOW, QUIT};$/;"	e	enum:__anon2	file:
+NAME_LEN	cusInfo.h	13;"	d
+NAME_LEN	phoneData.h	16;"	d
+Node	CLinkedList.h	/^} Node;$/;"	t	typeref:struct:_node
+Node	DBLinkedList.h	/^} Node;$/;"	t	typeref:struct:_node
+Node	DLinkedList.h	/^} Node;$/;"	t	typeref:struct:_node
+Node	ListBaseStack.h	/^} Node;$/;"	t	typeref:struct:_node
+PHONE_LEN	cusInfo.h	14;"	d
+PHONE_LEN	phoneData.h	17;"	d
+QUE_LEN	circularQueue.h	13;"	d
+QUIT	4.c	/^enum{NAME=1, SCOREHIGH, SCORELOW, QUIT};$/;"	e	enum:__anon2	file:
+QUIT	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+QUIT	main3.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH,DVD_RENT,DVD_RETURN, DVD_RENT_PRINT,CUS_RENT_PRINT ,QUIT};$/;"	e	enum:__anon6	file:
+Queue	circularQueue.h	/^typedef CQueue Queue;$/;"	t
+READ_CNT	160520_pr3.c	5;"	d	file:
+RENTED	dvdInfo.h	/^enum{RENTED, RETURNED};$/;"	e	enum:__anon4
+RENT_LEN	rentInfoAccess.c	17;"	d	file:
+RETURNED	dvdInfo.h	/^enum{RENTED, RETURNED};$/;"	e	enum:__anon4
+ROMANTIC	dvdInfo.h	/^enum{ACTION = 1, COMIC, SF, ROMANTIC};$/;"	e	enum:__anon3
+ReadAndSortPrint	160704_p125.c	/^void ReadAndSortPrint(int number)$/;"	f
+ReadString	160702_p141.c	/^char *ReadString(void)$/;"	f
+Reverse	5.c	/^void Reverse(char s[])$/;"	f
+SCOREHIGH	4.c	/^enum{NAME=1, SCOREHIGH, SCORELOW, QUIT};$/;"	e	enum:__anon2	file:
+SCORELOW	4.c	/^enum{NAME=1, SCOREHIGH, SCORELOW, QUIT};$/;"	e	enum:__anon2	file:
+SEARCH	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+SF	dvdInfo.h	/^enum{ACTION = 1, COMIC, SF, ROMANTIC};$/;"	e	enum:__anon3
+SHOWALL	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE ,CHANGE ,QUIT};$/;"	e	enum:__anon7	file:
+SIZE	160526_pr1.c	2;"	d	file:
+SInsert	DLinkedList.c	/^void SInsert(List *plist, LData data)$/;"	f
+SIsEmpty	ListBaseStack.c	/^int SIsEmpty(Stack * pstack)$/;"	f
+SORT_PRICE	160705_p157.c	/^enum{SORT_TITLE=1, SORT_PUB, SORT_PRICE, EXIT};$/;"	e	enum:__anon1	file:
+SORT_PUB	160705_p157.c	/^enum{SORT_TITLE=1, SORT_PUB, SORT_PRICE, EXIT};$/;"	e	enum:__anon1	file:
+SORT_TITLE	160705_p157.c	/^enum{SORT_TITLE=1, SORT_PUB, SORT_PRICE, EXIT};$/;"	e	enum:__anon1	file:
+SPeek	ListBaseStack.c	/^Data SPeek(Stack * pstack)$/;"	f
+SPop	ListBaseStack.c	/^Data SPop(Stack * pstack)$/;"	f
+SPush	ListBaseStack.c	/^void SPush(Stack * pstack, Data data)$/;"	f
+STACK_LEN	arrayBaseStack.h	7;"	d
+STR_LEN	160704_p151.c	3;"	d	file:
+STR_LEN	160705_p157.c	4;"	d	file:
+STR_MAX	myString.h	8;"	d
+STR_NUM	160702_p141.c	5;"	d	file:
+STUDENT	4.c	/^} STUDENT;$/;"	t	typeref:struct:student	file:
+SearchPhoneData	phoneFunc.c	/^void SearchPhoneData()$/;"	f
+ShowAllData	phoneFunc.c	/^void ShowAllData()$/;"	f
+ShowMenu	screenOut.c	/^void ShowMenu()$/;"	f
+ShowPhoneInfo	screenOut.c	/^void ShowPhoneInfo(phoneData phone)$/;"	f
+ShowPhoneInfoByPtr	screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f
+SortArr	160704_p125.c	/^void SortArr(int *arr,int num)$/;"	f
+SortString	160702_p141.c	/^void SortString(char *strArr[STR_NUM])$/;"	f
+Stack	ListBaseStack.h	/^typedef ListStack Stack;$/;"	t
+Stack	arrayBaseStack.h	/^typedef ArrayStack Stack;$/;"	t
+StackInit	ListBaseStack.c	/^void StackInit(Stack * pstack)$/;"	f
+StringTokenize	160704_p120.c	/^char* StringTokenize(char * str, char *delim)$/;"	f
+TITLE_LEN	dvdInfo.h	16;"	d
+TRUE	ArrayList.h	4;"	d
+TRUE	CLinkedList.h	4;"	d
+TRUE	DBLinkedList.h	4;"	d
+TRUE	DLinkedList.h	4;"	d
+TRUE	ListBaseStack.h	4;"	d
+TRUE	arrayBaseStack.h	4;"	d
+TRUE	circularQueue.h	9;"	d
+_CLL	CLinkedList.h	/^typedef struct _CLL$/;"	s
+_DLinkedList	DBLinkedList.h	/^typedef struct _DLinkedList$/;"	s
+__AB_STACK_H__	arrayBaseStack.h	2;"	d
+__ARRAY_LIST_H__	ArrayList.h	2;"	d
+__ArrayList	ArrayList.h	/^typedef struct __ArrayList$/;"	s
+__CALCPERCENT_H__	gameTimes.h	9;"	d
+__COMMON_H__	common.h	10;"	d
+__CUSACCESS_H__	cusInfoAccess.h	10;"	d
+__CUSINFO_H__	cusInfo.h	10;"	d
+__CUSMGR_H__	cusManager.h	10;"	d
+__C_QUEUE_H__	circularQueue.h	7;"	d
+__DB_LINKED_LIST_H__	DBLinkedList.h	2;"	d
+__DVDCONTROL_H__	dvdInfoAccess.h	11;"	d
+__DVDINFO_H__	dvdInfo.h	10;"	d
+__DVDMGR_H__	dvdManager.h	11;"	d
+__D_LINKED_LIST_H__	CLinkedList.h	2;"	d
+__D_LINKED_LIST_H__	DLinkedList.h	2;"	d
+__GAMECONTINUE_H__	gameContinue.h	10;"	d
+__GAMEMONEY_H__	gameMoney.h	9;"	d
+__GAME_H__	game.h	11;"	d
+__INFIX_TO_POSTFIX_H__	infixToPostfix.h	2;"	d
+__LB_STACK_H__	ListBaseStack.h	2;"	d
+__MYSTRING_H__	myString.h	4;"	d
+__PHONEDATA_H__	phoneData.h	14;"	d
+__PHONEFUNC_H__	phoneFunc.h	14;"	d
+__RENTINFOACCESS_H__	rentInfoAccess.h	11;"	d
+__RENTINFO_H__	rentInfo.h	10;"	d
+__SCREENOUT_H__	screenOut.h	11;"	d
+__SCREENOUT_H__	screenOut2.h	10;"	d
+__bookInfo	160704_p151.c	/^typedef struct __bookInfo$/;"	s	file:
+__bookInfo	160705_p157.c	/^typedef struct __bookInfo$/;"	s	file:
+__cusInfo	cusInfo.h	/^typedef struct __cusInfo$/;"	s
+__dvdInfo	dvdInfo.h	/^typedef struct __dvdInfo$/;"	s
+__dvdRentInfo	rentInfo.h	/^typedef struct __dvdRentInfo$/;"	s
+__phoneData	phoneData.h	/^typedef struct __phoneData$/;"	s
+_arrayStack	arrayBaseStack.h	/^typedef struct _arrayStack$/;"	s
+_cQueue	circularQueue.h	/^typedef struct _cQueue$/;"	s
+_linkedList	DLinkedList.h	/^typedef struct _linkedList$/;"	s
+_listStack	ListBaseStack.h	/^typedef struct _listStack$/;"	s
+_node	CLinkedList.h	/^typedef struct _node$/;"	s
+_node	DBLinkedList.h	/^typedef struct _node$/;"	s
+_node	DLinkedList.h	/^typedef struct _node$/;"	s
+_node	ListBaseStack.h	/^typedef struct _node$/;"	s
+addCusInfo	cusInfoAccess.c	/^int addCusInfo(char *ID, char * name, char *num)$/;"	f
+addDvdInfo	dvdInfoAccess.c	/^int addDvdInfo(char *ISBN, char * title, int genre)$/;"	f
+addRentList	rentInfoAccess.c	/^void addRentList(char *ISBN, char *cusID ,int rentDay)$/;"	f
+arr	ArrayList.h	/^	LData arr[LIST_LEN];$/;"	m	struct:__ArrayList
+arrSum	160704_p100.c	/^int arrSum(int* arr, int arrLen)$/;"	f
+before	CLinkedList.h	/^     Node *before;$/;"	m	struct:_CLL
+before	DLinkedList.h	/^  Node *before;$/;"	m	struct:_linkedList
+bookInfo	160704_p151.c	/^} bookInfo;$/;"	t	typeref:struct:__bookInfo	file:
+bookInfo	160705_p157.c	/^} bookInfo;$/;"	t	typeref:struct:__bookInfo	file:
+bookInfoList	160704_p151.c	/^bookInfo bookInfoList[BOOK_INFO_NUM];$/;"	v
+bookInfoList	160705_p157.c	/^bookInfo bookInfoList[BOOK_INFO_NUM];$/;"	v
+bookPrice	160704_p151.c	/^  int bookPrice;$/;"	m	struct:__bookInfo	file:
+bookPrice	160705_p157.c	/^  int bookPrice;$/;"	m	struct:__bookInfo	file:
+bookPub	160704_p151.c	/^  char bookPub[STR_LEN];$/;"	m	struct:__bookInfo	file:
+bookPub	160705_p157.c	/^  char bookPub[STR_LEN];$/;"	m	struct:__bookInfo	file:
+bookSortList	160705_p157.c	/^bookInfo * bookSortList[BOOK_INFO_NUM];$/;"	v
+bookTitle	160704_p151.c	/^  char bookTitle[STR_LEN];$/;"	m	struct:__bookInfo	file:
+bookTitle	160705_p157.c	/^  char bookTitle[STR_LEN];$/;"	m	struct:__bookInfo	file:
+calcPercent	gameTimes.c	/^int calcPercent(int win,int lose)$/;"	f
+changePhoneData	phoneFunc.c	/^void changePhoneData()$/;"	f
+checkSameData	phoneFunc.c	/^int checkSameData(phoneData *pPhone)$/;"	f
+choiceOfCom	game.c	/^int choiceOfCom()$/;"	f
+choiceOfMe	game.c	/^int choiceOfMe(int win,int lose,int draw,int moneyAmount)$/;"	f
+comWinMoneyAccount	gameMoney.c	/^void comWinMoneyAccount()$/;"	f
+combi	160519_pr2.c	/^long combi(int n, int r)$/;"	f
+comp	DLinkedList.h	/^  int (*comp)(LData d1, LData d2);  $/;"	m	struct:_linkedList
+convToRPNExp	infixToPostfix.c	/^void convToRPNExp(char exp[])$/;"	f
+cur	CLinkedList.h	/^     Node *cur;$/;"	m	struct:_CLL
+cur	DBLinkedList.h	/^     Node *cur;$/;"	m	struct:_DLinkedList
+cur	DLinkedList.h	/^  Node *cur;$/;"	m	struct:_linkedList
+curPosition	ArrayList.h	/^	int curPosition;$/;"	m	struct:__ArrayList
+cusID	rentInfo.h	/^  char cusID[ID_LEN];$/;"	m	struct:__dvdRentInfo
+cusInfo	cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
+cusList	cusInfoAccess.c	/^static cusInfo *cusList[MAX_CUSTOMER];$/;"	v	file:
+data	CLinkedList.h	/^     LData data;$/;"	m	struct:_node
+data	DBLinkedList.h	/^     Data data;$/;"	m	struct:_node
+data	DLinkedList.h	/^  LData data;$/;"	m	struct:_node
+data	ListBaseStack.h	/^	Data data;$/;"	m	struct:_node
+do_swap	buggy.c	/^  do_swap(int *lhs, int *rhs, int *tmp)$/;"	f	file:
+dvdInfo	dvdInfo.h	/^} dvdInfo;$/;"	t	typeref:struct:__dvdInfo
+dvdList	dvdInfoAccess.c	/^static dvdInfo *dvdList[MAX_DVD];$/;"	v	file:
+dvdRentInfo	rentInfo.h	/^} dvdRentInfo;$/;"	t	typeref:struct:__dvdRentInfo
+englishScore	4.c	/^  int englishScore;$/;"	m	struct:student	file:
+factorial	160702_p93.c	/^int factorial(int num)$/;"	f
+firstFlag	screenOut.c	/^int firstFlag = 0;$/;"	v
+firstFlag	screenOut2.c	/^int firstFlag = 0;$/;"	v
+front	circularQueue.h	/^     int front;$/;"	m	struct:_cQueue
+gamblingTableMoney	gameMoney.c	/^static int gamblingTableMoney;$/;"	v	file:
+genre	dvdInfo.h	/^  int genre;$/;"	m	struct:__dvdInfo
+getCurrentComMoney	gameMoney.c	/^int getCurrentComMoney()$/;"	f
+getCurrentYouMoney	gameMoney.c	/^int getCurrentYouMoney()$/;"	f
+getCusPtrById	cusInfoAccess.c	/^cusInfo * getCusPtrById(char *ID)$/;"	f
+getDVDRentState	dvdInfoAccess.c	/^int getDVDRentState(char * ISBN)$/;"	f
+getDvdPtrByISBN	dvdInfoAccess.c	/^dvdInfo * getDvdPtrByISBN(char *ISBN)$/;"	f
+getMeanScore	4.c	/^void getMeanScore(int num)$/;"	f
+getOpPrec	infixToPostfix.c	/^int getOpPrec(char op)$/;"	f
+getStudentScore	4.c	/^void getStudentScore(int num)$/;"	f
+getTotalScore	4.c	/^void getTotalScore(int num)$/;"	f
+head	DBLinkedList.h	/^     Node *head;$/;"	m	struct:_DLinkedList
+head	DLinkedList.h	/^  Node *head;$/;"	m	struct:_linkedList
+head	ListBaseStack.h	/^	Node * head;$/;"	m	struct:_listStack
+isPrime	6.c	/^int isPrime(int n)$/;"	f
+isRegistISBN	dvdInfoAccess.c	/^int isRegistISBN(char *ISBN)$/;"	f
+isRegistId	cusInfoAccess.c	/^int isRegistId(char *ID)$/;"	f
+j	phoneFunc.c	/^int j =1 ;$/;"	v
+koreanScore	4.c	/^  int koreanScore;$/;"	m	struct:student	file:
+loadDataFromFile	phoneFunc.c	/^void loadDataFromFile()$/;"	f
+loadDataFromFileInStruct	phoneFunc.c	/^void loadDataFromFileInStruct()$/;"	f
+loadSavedFile	gameContinue.c	/^int loadSavedFile()$/;"	f
+main	1.c	/^void main()$/;"	f
+main	160519_pr1.c	/^void main()$/;"	f
+main	160519_pr2.c	/^int main()$/;"	f
+main	160519_pr3.c	/^int main(){$/;"	f
+main	160519_pr4.c	/^int main()$/;"	f
+main	160520_pr1.c	/^int main(){$/;"	f
+main	160520_pr2.c	/^int main(){$/;"	f
+main	160520_pr3.c	/^int main()$/;"	f
+main	160520_pr4.c	/^int main()$/;"	f
+main	160524_pr1.c	/^int main(){$/;"	f
+main	160524_pr2.c	/^void main()$/;"	f
+main	160526_pr1.c	/^int main()$/;"	f
+main	160701_pr1.c	/^int main()$/;"	f
+main	160701_pr2.c	/^void main()$/;"	f
+main	160702_p141.c	/^void main()$/;"	f
+main	160702_p47.c	/^void main()$/;"	f
+main	160702_p52.c	/^void main()$/;"	f
+main	160702_p61.c	/^void main()$/;"	f
+main	160702_p64.c	/^void main()$/;"	f
+main	160702_p68.c	/^void main()$/;"	f
+main	160702_p82.c	/^void main()$/;"	f
+main	160702_p85.c	/^void main()$/;"	f
+main	160702_p93.c	/^void main()$/;"	f
+main	160702_p97.c	/^void main()$/;"	f
+main	160704_p100.c	/^void main()$/;"	f
+main	160704_p108.c	/^void main()$/;"	f
+main	160704_p120.c	/^void main()$/;"	f
+main	160704_p125.c	/^void main()$/;"	f
+main	160704_p133.c	/^void main()$/;"	f
+main	160704_p151.c	/^void main()$/;"	f
+main	160705_p157.c	/^void main()$/;"	f
+main	160705_p204_main.c	/^void main()$/;"	f
+main	160705_p209.c	/^void main()$/;"	f
+main	160705_p211.c	/^void main()$/;"	f
+main	160705_p214.c	/^void main()$/;"	f
+main	160705_p218.c	/^int main()$/;"	f
+main	160705_p220.c	/^void main()$/;"	f
+main	160705_p223.c	/^void main()$/;"	f
+main	160705_p225.c	/^void main()$/;"	f
+main	160706_p235.c	/^void main()$/;"	f
+main	160706_p250.c	/^void main()$/;"	f
+main	2.c	/^void main()$/;"	f
+main	3.c	/^void main()$/;"	f
+main	4.c	/^void main()$/;"	f
+main	5.c	/^void main()$/;"	f
+main	6.c	/^void main()$/;"	f
+main	DLinkedListMain.c	/^void main()$/;"	f
+main	ListBaseStackMain.c	/^int main(void)$/;"	f
+main	ListMain.c	/^int main(void)$/;"	f
+main	arrayBaseStackMain.c	/^void main()$/;"	f
+main	buggy.c	/^  main(void)$/;"	f
+main	infixToPostfixMain.c	/^void main()$/;"	f
+main	main.c	/^int main()$/;"	f
+main	main.cpp	/^int main()$/;"	f
+main	main2.c	/^void main()$/;"	f
+main	main3.c	/^void main()$/;"	f
+main	practice.c	/^void main()$/;"	f
+main	printHW.h	/^int main()$/;"	f
+main	test.c	/^int main() $/;"	f
+mathScore	4.c	/^  int mathScore;$/;"	m	struct:student	file:
+meanScore	4.c	/^  double meanScore;$/;"	m	struct:student	file:
+moneyCom	gameMoney.c	/^static int moneyCom;$/;"	v	file:
+moneyYou	gameMoney.c	/^static int moneyYou;$/;"	v	file:
+name	4.c	/^  char name[MAX_LEN];$/;"	m	struct:student	file:
+name	cusInfo.h	/^  char name[NAME_LEN];$/;"	m	struct:__cusInfo
+name	phoneData.h	/^  char name[NAME_LEN];$/;"	m	struct:__phoneData
+name	phoneFunc.c	/^char name[LIST_NUM];$/;"	v
+next	CLinkedList.h	/^     struct _node *next;$/;"	m	struct:_node	typeref:struct:_node::_node
+next	DBLinkedList.h	/^     struct _node *next;$/;"	m	struct:_node	typeref:struct:_node::_node
+next	DLinkedList.h	/^  struct _node *next;$/;"	m	struct:_node	typeref:struct:_node::_node
+next	ListBaseStack.h	/^	struct _node * next;$/;"	m	struct:_node	typeref:struct:_node::_node
+numOfCustomer	cusInfoAccess.c	/^static int numOfCustomer = 0;$/;"	v	file:
+numOfData	160705_p157.c	/^int numOfData = 0;$/;"	v
+numOfData	ArrayList.h	/^	int numOfData;$/;"	m	struct:__ArrayList
+numOfData	CLinkedList.h	/^     int numOfData;$/;"	m	struct:_CLL
+numOfData	DBLinkedList.h	/^     int numOfData;$/;"	m	struct:_DLinkedList
+numOfData	DLinkedList.h	/^  int numOfData;$/;"	m	struct:_linkedList
+numOfData	phoneFunc.c	/^int numOfData = 0;$/;"	v
+numOfDvd	dvdInfoAccess.c	/^static int numOfDvd = 0;$/;"	v	file:
+numOfRentCus	rentInfoAccess.c	/^static int numOfRentCus = 0;$/;"	v	file:
+paper	game.h	/^enum{scissors=1,rock,paper,quit};$/;"	e	enum:__anon5
+phoneData	phoneData.h	/^} phoneData;$/;"	t	typeref:struct:__phoneData
+phoneList	phoneFunc.c	/^phoneData *phoneList[LIST_NUM];$/;"	v
+phoneNum	cusInfo.h	/^  char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
+phoneNum	phoneData.h	/^  char phoneNum[PHONE_LEN];$/;"	m	struct:__phoneData
+power	test.c	/^int power(int b, int e) $/;"	f
+prev	DBLinkedList.h	/^     struct _node *prev;$/;"	m	struct:_node	typeref:struct:_node::_node
+printAllString	160705_p223.c	/^void printAllString(FILE *fp)$/;"	f
+printOutCusAllRentInfo	rentInfoAccess.c	/^void printOutCusAllRentInfo(char *ID, unsigned in start, unsigned int end)$/;"	f
+printOutRentAllCusInfo	rentInfoAccess.c	/^void printOutRentAllCusInfo(char *ISBN)$/;"	f
+printString	160705_p223.c	/^void printString(int num, FILE *fp)$/;"	f
+printhw	printHW.h	/^void printhw()$/;"	f
+queArr	circularQueue.h	/^     Data queArr[QUE_LEN];$/;"	m	struct:_cQueue
+quit	game.h	/^enum{scissors=1,rock,paper,quit};$/;"	e	enum:__anon5
+rear	circularQueue.h	/^     int rear;$/;"	m	struct:_cQueue
+registCustomer	cusManager.c	/^void registCustomer()$/;"	f
+registDvd	dvdManager.c	/^void registDvd()$/;"	f
+rentDay	rentInfo.h	/^  unsigned int rentDay;$/;"	m	struct:__dvdRentInfo
+rentDvd	dvdManager.c	/^void rentDvd()$/;"	f
+rentList	rentInfoAccess.c	/^static dvdRentInfo rentList[RENT_LEN];$/;"	v	file:
+rentState	dvdInfo.h	/^  int rentState ;$/;"	m	struct:__dvdInfo
+returnDvd	dvdManager.c	/^void returnDvd()$/;"	f
+rock	game.h	/^enum{scissors=1,rock,paper,quit};$/;"	e	enum:__anon5
+sIsEmpty	arrayBaseStack.c	/^int sIsEmpty(Stack *pstack)$/;"	f
+sPeek	arrayBaseStack.c	/^Data sPeek(Stack *pstack)$/;"	f
+sPop	arrayBaseStack.c	/^Data sPop(Stack *pstack)$/;"	f
+sPush	arrayBaseStack.c	/^void sPush(Stack *pstack, Data data)$/;"	f
+sang	160526_pr1.c	/^int sang(float e, float E)$/;"	f
+saveCurrentState	gameContinue.c	/^void saveCurrentState(int moneyCom, int moneyYou,int win,int lose,int draw,int moneyAmount)$/;"	f
+scissors	game.h	/^enum{scissors=1,rock,paper,quit};$/;"	e	enum:__anon5
+searchArr	160704_p108.c	/^int searchArr(char* arr, char c)$/;"	f
+searchCusInfo	cusManager.c	/^void searchCusInfo()$/;"	f
+searchDvdInfo	dvdManager.c	/^void searchDvdInfo()$/;"	f
+setComMoney	gameMoney.c	/^void setComMoney(int money)$/;"	f
+setDVDRented	dvdInfoAccess.c	/^int setDVDRented(char *ISBN, char *cusID, int rentDay)$/;"	f
+setDVDReturned	dvdInfoAccess.c	/^int setDVDReturned(char *ISBN)$/;"	f
+setGamblingTableMoney	gameMoney.c	/^void setGamblingTableMoney(int money)$/;"	f
+setSortRule	CLinkedList.c	/^void setSortRule(List *plist,int (*comp)(LData d1, LData d2))$/;"	f
+setSortRule	DBLinkedList.c	/^void setSortRule(List *plist,int (*comp)(LData d1, LData d2))$/;"	f
+setSortRule	DLinkedList.c	/^void setSortRule(List *plist,int (*comp)(LData d1, LData d2))$/;"	f
+setYouMoney	gameMoney.c	/^void setYouMoney(int money)$/;"	f
+showCustomerInfo	screenOut2.c	/^void showCustomerInfo(cusInfo *pCus)$/;"	f
+showCustomerInfoContinue	screenOut2.c	/^void showCustomerInfoContinue(cusInfo *pCus)$/;"	f
+showDVDRentAllCusInfo	dvdManager.c	/^void showDVDRentAllCusInfo()$/;"	f
+showDvdInfo	screenOut2.c	/^void showDvdInfo(dvdInfo *pDvd)$/;"	f
+showGenre	screenOut2.c	/^void showGenre(int gen)$/;"	f
+showMenu	screenOut2.c	/^void showMenu()$/;"	f
+sortStudentByScoreHigh	4.c	/^void sortStudentByScoreHigh(int num)$/;"	f
+sortStudentByScoreLow	4.c	/^void sortStudentByScoreLow(int num)$/;"	f
+sortStudentByScoreName	4.c	/^void sortStudentByScoreName(int num)$/;"	f
+stackArr	arrayBaseStack.h	/^     Data stackArr[STACK_LEN];$/;"	m	struct:_arrayStack
+stackInit	arrayBaseStack.c	/^void stackInit(Stack *pstack)$/;"	f
+storeDataToFile	phoneFunc.c	/^void storeDataToFile()$/;"	f
+storeDataToFileInStruct	phoneFunc.c	/^void storeDataToFileInStruct()$/;"	f
+strCat	160705_p204_2.c	/^int strCat(char *dest, char *source)$/;"	f
+strCmp	160705_p204.c	/^int strCmp(char *str1, char *str2)$/;"	f
+strCpy	160705_p204_2.c	/^int strCpy(char *dest, char *source)$/;"	f
+strLen	160705_p204.c	/^int strLen(char *str)$/;"	f
+student	4.c	/^STUDENT student[MAX_LEN];$/;"	v
+student	4.c	/^typedef struct student$/;"	s	file:
+swap	buggy.c	/^  swap(int *lhs, int *rhs)$/;"	f
+tail	CLinkedList.h	/^     Node *tail;$/;"	m	struct:_CLL
+title	dvdInfo.h	/^  char title[TITLE_LEN];$/;"	m	struct:__dvdInfo
+tmp	4.c	/^STUDENT tmp;$/;"	v
+topIndex	arrayBaseStack.h	/^     int topIndex;$/;"	m	struct:_arrayStack
+totalScore	4.c	/^  int totalScore;$/;"	m	struct:student	file:
+whoIsPrecede	DLinkedListMain.c	/^int whoIsPrecede(int d1, int d2)$/;"	f
+whoIsWinner	game.c	/^int whoIsWinner(int com, int you)$/;"	f
+whoPrecOp	infixToPostfix.c	/^int whoPrecOp(char op1,char op2)$/;"	f
+youWinMoneyAccount	gameMoney.c	/^void youWinMoneyAccount()$/;"	f

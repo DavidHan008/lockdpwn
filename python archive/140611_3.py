@@ -26,7 +26,7 @@ class ETNEWS:
 		self.br['id'] = username   
 		self.br['pw'] = password   
 		self.br.submit()   
-		
+
 	def get_pdf_data(self, date):   
 		print 'Downloading ... : ' + self._pdf_url + date
 		file = self.br.open(self._pdf_url + date, "today_news" + date + ".zip").read()
@@ -41,6 +41,7 @@ class ETNEWS:
 		import time
 		date = time.strftime("%Y%m%d", time.gmtime())
 		self.get_pdf_data(date)   
+
 
 if __name__ == '__main__':
 	import sys
