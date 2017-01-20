@@ -1,8 +1,0 @@
-# object files
-*.o
-
-# root path files
-/huffman
-
-# zip files
-*.zip
