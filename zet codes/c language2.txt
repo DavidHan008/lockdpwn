@@ -1,0 +1,206 @@
+------------------------------------------------------------------------------------------
+1. 소수(prime number)는 1과 자기 자신 외의 약수를 가지지 않는 1 보다 큰 자연수이다. 
+  주어진 정수가 소수인지를 판단하여 소수이면 1 아니면 0을 리턴하는 함수 
+  int IsPrime(int n)을 작성하고, 이를 이용하여 30 보다 작은 모든 소수를 출력하는 
+   프로그램을 작성하시오. (예 2 3 5 7 11 13 17 19 23 29)
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+ int isprime(int n);
+ int main(void)
+ {
+	 int i;
+	 for(i=1;i<=30;i++)
+	 {
+		 if(isprime(i)==1)
+			 printf("%d ",i);
+	 }
+	 getchar();
+	 getchar();
+	 getchar();
+	 return 0;
+ }
+ int isprime(int n)
+ {
+	 int i,count=0;
+	 for(i=1;i<=n;i++) {
+		 if(n%i==0)
+			 count++;
+ 	 }
+	 return (count==2);
+ }
+
+
+------------------------------------------------------------------------------------------
+2. 좌표 (x, y)와 원점과의 거리를 리턴하는 함수 double Distance(double x, double y)를 작성
+  하고 이를 이용하여 원점 좌표 (0, 0)이 입력될 때까지 X-Y 평면상의 좌표를 입력 받은 후에 
+  원점과의 거리가 가장 먼 좌표를 출력하는 프로그램을 작성하시오. 단 가장 먼 거리의 좌표가
+  여럿인 경우 그 중에서 Y 좌표가 가장 작은 것을 출력하시오. 또한 가장 먼 거리의 좌표가 
+  여럿이고 그 중에서 Y 좌표가 가장 작은 것도 여럿일 경우에는 그 좌표들 중에서 가장 나중에 
+  입력된 좌표를 출력하시오. 단 좌표는 실수로 주어진다.
+	(예 (-5,0)(-3,-4)(5,0)(4,3)(0,0) : (-3,-4) )
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include<math.h>
+double Distance(double x, double y);
+int main(void)
+{
+	int x,y,x1=0,y1=0;
+	double d=0;
+	while(1)
+	{
+		printf("좌표를 입력하라:");
+		scanf("%d %d",&x,&y);
+		if(Distance(x,y)>d)
+		{	
+			d=Distance(x,y);
+			x1=x;y1=y;}
+		if(x==0 && y==0)
+			break;
+		if (d==Distance(x,y))
+		{
+			if(y1<=y)
+			{
+				x1=x;y1=y;}
+		}
+}
+	printf(": (%d,%d)\n",x1,y1);
+	getchar();
+	getchar();
+	return 0;
+}
+double Distance(double x, double y)
+{
+	return (sqrt(x*x+y*y));
+}
+
+
+
+------------------------------------------------------------------------------------------
+3. 양의 정수 n을 입력 받아, 만약 n이 소수(prime number)이면 “Prime Number”라는 메시지를
+   출력하고, n이 소수가 아닌 짝수일 경우에는 a + b = n을 만족하는 두 소수 a, b의 조합을 
+   출력하고, n이 소수가 아닌 홀수일 경우에는 “Try Again”을 출력하는 프로그램을 작성하시오.
+   (예 61 : Prime Number , 62 : 3 59 , 63 : Try Again)
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+int get_int(void);
+int prime_number(int n);
+int main(void)
+{
+	int n,i,j,a=0,b=0;
+	while(1)
+	{
+		n=get_int();
+		if(prime_number(n)==1)
+			printf(" : Prime Number\n");
+		else if (n%2==0)
+		{
+			for(i=1;i<=n/2;i++)
+			{
+				if(prime_number(i)==1)
+				{
+					for(j=i;j<=n;j++)
+					{
+						if(prime_number(j)==1)
+						{
+							if(i+j==n)
+							{
+								a=i;
+								b=j;
+								break;}
+						}
+					}
+				}
+			}
+		printf(" : %d %d\n",a,b);
+		}
+		else
+			printf("Try Again\n");
+	}
+	getchar();
+	getchar();
+	return 0;
+}
+int get_int(void)
+{
+	int n;
+	printf("원하는 정수를 입력하시오:");
+	scanf("%d",&n);
+	return n;
+}
+int prime_number(int n)
+{
+	int i;
+	for(i=2;i<=n;i++)
+	{
+		if(n%i==0)
+			break;}
+	return (i==n);
+}
+
+
+
+------------------------------------------------------------------------------------------
+4. 소득세를 계산하는 double get_tax(int income)를 작성하여라. 1000만원 이하는 8%의 세금이 
+   붙고, 1000만원 넘는 부분에 대해서는 10%의 세금이 붙는다.
+	(예 1000 : 80 , 2000 :180)
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+double get_tax(int income);
+int main(void)
+{
+	int income;
+	printf("소득을 입력하라:");
+	scanf("%d",&income);
+	printf("세금은 %lf이다.",get_tax(income));
+	getchar();
+	getchar();
+	return 0;
+}
+double get_tax(int income)
+{
+	if(income<=1000)
+		return (income*0.08);
+	else
+		return (80+(income-1000)*0.1);
+}
+
+
+------------------------------------------------------------------------------------------
+5. rand() 함수를 활용하여 주사위 던지기 게임을 작성하시오. 주사위 던지기 게임을 시작하기 전에
+   10원을 가지고 있다. 홀수의 눈이 나오면 나온 눈의 개수만큼 돈을 획득한다. 짝수의 눈이 나오면
+   나온 눈의 개수만큼 돈을 잃는다. 돈을 모두 잃으면 프로그램을 종료한다.
+	(Ex. 10원을 가지고 게임을 시작합니다.
+	2원 손실 ==> 8원이 되었습니다.
+	3원 획득 ==> 11원이 되었습니다.
+	6원 손실 ==> 5원이 되었습니다.
+	4원 손실 ==> 1원이 되었습니다.
+	2원 손실 ==> 모든 돈을 잃었습니다.)
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main(void)
+{
+	int i,money=10;
+	srand( (unsigned)time(NULL) );
+	printf("10원을 가지고 게임을 시작합니다.\n");
+	getchar();
+	while(money>0)
+	{
+		i=rand()%10+1;
+		if(i%2==0)
+		{
+			money-=i;
+			printf("%d원 손실 ==>",i);}
+		else
+		{
+			money+=i;
+			printf("%d원 획득 ==>",i);}
+		if(money>0)
+			printf(" %2d원이 되었습니다.",money);
+		else
+			printf(" 모든 돈을 잃었습니다.");
+		getchar();
+	}
+	return 0;
+}
