@@ -1,0 +1,167 @@
+\documentclass[draft, pdftex, a4paper, 12pt, openbib, ]{article}
+
+\usepackage[pdftex, final, pdfstartview = FitV, linktocpage = false, breaklinks = true, ]{hyperref}
+\usepackage[english]{babel}
+\usepackage{float}   % Improved interface for floating objects ; add [H] option
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS and ENCODING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lmodern}        % Latin Modern family of fonts
+\usepackage[T1]{fontenc}    % fontenc is oriented to output, that is, what fonts to use for printing characters. 
+% http://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc 
+% http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+% WHICH ONE TO CHOOSE?
+% \usepackage{pslatex}
+% \usepackage[varg, cmintegrals, cmbraces, ]{newtxtext,newtxmath} % libertine, uprightGreek (U.S.) or slantedGreek (ISO), 
+% \usepackage{tgtermes}                
+% \usepackage{txfonts}
+% \usepackage{mathptmx}
+% \usepackage[scaled=.90]{helvet}
+% \usepackage{courier}
+% \usepackage{textcomp}     % required for special glyphs
+% \usepackage{bm}           % load after all math to give access to bold math
+\usepackage[utf8]{inputenc} % inputenc allows the user to input accented characters directly from the keyboard; 
+% utf8x : much broader but less compatible ; latin1 : old?
+% http://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc
+
+% References:
+% http://www.latex-community.org/forum/viewtopic.php?f=8&t=6637
+% ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/info/l2tabu/english/l2tabuen.pdf
+% ftp://ftp.dante.de/tex-archive/info/l2tabu/english/l2tabuen.pdf
+% http://xpt.sourceforge.net/techdocs/language/latex/latex32-LaTeXAndFonts/single/
+% http://thirteen-01.stat.iastate.edu/wiki/LaTeXFonts
+% http://www.tex.ac.uk/tex-archive/info/beginlatex/html/chapter8.html
+% http://tex.stackexchange.com/questions/56876/times-new-roman-fonts-and-maths-without-mathptmx
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LAY OUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See: http://tex.stackexchange.com/questions/59626/nicely-force-66-characters-per-line
+% (must be after pslatex, tgterms, etc...)
+% \usepackage[DIV=calc]{typearea}
+%
+% \usepackage[cm]{fullpage} % set 'default' full page
+% \usepackage{geometry}     % margins?
+\usepackage{lipsum}         % to fill in with arbitrary text
+\widowpenalty = 4000        % help suppress widows,  default = 4,000 (?), from 0 to 10 000 (from 300 to 1 000 recommended, 10 000 not recommended)
+\clubpenalty  = 4000        % help suppress orphans, default = 4,000 (?), from 0 to 10 000 (from 300 to 1 000 recommended, 10 000 not recommended)
+\usepackage[final, babel]{microtype} % many good lay-out/justification effects, see:
+% texblog.net/latex-archive/layout/pdflatex-microtype/
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AMS MATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{amsmath}      % loads amstext, amsbsy, amsopn but not amssymb
+% equation stuff (eqref, subequations, equation, align, gather, flalign, multline, alignat, split...)
+% \usepackage{amsfonts}     % may be redundant with amsmath
+% \usepackage{amssymb}      % may be redundant with amsmath
+
+\begin{document}	
+
+
+
+
+
+%---------------------------------------------
+
+$  {g}'(y) = N(x,y) - \frac{\partial }{\partial y}\int M(x,y)dx      \\\\$
+
+%---------------------------------------------
+
+%% Digital Control 160925
+
+$   F - kx - bx' = mx''    \\\\$
+
+$	F(s) -kX(s) - bsX(s) = ms^{2}X(s) \\\\ $
+
+
+$  F(s) = (ms^{2} + bs + k ) X(s)     \\\\$
+
+
+$	\frac{X(s)}{F(s)} = H(s) = \frac{1}{(ms^{2} + bs + k)} \\\\ $
+
+
+$   H(s) = \frac{\frac{1}{m}}{(s^{2} + \frac{b}{m}s + \frac{k}{m})} \\\\ $
+
+
+$   \lim\limits_{s \rightarrow 0} 2\cdot H(s) = \lim\limits_{s \rightarrow 0} 2\cdot \frac{\frac{1}{m}}{(s^{2} + \frac{b}{m}s + \frac{k}{m})} = \frac{2}{k} = 0.1   \\\\$ 
+
+
+$   then, \  k = 20 N/m       \\\\$
+
+
+$  t_{r} \approx \frac{1.8}{w_{n}} \approx 1      \\$
+
+
+$  \therefore w_{n} = 1.8  \\$
+
+
+$  w_{n} = \sqrt{\frac{k}{m}} = \sqrt{\frac{20}{m}}  = 1.8     \\$
+
+
+$   then, \ m = 6.17 \ kg    \\$
+
+
+$  2\xi w_{n} = 3.6\cdot\xi = \frac{b}{m} = \frac{b}{6.17}     \\$
+
+
+$  M_{p} = 10\% \ \ \Longleftrightarrow \ \  \xi = 0.6   \\$
+
+
+$  then, \ b = 13.32 \ N\cdot s/m     \\$
+
+
+
+
+$   \dfrac{Y(s)}{R(s)} = H(s) = \dfrac{10}{s^{2} + 55s + 10}   \\\\$
+
+
+$    E(s) = R(s) - Y(s) =  (\dfrac{1}{1+\dfrac{10}{s(s+55)}})R(s)   \\\\$
+
+
+
+$   \therefore e_{ss} = \lim\limits_{s \rightarrow 0} s\cdot E(s) = \lim\limits_{s \rightarrow 0} s\cdot \dfrac{1}{1+\dfrac{10}{s(s+55)}} \dfrac{1}{s^2} = \dfrac{55}{10}  = 5.5 \ (550 \%)\\\\$
+
+
+
+$  H(s) = \dfrac{8.1}{s^2 + 3s + 9}     \\\\$
+
+
+$  H(s) = \dfrac{8.1 \cdot \dfrac{1}{5}(s+5)}{s^2 + 3s + 9}     \\\\\\\\\\$
+
+
+$     x(t) = v_{0} cos(\theta) t  \\\\$
+
+
+$   y(t) = v_{0} sin(\theta)  t - \dfrac{1}{2}gt^2    \\\\$
+
+
+$     v_{0} = 5 m/s  \\\\$
+
+
+$     n = \begin{bmatrix}
+\ -sin(yaw)\cdot cos(pitch) \ \\  
+\ sin(pitch) \ \\ 
+\ -cos(yaw)\cdot cos(pitch) \ 
+\end{bmatrix}  \\\\$
+
+
+$    n = \begin{bmatrix}
+\ n_{x} \ \\  
+\ n_{y} \ \\ 
+\ n_{z} \
+\end{bmatrix}   \\\\$
+
+
+
+
+
+
+\end{document}
+
