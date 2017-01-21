@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "DBLinkedList.h"
 
-     
-
 void ListInit(List *plist)
 {
      plist->head = NULL;
@@ -11,7 +9,6 @@ void ListInit(List *plist)
      plist  = 0 ;
      plist = 0 ;
 }
-
 
 void LInsert(List *plist, LData data)
 {
@@ -38,7 +35,6 @@ void LInsert(List *plist, LData data)
      (plist->numOfData)++;
 }
 
-
 void LInsertFront(List *plist, LData data)
 {
      Node *newNode = (Node*)malloc(sizeof(Node));
@@ -61,8 +57,6 @@ void LInsertFront(List *plist, LData data)
      (plist->numOfData)++;
 }
 
-
-
 int LFirst(List *plist, LData *pdata)
 {
      if(plist->head->next ==NULL)
@@ -76,8 +70,6 @@ int LFirst(List *plist, LData *pdata)
      *pdata = plist->cur->data;
      return TRUE;
 }
-
-
 
 int LNext(List *plist, LData *pdata)
 {
@@ -93,13 +85,10 @@ int LNext(List *plist, LData *pdata)
      return TRUE;
 }
 
-
-
 LData LRemove(List *plist)
 {
      Node *rpos = plist->cur;
      LData rdata = rpos->data;
-
 
      plist->before->next = plist->cur->next;
      plist->cur = plist->before;
@@ -107,15 +96,12 @@ LData LRemove(List *plist)
      free(rpos);
      (plist->numOfData)--;
      return rdata;
-  
 }
-
 
 int LCount(List *plist)
 {
      return plist->numOfData;
 }
-
 
 void setSortRule(List *plist,int (*comp)(LData d1, LData d2))
 {
