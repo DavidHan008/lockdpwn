@@ -1,3 +1,7 @@
+/*
+  c tcpip ==> operand client 구현한 예제코드
+               숫자와 연산자를 서버로 보내서 결과값을 돌려받는다
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,6 +10,8 @@
 #include <sys/socket.h>
 
 #define BUF_SIZE 1024
+#define OPSZ 4
+#define RLT_SIZE 4
 
 void error_handling(char *message);
 
@@ -42,28 +48,25 @@ void main(int argc, char *argv[])
     puts("conneted...");
   }
 
-  while (1)
+  fputs("operand count : ", stdout);
+  scanf("%d", &opnd_cnt);
+  opmsg[0] = (char)opnd_cnt;
+
+  for (i = 0; i < opnd_cnt; i++)
   {
-    fputs("operand count", stdout);
-
-    fputs("operand 1", stdout);
-
-    fputs("operator", stdout);
-
-
-    fputs("operation result: ", stdout);
-
-
+    printf("operand %d: ", i+1);
+    scanf("%d", (int*)&opmsg[i*OPSZ + 1]);
   }
 
+  fgetc(stdin);
+  fputs("Operator: ", stdout);
+  scanf("%c", &opmsg[opnd_cnt * OPSZ + 1]);
+  write(sock, opmsg, opnd_cnt*OPSZ + 2);
+  read(sock, &result, RLT_SIZE);
 
-
-
-
-
-
+  printf("operation results: %d\n",result);
+  close(sock);
 }
-
 
 void error_handling(char *message)
 {
