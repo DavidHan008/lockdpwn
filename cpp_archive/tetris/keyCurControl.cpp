@@ -21,34 +21,34 @@ static int keyDelayRate;
 // 깜빡거리는 커서를 제거한다 
 void removeCursor()
 {
-	CONSOLE_CURSOR_INFO curInfo;
+  CONSOLE_CURSOR_INFO curInfo;
 
-	GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
-	curInfo.bVisible = 0;
+  GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+  curInfo.bVisible = 0;
 
-	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+  SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
 }
 
 // 현재 커서의 위치정보를 담은 구조체 변수를 반환한다
 POINT_EDWARD getCurrentCursorPos()
 {
-	POINT_EDWARD curPoint;
-	CONSOLE_SCREEN_BUFFER_INFO curInfo;
+  POINT_EDWARD curPoint;
+  CONSOLE_SCREEN_BUFFER_INFO curInfo;
 
-	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
 
-	curPoint.x = curInfo.dwCursorPosition.X;
-	curPoint.y = curInfo.dwCursorPosition.Y;
+  curPoint.x = curInfo.dwCursorPosition.X;
+  curPoint.y = curInfo.dwCursorPosition.Y;
 
-	return curPoint;
+  return curPoint;
 
 }
 
 // 커서의 위치를 설정한다
 void setCurrentCursorPos(int x, int y)
 {
-	COORD pos = { x, y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+  COORD pos = { x, y };
+  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 
 }
 
@@ -56,56 +56,55 @@ void setCurrentCursorPos(int x, int y)
 // 핵심!
 int insertUserKeyInput()
 {
-	int key;
+  int key;
 
-	for (int i = 0; i < KEY_SENSITIVE; i++)
-	{
-		if (_kbhit() != 0)
-		{
-				key = _getch();
+  for (int i = 0; i < KEY_SENSITIVE; i++)
+  {
+    if (_kbhit() != 0)
+    {
+      key = _getch();
 
-			switch(key)
-			{
-				case LEFT:
-			 		shiftLeft();
-					break;
-				case RIGHT:
-					shiftRight();
-					break;
-				case UP:
-					rotateBlock();
-					break;
-				case SPACE:
-					solidCurrentBlock();		
-					return 1;					// 스페이스바가 입력된 걸 알리기 위해
-			}
-		}
+      switch(key)
+      {
+        case LEFT:
+          shiftLeft();
+          break;
+        case RIGHT:
+          shiftRight();
+          break;
+        case UP:
+          rotateBlock();
+          break;
+        case SPACE:
+          solidCurrentBlock();
+          return 1;					// 스페이스바가 입력된 걸 알리기 위해
+      }
+    }
+    if (i % keyDelayRate == 0)
+    {
+      Sleep(SYS_DELAY);
+    }
+  }
 
-		if (i % keyDelayRate == 0)
-		{
-			Sleep(SYS_DELAY);
-		}
-	}
-
-	return 0;
+  return 0;
 }
 
 
 // 게임 속도를 증가시키는 함수
 void keyDelaySpeedCtl(int addSpeed)
 {
-	keyDelayRate += addSpeed;
+  keyDelayRate += addSpeed;
 }
 
 
 void initKeyDelayRate(int rate)
 {
-	if (rate < 1)
-	{
-		return;
-	}
+  if (rate < 1)
+  {
+    return;
+  }
 
-	keyDelayRate = rate;
+  keyDelayRate = rate;
 }
 
 

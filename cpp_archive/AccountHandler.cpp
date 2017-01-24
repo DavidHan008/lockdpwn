@@ -95,7 +95,7 @@ void AccountHandler::MakeCreditAccount()
       break;
 
     case 3:
-     accArr[accNum++] = new HighCreditAccount(id,balance,name,interRate,LEVEL_C);
+      accArr[accNum++] = new HighCreditAccount(id,balance,name,interRate,LEVEL_C);
       break;
   }
 }

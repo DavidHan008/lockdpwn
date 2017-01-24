@@ -88,7 +88,6 @@ void exit_message(const char* error_message, int error)
 	// Exit the program
 	exit(error);
 }
-
 int main(int argc, char **argv)
 {
 	// Capture settings
@@ -563,7 +562,6 @@ int main(int argc, char **argv)
 		mt.pUnk->Release();
 		mt.pUnk = NULL;
 	}
-
 	// Clean up and exit
 	fprintf(stderr, "Captured image to %s", filename);
 	exit_message("", 0);

@@ -9,6 +9,9 @@
 			fputc()
 			fgets()
 
+			fdopen()  : return FILE* fp
+			fileno()
+
 
 
 
@@ -32,6 +35,8 @@
 			read()
 			close()
 
+			dup()
+			dup2()
 
 
 
