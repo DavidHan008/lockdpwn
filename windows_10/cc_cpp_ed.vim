@@ -12,6 +12,11 @@
 			fdopen()  : return FILE* fp
 			fileno()
 
+			fopen()
+			fclose()
+			fread()
+			fwrite()
+				size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream)
 
 
 
@@ -34,6 +39,9 @@
 			write()
 			read()
 			close()
+			fork()
+			alarm()
+			pipe()
 
 			dup()
 			dup2()
@@ -51,7 +59,12 @@
 			socket()
 			listen()
 			accept()
+			shutdown()
+			getsockopt()
 			setsockopt()
+			send()
+			recv()
+
 
 			# udp
 			sendto()
@@ -93,17 +106,36 @@
 
 
 
+======================================================================
+# WinSock2.h
+			WSAStartup()
+			send()
+			recv()
+	
+
+			SOCKADDR_IN
+			SOCKET
+			WSADATA
+
+
+
+
+
+
+
 ============================================================================
-
-
-
-============================================================================
-
+# sys/select.h
+			select()
 
 
 
 
 ===========================================================================
+# sys/time.h
+			struct timeval
+	
+
+
 
 
 
