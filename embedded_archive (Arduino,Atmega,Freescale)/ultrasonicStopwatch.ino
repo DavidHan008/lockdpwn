@@ -46,6 +46,8 @@ void loop()
   // 아래 초음파, 초음파센서로부터 거리를 재는 코드
   distance = pulseIn(ECHOBOTTOM,HIGH,5800)/58.0;
 
+
+
   /// 스톱워치 시간을 재는 코드
   elapsedTime = millis();
 
