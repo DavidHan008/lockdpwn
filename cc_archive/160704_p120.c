@@ -44,23 +44,23 @@ char* StringTokenize(char * str, char *delim)
     return NULL;
 
   
-  while(1)
-  {
-    if(*curStrPos ==0) // 문자열의 끝을 검사한다
-    {
-      nextTokenPos = NULL;
-      break;
-    }
+ while(1)
+ {
+   if(*curStrPos ==0) // 문자열의 끝을 검사한다
+   {
+     nextTokenPos = NULL;
+     break;
+   }
 
-    if(*curStrPos == delim[0]) // 토큰 구분 문자를 발견한다
-    {
-      *curStrPos = 0;
-      nextTokenPos = curStrPos +1;
-      break;
-    }
+   if(*curStrPos == delim[0]) // 토큰 구분 문자를 발견한다
+   {
+     *curStrPos = 0;
+     nextTokenPos = curStrPos +1;
+     break;
+   }
 
-    curStrPos++;
-  }
+   curStrPos++;
+ }
 
   return curTokenPos;
 

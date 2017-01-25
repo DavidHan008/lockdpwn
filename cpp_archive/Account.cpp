@@ -25,7 +25,6 @@ int Account::Withdraw(int money)
   {
     return 0;
   }
-
   balance -= money;
   return money;
 }

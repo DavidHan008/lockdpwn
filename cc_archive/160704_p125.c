@@ -54,7 +54,7 @@ void ReadAndSortPrint(int number)
   SortArr(arr,number);
 
   
-  puts("입력된 숫자의 정렬된 출력");
+  puts("입력 숫자의 정렬된 출력");
 
   for(i=0; i<number; i++)
     printf("%d ",arr[i]);
