@@ -5,27 +5,21 @@
    Last modified 2016/07/09
 */
 
-
 #include "common.h"
 #include "cusInfo.h"
 #include "dvdInfo.h"
 #include "dvdManager.h"
 #include "dvdInfoAccess.h"
 
-
-
 int firstFlag = 0;
 
 void showMenu()
 {
- if (firstFlag == 0 )
+  if (firstFlag == 0 )
   {
     system("clear"); //stdlib.h
     firstFlag++;
   }
-
-
-  
   printf("\n---------메뉴---------\n");
   printf("1. 신규가입\n");
   printf("2. 고객검색\n");
@@ -41,7 +35,6 @@ void showMenu()
   printf("9. 종료\n");
   printf("-----------------------\n");
   printf("선택>> ");
-  
 }
 
 void showCustomerInfo(cusInfo *pCus)
@@ -53,7 +46,6 @@ void showCustomerInfo(cusInfo *pCus)
   printf("**********************\n\n"); 
 }
 
-
 void showDvdInfo(dvdInfo *pDvd)
 {
   printf("\n**********************\n");
@@ -61,14 +53,10 @@ void showDvdInfo(dvdInfo *pDvd)
   printf("| >> 제목 : %s \n", pDvd->title);
   printf("| >> 장르 : "); showGenre(pDvd->genre); printf("\n");
   printf("**********************\n\n");
-
-
 }
-
 
 void showGenre(int gen)
 {
-
   switch(gen)
   {
     case ACTION:
@@ -85,20 +73,15 @@ void showGenre(int gen)
       fputs("로맨틱",stdout);
       break;
   }
-
 }
-
 
 void showCustomerInfoContinue(cusInfo *pCus)
 {
-  
   printf("\n**********************\n");
   printf("| >> ID : %s \n", pCus->ID);
   printf("| >> 이름 : %s \n", pCus->name);
   printf("| >> 전화번호 : %s \n", pCus->phoneNum); 
   printf("**********************\n\n"); 
-
 }
-
 
 /* end of file */

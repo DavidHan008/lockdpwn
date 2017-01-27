@@ -15,9 +15,7 @@ void main(int argc, char *argv[])
   strcpy(str_arr, str_ptr);
   printf("dotted-deical notation1 :%s \n",str_ptr);
 
-
   inet_ntoa(ad2.sin_addr);
   printf("dotted ..2 : %s \n", str_ptr);
   printf("dotted ..3 : %s \n", str_arr);
-
 }

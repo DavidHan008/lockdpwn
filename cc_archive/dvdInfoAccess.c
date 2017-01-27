@@ -4,8 +4,6 @@
    Implementation : LKB
    Last modified 2016/07/09
 */
-
-
 #include "common.h"
 #include "dvdInfo.h"
 #include "screenOut2.h"
@@ -16,11 +14,9 @@
 static dvdInfo *dvdList[MAX_DVD];
 static int numOfDvd = 0;
 
-
 int addDvdInfo(char *ISBN, char * title, int genre)
 {
   dvdInfo *pDvd;
-
 
   if(numOfDvd >= MAX_DVD)
   {
@@ -39,10 +35,8 @@ int addDvdInfo(char *ISBN, char * title, int genre)
 
   dvdList[numOfDvd++] = pDvd;
 
-
   return numOfDvd;
 }
-
 
 dvdInfo * getDvdPtrByISBN(char *ISBN)
 {
@@ -53,16 +47,13 @@ dvdInfo * getDvdPtrByISBN(char *ISBN)
       return dvdList[i];
     }
   }
-
   // 무슨 의미일까...?
   return (dvdInfo*)0;
 }
 
-
 int isRegistISBN(char *ISBN)
 {
   dvdInfo * pDvd = getDvdPtrByISBN(ISBN);
-
 
   if(pDvd == 0)
   {
@@ -72,13 +63,10 @@ int isRegistISBN(char *ISBN)
   {
     return -1;
   }
-  
 }
-
 
 int setDVDRented(char *ISBN, char *cusID, int rentDay)
 {
-
   dvdInfo * pDvd = getDvdPtrByISBN(ISBN);
 
   if(pDvd == 0)
@@ -88,14 +76,10 @@ int setDVDRented(char *ISBN, char *cusID, int rentDay)
   
   addRentList(ISBN,cusID,rentDay);
   pDvd->rentState = RENTED;
-
-
   strcpy(pDvd->rentList[rentCusNum].cusID, cusID);
-  
-  return 1;
-  
-}
 
+  return 1;
+}
 
 int setDVDReturned(char *ISBN)
 {
@@ -105,21 +89,18 @@ int setDVDReturned(char *ISBN)
   {
     return 0;
   }
-
   pDvd->rentState = RETURNED;
   return 1;
-  
 }
 
 int getDVDRentState(char * ISBN)
 {
- dvdInfo *pDvd = getDvdPtrByISBN(ISBN);
+  dvdInfo *pDvd = getDvdPtrByISBN(ISBN);
 
   if(pDvd == 0)
   {
     return 0;
   } 
-
 
   return pDvd->rentState;
 }

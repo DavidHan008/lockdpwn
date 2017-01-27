@@ -4,24 +4,17 @@
    Implementation : LKB
    Last modified 2016/07/09
 */
-
-
 #include "common.h"
 #include "cusInfo.h"
 #include "cusInfoAccess.h"
 #include "screenOut2.h"
 
-
-
-
 void registCustomer()
 {
-  
   char tmpId[ID_LEN];
   char tmpName[NAME_LEN];
   char tmpPhone[PHONE_LEN];
-  
-  
+
   while(1)
   {
     printf("ID 입력: ");
@@ -41,7 +34,6 @@ void registCustomer()
     if((strlen(tmpId)) < ID_LEN && (strlen(tmpName)) < NAME_LEN && (strlen(tmpPhone)) < PHONE_LEN)
     {
       break;
-      
     }
     else
     {
@@ -51,17 +43,13 @@ void registCustomer()
   
   addCusInfo(tmpId,tmpName,tmpPhone);
   printf("[+] 가입이 완료됐습니다\n");
-
-  
 }
-
 
 void searchCusInfo()
 {
   char searchId[ID_LEN];
   cusInfo *cusPtr;
 
-  
   printf("찾는 ID 입력: ");
   scanf("%s",searchId);
   
@@ -72,7 +60,6 @@ void searchCusInfo()
     puts("존재하지 않는 사용자입니다");
     return;
   }
-
 
   showCustomerInfo(cusPtr);
 }

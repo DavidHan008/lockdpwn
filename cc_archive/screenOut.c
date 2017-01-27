@@ -4,7 +4,6 @@
   Implementation : LKB
   Last modified 2016/07/06
 */
-
 #include "common.h"
 #include "phoneData.h"
 
@@ -44,13 +43,4 @@ void ShowPhoneInfoByPtr(phoneData * pPhone)
   printf("| >> 전화번호 : %s \n",pPhone->phoneNum);
   printf("**********************\n\n");
 }
-
 /* end of file  */
-
-
-
-
-
-
-
-
