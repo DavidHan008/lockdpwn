@@ -132,14 +132,11 @@ def jmp_handler(emu,mnemonic, eip,op1,op2,op3):
         print "[*] OEP = 0x%08x" % eip
 
         # 언팩 된 바이너리를 디스크에 저장한다
-
         dump_unpacked(emu)
 
         # 에뮬레이터를 정지시킨다.
-
         emu.emulating = False
         return True
-
 
 
 def dump_unpacked(eum):
@@ -164,6 +161,4 @@ def dump_unpacked(eum):
 
     for x in range(length):
         fh.write("%c" % emu.get_memory(base+x , 1))
-
     print "[*] Finished"
-    

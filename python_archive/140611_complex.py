@@ -10,21 +10,15 @@ class Complex(object):
         return "(%g+%gj)" % (self.real, self.imag)
 
     # self + other
-
     def __add__(self, other):
         return Complex(self.real + other.real, self.imag + other.imag)
 
     # self - other
-
     def __sub_(self,other):
         return Complex(self.real - other.real, self.imag - other.imag)
-
-    
 
     def __radd__(self,other):
         return Complex(other.real + self.real, other.imag + self.imag)
 
     def __rsub__(self,other):
         return Complex(other.real - self.real, other.imag - self.imag)
-
-    
