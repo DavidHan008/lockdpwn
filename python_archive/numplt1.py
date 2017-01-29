@@ -1,5 +1,5 @@
 '''
- matplotlib ==> pyplot, animation을 이용해 gif파일을 만드는 예제 코드
+    python ==> matplotlib, pyplot, animation을 이용해 gif파일을 만드는 예제 코드
                 cos(2pi*(x - 0.01t))
 '''
 import numpy as np

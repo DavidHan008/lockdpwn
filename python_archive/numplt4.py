@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 '''
-numpy,matplot ==> 인터넷에서 퍼온 PinkWink님의 로봇역학 관련된 예제 코드
+    python ==> numpy,matplot 인터넷에서 퍼온 PinkWink님의 로봇역학 관련된 예제 코드
 '''
 from matplotlib import pyplot as plt
 from matplotlib.patches import FancyArrowPatch

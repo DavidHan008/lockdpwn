@@ -23,7 +23,6 @@ skill = ["sword","spear","bow","axe"]
 power = [98.5, 89.2, 100, 79.2]
 
 querySkill = raw_input("select weapon: ")
-
 i=0
 
 for each_item in skill:

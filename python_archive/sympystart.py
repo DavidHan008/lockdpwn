@@ -1,3 +1,6 @@
+'''
+    python ==> sympy 시작할 때 변수 선언을 해주는 코드
+'''
 from __future__ import division
 from sympy import *
 from sympy import solve

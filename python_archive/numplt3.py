@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 '''
-numpy, matplot ==> 인터넷에서 PinkWink님이 작성하신 로봇 관련된 예제코드
+    python ==> numpy, matplotlib 인터넷에서 PinkWink님이 작성하신 로봇 관련된 예제코드
 '''
 import matplotlib.pyplot as plt
 import drawRobotics as dR

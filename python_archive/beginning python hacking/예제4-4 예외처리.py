@@ -2,7 +2,7 @@ try:
     a = 10 / 0                                               #(1)
 except:                                                      #(2)   
     print "1.[exception] divided by zero "
-    
+
 print "\n"
 
 try:

@@ -1,33 +1,33 @@
-#!/usr/bin/env python   
-#-*- coding: utf-8 -*-   
-# LICENSE http://aslongas.pe.kr   
-# This program is free to use but you should remain these comments without modification.   
-# Developement Environment   
-# 1. Windows XP   
-# 2. Python 2.5.1   
-# 3. extra module : mechanize   
-  
-from mechanize import Browser   
-import re  
-import os  
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+# LICENSE http://aslongas.pe.kr
+# This program is free to use but you should remain these comments without modification.
+# Developement Environment
+# 1. Windows XP
+# 2. Python 2.5.1
+# 3. extra module : mechanize
 
-class ETNEWS:   
-	_login_url = "https://member.etnews.co.kr/member/login.html"   
-	_pdf_url = "http://pdf.etnews.co.kr/download_zip.html?p_date="   
-      
-	def __init__(self):   
-		self.login("아이디", "패스워드")   
+from mechanize import Browser
+import re
+import os
 
-	def login(self, username, password):   
-		self.br = Browser()   
-		self.br.set_handle_robots(False)   
-		self.br.open(self._login_url)   
-		self.br.select_form(name='loginFrm')   
-		self.br['id'] = username   
-		self.br['pw'] = password   
-		self.br.submit()   
+class ETNEWS:
+	_login_url = "https://member.etnews.co.kr/member/login.html"
+	_pdf_url = "http://pdf.etnews.co.kr/download_zip.html?p_date="
 
-	def get_pdf_data(self, date):   
+	def __init__(self):
+		self.login("아이디", "패스워드")
+
+	def login(self, username, password):
+		self.br = Browser()
+		self.br.set_handle_robots(False)
+		self.br.open(self._login_url)
+		self.br.select_form(name='loginFrm')
+		self.br['id'] = username
+		self.br['pw'] = password
+		self.br.submit()
+
+	def get_pdf_data(self, date):
 		print 'Downloading ... : ' + self._pdf_url + date
 		file = self.br.open(self._pdf_url + date, "today_news" + date + ".zip").read()
 		
@@ -40,7 +40,7 @@ class ETNEWS:
 	def get_content(self): 
 		import time
 		date = time.strftime("%Y%m%d", time.gmtime())
-		self.get_pdf_data(date)   
+		self.get_pdf_data(date)
 
 
 if __name__ == '__main__':

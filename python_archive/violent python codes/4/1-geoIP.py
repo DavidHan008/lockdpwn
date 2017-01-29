@@ -1,13 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pygeoip
-gi = pygeoip.GeoIP('/opt/GeoIP/Geo.dat')
-
+gi = pygeoip.GeoIP('/home/edward/Downloads/etc/GeoLiteCity.dat')
 
 def printRecord(tgt):
     rec = gi.record_by_name(tgt)
     city = rec['city']
-    region = rec['region_name']
+    region = rec['region_code']
     country = rec['country_name']
     long = rec['longitude']
     lat = rec['latitude']
