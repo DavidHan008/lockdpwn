@@ -14,7 +14,8 @@ data = conn.recv(1024)
 while 1:
      command = raw_input("Enter shell command or quit: ")
      conn.send(command)
-     if command == "quit": break 
+     if command == "quit": 
+		 break 
      data = conn.recv(1024)                                 
      print data
 

