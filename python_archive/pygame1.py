@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # python ==> pygame을 활용해 눈내리는 프로그램 예제 코드
 """
  Animating multiple objects using a list.
@@ -17,6 +15,7 @@ import random
 
 # Initialize the game engine
 pygame.init()
+
 BLACK = [0, 0, 0]
 WHITE = [255, 255, 255]
 
