@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> Android 라이브러리를 사용해본 예제 코드
+'''
 import android
 from urllib import urlencode
 from urlib2 import urlopen
