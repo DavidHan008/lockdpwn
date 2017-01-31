@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> sympy 시작할 때 변수 선언을 해주는 코드
 '''

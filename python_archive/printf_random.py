@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 
+'''
 from pydbg import *
 from pydbg.defines import *
 
@@ -6,7 +11,6 @@ import random
 
 # This is our user defined callback function
 def printf_randomizer(dbg):
-    
     # Read in the value of the counter at ESP + 0x8 as a DWORD
     parameter_addr = dbg.context.Esp + 0x8
     counter = dbg.read_process_memory(parameter_addr,4)
@@ -28,10 +32,8 @@ def printf_randomizer(dbg):
 
 # Instantiate the pydbg class
 dbg = pydbg()
-
 # Now enter the PID of the printf_loop.py process
 pid = raw_input("Enter the printf_loop.py PID: ")
-
 # Attach the debugger to that process
 dbg.attach(int(pid))
 

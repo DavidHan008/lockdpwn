@@ -1,22 +1,18 @@
 ﻿from ctypes import *
 import sys
+
 # pyemu 의 경로를 설정한다
-
-
 sys.path.append("C:\Python27\Lib\site-packages\pyemu")
 sys.path.append("C:\Python27\Lib\site-packages\pyemu\lib")
 
 
 from PyEmu import PEPyEmu
-
 # 커맨드라인 파라미터
 
 exename = sys.argv[1]
-
 outputfile = sys.argv[2]
 
 # 에뮬레이터 객체를 초기화 한다
-
 emu = PEPyEmu()
 
 if exename:
@@ -57,7 +53,6 @@ def loadlibrary(name,address):
     dllname= emu.get_memory_string(emu.get_memory(emu.get_register("ESP")+4))
 
     # 실제 LoadLibrary 함수를 호출하고 핸들을 리턴 값으로 설정한다
-
     dllhandle = windll.kernel32.LoadLibrary(dllname)
     emu.set_register("EAX",dllhandle)
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> sympy를 이용해 연립방정식을 푸는 예제 코드
 '''

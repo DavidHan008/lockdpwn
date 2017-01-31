@@ -1,4 +1,8 @@
-# python ==> pygame을 활용해 눈내리는 프로그램 예제 코드
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> pygame을 활용해 눈내리는 프로그램 예제 코드 
+'''
 """
  Animating multiple objects using a list.
  Sample Python/Pygame Programs
@@ -39,19 +43,17 @@ clock = pygame.time.Clock()
 # Loop until the user clicks the close button.
 done = False
 while not done:
-
     for event in pygame.event.get():   # User did something
         if event.type == pygame.QUIT:  # If user clicked close
             done = True   # Flag that we are done so we exit this loop
 
     # Set the screen background
-    screen.fill(BLACK)
+    screen.fill([0,100,0])
 
     # Process each snow flake in the list
     for i in range(len(snow_list)):
-
         # Draw the snow flake
-        pygame.draw.circle(screen, WHITE, snow_list[i], 2)
+        pygame.draw.circle(screen, WHITE, snow_list[i], 1)
 
         # Move the snow flake down one pixel
         snow_list[i][1] += 1

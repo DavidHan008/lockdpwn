@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> sympy, 인터넷에서 퍼온 PinkWink님의 로봇 관련된 예제 코드
 '''

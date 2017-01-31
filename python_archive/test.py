@@ -28,8 +28,6 @@
 #         Key Found in file: ba7a6b3be3dac7dcd359w20b4afd5143-1121
 #		  Execute: ssh -lroot -p22 -i /home/hitz/keys/ba7a6b3be3dac7dcd359w20b4afd5143-1121 192.168.1.240
 ############################################################################
-
-
 import Queue
 import os
 import string

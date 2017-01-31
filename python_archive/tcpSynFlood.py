@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
-    python ==> 파이써해킹입문, tcp syn flood 공격을 하는 예제 코드 (왠지 모르지만 작동안한다)
+    python ==> 파이썬해킹입문, tcp syn flood 공격을 하는 예제 코드 (왠지 모르지만 작동안한다)
 '''
 import socket
 import sys

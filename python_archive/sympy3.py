@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> sympy, 4x4 행렬의 역행렬을 구하는 예제코드
 '''

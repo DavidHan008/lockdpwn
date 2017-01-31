@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
 	python ==> 파이썬해킹입문, Window 레지스트리를 활용해 유저의 목록을 출력하는 예제 코드
 '''
