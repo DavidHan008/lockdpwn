@@ -6,19 +6,31 @@ $$ 리눅스 명령어
 	$ mv
 	$ cp
 	$ mkdir
+	$ nautilus
 	$ apt-get
+
+
 
 	$ ack
 				파일 내용 중 hello_world가 들어간 내용을 검색합니다
 				$ ack -k hello_world
 
+
+
+
 	$ systemctl
 				절전모드로 전환합니다
 				$ systemctl suspend
 
+
+
+
 	$ shutdown
 				시스템을 바로 종료합니다
 				$ shutdown -H now			
+
+
+
 
 	$ poweroff
 
@@ -26,6 +38,15 @@ $$ 리눅스 명령어
 		
 
 	$ tcpdump
+
+
+	$ nmap
+				$ nmap -T4 -PN --script=default koradb.iptime.org
+
+				
+				$ nmap -T4 -PN 172.30.1.48
+				
+
 
 
 

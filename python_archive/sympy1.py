@@ -11,6 +11,7 @@ th3 = sp.Symbol('th3')
 L1 = sp.Symbol('L1')
 L2 = sp.Symbol('L2')
 
+
 def RotZ(a):
         return sp.Matrix( [	[sp.cos(a), -sp.sin(a), 0, 0],
                                 [sp.sin(a), sp.cos(a), 0, 0],
