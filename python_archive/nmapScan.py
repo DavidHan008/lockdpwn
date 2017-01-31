@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> nmap을 사용해 호스트 스캐닝을 하는 예제 코드
 '''
@@ -15,7 +17,7 @@ def nmapScan(Host, Port):
 
 def main():
 	parser = optparse.OptionParser('usage%prog ' + \
-								   '-H <target host> -p <target port>')
+			              '-H <target host> -p <target port>')
 	parser.add_option('-H', dest='Host', type='string',\
 					  help='specify target host')
 	parser.add_option('-p', dest='Port', type='string',\

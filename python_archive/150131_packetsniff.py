@@ -1,3 +1,8 @@
+#-*- coding: utf-8 -*-
+'''
+    python ==> 파이썬해킹입문, ftp 서버와의 통신 패킷을 읽고 스니핑해주는 예제 코드
+                                cmd> ftp ~~ 로 해야지 제대로 패킷이 잡힌다
+'''
 import socket
 import string
 

@@ -19,7 +19,6 @@ def check_accessv(dbg):
 
 pid = raw_input("Enter the Process ID: " )
 dbg = pydbg()
-
 dbg.attach(int(pid))
-dbg.set_callback(EXCEPTION_ACCESS_VIOLATION,check_accessv)
+dbg.set_callback(EXCEPTION_ACCESS_VIOLATION, check_accessv)
 dbg.run()

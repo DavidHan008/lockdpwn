@@ -1,4 +1,8 @@
-# -*-coding:utf8-*-#
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> Machine Learning 관련 코드. 중국인이 작성한듯하다. 아직 이해할 내공 부족
+'''
 """
 本程序基于python+numpy+theano+PIL??，采用?似LeNet5的CNN模型，?用于olivettifaces人??据?，
 ??人???的功能，模型的?差降到了5%以下。
@@ -153,7 +157,6 @@ class HiddenLayer(object):
 
 #卷?+采??（conv+maxpooling）
 class LeNetConvPoolLayer(object):
-
     def __init__(self, rng, input, filter_shape, image_shape, poolsize=(2, 2)):
 
         assert image_shape[1] == filter_shape[1]

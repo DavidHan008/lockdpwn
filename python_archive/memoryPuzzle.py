@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-	 pygame ==> Memory Puzzle 같은그림 맞추기 게임 코드
+     pygame ==> Memory Puzzle 같은그림 맞추기 게임 코드
 '''
 import pygame, sys, random
 from pygame.locals import *
@@ -51,74 +51,74 @@ ALLSHAPES = (DONUT,SQUARE,DIAMOND,LINES,OVAL)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT,"Board is too big for the number of shapes/color defined"
 
 def main():
-		global FPSCLOCK, DISPLAYSURF
-		pygame.init()
+    global FPSCLOCK, DISPLAYSURF
+    pygame.init()
 
-		FPSCLOCK = pygame.time.Clock()
-		DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
-		mousex = 0
-		mousey = 0
+    FPSCLOCK = pygame.time.Clock()
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+    mousex = 0
+    mousey = 0
 
-		pygame.display.set_caption('Memory Game')
-		mainBoard = getRandomizedBoard()
-		revealedBoxes = generateRevealedBoxesData(False)
-		firstSelection = None
-		DISPLAYSURF.fill(BGCOLOR)
-		startGameAnimation(mainBoard)
+    pygame.display.set_caption('Memory Game')
+    mainBoard = getRandomizedBoard()
+    revealedBoxes = generateRevealedBoxesData(False)
+    firstSelection = None
+    DISPLAYSURF.fill(BGCOLOR)
+    startGameAnimation(mainBoard)
 
-		while True:
-				mouseClicked = False
-				DISPLAYSURF.fill(BGCOLOR)
-				drawBoard(mainBoard, revealedBoxes)
+    while True:
+        mouseClicked = False
+        DISPLAYSURF.fill(BGCOLOR)
+        drawBoard(mainBoard, revealedBoxes)
 
-				for event in pygame.event.get():
-						if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
-								pygame.quit()
-								sys.exit()
+        for event in pygame.event.get():
+                        if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
+                                        pygame.quit()
+                                        sys.exit()
 
-						elif event.type == MOUSEMOTION:
-								mousex,mousey = event.pos
+                        elif event.type == MOUSEMOTION:
+                                        mousex,mousey = event.pos
 
-						elif event.type == MOUSEBUTTONUP:
-								mousex,mousey = event.pos
-								mouseClicked = True
+                        elif event.type == MOUSEBUTTONUP:
+                                        mousex,mousey = event.pos
+                                        mouseClicked = True
 
-				boxx, boxy = getBoxAtPixel(mousex, mousey)
-				if boxx != None and boxy != None:
-						if not revealedBoxes[boxx][boxy]:
-								drawHighlightBox(boxx,boxy)
+        boxx, boxy = getBoxAtPixel(mousex, mousey)
+        if boxx != None and boxy != None:
+                        if not revealedBoxes[boxx][boxy]:
+                                        drawHighlightBox(boxx,boxy)
 
-						if not revealedBoxes[boxx][boxy] and mouseClicked:
-								revealBoxesAnimation(mainBoard, [(boxx,boxy)])
-								revealedBoxes[boxx][boxy] = True
+                        if not revealedBoxes[boxx][boxy] and mouseClicked:
+                                        revealBoxesAnimation(mainBoard, [(boxx,boxy)])
+                                        revealedBoxes[boxx][boxy] = True
 
-								# 첫번째 클릭인 경우
-								if firstSelection == None:
-										firstSelection = (boxx,boxy)
-								# 두번째 클릭인 경우
-								else:
-										icon1shape, icon1color = getShapeAndColor(mainBoard, firstSelection[0], firstSelection[1])
-										icon2shape, icon2color = getShapeAndColor(mainBoard, boxx,boxy)
+                                        # 첫번째 클릭인 경우
+                                        if firstSelection == None:
+                                                        firstSelection = (boxx,boxy)
+                                        # 두번째 클릭인 경우
+                                        else:
+                                                        icon1shape, icon1color = getShapeAndColor(mainBoard, firstSelection[0], firstSelection[1])
+                                                        icon2shape, icon2color = getShapeAndColor(mainBoard, boxx,boxy)
 
-										if icon1shape != icon2shape or icon1color != icon2color:
-												pygame.time.wait(1000)
-												coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1], (boxx,boxy))])
-												revealedBoxes[firstSelection[0]][firstSelection[1]] = False
-												revealedBoxes[boxx][boxy] = False
-										# 게임을 클리어 한 경우
-										elif hasWon(revealedBoxes):
-												gameWonAnimation(mainBoard)
-												pygame.time.wait(2000)
-												mainBoard = getRandomizedBoard()
-												revealedBoxes = generateRevealedBoxesData(False)
-												drawBoard(mainBoard, revealedBoxes)
-												pygame.display.update()
-												pygame.time.wait(1000)
-												startGameAnimation(mainBoard)
-										firstSelection = None
+                                                        if icon1shape != icon2shape or icon1color != icon2color:
+                                                                        pygame.time.wait(1000)
+                                                                        coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1], (boxx,boxy))])
+                                                                        revealedBoxes[firstSelection[0]][firstSelection[1]] = False
+                                                                        revealedBoxes[boxx][boxy] = False
+                                                        # 게임을 클리어 한 경우
+                                                        elif hasWon(revealedBoxes):
+                                                                        gameWonAnimation(mainBoard)
+                                                                        pygame.time.wait(2000)
+                                                                        mainBoard = getRandomizedBoard()
+                                                                        revealedBoxes = generateRevealedBoxesData(False)
+                                                                        drawBoard(mainBoard, revealedBoxes)
+                                                                        pygame.display.update()
+                                                                        pygame.time.wait(1000)
+                                                                        startGameAnimation(mainBoard)
+                                                        firstSelection = None
 
-						pygame.display.update()
-						FPSCLOCK.tick(FPS)
+                        pygame.display.update()
+                        FPSCLOCK.tick(FPS)
 
 
 def generateRevealedBoxesData(val):

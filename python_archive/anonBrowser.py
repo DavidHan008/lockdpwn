@@ -1,5 +1,6 @@
+#-*- coding: utf-8 -*-
 '''
-	python ==> violent python, 익명브라우저를 만들기 위해 작성한 클래스 예제 코드
+    python ==> violent python, 익명브라우저를 만들기 위해 작성한 클래스 예제 코드
 '''
 import mechanize, cookielib, random, time
 

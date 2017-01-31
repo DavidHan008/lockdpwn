@@ -2,14 +2,11 @@ import struct
 import random
 from immlib import *
 
-
-
 class ioctl_hook(LogBpHook):
     def __init__(self):
         self.imm = Debugger()
         self.logfile = "C:\ioctl_log.txt"
         LogBpHook.__init__(self)
-
 
     def run(self,regs):
         """
@@ -22,23 +19,15 @@ class ioctl_hook(LogBpHook):
         ESP+1C -> pBytesReturned
         ESP+20 -> pOverlapped
         """
-
         in_buf = ""
-
         ioctl_code = self.imm.readLong(regs['ESP']+8)
-
         inbuffer_size = self.imm.readLong(regs['ESP'] + 0x10)
-
         inbuffer_ptr  = self.imm.readLong(regs['ESP'] + 0xC)
-
         inbuffer = self.imm.readMemory(inbuffer_ptr,inbuffer_size)
-
         mutated_buffer = self.mutate(inbuffer_size)
 
         self.imm.writeMemory(inbuffer_ptr , mutated_buffer)
-
         self.save_test_case(ioctl_code,inbuffer_size,in_buffer,mutated_buffer)
-
 
     def mutated(self,inbuffer_size):
         counter = 0
@@ -49,10 +38,7 @@ class ioctl_hook(LogBpHook):
 
         return mutated_buffer
 
-
-
     def save_test_case(self,ioctl_code,inbuffer_size,in_buffer,mutated_buffer):
-
         message = "*****\n"
         message += "IOCTL Code: 0x%08x" % ioctl_code
         message += "Buffer Size: %d\n" % inbuffer_size
@@ -68,11 +54,8 @@ class ioctl_hook(LogBpHook):
 
     def main(args):
         imm = Debugger()
-
         deviceiocontrol = imm.getAddress("kernel32.DeviceIoControl")
-
         ioctl_hooker = ioctl_hook()
-
         ioctl_hooker.add("%08x" % deviceiocontrol, deviceiocontrol)
 
         return "[*] IOCTL Fuzzer Ready for Action!"

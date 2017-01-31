@@ -1,3 +1,8 @@
+#-*- coding: utf-8 -*-
+'''
+    python ==> violent python, Conficker 웜을 재현해본 예제 코드
+                                (linux, Metasploit이 필요하다)
+'''
 import os
 import optparse
 import sys

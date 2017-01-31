@@ -1,3 +1,6 @@
+'''
+    python ==> 파이써해킹입문, tcp syn flood 공격을 하는 예제 코드 (왠지 모르지만 작동안한다)
+'''
 import socket
 import sys
 from struct import *
@@ -7,7 +10,6 @@ def makeChecksum(msg):
 	for i in range(0, len(msg), 2):
 		w = (ord(msg[i]) << 8) + (ord(msg[i+1]))
 		s += w
-
 	s = (s >> 16) + (s & 0xffff);
 	s = ~s & 0xffff
 	return s

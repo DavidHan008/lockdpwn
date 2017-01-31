@@ -1,10 +1,14 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 헤드퍼스트파이썬, sqlite3를 사용해 DB에 데이터를 넣어본 예제 코드
+'''
 import sqlite3
+import glob
+import athletemodel
 
 connection = sqlite3.connect('coachdata.sqlite')
 cursor = connection.cursor()
-
-import glob
-import athletemodel
 
 data_files = glob.glob("../data/*.txt")
 athletes = athletemodel.put_to_store(data_files)

@@ -8,7 +8,7 @@ GENERIC_READ = 0x80000000
 GENERIC_WRITE = 0x40000000
 OPEN_EXISTING = 0x3
 
-#	pickle 파일을 열고 dictionary를 구한다
+# pickle 파일을 열고 dictionary를 구한다
 fd = open(sys.argv[1],"rb")
 master_list = pickle.load(fd)
 ioctl_list = master_list['ioctl_list']
@@ -60,18 +60,21 @@ while 1:
 		bytes_returned = c_ulong(current_length)
 
 		# 핸들을 구한다
-		driver_handle = kernel32.CreateFileW(device_file , GENERIC_READ|\
-																				 GENERIC_WRITE,0,None,OPEN_EXISTING,0,None)
+		driver_handle = kernel32.CreateFileW(device_file , 
+                                                    GENERIC_READ| GENERIC_WRITE,
+                                                    0,
+                                                    None,
+                                                    OPEN_EXISTING,
+                                                    0,
+                                                    None)
 
 		fd.write("!!FUZZ!!\n")
 
 		# 테스트 케이스를 실행한다.
-		kernel32.DeviceIoControl(driver_handle, current_ioctl,in_buffer,\
-														 current_length,byref(out_buf),\
-														 current_length,byref(bytes_returned),None)
+		kernel32.DeviceIoControl(driver_handle, current_ioctl,in_buffer, 
+                                        current_length,byref(out_buf), current_length,byref(bytes_returned),None)
 
-		fd.write("[*] Test case finished. %d bytes returned. \n\n" % \
-						 bytes_returned.value)
+		fd.write("[*] Test case finished. %d bytes returned. \n\n" %  bytes_returned.value)
 
 		# 핸들을 닫는다
 		kernel32.CloseHandle(driver_handle)

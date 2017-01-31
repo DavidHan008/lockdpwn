@@ -1,3 +1,7 @@
+#-*- coding: utf-8 -*-
+'''
+    python ==> 파이썬해킹입문, pydbg를 활용해 메모장의 I love you 를 I hate you로 바꾸는 예제 코드
+'''
 import utils, sys
 from pydbg import *
 from pydbg.defines import *
@@ -11,7 +15,8 @@ BOOL WINAPI WriteFile(
   _Inout_opt_  LPOVERLAPPED lpOverlapped
 );
 '''
-dbg = pydbg()
+        
+dbg= pydbg()
 isProcess = False
 
 orgPattern = "love"
@@ -29,9 +34,8 @@ def replaceString(dbg, args):                                #(1)
 
     return DBG_CONTINUE
 
-for(pid, name) in dbg.enumerate_processes():                 #(6)
+for (pid, name) in dbg.enumerate_processes():                 #(6)
     if name.lower() == processName :
-
         isProcess = True
         hooks = utils.hook_container()        
 

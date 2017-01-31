@@ -9,9 +9,6 @@ import shutil
 import time
 import getopt
 
-
-
-
 class file_fuzzer:
     def __init__(self,exe_path,ext,notify):
         self.exe_path = exe_path
@@ -31,7 +28,6 @@ class file_fuzzer:
         self.dbg = None
         self.running = False
         self.ready = False
-
 
         self.smtpserver = 'mail.nostarch.com'
         self.recipients = ['jms@bughunter.ca',]
@@ -152,29 +148,21 @@ class file_fuzzer:
         rand_offset = random.randint(0, stream_length - 1 )
         rand_len = random.randint(1,1000)
 
-
         test_case = test_case * rand_len
-
 
         fuzz_file = stream[0:rand_offset]
         fuzz_file += str(test_case)
         fuzz_file += stream[rand_offset:]
 
-
-
         fd = open("test.%s" % self.ext, "wb")
         fd.write(fuzz_file)
         fd.close()
-
-
         return
-
 
 def print_usage():
     print '[*]'
     print "[*] file_fuzzer.py -e <Executable Path> -x <File Extension>"
     print "[*]"
-
 
     sys.exit(0)
 
@@ -182,7 +170,7 @@ if __name__=="__main__":
     print "[*] Generic File Fuzzer."
 
     try:
-         opts,argo = getopt.getopt(sys.argv[1:],"e:x:n")
+         opts, argo = getopt.getopt(sys.argv[1:],"e:x:n")
     except getopt.GetoptError:
         print_usage()
 
@@ -191,7 +179,6 @@ if __name__=="__main__":
     notify = False
 
     for o,a in opts:
-
         if o == "-e":
             exe_path = a
         elif o == "-x":

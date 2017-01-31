@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> debugger 클래스에서 사용하기 위해 상수를 정의해놓은 코드(인듯)
+'''
 from ctypes import *
 
 # Let's map the Microsoft types to ctypes for clarity

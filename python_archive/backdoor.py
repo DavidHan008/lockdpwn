@@ -1,4 +1,5 @@
-﻿# This library is from Chapter 3 and contains all the necessary
+﻿#-*- coding: utf-8 -*-
+# This library is from Chapter 3 and contains all the necessary
 # defines for process creation that we need
 import sys
 from ctypes import *
@@ -11,7 +12,7 @@ PROCESS_ALL_ACCESS =     ( 0x000F0000 | 0x00100000 | 0xFFF )
 VIRTUAL_MEM        =     ( 0x1000 | 0x2000 )
 
 # This is the original executable
-path_to_exe             = "C:\Users\규범\Desktop\tigerk\softwares\cpu-z.exe"
+path_to_exe             = "C:\Users\vdl\Downloads\123.txt"
 startupinfo             = STARTUPINFO()
 process_information     = PROCESS_INFORMATION()
 creation_flags          = CREATE_NEW_CONSOLE
@@ -35,12 +36,10 @@ kernel32.CreateProcessA(path_to_exe,
 pid = process_information.dwProcessId
 
 def inject( pid, data, parameter = 0 ):
-
     # Get a handle to the process we are injecting into.
     h_process = kernel32.OpenProcess( PROCESS_ALL_ACCESS, False, int(pid) )
 
     if not h_process:
-
         print "[*] Couldn't acquire a handle to PID: %s" % pid
         sys.exit(0)
 
@@ -59,7 +58,6 @@ def inject( pid, data, parameter = 0 ):
 
 
     if not kernel32.CreateRemoteThread(h_process,None,0,start_address,parameter,0,byref(thread_id)):
-
         print "[*] Failed to inject the DLL. Exiting."
         sys.exit(0)
 

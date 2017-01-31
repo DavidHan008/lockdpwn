@@ -1,4 +1,10 @@
-﻿from ctypes import *
+﻿#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+   python ==> debugger 클래스를 정의한 코드 
+              대부분이 kernel32.dll API를 이용하고 있다
+'''
+from ctypes import *
 from my_debugger_defines import *
 
 kernel32 = windll.kernel32
@@ -286,7 +292,7 @@ class debugger():
             
 
     def exception_handler_single_step(self):
-        #pyDbg에 의한 주석
+        # pyDbg에 의한 주석
         # 이 단일 스텝 이벤트가 하드웨어 브레이크 포인트에 의해
         # 발생한 것인지 판단해야 한다.
         
