@@ -1,3 +1,8 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> 파이썬해킹프로그래밍,
+'''
 import struct
 import random
 from immlib import *
