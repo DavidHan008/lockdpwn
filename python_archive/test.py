@@ -12,7 +12,6 @@ from sympy import *
 from sympy.abc import x,y
 import math
 
-
 def nmapHostFinder():
 	ret = subprocess.check_output("nmap -sP 192.168.24.0/24", shell=True)
 
@@ -85,7 +84,7 @@ def main():
 			solveSimultaneousEq(a,b,c,d,e,f)
 
 		elif choose == '2':
-			print "solve Inverse Matrix"
+		        print "solve Inverse Matrix"
 			print "[ a  b  c ]"
 			print "[ d  e  f ]"
 			print "[ g  h  i ]"
