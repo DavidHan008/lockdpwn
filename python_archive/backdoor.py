@@ -1,4 +1,8 @@
-﻿#-*- coding: utf-8 -*-
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+    python ==>
+'''
 # This library is from Chapter 3 and contains all the necessary
 # defines for process creation that we need
 import sys

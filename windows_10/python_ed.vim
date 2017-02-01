@@ -647,6 +647,7 @@ $ ftplib
 ====================================================================
 $ subprocess 
 			call()
+			check_output()
 			Popen()
 				stdout
 					read()
