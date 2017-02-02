@@ -1,4 +1,9 @@
-﻿import pickle
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> 파이썬해킹프로그래밍,
+'''
+import pickle
 import driverlib
 from immlib import *
 

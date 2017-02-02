@@ -1,21 +1,28 @@
 #include <stdio.h>
-#include <string.h>
-#include <arpa/inet.h>
 
-void main(int argc, char *argv[])
+void swap(int *, int *);
+
+int main(void)
 {
-  struct sockaddr_in ad1,ad2;
-  char *str_ptr;
-  char str_arr[20];
+  int i = 0;
+  int j = 1;
 
-  ad1.sin_addr.s_addr = htonl(0x1020304);
-  ad2.sin_addr.s_addr = htonl(0x2030405);
+  printf("i = %d, j = %d\n", i, j);
+  swap(&i, &j);
 
-  str_ptr = inet_ntoa(ad1.sin_addr);
-  strcpy(str_arr, str_ptr);
-  printf("dotted-deical notation1 :%s \n",str_ptr);
+  printf("i = %d, j = %d\n", i, j);
+  return 0;
+}
 
-  inet_ntoa(ad2.sin_addr);
-  printf("dotted ..2 : %s \n", str_ptr);
-  printf("dotted ..3 : %s \n", str_arr);
+static void do_swap(int *lhs, int *rhs, int *tmp)
+{
+  *tmp = *lhs;
+  *lhs = *rhs;
+  *rhs = *tmp;
+}
+
+void swap(int *lhs, int *rhs)
+{
+  int t;
+  do_swap(lhs, rhs, &t);
 }

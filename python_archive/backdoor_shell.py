@@ -1,3 +1,8 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> 파이썬해킹프로그래밍, 백도어 서버를 작성한 예제 코드
+'''
 import socket
 import sys
 

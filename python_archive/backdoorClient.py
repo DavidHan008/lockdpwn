@@ -1,3 +1,4 @@
+#!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
     python ==> 파이썬해킹입문, backdoor Client를 subprocess를 활용해 작성한 예제 코드

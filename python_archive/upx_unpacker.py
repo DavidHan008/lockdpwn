@@ -1,4 +1,9 @@
-﻿from ctypes import *
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> 파이썬해킹프로그래밍,
+'''
+from ctypes import *
 import sys
 
 # pyemu 의 경로를 설정한다

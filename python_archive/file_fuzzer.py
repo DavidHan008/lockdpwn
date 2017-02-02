@@ -1,3 +1,8 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> 파이썬해킹프로그래밍, 파일퍼저를 작성한 예제 코드
+'''
 from pydbg import *
 from pydbg.defines import *
 
@@ -10,7 +15,7 @@ import time
 import getopt
 
 class file_fuzzer:
-    def __init__(self,exe_path,ext,notify):
+    def __init__(self, exe_path, ext, notify):
         self.exe_path = exe_path
         self.ext = ext
         self.notify_crash = notify
