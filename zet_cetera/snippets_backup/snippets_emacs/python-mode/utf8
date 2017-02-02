@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
 # name: utf-8 encoding
-# key: utf8
+# key: utf
 # --
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
