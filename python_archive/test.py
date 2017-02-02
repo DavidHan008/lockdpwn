@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
-
 import os
 import sys
 import sqlite3
@@ -46,18 +45,16 @@ try:
 except WindowsError:
     pass
 
-
 '''
-
 def Word():
     _reg = _winreg.ConnectRegistry(None, _winreg.HKEY_CURRENT_USER)
-    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\14.0\\Word\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
+    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\15.0\\Word\\User MRU\\LiveId_1E760FAA55C5054F9D13A24FE9D349E16F885C45D07F281A1EB94290DB8AC76F\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
 
     try:
         count = 0
         while True:
             name, value, type = _winreg.EnumValue(_key, count)
-            print  unicode(value,'euc-kr')
+            print name + " : " + value
             count += 1 
     except  WindowsError:
         pass
@@ -65,13 +62,13 @@ def Word():
 
 def Excel():
     _reg = _winreg.ConnectRegistry(None, _winreg.HKEY_CURRENT_USER)
-    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\14.0\\Excel\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
+    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\15.0\\Excel\\User MRU\\LiveId_1E760FAA55C5054F9D13A24FE9D349E16F885C45D07F281A1EB94290DB8AC76F\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
 
     try:
         count = 0
         while True:
             name, value, type = _winreg.EnumValue(_key, count)
-            print value
+            print name + " : " + value
             count += 1
     except  WindowsError:
         pass
@@ -80,21 +77,28 @@ def Excel():
 
 def PowerPoint( ):
     _reg = _winreg.ConnectRegistry(None, _winreg.HKEY_CURRENT_USER)
-    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\14.0\\PowerPoint\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
+    _key = _winreg.OpenKey(_reg, r"Software\\Microsoft\\Office\\15.0\\PowerPoint\\User MRU\\LiveId_1E760FAA55C5054F9D13A24FE9D349E16F885C45D07F281A1EB94290DB8AC76F\\File MRU", 0, _winreg.KEY_ALL_ACCESS)
 
     try:
         count = 0
         while True:
             name, value, type = _winreg.EnumValue(_key, count)
-            print  value
+            print name + " : " + value
             count += 1 
     except  WindowsError:
         pass
  
-
-
+print ""
+print ""
+print "=============Word============="
 Word()
+print ""
+print ""
+print "=============Excel============="
 Excel()
+print ""
+print ""
+print "=============PowerPoint============="
 PowerPoint()
 
 

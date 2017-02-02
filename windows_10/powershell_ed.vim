@@ -233,7 +233,8 @@
 
 
 
-
+	"" 현재 파워쉘 버전을 확인합니다
+	$ get-host | select-object version
 
 
 
@@ -296,8 +297,8 @@
 	
 	
 	
-
-
+	"" 
+	# import-module PowerForensics
 
 
 
@@ -336,6 +337,16 @@
 
 
 
+
+
+
+
+
+
+## INSTALL-...
+
+	"" PowerForensics 모듈을 설치합니다
+	# install-module -name PowerForensics
 
 
 

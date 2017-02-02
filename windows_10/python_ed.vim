@@ -18,6 +18,7 @@ $ random
 $ time
             localtime()
             time()
+			ctime()
             strftime()
             asctime()
             sleep()
@@ -758,6 +759,16 @@ $ IPy
 
 
 ================================================================
+$ hashlib
+			md5()
+				hexdigest()
+			sha1()
+				hexdigest()
+
+
+
+
+
 
 
 
