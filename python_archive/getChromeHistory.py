@@ -1,30 +1,46 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-	python ==> 크롬의 History 파일을 sqlite3를 사용해 키워드를 분석해본 예제 코드
+    python ==> 크롬의 History 파일을 sqlite3를 사용해 키워드를 분석해본 예제 코드
 '''
 import os
 import sys
 import sqlite3
 
-print "======== Chrome Histroy Viewer ============\n"
+NUM = 10
 
-os.system("taskkill /f /im chrome.exe")
+def getPid(s):
+    im = '"IMAGENAME eq %s"' % s
+    cmd = "tasklist /V /FI %s"  %  im
+    s = os.popen(cmd).read()
+    return s
 
-con = sqlite3.connect('C:\\Users\\vdl\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History')
-cursor = con.cursor()
-cursor.execute("SELECT * FROM keyword_search_terms ORDER BY url_id DESC")
+print "======== Chrome Histroy Viewer ============"
 
-count = 0
+def main():
+    if "chrome.exe" in getPid("Chrome.exe"):
+        os.system("taskkill /f /im chrome.exe")
 
-while count <= 5:
-    count += 1
-    data = cursor.fetchone()
-    covdata = "".join(str(data))
+    con = sqlite3.connect('C:\\Users\\vdl\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History')
+    cursor = con.cursor()
+    cursor.execute("SELECT * FROM keyword_search_terms ORDER BY url_id DESC")
 
-    print "\n", covdata
+    count = 0
 
-    if count == 15:
-        print ("\nComplete Histroy DB load - ",count ," Search keywords ")
+    while count < NUM:
+        count += 1
+        data = cursor.fetchone()
+        covdata = "".join(str(data))
 
+        list1 = covdata.split(',')[3]
+        list1 = list1.replace('u','')
+        list1 = list1.replace('\'','')
+        list1 = list1.replace(')','')
+        print "\n", list1
 
+    if True:
+        print ""
+        print "========= Complete Histroy DB load - ",count ," Search keywords =============="
+
+if __name__ == '__main__':
+    main()
