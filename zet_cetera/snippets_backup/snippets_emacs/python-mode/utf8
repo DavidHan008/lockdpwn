@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
-# name: utf-8 encoding
+# name: utf8
 # key: utf
+# group : control structure
 # --
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-

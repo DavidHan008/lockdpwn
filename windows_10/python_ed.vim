@@ -42,7 +42,7 @@ $ mechanize
 $ re
 			compile()
 			sub()
-
+			findall()
 
 
 
@@ -575,8 +575,21 @@ $ sympy
 $ PIL : Python Image Library
 
 		$ from PIL import Image
+				new()
+					save()
+
 				open()
 				_getexif()
+				getpixel()
+
+				size[]
+
+
+		$ from PIL import ImageDraw
+				Draw()
+					line()
+
+
 
 		$ from PIL.ExifTags import TAGS
 				
@@ -777,6 +790,10 @@ $ hashlib
 
 
 =================================================================
+$ calendar 
+			isleap()
+			weekday()
+
 
 
 
