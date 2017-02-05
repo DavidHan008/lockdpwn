@@ -1,28 +1,8 @@
-#include <stdio.h>
 
-void swap(int *, int *);
+4203f2c0 : system()
+42029bb0 : exit()
+420d7920 : setreuid()
 
-int main(void)
-{
-  int i = 0;
-  int j = 1;
+42127ea4 : /bin/sh
 
-  printf("i = %d, j = %d\n", i, j);
-  swap(&i, &j);
-
-  printf("i = %d, j = %d\n", i, j);
-  return 0;
-}
-
-static void do_swap(int *lhs, int *rhs, int *tmp)
-{
-  *tmp = *lhs;
-  *lhs = *rhs;
-  *rhs = *tmp;
-}
-
-void swap(int *lhs, int *rhs)
-{
-  int t;
-  do_swap(lhs, rhs, &t);
-}
+0804849d : poppopret

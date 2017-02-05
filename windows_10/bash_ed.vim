@@ -9,6 +9,24 @@ $$ 리눅스 명령어
 	$ nautilus
 	$ apt-get
 
+	
+	$ objdump
+				attackme 파일을 덤프해서 어셈블리 명령어 중 ret 명령어를 검색한다
+				$ objdump -d attackme | grep ret -B 2
+
+
+
+
+	$ ldd 		
+				grep 파일이 어떤 라이브러리를 사용하는지 출력합니다(ASLR 사용을 확인할 수 있다고 한다)
+				$ ldd /bin/grep
+
+
+
+	$ ipcs
+				공유메모리 영역을 확인합니다
+				$ ipcs -m
+
 
 
 	$ ack
@@ -19,10 +37,10 @@ $$ 리눅스 명령어
 
 
 	$ systemctl
-				절전모드로 전환합니다
-				$ systemctl suspend
-
-
+				강제로 절전모드로 전환합니다
+				$ systemctl suspend -i
+				
+		
 
 
 	$ shutdown
@@ -32,12 +50,20 @@ $$ 리눅스 명령어
 
 
 
-	$ poweroff
 
+
+	$ poweroff
 	$ reboot
 		
 
+
+
+
+
 	$ tcpdump
+
+
+
 
 
 	$ nmap
