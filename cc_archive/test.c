@@ -1,33 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-const int kCmdLen = 400;
+const int kBufSize = 128;
 
-void print_dir_with_system(char *path)
+void off_by_one1(char* in_buf)
 {
-	char cmd[kCmdLen];
-	const char* cmd_prefix = "dir";
-	if (strlen(cmd_prefix) + strlen(path) +1 < kCmdLen)
+	char out_buf[128] = "";
+	int in_buf_len = strlen(in_buf);
+	
+	for (int i = 0; i <= in_buf_len; i++)
 	{
-		 _snprintf(cmd, kCmdLen, "%s %s", cmd_prefix, path);
+		out_buf[i] = in_buf[i];
 	}
-	system(cmd);
+	printf("%s\n",out_buf);
 }
 
-int main(int argc, const char *argv[])
+void off_by_one2(char* in_buf)
 {
-	char *exec_file = argv[0];
-	char *path = argv[1];
-	
-	if (argc == 2) 
-	{
-		print_dir_with_system(path);
-	}
-	else 
-	{
-		printf("Usage > %s [filename]\n", exec_file);
-	}
+	char out_buf[128] = "";
+	int in_buf_len = strlen(in_buf);
 
+	if (in_buf_len <= kBufSize)
+	{
+		strcpy(out_buf, in_buf);
+	}
+	printf("%s\n", out_buf);
+}
+
+int main(int argc, char* argv[])
+{
+	off_by_one1(argv[1]);
+	off_by_one2(argv[1]);
 	return 0;
 }
