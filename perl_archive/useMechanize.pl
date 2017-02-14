@@ -1,3 +1,6 @@
+=pod
+	perl ==> 해킹침투코딩 p309, Mechanize 모듈을 사용해 구글링을 해본 코드 
+=cut
 use WWW::Mechanize
 
 $site = @ARGV[0];
