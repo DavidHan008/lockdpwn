@@ -1,8 +1,8 @@
+#include <stdio.h>
 
-4203f2c0 : system()
-42029bb0 : exit()
-420d7920 : setreuid()
-
-42127ea4 : /bin/sh
-
-0804849d : poppopret
+int main(int argc, char *argv[])
+{
+  int a = 1;
+  printf("1.2.3.4.5.6.");
+  return 0;
+}
