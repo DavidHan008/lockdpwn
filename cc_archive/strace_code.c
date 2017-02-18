@@ -1,5 +1,5 @@
 /*
-  c ==> CTF, st
+  c ==> CTF, strace 명령어를 사용해 FLAG를 취득할 수 있는 예제 코드
  */
 #include <stdio.h>
 #include <stdlib.h>
