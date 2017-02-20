@@ -1,3 +1,5 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
 '''
 	python ==> 해킹침투코딩 p100, koradb.iptime.org의 코드를 읽어와 커맨드창에 뿌리는 코드
 '''
