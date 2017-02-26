@@ -1,7 +1,7 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> CTF, scapy를 활용해 pcap 파일에서 flag를 얻은 예제 코드
+   python ==> CTF, scapy를 활용해 pcap 파일에서 flag를 얻은 예제 코드
 '''
 from scapy.all import *
 
