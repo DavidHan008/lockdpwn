@@ -1,0 +1,21 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by ContextEdit.rc
+//
+#define HIDC_chkExpandCmdLine           0x80840409    // IDD_COMMAND_DLG
+#define HIDC_chkUseDDE                  0x808403f9    // IDD_COMMAND_DLG
+#define HIDC_cmbExtensions              0x806603ec    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_cmdBrowse                  0x808403f8    // IDD_COMMAND_DLG
+#define HIDC_cmdDeleteCommand           0x806603f2    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_cmdFindType                0x806603f5    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_cmdMoveTo                  0x806603f7    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_cmdNewCommand              0x806603f1    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_lstCommands                0x806603ea    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_lstHandlers                0x806603f3    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_lstMaster                  0x808503f9    // IDD_CHOOSE_TYPE
+#define HIDC_lstTypes                   0x806603e8    // IDD_CONTEXTEDIT_DIALOG
+#define HIDC_txtApplication             0x808403fb    // IDD_COMMAND_DLG
+#define HIDC_txtCommand                 0x808203f6    // IDD_CMD_NAME
+#define HIDC_txtCommandLine             0x808403f7    // IDD_COMMAND_DLG
+#define HIDC_txtDDEMessage              0x808403fa    // IDD_COMMAND_DLG
+#define HIDC_txtMenuText                0x808403f6    // IDD_COMMAND_DLG
+#define HIDC_txtNotRunning              0x808403fc    // IDD_COMMAND_DLG

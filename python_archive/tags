@@ -1,0 +1,1941 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+aa	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def aa(bb, ee):$/;"	f
+aa	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def aa(bb, ee):$/;"	f
+access_violation_handler	.\danger_track.py	/^def access_violation_handler(dbg):$/;"	f
+Account	.\140611.py	/^class Account(object):$/;"	c
+ADC	.\pyemu\PyCPU.py	/^    def ADC(self, instruction):$/;"	m	class:PyCPU
+add	.\pyemu\lib\pefile.py	/^    def add(self, txt, indent=0):$/;"	m	class:Dump
+ADD	.\pyemu\PyCPU.py	/^    def ADD(self, instruction):$/;"	m	class:PyCPU
+addClient	.\violent python codes\2\3-botNet.py	/^def addClient(host, user, password):$/;"	f
+addClient	.\violent python codes\2\tonis_botnet.py	/^def addClient(host,user,password):$/;"	f
+addr	.\mp4.py	/^   def addr(sval):$/;"	f	function:create_mp4
+address_so	.\pyemu\PyInstruction.py	/^		def address_so(self):$/;"	m	class:PyInstruction
+addToBoard	.\inventwithpython code\pentomino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\inventwithpython code\tetromino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\inventwithpython code\tetrominoforidiots.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\python game\inventwithpython2\pentomino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\python game\inventwithpython2\tetromino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\python game\inventwithpython2\tetrominoforidiots.py	/^def addToBoard(board, piece):$/;"	f
+add_header	.\pyemu\lib\pefile.py	/^    def add_header(self, txt):$/;"	m	class:Dump
+add_library	.\pyemu\PyOS.py	/^		def add_library(self, dllname, function):$/;"	m	class:PyWindows
+add_line	.\pyemu\lib\pefile.py	/^    def add_line(self, txt, indent=0):$/;"	m	class:Dump
+add_lines	.\pyemu\lib\pefile.py	/^    def add_lines(self, txt, indent=0):$/;"	m	class:Dump
+add_newline	.\pyemu\lib\pefile.py	/^    def add_newline(self):$/;"	m	class:Dump
+add_number	.\python hacking programming codes\addnum.cpp	/^int add_number( int num1, int num2 )$/;"	f
+add_thread	.\pyemu\PyOS.py	/^		def add_thread(self):$/;"	m	class:PyWindows
+allocate_page	.\pyemu\PyMemory.py	/^		def allocate_page(self, page):$/;"	m	class:IDAMemory
+allocate_page	.\pyemu\PyMemory.py	/^		def allocate_page(self, page):$/;"	m	class:PEMemory
+allocate_page	.\pyemu\PyMemory.py	/^		def allocate_page(self, page):$/;"	m	class:PyDbgMemory
+all_zeroes	.\pyemu\lib\pefile.py	/^    def all_zeroes(self):$/;"	m	class:Structure
+AND	.\pyemu\PyCPU.py	/^    def AND(self, instruction):$/;"	m	class:PyCPU
+animate	.\numplt1.py	/^def animate(i):$/;"	f
+animateComputerMoving	.\inventwithpython code\fourinarow.py	/^def animateComputerMoving(board, column):$/;"	f
+animateComputerMoving	.\python game\inventwithpython2\fourinarow.py	/^def animateComputerMoving(board, column):$/;"	f
+animateDroppingToken	.\inventwithpython code\fourinarow.py	/^def animateDroppingToken(board, column, color):$/;"	f
+animateDroppingToken	.\python game\inventwithpython2\fourinarow.py	/^def animateDroppingToken(board, column, color):$/;"	f
+animateMovingGems	.\inventwithpython code\gemgem.py	/^def animateMovingGems(board, gems, pointsText, score):$/;"	f
+animateMovingGems	.\python game\inventwithpython2\gemgem.py	/^def animateMovingGems(board, gems, pointsText, score):$/;"	f
+animateTileChange	.\inventwithpython code\flippy.py	/^def animateTileChange(tilesToFlip, tileColor, additionalTile):$/;"	f
+animateTileChange	.\python game\inventwithpython2\flippy.py	/^def animateTileChange(tilesToFlip, tileColor, additionalTile):$/;"	f
+anonBrowser	.\anonBrowser.py	/^class anonBrowser(mechanize.Browser):$/;"	c
+anonBrowser	.\violent python codes\6\anonBrowser.py	/^class anonBrowser(mechanize.Browser):$/;"	c
+anonLogin	.\violent python codes\2\4-anonLogin.py	/^def anonLogin(hostname):$/;"	f
+anonLogin	.\violent python codes\2\4-massCompromise.py	/^def anonLogin(hostname):$/;"	f
+anonLogin	.\violent python codes\2\tonis_ftp3.py	/^def anonLogin(hostname):$/;"	f
+anonymize	.\anonBrowser.py	/^	def anonymize(self, sleep = False):$/;"	m	class:anonBrowser
+anonymize	.\violent python codes\6\anonBrowser.py	/^    def anonymize(self, sleep = False):$/;"	m	class:anonBrowser
+area	.\140611_property.py	/^    def area(self):$/;"	m	class:Circle
+ARRAY	.\pyemu\lib\ctypes\__init__.py	/^def ARRAY(typ, len):$/;"	f
+Arrow3D	.\Arrow3D.py	/^class Arrow3D(FancyArrowPatch):$/;"	c
+Arrow3D	.\numplt4.py	/^class Arrow3D(FancyArrowPatch):$/;"	c
+as_dict	.\Head_First_Python codes\chapter8\page321.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+as_dict	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+as_dict	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+Athlete	.\Head_First_Python codes\chapter6\page231.py	/^class Athlete:$/;"	c
+AthleteList	.\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\Head_First_Python codes\chapter6\page245.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\Head_First_Python codes\chapter7\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\Head_First_Python codes\chapter8\page321.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\webapp\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+attach	.\my_debugger.py	/^    def attach(self,pid):$/;"	m	class:debugger
+attach	.\python hacking programming codes\my_debugger.py	/^    def attach(self,pid):$/;"	m	class:debugger
+attach_target_proc	.\pyemu\examples\pydbgpyemu.py	/^def attach_target_proc(dbg, procname):$/;"	f
+attack	.\violent python codes\2\4-massCompromise.py	/^def attack(username,password,tgtHost,redirect):$/;"	f
+attack	.\violent python codes\2\tonis_ftp3.py	/^def attack(username,password,tgtHost,redirect):$/;"	f
+ault	.\inventwithpython code\inkspill.py	/^        screenNeedsRedraw = False # by default, don't redraw the screen$/;"	f	function:showSettingsScreen
+ault	.\mp4.py	/^   parser.add_argument('-c', '-connectback-host', dest='cbhost', default='31.3.3.7')$/;"	f	function:create_mp4
+ault	.\mp4.py	/^   parser.add_argument('-o', '-output-file', dest='output_file', default='movie.mp4')$/;"	f	function:create_mp4
+ault	.\mp4.py	/^   parser.add_argument('-p', '-connectback-port', dest='cbport', type=int, default=12345)$/;"	f	function:create_mp4
+ault	.\mp4.py	/^   parser.add_argument('-r', '-rop-pivot', dest='rop_pivot', type=addr, default=None)$/;"	f	function:create_mp4
+ault	.\mp4.py	/^   parser.add_argument('-s', '-spray-address', dest='spray_addr', type=addr, default=None)$/;"	f	function:create_mp4
+ault	.\pyemu\lib\ctypes\__init__.py	/^            _restype_ = c_int # default, can be overridden in instances$/;"	m	class:PyDLL.WinDLL._FuncPtr
+ault	.\pyemu\lib\ctypes\__init__.py	/^        _restype_ = c_int # default, can be overridden in instances$/;"	m	class:CDLL._FuncPtr
+ault	.\pyemu\lib\ctypes\__init__.py	/^        _restype_ = c_int # default, can be overridden in instances$/;"	m	class:PyDLL._FuncPtr
+ault	.\python game\inventwithpython2\inkspill.py	/^        screenNeedsRedraw = False # by default, don't redraw the screen$/;"	f	function:showSettingsScreen
+BaseRelocationData	.\pyemu\lib\pefile.py	/^class BaseRelocationData(DataContainer):$/;"	c
+BigEndianStructure	.\pyemu\lib\ctypes\_endian.py	/^    class BigEndianStructure(Structure):$/;"	c	class:_swapped_meta
+BirthDetails	.\Head_First_Python codes\chapter10\page403.py	/^class BirthDetails(db.Model):$/;"	c
+BirthDetails	.\hfwwg\birthDB.py	/^class BirthDetails(db.Model):$/;"	c
+BirthDetailsForm	.\Head_First_Python codes\chapter10\page403b.py	/^class BirthDetailsForm(djangoforms.ModelForm):$/;"	c
+BirthDetailsForm	.\hfwwg\ee.py	/^class BirthDetailsForm(djangoforms.ModelForm):$/;"	c
+botnetCommand	.\violent python codes\2\3-botNet.py	/^def botnetCommand(command):$/;"	f
+botnetCommand	.\violent python codes\2\tonis_botnet.py	/^def botnetCommand(command):$/;"	f
+BoundImportDescData	.\pyemu\lib\pefile.py	/^class BoundImportDescData(DataContainer):$/;"	c
+BoundImportRefData	.\pyemu\lib\pefile.py	/^class BoundImportRefData(DataContainer):$/;"	c
+bp_del_hw	.\my_debugger.py	/^    def bp_del_hw(self,slot):$/;"	m	class:debugger
+bp_del_hw	.\python hacking programming codes\my_debugger.py	/^    def bp_del_hw(self,slot):$/;"	m	class:debugger
+bp_set	.\my_debugger.py	/^    def bp_set(self,address):$/;"	m	class:debugger
+bp_set	.\python hacking programming codes\my_debugger.py	/^    def bp_set(self,address):$/;"	m	class:debugger
+bp_set_hw	.\my_debugger.py	/^    def bp_set_hw(self,address,length,condition):$/;"	m	class:debugger
+bp_set_hw	.\python hacking programming codes\my_debugger.py	/^    def bp_set_hw(self, address, length, condition):$/;"	m	class:debugger
+bp_set_mem	.\my_debugger.py	/^    def bp_set_mem(self,address,size):$/;"	m	class:debugger
+bp_set_mem	.\python hacking programming codes\my_debugger.py	/^    def bp_set_mem (self, address, size):$/;"	m	class:debugger
+bruteLogin	.\violent python codes\2\4-bruteLogin.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+bruteLogin	.\violent python codes\2\4-massCompromise.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+bruteLogin	.\violent python codes\2\tonis_ftp.py	/^def bruteLogin(hostname,passwdFile):$/;"	f
+bruteLogin	.\violent python codes\2\tonis_ftp3.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+build_rop	.\mp4.py	/^def build_rop(off, sp_addr, newpc_val, cb_host, cb_port):$/;"	f
+c	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def c():$/;"	f
+c	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def c():$/;"	f
+calcBCoordi	.\numplt3.py	/^def calcBCoordi(rotAngle, ORG, hat_X, hat_Y, hat_Z):$/;"	f
+calcODEFunc	.\numpygame1.py	/^def calcODEFunc(tVal, xVal, vVal):$/;"	f
+calculateLevelAndFallFreq	.\inventwithpython code\pentomino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\inventwithpython code\tetromino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\inventwithpython code\tetrominoforidiots.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\python game\inventwithpython2\pentomino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\python game\inventwithpython2\tetromino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\python game\inventwithpython2\tetrominoforidiots.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+CALL	.\pyemu\PyCPU.py	/^    def CALL(self, instruction):$/;"	m	class:PyCPU
+calTSN	.\violent python codes\4\9-mitnickAttack.py	/^def calTSN(tgt):$/;"	f
+canMakeMove	.\inventwithpython code\gemgem.py	/^def canMakeMove(board):$/;"	f
+canMakeMove	.\python game\inventwithpython2\gemgem.py	/^def canMakeMove(board):$/;"	f
+cast	.\pyemu\lib\ctypes\__init__.py	/^def cast(obj, typ):$/;"	f
+cat	.\p128.py	/^def cat(filelist):$/;"	f
+cat	.\p129.py	/^def cat(target):$/;"	f
+CDLL	.\pyemu\lib\ctypes\__init__.py	/^class CDLL(object):$/;"	c
+CDQ	.\pyemu\PyCPU.py	/^    def CDQ(self, instruction):$/;"	m	class:PyCPU
+CFunctionType	.\pyemu\lib\ctypes\__init__.py	/^        class CFunctionType(_CFuncPtr):$/;"	c	function:CFUNCTYPE
+CFunctionType	.\pyemu\lib\ctypes\__init__.py	/^    class CFunctionType(_CFuncPtr):$/;"	c	function:PYFUNCTYPE
+CFUNCTYPE	.\pyemu\lib\ctypes\__init__.py	/^def CFUNCTYPE(restype, *argtypes):$/;"	f
+changeBackgroundAnimation	.\inventwithpython code\simulate.py	/^def changeBackgroundAnimation(animationSpeed=40):$/;"	f
+changeBackgroundAnimation	.\python game\inventwithpython2\simulate.py	/^def changeBackgroundAnimation(animationSpeed=40):$/;"	f
+change_proxy	.\anonBrowser.py	/^	def change_proxy(self):$/;"	m	class:anonBrowser
+change_proxy	.\violent python codes\6\anonBrowser.py	/^    def change_proxy(self):$/;"	m	class:anonBrowser
+change_user_agent	.\anonBrowser.py	/^	def change_user_agent(self):$/;"	m	class:anonBrowser
+change_user_agent	.\violent python codes\6\anonBrowser.py	/^    def change_user_agent(self):$/;"	m	class:anonBrowser
+checkApache	.\beginning python hacking\Directory Listing.py	/^def checkApache(dirName1, dirName2):$/;"	f
+checkBluetooth	.\violent python codes\5\10-iphoneFinder.py	/^def checkBluetooth(btAddr):$/;"	f
+checkCave	.\python game\141102_p95.py	/^def checkCave(chosenCave):$/;"	f
+checkCave	.\python game\inventwithpython\dragon.py	/^def checkCave(chosenCave):$/;"	f
+checkForGemClick	.\inventwithpython code\gemgem.py	/^def checkForGemClick(pos):$/;"	f
+checkForGemClick	.\python game\inventwithpython2\gemgem.py	/^def checkForGemClick(pos):$/;"	f
+checkForKeyPress	.\inventwithpython code\pentomino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\inventwithpython code\tetromino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\inventwithpython code\tetrominoforidiots.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\inventwithpython code\wormy.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\python game\inventwithpython2\pentomino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\python game\inventwithpython2\tetromino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\python game\inventwithpython2\tetrominoforidiots.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\python game\inventwithpython2\wormy.py	/^def checkForKeyPress():$/;"	f
+checkForQuit	.\inventwithpython code\flippy.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\inkspill.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\pentomino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\simulate.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\slidepuzzle.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\tetromino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\inventwithpython code\tetrominoforidiots.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\flippy.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\inkspill.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\pentomino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\simulate.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\slidepuzzle.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\tetromino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\python game\inventwithpython2\tetrominoforidiots.py	/^def checkForQuit():$/;"	f
+checkTTL	.\violent python codes\4\6-spoofDetect.py	/^def checkTTL(ipsrc, ttl):$/;"	f
+checkVulns	.\ftp_scanner.py	/^def checkVulns(banner, filename):$/;"	f
+checkVulns	.\violent python codes\1\1-vulnScanner.py	/^def checkVulns(banner, filename):$/;"	f
+check_accessv	.\access_violation_handler.py	/^def check_accessv(dbg):$/;"	f
+check_accessv	.\file_fuzzer.py	/^    def check_accessv(self,dbg):$/;"	m	class:file_fuzzer
+check_accessv	.\python hacking programming codes\access_violation_handler.py	/^def check_accessv(dbg):$/;"	f
+check_accessv	.\python hacking programming codes\file_fuzzer.py	/^    def check_accessv(self,dbg):$/;"	m	class:file_fuzzer
+chooseCave	.\python game\141102_p95.py	/^def chooseCave():$/;"	f
+chooseCave	.\python game\inventwithpython\dragon.py	/^def chooseCave():$/;"	f
+chooseRandomMoveFromList	.\python game\inventwithpython\tictactoe.py	/^def chooseRandomMoveFromList(board, movesList):$/;"	f
+Circle	.\140611_property.py	/^class Circle(object):$/;"	c
+classify	.\kmeans.py	/^	def classify(self,input):$/;"	m	class:KMeans
+CLC	.\pyemu\PyCPU.py	/^    def CLC(self, instruction):$/;"	m	class:PyCPU
+CLD	.\pyemu\PyCPU.py	/^    def CLD(self, instruction):$/;"	m	class:PyCPU
+clean_data	.\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\Head_First_Python codes\chapter7\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\Head_First_Python codes\chapter8\page321.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\webapp\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clear_cookies	.\anonBrowser.py	/^	def clear_cookies(self):$/;"	m	class:anonBrowser
+clear_cookies	.\violent python codes\6\anonBrowser.py	/^    def clear_cookies(self):$/;"	m	class:anonBrowser
+clear_eflags	.\pyemu\PyCPU.py	/^    def clear_eflags(self):$/;"	m	class:PyCPU
+Client	.\violent python codes\2\3-botNet.py	/^class Client:$/;"	c
+Client	.\violent python codes\2\tonis_botnet.py	/^class Client:$/;"	c
+CMP	.\pyemu\PyCPU.py	/^    def CMP(self, instruction):$/;"	m	class:PyCPU
+CMPS	.\pyemu\PyCPU.py	/^    def CMPS(self, instruction):$/;"	m	class:PyCPU
+CMPSB	.\pyemu\PyCPU.py	/^    def CMPSB(self, instruction):$/;"	m	class:PyCPU
+CMPSD	.\pyemu\PyCPU.py	/^    def CMPSD(self, instruction):$/;"	m	class:PyCPU
+CMPSW	.\pyemu\PyCPU.py	/^    def CMPSW(self, instruction):$/;"	m	class:PyCPU
+Complex	.\140611_complex.py	/^class Complex(object):$/;"	c
+confickerExploit	.\conficker.py	/^def confickerExploit(configFile, tHost, lhost, lport ):$/;"	f
+confickerExploit	.\violent python codes\2\5-conficker.py	/^def confickerExploit(configFile,tgtHost,lhost,lport):$/;"	f
+confickerExploit	.\violent python codes\2\tonis_conficker.py	/^def confickerExploit(configFile,tgtHost,lhost,lport):$/;"	f
+connect	.\violent python codes\2\3-botNet.py	/^    def connect(self):$/;"	m	class:Client
+connect	.\violent python codes\2\3-bruteKey.py	/^def connect(user,host,keyfile,release):$/;"	f
+connect	.\violent python codes\2\3-pxsshCommand.py	/^def connect(host, user, password):$/;"	f
+connect	.\violent python codes\2\3-sshBrute.py	/^def connect(host, user, password, release):$/;"	f
+connect	.\violent python codes\2\3-sshCommand.py	/^def connect(user, host, password):$/;"	f
+connect	.\violent python codes\2\tonis_botnet.py	/^	def connect(self):$/;"	m	class:Client
+connect	.\violent python codes\2\tonis_sshd.py	/^def connect(user,host,password):$/;"	f
+connect	.\violent python codes\2\tonis_sshd2.py	/^def connect(host,user,password,release):$/;"	f
+connect	.\violent python codes\2\tonis_sshd3.py	/^def connect(user,host,keyfile,release):$/;"	f
+Connection	.\test.py	/^class Connection(Thread):$/;"	c
+Connection	.\violent python codes\5720.py	/^class Connection(Thread):$/;"	c
+connScan	.\portScan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+connScan	.\violent python codes\2\1-portScan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+connScan	.\violent python codes\2\tonis_portscan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+contains	.\pyemu\lib\pefile.py	/^    def contains(self, address):$/;"	m	class:SectionStructure
+CONTEXT	.\my_debugger_defines.py	/^class CONTEXT(Structure):$/;"	c
+CONTEXT	.\python hacking programming codes\my_debugger_defines.py	/^class CONTEXT(Structure):$/;"	c
+convertToPixelCoords	.\inventwithpython code\pentomino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\inventwithpython code\tetromino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\inventwithpython code\tetrominoforidiots.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\python game\inventwithpython2\pentomino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\python game\inventwithpython2\tetromino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\python game\inventwithpython2\tetrominoforidiots.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+coverBoxesAnimation	.\inventwithpython code\memorypuzzle.py	/^def coverBoxesAnimation(board, boxesToCover):$/;"	f
+coverBoxesAnimation	.\memoryPuzzle.py	/^def coverBoxesAnimation(board, boxesToCover):$/;"	f
+coverBoxesAnimation	.\python game\inventwithpython2\memorypuzzle.py	/^def coverBoxesAnimation(board, boxesToCover):$/;"	f
+create_inputs	.\Head_First_Python codes\chapter9\page333.py	/^def create_inputs(inputs_list):$/;"	f
+create_inputs	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def create_inputs(inputs_list):$/;"	f
+create_inputs	.\webapp\cgi-bin\yate.py	/^def create_inputs(inputs_list):$/;"	f
+create_inputs	.\yate.py	/^def create_inputs(inputs_list):$/;"	f
+create_mp4	.\mp4.py	/^def create_mp4(sp_addr, newpc_val, cb_host, cb_port):$/;"	f
+create_string_buffer	.\pyemu\lib\ctypes\__init__.py	/^def create_string_buffer(init, size=None):$/;"	f
+create_unicode_buffer	.\pyemu\lib\ctypes\__init__.py	/^    def create_unicode_buffer(init, size=None):$/;"	f	function:POINTER
+cs_override	.\pyemu\PyInstruction.py	/^		def cs_override(self):$/;"	m	class:PyInstruction
+c_buffer	.\pyemu\lib\ctypes\__init__.py	/^def c_buffer(init, size=None):$/;"	f
+c_byte	.\pyemu\lib\ctypes\__init__.py	/^class c_byte(_SimpleCData):$/;"	c
+c_char	.\pyemu\lib\ctypes\__init__.py	/^class c_char(_SimpleCData):$/;"	c
+c_char_p	.\pyemu\lib\ctypes\__init__.py	/^class c_char_p(_SimpleCData):$/;"	c
+c_double	.\pyemu\lib\ctypes\__init__.py	/^class c_double(_SimpleCData):$/;"	c
+c_float	.\pyemu\lib\ctypes\__init__.py	/^class c_float(_SimpleCData):$/;"	c
+c_int	.\pyemu\lib\ctypes\__init__.py	/^    class c_int(_SimpleCData):$/;"	c	class:c_ulong
+c_long	.\pyemu\lib\ctypes\__init__.py	/^class c_long(_SimpleCData):$/;"	c
+c_longlong	.\pyemu\lib\ctypes\__init__.py	/^    class c_longlong(_SimpleCData):$/;"	c	class:c_double
+c_short	.\pyemu\lib\ctypes\__init__.py	/^class c_short(_SimpleCData):$/;"	c
+c_ubyte	.\pyemu\lib\ctypes\__init__.py	/^class c_ubyte(_SimpleCData):$/;"	c
+c_uint	.\pyemu\lib\ctypes\__init__.py	/^    class c_uint(_SimpleCData):$/;"	c	class:c_ulong
+c_ulong	.\pyemu\lib\ctypes\__init__.py	/^class c_ulong(_SimpleCData):$/;"	c
+c_ulonglong	.\pyemu\lib\ctypes\__init__.py	/^    class c_ulonglong(_SimpleCData):$/;"	c	class:c_double
+c_ushort	.\pyemu\lib\ctypes\__init__.py	/^class c_ushort(_SimpleCData):$/;"	c
+c_void_p	.\pyemu\lib\ctypes\__init__.py	/^class c_void_p(_SimpleCData):$/;"	c
+c_wchar	.\pyemu\lib\ctypes\__init__.py	/^    class c_wchar(_SimpleCData):$/;"	c	function:POINTER
+c_wchar_p	.\pyemu\lib\ctypes\__init__.py	/^    class c_wchar_p(_SimpleCData):$/;"	c	function:POINTER
+d	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def d(ccc):$/;"	f
+d	.\pyemu\lib\ctypes\macholib\dylib.py	/^    def d(location=None, name=None, shortname=None, version=None, suffix=None):$/;"	f	function:test_dylib_info
+d	.\pyemu\lib\ctypes\macholib\framework.py	/^    def d(location=None, name=None, shortname=None, version=None, suffix=None):$/;"	f	function:test_framework_info
+d	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def d(ccc):$/;"	f
+danger_handler	.\danger_track.py	/^def danger_handler(dbg):$/;"	f
+DataContainer	.\pyemu\lib\pefile.py	/^class DataContainer:$/;"	c
+Date	.\140611_2.py	/^class Date(object):$/;"	c
+dbg_bpt	.\python hacking programming codes\func_coverage.py	/^    def dbg_bpt(self, tid, ea):$/;"	m	class:FuncCoverage
+dd	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def dd(bbb, boxes, gg):$/;"	f
+dd	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def dd(bbb, boxes, gg):$/;"	f
+ddosTest	.\violent python codes\4\10-idsFoil.py	/^def ddosTest(src, dst, iface, count):$/;"	f
+debug	.\pyemu\PyEmu.py	/^		def debug(self, level):$/;"	m	class:PyEmu
+DebugData	.\pyemu\lib\pefile.py	/^class DebugData(DataContainer):$/;"	c
+DebugDumpFlags	.\pyemu\PyDebug.py	/^def DebugDumpFlags(flags):$/;"	f
+debugger	.\my_debugger.py	/^class debugger():$/;"	c
+debugger	.\python hacking programming codes\my_debugger.py	/^class debugger():$/;"	c
+DebugInstruction	.\pyemu\PyDebug.py	/^def DebugInstruction(instruction):$/;"	f
+DebugOperand	.\pyemu\PyDebug.py	/^def DebugOperand(operand):$/;"	f
+DEBUG_EVENT	.\my_debugger_defines.py	/^class DEBUG_EVENT(Structure):$/;"	c
+DEBUG_EVENT	.\python hacking programming codes\my_debugger_defines.py	/^class DEBUG_EVENT(Structure):$/;"	c
+DEBUG_EVENT_UNION	.\my_debugger_defines.py	/^class DEBUG_EVENT_UNION(Union):$/;"	c
+DEBUG_EVENT_UNION	.\python hacking programming codes\my_debugger_defines.py	/^class DEBUG_EVENT_UNION(Union):$/;"	c
+DEC	.\pyemu\PyCPU.py	/^    def DEC(self, instruction):$/;"	m	class:PyCPU
+decorateMap	.\inventwithpython code\starpusher.py	/^def decorateMap(mapObj, startxy):$/;"	f
+decorateMap	.\python game\inventwithpython2\starpusher.py	/^def decorateMap(mapObj, startxy):$/;"	f
+deposit	.\140611.py	/^    def deposit(self,amount):$/;"	m	class:MoreEvilAccount
+deposit	.\140611.py	/^    def deposit(self,amt):$/;"	m	class:Account
+detach	.\my_debugger.py	/^    def detach(self):$/;"	m	class:debugger
+detach	.\python hacking programming codes\my_debugger.py	/^    def detach(self):$/;"	m	class:debugger
+dispatch_interrupt	.\pyemu\PyCPU.py	/^    def dispatch_interrupt(self, interrupt):$/;"	m	class:PyCPU
+displayBoard	.\python game\inventwithpython\hangman.py	/^def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):$/;"	f
+displayIntro	.\python game\141102_p95.py	/^def displayIntro():$/;"	f
+displayIntro	.\python game\inventwithpython\dragon.py	/^def displayIntro():$/;"	f
+DIV	.\pyemu\PyCPU.py	/^    def DIV(self, instruction):$/;"	m	class:PyCPU
+DllCanUnloadNow	.\pyemu\lib\ctypes\__init__.py	/^    def DllCanUnloadNow():$/;"	f	function:string_at
+DllGetClassObject	.\pyemu\lib\ctypes\__init__.py	/^    def DllGetClassObject(rclsid, riid, ppv):$/;"	f	function:string_at
+DllMain	.\python hacking programming codes\ghp_inject.cpp	/^BOOL APIENTRY DllMain( HMODULE hModule,$/;"	f
+dnsQRTest	.\violent python codes\4\8-testDomainFlux.py	/^def dnsQRTest(pkt):$/;"	f
+doRectsOverlap	.\python game\inventwithpython\collisionDetection.py	/^def doRectsOverlap(rect1, rect2):$/;"	f
+downloadImage	.\exifFetch.py	/^def downloadImage(imgTag):$/;"	f
+downloadImage	.\violent python codes\3\4-exifFetch.py	/^def downloadImage(imgTag):$/;"	f
+downloadImage	.\violent python codes\3\tonis_beautifulsoup.py	/^def downloadImage(imgTag):$/;"	f
+do_dialog	.\Head_First_Python codes\chapter11\page464.py	/^def do_dialog(title, data, func, ok='Select', notok='Quit'):$/;"	f
+do_form	.\Head_First_Python codes\chapter9\page333.py	/^def do_form(name, the_inputs, method="POST", text="Submit"):$/;"	f
+do_form	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def do_form(name, the_inputs, method="POST", text="Submit"):$/;"	f
+do_form	.\webapp\cgi-bin\yate.py	/^def do_form(name,the_inputs,method="POST",text='Submit'):$/;"	f
+do_form	.\yate.py	/^def do_form(name,the_inputs,method="POST",text='Submit'):$/;"	f
+draw	.\Arrow3D.py	/^    def draw(self, renderer):$/;"	m	class:Arrow3D
+draw	.\numplt4.py	/^    def draw(self, renderer):$/;"	m	class:Arrow3D
+drawApple	.\inventwithpython code\wormy.py	/^def drawApple(coord):$/;"	f
+drawApple	.\python game\inventwithpython2\wormy.py	/^def drawApple(coord):$/;"	f
+drawBoard	.\inventwithpython code\flippy.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\inventwithpython code\fourinarow.py	/^def drawBoard(board, extraToken=None):$/;"	f
+drawBoard	.\inventwithpython code\gemgem.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\inventwithpython code\inkspill.py	/^def drawBoard(board, transparency=255):$/;"	f
+drawBoard	.\inventwithpython code\memorypuzzle.py	/^def drawBoard(board, revealed):$/;"	f
+drawBoard	.\inventwithpython code\pentomino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\inventwithpython code\slidepuzzle.py	/^def drawBoard(board, message):$/;"	f
+drawBoard	.\inventwithpython code\tetromino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\inventwithpython code\tetrominoforidiots.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\memoryPuzzle.py	/^def drawBoard(board, revealed):$/;"	f
+drawBoard	.\python game\inventwithpython2\flippy.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython2\fourinarow.py	/^def drawBoard(board, extraToken=None):$/;"	f
+drawBoard	.\python game\inventwithpython2\gemgem.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython2\inkspill.py	/^def drawBoard(board, transparency=255):$/;"	f
+drawBoard	.\python game\inventwithpython2\memorypuzzle.py	/^def drawBoard(board, revealed):$/;"	f
+drawBoard	.\python game\inventwithpython2\pentomino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython2\slidepuzzle.py	/^def drawBoard(board, message):$/;"	f
+drawBoard	.\python game\inventwithpython2\tetromino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython2\tetrominoforidiots.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\AISim1.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\AISim2.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\AISim3.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\reversi.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\sonar.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\python game\inventwithpython\tictactoe.py	/^def drawBoard(board):$/;"	f
+drawBox	.\inventwithpython code\pentomino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\inventwithpython code\tetromino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\inventwithpython code\tetrominoforidiots.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\python game\inventwithpython2\pentomino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\python game\inventwithpython2\tetromino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\python game\inventwithpython2\tetrominoforidiots.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBoxCovers	.\inventwithpython code\memorypuzzle.py	/^def drawBoxCovers(board, boxes, coverage):$/;"	f
+drawBoxCovers	.\memoryPuzzle.py	/^def drawBoxCovers(board, boxes, coverage):$/;"	f
+drawBoxCovers	.\python game\inventwithpython2\memorypuzzle.py	/^def drawBoxCovers(board, boxes, coverage):$/;"	f
+drawButtons	.\inventwithpython code\simulate.py	/^def drawButtons():$/;"	f
+drawButtons	.\python game\inventwithpython2\simulate.py	/^def drawButtons():$/;"	f
+drawColorSchemeBoxes	.\inventwithpython code\inkspill.py	/^def drawColorSchemeBoxes(x, y, schemeNum):$/;"	f
+drawColorSchemeBoxes	.\python game\inventwithpython2\inkspill.py	/^def drawColorSchemeBoxes(x, y, schemeNum):$/;"	f
+drawCoordinator	.\numplt4.py	/^def drawCoordinator(fig, *args, **kwargs):$/;"	f
+drawGrid	.\inventwithpython code\wormy.py	/^def drawGrid():$/;"	f
+drawGrid	.\python game\inventwithpython2\wormy.py	/^def drawGrid():$/;"	f
+drawHealthMeter	.\inventwithpython code\squirrel.py	/^def drawHealthMeter(currentHealth):$/;"	f
+drawHealthMeter	.\python game\inventwithpython2\squirrel.py	/^def drawHealthMeter(currentHealth):$/;"	f
+drawHighlightBox	.\inventwithpython code\memorypuzzle.py	/^def drawHighlightBox(boxx, boxy):$/;"	f
+drawHighlightBox	.\memoryPuzzle.py	/^def drawHighlightBox(boxx,boxy):$/;"	f
+drawHighlightBox	.\python game\inventwithpython2\memorypuzzle.py	/^def drawHighlightBox(boxx, boxy):$/;"	f
+drawIcon	.\inventwithpython code\memorypuzzle.py	/^def drawIcon(shape, color, boxx, boxy):$/;"	f
+drawIcon	.\memoryPuzzle.py	/^def drawIcon(shape, color, boxx,boxy):$/;"	f
+drawIcon	.\python game\inventwithpython2\memorypuzzle.py	/^def drawIcon(shape, color, boxx, boxy):$/;"	f
+drawInfo	.\inventwithpython code\flippy.py	/^def drawInfo(board, playerTile, computerTile, turn):$/;"	f
+drawInfo	.\python game\inventwithpython2\flippy.py	/^def drawInfo(board, playerTile, computerTile, turn):$/;"	f
+drawLifeMeter	.\inventwithpython code\inkspill.py	/^def drawLifeMeter(currentLife):$/;"	f
+drawLifeMeter	.\python game\inventwithpython2\inkspill.py	/^def drawLifeMeter(currentLife):$/;"	f
+drawLogoAndButtons	.\inventwithpython code\inkspill.py	/^def drawLogoAndButtons():$/;"	f
+drawLogoAndButtons	.\python game\inventwithpython2\inkspill.py	/^def drawLogoAndButtons():$/;"	f
+drawMap	.\inventwithpython code\starpusher.py	/^def drawMap(mapObj, gameStateObj, goals):$/;"	f
+drawMap	.\python game\inventwithpython2\starpusher.py	/^def drawMap(mapObj, gameStateObj, goals):$/;"	f
+drawMovingGem	.\inventwithpython code\gemgem.py	/^def drawMovingGem(gem, progress):$/;"	f
+drawMovingGem	.\python game\inventwithpython2\gemgem.py	/^def drawMovingGem(gem, progress):$/;"	f
+drawNextPiece	.\inventwithpython code\pentomino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\inventwithpython code\tetromino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\inventwithpython code\tetrominoforidiots.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\python game\inventwithpython2\pentomino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\python game\inventwithpython2\tetromino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\python game\inventwithpython2\tetrominoforidiots.py	/^def drawNextPiece(piece):$/;"	f
+drawPalettes	.\inventwithpython code\inkspill.py	/^def drawPalettes():$/;"	f
+drawPalettes	.\python game\inventwithpython2\inkspill.py	/^def drawPalettes():$/;"	f
+drawPiece	.\inventwithpython code\pentomino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\inventwithpython code\tetromino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\inventwithpython code\tetrominoforidiots.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\python game\inventwithpython2\pentomino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\python game\inventwithpython2\tetromino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\python game\inventwithpython2\tetrominoforidiots.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPointWithAxis	.\drawRobotics.py	/^def drawPointWithAxis(fig, *args, **kwargs):$/;"	f
+drawPressKeyMsg	.\inventwithpython code\wormy.py	/^def drawPressKeyMsg():$/;"	f
+drawPressKeyMsg	.\python game\inventwithpython2\wormy.py	/^def drawPressKeyMsg():$/;"	f
+drawScore	.\inventwithpython code\gemgem.py	/^def drawScore(score):$/;"	f
+drawScore	.\inventwithpython code\wormy.py	/^def drawScore(score):$/;"	f
+drawScore	.\python game\inventwithpython2\gemgem.py	/^def drawScore(score):$/;"	f
+drawScore	.\python game\inventwithpython2\wormy.py	/^def drawScore(score):$/;"	f
+drawStatus	.\inventwithpython code\pentomino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\inventwithpython code\tetromino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\inventwithpython code\tetrominoforidiots.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\python game\inventwithpython2\pentomino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\python game\inventwithpython2\tetromino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\python game\inventwithpython2\tetrominoforidiots.py	/^def drawStatus(score, level):$/;"	f
+drawText	.\python game\inventwithpython\dodger.py	/^def drawText(text, font, surface, x, y):$/;"	f
+drawTile	.\inventwithpython code\slidepuzzle.py	/^def drawTile(tilex, tiley, number, adjx=0, adjy=0):$/;"	f
+drawTile	.\python game\inventwithpython2\slidepuzzle.py	/^def drawTile(tilex, tiley, number, adjx=0, adjy=0):$/;"	f
+drawVector	.\drawRobotics.py	/^def drawVector(fig, pointA, pointB, **kwargs):$/;"	f
+drawVector	.\numplt4.py	/^def drawVector(fig, pointA, pointB, **kwargs):$/;"	f
+drawWorm	.\inventwithpython code\wormy.py	/^def drawWorm(wormCoords):$/;"	f
+drawWorm	.\python game\inventwithpython2\wormy.py	/^def drawWorm(wormCoords):$/;"	f
+ds_override	.\pyemu\PyInstruction.py	/^		def ds_override(self):$/;"	m	class:PyInstruction
+dump	.\pyemu\lib\pefile.py	/^    def dump(self, indentation=0):$/;"	m	class:Structure
+Dump	.\pyemu\lib\pefile.py	/^class Dump:$/;"	c
+dump_info	.\pyemu\lib\pefile.py	/^    def dump_info(self):$/;"	m	class:PE
+dump_pages	.\pyemu\PyMemory.py	/^		def dump_pages(self, data=False):$/;"	m	class:PyMemory
+dump_regs	.\pyemu\PyCPU.py	/^    def dump_regs(self):$/;"	m	class:PyCPU
+dump_regs	.\pyemu\PyEmu.py	/^		def dump_regs(self):$/;"	m	class:PyEmu
+dump_stack	.\pyemu\PyCPU.py	/^    def dump_stack(self, count=64):$/;"	m	class:PyCPU
+dump_stack	.\pyemu\PyEmu.py	/^		def dump_stack(self, count=64):$/;"	m	class:PyEmu
+dump_unpacked	.\python hacking programming codes\upx_unpacker.py	/^def dump_unpacked(emu):$/;"	f
+dump_unpacked	.\upx_unpacker.py	/^def dump_unpacked(eum):$/;"	f
+dupDot11	.\violent python codes\5\7-dup.py	/^def dupDot11(pkt):$/;"	f
+dupDot11	.\violent python codes\5\dup.py	/^def dupDot11(pkt):$/;"	f
+dupIP	.\violent python codes\5\7-dup.py	/^def dupIP(pkt):$/;"	f
+dupIP	.\violent python codes\5\dup.py	/^def dupIP(pkt):$/;"	f
+dupLLC	.\violent python codes\5\7-dup.py	/^def dupLLC(pkt):$/;"	f
+dupLLC	.\violent python codes\5\dup.py	/^def dupLLC(pkt):$/;"	f
+dupRadio	.\violent python codes\5\7-dup.py	/^def dupRadio(pkt):$/;"	f
+dupRadio	.\violent python codes\5\dup.py	/^def dupRadio(pkt):$/;"	f
+dupSNAP	.\violent python codes\5\7-dup.py	/^def dupSNAP(pkt):$/;"	f
+dupSNAP	.\violent python codes\5\dup.py	/^def dupSNAP(pkt):$/;"	f
+dupUDP	.\violent python codes\5\7-dup.py	/^def dupUDP(pkt):$/;"	f
+dupUDP	.\violent python codes\5\dup.py	/^def dupUDP(pkt):$/;"	f
+dword_align	.\pyemu\lib\pefile.py	/^    def dword_align(self, offset, base):$/;"	m	class:PE
+dyld_default_search	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_default_search(name, env=None):$/;"	f
+dyld_env	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_env(env, var):$/;"	f
+dyld_executable_path_search	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_executable_path_search(name, executable_path=None):$/;"	f
+dyld_fallback_framework_path	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_fallback_framework_path(env=None):$/;"	f
+dyld_fallback_library_path	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_fallback_library_path(env=None):$/;"	f
+dyld_find	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_find(name, executable_path=None, env=None):$/;"	f
+dyld_framework_path	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_framework_path(env=None):$/;"	f
+dyld_image_suffix	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_image_suffix(env=None):$/;"	f
+dyld_image_suffix_search	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_image_suffix_search(iterator, env=None):$/;"	f
+dyld_library_path	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_library_path(env=None):$/;"	f
+dyld_override_search	.\pyemu\lib\ctypes\macholib\dyld.py	/^def dyld_override_search(name, env=None):$/;"	f
+dylib_info	.\pyemu\lib\ctypes\macholib\dylib.py	/^def dylib_info(filename):$/;"	f
+D_q	.\drawRobotics.py	/^def D_q(dx, dy, dz):$/;"	f
+D_q	.\sympy1.py	/^def D_q(a1,a2,a3):$/;"	f
+eat	.\inventwithpython code\inkspill.py	/^                pygame.time.wait(2000) # pause so the player can suffer in their defeat$/;"	f	function:main
+eat	.\python game\inventwithpython2\inkspill.py	/^                pygame.time.wait(2000) # pause so the player can suffer in their defeat$/;"	f	function:main
+emergencyland	.\violent python codes\5\7-uavSniff.py	/^    def emergencyland(self):$/;"	m	class:interceptThread
+encode_multipart_formdata	.\beginning python hacking\fileupload.py	/^def encode_multipart_formdata(fields, files):$/;"	f
+encode_multipart_formdata	.\beginning python hacking\Form 데이터 설정.py	/^def encode_multipart_formdata(fields, files):                                                     #(1)$/;"	f
+End	.\test.py	/^class End():$/;"	c
+End	.\violent python codes\5720.py	/^class End():$/;"	c
+end_form	.\Head_First_Python codes\chapter7\page262.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\Head_First_Python codes\chapter9\page333.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\webapp\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+ensure_utf8	.\pyemu\lib\ctypes\macholib\dyld.py	/^def ensure_utf8(s):$/;"	f
+enterPlayerMove	.\python game\inventwithpython\sonar.py	/^def enterPlayerMove():$/;"	f
+enterPlayerTile	.\inventwithpython code\flippy.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\python game\inventwithpython2\flippy.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\python game\inventwithpython\AISim1.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\python game\inventwithpython\AISim2.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\python game\inventwithpython\AISim3.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\python game\inventwithpython\reversi.py	/^def enterPlayerTile():$/;"	f
+enumerate_threads	.\my_debugger.py	/^    def enumerate_threads(self):$/;"	m	class:debugger
+enumerate_threads	.\python hacking programming codes\my_debugger.py	/^    def enumerate_threads(self):$/;"	m	class:debugger
+equation	.\scipy1.py	/^def equation(p):$/;"	f
+errors	.\machine_learning.py	/^    def errors(self, y):$/;"	m	class:LogisticRegression
+es_override	.\pyemu\PyInstruction.py	/^		def es_override(self):$/;"	m	class:PyInstruction
+ETNEWS	.\140611_3.py	/^class ETNEWS:$/;"	c
+EuroDate	.\140611_2.py	/^class EuroDate(Date):$/;"	c
+evaluate_olivettifaces	.\machine_learning.py	/^def evaluate_olivettifaces(learning_rate=0.05, n_epochs=200,$/;"	f
+EvilAccount	.\140611.py	/^class EvilAccount(Account):$/;"	c
+EXCEPTION_DEBUG_INFO	.\my_debugger_defines.py	/^class EXCEPTION_DEBUG_INFO(Structure):$/;"	c
+EXCEPTION_DEBUG_INFO	.\python hacking programming codes\my_debugger_defines.py	/^class EXCEPTION_DEBUG_INFO(Structure):$/;"	c
+exception_handler_breakpoint	.\my_debugger.py	/^    def exception_handler_breakpoint(self):$/;"	m	class:debugger
+exception_handler_breakpoint	.\python hacking programming codes\my_debugger.py	/^    def exception_handler_breakpoint(self):$/;"	m	class:debugger
+exception_handler_single_step	.\my_debugger.py	/^    def exception_handler_single_step(self):$/;"	m	class:debugger
+exception_handler_single_step	.\python hacking programming codes\my_debugger.py	/^    def exception_handler_single_step(self):$/;"	m	class:debugger
+EXCEPTION_RECORD	.\my_debugger_defines.py	/^class EXCEPTION_RECORD(Structure):$/;"	c
+EXCEPTION_RECORD	.\python hacking programming codes\my_debugger_defines.py	/^class EXCEPTION_RECORD(Structure):$/;"	c
+execute	.\pyemu\PyCPU.py	/^    def execute(self):$/;"	m	class:PyCPU
+execute	.\pyemu\PyEmu.py	/^		def execute(self, steps=1, start=0x0, end=0x0):$/;"	m	class:PyEmu
+exploitTest	.\violent python codes\4\10-idsFoil.py	/^def exploitTest(src, dst, iface, count):$/;"	f
+ExportData	.\pyemu\lib\pefile.py	/^class ExportData(DataContainer):$/;"	c
+ExportDirData	.\pyemu\lib\pefile.py	/^class ExportDirData(DataContainer):$/;"	c
+extractall	.\unzip.py	/^def extractall(zFile, password ):$/;"	f
+extractFile	.\violent python codes\1\3-zipCrack.py	/^def extractFile(zFile, password):$/;"	f
+extractFile	.\violent python codes\1\tonis_zipfile.py	/^def extractFile(zFile,password):$/;"	f
+f	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def f(bbb, pp):$/;"	f
+f	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def f(bbb, pp):$/;"	f
+FILETIME	.\pyemu\lib\ctypes\wintypes.py	/^class FILETIME(Structure):$/;"	c
+file_fuzzer	.\file_fuzzer.py	/^class file_fuzzer:$/;"	c
+file_fuzzer	.\python hacking programming codes\file_fuzzer.py	/^class file_fuzzer:$/;"	c
+file_picker	.\file_fuzzer.py	/^    def file_picker(self):$/;"	m	class:file_fuzzer
+file_picker	.\python hacking programming codes\file_fuzzer.py	/^    def file_picker( self ):$/;"	m	class:file_fuzzer
+fillBoardAndAnimate	.\inventwithpython code\gemgem.py	/^def fillBoardAndAnimate(board, points, score):$/;"	f
+fillBoardAndAnimate	.\python game\inventwithpython2\gemgem.py	/^def fillBoardAndAnimate(board, points, score):$/;"	f
+findAttack	.\violent python codes\4\5-findDDoS.py	/^def findAttack(pcap):$/;"	f
+findCreditCard	.\violent python codes\5\2-creditSniff.py	/^def findCreditCard(pkt):$/;"	f
+findDevs	.\violent python codes\5\9-btScan.py	/^def findDevs():$/;"	f
+findDownload	.\violent python codes\4\5-findDDoS.py	/^def findDownload(pcap):$/;"	f
+findGoogle	.\violent python codes\5\4-googleSniff.py	/^def findGoogle(pkt):$/;"	f
+findGuest	.\violent python codes\5\3-hotelSniff.py	/^def findGuest(pkt):$/;"	f
+findHivemind	.\violent python codes\4\5-findDDoS.py	/^def findHivemind(pcap):$/;"	f
+findImages	.\exifFetch.py	/^def findImages(url):$/;"	f
+findImages	.\violent python codes\3\4-exifFetch.py	/^def findImages(url):$/;"	f
+findImages	.\violent python codes\3\tonis_beautifulsoup.py	/^def findImages(url):$/;"	f
+findMatchingGems	.\inventwithpython code\gemgem.py	/^def findMatchingGems(board):$/;"	f
+findMatchingGems	.\python game\inventwithpython2\gemgem.py	/^def findMatchingGems(board):$/;"	f
+findRecycled	.\violent python codes\3\2-dumpRecycleBin.py	/^def findRecycled(recycleDir):$/;"	f
+findRecycled	.\violent python codes\3\tonis_recycle.py	/^def findRecycled(recycleDir):$/;"	f
+findTgt	.\violent python codes\5\9-btFind.py	/^def findTgt(tgtName):$/;"	f
+findTgts	.\conficker.py	/^def findTgts(subNet):$/;"	f
+findTgts	.\violent python codes\2\5-conficker.py	/^def findTgts(subNet):$/;"	f
+findTgts	.\violent python codes\2\tonis_conficker.py	/^def findTgts(subNet):$/;"	f
+find_closest	.\Head_First_Python codes\chapter11\find_it.py	/^def find_closest(look_for, target_data):$/;"	f
+find_closest	.\Head_First_Python codes\chapter11\page451.py	/^def find_closest(look_for, target_data):$/;"	f
+find_files	.\p128.py	/^def find_files(topdir,pattern):$/;"	f
+find_files	.\p129.py	/^def find_files(target):$/;"	f
+find_interests	.\violent python codes\6\9-twitterClass.py	/^    def find_interests(self):$/;"	m	class:reconPerson
+find_interests	.\violent python codes\6\9-twitterInterests.py	/^def find_interests(tweets):$/;"	f
+find_interests	.\violent python codes\6\twitterClass.py	/^    def find_interests(self):$/;"	m	class:reconPerson
+find_library	.\pyemu\lib\ctypes\util.py	/^    def find_library(name):$/;"	f
+find_nearest_time	.\Head_First_Python codes\chapter11\page456.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+find_nearest_time	.\Head_First_Python codes\chapter11\page457.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+find_nearest_time	.\Head_First_Python codes\chapter11\page464.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+Finish	.\test.py	/^	def Finish(self):$/;"	m	class:End
+Finish	.\violent python codes\5720.py	/^	def Finish(self):$/;"	m	class:End
+fireCatcher	.\violent python codes\5\8-fireCatcher.py	/^def fireCatcher(pkt):$/;"	f
+flashBorderAnimation	.\inventwithpython code\inkspill.py	/^def flashBorderAnimation(color, board, animationSpeed=30):$/;"	f
+flashBorderAnimation	.\python game\inventwithpython2\inkspill.py	/^def flashBorderAnimation(color, board, animationSpeed=30):$/;"	f
+flashButtonAnimation	.\inventwithpython code\simulate.py	/^def flashButtonAnimation(color, animationSpeed=50):$/;"	f
+flashButtonAnimation	.\python game\inventwithpython2\simulate.py	/^def flashButtonAnimation(color, animationSpeed=50):$/;"	f
+FLOATING_SAVE_AREA	.\my_debugger_defines.py	/^class FLOATING_SAVE_AREA(Structure):$/;"	c
+FLOATING_SAVE_AREA	.\python hacking programming codes\my_debugger_defines.py	/^class FLOATING_SAVE_AREA(Structure):$/;"	c
+floodAnimation	.\inventwithpython code\inkspill.py	/^def floodAnimation(board, paletteClicked, animationSpeed=25):$/;"	f
+floodAnimation	.\python game\inventwithpython2\inkspill.py	/^def floodAnimation(board, paletteClicked, animationSpeed=25):$/;"	f
+floodFill	.\inventwithpython code\inkspill.py	/^def floodFill(board, oldColor, newColor, x, y):$/;"	f
+floodFill	.\inventwithpython code\starpusher.py	/^def floodFill(mapObj, x, y, oldCharacter, newCharacter):$/;"	f
+floodFill	.\python game\inventwithpython2\inkspill.py	/^def floodFill(board, oldColor, newColor, x, y):$/;"	f
+floodFill	.\python game\inventwithpython2\starpusher.py	/^def floodFill(mapObj, x, y, oldCharacter, newCharacter):$/;"	f
+for	.\pyemu\PyEmu.py	/^		The purposed class for emulating from a raw PE executable.	This has$/;"	c	class:IDAPyEmu
+for	.\pyemu\PyEmu.py	/^		The purposed class for emulating in IDA Pro.	This has to set up$/;"	c	class:PyDbgPyEmu
+for	.\pyemu\PyFlags.py	/^		This is a new class for setting flags.	It is used by PyCPU to set$/;"	c
+for	.\pyemu\PyMemory.py	/^		The base class for handling memory requests from the PyCPU and PyEmu.$/;"	c	class:PyMemoryPage
+for	.\pyemu\PyOS.py	/^										A class for handling exception records.	 Currently$/;"	c	function:PyWindows.__THREAD.__TEB.__TIB.get_packed
+for	.\pyemu\PyOS.py	/^								A class for storing the each LDT entries information$/;"	c	function:PyWindows.__THREAD.__LDT.set_selector
+for	.\pyemu\PyOS.py	/^						A LDR_DATA class for the future! and beyond!$/;"	c	function:PyWindows.__PEB.get_packed
+format_time	.\Head_First_Python codes\chapter11\page454.py	/^def format_time(time_string):$/;"	f
+format_time	.\Head_First_Python codes\chapter11\tm2secs2tm.py	/^def format_time(time_string):$/;"	f
+framework_find	.\pyemu\lib\ctypes\macholib\dyld.py	/^def framework_find(fn, executable_path=None, env=None):$/;"	f
+framework_info	.\pyemu\lib\ctypes\macholib\framework.py	/^def framework_info(filename):$/;"	f
+fs_override	.\pyemu\PyInstruction.py	/^		def fs_override(self):$/;"	m	class:PyInstruction
+ftpSniff	.\violent python codes\5\5-ftpSniff.py	/^def ftpSniff(pkt):$/;"	f
+full_load	.\pyemu\lib\pefile.py	/^    def full_load(self):$/;"	m	class:PE
+FuncCoverage	.\python hacking programming codes\func_coverage.py	/^class FuncCoverage(DBG_Hooks):$/;"	c
+func_resolve	.\my_debugger.py	/^    def func_resolve(self,dll,function):$/;"	m	class:debugger
+func_resolve	.\python hacking programming codes\my_debugger.py	/^    def func_resolve(self,dll,function):$/;"	m	class:debugger
+fuzz	.\file_fuzzer.py	/^    def fuzz(self):$/;"	m	class:file_fuzzer
+fuzz	.\python hacking programming codes\file_fuzzer.py	/^    def fuzz( self ):$/;"	m	class:file_fuzzer
+g	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def g(bbb):$/;"	f
+g	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def g(bbb):$/;"	f
+gameOverAnimation	.\inventwithpython code\simulate.py	/^def gameOverAnimation(color=WHITE, animationSpeed=50):$/;"	f
+gameOverAnimation	.\python game\inventwithpython2\simulate.py	/^def gameOverAnimation(color=WHITE, animationSpeed=50):$/;"	f
+gameWonAnimation	.\inventwithpython code\memorypuzzle.py	/^def gameWonAnimation(board):$/;"	f
+gameWonAnimation	.\memoryPuzzle.py	/^def gameWonAnimation(board):$/;"	f
+gameWonAnimation	.\python game\inventwithpython2\memorypuzzle.py	/^def gameWonAnimation(board):$/;"	f
+generateNewPuzzle	.\inventwithpython code\slidepuzzle.py	/^def generateNewPuzzle(numSlides):$/;"	f
+generateNewPuzzle	.\python game\inventwithpython2\slidepuzzle.py	/^def generateNewPuzzle(numSlides):$/;"	f
+generateRandomBoard	.\inventwithpython code\inkspill.py	/^def generateRandomBoard(width, height, difficulty=MEDIUM):$/;"	f
+generateRandomBoard	.\python game\inventwithpython2\inkspill.py	/^def generateRandomBoard(width, height, difficulty=MEDIUM):$/;"	f
+generateRevealedBoxesData	.\inventwithpython code\memorypuzzle.py	/^def generateRevealedBoxesData(val):$/;"	f
+generateRevealedBoxesData	.\memoryPuzzle.py	/^def generateRevealedBoxesData(val):$/;"	f
+generateRevealedBoxesData	.\python game\inventwithpython2\memorypuzzle.py	/^def generateRevealedBoxesData(val):$/;"	f
+get	.\Head_First_Python codes\chapter10\page403b.py	/^    def get(self):$/;"	m	class:SimpleInput
+get	.\Head_First_Python codes\chapter10\page405.py	/^    def get(self):$/;"	m	class:IndexPage
+get	.\Head_First_Python codes\chapter10\page407.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\Head_First_Python codes\chapter10\page417.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\Head_First_Python codes\chapter10\page425.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\hfwwg\hfwwg.py	/^		def get(self):$/;"	m	class:SightingInputPage
+getBlankBoard	.\inventwithpython code\gemgem.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\inventwithpython code\pentomino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\inventwithpython code\tetromino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\inventwithpython code\tetrominoforidiots.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\python game\inventwithpython2\gemgem.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\python game\inventwithpython2\pentomino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\python game\inventwithpython2\tetromino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\python game\inventwithpython2\tetrominoforidiots.py	/^def getBlankBoard():$/;"	f
+getBlankPosition	.\inventwithpython code\slidepuzzle.py	/^def getBlankPosition(board):$/;"	f
+getBlankPosition	.\python game\inventwithpython2\slidepuzzle.py	/^def getBlankPosition(board):$/;"	f
+getBoardCopy	.\python game\inventwithpython\AISim1.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\python game\inventwithpython\AISim2.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\python game\inventwithpython\AISim3.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\python game\inventwithpython\reversi.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\python game\inventwithpython\tictactoe.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopyMinusGems	.\inventwithpython code\gemgem.py	/^def getBoardCopyMinusGems(board, gems):$/;"	f
+getBoardCopyMinusGems	.\python game\inventwithpython2\gemgem.py	/^def getBoardCopyMinusGems(board, gems):$/;"	f
+getBoardWithValidMoves	.\inventwithpython code\flippy.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\python game\inventwithpython2\flippy.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\python game\inventwithpython\AISim1.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\python game\inventwithpython\AISim2.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\python game\inventwithpython\AISim3.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\python game\inventwithpython\reversi.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBounceAmount	.\inventwithpython code\squirrel.py	/^def getBounceAmount(currentBounce, bounceRate, bounceHeight):$/;"	f
+getBounceAmount	.\python game\inventwithpython2\squirrel.py	/^def getBounceAmount(currentBounce, bounceRate, bounceHeight):$/;"	f
+getBoxAtPixel	.\inventwithpython code\memorypuzzle.py	/^def getBoxAtPixel(x, y):$/;"	f
+getBoxAtPixel	.\memoryPuzzle.py	/^def getBoxAtPixel(x,y):$/;"	f
+getBoxAtPixel	.\python game\inventwithpython2\memorypuzzle.py	/^def getBoxAtPixel(x, y):$/;"	f
+getButtonClicked	.\inventwithpython code\simulate.py	/^def getButtonClicked(x, y):$/;"	f
+getButtonClicked	.\python game\inventwithpython2\simulate.py	/^def getButtonClicked(x, y):$/;"	f
+getClues	.\python game\inventwithpython\bagels.py	/^def getClues(guess, secretNum):$/;"	f
+getColorOfPaletteAt	.\inventwithpython code\inkspill.py	/^def getColorOfPaletteAt(x, y):$/;"	f
+getColorOfPaletteAt	.\python game\inventwithpython2\inkspill.py	/^def getColorOfPaletteAt(x, y):$/;"	f
+getComputerMove	.\inventwithpython code\flippy.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\inventwithpython code\fourinarow.py	/^def getComputerMove(board):$/;"	f
+getComputerMove	.\python game\inventwithpython2\flippy.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\python game\inventwithpython2\fourinarow.py	/^def getComputerMove(board):$/;"	f
+getComputerMove	.\python game\inventwithpython\AISim1.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\python game\inventwithpython\AISim2.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\python game\inventwithpython\AISim3.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\python game\inventwithpython\reversi.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\python game\inventwithpython\tictactoe.py	/^def getComputerMove(board, computerLetter):$/;"	f
+getCornerSideBestMove	.\python game\inventwithpython\AISim3.py	/^def getCornerSideBestMove(board, tile):$/;"	f
+getCornerWorstMove	.\python game\inventwithpython\AISim3.py	/^def getCornerWorstMove(board, tile):$/;"	f
+getDirList	.\beginning python hacking\Directory Listing.py	/^def getDirList(cftp, name):$/;"	f
+getDroppingGems	.\inventwithpython code\gemgem.py	/^def getDroppingGems(board):$/;"	f
+getDroppingGems	.\python game\inventwithpython2\gemgem.py	/^def getDroppingGems(board):$/;"	f
+getDropSlots	.\inventwithpython code\gemgem.py	/^def getDropSlots(board):$/;"	f
+getDropSlots	.\python game\inventwithpython2\gemgem.py	/^def getDropSlots(board):$/;"	f
+GetEnd	.\test.py	/^	def GetEnd(self):$/;"	m	class:End
+GetEnd	.\violent python codes\5720.py	/^	def GetEnd(self):$/;"	m	class:End
+getFPTR	.\150130_hook.py	/^def getFPTR(fn):                                                                  #(6)$/;"	f
+getFPTR	.\beginning python hacking\MessageHooking.py	/^def getFPTR(fn):                                                                  #(6)$/;"	f
+getGemAt	.\inventwithpython code\gemgem.py	/^def getGemAt(board, x, y):$/;"	f
+getGemAt	.\python game\inventwithpython2\gemgem.py	/^def getGemAt(board, x, y):$/;"	f
+getGuess	.\python game\inventwithpython\hangman.py	/^def getGuess(alreadyGuessed):$/;"	f
+getHumanMove	.\inventwithpython code\fourinarow.py	/^def getHumanMove(board, isFirstMove):$/;"	f
+getHumanMove	.\python game\inventwithpython2\fourinarow.py	/^def getHumanMove(board, isFirstMove):$/;"	f
+getKey	.\python game\inventwithpython\cipher.py	/^def getKey():$/;"	f
+getLeftTopOfTile	.\inventwithpython code\slidepuzzle.py	/^def getLeftTopOfTile(tileX, tileY):$/;"	f
+getLeftTopOfTile	.\python game\inventwithpython2\slidepuzzle.py	/^def getLeftTopOfTile(tileX, tileY):$/;"	f
+getLowestEmptySpace	.\inventwithpython code\fourinarow.py	/^def getLowestEmptySpace(board, column):$/;"	f
+getLowestEmptySpace	.\python game\inventwithpython2\fourinarow.py	/^def getLowestEmptySpace(board, column):$/;"	f
+getMessage	.\python game\inventwithpython\cipher.py	/^def getMessage():$/;"	f
+getMode	.\python game\inventwithpython\cipher.py	/^def getMode():$/;"	f
+getNewBoard	.\inventwithpython code\flippy.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\inventwithpython code\fourinarow.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython2\flippy.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython2\fourinarow.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython\AISim1.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython\AISim2.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython\AISim3.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython\reversi.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\python game\inventwithpython\sonar.py	/^def getNewBoard():$/;"	f
+getNewPiece	.\inventwithpython code\pentomino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\inventwithpython code\tetromino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\inventwithpython code\tetrominoforidiots.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\python game\inventwithpython2\pentomino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\python game\inventwithpython2\tetromino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\python game\inventwithpython2\tetrominoforidiots.py	/^def getNewPiece():$/;"	f
+getPassword	.\beginning python hacking\FTP Passwrod Cracking.py	/^def getPassword(password):                            #(2)$/;"	f
+getPlayerMove	.\python game\inventwithpython\AISim1.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\python game\inventwithpython\AISim2.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\python game\inventwithpython\AISim3.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\python game\inventwithpython\reversi.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\python game\inventwithpython\tictactoe.py	/^def getPlayerMove(board):$/;"	f
+getPotentialMoves	.\inventwithpython code\fourinarow.py	/^def getPotentialMoves(board, tile, lookAhead):$/;"	f
+getPotentialMoves	.\python game\inventwithpython2\fourinarow.py	/^def getPotentialMoves(board, tile, lookAhead):$/;"	f
+getprocaddress	.\python hacking programming codes\upx_unpacker.py	/^def getprocaddress(name, address):$/;"	f
+getprocaddress	.\upx_unpacker.py	/^def getprocaddress(name,address):$/;"	f
+getRandomChests	.\python game\inventwithpython\sonar.py	/^def getRandomChests(numChests):$/;"	f
+getRandomizedBoard	.\inventwithpython code\memorypuzzle.py	/^def getRandomizedBoard():$/;"	f
+getRandomizedBoard	.\memoryPuzzle.py	/^def getRandomizedBoard():$/;"	f
+getRandomizedBoard	.\python game\inventwithpython2\memorypuzzle.py	/^def getRandomizedBoard():$/;"	f
+getRandomLocation	.\inventwithpython code\wormy.py	/^def getRandomLocation():$/;"	f
+getRandomLocation	.\python game\inventwithpython2\wormy.py	/^def getRandomLocation():$/;"	f
+getRandomMove	.\inventwithpython code\slidepuzzle.py	/^def getRandomMove(board, lastMove=None):$/;"	f
+getRandomMove	.\python game\inventwithpython2\slidepuzzle.py	/^def getRandomMove(board, lastMove=None):$/;"	f
+getRandomMove	.\python game\inventwithpython\AISim3.py	/^def getRandomMove(board, tile):$/;"	f
+getRandomOffCameraPos	.\inventwithpython code\squirrel.py	/^def getRandomOffCameraPos(camerax, cameray, objWidth, objHeight):$/;"	f
+getRandomOffCameraPos	.\python game\inventwithpython2\squirrel.py	/^def getRandomOffCameraPos(camerax, cameray, objWidth, objHeight):$/;"	f
+getRandomVelocity	.\inventwithpython code\squirrel.py	/^def getRandomVelocity():$/;"	f
+getRandomVelocity	.\python game\inventwithpython2\squirrel.py	/^def getRandomVelocity():$/;"	f
+getRandomWord	.\python game\inventwithpython\hangman.py	/^def getRandomWord(wordList):$/;"	f
+getRet	.\hippie_easy.py	/^def getRet(imm,allocaddr,max_opcodes = 300):$/;"	f
+getRet	.\python hacking programming codes\hippie_easy.py	/^def getRet(imm, allocaddr, max_opcodes = 300):$/;"	f
+getRow	.\python game\inventwithpython\sonar.py	/^def getRow(board, row):$/;"	f
+getScoreOfBoard	.\inventwithpython code\flippy.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\python game\inventwithpython2\flippy.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\python game\inventwithpython\AISim1.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\python game\inventwithpython\AISim2.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\python game\inventwithpython\AISim3.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\python game\inventwithpython\reversi.py	/^def getScoreOfBoard(board):$/;"	f
+getSecretNum	.\python game\inventwithpython\bagels.py	/^def getSecretNum(numDigits):$/;"	f
+getShapeAndColor	.\inventwithpython code\memorypuzzle.py	/^def getShapeAndColor(board, boxx, boxy):$/;"	f
+getShapeAndColor	.\memoryPuzzle.py	/^def getShapeAndColor(board,boxx,boxy):$/;"	f
+getShapeAndColor	.\python game\inventwithpython2\memorypuzzle.py	/^def getShapeAndColor(board, boxx, boxy):$/;"	f
+getSideBestMove	.\python game\inventwithpython\AISim3.py	/^def getSideBestMove(board, tile):$/;"	f
+getSpaceClicked	.\inventwithpython code\flippy.py	/^def getSpaceClicked(mousex, mousey):$/;"	f
+getSpaceClicked	.\python game\inventwithpython2\flippy.py	/^def getSpaceClicked(mousex, mousey):$/;"	f
+getSpotClicked	.\inventwithpython code\slidepuzzle.py	/^def getSpotClicked(board, x, y):$/;"	f
+getSpotClicked	.\python game\inventwithpython2\slidepuzzle.py	/^def getSpotClicked(board, x, y):$/;"	f
+getStartingBoard	.\inventwithpython code\slidepuzzle.py	/^def getStartingBoard():$/;"	f
+getStartingBoard	.\python game\inventwithpython2\slidepuzzle.py	/^def getStartingBoard():$/;"	f
+getSwappingGems	.\inventwithpython code\gemgem.py	/^def getSwappingGems(board, firstXY, secondXY):$/;"	f
+getSwappingGems	.\python game\inventwithpython2\gemgem.py	/^def getSwappingGems(board, firstXY, secondXY):$/;"	f
+getTranslatedMessage	.\python game\inventwithpython\cipher.py	/^def getTranslatedMessage(mode, message, key):$/;"	f
+getValidMoves	.\inventwithpython code\flippy.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\python game\inventwithpython2\flippy.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\python game\inventwithpython\AISim1.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\python game\inventwithpython\AISim2.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\python game\inventwithpython\AISim3.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\python game\inventwithpython\reversi.py	/^def getValidMoves(board, tile):$/;"	f
+getWorstMove	.\python game\inventwithpython\AISim3.py	/^def getWorstMove(board, tile):$/;"	f
+get_AF	.\pyemu\PyFlags.py	/^		def get_AF(self):$/;"	m	class:PyFlags
+get_athlete_from_id	.\athletemodel_sqlite3.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\Head_First_Python codes\chapter9\page368.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_base	.\pyemu\PyInstruction.py	/^		def get_base(self):$/;"	m	class:PyInstruction
+get_CF	.\pyemu\PyFlags.py	/^		def get_CF(self):$/;"	m	class:PyFlags
+get_coach_data	.\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter5\page205.py	/^def get_coach_data(filename): $/;"	f
+get_coach_data	.\Head_First_Python codes\chapter6\page211.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter6\page217.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter6\page222.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter6\page231.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter6\page245.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter7\page259.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\webapp\cgi-bin\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_content	.\140611_3.py	/^	def get_content(self): $/;"	m	class:ETNEWS
+get_context	.\pyemu\PyCPU.py	/^    def get_context(self):$/;"	m	class:PyCPU
+get_data	.\pyemu\lib\pefile.py	/^    def get_data(self, rva, length=None):$/;"	m	class:PE
+get_data	.\pyemu\lib\pefile.py	/^    def get_data(self, start, length=None):$/;"	m	class:SectionStructure
+get_data	.\pyemu\PyMemory.py	/^		def get_data(self):$/;"	m	class:PyMemoryPage
+get_debug_event	.\my_debugger.py	/^    def get_debug_event(self):$/;"	m	class:debugger
+get_debug_event	.\python hacking programming codes\my_debugger.py	/^    def get_debug_event(self):$/;"	m	class:debugger
+get_disasm	.\pyemu\PyCPU.py	/^    def get_disasm(self, instruction=None):$/;"	m	class:PyCPU
+get_disasm	.\pyemu\PyEmu.py	/^		def get_disasm(self):$/;"	m	class:PyEmu
+get_dword_from_data	.\pyemu\lib\pefile.py	/^    def get_dword_from_data(self, data, offset):$/;"	m	class:PE
+get_file_offset	.\pyemu\lib\pefile.py	/^    def get_file_offset(self):$/;"	m	class:Structure
+get_from_store	.\athletemodel.py	/^def get_from_store():$/;"	f
+get_from_store	.\Head_First_Python codes\chapter7\page259.py	/^def get_from_store():$/;"	f
+get_from_store	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_from_store():$/;"	f
+get_from_store	.\webapp\cgi-bin\athletemodel.py	/^def get_from_store():$/;"	f
+get_import_table	.\pyemu\lib\pefile.py	/^    def get_import_table(self, rva):$/;"	m	class:PE
+get_index	.\pyemu\PyInstruction.py	/^		def get_index(self):$/;"	m	class:PyInstruction
+get_lsb	.\pyemu\PyCPU.py	/^    def get_lsb(self, value):$/;"	m	class:PyCPU
+get_mask	.\pyemu\PyCPU.py	/^    def get_mask(self, size):$/;"	m	class:PyCPU
+get_memory	.\pyemu\PyCPU.py	/^    def get_memory(self, address, size):$/;"	m	class:PyCPU
+get_memory	.\pyemu\PyEmu.py	/^		def get_memory(self, address, size=0):$/;"	m	class:PyEmu
+get_memory	.\pyemu\PyMemory.py	/^		def get_memory(self, address, size):$/;"	m	class:PyMemory
+get_memory16	.\pyemu\PyCPU.py	/^    def get_memory16(self, address):$/;"	m	class:PyCPU
+get_memory32	.\pyemu\PyCPU.py	/^    def get_memory32(self, address):$/;"	m	class:PyCPU
+get_memory8	.\pyemu\PyCPU.py	/^    def get_memory8(self, address):$/;"	m	class:PyCPU
+get_memory_address	.\pyemu\PyCPU.py	/^    def get_memory_address(self, instruction, opnum, size):$/;"	m	class:PyCPU
+get_memory_mapped_image	.\pyemu\lib\pefile.py	/^    def get_memory_mapped_image(self):$/;"	m	class:PE
+get_mod	.\pyemu\PyInstruction.py	/^		def get_mod(self):$/;"	m	class:PyInstruction
+get_msb	.\pyemu\PyCPU.py	/^    def get_msb(self, value, size):$/;"	m	class:PyCPU
+get_namesID_from_store	.\athletemodel_sqlite3.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\Head_First_Python codes\chapter9\page371.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_namesID_from_store():$/;"	f
+get_names_from_store	.\athletemodel_sqlite3.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\Head_First_Python codes\chapter9\page367.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_names_from_store():$/;"	f
+get_OF	.\pyemu\PyFlags.py	/^		def get_OF(self):$/;"	m	class:PyFlags
+get_offset_from_rva	.\pyemu\lib\pefile.py	/^    def get_offset_from_rva(self, rva):$/;"	m	class:PE
+get_offset_from_rva	.\pyemu\lib\pefile.py	/^    def get_offset_from_rva(self, rva):$/;"	m	class:SectionStructure
+get_OF_ADD	.\pyemu\PyFlags.py	/^		def get_OF_ADD(self):$/;"	m	class:PyFlags
+get_OF_SUB	.\pyemu\PyFlags.py	/^		def get_OF_SUB(self):$/;"	m	class:PyFlags
+get_packed	.\pyemu\PyOS.py	/^										def get_packed(self):$/;"	m	class:PyWindows.__THREAD.__TEB.__TIB.__EXCEPTION_RECORD
+get_packed	.\pyemu\PyOS.py	/^								def get_packed(self):$/;"	m	class:PyWindows.__THREAD.__TEB.__TIB
+get_packed	.\pyemu\PyOS.py	/^						def get_packed(self):$/;"	m	class:PyWindows.__PEB.__LDR
+get_packed	.\pyemu\PyOS.py	/^						def get_packed(self):$/;"	m	class:PyWindows.__THREAD.__TEB
+get_packed	.\pyemu\PyOS.py	/^				def get_packed(self):$/;"	m	class:PyWindows.__PEB
+get_page	.\pyemu\PyMemory.py	/^		def get_page(self, page):$/;"	m	class:IDAMemory
+get_page	.\pyemu\PyMemory.py	/^		def get_page(self, page):$/;"	m	class:PEMemory
+get_page	.\pyemu\PyMemory.py	/^		def get_page(self, page):$/;"	m	class:PyDbgMemory
+get_page	.\pyemu\PyMemory.py	/^		def get_page(self, page):$/;"	m	class:PyMemory
+get_pdf_data	.\140611_3.py	/^	def get_pdf_data(self, date):$/;"	m	class:ETNEWS
+get_permissions	.\pyemu\PyMemory.py	/^		def get_permissions(self):$/;"	m	class:PyMemoryPage
+get_PF	.\pyemu\PyFlags.py	/^		def get_PF(self):$/;"	m	class:PyFlags
+get_physical_by_rva	.\pyemu\lib\pefile.py	/^    def get_physical_by_rva(self, rva):$/;"	m	class:PE
+get_register	.\pyemu\PyCPU.py	/^    def get_register(self, register, size):$/;"	m	class:PyCPU
+get_register	.\pyemu\PyEmu.py	/^		def get_register(self, register):$/;"	m	class:PyEmu
+get_register16	.\pyemu\PyCPU.py	/^    def get_register16(self, register):$/;"	m	class:PyCPU
+get_register32	.\pyemu\PyCPU.py	/^    def get_register32(self, register):$/;"	m	class:PyCPU
+get_register8	.\pyemu\PyCPU.py	/^    def get_register8(self, register):$/;"	m	class:PyCPU
+get_reg_opcode	.\pyemu\PyInstruction.py	/^		def get_reg_opcode(self):$/;"	m	class:PyInstruction
+get_rm	.\pyemu\PyInstruction.py	/^		def get_rm(self):$/;"	m	class:PyInstruction
+get_scale	.\pyemu\PyInstruction.py	/^		def get_scale(self):$/;"	m	class:PyInstruction
+get_section_by_rva	.\pyemu\lib\pefile.py	/^    def get_section_by_rva(self, rva):$/;"	m	class:PE
+get_selector	.\pyemu\PyEmu.py	/^		def get_selector(self, selector):$/;"	m	class:PyEmu
+get_selector	.\pyemu\PyOS.py	/^						def get_selector(self, selector):$/;"	m	class:PyWindows.__THREAD.__LDT
+get_selector	.\pyemu\PyOS.py	/^		def get_selector(self, selector):$/;"	m	class:PyWindows
+get_SF	.\pyemu\PyFlags.py	/^		def get_SF(self):$/;"	m	class:PyFlags
+get_social	.\violent python codes\6\9-twitterRecon.py	/^    def get_social(self, media_name):$/;"	m	class:reconPerson
+get_stack_argument	.\pyemu\PyEmu.py	/^		def get_stack_argument(self, offset, size=0):$/;"	m	class:PyEmu
+get_stack_variable	.\pyemu\PyEmu.py	/^		def get_stack_variable(self, offset, size=0):$/;"	m	class:PyEmu
+get_string_at_rva	.\pyemu\lib\pefile.py	/^    def get_string_at_rva(self, rva):$/;"	m	class:PE
+get_string_from_data	.\pyemu\lib\pefile.py	/^    def get_string_from_data(self, offset, data):$/;"	m	class:PE
+get_string_u_at_rva	.\pyemu\lib\pefile.py	/^    def get_string_u_at_rva(self, rva, max_length = 2**16):$/;"	m	class:PE
+get_text	.\pyemu\lib\pefile.py	/^    def get_text(self):$/;"	m	class:Dump
+get_thread_context	.\my_debugger.py	/^    def get_thread_context(self,thread_id=None, h_thread =None):$/;"	m	class:debugger
+get_thread_context	.\python hacking programming codes\my_debugger.py	/^    def get_thread_context (self, thread_id=None,h_thread=None):$/;"	m	class:debugger
+get_tweets	.\violent python codes\6\9-twitterClass.py	/^    def get_tweets(self):$/;"	m	class:reconPerson
+get_tweets	.\violent python codes\6\9-twitterGeo.py	/^def get_tweets(handle):$/;"	f
+get_tweets	.\violent python codes\6\9-twitterInterests.py	/^def get_tweets(handle):$/;"	f
+get_tweets	.\violent python codes\6\twitterClass.py	/^    def get_tweets(self):$/;"	m	class:reconPerson
+get_warnings	.\pyemu\lib\pefile.py	/^    def get_warnings(self):$/;"	m	class:PE
+get_word_from_data	.\pyemu\lib\pefile.py	/^    def get_word_from_data(self, data, offset):$/;"	m	class:PE
+get_ZF	.\pyemu\PyFlags.py	/^		def get_ZF(self):$/;"	m	class:PyFlags
+google	.\violent python codes\6\8-anonGoogle.py	/^def google(search_term):$/;"	f
+google	.\violent python codes\6\8-googleJson.py	/^def google(search_term):$/;"	f
+google	.\violent python codes\6\8-googleJumbled.py	/^def google(search_term):$/;"	f
+Google_Result	.\violent python codes\6\8-anonGoogle.py	/^class Google_Result:$/;"	c
+grep	.\p128.py	/^def grep(pattern,lines):$/;"	f
+grep	.\p129.py	/^def grep(pattern,target):$/;"	f
+group1	.\pyemu\PyInstruction.py	/^		def group1(self):$/;"	m	class:PyInstruction
+group2	.\pyemu\PyInstruction.py	/^		def group2(self):$/;"	m	class:PyInstruction
+group3	.\pyemu\PyInstruction.py	/^		def group3(self):$/;"	m	class:PyInstruction
+gs_override	.\pyemu\PyInstruction.py	/^		def gs_override(self):$/;"	m	class:PyInstruction
+handlePkt	.\violent python codes\4\7-testFastFlux.py	/^def handlePkt(pkt):$/;"	f
+handler_av	.\beginning python hacking\bufferOverflowTest.py	/^def handler_av(dbg):                                                 #(2)$/;"	f
+handler_breakpoint	.\pyemu\examples\pydbgpyemu.py	/^def handler_breakpoint(dbg):$/;"	f
+handler_emu_breakpoint	.\pyemu\examples\pydbgpyemu.py	/^def handler_emu_breakpoint(dbg):$/;"	f
+handles	.\pyemu\PyCPU.py	/^    The heart of PyEmu.  The CPU class handles execution of instructions.$/;"	c
+hasWon	.\inventwithpython code\inkspill.py	/^def hasWon(board):$/;"	f
+hasWon	.\inventwithpython code\memorypuzzle.py	/^def hasWon(revealedBoxes):$/;"	f
+hasWon	.\memoryPuzzle.py	/^def hasWon(revealedBoxes):$/;"	f
+hasWon	.\python game\inventwithpython2\inkspill.py	/^def hasWon(board):$/;"	f
+hasWon	.\python game\inventwithpython2\memorypuzzle.py	/^def hasWon(revealedBoxes):$/;"	f
+header	.\Head_First_Python codes\chapter7\page262.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\Head_First_Python codes\chapter9\page333.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\webapp\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\yate.py	/^def header(header_text, header_level=2):$/;"	f
+Hero	.\beginning python hacking\클래스의 생성.py	/^class Hero:                                                      #(1)$/;"	c
+hhh	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def hhh():$/;"	f
+hhh	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def hhh():$/;"	f
+HiddenLayer	.\machine_learning.py	/^class HiddenLayer(object):$/;"	c
+highlightSpace	.\inventwithpython code\gemgem.py	/^def highlightSpace(x, y):$/;"	f
+highlightSpace	.\python game\inventwithpython2\gemgem.py	/^def highlightSpace(x, y):$/;"	f
+hookProc	.\150130_hook.py	/^def hookProc(nCode, wParam, lParam):                                              #(7)$/;"	f
+hookProc	.\beginning python hacking\MessageHooking.py	/^def hookProc(nCode, wParam, lParam):                                              #(7)$/;"	f
+HRESULT	.\pyemu\lib\ctypes\__init__.py	/^    class HRESULT(_SimpleCData):$/;"	c	class:PyDLL
+IDAMemory	.\pyemu\PyMemory.py	/^class IDAMemory(PyMemory):$/;"	c
+IDAPyEmu	.\pyemu\PyEmu.py	/^class IDAPyEmu(PyEmu):$/;"	c
+IDIV	.\pyemu\PyCPU.py	/^    def IDIV(self, instruction):$/;"	m	class:PyCPU
+ify	.\kmeans.py	/^			new_assignments = map(self.classify, inputs)$/;"	c	function:KMeans.train
+ii	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def ii(hh):$/;"	f
+ii	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def ii(hh):$/;"	f
+implementation	.\pyemu\PyOS.py	/^				The PEB class implementation.	 This is not complete as stated$/;"	c	function:PyWindows.set_selector
+ImportData	.\pyemu\lib\pefile.py	/^class ImportData(DataContainer):$/;"	c
+ImportDescData	.\pyemu\lib\pefile.py	/^class ImportDescData(DataContainer):$/;"	c
+IMUL	.\pyemu\PyCPU.py	/^    def IMUL(self, instruction):$/;"	m	class:PyCPU
+INC	.\pyemu\PyCPU.py	/^    def INC(self, instruction):$/;"	m	class:PyCPU
+includes	.\pyemu\PyOS.py	/^		implementation.	 The class includes the PEB, TEB\/TIB, LDT.$/;"	c
+include_footer	.\Head_First_Python codes\chapter7\page262.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\Head_First_Python codes\chapter9\page333.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\webapp\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\yate.py	/^def include_footer(the_links):$/;"	f
+include_header	.\Head_First_Python codes\chapter7\page262.py	/^def include_header(the_title):$/;"	f
+include_header	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+include_header	.\Head_First_Python codes\chapter9\page333.py	/^def include_header(the_title):$/;"	f
+include_header	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+include_header	.\webapp\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+include_header	.\yate.py	/^def include_header(the_title):$/;"	f
+IndexPage	.\Head_First_Python codes\chapter10\page405.py	/^class IndexPage(webapp.RequestHandler):$/;"	c
+ine	.\pyemu\PyMemory.py	/^		page of memory in our cache.	This could be used to further define$/;"	f
+ines	.\150130_apihooking.py	/^from pydbg.defines import *$/;"	f
+ines	.\access_violation_handler.py	/^from pydbg.defines import *$/;"	f
+ines	.\beginning python hacking\APIHooking.py	/^from pydbg.defines import *$/;"	f
+ines	.\beginning python hacking\bufferOverflowTest.py	/^from pydbg.defines import *$/;"	f
+ines	.\danger_track.py	/^from pydbg.defines import *$/;"	f
+ines	.\file_fuzzer.py	/^from pydbg.defines import *$/;"	f
+ines	.\firefox_hook.py	/^from pydbg.defines import *$/;"	f
+ines	.\printf_random.py	/^from pydbg.defines import *$/;"	f
+ines	.\pyemu\examples\pydbgpyemu.py	/^from pydbg.defines import *$/;"	f
+ines	.\python hacking programming codes\access_violation_handler.py	/^from pydbg.defines import *$/;"	f
+ines	.\python hacking programming codes\file_fuzzer.py	/^from pydbg.defines import *$/;"	f
+ines	.\python hacking programming codes\firefox_hook.py	/^from pydbg.defines import *$/;"	f
+ines	.\python hacking programming codes\printf_random.py	/^from pydbg.defines import *$/;"	f
+ines	.\snapshot.py	/^from pydbg.defines import *$/;"	f
+init	.\numplt1.py	/^def init():$/;"	f
+initialize	.\pyemu\PyOS.py	/^		def initialize(self, emu, stackbase, stacklimit, heapbase, heaplimit):$/;"	m	class:PyWindows
+initialize	.\pyemu\PyOS.py	/^		def initialize(self, stackbase, stacklimit, heapbase, heaplimit):$/;"	m	class:PyLinux
+init_entries	.\pyemu\PyOS.py	/^						def init_entries(self):$/;"	m	class:PyWindows.__THREAD.__LDT
+inject	.\backdoor.py	/^def inject( pid, data, parameter = 0 ):$/;"	f
+inject	.\python hacking programming codes\backdoor.py	/^def inject( pid, data, parameter = 0 ):$/;"	f
+injectCmd	.\violent python codes\5\7-uavSniff.py	/^    def injectCmd(self, cmd):$/;"	m	class:interceptThread
+injectPage	.\violent python codes\2\4-injectPage.py	/^def injectPage(ftp, page, redirect):$/;"	f
+injectPage	.\violent python codes\2\4-massCompromise.py	/^def injectPage(ftp, page, redirect):$/;"	f
+injectPage	.\violent python codes\2\tonis_ftp2.py	/^def injectPage(ftp,page,redirect):$/;"	f
+injectPage	.\violent python codes\2\tonis_ftp3.py	/^def injectPage(ftp,page,redirect):$/;"	f
+inject_dll	.\python hacking programming codes\injector.py	/^def inject_dll( dll_path ):$/;"	f
+inputPlayerLetter	.\python game\inventwithpython\tictactoe.py	/^def inputPlayerLetter():$/;"	f
+inquiry	.\140611.py	/^    def inquiry(self):$/;"	m	class:Account
+inquiry	.\140611.py	/^    def inquiry(self):$/;"	m	class:EvilAccount
+installHookProc	.\150130_hook.py	/^    def installHookProc(self, pointer):                                           #(4)$/;"	m	class:KeyLogger
+installHookProc	.\beginning python hacking\MessageHooking.py	/^    def installHookProc(self, pointer):                                           #(4)$/;"	m	class:KeyLogger
+INT	.\pyemu\PyCPU.py	/^    def INT(self, instruction):$/;"	m	class:PyCPU
+interceptPkt	.\violent python codes\5\7-uavSniff.py	/^    def interceptPkt(self, pkt):$/;"	m	class:interceptThread
+interceptThread	.\violent python codes\5\7-uavSniff.py	/^class interceptThread(threading.Thread):$/;"	c
+ioctl_hook	.\ioctl_fuzzer.py	/^class ioctl_hook(LogBpHook):$/;"	c
+ioctl_hook	.\python hacking programming codes\ioctl_fuzzer.py	/^class ioctl_hook( LogBpHook ):$/;"	c
+isBlocked	.\inventwithpython code\starpusher.py	/^def isBlocked(mapObj, gameStateObj, x, y):$/;"	f
+isBlocked	.\python game\inventwithpython2\starpusher.py	/^def isBlocked(mapObj, gameStateObj, x, y):$/;"	f
+isBoardFull	.\inventwithpython code\fourinarow.py	/^def isBoardFull(board):$/;"	f
+isBoardFull	.\python game\inventwithpython2\fourinarow.py	/^def isBoardFull(board):$/;"	f
+isBoardFull	.\python game\inventwithpython\tictactoe.py	/^def isBoardFull(board):$/;"	f
+isCompleteLine	.\inventwithpython code\pentomino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\inventwithpython code\tetromino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\inventwithpython code\tetrominoforidiots.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\python game\inventwithpython2\pentomino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\python game\inventwithpython2\tetromino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\python game\inventwithpython2\tetrominoforidiots.py	/^def isCompleteLine(board, y):$/;"	f
+isLevelFinished	.\inventwithpython code\starpusher.py	/^def isLevelFinished(levelObj, gameStateObj):$/;"	f
+isLevelFinished	.\python game\inventwithpython2\starpusher.py	/^def isLevelFinished(levelObj, gameStateObj):$/;"	f
+isMessageTable	.\violent python codes\3\7-iphoneMessages.py	/^def isMessageTable(iphoneDB):$/;"	f
+isOnBoard	.\inventwithpython code\flippy.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\inventwithpython code\pentomino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\inventwithpython code\tetromino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\inventwithpython code\tetrominoforidiots.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython2\flippy.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython2\pentomino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython2\tetromino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython2\tetrominoforidiots.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython\AISim1.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython\AISim2.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython\AISim3.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\python game\inventwithpython\reversi.py	/^def isOnBoard(x, y):$/;"	f
+isOnCorner	.\inventwithpython code\flippy.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\python game\inventwithpython2\flippy.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\python game\inventwithpython\AISim1.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\python game\inventwithpython\AISim2.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\python game\inventwithpython\AISim3.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\python game\inventwithpython\reversi.py	/^def isOnCorner(x, y):$/;"	f
+isOnlyDigits	.\python game\inventwithpython\bagels.py	/^def isOnlyDigits(num):$/;"	f
+isOnSide	.\python game\inventwithpython\AISim3.py	/^def isOnSide(x, y):$/;"	f
+isOutsideActiveArea	.\inventwithpython code\squirrel.py	/^def isOutsideActiveArea(camerax, cameray, obj):$/;"	f
+isOutsideActiveArea	.\python game\inventwithpython2\squirrel.py	/^def isOutsideActiveArea(camerax, cameray, obj):$/;"	f
+isPointInsideRect	.\python game\inventwithpython\collisionDetection.py	/^def isPointInsideRect(x, y, rect):$/;"	f
+isSpaceFree	.\python game\inventwithpython\tictactoe.py	/^def isSpaceFree(board, move):$/;"	f
+isValidMove	.\inventwithpython code\flippy.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\inventwithpython code\fourinarow.py	/^def isValidMove(board, column):$/;"	f
+isValidMove	.\inventwithpython code\slidepuzzle.py	/^def isValidMove(board, move):$/;"	f
+isValidMove	.\python game\inventwithpython2\flippy.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\python game\inventwithpython2\fourinarow.py	/^def isValidMove(board, column):$/;"	f
+isValidMove	.\python game\inventwithpython2\slidepuzzle.py	/^def isValidMove(board, move):$/;"	f
+isValidMove	.\python game\inventwithpython\AISim1.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\python game\inventwithpython\AISim2.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\python game\inventwithpython\AISim3.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\python game\inventwithpython\reversi.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\python game\inventwithpython\sonar.py	/^def isValidMove(x, y):$/;"	f
+isValidPosition	.\inventwithpython code\pentomino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\inventwithpython code\tetromino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\inventwithpython code\tetrominoforidiots.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\python game\inventwithpython2\pentomino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\python game\inventwithpython2\tetromino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\python game\inventwithpython2\tetrominoforidiots.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isWall	.\inventwithpython code\starpusher.py	/^def isWall(mapObj, x, y):$/;"	f
+isWall	.\python game\inventwithpython2\starpusher.py	/^def isWall(mapObj, x, y):$/;"	f
+isWinner	.\inventwithpython code\fourinarow.py	/^def isWinner(board, tile):$/;"	f
+isWinner	.\python game\inventwithpython2\fourinarow.py	/^def isWinner(board, tile):$/;"	f
+isWinner	.\python game\inventwithpython\tictactoe.py	/^def isWinner(bo, le):$/;"	f
+is_r	.\pyemu\PyMemory.py	/^		def is_r(self):$/;"	m	class:PyMemoryPage
+is_rwx	.\pyemu\PyMemory.py	/^		def is_rwx(self):$/;"	m	class:PyMemoryPage
+is_rx	.\pyemu\PyMemory.py	/^		def is_rx(self):$/;"	m	class:PyMemoryPage
+is_valid	.\pyemu\PyMemory.py	/^		def is_valid(self, address):$/;"	m	class:PyMemory
+is_w	.\pyemu\PyMemory.py	/^		def is_w(self):$/;"	m	class:PyMemoryPage
+is_x	.\pyemu\PyMemory.py	/^		def is_x(self):$/;"	m	class:PyMemoryPage
+JA	.\pyemu\PyCPU.py	/^    def JA(self, instruction):$/;"	m	class:PyCPU
+JB	.\pyemu\PyCPU.py	/^    def JB(self, instruction):$/;"	m	class:PyCPU
+JBE	.\pyemu\PyCPU.py	/^    def JBE(self, instruction):$/;"	m	class:PyCPU
+JC	.\pyemu\PyCPU.py	/^    def JC(self, instruction):$/;"	m	class:PyCPU
+JG	.\pyemu\PyCPU.py	/^    def JG(self, instruction):$/;"	m	class:PyCPU
+JGE	.\pyemu\PyCPU.py	/^    def JGE(self, instruction):$/;"	m	class:PyCPU
+jj	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def jj(bbb):$/;"	f
+jj	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def jj(bbb):$/;"	f
+JL	.\pyemu\PyCPU.py	/^    def JL(self, instruction):$/;"	m	class:PyCPU
+JLE	.\pyemu\PyCPU.py	/^    def JLE(self, instruction):$/;"	m	class:PyCPU
+JMP	.\pyemu\PyCPU.py	/^    def JMP(self, instruction):$/;"	m	class:PyCPU
+jmp_handler	.\python hacking programming codes\upx_unpacker.py	/^def jmp_handler(emu, mnemonic, eip, op1, op2, op3):$/;"	f
+jmp_handler	.\upx_unpacker.py	/^def jmp_handler(emu,mnemonic, eip,op1,op2,op3):$/;"	f
+JNA	.\pyemu\PyCPU.py	/^    def JNA(self, instruction):$/;"	m	class:PyCPU
+JNB	.\pyemu\PyCPU.py	/^    def JNB(self, instruction):$/;"	m	class:PyCPU
+JNC	.\pyemu\PyCPU.py	/^    def JNC(self, instruction):$/;"	m	class:PyCPU
+JNG	.\pyemu\PyCPU.py	/^    def JNG(self, instruction):$/;"	m	class:PyCPU
+JNL	.\pyemu\PyCPU.py	/^    def JNL(self, instruction):$/;"	m	class:PyCPU
+JNS	.\pyemu\PyCPU.py	/^    def JNS(self, instruction):$/;"	m	class:PyCPU
+JNZ	.\pyemu\PyCPU.py	/^    def JNZ(self, instruction):$/;"	m	class:PyCPU
+JS	.\pyemu\PyCPU.py	/^    def JS(self, instruction):$/;"	m	class:PyCPU
+JZ	.\pyemu\PyCPU.py	/^    def JZ(self, instruction):$/;"	m	class:PyCPU
+KeyLogger	.\150130_hook.py	/^class KeyLogger:                                                                  #(3)$/;"	c
+KeyLogger	.\beginning python hacking\MessageHooking.py	/^class KeyLogger:                                                                  #(3)$/;"	c
+KMeans	.\kmeans.py	/^class KMeans:$/;"	c
+LEA	.\pyemu\PyCPU.py	/^    def LEA(self, instruction):$/;"	m	class:PyCPU
+LEAVE	.\pyemu\PyCPU.py	/^    def LEAVE(self, instruction):$/;"	m	class:PyCPU
+leftTopCoordsOfBox	.\inventwithpython code\memorypuzzle.py	/^def leftTopCoordsOfBox(boxx, boxy):$/;"	f
+leftTopCoordsOfBox	.\memoryPuzzle.py	/^def leftTopCoordsOfBox(boxx,boxy):$/;"	f
+leftTopCoordsOfBox	.\python game\inventwithpython2\memorypuzzle.py	/^def leftTopCoordsOfBox(boxx, boxy):$/;"	f
+leftTopPixelCoordOfBox	.\inventwithpython code\inkspill.py	/^def leftTopPixelCoordOfBox(boxx, boxy):$/;"	f
+leftTopPixelCoordOfBox	.\python game\inventwithpython2\inkspill.py	/^def leftTopPixelCoordOfBox(boxx, boxy):$/;"	f
+LeNetConvPoolLayer	.\machine_learning.py	/^class LeNetConvPoolLayer(object):$/;"	c
+LibraryLoader	.\pyemu\lib\ctypes\__init__.py	/^class LibraryLoader(object):$/;"	c
+LittleEndianStructure	.\pyemu\lib\ctypes\_endian.py	/^    class LittleEndianStructure(Structure):$/;"	c	class:_swapped_meta
+load	.\my_debugger.py	/^    def load(self,path_to_exe):$/;"	m	class:debugger
+load	.\python hacking programming codes\my_debugger.py	/^    def load(self,path_to_exe):$/;"	m	class:debugger
+LoadLibrary	.\pyemu\lib\ctypes\__init__.py	/^    def LoadLibrary(self, name):$/;"	m	class:LibraryLoader
+loadlibrary	.\python hacking programming codes\upx_unpacker.py	/^def loadlibrary(name, address):$/;"	f
+loadlibrary	.\upx_unpacker.py	/^def loadlibrary(name,address):$/;"	f
+load_cities	.\violent python codes\6\9-twitterGeo.py	/^def load_cities(cityFile):$/;"	f
+load_data	.\machine_learning.py	/^def load_data(dataset_path):$/;"	f
+load_exceptions	.\pyemu\PyOS.py	/^				def load_exceptions(self, emu):$/;"	m	class:PyWindows.__THREAD
+load_stack	.\pyemu\PyOS.py	/^				def load_stack(self, emu, stackbase, stacklimit):$/;"	m	class:PyWindows.__THREAD
+load_teb	.\pyemu\PyOS.py	/^				def load_teb(self, emu, address):$/;"	m	class:PyWindows.__THREAD
+lock	.\pyemu\PyInstruction.py	/^		def lock(self):$/;"	m	class:PyInstruction
+login	.\140611_3.py	/^	def login(self, username, password):$/;"	m	class:ETNEWS
+LogisticRegression	.\machine_learning.py	/^class LogisticRegression(object):$/;"	c
+m	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def m(x, y):$/;"	f
+m	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def m(x, y):$/;"	f
+main	.\badchar.py	/^def main(args):$/;"	f
+main	.\conficker.py	/^def main():$/;"	f
+main	.\exifFetch.py	/^def main():$/;"	f
+main	.\findinstruction.py	/^def main(args):$/;"	f
+main	.\ftp_scanner.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\page403b.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\page405.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\page407.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\page417.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\page425.py	/^def main():$/;"	f
+main	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^def main():$/;"	f
+main	.\hfwwg\hfwwg.py	/^def main():$/;"	f
+main	.\hippie_easy.py	/^def main(args):$/;"	f
+main	.\inventwithpython code\flippy.py	/^def main():$/;"	f
+main	.\inventwithpython code\fourinarow.py	/^def main():$/;"	f
+main	.\inventwithpython code\gemgem.py	/^def main():$/;"	f
+main	.\inventwithpython code\inkspill.py	/^def main():$/;"	f
+main	.\inventwithpython code\memorypuzzle.py	/^def main():$/;"	f
+main	.\inventwithpython code\pentomino.py	/^def main():$/;"	f
+main	.\inventwithpython code\simulate.py	/^def main():$/;"	f
+main	.\inventwithpython code\slidepuzzle.py	/^def main():$/;"	f
+main	.\inventwithpython code\squirrel.py	/^def main():$/;"	f
+main	.\inventwithpython code\starpusher.py	/^def main():$/;"	f
+main	.\inventwithpython code\tetromino.py	/^def main():$/;"	f
+main	.\inventwithpython code\tetrominoforidiots.py	/^def main():$/;"	f
+main	.\inventwithpython code\wormy.py	/^def main():$/;"	f
+main	.\ioctl_dump.py	/^def main(args):$/;"	f
+main	.\ioctl_fuzzer.py	/^    def main(args):$/;"	m	class:ioctl_hook
+main	.\linkParser.py	/^def main():$/;"	f
+main	.\memoryPuzzle.py	/^def main():$/;"	f
+main	.\nmapScan.py	/^def main():$/;"	f
+main	.\pdfRead.py	/^def main():$/;"	f
+main	.\portScan.py	/^def main():$/;"	f
+main	.\printGeo.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\flippy.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\fourinarow.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\gemgem.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\inkspill.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\memorypuzzle.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\pentomino.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\simulate.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\slidepuzzle.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\squirrel.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\starpusher.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\tetromino.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\tetrominoforidiots.py	/^def main():$/;"	f
+main	.\python game\inventwithpython2\wormy.py	/^def main():$/;"	f
+main	.\python hacking programming codes\addnum.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	.\python hacking programming codes\badchar.py	/^def main(args):$/;"	f
+main	.\python hacking programming codes\findinstruction.py	/^def main(args):$/;"	f
+main	.\python hacking programming codes\hippie_easy.py	/^def main(args):$/;"	f
+main	.\python hacking programming codes\ioctl_dump.py	/^def main( args ):$/;"	f
+main	.\python hacking programming codes\ioctl_fuzzer.py	/^def main(args):$/;"	f
+main	.\unzip.py	/^def main():$/;"	f
+main	.\violent python codes\1\1-vulnScanner.py	/^def main():$/;"	f
+main	.\violent python codes\1\2-passwdCrack.py	/^def main():$/;"	f
+main	.\violent python codes\1\3-zipCrack.py	/^def main():$/;"	f
+main	.\violent python codes\1\tonis_zipfile.py	/^def main():$/;"	f
+main	.\violent python codes\2\1-portScan.py	/^def main():$/;"	f
+main	.\violent python codes\2\2-nmapScan.py	/^def main():$/;"	f
+main	.\violent python codes\2\3-bruteKey.py	/^def main():$/;"	f
+main	.\violent python codes\2\3-sshBrute.py	/^def main():$/;"	f
+main	.\violent python codes\2\3-sshCommand.py	/^def main():$/;"	f
+main	.\violent python codes\2\4-massCompromise.py	/^def main():$/;"	f
+main	.\violent python codes\2\5-conficker.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_conficker.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_ftp3.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_nmap.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_portscan.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_sshd.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_sshd2.py	/^def main():$/;"	f
+main	.\violent python codes\2\tonis_sshd3.py	/^def main():$/;"	f
+main	.\violent python codes\3\1-discoverNetworks.py	/^def main():$/;"	f
+main	.\violent python codes\3\2-dumpRecycleBin.py	/^def main():$/;"	f
+main	.\violent python codes\3\3-pdfRead.py	/^def main():$/;"	f
+main	.\violent python codes\3\4-exifFetch.py	/^def main():$/;"	f
+main	.\violent python codes\3\5-skypeParse.py	/^def main():$/;"	f
+main	.\violent python codes\3\6-firefoxParse.py	/^def main():$/;"	f
+main	.\violent python codes\3\7-iphoneMessages.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_beautifulsoup.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_discovernetwork.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_firefox.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_metadata.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_recycle.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_skype.py	/^def main():$/;"	f
+main	.\violent python codes\3\tonis_wigle.py	/^def main():$/;"	f
+main	.\violent python codes\4\10-idsFoil.py	/^def main():$/;"	f
+main	.\violent python codes\4\2-printDirection.py	/^def main():$/;"	f
+main	.\violent python codes\4\3-geoPrint.py	/^def main():$/;"	f
+main	.\violent python codes\4\4-googleEarthPcap.py	/^def main():$/;"	f
+main	.\violent python codes\4\5-findDDoS.py	/^def main():$/;"	f
+main	.\violent python codes\4\6-spoofDetect.py	/^def main():$/;"	f
+main	.\violent python codes\4\7-testFastFlux.py	/^def main():$/;"	f
+main	.\violent python codes\4\8-testDomainFlux.py	/^def main():$/;"	f
+main	.\violent python codes\4\9-mitnickAttack.py	/^def main():$/;"	f
+main	.\violent python codes\5\2-creditSniff.py	/^def main():$/;"	f
+main	.\violent python codes\5\3-hotelSniff.py	/^def main():$/;"	f
+main	.\violent python codes\5\4-googleSniff.py	/^def main():$/;"	f
+main	.\violent python codes\5\5-ftpSniff.py	/^def main():$/;"	f
+main	.\violent python codes\5\7-uavSniff.py	/^def main():$/;"	f
+main	.\violent python codes\5\8-fireCatcher.py	/^def main():$/;"	f
+main	.\violent python codes\6\10-sendSpam.py	/^def main():$/;"	f
+main	.\violent python codes\6\6-linkParser.py	/^def main():$/;"	f
+main	.\violent python codes\6\7-imageMirror.py	/^def main():$/;"	f
+main	.\violent python codes\6\8-anonGoogle.py	/^def main():$/;"	f
+main	.\violent python codes\6\9-twitterGeo.py	/^def main():$/;"	f
+main	.\violent python codes\6\9-twitterInterests.py	/^def main():$/;"	f
+main	.\violent python codes\7\2-virusCheck.py	/^def main():$/;"	f
+main	.\wormy.py	/^def main():$/;"	f
+makeChecksum	.\beginning python hacking\TCP SYN Flood.py	/^def makeChecksum(msg):                                                #(1)$/;"	f
+makeChecksum	.\tcpSynFlood.py	/^def makeChecksum(msg):$/;"	f
+makeFile	.\beginning python hacking\파일 다루기.py	/^def makeFile(fileName, message, mode):$/;"	f
+makeIPHeader	.\beginning python hacking\TCP SYN Flood.py	/^def makeIPHeader(sourceIP, destIP):                                   #(2)$/;"	f
+makeIPHeader	.\tcpSynFlood.py	/^def makeIPHeader(sourceIP, destIP):                                   #(2)$/;"	f
+makeMove	.\inventwithpython code\flippy.py	/^def makeMove(board, tile, xstart, ystart, realMove=False):$/;"	f
+makeMove	.\inventwithpython code\fourinarow.py	/^def makeMove(board, player, column):$/;"	f
+makeMove	.\inventwithpython code\slidepuzzle.py	/^def makeMove(board, move):$/;"	f
+makeMove	.\inventwithpython code\starpusher.py	/^def makeMove(mapObj, gameStateObj, playerMoveTo):$/;"	f
+makeMove	.\python game\inventwithpython2\flippy.py	/^def makeMove(board, tile, xstart, ystart, realMove=False):$/;"	f
+makeMove	.\python game\inventwithpython2\fourinarow.py	/^def makeMove(board, player, column):$/;"	f
+makeMove	.\python game\inventwithpython2\slidepuzzle.py	/^def makeMove(board, move):$/;"	f
+makeMove	.\python game\inventwithpython2\starpusher.py	/^def makeMove(mapObj, gameStateObj, playerMoveTo):$/;"	f
+makeMove	.\python game\inventwithpython\AISim1.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\python game\inventwithpython\AISim2.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\python game\inventwithpython\AISim3.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\python game\inventwithpython\reversi.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\python game\inventwithpython\sonar.py	/^def makeMove(board, chests, x, y):$/;"	f
+makeMove	.\python game\inventwithpython\tictactoe.py	/^def makeMove(board, letter, move):$/;"	f
+makeNewGrass	.\inventwithpython code\squirrel.py	/^def makeNewGrass(camerax, cameray):$/;"	f
+makeNewGrass	.\python game\inventwithpython2\squirrel.py	/^def makeNewGrass(camerax, cameray):$/;"	f
+makeNewSquirrel	.\inventwithpython code\squirrel.py	/^def makeNewSquirrel(camerax, cameray):$/;"	f
+makeNewSquirrel	.\python game\inventwithpython2\squirrel.py	/^def makeNewSquirrel(camerax, cameray):$/;"	f
+makeTCPHeader	.\beginning python hacking\TCP SYN Flood.py	/^def makeTCPHeader(port, icheckSum="none"):                            #(4)$/;"	f
+makeTCPHeader	.\tcpSynFlood.py	/^def makeTCPHeader(port, icheckSum="none"):                            #(4)$/;"	f
+makeText	.\inventwithpython code\slidepuzzle.py	/^def makeText(text, color, bgcolor, top, left):$/;"	f
+makeText	.\python game\inventwithpython2\slidepuzzle.py	/^def makeText(text, color, bgcolor, top, left):$/;"	f
+makeTextObjs	.\inventwithpython code\pentomino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\inventwithpython code\tetromino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\inventwithpython code\tetrominoforidiots.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\python game\inventwithpython2\pentomino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\python game\inventwithpython2\tetromino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\python game\inventwithpython2\tetrominoforidiots.py	/^def makeTextObjs(text, font, color):$/;"	f
+make_chunk	.\mp4.py	/^def make_chunk(tag, data):$/;"	f
+make_stco	.\mp4.py	/^def make_stco(extra=''):$/;"	f
+make_stsc	.\mp4.py	/^def make_stsc(num_alloc, num_write, sp_addr=0x42424242, do_overflow = False):$/;"	f
+make_stsc_entry	.\mp4.py	/^def make_stsc_entry(start, per, desc):$/;"	f
+make_stsz	.\mp4.py	/^def make_stsz(extra=''):$/;"	f
+make_stts	.\mp4.py	/^def make_stts():$/;"	f
+MEMORY_BASIC_INFORMATION	.\my_debugger_defines.py	/^class MEMORY_BASIC_INFORMATION(Structure):$/;"	c
+MEMORY_BASIC_INFORMATION	.\python hacking programming codes\my_debugger_defines.py	/^class MEMORY_BASIC_INFORMATION(Structure):$/;"	c
+Meta	.\Head_First_Python codes\chapter10\page403b.py	/^    class Meta:$/;"	c	class:BirthDetailsForm
+Meta	.\Head_First_Python codes\chapter10\page407.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\Head_First_Python codes\chapter10\page417.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\Head_First_Python codes\chapter10\page425.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\hfwwg\ee.py	/^    class Meta:$/;"	c	class:BirthDetailsForm
+Meta	.\hfwwg\hfwwg.py	/^		class Meta:$/;"	c	class:SightingForm
+method	.\140611_2.py	/^		@classmethod$/;"	c	class:Times
+mirrorImages	.\violent python codes\6\7-imageMirror.py	/^def mirrorImages(url, dir):$/;"	f
+monitor_debugger	.\file_fuzzer.py	/^    def monitor_debugger(self):$/;"	m	class:file_fuzzer
+monitor_debugger	.\python hacking programming codes\file_fuzzer.py	/^    def monitor_debugger(self):$/;"	m	class:file_fuzzer
+monitor_debugger	.\snapshot.py	/^        def monitor_debugger(self):$/;"	m	class:snapshotter
+MoreEvilAccount	.\140611.py	/^class MoreEvilAccount(EvilAccount):$/;"	c
+MOV	.\pyemu\PyCPU.py	/^    def MOV(self, instruction):$/;"	m	class:PyCPU
+moveGems	.\inventwithpython code\gemgem.py	/^def moveGems(board, movingGems):$/;"	f
+moveGems	.\python game\inventwithpython2\gemgem.py	/^def moveGems(board, movingGems):$/;"	f
+MOVS	.\pyemu\PyCPU.py	/^    def MOVS(self, instruction):$/;"	m	class:PyCPU
+MOVSB	.\pyemu\PyCPU.py	/^    def MOVSB(self, instruction):$/;"	m	class:PyCPU
+MOVSD	.\pyemu\PyCPU.py	/^    def MOVSD(self, instruction):$/;"	m	class:PyCPU
+MOVSW	.\pyemu\PyCPU.py	/^    def MOVSW(self, instruction):$/;"	m	class:PyCPU
+MOVSX	.\pyemu\PyCPU.py	/^    def MOVSX(self, instruction):$/;"	m	class:PyCPU
+MOVZX	.\pyemu\PyCPU.py	/^    def MOVZX(self, instruction):$/;"	m	class:PyCPU
+MSG	.\pyemu\lib\ctypes\wintypes.py	/^class MSG(Structure):$/;"	c
+mul	.\140611_2.py	/^		def mul(cls,x):$/;"	m	class:Times
+MUL	.\pyemu\PyCPU.py	/^    def MUL(self, instruction):$/;"	m	class:PyCPU
+mutate	.\python hacking programming codes\ioctl_fuzzer.py	/^    def mutate( self, inbuffer_size ):$/;"	m	class:ioctl_hook
+mutated	.\ioctl_fuzzer.py	/^    def mutated(self,inbuffer_size):$/;"	m	class:ioctl_hook
+mutate_file	.\file_fuzzer.py	/^    def mutate_file(self):$/;"	m	class:file_fuzzer
+mutate_file	.\python hacking programming codes\file_fuzzer.py	/^    def mutate_file( self ):$/;"	m	class:file_fuzzer
+MyHero	.\beginning python hacking\클래스의 생성.py	/^class MyHero(Hero):                                              #(6)$/;"	c
+my_cmp_handler	.\pyemu\examples\idapyemu_path_enumeration.py	/^def my_cmp_handler(emu, address, op1, op2, op3):$/;"	f
+my_library_handler	.\pyemu\examples\pydbgpyemu.py	/^def my_library_handler(library, address, dll):$/;"	f
+my_memory_access_handler	.\pyemu\examples\idapyemu_memory_access.py	/^def my_memory_access_handler(emu, address, value, size, type):$/;"	f
+my_memory_handler	.\pyemu\examples\idapyemu_test_case.py	/^def my_memory_handler(emu, address, value, size, type):$/;"	f
+my_mnemonic_handler	.\pyemu\examples\idapyemu_test_case.py	/^def my_mnemonic_handler(emu, mnemonic, address, op1value, op2value, op3value):$/;"	f
+my_opcode_handler	.\pyemu\examples\idapyemu_test_case.py	/^def my_opcode_handler(emu, opcode, address, op1value, op2value, op3value):$/;"	f
+my_pc_handler	.\pyemu\examples\idapyemu_test_case.py	/^def my_pc_handler(emu, address):$/;"	f
+my_register_handler	.\pyemu\examples\idapyemu_test_case.py	/^def my_register_handler(emu, register, value, type):$/;"	f
+my_ret_handler	.\pyemu\examples\idapyemu_return_value.py	/^def my_ret_handler(emu, address):$/;"	f
+n	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def n(bb, ee):$/;"	f
+n	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def n(bb, ee):$/;"	f
+name	.\pyemu\PyEmu.py	/^		The ugliest class name ever.	Really the PyEmu class for handling$/;"	c	class:PyEmu
+NEG	.\pyemu\PyCPU.py	/^    def NEG(self, instruction):$/;"	m	class:PyCPU
+negative_log_likelihood	.\machine_learning.py	/^    def negative_log_likelihood(self, y):$/;"	m	class:LogisticRegression
+nmapScan	.\nmapScan.py	/^def nmapScan(Host, Port):$/;"	f
+nmapScan	.\violent python codes\2\2-nmapScan.py	/^def nmapScan(tgtHost,tgtPort):$/;"	f
+nmapScan	.\violent python codes\2\tonis_nmap.py	/^def nmapScan(tgtHost,tgtPort):$/;"	f
+NOP	.\pyemu\PyCPU.py	/^    def NOP(self, instruction):$/;"	m	class:PyCPU
+NOT	.\pyemu\PyCPU.py	/^    def NOT(self, instruction):$/;"	m	class:PyCPU
+notify	.\file_fuzzer.py	/^    def notify(self):$/;"	m	class:file_fuzzer
+notify	.\python hacking programming codes\file_fuzzer.py	/^    def notify(self):$/;"	m	class:file_fuzzer
+now	.\140611_2.py	/^		def now( ):$/;"	m	class:Date
+nqueen	.\nqueenalgorithm.py	/^def nqueen(sol, N):$/;"	f
+o	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def o(bbb, cc):$/;"	f
+o	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def o(bbb, cc):$/;"	f
+OleDLL	.\pyemu\lib\ctypes\__init__.py	/^    class OleDLL(CDLL):$/;"	c	class:PyDLL
+opener	.\p128.py	/^def opener(filenames):$/;"	f
+opener	.\p129.py	/^def opener(target):$/;"	f
+openFile	.\beginning python hacking\파일 다루기.py	/^def openFile(fileName):$/;"	f
+open_process	.\my_debugger.py	/^    def open_process(self,pid):$/;"	m	class:debugger
+open_process	.\python hacking programming codes\my_debugger.py	/^    def open_process(self,pid):$/;"	m	class:debugger
+open_thread	.\my_debugger.py	/^    def open_thread(self,thread_id):$/;"	m	class:debugger
+open_thread	.\python hacking programming codes\my_debugger.py	/^    def open_thread (self, thread_id):$/;"	m	class:debugger
+operand_so	.\pyemu\PyInstruction.py	/^		def operand_so(self):$/;"	m	class:PyInstruction
+OR	.\pyemu\PyCPU.py	/^    def OR(self, instruction):$/;"	m	class:PyCPU
+p	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def p(bbb, ff):$/;"	f
+p	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def p(bbb, ff):$/;"	f
+Page	.\violent python codes\2\4-massCompromise.py	/^        injectPage(ftp, defPage, redirect)$/;"	f	function:attack/Page
+Page	.\violent python codes\2\4-massCompromise.py	/^    for defPage in defPages:$/;"	f	function:attack
+Page	.\violent python codes\2\tonis_ftp3.py	/^		injectPage(ftp,defPage,redirect)$/;"	f	function:attack/Page
+Page	.\violent python codes\2\tonis_ftp3.py	/^	for defPage in defPages:$/;"	f	function:attack
+Pages	.\violent python codes\2\4-massCompromise.py	/^    defPages = returnDefault(ftp)$/;"	f	function:attack
+Pages	.\violent python codes\2\tonis_ftp3.py	/^	defPages=returnDefault(ftp)$/;"	f	function:attack
+para	.\Head_First_Python codes\chapter7\page262.py	/^def para(para_text):$/;"	f
+para	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+para	.\Head_First_Python codes\chapter9\page333.py	/^def para(para_text):$/;"	f
+para	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+para	.\webapp\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+para	.\yate.py	/^def para(para_text):$/;"	f
+parse_data_directories	.\pyemu\lib\pefile.py	/^    def parse_data_directories(self):$/;"	m	class:PE
+parse_debug_directory	.\pyemu\lib\pefile.py	/^    def parse_debug_directory(self, rva, size):$/;"	m	class:PE
+parse_delay_import_directory	.\pyemu\lib\pefile.py	/^    def parse_delay_import_directory(self, rva, size):$/;"	m	class:PE
+parse_directory_bound_imports	.\pyemu\lib\pefile.py	/^    def parse_directory_bound_imports(self, rva, size):$/;"	m	class:PE
+parse_directory_tls	.\pyemu\lib\pefile.py	/^    def parse_directory_tls(self, rva, size):$/;"	m	class:PE
+parse_export_directory	.\pyemu\lib\pefile.py	/^    def parse_export_directory(self, rva, size):$/;"	m	class:PE
+parse_imports	.\pyemu\lib\pefile.py	/^    def parse_imports(self, original_first_thunk, first_thunk, forwarder_chain):$/;"	m	class:PE
+parse_import_directory	.\pyemu\lib\pefile.py	/^    def parse_import_directory(self, rva, size):$/;"	m	class:PE
+parse_relocations	.\pyemu\lib\pefile.py	/^    def parse_relocations(self, data_rva, rva, size):$/;"	m	class:PE
+parse_relocations_directory	.\pyemu\lib\pefile.py	/^    def parse_relocations_directory(self, rva, size):$/;"	m	class:PE
+parse_resources_directory	.\pyemu\lib\pefile.py	/^    def parse_resources_directory(self, rva, size=0, base_rva = None, level = 0):$/;"	m	class:PE
+parse_resource_data_entry	.\pyemu\lib\pefile.py	/^    def parse_resource_data_entry(self, rva):$/;"	m	class:PE
+parse_resource_entry	.\pyemu\lib\pefile.py	/^    def parse_resource_entry(self, rva):$/;"	m	class:PE
+parse_sections	.\pyemu\lib\pefile.py	/^    def parse_sections(self, offset):$/;"	m	class:PE
+parse_version_information	.\pyemu\lib\pefile.py	/^    def parse_version_information(self, version_struct):$/;"	m	class:PE
+PE	.\pyemu\lib\pefile.py	/^class PE:$/;"	c
+PEFormatError	.\pyemu\lib\pefile.py	/^class PEFormatError(Exception):$/;"	c
+PEMemory	.\pyemu\PyMemory.py	/^class PEMemory(PyMemory):$/;"	c
+PEPyEmu	.\pyemu\PyEmu.py	/^class PEPyEmu(PyEmu):$/;"	c
+perimeter	.\140611_property.py	/^    def perimeter(self):$/;"	m	class:Circle
+pktPrint	.\violent python codes\5\1-testSniff.py	/^def pktPrint(pkt):$/;"	f
+playAgain	.\python game\inventwithpython\AISim1.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\AISim2.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\AISim3.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\bagels.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\hangman.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\reversi.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\sonar.py	/^def playAgain():$/;"	f
+playAgain	.\python game\inventwithpython\tictactoe.py	/^def playAgain():$/;"	f
+playerHasHitBaddie	.\python game\inventwithpython\dodger.py	/^def playerHasHitBaddie(playerRect, baddies):$/;"	f
+plotIPs	.\violent python codes\4\4-googleEarthPcap.py	/^def plotIPs(pcap):$/;"	f
+POD	.\beginning python hacking\Ping Of Death.py	/^def POD(id):                                                    #(1)$/;"	f
+POD	.\pingOfDeath.py	/^def POD(id):$/;"	f
+POINT	.\pyemu\lib\ctypes\wintypes.py	/^class POINT(Structure):$/;"	c
+POINTER	.\pyemu\lib\ctypes\__init__.py	/^def POINTER(cls):$/;"	f
+pointer	.\pyemu\lib\ctypes\__init__.py	/^def pointer(inst):$/;"	f
+POP	.\pyemu\PyCPU.py	/^    def POP(self, instruction):$/;"	m	class:PyCPU
+portScan	.\portScan.py	/^def portScan(tgtHost, tgtPorts):$/;"	f
+portScan	.\violent python codes\2\1-portScan.py	/^def portScan(tgtHost, tgtPorts):$/;"	f
+portScan	.\violent python codes\2\tonis_portscan.py	/^def portScan(tgtHost,tgtPorts):$/;"	f
+post	.\Head_First_Python codes\chapter10\page417.py	/^    def post(self): $/;"	m	class:SightingInputPage
+post	.\Head_First_Python codes\chapter10\page425.py	/^    def post(self): $/;"	m	class:SightingInputPage
+post	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    def post(self): $/;"	m	class:SightingInputPage
+printCallLog	.\violent python codes\3\5-skypeParse.py	/^def printCallLog(skypeDB):$/;"	f
+printCallLog	.\violent python codes\3\tonis_skype.py	/^def printCallLog(skypeDB):$/;"	f
+printContacts	.\violent python codes\3\5-skypeParse.py	/^def printContacts(skypeDB):$/;"	f
+printContacts	.\violent python codes\3\tonis_skype.py	/^def printContacts(skypeDB):$/;"	f
+printCookies	.\violent python codes\3\6-firefoxParse.py	/^def printCookies(cookiesDB):$/;"	f
+printCookies	.\violent python codes\3\tonis_firefox.py	/^def printCookies(cookiesDB):$/;"	f
+printCookies	.\violent python codes\6\4-printCookies.py	/^def printCookies(url):$/;"	f
+printDownloads	.\violent python codes\3\6-firefoxParse.py	/^def printDownloads(downloadDB):$/;"	f
+printDownloads	.\violent python codes\3\tonis_firefox.py	/^def printDownloads(downloadDB):$/;"	f
+printer	.\p129.py	/^def printer():$/;"	f
+printf_randomizer	.\printf_random.py	/^def printf_randomizer(dbg):$/;"	f
+printf_randomizer	.\python hacking programming codes\printf_random.py	/^def printf_randomizer(dbg):$/;"	f
+printGoogle	.\violent python codes\3\6-firefoxParse.py	/^def printGoogle(placesDB):$/;"	f
+printGoogle	.\violent python codes\3\tonis_firefox.py	/^def printGoogle(placesDB):$/;"	f
+printHero	.\beginning python hacking\클래스의 생성.py	/^    def printHero(self):                                         #(4)$/;"	m	class:Hero
+printHistory	.\violent python codes\3\6-firefoxParse.py	/^def printHistory(placesDB):$/;"	f
+printHistory	.\violent python codes\3\tonis_firefox.py	/^def printHistory(placesDB):$/;"	f
+printItem	.\beginning python hacking\modHero.py	/^def printItem(inSkill, idx=0):                        #(2)$/;"	f
+printItem	.\beginning python hacking\사용자 정의 함수.py	/^def printItem(inSkill, idx=0):                             #(1)$/;"	f
+printLinks	.\linkParser.py	/^def printLinks(url):$/;"	f
+printLinks	.\violent python codes\6\6-linkParser.py	/^def printLinks(url):$/;"	f
+printMessage	.\violent python codes\3\7-iphoneMessages.py	/^def printMessage(msgDB):$/;"	f
+printMessages	.\violent python codes\3\5-skypeParse.py	/^def printMessages(skypeDB):$/;"	f
+printMessages	.\violent python codes\3\tonis_skype.py	/^def printMessages(skypeDB):$/;"	f
+printMeta	.\pdfRead.py	/^def printMeta(fileName):$/;"	f
+printMeta	.\violent python codes\3\3-pdfRead.py	/^def printMeta(fileName):$/;"	f
+printMeta	.\violent python codes\3\tonis_metadata.py	/^def printMeta(fileName):$/;"	f
+printNets	.\violent python codes\3\1-discoverNetworks.py	/^def printNets(username, password):$/;"	f
+printNets	.\violent python codes\3\tonis_discovernetwork.py	/^def printNets():$/;"	f
+printNets	.\violent python codes\3\tonis_wigle.py	/^def printNets(username,password):$/;"	f
+printPcap	.\violent python codes\4\2-printDirection.py	/^def printPcap(pcap):$/;"	f
+printPcap	.\violent python codes\4\3-geoPrint.py	/^def printPcap(pcap):$/;"	f
+printProfile	.\violent python codes\3\5-skypeParse.py	/^def printProfile(skypeDB):$/;"	f
+printProfile	.\violent python codes\3\tonis_skype.py	/^def printProfile(skypeDB):$/;"	f
+printRecord	.\printGeo.py	/^def printRecord(target):$/;"	f
+printRecord	.\violent python codes\4\1-geoIP.py	/^def printRecord(tgt):$/;"	f
+printResults	.\violent python codes\7\2-virusCheck.py	/^def printResults(url):$/;"	f
+printSkill	.\beginning python hacking\클래스의 생성.py	/^    def printSkill(self):$/;"	m	class:MyHero
+print_info	.\pyemu\lib\pefile.py	/^    def print_info(self):$/;"	m	class:PE
+print_lol	.\Head_First_Python codes\chapter1\page65.py	/^def print_lol(a_list):$/;"	f
+print_lol	.\Head_First_Python codes\chapter2\page103.py	/^def print_lol(a_list, indent=True, level=0):$/;"	f
+print_lol	.\Head_First_Python codes\chapter2\page73.py	/^def print_lol(the_list):$/;"	f
+print_lol	.\Head_First_Python codes\chapter2\page94.py	/^def print_lol(a_list, level=0):$/;"	f
+print_lol	.\Head_First_Python codes\chapter4\page163.py	/^def print_lol(the_list, indent=False, level=0, fh=sys.stdout):$/;"	f
+print_usage	.\file_fuzzer.py	/^def print_usage():$/;"	f
+print_usage	.\python hacking programming codes\file_fuzzer.py	/^def print_usage():$/;"	f
+PROCESS_INFORMATION	.\my_debugger_defines.py	/^class PROCESS_INFORMATION(Structure):$/;"	c
+PROCESS_INFORMATION	.\python hacking programming codes\my_debugger_defines.py	/^class PROCESS_INFORMATION(Structure):$/;"	c
+PROC_STRUCT	.\my_debugger_defines.py	/^class PROC_STRUCT(Structure):$/;"	c
+PROC_STRUCT	.\python hacking programming codes\my_debugger_defines.py	/^class PROC_STRUCT(Structure):$/;"	c
+pullDownAllGems	.\inventwithpython code\gemgem.py	/^def pullDownAllGems(board):$/;"	f
+pullDownAllGems	.\python game\inventwithpython2\gemgem.py	/^def pullDownAllGems(board):$/;"	f
+PUSH	.\pyemu\PyCPU.py	/^    def PUSH(self, instruction):$/;"	m	class:PyCPU
+put_to_store	.\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\Head_First_Python codes\chapter7\page259.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\webapp\cgi-bin\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+PyContext	.\pyemu\PyContext.py	/^class PyContext:$/;"	c
+PyCPU	.\pyemu\PyCPU.py	/^class PyCPU:$/;"	c
+PyDbgMemory	.\pyemu\PyMemory.py	/^class PyDbgMemory(PyMemory):$/;"	c
+PyDbgPyEmu	.\pyemu\PyEmu.py	/^class PyDbgPyEmu(PyEmu):$/;"	c
+PyDLL	.\pyemu\lib\ctypes\__init__.py	/^class PyDLL(CDLL):$/;"	c
+PyEmu	.\pyemu\PyEmu.py	/^class PyEmu:$/;"	c
+PyFlags	.\pyemu\PyFlags.py	/^class PyFlags:$/;"	c
+PYFUNCTYPE	.\pyemu\lib\ctypes\__init__.py	/^def PYFUNCTYPE(restype, *argtypes):$/;"	f
+PyInstruction	.\pyemu\PyInstruction.py	/^class PyInstruction:$/;"	c
+PyLinux	.\pyemu\PyOS.py	/^class PyLinux:$/;"	c
+PyMemory	.\pyemu\PyMemory.py	/^class PyMemory:$/;"	c
+PyMemoryPage	.\pyemu\PyMemory.py	/^class PyMemoryPage:$/;"	c
+PyOperand	.\pyemu\PyInstruction.py	/^class PyOperand:$/;"	c
+PyWindows	.\pyemu\PyOS.py	/^class PyWindows:$/;"	c
+py_object	.\pyemu\lib\ctypes\__init__.py	/^class py_object(_SimpleCData):$/;"	c
+query_twitter	.\violent python codes\6\9-twitterRecon.py	/^    def query_twitter(self, query):$/;"	m	class:reconPerson
+radio_button	.\Head_First_Python codes\chapter7\page262.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\Head_First_Python codes\chapter9\page333.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\webapp\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button_id	.\Head_First_Python codes\chapter9\page333.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+radio_button_id	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+radio_button_id	.\webapp\cgi-bin\yate.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+radio_button_id	.\yate.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+raise_exception	.\pyemu\PyEmu.py	/^		def raise_exception(self, exception, address):$/;"	m	class:PyEmu
+RCL	.\pyemu\PyCPU.py	/^    def RCL(self, instruction):$/;"	m	class:PyCPU
+RCR	.\pyemu\PyCPU.py	/^    def RCR(self, instruction):$/;"	m	class:PyCPU
+readLevelsFile	.\inventwithpython code\starpusher.py	/^def readLevelsFile(filename):$/;"	f
+readLevelsFile	.\python game\inventwithpython2\starpusher.py	/^def readLevelsFile(filename):$/;"	f
+read_process_memory	.\python hacking programming codes\my_debugger.py	/^    def read_process_memory(self,address,length):$/;"	m	class:debugger
+reconPerson	.\violent python codes\6\9-twitterClass.py	/^class reconPerson:$/;"	c
+reconPerson	.\violent python codes\6\9-twitterRecon.py	/^class reconPerson:$/;"	c
+reconPerson	.\violent python codes\6\twitterClass.py	/^class reconPerson:$/;"	c
+RECT	.\pyemu\lib\ctypes\wintypes.py	/^class RECT(Structure):$/;"	c
+RelocationData	.\pyemu\lib\pefile.py	/^class RelocationData(DataContainer):$/;"	c
+removeCompleteLines	.\inventwithpython code\pentomino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\inventwithpython code\tetromino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\inventwithpython code\tetrominoforidiots.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\python game\inventwithpython2\pentomino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\python game\inventwithpython2\tetromino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\python game\inventwithpython2\tetrominoforidiots.py	/^def removeCompleteLines(board):$/;"	f
+rep	.\pyemu\PyInstruction.py	/^		def rep(self):$/;"	m	class:PyInstruction
+repe	.\pyemu\PyInstruction.py	/^		def repe(self):$/;"	m	class:PyInstruction
+replaceString	.\150130_apihooking.py	/^def replaceString(dbg, args):                                #(1)$/;"	f
+replaceString	.\beginning python hacking\APIHooking.py	/^def replaceString(dbg, args):                                #(1)$/;"	f
+repne	.\pyemu\PyInstruction.py	/^		def repne(self):$/;"	m	class:PyInstruction
+resetAnimation	.\inventwithpython code\slidepuzzle.py	/^def resetAnimation(board, allMoves):$/;"	f
+resetAnimation	.\python game\inventwithpython2\slidepuzzle.py	/^def resetAnimation(board, allMoves):$/;"	f
+resetBoard	.\inventwithpython code\flippy.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\python game\inventwithpython2\flippy.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\python game\inventwithpython\AISim1.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\python game\inventwithpython\AISim2.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\python game\inventwithpython\AISim3.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\python game\inventwithpython\reversi.py	/^def resetBoard(board):$/;"	f
+reset_stack	.\pyemu\examples\idapyemu_return_value.py	/^def reset_stack(emu, value1, value2, value3):$/;"	f
+ResourceDataEntryData	.\pyemu\lib\pefile.py	/^class ResourceDataEntryData(DataContainer):$/;"	c
+ResourceDirData	.\pyemu\lib\pefile.py	/^class ResourceDirData(DataContainer):$/;"	c
+ResourceDirEntryData	.\pyemu\lib\pefile.py	/^class ResourceDirEntryData(DataContainer):$/;"	c
+RET	.\pyemu\PyCPU.py	/^    def RET(self, instruction):$/;"	m	class:PyCPU
+retBanner	.\ftp_scanner.py	/^def retBanner(ip, port):$/;"	f
+retBanner	.\violent python codes\1\1-vulnScanner.py	/^def retBanner(ip, port):$/;"	f
+retBtAddr	.\violent python codes\5\10-iphoneFinder.py	/^def retBtAddr(addr):$/;"	f
+retGeoStr	.\violent python codes\4\3-geoPrint.py	/^def retGeoStr(ip):$/;"	f
+retKML	.\violent python codes\4\4-googleEarthPcap.py	/^def retKML(ip):$/;"	f
+retrieve_flags	.\pyemu\lib\pefile.py	/^    def retrieve_flags(self, flag_dict, flag_filter):$/;"	m	class:PE
+returnDefault	.\violent python codes\2\4-defaultPages.py	/^def returnDefault(ftp):$/;"	f
+returnDefault	.\violent python codes\2\4-massCompromise.py	/^def returnDefault(ftp):$/;"	f
+returnDefault	.\violent python codes\2\tonis_ftp3.py	/^def returnDefault(ftp):$/;"	f
+returnDir	.\violent python codes\3\2-dumpRecycleBin.py	/^def returnDir():$/;"	f
+returnDir	.\violent python codes\3\tonis_recycle.py	/^def returnDir():$/;"	f
+ret_handler	.\python hacking programming codes\addnum_function_call.py	/^def ret_handler(emu, address):$/;"	f
+revealBoxesAnimation	.\inventwithpython code\memorypuzzle.py	/^def revealBoxesAnimation(board, boxesToReveal):$/;"	f
+revealBoxesAnimation	.\memoryPuzzle.py	/^def revealBoxesAnimation(board, boxesToReveal):$/;"	f
+revealBoxesAnimation	.\python game\inventwithpython2\memorypuzzle.py	/^def revealBoxesAnimation(board, boxesToReveal):$/;"	f
+rfcommCon	.\violent python codes\5\11-rfcommScan.py	/^def rfcommCon(addr, port):$/;"	f
+RGB	.\pyemu\lib\ctypes\wintypes.py	/^def RGB(red, green, blue):$/;"	f
+ROL	.\pyemu\PyCPU.py	/^    def ROL(self, instruction):$/;"	m	class:PyCPU
+ROR	.\pyemu\PyCPU.py	/^    def ROR(self, instruction):$/;"	m	class:PyCPU
+RotX	.\drawRobotics.py	/^def RotX(phi):$/;"	f
+RotX	.\sympy1.py	/^def RotX(a):$/;"	f
+RotY	.\drawRobotics.py	/^def RotY(theta):$/;"	f
+RotZ	.\drawRobotics.py	/^def RotZ(psi):$/;"	f
+RotZ	.\sympy1.py	/^def RotZ(a):$/;"	f
+run	.\ioctl_fuzzer.py	/^    def run(self,regs):$/;"	m	class:ioctl_hook
+run	.\my_debugger.py	/^    def run(self):$/;"	m	class:debugger
+run	.\python hacking programming codes\ioctl_fuzzer.py	/^    def run( self, regs ):$/;"	m	class:ioctl_hook
+run	.\python hacking programming codes\my_debugger.py	/^    def run(self):$/;"	m	class:debugger
+run	.\test.py	/^	def run(self):$/;"	m	class:Connection
+run	.\violent python codes\5720.py	/^	def run(self):$/;"	m	class:Connection
+run	.\violent python codes\5\7-uavSniff.py	/^    def run(self):$/;"	m	class:interceptThread
+runGame	.\inventwithpython code\flippy.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\fourinarow.py	/^def runGame(isFirstGame):$/;"	f
+runGame	.\inventwithpython code\gemgem.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\pentomino.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\squirrel.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\tetromino.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\tetrominoforidiots.py	/^def runGame():$/;"	f
+runGame	.\inventwithpython code\wormy.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\flippy.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\fourinarow.py	/^def runGame(isFirstGame):$/;"	f
+runGame	.\python game\inventwithpython2\gemgem.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\pentomino.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\squirrel.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\tetromino.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\tetrominoforidiots.py	/^def runGame():$/;"	f
+runGame	.\python game\inventwithpython2\wormy.py	/^def runGame():$/;"	f
+rungame	.\wormy.py	/^def rungame():$/;"	f
+runLevel	.\inventwithpython code\starpusher.py	/^def runLevel(levels, levelNum):$/;"	f
+runLevel	.\python game\inventwithpython2\starpusher.py	/^def runLevel(levels, levelNum):$/;"	f
+s	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def s(bbb, bb, ee):$/;"	f
+s	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def s(bbb, bb, ee):$/;"	f
+SAL	.\pyemu\PyCPU.py	/^    def SAL(self, instruction):$/;"	m	class:PyCPU
+sanitize	.\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\Head_First_Python codes\chapter5\page185.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter5\page187.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter5\page193.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter5\page197.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter5\page203.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter5\page205.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter6\page211.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter6\page217.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter6\page222.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter6\page231.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter6\page245.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\Head_First_Python codes\chapter7\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\Head_First_Python codes\chapter8\page321.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\webapp\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize_value	.\pyemu\PyCPU.py	/^    def sanitize_value(self, value, size):$/;"	m	class:PyCPU
+SAR	.\pyemu\PyCPU.py	/^    def SAR(self, instruction):$/;"	m	class:PyCPU
+save_params	.\machine_learning.py	/^def save_params(param1,param2,param3,param4):  $/;"	f
+save_test_case	.\ioctl_fuzzer.py	/^    def save_test_case(self,ioctl_code,inbuffer_size,in_buffer,mutated_buffer):$/;"	m	class:ioctl_hook
+save_test_case	.\python hacking programming codes\ioctl_fuzzer.py	/^    def save_test_case( self, ioctl_code, in_buffer, mutated_buffer ):$/;"	m	class:ioctl_hook
+SBB	.\pyemu\PyCPU.py	/^    def SBB(self, instruction):$/;"	m	class:PyCPU
+scanTest	.\violent python codes\4\10-idsFoil.py	/^def scanTest(src, dst, iface, count):$/;"	f
+SCAS	.\pyemu\PyCPU.py	/^    def SCAS(self, instruction):$/;"	m	class:PyCPU
+SCASB	.\pyemu\PyCPU.py	/^    def SCASB(self, instruction):$/;"	m	class:PyCPU
+SCASD	.\pyemu\PyCPU.py	/^    def SCASD(self, instruction):$/;"	m	class:PyCPU
+SCASW	.\pyemu\PyCPU.py	/^    def SCASW(self, instruction):$/;"	m	class:PyCPU
+sdpBrowse	.\violent python codes\5\12-sdpScan.py	/^def sdpBrowse(addr):$/;"	f
+secs2time	.\Head_First_Python codes\chapter11\find_it.py	/^def secs2time(seconds):$/;"	f
+secs2time	.\Head_First_Python codes\chapter11\page454.py	/^def secs2time(seconds):$/;"	f
+secs2time	.\Head_First_Python codes\chapter11\tm2secs2tm.py	/^def secs2time(seconds):$/;"	f
+SectionStructure	.\pyemu\lib\pefile.py	/^class SectionStructure(Structure):$/;"	c
+sendMail	.\violent python codes\6\10-sendMail.py	/^def sendMail(user,pwd,to,subject,text):$/;"	f
+sendMail	.\violent python codes\6\10-sendSpam.py	/^def sendMail(user,pwd,to,subject,text):$/;"	f
+send_command	.\violent python codes\2\3-botNet.py	/^    def send_command(self, cmd):$/;"	m	class:Client
+send_command	.\violent python codes\2\3-pxsshCommand.py	/^def send_command(s, cmd):$/;"	f
+send_command	.\violent python codes\2\3-sshCommand.py	/^def send_command(child, cmd):$/;"	f
+send_command	.\violent python codes\2\tonis_botnet.py	/^	def send_command(self,cmd):$/;"	m	class:Client
+send_command	.\violent python codes\2\tonis_sshd.py	/^def send_command(child,cmd):$/;"	f
+send_command	.\violent python codes\2\tonis_sshd2.py	/^def send_command(s,cmd):$/;"	f
+send_to_server	.\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\get2inputsapp.py	/^def send_to_server(url,post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter8\page311.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter8\page315.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter8\webapp-chapter8\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter9\page341.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter9\page381.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter9\webapp-chapter9\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\Head_First_Python codes\chapter9\webapp-chapter9\get2inputsapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\webapp\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\webapp\coachapp_sqlite3.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\webapp\get2inputsapp.py	/^def send_to_server(url,post_data=None):$/;"	f
+SETA	.\pyemu\PyCPU.py	/^    def SETA(self, instruction):$/;"	m	class:PyCPU
+SETAE	.\pyemu\PyCPU.py	/^    def SETAE(self, instruction):$/;"	m	class:PyCPU
+SETB	.\pyemu\PyCPU.py	/^    def SETB(self, instruction):$/;"	m	class:PyCPU
+SETBE	.\pyemu\PyCPU.py	/^    def SETBE(self, instruction):$/;"	m	class:PyCPU
+SETC	.\pyemu\PyCPU.py	/^    def SETC(self, instruction):$/;"	m	class:PyCPU
+SETE	.\pyemu\PyCPU.py	/^    def SETE(self, instruction):$/;"	m	class:PyCPU
+SETG	.\pyemu\PyCPU.py	/^    def SETG(self, instruction):$/;"	m	class:PyCPU
+SETGE	.\pyemu\PyCPU.py	/^    def SETGE(self, instruction):$/;"	m	class:PyCPU
+SETL	.\pyemu\PyCPU.py	/^    def SETL(self, instruction):$/;"	m	class:PyCPU
+SETLE	.\pyemu\PyCPU.py	/^    def SETLE(self, instruction):$/;"	m	class:PyCPU
+SETNA	.\pyemu\PyCPU.py	/^    def SETNA(self, instruction):$/;"	m	class:PyCPU
+SETNAE	.\pyemu\PyCPU.py	/^    def SETNAE(self, instruction):$/;"	m	class:PyCPU
+SETNB	.\pyemu\PyCPU.py	/^    def SETNB(self, instruction):$/;"	m	class:PyCPU
+SETNBE	.\pyemu\PyCPU.py	/^    def SETNBE(self, instruction):$/;"	m	class:PyCPU
+SETNC	.\pyemu\PyCPU.py	/^    def SETNC(self, instruction):$/;"	m	class:PyCPU
+SETNE	.\pyemu\PyCPU.py	/^    def SETNE(self, instruction):$/;"	m	class:PyCPU
+SETNG	.\pyemu\PyCPU.py	/^    def SETNG(self, instruction):$/;"	m	class:PyCPU
+SETNGE	.\pyemu\PyCPU.py	/^    def SETNGE(self, instruction):$/;"	m	class:PyCPU
+SETNL	.\pyemu\PyCPU.py	/^    def SETNL(self, instruction):$/;"	m	class:PyCPU
+SETNLE	.\pyemu\PyCPU.py	/^    def SETNLE(self, instruction):$/;"	m	class:PyCPU
+SETNO	.\pyemu\PyCPU.py	/^    def SETNO(self, instruction):$/;"	m	class:PyCPU
+SETNP	.\pyemu\PyCPU.py	/^    def SETNP(self, instruction):$/;"	m	class:PyCPU
+SETNS	.\pyemu\PyCPU.py	/^    def SETNS(self, instruction):$/;"	m	class:PyCPU
+SETNZ	.\pyemu\PyCPU.py	/^    def SETNZ(self, instruction):$/;"	m	class:PyCPU
+SETO	.\pyemu\PyCPU.py	/^    def SETO(self, instruction):$/;"	m	class:PyCPU
+SETP	.\pyemu\PyCPU.py	/^    def SETP(self, instruction):$/;"	m	class:PyCPU
+SETPE	.\pyemu\PyCPU.py	/^    def SETPE(self, instruction):$/;"	m	class:PyCPU
+SETPO	.\pyemu\PyCPU.py	/^    def SETPO(self, instruction):$/;"	m	class:PyCPU
+SetPointerType	.\pyemu\lib\ctypes\__init__.py	/^def SetPointerType(pointer, cls):$/;"	f
+SETPS	.\pyemu\PyCPU.py	/^    def SETPS(self, instruction):$/;"	m	class:PyCPU
+setupHandler	.\conficker.py	/^def setupHandler (configFile, lhost, lport ):$/;"	f
+setupHandler	.\violent python codes\2\5-conficker.py	/^def setupHandler(configFile, lhost, lport):$/;"	f
+setupHandler	.\violent python codes\2\tonis_conficker.py	/^def setupHandler(configFile,lhost,lport):$/;"	f
+setup_context	.\pyemu\PyEmu.py	/^		def setup_context(self):$/;"	m	class:IDAPyEmu
+setup_context	.\pyemu\PyEmu.py	/^		def setup_context(self):$/;"	m	class:PEPyEmu
+setup_context	.\pyemu\PyEmu.py	/^		def setup_context(self):$/;"	m	class:PyDbgPyEmu
+setup_os	.\pyemu\PyEmu.py	/^		def setup_os(self):$/;"	m	class:IDAPyEmu
+setup_os	.\pyemu\PyEmu.py	/^		def setup_os(self):$/;"	m	class:PEPyEmu
+SETZ	.\pyemu\PyCPU.py	/^    def SETZ(self, instruction):$/;"	m	class:PyCPU
+set_arithmetic_flags	.\pyemu\PyCPU.py	/^    def set_arithmetic_flags(self, op1, op2, result, size, direction=None):$/;"	m	class:PyCPU
+set_context	.\pyemu\PyCPU.py	/^    def set_context(self, context):$/;"	m	class:PyCPU
+set_data	.\pyemu\PyMemory.py	/^		def set_data(self, data):$/;"	m	class:PyMemoryPage
+set_debug	.\pyemu\PyCPU.py	/^    def set_debug(self, level):$/;"	m	class:PyCPU
+set_debug	.\pyemu\PyMemory.py	/^		def set_debug(self, level):$/;"	m	class:PyMemory
+set_debug	.\pyemu\PyMemory.py	/^		def set_debug(self, level):$/;"	m	class:PyMemoryPage
+set_debug	.\pyemu\PyOS.py	/^		def set_debug(self, level):$/;"	m	class:PyLinux
+set_debug	.\pyemu\PyOS.py	/^		def set_debug(self, level):$/;"	m	class:PyWindows
+set_exception_handler	.\pyemu\PyEmu.py	/^		def set_exception_handler(self, exception, handler):$/;"	m	class:PyEmu
+set_file_offset	.\pyemu\lib\pefile.py	/^    def set_file_offset(self, offset):$/;"	m	class:Structure
+set_flags	.\pyemu\lib\pefile.py	/^    def set_flags(self, obj, flag_field, flags):$/;"	m	class:PE
+set_flags	.\pyemu\PyCPU.py	/^    def set_flags(self, mnemonic, op1, op2, result, size):$/;"	m	class:PyCPU
+set_heap_access_handler	.\pyemu\PyEmu.py	/^		def set_heap_access_handler(self, handler):$/;"	m	class:PyEmu
+set_heap_read_handler	.\pyemu\PyEmu.py	/^		def set_heap_read_handler(self, handler):$/;"	m	class:PyEmu
+set_heap_write_handler	.\pyemu\PyEmu.py	/^		def set_heap_write_handler(self, handler):$/;"	m	class:PyEmu
+set_instruction	.\pyemu\PyInstruction.py	/^		def set_instruction(self, instruction):$/;"	m	class:PyInstruction
+set_interrupt_handler	.\pyemu\PyEmu.py	/^		def set_interrupt_handler(self, interrupt, handler):$/;"	m	class:PyEmu
+set_library_handler	.\pyemu\PyEmu.py	/^		def set_library_handler(self, function, handler):$/;"	m	class:PyEmu
+set_memory	.\pyemu\PyCPU.py	/^    def set_memory(self, address, value, size):$/;"	m	class:PyCPU
+set_memory	.\pyemu\PyEmu.py	/^		def set_memory(self, address, value, size=0):$/;"	m	class:PyEmu
+set_memory	.\pyemu\PyMemory.py	/^		def set_memory(self, address, value, size):$/;"	m	class:PyMemory
+set_memory16	.\pyemu\PyCPU.py	/^    def set_memory16(self, address, value):$/;"	m	class:PyCPU
+set_memory32	.\pyemu\PyCPU.py	/^    def set_memory32(self, address, value):$/;"	m	class:PyCPU
+set_memory8	.\pyemu\PyCPU.py	/^    def set_memory8(self, address, value):$/;"	m	class:PyCPU
+set_memory_access_handler	.\pyemu\PyEmu.py	/^		def set_memory_access_handler(self, handler):$/;"	m	class:PyEmu
+set_memory_handler	.\pyemu\PyEmu.py	/^		def set_memory_handler(self, address, handler):$/;"	m	class:PyEmu
+set_memory_read_handler	.\pyemu\PyEmu.py	/^		def set_memory_read_handler(self, handler):$/;"	m	class:PyEmu
+set_memory_write_handler	.\pyemu\PyEmu.py	/^		def set_memory_write_handler(self, handler):$/;"	m	class:PyEmu
+set_mnemonic_handler	.\pyemu\PyEmu.py	/^		def set_mnemonic_handler(self, mnemonic, handler):$/;"	m	class:PyEmu
+set_opcode_handler	.\pyemu\PyEmu.py	/^		def set_opcode_handler(self, opcode, handler):$/;"	m	class:PyEmu
+set_operand	.\pyemu\PyInstruction.py	/^		def set_operand(self, operand):$/;"	m	class:PyOperand
+set_pc_handler	.\pyemu\PyEmu.py	/^		def set_pc_handler(self, address, handler):$/;"	m	class:PyEmu
+set_permissions	.\pyemu\PyMemory.py	/^		def set_permissions(self, permissions):$/;"	m	class:PyMemoryPage
+set_r	.\pyemu\PyMemory.py	/^		def set_r(self):$/;"	m	class:PyMemoryPage
+set_register	.\pyemu\PyCPU.py	/^    def set_register(self, register, value, size):$/;"	m	class:PyCPU
+set_register	.\pyemu\PyEmu.py	/^		def set_register(self, register, value, name=""):$/;"	m	class:PyEmu
+set_register16	.\pyemu\PyCPU.py	/^    def set_register16(self, register, value):$/;"	m	class:PyCPU
+set_register32	.\pyemu\PyCPU.py	/^    def set_register32(self, register, value):$/;"	m	class:PyCPU
+set_register8	.\pyemu\PyCPU.py	/^    def set_register8(self, register, value):$/;"	m	class:PyCPU
+set_register_handler	.\pyemu\PyEmu.py	/^		def set_register_handler(self, register, handler):$/;"	m	class:PyEmu
+set_rw	.\pyemu\PyMemory.py	/^		def set_rw(self):$/;"	m	class:PyMemoryPage
+set_rwx	.\pyemu\PyMemory.py	/^		def set_rwx(self):$/;"	m	class:PyMemoryPage
+set_rx	.\pyemu\PyMemory.py	/^		def set_rx(self):$/;"	m	class:PyMemoryPage
+set_selector	.\pyemu\PyOS.py	/^						def set_selector(self, selector, value):$/;"	m	class:PyWindows.__THREAD.__LDT
+set_selector	.\pyemu\PyOS.py	/^		def set_selector(self, selector, value):$/;"	m	class:PyWindows
+set_shift_flags	.\pyemu\PyCPU.py	/^    def set_shift_flags(self, result, size):$/;"	m	class:PyCPU
+set_stack_access_handler	.\pyemu\PyEmu.py	/^		def set_stack_access_handler(self, handler):$/;"	m	class:PyEmu
+set_stack_argument	.\pyemu\PyEmu.py	/^		def set_stack_argument(self, offset, value, name=""):$/;"	m	class:PyEmu
+set_stack_read_handler	.\pyemu\PyEmu.py	/^		def set_stack_read_handler(self, handler):$/;"	m	class:PyEmu
+set_stack_variable	.\pyemu\PyEmu.py	/^		def set_stack_variable(self, offset, value, size=0, name=""):$/;"	m	class:PyEmu
+set_stack_write_handler	.\pyemu\PyEmu.py	/^		def set_stack_write_handler(self, handler):$/;"	m	class:PyEmu
+set_w	.\pyemu\PyMemory.py	/^		def set_w(self):$/;"	m	class:PyMemoryPage
+set_x	.\pyemu\PyMemory.py	/^		def set_x(self):$/;"	m	class:PyMemoryPage
+shared_dataset	.\machine_learning.py	/^    def shared_dataset(data_x, data_y, borrow=True):$/;"	f	function:load_data
+SHL	.\pyemu\PyCPU.py	/^    def SHL(self, instruction):$/;"	m	class:PyCPU
+should	.\pyemu\PyMemory.py	/^		This class should be extended by any custom memory managers.$/;"	c	class:PyMemoryPage
+showGameOverScreen	.\inventwithpython code\wormy.py	/^def showGameOverScreen():$/;"	f
+showGameOverScreen	.\python game\inventwithpython2\wormy.py	/^def showGameOverScreen():$/;"	f
+showInstructions	.\python game\inventwithpython\sonar.py	/^def showInstructions():$/;"	f
+showPoints	.\python game\inventwithpython\AISim1.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\python game\inventwithpython\AISim2.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\python game\inventwithpython\AISim3.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\python game\inventwithpython\reversi.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showresult	.\hippie_easy.py	/^def showresult(imm,a,rtlallocate):$/;"	f
+showresult	.\python hacking programming codes\hippie_easy.py	/^def showresult(imm, a, rtlallocate, extra = ""):$/;"	f
+showSettingsScreen	.\inventwithpython code\inkspill.py	/^def showSettingsScreen():$/;"	f
+showSettingsScreen	.\python game\inventwithpython2\inkspill.py	/^def showSettingsScreen():$/;"	f
+showStartScreen	.\inventwithpython code\wormy.py	/^def showStartScreen():$/;"	f
+showStartScreen	.\python game\inventwithpython2\wormy.py	/^def showStartScreen():$/;"	f
+showTextScreen	.\inventwithpython code\pentomino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\inventwithpython code\tetromino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\inventwithpython code\tetrominoforidiots.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\python game\inventwithpython2\pentomino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\python game\inventwithpython2\tetromino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\python game\inventwithpython2\tetrominoforidiots.py	/^def showTextScreen(text):$/;"	f
+show_warnings	.\pyemu\lib\pefile.py	/^    def show_warnings(self):$/;"	m	class:PE
+SHR	.\pyemu\PyCPU.py	/^    def SHR(self, instruction):$/;"	m	class:PyCPU
+sid2user	.\violent python codes\3\2-dumpRecycleBin.py	/^def sid2user(sid):$/;"	f
+sid2user	.\violent python codes\3\tonis_recycle.py	/^def sid2user(sid):$/;"	f
+Sighting	.\Head_First_Python codes\chapter10\page397.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\Head_First_Python codes\chapter10\page411.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwgDB.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\hfwwg\hfwwgDB.py	/^class Sighting(db.Model):$/;"	c
+SightingForm	.\Head_First_Python codes\chapter10\page407.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\Head_First_Python codes\chapter10\page417.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\Head_First_Python codes\chapter10\page425.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\hfwwg\hfwwg.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingInputPage	.\Head_First_Python codes\chapter10\page407.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\Head_First_Python codes\chapter10\page417.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\Head_First_Python codes\chapter10\page425.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\Head_First_Python codes\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\hfwwg\hfwwg.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+sign_extend	.\pyemu\PyCPU.py	/^    def sign_extend(self, number, orig_size, dest_size):$/;"	m	class:PyCPU
+SimpleInput	.\Head_First_Python codes\chapter10\page403b.py	/^class SimpleInput(webapp.RequestHandler):$/;"	c
+single_step_amder	.\danger_track.py	/^def single_step_amder(dbg):$/;"	f
+SIZE	.\pyemu\lib\ctypes\wintypes.py	/^class SIZE(Structure):$/;"	c
+sizeof	.\pyemu\lib\pefile.py	/^    def sizeof(self):$/;"	m	class:Structure
+slideAnimation	.\inventwithpython code\slidepuzzle.py	/^def slideAnimation(board, direction, message, animationSpeed):$/;"	f
+slideAnimation	.\python game\inventwithpython2\slidepuzzle.py	/^def slideAnimation(board, direction, message, animationSpeed):$/;"	f
+smbBrute	.\conficker.py	/^def smbBrute(configFile, tHost, passwdFile, lhost, lport ):$/;"	f
+smbBrute	.\violent python codes\2\5-conficker.py	/^def smbBrute(configFile,tgtHost,passwdFile,lhost,lport):$/;"	f
+smbBrute	.\violent python codes\2\tonis_conficker.py	/^def smbBrute(configFile,tgtHost,passwdFile,lhost,lport):$/;"	f
+snapshotter	.\snapshot.py	/^class snapshotter(object):$/;"	c
+sniffDot11	.\violent python codes\5\6-sniffHidden.py	/^def sniffDot11(p):$/;"	f
+sniffProbe	.\violent python codes\5\6-sniffProbe.py	/^def sniffProbe(p):$/;"	f
+solveODEusingRK4	.\numpygame1.py	/^def solveODEusingRK4(t, x, v):$/;"	f
+splitIntoGroupOf	.\memoryPuzzle.py	/^def splitIntoGroupOf(groupSize, theList):$/;"	f
+splitIntoGroupsOf	.\inventwithpython code\memorypuzzle.py	/^def splitIntoGroupsOf(groupSize, theList):$/;"	f
+splitIntoGroupsOf	.\python game\inventwithpython2\memorypuzzle.py	/^def splitIntoGroupsOf(groupSize, theList):$/;"	f
+spoofConn	.\violent python codes\4\9-mitnickAttack.py	/^def spoofConn(src, tgt, ack):$/;"	f
+ssl_sniff	.\firefox_hook.py	/^def ssl_sniff(dbg,args):$/;"	f
+ssl_sniff	.\python hacking programming codes\firefox_hook.py	/^def ssl_sniff( dbg, args ):$/;"	f
+ss_override	.\pyemu\PyInstruction.py	/^		def ss_override(self):$/;"	m	class:PyInstruction
+startGameAnimation	.\inventwithpython code\memorypuzzle.py	/^def startGameAnimation(board):$/;"	f
+startGameAnimation	.\memoryPuzzle.py	/^def startGameAnimation(board):$/;"	f
+startGameAnimation	.\python game\inventwithpython2\memorypuzzle.py	/^def startGameAnimation(board):$/;"	f
+startKeyLog	.\150130_hook.py	/^def startKeyLog():                                                                 #(8)$/;"	f
+startKeyLog	.\beginning python hacking\MessageHooking.py	/^def startKeyLog():$/;"	f
+startScreen	.\inventwithpython code\starpusher.py	/^def startScreen():$/;"	f
+startScreen	.\python game\inventwithpython2\starpusher.py	/^def startScreen():$/;"	f
+STARTUPINFO	.\my_debugger_defines.py	/^class STARTUPINFO(Structure):$/;"	c
+STARTUPINFO	.\python hacking programming codes\my_debugger_defines.py	/^class STARTUPINFO(Structure):$/;"	c
+start_debugger	.\file_fuzzer.py	/^    def start_debugger(self):$/;"	m	class:file_fuzzer
+start_debugger	.\python hacking programming codes\file_fuzzer.py	/^    def start_debugger(self):$/;"	m	class:file_fuzzer
+start_debugger	.\snapshot.py	/^        def start_debugger(self):$/;"	m	class:snapshotter
+start_form	.\Head_First_Python codes\chapter7\page262.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\Head_First_Python codes\chapter9\page333.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\webapp\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_response	.\Head_First_Python codes\chapter7\page262.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\Head_First_Python codes\chapter9\page333.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\webapp\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+status_update	.\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter11\page464.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter8\page311.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter8\page315.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter8\webapp-chapter8\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter9\page381.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\Head_First_Python codes\chapter9\webapp-chapter9\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\webapp\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\webapp\coachapp_sqlite3.py	/^def status_update(msg, how_long=2):$/;"	f
+STOS	.\pyemu\PyCPU.py	/^    def STOS(self, instruction):$/;"	m	class:PyCPU
+STOSB	.\pyemu\PyCPU.py	/^    def STOSB(self, instruction):$/;"	m	class:PyCPU
+STOSD	.\pyemu\PyCPU.py	/^    def STOSD(self, instruction):$/;"	m	class:PyCPU
+STOSW	.\pyemu\PyCPU.py	/^    def STOSW(self, instruction):$/;"	m	class:PyCPU
+string_at	.\pyemu\lib\ctypes\__init__.py	/^def string_at(ptr, size=0):$/;"	f
+Structure	.\pyemu\lib\pefile.py	/^class Structure:$/;"	c
+SUB	.\pyemu\PyCPU.py	/^    def SUB(self, instruction):$/;"	m	class:PyCPU
+synFlood	.\violent python codes\4\9-mitnickAttack.py	/^def synFlood(src, tgt):$/;"	f
+SYSTEM_INFO	.\my_debugger_defines.py	/^class SYSTEM_INFO(Structure):$/;"	c
+SYSTEM_INFO	.\python hacking programming codes\my_debugger_defines.py	/^class SYSTEM_INFO(Structure):$/;"	c
+SYSTEM_INFO_UNION	.\my_debugger_defines.py	/^class SYSTEM_INFO_UNION(Union):$/;"	c
+SYSTEM_INFO_UNION	.\python hacking programming codes\my_debugger_defines.py	/^class SYSTEM_INFO_UNION(Union):$/;"	c
+t	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def t(vv, uu):$/;"	f
+t	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def t(vv, uu):$/;"	f
+takeoff	.\violent python codes\5\7-uavSniff.py	/^    def takeoff(self):$/;"	m	class:interceptThread
+terminate	.\inventwithpython code\pentomino.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\simulate.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\slidepuzzle.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\squirrel.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\starpusher.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\tetromino.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\tetrominoforidiots.py	/^def terminate():$/;"	f
+terminate	.\inventwithpython code\wormy.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\pentomino.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\simulate.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\slidepuzzle.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\squirrel.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\starpusher.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\tetromino.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\tetrominoforidiots.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython2\wormy.py	/^def terminate():$/;"	f
+terminate	.\python game\inventwithpython\dodger.py	/^def terminate():$/;"	f
+test	.\pyemu\lib\ctypes\util.py	/^def test():$/;"	f
+TEST	.\pyemu\PyCPU.py	/^    def TEST(self, instruction):$/;"	m	class:PyCPU
+testForExif	.\exifFetch.py	/^def testForExif (imgFileName):$/;"	f
+testForExif	.\violent python codes\3\4-exifFetch.py	/^def testForExif(imgFileName):$/;"	f
+testForExif	.\violent python codes\3\tonis_beautifulsoup.py	/^def testForExif(imgFileName):$/;"	f
+testPass	.\violent python codes\1\2-passwdCrack.py	/^def testPass(cryptPass):$/;"	f
+testProxy	.\violent python codes\6\2-proxyTest.py	/^def testProxy(url, proxy):$/;"	f
+testTTL	.\violent python codes\4\6-spoofDetect.py	/^def testTTL(pkt):$/;"	f
+testUserAgent	.\violent python codes\6\3-userAgentTest.py	/^def testUserAgent(url, userAgent):$/;"	f
+test_dyld_find	.\pyemu\lib\ctypes\macholib\dyld.py	/^def test_dyld_find():$/;"	f
+test_dylib_info	.\pyemu\lib\ctypes\macholib\dylib.py	/^def test_dylib_info():$/;"	f
+test_framework_info	.\pyemu\lib\ctypes\macholib\framework.py	/^def test_framework_info():$/;"	f
+that	.\pyemu\PyContext.py	/^    A simple class that provides a method for passing full context$/;"	c
+that	.\pyemu\PyMemory.py	/^		A class that allows us to define some properties and methods for each$/;"	c
+THREADENTRY32	.\my_debugger_defines.py	/^class THREADENTRY32(Structure):$/;"	c
+THREADENTRY32	.\python hacking programming codes\my_debugger_defines.py	/^class THREADENTRY32(Structure):$/;"	c
+time2secs	.\Head_First_Python codes\chapter11\find_it.py	/^def time2secs(time_string):$/;"	f
+time2secs	.\Head_First_Python codes\chapter11\page454.py	/^def time2secs(time_string):$/;"	f
+time2secs	.\Head_First_Python codes\chapter11\tm2secs2tm.py	/^def time2secs(time_string):$/;"	f
+Times	.\140611_2.py	/^class Times(object):$/;"	c
+TlsData	.\pyemu\lib\pefile.py	/^class TlsData(DataContainer):$/;"	c
+to	.\pyemu\PyOS.py	/^								A class to store the import TIB information.	This includes$/;"	c	function:PyWindows.__THREAD.__TEB.get_packed
+to	.\pyemu\PyOS.py	/^						A class to represent the TEB.	 The only thing we are$/;"	c	function:PyWindows.__THREAD.load_exceptions
+to	.\pyemu\PyOS.py	/^		A class to handle process setup in Linux.	 I dont have time to add$/;"	c	class:PyWindows
+to	.\pyemu\PyOS.py	/^		This is a class to handle any Win32 related system structures.	To the$/;"	c
+tomorrow	.\140611_2.py	/^		def tomorrow( ):$/;"	m	class:Date
+top3	.\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\Head_First_Python codes\chapter6\page231.py	/^    def top3(self):$/;"	m	class:Athlete
+top3	.\Head_First_Python codes\chapter6\page245.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\Head_First_Python codes\chapter7\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\Head_First_Python codes\chapter8\page321.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\webapp\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+train	.\kmeans.py	/^	def train(self, inputs):$/;"	m	class:KMeans
+translateBoardToPixelCoord	.\inventwithpython code\flippy.py	/^def translateBoardToPixelCoord(x, y):$/;"	f
+translateBoardToPixelCoord	.\python game\inventwithpython2\flippy.py	/^def translateBoardToPixelCoord(x, y):$/;"	f
+twitter_locate	.\violent python codes\6\9-twitterClass.py	/^    def twitter_locate(self, cityFile):$/;"	m	class:reconPerson
+twitter_locate	.\violent python codes\6\9-twitterGeo.py	/^def twitter_locate(tweets,cities):$/;"	f
+twitter_locate	.\violent python codes\6\twitterClass.py	/^    def twitter_locate(self, cityFile):$/;"	m	class:reconPerson
+TwoTimes	.\140611_2.py	/^class TwoTimes(Times):$/;"	c
+uninstallHookProc	.\150130_hook.py	/^    def uninstallHookProc(self):                                                  #(5)$/;"	m	class:KeyLogger
+uninstallHookProc	.\beginning python hacking\MessageHooking.py	/^    def uninstallHookProc(self):                                                  #(5)$/;"	m	class:KeyLogger
+update	.\numplt3.py	/^def update(val):$/;"	f
+uploadFile	.\violent python codes\7\2-virusCheck.py	/^def uploadFile(fileName):$/;"	f
+usage	.\pyemu\examples\pepyemu.py	/^def usage():$/;"	f
+u_list	.\Head_First_Python codes\chapter7\page262.py	/^def u_list(items):$/;"	f
+u_list	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+u_list	.\Head_First_Python codes\chapter9\page333.py	/^def u_list(items):$/;"	f
+u_list	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+u_list	.\webapp\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+u_list	.\yate.py	/^def u_list(items):$/;"	f
+val2addr	.\violent python codes\3\1-discoverNetworks.py	/^def val2addr(val):$/;"	f
+val2addr	.\violent python codes\3\tonis_discovernetwork.py	/^def val2addr(val):$/;"	f
+val2addr	.\violent python codes\3\tonis_wigle.py	/^def val2addr(val):$/;"	f
+VARIANT_BOOL	.\pyemu\lib\ctypes\wintypes.py	/^class VARIANT_BOOL(_SimpleCData):$/;"	c
+viewPage	.\violent python codes\6\1-viewPage.py	/^def viewPage(url):$/;"	f
+virtualprotect	.\python hacking programming codes\upx_unpacker.py	/^def virtualprotect(name, address):$/;"	f
+virtualprotect	.\upx_unpacker.py	/^def virtualprotect(name,address):$/;"	f
+w	.\inventwithpython code\memorypuzzle_obfuscated.py	/^def w(ss, tt, bb, ee):$/;"	f
+w	.\python game\inventwithpython2\memorypuzzle_obfuscated.py	/^def w(ss, tt, bb, ee):$/;"	f
+waitForPlayerToPressKey	.\python game\inventwithpython\dodger.py	/^def waitForPlayerToPressKey():$/;"	f
+whats_the_difference	.\Head_First_Python codes\chapter11\find_it.py	/^    def whats_the_difference(first, second):$/;"	f	function:find_closest
+whats_the_difference	.\Head_First_Python codes\chapter11\page451.py	/^    def whats_the_difference(first, second):$/;"	f	function:find_closest
+which	.\pyemu\PyOS.py	/^				A THREAD class which contains our TEB and LDT.	This has been$/;"	c	class:PyWindows.__PEB
+whoGoesFirst	.\python game\inventwithpython\AISim1.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\python game\inventwithpython\AISim2.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\python game\inventwithpython\AISim3.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\python game\inventwithpython\reversi.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\python game\inventwithpython\tictactoe.py	/^def whoGoesFirst():$/;"	f
+wifiPrint	.\violent python codes\5\10-iphoneFinder.py	/^def wifiPrint(pkt):$/;"	f
+wiglePrint	.\violent python codes\3\1-discoverNetworks.py	/^def wiglePrint(username, password, netid):$/;"	f
+wiglePrint	.\violent python codes\3\tonis_wigle.py	/^def wiglePrint(username,password,netid):$/;"	f
+WIN32_FIND_DATAA	.\pyemu\lib\ctypes\wintypes.py	/^class WIN32_FIND_DATAA(Structure):$/;"	c
+WIN32_FIND_DATAW	.\pyemu\lib\ctypes\wintypes.py	/^class WIN32_FIND_DATAW(Structure):$/;"	c
+WinDLL	.\pyemu\lib\ctypes\__init__.py	/^    class WinDLL(CDLL):$/;"	c	class:PyDLL
+WinError	.\pyemu\lib\ctypes\__init__.py	/^    def WinError(code=None, descr=None):$/;"	m	class:LibraryLoader
+WinFunctionType	.\pyemu\lib\ctypes\__init__.py	/^            class WinFunctionType(_CFuncPtr):$/;"	c	function:CFUNCTYPE/WINFUNCTYPE
+WINFUNCTYPE	.\pyemu\lib\ctypes\__init__.py	/^    def WINFUNCTYPE(restype, *argtypes):$/;"	f	function:CFUNCTYPE
+withdraw	.\140611.py	/^    def withdraw(self,amt):$/;"	m	class:Account
+write	.\pyemu\lib\pefile.py	/^    def write(self, filename=None):$/;"	m	class:PE
+write_data	.\python hacking programming codes\injector.py	/^def write_data( data, length ):$/;"	f
+write_file	.\mp4.py	/^   def write_file(path, content):$/;"	f	function:create_mp4
+write_process_memory	.\my_debugger.py	/^    def write_process_memory(self,address,data):$/;"	m	class:debugger
+write_process_memory	.\python hacking programming codes\my_debugger.py	/^    def write_process_memory(self,address,data):$/;"	m	class:debugger
+wstring_at	.\pyemu\lib\ctypes\__init__.py	/^    def wstring_at(ptr, size=0):$/;"	f	function:string_at
+XCHG	.\pyemu\PyCPU.py	/^    def XCHG(self, instruction):$/;"	m	class:PyCPU
+XOR	.\pyemu\PyCPU.py	/^    def XOR(self, instruction):$/;"	m	class:PyCPU
+_COORD	.\pyemu\lib\ctypes\wintypes.py	/^class _COORD(Structure):$/;"	c
+_EXCEPTION_RECORD	.\my_debugger_defines.py	/^class _EXCEPTION_RECORD(Structure):$/;"	c
+_EXCEPTION_RECORD	.\python hacking programming codes\my_debugger_defines.py	/^class _EXCEPTION_RECORD(Structure):$/;"	c
+_findLib_gcc	.\pyemu\lib\ctypes\util.py	/^    def _findLib_gcc(name):$/;"	f
+_findLib_ld	.\pyemu\lib\ctypes\util.py	/^    def _findLib_ld(name):$/;"	f
+_FuncPtr	.\pyemu\lib\ctypes\__init__.py	/^        class _FuncPtr(_CFuncPtr):$/;"	c	class:PyDLL.OleDLL
+_FuncPtr	.\pyemu\lib\ctypes\__init__.py	/^        class _FuncPtr(_CFuncPtr):$/;"	c	class:PyDLL.WinDLL
+_FuncPtr	.\pyemu\lib\ctypes\__init__.py	/^    class _FuncPtr(_CFuncPtr):$/;"	c	class:CDLL
+_FuncPtr	.\pyemu\lib\ctypes\__init__.py	/^    class _FuncPtr(_CFuncPtr):$/;"	c	class:PyDLL
+_get_soname	.\pyemu\lib\ctypes\util.py	/^    def _get_soname(f):$/;"	f
+_inject	.\pyemu\lib\ctypes\macholib\dyld.py	/^    def _inject(iterator=iterator, suffix=suffix):$/;"	f	function:dyld_image_suffix_search
+_other_endian	.\pyemu\lib\ctypes\_endian.py	/^def _other_endian(typ):$/;"	f
+_SMALL_RECT	.\pyemu\lib\ctypes\wintypes.py	/^class _SMALL_RECT(Structure):$/;"	c
+_swapped_meta	.\pyemu\lib\ctypes\_endian.py	/^class _swapped_meta(type(Structure)):$/;"	c
+__add__	.\140611_complex.py	/^    def __add__(self, other):$/;"	m	class:Complex	file:
+__del__	.\140611.py	/^    def __del__(self):$/;"	m	class:Account	file:
+__EXCEPTION_RECORD	.\pyemu\PyOS.py	/^								class __EXCEPTION_RECORD:$/;"	c	class:PyWindows.__THREAD.__TEB.__TIB
+__getattr__	.\pyemu\lib\ctypes\__init__.py	/^    def __getattr__(self, name):$/;"	m	class:CDLL	file:
+__getattr__	.\pyemu\lib\ctypes\__init__.py	/^    def __getattr__(self, name):$/;"	m	class:LibraryLoader	file:
+__getitem__	.\pyemu\lib\ctypes\__init__.py	/^    def __getitem__(self, name):$/;"	m	class:LibraryLoader	file:
+__getitem__	.\pyemu\lib\ctypes\__init__.py	/^    def __getitem__(self, name_or_ordinal):$/;"	m	class:CDLL	file:
+__get_format__	.\pyemu\lib\pefile.py	/^    def __get_format__(self):$/;"	m	class:Structure	file:
+__init__	.\140611.py	/^    def __init__(self,name,balance):$/;"	m	class:Account
+__init__	.\140611.py	/^    def __init__(self,name,balance,evilfactor):$/;"	m	class:EvilAccount
+__init__	.\140611_2.py	/^		def __init__(self,year,month,day):$/;"	m	class:Date
+__init__	.\140611_3.py	/^	def __init__(self):$/;"	m	class:ETNEWS
+__init__	.\140611_complex.py	/^    def __init__(self,real,imag=0):$/;"	m	class:Complex
+__init__	.\140611_property.py	/^    def __init__(self,radius):$/;"	m	class:Circle
+__init__	.\150130_hook.py	/^    def __init__(self):$/;"	m	class:KeyLogger
+__init__	.\anonBrowser.py	/^	def __init__(self, proxies = [], user_agents = []):$/;"	m	class:anonBrowser
+__init__	.\Arrow3D.py	/^    def __init__(self, xs, ys, zs, *args, **kwargs):$/;"	m	class:Arrow3D
+__init__	.\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\beginning python hacking\MessageHooking.py	/^    def __init__(self):$/;"	m	class:KeyLogger
+__init__	.\beginning python hacking\클래스의 생성.py	/^    def __init__(self, inSkill, inPower, idx):$/;"	m	class:MyHero
+__init__	.\beginning python hacking\클래스의 생성.py	/^    def __init__(self, name, age, weight):                       #(2)$/;"	m	class:Hero
+__init__	.\file_fuzzer.py	/^    def __init__(self,exe_path,ext,notify):$/;"	m	class:file_fuzzer
+__init__	.\Head_First_Python codes\chapter6\page231.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:Athlete
+__init__	.\Head_First_Python codes\chapter6\page245.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\Head_First_Python codes\chapter7\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\Head_First_Python codes\chapter8\page321.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\Head_First_Python codes\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\Head_First_Python codes\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\ioctl_fuzzer.py	/^    def __init__(self):$/;"	m	class:ioctl_hook
+__init__	.\kmeans.py	/^	def __init__(self,k):$/;"	m	class:KMeans
+__init__	.\machine_learning.py	/^    def __init__(self, input, n_in, n_out):$/;"	m	class:LogisticRegression
+__init__	.\machine_learning.py	/^    def __init__(self, rng, input, filter_shape, image_shape, poolsize=(2, 2)):$/;"	m	class:LeNetConvPoolLayer
+__init__	.\machine_learning.py	/^    def __init__(self, rng, input, n_in, n_out, W=None, b=None,$/;"	m	class:HiddenLayer
+__init__	.\my_debugger.py	/^    def __init__(self):$/;"	m	class:debugger
+__init__	.\numplt4.py	/^    def __init__(self, xs, ys, zs, *args, **kwargs):$/;"	m	class:Arrow3D
+__init__	.\pyemu\lib\ctypes\__init__.py	/^    def __init__(self, dlltype):$/;"	m	class:LibraryLoader
+__init__	.\pyemu\lib\ctypes\__init__.py	/^    def __init__(self, name, mode=DEFAULT_MODE, handle=None):$/;"	m	class:CDLL
+__init__	.\pyemu\lib\pefile.py	/^    def __init__(self):$/;"	m	class:Dump
+__init__	.\pyemu\lib\pefile.py	/^    def __init__(self, **args):$/;"	m	class:DataContainer
+__init__	.\pyemu\lib\pefile.py	/^    def __init__(self, format, name=None, file_offset=None):$/;"	m	class:Structure
+__init__	.\pyemu\lib\pefile.py	/^    def __init__(self, name=None, data=None, fast_load=None):$/;"	m	class:PE
+__init__	.\pyemu\lib\pefile.py	/^    def __init__(self, value):$/;"	m	class:PEFormatError
+__init__	.\pyemu\PyContext.py	/^    def __init__(self):$/;"	m	class:PyContext
+__init__	.\pyemu\PyCPU.py	/^    def __init__(self, emu):$/;"	m	class:PyCPU
+__init__	.\pyemu\PyEmu.py	/^		def __init__(self):$/;"	m	class:PyEmu
+__init__	.\pyemu\PyEmu.py	/^		def __init__(self, dbg):$/;"	m	class:PyDbgPyEmu
+__init__	.\pyemu\PyEmu.py	/^		def __init__(self, stack_base=0x0095f000, stack_size=0x1000, heap_base=0x000a0000, heap_size=0x2000, frame_pointer=True):$/;"	m	class:IDAPyEmu
+__init__	.\pyemu\PyEmu.py	/^		def __init__(self, stack_base=0x0095f000, stack_size=0x1000, heap_base=0x000a0000, heap_size=0x2000, frame_pointer=True):$/;"	m	class:PEPyEmu
+__init__	.\pyemu\PyFlags.py	/^		def __init__(self, mnemonic, op1, op2, result, size):$/;"	m	class:PyFlags
+__init__	.\pyemu\PyInstruction.py	/^		def __init__(self, instruction):$/;"	m	class:PyInstruction
+__init__	.\pyemu\PyInstruction.py	/^		def __init__(self, operand):$/;"	m	class:PyOperand
+__init__	.\pyemu\PyMemory.py	/^		def __init__(self, address, data="", permissions=0x0):$/;"	m	class:PyMemoryPage
+__init__	.\pyemu\PyMemory.py	/^		def __init__(self, emu):$/;"	m	class:IDAMemory
+__init__	.\pyemu\PyMemory.py	/^		def __init__(self, emu):$/;"	m	class:PEMemory
+__init__	.\pyemu\PyMemory.py	/^		def __init__(self, emu):$/;"	m	class:PyMemory
+__init__	.\pyemu\PyMemory.py	/^		def __init__(self, emu, dbg):$/;"	m	class:PyDbgMemory
+__init__	.\pyemu\PyOS.py	/^										def __init__(self):$/;"	m	class:PyWindows.__THREAD.__TEB.__TIB.__EXCEPTION_RECORD
+__init__	.\pyemu\PyOS.py	/^								def __init__(self):$/;"	m	class:PyWindows.__THREAD.__TEB.__TIB
+__init__	.\pyemu\PyOS.py	/^								def __init__(self, selector, base, limit):$/;"	m	class:PyWindows.__THREAD.__LDT.__LDT_ENTRY
+__init__	.\pyemu\PyOS.py	/^						def __init__(self):$/;"	m	class:PyWindows.__PEB.__LDR
+__init__	.\pyemu\PyOS.py	/^						def __init__(self):$/;"	m	class:PyWindows.__THREAD.__LDT
+__init__	.\pyemu\PyOS.py	/^						def __init__(self):$/;"	m	class:PyWindows.__THREAD.__TEB
+__init__	.\pyemu\PyOS.py	/^				def __init__(self):$/;"	m	class:PyWindows.__PEB
+__init__	.\pyemu\PyOS.py	/^				def __init__(self):$/;"	m	class:PyWindows.__THREAD
+__init__	.\pyemu\PyOS.py	/^		def __init__(self):$/;"	m	class:PyLinux
+__init__	.\pyemu\PyOS.py	/^		def __init__(self):$/;"	m	class:PyWindows
+__init__	.\python hacking programming codes\file_fuzzer.py	/^    def __init__(self, exe_path, ext, notify):$/;"	m	class:file_fuzzer
+__init__	.\python hacking programming codes\ioctl_fuzzer.py	/^    def __init__( self ):$/;"	m	class:ioctl_hook
+__init__	.\python hacking programming codes\my_debugger.py	/^    def __init__(self):$/;"	m	class:debugger
+__init__	.\snapshot.py	/^        def __init__(self,exe_path):$/;"	m	class:snapshotter
+__init__	.\test.py	/^	def __init__(self):$/;"	m	class:End
+__init__	.\test.py	/^	def __init__(self,QueueDir,TheEnd,dir,host,user,port='22'):$/;"	m	class:Connection
+__init__	.\violent python codes\2\3-botNet.py	/^    def __init__(self, host, user, password):$/;"	m	class:Client
+__init__	.\violent python codes\2\tonis_botnet.py	/^	def __init__(self,host,user,password):$/;"	m	class:Client
+__init__	.\violent python codes\5720.py	/^	def __init__(self):$/;"	m	class:End
+__init__	.\violent python codes\5720.py	/^	def __init__(self,QueueDir,TheEnd,dir,host,user,port='22'):$/;"	m	class:Connection
+__init__	.\violent python codes\5\7-uavSniff.py	/^    def __init__(self):$/;"	m	class:interceptThread
+__init__	.\violent python codes\6\8-anonGoogle.py	/^    def __init__(self,title,text,url):$/;"	m	class:Google_Result
+__init__	.\violent python codes\6\9-twitterClass.py	/^    def __init__(self, handle):$/;"	m	class:reconPerson
+__init__	.\violent python codes\6\9-twitterRecon.py	/^      job='',social_media={}):$/;"	m	class:reconPerson
+__init__	.\violent python codes\6\anonBrowser.py	/^    def __init__(self, proxies = [], user_agents = []):$/;"	m	class:anonBrowser
+__init__	.\violent python codes\6\twitterClass.py	/^    def __init__(self, handle):$/;"	m	class:reconPerson
+__init__	.\webapp\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__LDR	.\pyemu\PyOS.py	/^				class __LDR:$/;"	c	class:PyWindows.__PEB
+__LDT	.\pyemu\PyOS.py	/^				class __LDT:$/;"	c	class:PyWindows.__THREAD
+__LDT_ENTRY	.\pyemu\PyOS.py	/^						class __LDT_ENTRY:$/;"	c	class:PyWindows.__THREAD.__LDT
+__pack__	.\pyemu\lib\pefile.py	/^    def __pack__(self):$/;"	m	class:Structure	file:
+__parse__	.\pyemu\lib\pefile.py	/^    def __parse__(self, fname, data, fast_load):$/;"	m	class:PE	file:
+__PEB	.\pyemu\PyOS.py	/^		class __PEB:$/;"	c	class:PyWindows
+__radd__	.\140611_complex.py	/^    def __radd__(self,other):$/;"	m	class:Complex	file:
+__repr__	.\140611_complex.py	/^    def __repr__(self):$/;"	m	class:Complex	file:
+__repr__	.\pyemu\lib\ctypes\wintypes.py	/^    def __repr__(self):$/;"	m	class:VARIANT_BOOL	file:
+__repr__	.\pyemu\lib\ctypes\__init__.py	/^    def __repr__(self):$/;"	m	class:CDLL	file:
+__repr__	.\pyemu\lib\ctypes\__init__.py	/^    def __repr__(self):$/;"	m	class:py_object	file:
+__repr__	.\violent python codes\6\8-anonGoogle.py	/^    def __repr__(self):$/;"	m	class:Google_Result	file:
+__repr__	.\violent python codes\6\9-twitterRecon.py	/^    def __repr__(self):$/;"	m	class:reconPerson	file:
+__rsub__	.\140611_complex.py	/^    def __rsub__(self,other):$/;"	m	class:Complex	file:
+__setattr__	.\pyemu\lib\ctypes\_endian.py	/^    def __setattr__(self, attrname, value):$/;"	m	class:_swapped_meta	file:
+__set_format__	.\pyemu\lib\pefile.py	/^    def __set_format__(self, format):$/;"	m	class:Structure	file:
+__str__	.\140611_2.py	/^		def __str__(self):$/;"	m	class:EuroDate	file:
+__str__	.\140611_complex.py	/^    def __str__(self):$/;"	m	class:Complex	file:
+__str__	.\pyemu\lib\pefile.py	/^    def __str__(self):$/;"	m	class:PE	file:
+__str__	.\pyemu\lib\pefile.py	/^    def __str__(self):$/;"	m	class:PEFormatError	file:
+__sub_	.\140611_complex.py	/^    def __sub_(self,other):$/;"	m	class:Complex	file:
+__TEB	.\pyemu\PyOS.py	/^				class __TEB:$/;"	c	class:PyWindows.__THREAD
+__THREAD	.\pyemu\PyOS.py	/^		class __THREAD:$/;"	c	class:PyWindows
+__TIB	.\pyemu\PyOS.py	/^						class __TIB:$/;"	c	class:PyWindows.__THREAD.__TEB
+__unpack_data__	.\pyemu\lib\pefile.py	/^    def __unpack_data__(self, format, data, file_offset):$/;"	m	class:PE	file:
+__unpack__	.\pyemu\lib\pefile.py	/^    def __unpack__(self, data):$/;"	m	class:Structure	file:
