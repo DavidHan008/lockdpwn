@@ -1,0 +1,99 @@
+* [SYSTEM]
+** Front or Rear (1=F, 2=R)
+** Symtric (1=yes, 2=no)
+** Unit (N,m,deg=1, Kgf,mm,deg=2)
+** CVW (Left, Right [Kg])
+** 2-UP (Left, Right [Kg])
+** Unsprung Mass (Left, Right [Kg])
+** CGH (mm)
+** Wheelbase (mm)
+** Toe (deg), Camber (deg)
+** Bump, Step, Rebound (mm)
+** Rack, Step (mm)
+
+
+* [HardPoint]
+** LWR_ARM BODY
+** LWR_ARM AXLE
+** LWR_ARM BODY
+** TIE_ROD INR
+** TIE_ROD OTR
+** STRUT_UPR BODY
+** STRUT_LWR AXLE
+** 
+** 
+** 
+** 
+** 
+** 
+
+
+
+
+
+* TODO learn python and use it how to make my own program
+  DEADLINE: <2017-02-01 수>
+
+
+* TODO first time to use org-mode
+  - Note taken on [2017-02-01 수 11:41] \\
+    why is it so famous?
+
+
+
+* TODO wake up                                                         :home:
+
+* TODO eat [2/3]                                                      :first:
+   - [X] go to work
+   - [X] bacon
+   - [ ] paccake
+**** TODO go to work [66%]                                           :second:
+     - [X] hey
+     - [X] what
+     - [ ] up
+
+** TODO Lunch                                                          :home:
+   DEADLINE: <2017-02-08 수>
+
+
+* DONE Hello world
+  CLOSED: [2017-02-01 수 12:13]
+ 
+
+[[http://google.com][GOOGLE]]
+[[https:www.naver.com][NAVER]]
+
+
+*hello world*
++hello world+
+/hello world/
+_hello world_
+
+
+#+TITLE: emacs org-mode
+------------------------------
+#+STARTUP: showall
+#+AUTHOR: Edward Gyu Beom Im
+#+EMAIL: gyurse@gmail.com
+#+OPTIONS: LaTeX:t
+
+#+LINK: gnu-emacs http://www.gnu.org/software/emacs
+
+| 2           | 1   | tab       |
+|-------------+-----+-----------|
+| hh          | sdf | fsdf      |
+| hello_world | wow | very_good |
+|             |     |           |
+
+
+#+BEGIN_SRC python
+def abc():
+
+
+#+END_SRC
+
+
+
+
+
+

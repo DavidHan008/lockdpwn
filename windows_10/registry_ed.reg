@@ -1,0 +1,321 @@
+<REGISTRY 경로>
+
+
+
+## HKLM
+
+	# SOFTWARE
+		
+		// USB 연결된 저장장치 정보 
+		# HKLM\SOFTWARE\Microsoft\Windows Portable Devices\Devices
+	
+
+		// 마지막 로그온 한 사용자
+		# HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon  [DefaultUserName]
+		
+		
+		// 무선 네트워크 정보
+		# HKLM\Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Nla  [Wireless,Singature,Profile] (Win7)
+		
+	
+		// 무선 네트워크 카드 정보
+		# HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkCards\
+		
+		
+		// 로그온 자동 시작 프로그램
+		# HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+		# HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Runonce
+
+
+
+
+
+
+
+
+	# SYSTEM
+
+
+		// USB 연결된 저장장치 정보 2
+		# HKLM\System\currentControlSet\Enum\USB\VID_XXXX&PID_####
+
+
+
+
+		// USB 연결된 저장장치 정보 4
+		# HKLM\System\MountedDevices
+	
+
+		//컴퓨터 이름
+		# HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName
+		
+		
+		//시간 정보
+		# HKLM\System\CurrentControlSet\control\TimeZoneInformation
+
+
+		//시스템 마지막 종료시간
+		# HKLM\System\ControlSetXXX\control\windows [ShutdownTime]
+
+
+		//무선 네트워크 정보2 (IP 정보)
+		# HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<GUID>
+
+
+
+		// 공유목록
+		# HKLM\system\CurrentControlSet\services\lanmanserver\shares
+
+		
+		// 기본공유목록 활성화/비활성화 (C$, IPC$, ADMIN$)
+		# HKLM\system\CurrentControlSet\services\lanmanserver\Parameters	[AutoShareServer]
+
+
+		// USB 사용 정보 확인
+		# HKLM\system\CurrentControlSet\enum\usbstor\<device_name>\<instance_id>
+
+
+		// USB 사용 정보 확인2 (device class id, unique instance id 확인)
+		# HKLM\system\CurrentControlSet\control\deviceclasses\<instance_id>
+
+
+
+		// 파일 접근시간 업데이트 여부
+		# HKLM\system\CurrentControlSet\control\filesystem  [NtfsDisableLastAccessUpdate] : 0 업데이트, 1 업데이트 하지 않음
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# SECURITY
+
+
+
+		// 시스템 감사 정책 (시스템권한만 볼 수 있습니다)(psexec -s -d -i regedit)
+		# HKLM\SECURITY\policy\poladtev		(오프셋은 책 참고)
+
+		
+
+
+
+
+
+
+
+
+
+
+
+## HKCU
+
+	# SOFTWARE
+		
+		// 윈도우 검색 로그
+		# HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
+		
+
+		// 최근 문서
+		# HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+		
+		
+		//최근 실행 명령어
+		# HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+		
+		
+		//원격 데스크탑 연결 목록 (사용안해서 그런지 안보입니다)
+		# HKCU\SOFTWARE\Microsoft\Terminal Server Client\Default
+		
+		
+
+		//대화 상자를 통한 접근 기록 (최근에 사용자가 열고 저장한 파일 목록, 최근  접근한 폴더 , 최근에 실행한 응용 프로그램, 최근에 실행한 폴더 경로) (중요)
+		# HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\
+		[LastVisitedPidlMRU] , [OpenSavePidlMRU] , [CIDSizeMRU], [FirstFolder]
+		
+
+
+		
+		//네트워크 드라이브 맵핑 정보 (사용안해서 그런지 없습니다)
+		# HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU
+		
+
+
+		//설치된 프로그램 정보 (중요)
+		# HKCU\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
+
+
+
+		//응용 프로그램 종류, 최종 실행 시각, 실행 횟수, 세션 아이디 확인(ROT-13 암호처리 돼있습니다)
+		# HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{...}\Count
+
+
+
+		// 마지막으로 접근한 registry 키 정보
+		# HKCU\SOFTWARE\Microsoft\windows\CurrentVersion\applets\regedit
+
+
+
+
+		// 휴지통 사용 여부 확인
+		# HKCU\SOFTWARE\microsoft\windows\CurrentVersion\explorer\bitbucket\volume
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## HKU
+
+
+
+	// USB 마지막 수정 시간
+	# HKU\<user>\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+	
+
+	//존재했던 파일과 디렉토리, 프로그램 정보 (USB 파일 정보 포함) (중요)
+	# HKU\<user id>\Software\Microsoft\Windows\Shell
+
+
+
+	//ms office 사용 흔적
+	# HKU\{USER}\SOFTWARE\Microsoft\Office\{VERSION}\{APP}\Place MRU
+
+
+
+	//한글2010 사용 흔적
+	# HKU\{USER}\SOFTWARE\HNC\Hwp\8.0\HwpFrame\RecentFile
+
+
+
+	//곰플레이어 사용 흔적
+	# HKU\{USER}\SOFTWARE\GRETECH\GomPlayer\OPTION
+
+
+
+	//adobe pdf 파일 흔적
+	# HKU\{USER}\SOFTWARE\Adobe\Adobe Acrobat\{version}\AVGeneral\cRecentFiles
+
+
+
+
+	// IE로 방문한 웹사이트 목록 
+	# HKU\{USER}\SOFTWARE\Microsoft\Internet Explorer\TypedURLs
+
+
+
+
+
+
+
+
+
+## HKCC
+
+
+## HKCR
+
+
+
+
+
+
+-----------------------------------------------------------------------
+
+<HIVE 설명>
+
+
+# HKEY_CLASSES_ROOT (HKCR)
+	
+	# 파일 확장자에 대한 정보 ,각 파일과 프로그램간의 연결에 대한 정보, 마우스 오른쪽 단추의 등록 정보 등
+	# 모든 형식의 파일 확장자가 sub key 형태로 구성되어 있음
+	# HKLM\SOFTWARE\Classes키에 동일하게 저장 되어 두 곳이 연동됨, 생성 및 삭제가 같이 이루어짐.
+
+
+
+
+# HKEY_CURRENT_USER (HKCU)
+	
+	# 현재 시스템에 로그인 된 사용자의 사용자 프로파일 정보
+	# 현재 로그인중인 사용자들에 대한 등록 정보(사용자의 배경화면, 디스플레이 설정이나 단축 아이콘의 정보 등) 
+	# 응용 프로그램의 우선 순위,보안 접근 허용 여부
+
+
+
+
+# HKEY_LOCAL_MACHINE (HKLM)
+	
+	# 시스템의 하드웨어, 소프트 웨어 설정 및 다양한 환경정보
+	# 하드웨어 구성 초기화 파일, 제어판과 밀접
+	# 사용중인 하드웨어 및 소프트웨어에 대한 정보
+	# 로그온 한 사용자와 관계없이 컴퓨터에 등록된 모든 사용자에게 동일
+	# 시스템에 존재하는 하이브 파일과 메모리 하이브 모음
+
+	# 경로
+		# <Boot Partition>\Boot\BCD
+		# %systemroot%\system32\config\COMPONENTS
+		# %systemroot%\system32\config\SAM
+		# %systemroot%\system32\config\SECURITY
+		# %systemroot%\system32\config\SOFTWARE
+		# %systemroot%\system32\config\SYSTEM
+		# HARDWARE는 메모리에 상주합니다
+
+
+
+
+
+# HKEY_USERS (HKU) 
+
+	#시스템의 모든 사용자와 그룹에 관한 프로파일 정보 
+	# 이전 사용자 초기화 파일을 보관
+	# 두 키 사이가 겹치면 HKEY_CURRENT_USER가 우선시 된다.
+	# 사용자 루트 폴더에 존재하는 NTUSER.DAT 파일의 내용이다.
+
+	# 경로
+		# C:\WINDOWS\ServiceProfiles\LocalService\NTUSER.DAT	// 로컬사용자의 계정 SID
+		# C:\WINDOWS\ServiceProfiles\NetworkService\NTUSER.DAT  // 네트워크사용자의 계정 SID
+		# C:\Users\gyurs\NTUSER.DAT 	// 사용자의 계정 SID
+		# %systemroot%\system32\config\Default 	// .DEFAULT
+
+
+
+
+
+# HKEY_CURRENT_CONFIG (HKCC) 
+	
+	# 시스템이 시작할 때 사용되는 하드웨어 프로 파일 정보 
+	# 현재 사용중인 윈도의 디스플레이(화면 글꼴이나 해상도) 정보와 프린터 관련 정보
+	# HKLM\Config키의 내용과 같음
+	# HKLM\SYSTEM\CurrentControlSet\Hardware Profiles\Current 의 내용
+
+
+
+
+
+
+
+
+
+#http://blog.naver.com/bitnang?Redirect=Log&logNo=70175434418
+#해당 파일의 syntax를 registry로 설정합니다
+# vim:ft=registry
