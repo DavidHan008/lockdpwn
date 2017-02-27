@@ -6,8 +6,8 @@
 # CurrentSeetings.vssettings 파일이 환경설정 파일이다
 
 # Color Theme Editor ==> solarized theme 
-					 ==> operator 폰트색깔 바꾸기 
-					 ==> brace highlight 색깔도 바꾸기
+					 ==> operator 폰트색깔 바꾸기  (gray)
+					 ==> brace highlight 색깔도 바꾸기 (lime)
 # VSColorOutput
 
 # Highlight all occurences of selected word
