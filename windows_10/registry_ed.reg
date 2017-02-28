@@ -35,11 +35,8 @@
 
 	# SYSTEM
 
-
 		// USB 연결된 저장장치 정보 2
 		# HKLM\System\currentControlSet\Enum\USB\VID_XXXX&PID_####
-
-
 
 
 		// USB 연결된 저장장치 정보 4
