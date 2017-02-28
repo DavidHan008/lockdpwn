@@ -11,12 +11,35 @@ $$ 리눅스 명령어
 
 
 
+	$ sysctl
+				ASLR을 해제합니다 (2: 활성화)
+				$ sysctl -w kernel.randomize_va_space=0
+
+
+
+
 	$ gcc
+				test 파일을 32비트 환경의 stack CANARY를 해제하고 생성합니다. stack pointer를 4바이트 경계로 정렬합니다(?)
+				$ gcc -m32 -fno-stack-protector -mpreferred-stack-boundary=2 test.c -o test
+
+				$ 
+
+
+	$ file
+				test 파일의 정보를 확인합니다
+				$ file test
 
 
 
 	
+
+
 	$ gdb
+				test 파일을 디버깅합니다
+				$ gdb -q test
+
+
+
 
 
 
@@ -29,6 +52,24 @@ $$ 리눅스 명령어
 				bof3 파일을 PLT 섹션을 intel cpu 방식으로 확인합니다
 				$ objdump -d -M intel -j .plt --no ./bof3
 	
+
+
+
+
+
+
+
+	
+	$ readelf
+				test 파일에서 buffer 변수의 주소를 구합니다
+				$ readelf -s test | grep buffer
+	
+				test 파일에서 GOT 영역의 주소를 구합니다
+				$ readelf -S test | grep .got
+
+
+
+
 
 
 
@@ -112,6 +153,8 @@ $$ 리눅스 명령어
 
 
 
+
+
 	$ socat
 				bof3 프로그램을 4000번 포트에서 엽니다
 				$ socat TCP-LISTEN:4000,reuseaddr,fork EXEC:./bof3 2>/dev/null &
@@ -120,13 +163,18 @@ $$ 리눅스 명령어
 
 
 
-	$ rp 
+
+
+
+	$ rp : ropgadget을 추출해주는 프로그램
 				bof3 프로그램 안에서 pop가 들어가 있는 ROP Gadget을 검색합니다
 				$ rp -f bof3 | grep pop
 	
 				
 				bof3 파일에서 Gadget 크기가 3인 unique한? 코드를 검색합니다
 				$ rp -f bof3 -r 3 --unique | grep pop
+
+
 
 
 
