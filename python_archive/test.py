@@ -1,20 +1,33 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-   python ==> CTF, scapy를 활용해 pcap 파일에서 flag를 얻은 예제 코드
+	python ==>
 '''
-from scapy.all import *
+import tensorflow as tf
 
-def main():
-	packets = rdpcap('/home/edward/test_ed/cc_archive/ctfContestChallange/book4b_net/scapy_ex1.pcap')
+hello = tf.constant('hello tf')
 
-	flag = ""
-	for p  in packets:
-		if p['IP'].type == 8:
-			flag += chr(p['ICMP'].id)
+a = tf.constant(10)
+b = tf.constant(32)
+c = a + b
 
-	print flag
+X = tf.placeholder("float", [None,3])
 
+W = tf.Variable(tf.random_normal([3,2]), name='Weights')
+b = tf.Variable(tf.random_normal([2,1]), name='Bias')
 
-if __name__ == '__main__':
-	main()
+x_data = [[1,2,3,] , [4,5,6]]
+
+expr = tf.matmul(X,W) + b
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+print sess.run(hello)
+print "a + b = c = ", sess.run(c)
+print x_data
+print sess.run(W)
+print sess.run(b)
+print sess.run(expr, feed_dict={X: x_data})
+
+sess.close()
