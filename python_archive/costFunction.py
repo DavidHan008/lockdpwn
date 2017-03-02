@@ -1,3 +1,8 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> ML SungKim 강의, Cost Funtion의 최소값을 그래프를 통해 알아보는 코드
+'''
 import tensorflow as tf
 import matplotlib.pyplot as plt
 

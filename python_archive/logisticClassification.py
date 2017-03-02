@@ -1,3 +1,10 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> ML SungKim 강의, numpy로 파일을 불러와 Logistic Classifier를 구현해본 코드
+                               공부시간, 수업참여율의 데이터를 사용해 학생의 다음 시험 당락여부를 예측해보는 코드
+'''
+
 import tensorflow as tf
 import numpy as np
 

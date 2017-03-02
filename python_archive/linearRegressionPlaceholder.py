@@ -1,3 +1,10 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> ML SungKim 강의, placeholder의 개념과 사용법을 알려준 코드
+                               약간 c#의 object 타입처럼 우선 변수를 선언해주는 코드 같다
+'''
+
 import tensorflow as tf
 
 xdata = [1,2,3]

@@ -1,3 +1,11 @@
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-
+'''
+	python ==> ML SungKim 강의, Gradient Descent Algorithm을 사용해 최소의 Cost Function을 구해본 코드
+                                W -> 1
+                                b -> 0
+'''
+
 import tensorflow as tf
 
 xdata = [1,2,3]
