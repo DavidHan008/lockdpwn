@@ -7,7 +7,7 @@ import gzip
 import matplotlib.pyplot as plt
 
 
-SOURCE_URL = 'http://yann.lecun.com/exdb/minist/'
+SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
 
 def maybe_download(filename, work_directory):
 	if not os.path.exists(work_directory):
@@ -171,7 +171,6 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
 
 
 
-
 x = tf.placeholder("float", [None, 784]) # mnist data image of shape 28 * 28 = 784
 y = tf.placeholder("float", [None, 10]) # 0-9 digits recognition => 10 classes
 
@@ -191,7 +190,7 @@ sess.run(init)
 trainig_epochs = 25
 display_step = 1
 batch_size = 100
-mnist = input_data.read_data_sets("MNIST_data", one_hot=True)
+mnist = input_data.read_data_sets("./MNIST_data", one_hot=True)
 
 
 for epoch in range(trainig_epochs):
