@@ -1,7 +1,7 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> 파이썬해킹프로그래밍, buffer_overflow.py와 같이 사용하는 예제 코드
+	python ==> 파해프, buffer_overflow.py와 같이 사용하는 예제 코드
 '''
 from pydbg import *
 from pydbg.defines import *

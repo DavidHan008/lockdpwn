@@ -1,20 +1,33 @@
-#!/usr/bin/env python
+#!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> A문자열을 입력해 데이터를 무작위로 변경하는 코드 (퍼저로 사용한다)
+	python ==>
 '''
-def mutate(data, n = 20):
-	import random
+import tensorflow as tf
 
-	tmp = [c for c in data]
-	for i in xrange(n):
-		tmp[random.randint(0, len(tmp) - 1)] = chr(random.randint(0, 255))
+hello = tf.constant('hello tf')
 
-	return ''.join(tmp)
+a = tf.constant(10)
+b = tf.constant(32)
+c = a + b
 
-print repr(mutate('A' * 50))
-print repr(mutate('A' * 50))
-print repr(mutate('A' * 50))
-print repr(mutate('A' * 50))
+X = tf.placeholder("float", [None,3])
 
+W = tf.Variable(tf.random_normal([3,2]), name='Weights')
+b = tf.Variable(tf.random_normal([2,1]), name='Bias')
 
+xdata = [[1,2,3,] , [4,5,6]]
+
+expr = tf.matmul(X,W) + b
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+print sess.run(hello)
+print "a + b = c = ", sess.run(c)
+print xdata
+print sess.run(W)
+print sess.run(b)
+print sess.run(expr, feed_dict={X: xdata})
+
+sess.close()

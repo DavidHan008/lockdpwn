@@ -1,35 +1,34 @@
+/*
+  c ==> CTF, st
+ */
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-const int kBufSize = 128;
-
-void off_by_one1(char* in_buf)
+int main(int argc, char *argv[])
 {
-	char out_buf[128] = "";
-	int in_buf_len = strlen(in_buf);
-	
-	for (int i = 0; i <= in_buf_len; i++)
-	{
-		out_buf[i] = in_buf[i];
-	}
-	printf("%s\n",out_buf);
-}
+  pid_t pid;
+  char buf[16];
+  int user_input;
 
-void off_by_one2(char* in_buf)
-{
-	char out_buf[128] = "";
-	int in_buf_len = strlen(in_buf);
+  pid = fork();
 
-	if (in_buf_len <= kBufSize)
-	{
-		strcpy(out_buf, in_buf);
-	}
-	printf("%s\n", out_buf);
-}
+  if (pid==0)
+  {
+    puts("Segmentation Fault");
+    exit(0);
+  }
+  else
+  {
+    puts("Enter the pid of child process: ");
+    fgets(buf, sizeof(buf), stdin);
+    user_input = atoi(buf);
 
-int main(int argc, char* argv[])
-{
-	off_by_one1(argv[1]);
-	off_by_one2(argv[1]);
-	return 0;
+    if (pid == user_input)
+    {
+      puts("Congratulation your FLAG is ctf4b{7h15_15_s1mpl3_ltrace}");
+    }
+  }
+  return 0;
 }
