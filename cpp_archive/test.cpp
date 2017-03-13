@@ -1,43 +1,17 @@
-#include <cstring>
 #include <iostream>
-#include <set>
-#include <list>
+#include <string>
 
 using namespace std;
 
-class CompanyA
+int main(int argc, const char *argv[])
 {
-  public:
-    void sendCleartext(const string& msg);
-    void sendEncrypted(const string& msg);
-};
+	cout << "aa" << endl;
+	
+	char address[100];
+	cin.getline(address, 100, '\n');
 
-class CompanyB
-{
-  public:
-    void sendClearttext(const string& msg);
-    void sendEncrypted(const string& msg);
-};
-
-class MsgInfo
-{
-  public:
+	cout << "주소는 " << address << " 입니다";
 
 
-};
-
-template<typename T>
-class MsgSender
-{
-  public:
-    void sendClear(const MsgInfo& info)
-    {
-        string msg;
-
-        CompanyA c;
-        c.sendCleartext(msg);
-    }
-
-    void sendSecret(const MsgInfo& info)
-    {}
-};
+	return 0;
+}
