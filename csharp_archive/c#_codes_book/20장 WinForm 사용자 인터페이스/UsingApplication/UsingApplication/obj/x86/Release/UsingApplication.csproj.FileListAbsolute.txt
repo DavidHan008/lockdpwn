@@ -8,3 +8,5 @@ D:\집필\뇌자극C#\20장 WinForm 사용자 인터페이스\UsingApplication\U
 D:\집필\뇌자극C#\20장 WinForm 사용자 인터페이스\UsingApplication\UsingApplication\bin\Release\UsingApplication.exe
 D:\집필\뇌자극C#\20장 WinForm 사용자 인터페이스\UsingApplication\UsingApplication\bin\Release\UsingApplication.pdb
 D:\집필\뇌자극C#\20장 WinForm 사용자 인터페이스\UsingApplication\UsingApplication\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\vdl\git\lockdpwn\csharp_archive\c#_codes_book\20장 WinForm 사용자 인터페이스\UsingApplication\UsingApplication\obj\x86\Release\UsingApplication.exe
+C:\Users\vdl\git\lockdpwn\csharp_archive\c#_codes_book\20장 WinForm 사용자 인터페이스\UsingApplication\UsingApplication\obj\x86\Release\UsingApplication.pdb
