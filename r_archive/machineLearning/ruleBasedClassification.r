@@ -1,10 +1,15 @@
-
+'''
+	 R ==> 머신러닝처음, Rule Based Classification을 적용해 중고등학생의 보충교육시간을 적절하게 선택해보는 예제 코드
+							적용도 : 확률
+							정확도 : 조건부확률
+							가능도비율 : 관찰도수 / 기대도수
+'''
 test <- read.csv("rule.csv", header = T)
 
 r1 <- NROW(subset(test, 효과 == "YES")) / NROW(test)
 r2 <- NROW(subset(test, 효과 == "NO")) / NROW(test)
 
-
+# 가능도비율, 정확도, 적용도를 구해주는 함수
 like_cov_acc <- function(cond, res)
 {
 	f1 <- NROW(subset(cond, 효과 == "YES"))
@@ -28,6 +33,7 @@ like_cov_acc <- function(cond, res)
 cond1 <- subset(test, 과목 == "수학" & 수업일 == "주말")
 res1 = "NO"
 like_cov_acc(cond1, res1)
+
 
 # RULE 2
 cond2 <- subset(test, 과목 == "과학")
