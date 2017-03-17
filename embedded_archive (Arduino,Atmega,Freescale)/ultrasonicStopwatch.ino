@@ -2,8 +2,8 @@
   arduino ==> 초음파센서 2개를 사용해서 스탑워치를 구현한 코드
               천장에서 물체를 떨어뜨리면 스탑워치를 시작해서 바닥에 떨어지는 순간까지 시간을 잰다
 */
-#define TRIG 8
-#define ECHO 9
+#define TRIGBOTTOM 8
+#define ECHOBOTTOM 9
 #define TRIGUPPER 10
 #define ECHOUPPER 11
 
@@ -45,8 +45,6 @@ void loop()
   digitalWrite(TRIGBOTTOM,LOW);
   // 아래 초음파, 초음파센서로부터 거리를 재는 코드
   distance = pulseIn(ECHOBOTTOM,HIGH,5800)/58.0;
-
-
 
   /// 스톱워치 시간을 재는 코드
   elapsedTime = millis();
