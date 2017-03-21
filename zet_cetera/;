@@ -13,54 +13,16 @@
 
 
 # this 포인터
-	this->radius = radius;
+	this->radius = radius 
 	또는
 	return this;
 
 
 
-# string 클래스
-		#include <string>
-		using namespace std;
-		string str = "I love ";
-		str.append("C++");
-	
-	# 문자열 복사
-		string address("abcdef");
-		string copyAddress(address);
-	
-		char text[] = {'L','o','v','e',',','C','+','+','\0'};
-		string title(text);
-
-	# 문자열 --> 숫자 변환
-		string s = "123";
-		int n = stoi(s);
-
-		string *p = new string("C++");
-		cout << *p;
-		p->append(" good man");
-		delete p;
 
 
-	# getline() 함수로 string을 입력받는다
 
-	string names[5]; // 문자열 배열 선언
-	for(int i=0; i<5; i++) 
-	{
-		cout << "이름 >> ";
-		getline(cin, names[i], '\n');
-	}
 
-	string latter = names[0];
-
-	for(int i=1; i<5; i++) 
-	{
-		if(latter < names[i]) // 사전 순으로 latter 문자열이 앞에 온다면
-		{ 
-			latter = names[i]; // latter 문자열 변경
-		}
-	}
-	cout << "사전에서 가장 뒤에 나오는 문자열은 " << latter << endl;
 
 
 
