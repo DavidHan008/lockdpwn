@@ -7,7 +7,7 @@ from __future__ import division
 from sympy import *
 from sympy import solve
 
-x, y, z, t = symbols('x y z t')
+x, y, z, w = symbols('x y z w')
 k, m, n = symbols('k m n', integer=True)
 f, g, h = symbols('f g h', cls=Function)
 a,b,c,d = symbols('a b c d')
