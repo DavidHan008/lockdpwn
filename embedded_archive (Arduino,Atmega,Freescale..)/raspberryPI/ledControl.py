@@ -5,8 +5,10 @@
 '''
 import RPi.GPIO as GPIO
 
+# 라즈베리파이 핀모드를 설정하고
 GPIO.setmode(GPIO.BOARD)
 
+# 11,13,15를 출력으로 설정한다 (14는 Ground에 꼽는다)
 GPIO.setup(11,GPIO.OUT)
 GPIO.setup(13,GPIO.OUT)
 GPIO.setup(15,GPIO.OUT)

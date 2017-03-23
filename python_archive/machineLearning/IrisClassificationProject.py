@@ -31,6 +31,8 @@ test_dataset = pandas.read_csv(test_filepath, names = names)
 testClass = test_dataset['class']
 del test_dataset['class']
 testData = np.array(test_dataset)
+testData2 = testData[:,0:2]
+
 
 #array = train_dataset.values
 #X = array[:,0:4]
@@ -161,9 +163,13 @@ print("<%.3f, %.3f, %.3f>\n" % (value7.mean(),value8.mean(),value9.mean()))
 
 # 2) In this problem we will use the first 2 features of the Iris data.
 
-xvec2 = Matrix([x,y]).T
 
 # a. Plot the training data samples (each class should be assigned a different symbol).
+
+c1 = class1[:,0:2]
+c2 = class2[:,0:2]
+c3 = class3[:,0:2]
+
 c1x = class1[:,0]
 c1y =class1[:,1]
 
@@ -172,6 +178,8 @@ c2y =class2[:,1]
 
 c3x = class3[:,0]
 c3y =class3[:,1]
+
+
 
 plt.plot(c1x,c1y,'bo',c2x,c2y,'ro',c3x,c3y,'co')
 plt.grid()
@@ -188,14 +196,205 @@ print("class3 mean : [%.3f, %.3f]" % (c3x.mean(),c3y.mean()) + "\n             s
 
 # c. Plot the means and the contours for which the Mahalanobis distance = 2. (same plot as in (a) )
 
+
+xvec2 = Matrix([x,y])
+
 mahal1x = []
-meanv1 = meanvec1[:,0:2]
-meanv1 = meanv1.T
+meanv1 = meanvec1[0:2,:].T
+meanv2 = meanvec2[0:2,:].T
+meanv3 = meanvec3[0:2,:].T
 c1cov = np.cov(c1x, c1y)
 invc1cov = np.linalg.inv(c1cov)
 
-for i in range(0,len(c1)):
-        mahal1x.append(((c1[i] - meanv1) * invc1cov * (c1[i]-meanv1).T).item(0))
+#for i in range(0,len(c1)):
+ #        mahal1x.append(((c1[i] - meanv1) * invc1cov * (c1[i]-meanv1).T).item(0))
+
+cov11 = np.cov(c1.T)
+cov22 = np.cov(c2.T)
+cov33 = np.cov(c3.T)
+
+icov11 = np.linalg.inv(cov11)
+icov22 = np.linalg.inv(cov22)
+icov33 = np.linalg.inv(cov33)
+
+# 3개 클래스의 경계함수를 구해서 e1,e2,e3에 넣는다 
+# 그 다음 서로의 경계평면인 e12, e23, e13을 구한다
+e1First = -0.5 * xvec2.T * icov11 * xvec2
+e1Second = (icov11 * meanv1.T).T * xvec2
+e1Third = -0.5 * meanv1 * icov11 * meanv1.T -0.5*log(np.linalg.det(cov11))
+e1 = e1First + e1Second + e1Third
+
+
+e2First = -0.5 * xvec2.T * icov22 * xvec2
+e2Second = (icov22 * meanv2.T).T * xvec2
+e2Third = -0.5 * meanv2 * icov22 * meanv2.T -0.5*log(np.linalg.det(cov22))
+e2 = e2First + e2Second + e2Third
+
+
+e3First = -0.5 * xvec2.T * icov33 * xvec2
+e3Second = (icov33 * meanv3.T).T * xvec2
+e3Third = -0.5 * meanv3 * icov33 * meanv3.T -0.5*log(np.linalg.det(cov33))
+e3 = e3First + e3Second + e3Third
+
+e12 = e1 - e2
+e23 = e2 - e3
+e13 = e1 - e3
+
+# 2개의 변수만을 고려하는 함수를 만든다
+def substitute2(func,li):
+    print(func.subs({x:li[0],y:li[1]}))
+    return func.subs({x:li[0],y:li[1]})
+
+value1 = []; value2 = []; value3 = []
+value4 = []; value5 = []; value6 = []
+value7 = []; value8 = []; value9 = []
+
+for i in range(0,len(testData2)):
+    if(i < 10):
+        value1.append(substitute2(e12,testData2[i]))
+    elif(i < 20 and i >= 10):
+        value2.append(substitute2(e12,testData2[i]))
+    elif(i < len(testData2) and i >= 20):
+        value3.append(substitute2(e12,testData2[i]))
+
+    if(i % 10 == 9 and i != 0):
+        print('\n')
+
+value1 = np.array(value1)
+value2 = np.array(value2)
+value3 = np.array(value3)
+print("<%.3f, %.3f, %.3f>\n" % (value1.mean(),value2.mean(),value3.mean()))
+
+for i in range(0,len(testData2)):
+    if(i < 10):
+        value4.append(substitute2(e23,testData2[i]))
+    elif(i < 20 and i >= 10):
+        value5.append(substitute2(e23,testData2[i]))
+    elif(i < len(testData2) and i >= 20):
+        value6.append(substitute2(e23,testData2[i]))
+
+    if(i % 10 == 9 and i != 0):
+        print('\n')
+
+value4 = np.array(value4)
+value5 = np.array(value5)
+value6 = np.array(value6)
+print("<%.3f, %.3f, %.3f>\n" % (value4.mean(),value5.mean(),value6.mean()))
+
+for i in range(0,len(testData2)):
+    if(i < 10):
+        value7.append(substitute2(e13,testData2[i]))
+    elif(i < 20 and i >= 10):
+        value8.append(substitute2(e13,testData2[i]))
+    elif(i < len(testData2) and i >= 20):
+        value9.append(substitute2(e13,testData2[i]))
+
+    if(i % 10 == 9 and i != 0):
+        print('\n')
+
+value7 = np.array(value7)
+value8 = np.array(value8)
+value9 = np.array(value9)
+print("<%.3f, %.3f, %.3f>\n" % (value7.mean(),value8.mean(),value9.mean()))
+
+
+# e12, e13, e23 방정식의 해를 (x,y)로 구해서 y1,y2,y3에 넣는다
+y1 = []
+y2 = []
+y3 = []
+
+def frange(x, y, jump):
+  while x < y:
+    yield x
+    x += jump
+
+def makeLine(func, a,b):
+    return func.subs({x:a,y:b})
+
+for i in frange(4.,8.,0.1):
+    y1.append(solve(e12.subs({x:i}),y))
+    y2.append(solve(e23.subs({x:i}),y))
+    y3.append(solve(e13.subs({x:i}),y))
+
+
+# 2차원 평면에 3차원 직선들을 나타내야하므로 y11,y12 같이 하나의 x에 따라 2개의 y값이 생긴다
+# 이를 표현하기 위해 총 6개의 직선을 그려야한다
+
+y11 = [] ; y12 = []
+y21 = [] ; y22 = []
+y31 = [] ; y32 = []
+
+x1 = np.linspace(4,8,len(y1))
+
+for i in range(0,len(y1)):
+    y11.append(y1[i][0])
+    y12.append(y1[i][1])
+
+for i in range(0,len(y2)):
+    y21.append(y2[i][0])
+    y22.append(y2[i][1])
+
+for i in range(0,len(y3)):
+    y31.append(y3[i][0])
+    y32.append(y3[i][1])
+
+y11 = np.real(y11)
+y12 = np.real(y12)
+y21 = np.real(y21)
+y22 = np.real(y22)
+y31 = np.real(y31)
+y32 = np.real(y32)
+
+y21[23] = 3.7516
+y22[23] = 3.7516
+
+for x in y11:
+    if x > 5 or x < 2:
+        y11[np.where(y11 == x)] = None
+
+for x in y12:
+    if x > 5 or x < 2:
+        y12[np.where(y12 == x)] = None
+
+for x in y21:
+    if x > 5 or x < 2:
+        y21[np.where(y21 == x)] = None
+
+for x in y22:
+    if x > 5 or x < 2:
+        y22[np.where(y22 == x)] = None
+
+for x in y31:
+    if x > 5 or x < 2:
+        y31[np.where(y31 == x)] = None
+
+for x in y32:
+    if x > 5 or x < 2:
+        y32[np.where(y32 == x)] = None
+
+
+plt.plot(c1x,c1y,'b.',c2x,c2y,'r.',c3x,c3y,'g.',x1,y11,'b',x1,y12,'b',x1,y21,'r',x1,y22,'r',x1,y31,'g',x1,y32,'g')
+plt.grid()
+plt.show()
+
+# e. Add the test data set to the plot. (correctly classified points, misclassified points, and points from different classes should be assigned different symbols).
+
+t1x = testData2[0:10,0]
+t1y = testData2[0:10,1]
+
+t2x = testData2[10:20,0]
+t2y = testData2[10:20,1]
+
+t3x = testData2[20:30,0]
+t3y = testData2[20:30,1]
+
+plt.plot(c1x,c1y,'b.',c2x,c2y,'r.',c3x,c3y,'g.',x1,y11,'b',x1,y12,'b',x1,y21,'r',x1,y22,'r',x1,y31,'g',x1,y32,'g',t1x,t1y,'bo',t2x,t2y,'ro',t3x,t3y,'go')
+plt.grid()
+plt.show()
+
+
+
+
 
 
 
