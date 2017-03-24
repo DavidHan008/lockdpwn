@@ -206,19 +206,26 @@ invc1cov = np.linalg.inv(c1cov)
 #for i in range(0,len(c1)):
  #        mahal1x.append(((c1[i] - meanv1) * invc1cov * (c1[i]-meanv1).T).item(0))
 
-def mahalanobisDistance(vec):
-    list = []
-    for i in range(0,256):
-        list.append(((vec[i]-meanv1) * invc1cov * (vec[i] - meanv1).T).item(0))
-    return list
+def mahalanobisDist(vec):
+    vec2 = [[0]*256 for i in range(256)]
+    
+    for k in range(0,2):
+        for i in range(0,256):
+            for j in range(0,256):
+                vec2[i][j]= ((vec[i][j][k]-meanv1) * invc1cov * (vec[i][j][k] - meanv1).T).item(0)
+
+    vec2 = np.array(vec2)
+    return vec2
 
 xx = np.linspace(4,8,256)
 yy = np.linspace(2,5,256)
 xy = np.vstack((xx,yy)).T
 
 XX,YY = np.meshgrid(xx,yy)
+XY = np.stack((XX,YY)).T
 
-mahal1x = mahalanobisDistance(XY)
+
+mahal1x = mahalanobisDist(XY)
 
 
 
@@ -323,6 +330,8 @@ y3 = []
 yy1 = []
 yy2 = []
 yy3 = []
+x1 = np.linspace(4,8,41)
+
 def frange(x, y, jump):
   while x < y:
     yield x
@@ -332,6 +341,7 @@ def frange(x, y, jump):
 def makeLine(func, a,b):
     return func.subs({x:a,y:b})
 
+# 값 뽑아오기 한 번 힘드네 ㅡㅡ
 for i in frange(4.,8.,0.1):
     y1.append(re(solve(e12.subs({x:i}),y)[0][0]))
     y2.append(re(solve(e23.subs({x:i}),y)[0][0]))
