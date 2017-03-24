@@ -188,14 +188,11 @@ plt.grid()
 
 
 print("class1 mean : [%.3f, %.3f]" % (c1x.mean(),c1y.mean()) + "\n             std :[%.3f, %.3f]" % (c1x.std(), c1y.std()))
-
 print("class2 mean : [%.3f, %.3f]" % (c2x.mean(),c2y.mean()) + "\n             std :[%.3f, %.3f]" % (c2x.std(), c2y.std()))
-
 print("class3 mean : [%.3f, %.3f]" % (c3x.mean(),c3y.mean()) + "\n             std :[%.3f, %.3f]" % (c3x.std(), c3y.std()))
 
 
 # c. Plot the means and the contours for which the Mahalanobis distance = 2. (same plot as in (a) )
-
 
 xvec2 = Matrix([x,y])
 
@@ -208,6 +205,26 @@ invc1cov = np.linalg.inv(c1cov)
 
 #for i in range(0,len(c1)):
  #        mahal1x.append(((c1[i] - meanv1) * invc1cov * (c1[i]-meanv1).T).item(0))
+
+def mahalanobisDistance(vec):
+    list = []
+    for i in range(0,256):
+        list.append(((vec[i]-meanv1) * invc1cov * (vec[i] - meanv1).T).item(0))
+    return list
+
+xx = np.linspace(4,8,256)
+yy = np.linspace(2,5,256)
+xy = np.vstack((xx,yy)).T
+
+XX,YY = np.meshgrid(xx,yy)
+
+mahal1x = mahalanobisDistance(XY)
+
+
+
+
+
+
 
 cov11 = np.cov(c1.T)
 cov22 = np.cov(c2.T)
@@ -222,18 +239,19 @@ icov33 = np.linalg.inv(cov33)
 e1First = -0.5 * xvec2.T * icov11 * xvec2
 e1Second = (icov11 * meanv1.T).T * xvec2
 e1Third = -0.5 * meanv1 * icov11 * meanv1.T -0.5*log(np.linalg.det(cov11))
-e1 = e1First + e1Second + e1Third
 
 
 e2First = -0.5 * xvec2.T * icov22 * xvec2
 e2Second = (icov22 * meanv2.T).T * xvec2
 e2Third = -0.5 * meanv2 * icov22 * meanv2.T -0.5*log(np.linalg.det(cov22))
-e2 = e2First + e2Second + e2Third
 
 
 e3First = -0.5 * xvec2.T * icov33 * xvec2
 e3Second = (icov33 * meanv3.T).T * xvec2
 e3Third = -0.5 * meanv3 * icov33 * meanv3.T -0.5*log(np.linalg.det(cov33))
+
+e1 = e1First + e1Second + e1Third
+e2 = e2First + e2Second + e2Third
 e3 = e3First + e3Second + e3Third
 
 e12 = e1 - e2
@@ -302,80 +320,33 @@ print("<%.3f, %.3f, %.3f>\n" % (value7.mean(),value8.mean(),value9.mean()))
 y1 = []
 y2 = []
 y3 = []
-
+yy1 = []
+yy2 = []
+yy3 = []
 def frange(x, y, jump):
   while x < y:
     yield x
     x += jump
 
+
 def makeLine(func, a,b):
     return func.subs({x:a,y:b})
 
 for i in frange(4.,8.,0.1):
-    y1.append(solve(e12.subs({x:i}),y))
-    y2.append(solve(e23.subs({x:i}),y))
-    y3.append(solve(e13.subs({x:i}),y))
+    y1.append(re(solve(e12.subs({x:i}),y)[0][0]))
+    y2.append(re(solve(e23.subs({x:i}),y)[0][0]))
+    y3.append(re(solve(e13.subs({x:i}),y)[0][0]))
+    yy1.append(re(solve(e1.subs({x:i}),y)[0][0]))
+    yy2.append(re(solve(e2.subs({x:i}),y)[0][0]))
+    yy3.append(re(solve(e3.subs({x:i}),y)[0][0]))
 
 
-# 2차원 평면에 3차원 직선들을 나타내야하므로 y11,y12 같이 하나의 x에 따라 2개의 y값이 생긴다
-# 이를 표현하기 위해 총 6개의 직선을 그려야한다
-
-y11 = [] ; y12 = []
-y21 = [] ; y22 = []
-y31 = [] ; y32 = []
-
-x1 = np.linspace(4,8,len(y1))
-
-for i in range(0,len(y1)):
-    y11.append(y1[i][0])
-    y12.append(y1[i][1])
-
-for i in range(0,len(y2)):
-    y21.append(y2[i][0])
-    y22.append(y2[i][1])
-
-for i in range(0,len(y3)):
-    y31.append(y3[i][0])
-    y32.append(y3[i][1])
-
-y11 = np.real(y11)
-y12 = np.real(y12)
-y21 = np.real(y21)
-y22 = np.real(y22)
-y31 = np.real(y31)
-y32 = np.real(y32)
-
-y21[23] = 3.7516
-y22[23] = 3.7516
-
-for x in y11:
-    if x > 5 or x < 2:
-        y11[np.where(y11 == x)] = None
-
-for x in y12:
-    if x > 5 or x < 2:
-        y12[np.where(y12 == x)] = None
-
-for x in y21:
-    if x > 5 or x < 2:
-        y21[np.where(y21 == x)] = None
-
-for x in y22:
-    if x > 5 or x < 2:
-        y22[np.where(y22 == x)] = None
-
-for x in y31:
-    if x > 5 or x < 2:
-        y31[np.where(y31 == x)] = None
-
-for x in y32:
-    if x > 5 or x < 2:
-        y32[np.where(y32 == x)] = None
-
-
-plt.plot(c1x,c1y,'b.',c2x,c2y,'r.',c3x,c3y,'g.',x1,y11,'b',x1,y12,'b',x1,y21,'r',x1,y22,'r',x1,y31,'g',x1,y32,'g')
+plt.plot(c1x,c1y,'bo',c2x,c2y,'ro',c3x,c3y,'go',x1,y1,'b',x1,y2,'r',x1,y3,'g')
 plt.grid()
+plt.xlim(4,8)
+plt.ylim(2,5)
 plt.show()
+
 
 # e. Add the test data set to the plot. (correctly classified points, misclassified points, and points from different classes should be assigned different symbols).
 
@@ -388,9 +359,24 @@ t2y = testData2[10:20,1]
 t3x = testData2[20:30,0]
 t3y = testData2[20:30,1]
 
-plt.plot(c1x,c1y,'b.',c2x,c2y,'r.',c3x,c3y,'g.',x1,y11,'b',x1,y12,'b',x1,y21,'r',x1,y22,'r',x1,y31,'g',x1,y32,'g',t1x,t1y,'bo',t2x,t2y,'ro',t3x,t3y,'go')
+plt.plot(x1,y1,'b',x1,y2,'r',x1,y3,'g',t1x,t1y,'bo',t2x,t2y,'ro',t3x,t3y,'go')
 plt.grid()
+plt.xlim(4,8)
+plt.ylim(2,5)
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -450,6 +436,10 @@ plt.show()
 # Naive Bayes를 선택하고 정확도와 Confusion Matrix를 설정한다
 NB = GaussianNB()
 NB.fit(X, Y)
+predictions = NB.predict(X_test)
+print(accuracy_score(Y_test, predictions))
+print(confusion_matrix(Y_test, predictions))
+print(classification_report(Y_test, predictions))
 predictions = NB.predict(X_test)
 print(accuracy_score(Y_test, predictions))
 print(confusion_matrix(Y_test, predictions))
