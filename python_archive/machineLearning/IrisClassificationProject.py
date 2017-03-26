@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-	python ==> 비주얼컴퓨팅수업,
+	python ==> 비주얼컴퓨팅수업, 프로젝트1에 사용한 Iris를 4개의 특성, 2개의 특성으로 분류기를 만들어본 코드
 '''
 import pandas
 import numpy as np
@@ -202,7 +202,6 @@ plt.show()
 
 
 
-
 # ================================================================================
 # b. Estimate the mean and covariance of each class.
 # ================================================================================
@@ -266,6 +265,7 @@ plt.xlabel('Sepal-Length')
 plt.ylabel('Sepal-Width')
 plt.plot(c1x,c1y,'bo',c2x,c2y,'ro',c3x,c3y,'go')
 plt.legend(['Iris-setosa','Iris-versicolor','Iris-virginica'])
+plt.plot(meanv1.item(0),meanv1.item(1), 'cD', meanv2.item(0), meanv2.item(1),'cD', meanv3.item(0), meanv3.item(1),'cD')
 plt.plot(xm1,ym11,'b--',xm1,ym12,'b--',xm1,ym21,'r--',xm1,ym22,'r--',xm1,ym31,'g--',xm1,ym32,'g--')
 plt.grid()
 plt.show()
