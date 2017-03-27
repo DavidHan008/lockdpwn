@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 '''
     python ==> 시스템최신기술, ds18b20 센서데이터를 thingspeak api를 이용해 웹에 뿌려주는 코드
 '''
@@ -7,8 +8,10 @@ import urllib
 import json
 import httplib
 
-sleep = 10
+sleep = 5
 key = 'PC45B10F37HRMZ0P'
+
+temp_sensor='/sys/bus/w1/devices/28-0416935fd1ff/w1_slave'
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
