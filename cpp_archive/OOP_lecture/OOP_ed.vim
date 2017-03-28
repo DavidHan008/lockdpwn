@@ -9,6 +9,40 @@
 
 
 -----------------------------------------------------------------------------------
+170328_화
+
+# 얕은 복사와 깊은 복사
+# 복사 생성자
+
+	# 얕은 복사
+		Circle::Circle(Circle& c)  // 복사 생성자
+		{
+			this->radius = c.radius;
+			cout << "복사 생성자 실행 radius = " << radius << endl;
+		}
+
+	# 깊은 복사
+		Person::Person(Person& person)  // 복사 생성자 
+		{
+			this->id = person.id; 					// id 값 복사
+			int len = strlen(person.name);			// name의 문자 개수
+			this->name = new char [len+1]; 			// name을 위한 공간 핟당
+			strcpy(this->name, person.name); 		// name의 문자열 복사
+			cout << "복사 생성자 실행. 원본 객체의 이름 " << this->name << endl;
+		}
+
+
+
+
+	$$ 206p 4번 문제 풀어보기
+		$ 2주 뒤에 제출하기 4/11(화)까지
+
+
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------
@@ -19,14 +53,12 @@
 	void swap(int *a, int *b)
 
 
-
 # 객체 치환 및 객체 리턴
 	Circle getCircle()
 	{
 		Circle tmp(30);
 		return tmp;
 	}
-
 
 
 # 참조자 &

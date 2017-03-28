@@ -1,57 +1,25 @@
-/*
-	c++ ==> 객체지향수업, 포인터를 사용해 Circle의 면적을 구해보는 코드
-*/
 #include <iostream>
+#include <cctype>
+#include <cstdio>
 
 using namespace std;
 
-class Circle
-{
-private:
-	int radius;
-
-public:
-	double getArea();
-	void setRadius(int r);
-};
-
-void Circle::setRadius(int r)
-{
-	radius = r;
-}
-
-double Circle::getArea()
-{
-	return 3.14 * radius * radius;
-}
-
-
 int main(int argc, const char *argv[])
 {
-	Circle circleArray[3];
+	int ch;
 
-	circleArray[0].setRadius(10);
-	circleArray[1].setRadius(20);
-	circleArray[2].setRadius(30);
+	cout << "알파벳 소문자, 대문자, 숫자 0-9 중 하나를 입력하세요 : ";
+	cin >> ch;
 
-
-	for (int i = 0; i < 3; i++)
+	switch(ch)
 	{
-		cout << "Circle " << i << " 의 면적은 " << circleArray[i].getArea() << endl;
+		case isalnum(ch):
+			oss << ch;
+			break;
+		default:
+			cout << "잘못 입력했습니다." << endl;
+			break;
 	}
-
-	cout << endl;
-	
-	Circle *p;
-	p = circleArray;
-
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Circle " << i << " 의 면적은 " << p->getArea() << endl;
-		p++;
-	}
-
 	return 0;
 }
-
 
