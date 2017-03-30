@@ -2,8 +2,6 @@
   arduino ==> 캡스톤, 평균이동필터를 사용해 초음파센서를 안정시키고 거리값을 읽어 서보모터를 구동시키는 예제코드
 */
 #include <Servo.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define MAXNUM 15
 #define TRIG 2
@@ -27,13 +25,13 @@ void setup()
 
 float getMean(float dist[])
 {
-  float mean = 0;
+  float sum = 0;
   for(int k = 0 ; k < MAXNUM ; k++)
   {
-    mean += dist[k];
+    sum += dist[k];
   }
 
-  return mean / MAXNUM;
+  return sum / MAXNUM;
 }
 
 void loop()
