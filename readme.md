@@ -4,7 +4,7 @@
 
 # Mission 2 :
 Raspberry Pi에 Python으로 DS18B20 온도세서 구동시키고, Thing Speak에 데이타 전송하여 실시간 온라인 그래프 보는 Public URL제출,  개인 github에 프로그램 올리고, 30초짜리 작동 동영상 만들어 유튜브에 올리고 Github에 링크를 올려둠
-<pre><code>
+```python
 #-*- coding: utf-8 -*-
 '''
     python ==> 시스템최신기술, ds18b20 센서데이터를 thingspeak api를 이용해 웹에 뿌려주는 코드
@@ -70,12 +70,12 @@ if __name__ == "__main__":
     while True:
         thermometer()
         time.sleep(sleep)
-</code></pre>
+```
 
 
 # Mission 3-1 :
 Raspberry Pi에 Python으로 LED를 10개 연결하여 뱀이 기어가는 형태를 구현하고 동영상 10초 촬영.  Push Button Switch를 붙이고 LED10개를 사용, LED를 킨후 사람이 스위치를 누르는 순발력 측정기 구현, 데모 영상.개인 github에 프로그램 올리고, 30초짜리 작동 동영상 만들어 유튜브에 올리고 Github에 링크를 올려둠
-<code><pre>
+```python
 #-*- coding: utf-8 -*-
 '''
     python ==> 시스템최신기술, LED 10개를 연쇄적으로 불이 들어왔다 꺼지게 하는 코드
@@ -114,10 +114,10 @@ while True:
     for i in range(len(pin)-1, -1, -1):
         out(i, 0);
         time.sleep(0.1)
-</code></pre>
+```
 
 # Mission 3-2 :
-<code><pre>
+```python
 #-*- coding: utf-8 -*-
 '''
     python ==> 시스템최신기술, LED 1개가 켜진 후 스위치를 누른 시간차이를 계산하는 코드
@@ -161,6 +161,6 @@ while True:
         out(1,0)
         end = time.time()
         print("%f second spent!" %(end-start))
-</code></pre>
+```
 
 
