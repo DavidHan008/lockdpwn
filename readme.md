@@ -1,9 +1,9 @@
 시스템최신기술 과제 제출
 모든 코드는 systemNewTechnology 폴더 안에 있습니다
 
-*Youtube URL (Mission 2) :    https://www.youtube.com/watch?v=grN8DFKpY14
-*Youtube URL (Mission 3):    https://youtu.be/uU5L1j1SaFw
-*thingspeak URL : https://thingspeak.com/channels/248481
+- Youtube URL (Mission 2) :    [https://www.youtube.com/watch?v=grN8DFKpY14]
+- Youtube URL (Mission 3):     [https://youtu.be/uU5L1j1SaFw]
+- thingspeak URL :             [https://thingspeak.com/channels/248481]
 
 # Mission 2 :
 Raspberry Pi에 Python으로 DS18B20 온도세서 구동시키고, Thing Speak에 데이타 전송하여 실시간 온라인 그래프 보는 Public URL제출,  개인 github에 프로그램 올리고, 30초짜리 작동 동영상 만들어 유튜브에 올리고 Github에 링크를 올려둠
