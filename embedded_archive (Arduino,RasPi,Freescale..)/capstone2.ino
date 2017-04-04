@@ -4,6 +4,7 @@
 
 volatile int STATE =  LOW;
 
+// 2 ~ 13번 핀을 OUTPUT으로 설정하고 시리얼모니터를 9600bps로 설정합니다 
 void setup()
 {
 	for(int i=2; i<13; i++)
@@ -13,6 +14,7 @@ void setup()
 	Serial.begin(9600);
 }
 
+// 2~13의 핀을 HIGH로 설정합니다 애노드 타입이므로 전부 OFF됩니다
 void reset()
 {
 	for(int i=2; i<13; i++)
@@ -21,6 +23,8 @@ void reset()
 	}	
 }
 
+// a값(0 ~ 9)에 따라 LED를 숫자모양으로 켜는 함수 
+// 숫자에 해당하는 부분을 LOW로 설정해 불이 켜지게 합니다
 void LEDControl(int a)
 {
 	reset();
@@ -161,6 +165,7 @@ void LEDControl(int a)
 	}
 }
 
+// 1초 간격으로 16 segment에 0 ~ 9의 숫자를 표시합니다
 void loop()
 {
 	for(int i = 0 ; i <= 9 ; i++)
