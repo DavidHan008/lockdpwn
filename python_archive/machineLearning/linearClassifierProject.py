@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-	python ==> 비주얼컴퓨팅, 프로젝트2
+	python ==> 비주얼컴퓨팅, 프로젝트2 선형분류기를 사용해 3 class - 2 features 시스템을 분류해보는 코드
 '''
 import pandas as pd
 import numpy as np
@@ -17,15 +17,19 @@ init_printing()
 # 1. Perceptron algorithm을 사용하여 w1, w2를 구분하는 선형분류기를 작성하라. 초기 weight vector와 학습율을 다양하게 시도해 볼 것.
 
 class Perceptron():
-	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10):
+	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, w_ = []):
 		self.thresholds = thresholds
 		self.eta = eta
 		self.n_iter = n_iter
+                if(w_ == []):
+                    self.w_ = np.zeros(3)
+                else:
+                    self.w_ = w_
 
 	def fit(self,X,y):
-		self.w_ = np.zeros(1 + X.shape[1])
 		self.errors_ = []
-		self.y_ = zip(one, X[:,0], X[:,1])
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
 		self.y_ = np.array(self.y_)
 
 		for _ in range(self.n_iter):
@@ -77,9 +81,11 @@ data13 = np.vstack((data1,data3))
 dataC13 = np.hstack((class1,class3))
 dataC13 = np.where(dataC13 == 'w1' ,-1,1)
 
+initAvec = np.array([0.5,0.5,0.5])
+
 ptron1 = Perceptron(eta = 0.1)
-ptron2 = Perceptron(eta = 0.2)
-ptron3 = Perceptron(eta = 0.3)
+ptron2 = Perceptron(eta = 1)
+ptron3 = Perceptron(eta = 0.5, w_ = initAvec)
 
 ptron1.fit(data12, dataC12)
 print("\n")
@@ -87,10 +93,6 @@ ptron2.fit(data12, dataC12)
 print("\n")
 ptron3.fit(data12, dataC12)
 print("\n")
-
-print(ptron1.errors_)
-print(ptron2.errors_)
-print(ptron3.errors_)
 
 def frange(x, y, jump):
   while x < y:
@@ -100,16 +102,48 @@ def frange(x, y, jump):
 
 yy = []
 for i in frange(-10,10,0.1):
-    yy.append(-(-103*i + 130)/116)
+    yy.append(0.8879*i  - 1.1206)
 
 xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=0.1, a=[0,0,0]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.plot(xx,yy) 
 plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
+plt.grid()
+plt.show()
+
+
+yyy = []
+for i in frange(-10,10,0.1):
+    yyy.append(0.8879*i  - 1.1206)
+
+xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=1, a=[0,0,0]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yyy) 
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
 plt.grid()
 plt.show()
 
 
 
+yyy2 = []
+for i in frange(-10,10,0.1):
+    yyy2.append(0.83319*i - 1.5583)
+
+xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=0.5, a = [.5,.5,.5]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yyy2) 
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
+plt.grid()
+plt.show()
 
 
 
@@ -129,7 +163,8 @@ class BatchRelaxationWithMargin():
 	def fit(self,X,y):
 		self.w_ = np.zeros(1 + X.shape[1])
 		self.errors_ = []
-		self.y_ = zip(one, X[:,0], X[:,1])
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
 		self.y_ = np.array(self.y_)
 
 		for _ in range(self.n_iter):
@@ -153,20 +188,24 @@ class BatchRelaxationWithMargin():
 
 bat = BatchRelaxationWithMargin(eta = 0.1, margin = 0.1)
 bat.fit(data13, dataC13)
-
-bat2 = BatchRelaxationWithMargin(eta = 0.1, margin = 0.5)
+print("\n")
+bat2 = BatchRelaxationWithMargin(eta = 0.5, margin = 0.5)
 bat2.fit(data13, dataC13)
+print("\n")
+bat3 = BatchRelaxationWithMargin(eta = 0.2, margin = 0.1)
+bat3.fit(data13, dataC13)
 
 yy2 = []
 xx = np.linspace(-10,10,201)
-
 for i in frange(-10,10,0.1):
-    yy2.append(0.16708*i + 1.1202)
+    yy2.append(0.1668*i + 1.119)
 
-
-
+plt.title('[w1, w3] eta=0.1, margin = 0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.plot(xx,yy2) 
 plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
 plt.grid()
 plt.show()
 
@@ -174,12 +213,32 @@ plt.show()
 yy3 = []
 xx = np.linspace(-10,10,201)
 for i in frange(-10,10,0.1):
-    yy3.append(0.18656*i + 0.15223)
+    yy3.append(0.6091*i + 0.8582)
 
+plt.title('[w1, w3] eta=0.5, margin = 0.5',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.plot(xx,yy3) 
 plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
 plt.grid()
 plt.show()
+
+
+yy7 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy7.append(0.3437*i + 0.6732)
+
+plt.title('[w1, w3] eta=0.2, margin = 0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy7) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
+plt.grid()
+plt.show()
+
 
 
 
@@ -194,17 +253,20 @@ plt.show()
 
 
 class WidrowHoff():
-	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, b_ = 0.1):
+	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, b_ = 0.1, w_ = []):
 		self.thresholds = thresholds
 		self.eta = eta
 		self.n_iter = n_iter
-		self.margin = margin
 		self.b_ = b_
+                if(w_ == []):
+                    self.w_ = np.zeros(3)
+                else:
+                    self.w_ = w_
 
 	def fit(self,X,y):
-		self.w_ = np.zeros(1 + X.shape[1])
 		self.errors_ = []
-		self.y_ = zip(one, X[:,0], X[:,1])
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
 		self.y_ = np.array(self.y_)
 
 		for _ in range(self.n_iter):
@@ -226,8 +288,18 @@ class WidrowHoff():
 		return np.where(self.net_input(X) > self.thresholds, 1, -1)
 
 
-wid = WidrowHoff(eta = 0.1, b_ = 0.001, n_iter = 20)
+initAvec = np.array([0.5,0.5,0.5])
+
+wid = WidrowHoff(eta = 0.1, b_ = 0.001, n_iter = 10)
 wid.fit(data13,dataC13)
+print("\n")
+wid2 = WidrowHoff(eta = 0.001, b_ = 0.1, n_iter = 10)
+wid2.fit(data13,dataC13)
+print("\n")
+wid3 = WidrowHoff(eta = 0.1, b_ = 0.1, n_iter = 10, w_ = initAvec)
+wid3.fit(data13,dataC13)
+
+
 
 
 yy4 = []
@@ -235,22 +307,44 @@ xx = np.linspace(-10,10,201)
 for i in frange(-10,10,0.1):
     yy4.append(1.0244*i + 1.3034)
 
+
+plt.title('[w1, w3] : eta=0.1 , a=[0,0,0], b=0.001',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.plot(xx,yy4) 
 plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
 plt.grid()
 plt.show()
+
 
 
 yy5 = []
 xx = np.linspace(-10,10,201)
 for i in frange(-10,10,0.1):
-    yy5.append(0.6899*i + 0.959)
+    yy5.append(0.9624*i + 1.2388)
 
+plt.title('[w1, w3] : eta=0.1 , a=[.5,.5,.5], b=0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.plot(xx,yy5) 
 plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
 plt.grid()
 plt.show()
 
 
+yy6 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy6.append(0.5019*i + 0.6556)
 
+plt.title('[w1, w3] : eta=0.001 , a=[0,0,0], b=0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy6) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
+plt.grid()
+plt.show()
 
