@@ -69,6 +69,7 @@ del data1['class']
 del data2['class']
 del data3['class']
 
+# 모든 데이터들의 산점도를 그린다
 plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo',data3['x1'],data3['x2'],'go')
 plt.grid()
 plt.show()
