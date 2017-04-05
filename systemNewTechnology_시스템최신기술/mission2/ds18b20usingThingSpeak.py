@@ -8,20 +8,24 @@ import urllib
 import json
 import httplib
 
+# 5초의 데이터 업데이트 시간을 설정하고 API 값을 저장합니다
 sleep = 5
 key = 'PC45B10F37HRMZ0P'
 
+# 라즈베리파이가 센서데이터를 받는 경로를 설정합니다.
 temp_sensor='/sys/bus/w1/devices/28-0416935fd1ff/w1_slave'
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
+# 파일의 내용을 읽어오는 함수
 def temp_raw():
     f = open(temp_sensor,'r')
     lines = f.readlines()
     f.close()
     return lines
 
+# 읽어온 파일의 구문을 분석해 온도부분만 반환하는 함수
 def read_temp():
     lines = temp_raw()
     while lines[0].strip()[-3:] != 'YES':
@@ -36,6 +40,7 @@ def read_temp():
         temp_f = temp_c * 9.0/5.0 + 32.0
         return temp_c, temp_f
 
+# ThingSpeak에 데이터를 전송하는 함수
 def thermometer():
     while True:
         temp = read_temp()[0]
@@ -52,6 +57,7 @@ def thermometer():
         except:
             print "connection failed"
         break
+
 
 if __name__ == "__main__":
     while True:

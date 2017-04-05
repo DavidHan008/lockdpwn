@@ -1,29 +1,38 @@
-#include <MSTimer2.h>
+#include <MsTimer2.h>
 #include <Servo.h>
 
-volatile int STATE = LOW;
+#define alpha 0.3
+
+Servo myservo;
+int n = 0;
+int dt = 100;
+float rpm = 0;
+float LPFvalue = 0;
+
+void getRpm()
+{
+  rpm = (n * 60) / (dt * 0.002);
+  Serial.println(rpm);
+  LPFvalue = 0.7*LPFvalue + 0.3*rpm/30.0;
+  n = 0;
+}
+
+void Encoder()
+{
+  n += 1;
+}
 
 void setup()
 {
-	pinMode(12, OUTPUT);
-	attachInterrupt(0, blink, CHANGE);
-	
-	MSTimer2::set(1000, IncreaseNumber);
-	MSTimer2::start();
+  Serial.begin(115200);
+  attachInterrupt(0, Encoder, CHANGE);
+  MsTimer2::set(dt, getRpm);
+  MsTimer2::start();
 
-	attachInterrupt(0, IncreaseNumber, HIGH);
+  myservo.attach(9);
 }
-
-void blink()
-{
-	state = !state;
-}
-
 
 void loop()
 {
-	digitalWrite(12, STATE);
+  myservo.write(LPFvalue);
 }
-
-
-
