@@ -1,41 +1,41 @@
 시스템최신기술 과제 제출
 모든 코드는 systemNewTechnology 폴더 안에 있습니다
 
-- Youtube URL (Mission 2) :    [https://www.youtube.com/watch?v=grN8DFKpY14]
-- Youtube URL (Mission 3):     [https://youtu.be/uU5L1j1SaFw]
+Mission #4, #5를 하나의 60초 데모 비디오로 구성.  한 화면에 소스코드 2가지 각각 (온도를 ThingSpeak로도 쏘고, 이어서 여러분 서버로도 쏘는 것) (웹서버인데 화일에도 저장하고, 데이타베이스에도 저장) 화면에 ssh를 여러개 띄워놓고 한번에 비디오 찍도록 함.
+
+- Youtube URL (Mission 4,5) :    [https://youtu.be/9D-_BwH0Was]
 - thingspeak URL :             [https://thingspeak.com/channels/248481]
 
-# Mission 2 :
-Raspberry Pi에 Python으로 DS18B20 온도세서 구동시키고, Thing Speak에 데이타 전송하여 실시간 온라인 그래프 보는 Public URL제출,  개인 github에 프로그램 올리고, 30초짜리 작동 동영상 만들어 유튜브에 올리고 Github에 링크를 올려둠
+# Mission 4 :
+ node.js 설치 및 간단웹서버 구축, http로 온도 데이타 받아서 화일에 포맷팅하여 저장하는 프로그램 작성, github에 올림
+# Mission 5 :
+ Mission 4의 연장으로, mysql을 설치하고 온도 데이타를 database에 저장시킴, 프로그램을 github에 올림.
+
+파이썬 코드입니다
 ```python
-#-*- coding: utf-8 -*-
-'''
-    python ==> 시스템최신기술, ds18b20 센서데이터를 thingspeak api를 이용해 웹에 뿌려주는 코드
-'''
 import os
 import time
 import urllib
 import json
 import httplib
+import requests
 
-# 5초의 데이터 업데이트 시간을 설정하고 API 값을 저장합니다
 sleep = 5
 key = 'PC45B10F37HRMZ0P'
 
-# 라즈베리파이가 센서데이터를 받는 경로를 설정합니다.
 temp_sensor='/sys/bus/w1/devices/28-0416935fd1ff/w1_slave'
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-# 파일의 내용을 읽어오는 함수
+
 def temp_raw():
     f = open(temp_sensor,'r')
     lines = f.readlines()
     f.close()
     return lines
 
-# 읽어온 파일의 구문을 분석해 온도부분만 반환하는 함수
+
 def read_temp():
     lines = temp_raw()
     while lines[0].strip()[-3:] != 'YES':
@@ -50,120 +50,205 @@ def read_temp():
         temp_f = temp_c * 9.0/5.0 + 32.0
         return temp_c, temp_f
 
-# ThingSpeak에 데이터를 전송하는 함수
+
 def thermometer():
     while True:
         temp = read_temp()[0]
-        params = urllib.urlencode({'field1': temp, 'key':key })
         headers = {"Content-typZZe": "application/x-www-form-urlencoded","Accept": "text/plain"}
+        params = urllib.urlencode({'field1': temp, 'key':key })
         conn = httplib.HTTPConnection("api.thingspeak.com:80")
+
         try:
+            print(" ")
+            print "[+] ThingSpeak"
             conn.request("POST", "/update", params, headers)
             response = conn.getresponse()
             print temp
             print response.status, response.reason
             data = response.read()
             conn.close()
+
+            print "[+] Node.js"
+            r = requests.get('http://192.168.137.74:3000/logone', params={'temp':temp})
+            print r.status_code
+
         except:
             print "connection failed"
         break
+
 
 
 if __name__ == "__main__":
     while True:
         thermometer()
         time.sleep(sleep)
+
 ```
 
+Node.js 코드입니다
+```javascript
+var express = require('express');
+var app = express();
 
-# Mission 3-1 :
-Raspberry Pi에 Python으로 LED를 10개 연결하여 뱀이 기어가는 형태를 구현하고 동영상 10초 촬영.  Push Button Switch를 붙이고 LED10개를 사용, LED를 킨후 사람이 스위치를 누르는 순발력 측정기 구현, 데모 영상.개인 github에 프로그램 올리고, 30초짜리 작동 동영상 만들어 유튜브에 올리고 Github에 링크를 올려둠
-```python
-#-*- coding: utf-8 -*-
-'''
-    python ==> 시스템최신기술, LED 10개를 연쇄적으로 불이 들어왔다 꺼지게 하는 코드
-'''
-import RPi.GPIO as GPIO
-import time
+bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
 
-# 핀들의 목록을 생성합니다.
-pin=[7,11,12,13,15,18,29,31,32,33]
+var fs = require("fs");
+var df = require('dataformat');
 
-# BOARD를 초기화하고 16번 핀을 풀다운 인풋으로 설정합니다.
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setwarnings(False)
-
-# setup : 핀들의 초기화를 하는 함수
-def setup(p):
-    GPIO.setup(pin[p], GPIO.OUT)
-
-# out : 핀들의 HIGH, LOW 값을 변경해주는 함수
-def out(p, v):
-    GPIO.output(pin[i], v)
-
-for i in range(0, len(pin)):
-    setup(i)
-
-for i in range(0, len(pin)):
-    out(i, 0)
-
-while True:
-    # 0.1초를 주기로 핀들이 순서대로 켜졌다가 순서대로 꺼지는 것을 반복합니다
-    for i in range(0, len(pin)):
-        out(i, 1);
-        time.sleep(0.1)
-
-    for i in range(len(pin)-1, -1, -1):
-        out(i, 0);
-        time.sleep(0.1)
-```
-
-# Mission 3-2 :
-```python
-#-*- coding: utf-8 -*-
-'''
-    python ==> 시스템최신기술, LED 1개가 켜진 후 스위치를 누른 시간차이를 계산하는 코드
-'''
-import RPi.GPIO as GPIO
-import time
-import random
-
-# 핀들의 목록을 생성합니다.
-pin=[7,11,12,13,15,18,29,31,32,33]
-
-# BOARD를 초기화하고 16번 핀을 풀다운 인풋으로 설정합니다.
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setwarnings(False)
-
-# setup : 핀들의 초기화를 하는 함수
-def setup(p):
-    GPIO.setup(pin[p], GPIO.OUT)
-
-# out : 핀들의 HIGH, LOW 값을 변경해주는 함수
-def out(p, v):
-    GPIO.output(pin[i], v)
-
-for i in range(0, len(pin)):
-    setup(i)
-
-for i in range(0, len(pin)):
-    out(i, 0)
+mysql = require('mysql');
+var connection = mysql.createConnection({
+	host:'localhost',
+	user:'sensor',
+	password:'qwer1234',
+	database:'data'
+})
+connection.connect();
 
 
-while True:
-    # 5 ~ 10초의 랜덤시간 안에 LED가 켜지고 현재 시간을 저장합니다.
-    rand= random.randint(5,10)
-    time.sleep(rand)
-    start = time.time()
-    out(1,1)
+function insert_sensor(user, type, value, user2, serial, ip)
+{
+	obj = {};
+	obj.user = user;
+	obj.type = type;
+	obj.value = value;
+	obj.user2 = user2;
+	obj.serial = serial;
+	obj.ip = ip
+	obj.date = df(new Date(), "yyyy-mm-dd HH:MM:ss");
 
-    # 스위치를 누르면 시간차이를 계산해 출력합니다.
-    if(GPIO.wait_for_edge(16, GPIO.RISING)):
-        out(1,0)
-        end = time.time()
-        print("%f second spent!" %(end-start))
+	var d = JSON.stringify(obj);
+	ret = " "+ type + user2 +"="+ value;
+
+	//console.log("RET "+ ret);
+	//
+	fs.appendFile("Data.txt", d+'\n', function(err) {
+		if(err) console.log("File Write Err: %j", r);
+	});
+	return(ret);
+}
+
+
+function do_get_post(cmd, r, req, res)
+{
+	console.log(cmd +" %j", r);
+	ret_msg = "{serial:"+ r.serial +",user:"+ r.user;
+
+	if (r.format == '2') {
+		//console.log("got format 2");
+		var items = r.items.split(',');
+
+		for (var i=0; i< items.length; i++) {
+			if (items[i].length < 3) continue;
+			var v = items[i].split('-');
+			ret_msg += insert_sensor(r.user, v[1], v[2], v[0], r.serial, req.connection.remoteAddress);
+		}
+	}
+
+	ret_msg += "}";
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.end('X-ACK:' + ret_msg);
+}
+
+
+app.get("/data", function(req, res){
+	console.log("params=" + req.query);
+
+	var qstr = 'select * from sensors where time > date_sub(now(), INTERVAL 1 DAY)';
+
+	connection.query(qstr, function(err, rows, cols){
+		if(err){
+			throw err;
+			res.send('query error: ' +qstr);
+			return;
+		}
+
+		console.log("Got " + rows.length +" records");
+		var html = "<!doctype html><html><body>";
+		html += "<H1> Sensor Data for Last 24 Hours </H1>";
+		html += "<table border=1 cellpadding=3 cellspacing=0>";
+		html += "<tr><td>Seq#<td>Time Stamp<td>Temperature";
+
+		for(var i =0; i < rows.length ; i++)
+		{
+			html += "<tr><td>"+ JSON.stringify(rows[i]['seq'])+"<td>"+ JSON.stringify(rows[i]['time'])+"<td>"+ JSON.stringify(rows[i]['value']);
+		}
+		html += "</table>";
+		html += "</body></html>";
+		res.send(html);
+	});
+});
+
+
+
+app.get('/logone', function(req, res){
+	var i = 0;
+	i++;
+
+	r = {};
+	r.seq = i;
+	r.type = 'T';
+	r.device = '102';
+	r.unit = '0';
+	r.ip = req.ip;
+	r.value = req.query.temp;
+
+	var query = connection.query('insert into sensors set ?', r, function(err, rows,cols){
+		if(err)
+		{
+			throw err;
+		}
+		console.log("[+]SQL injection is done!");
+	});
+	
+	var date = new Date();
+	fs.appendFile("log.txt",JSON.stringify(req.query) +", "+req.ip+", "+ date +"\n" ,function(err){
+	if(err){
+			return console.log(err);
+		}
+	})
+	r = req.query;
+	do_get_post("GET", r, req, res);
+});
+
+
+
+
+app.post('/logone', function(req, res){
+	r = {};
+	r.seq = 1;
+	r.type = 'T';
+	r.device = '102';
+	r.unit = '0';
+	r.ip = req.ip;
+	r.value = req.query.temp;
+
+	var query = connection.query('insert into sensors set ?', r, function(err, rows,cols){
+		if(err)
+		{
+			throw err;
+		}
+		console.log("done");
+	});
+
+	var date = new Date();
+
+	fs.appendFile("log.txt",JSON.stringify(req.query) +", "+req.ip+", "+ date +"\n" ,function(err){
+		if(err){
+			return console.log(err);
+		}
+	})
+
+	r = req.body;
+	do_get_post("POST", r, req, res);
+});
+
+
+var server = app.listen(3000, function(){
+	var host = server.address().address
+	var port = server.address().port
+	console.log('listening at http://%s:%s',host,port)
+});
 ```
 
 
