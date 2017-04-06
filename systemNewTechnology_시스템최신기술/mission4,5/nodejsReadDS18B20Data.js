@@ -2,15 +2,18 @@
 // nodejs ==> 시스템최신기술, nodejs로 ds18b20의 센서데이터를 읽어오는 코드
 //
 
+// express 패키지를 사용합니다
 var express = require('express');
 var app = express();
 
 bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+// 파일을 저장하기 위해 fs, df 패키지를 사용합니다
 var fs = require("fs");
 var df = require('dataformat');
 
+// mysql에 데이터를 저장하기 위해 mysql 패키지를 사용합니다
 mysql = require('mysql');
 var connection = mysql.createConnection({
 	host:'localhost',
@@ -18,8 +21,7 @@ var connection = mysql.createConnection({
 	password:'qwer1234',
 	database:'data'
 })
-connection.connect();
-
+connection.connect(); // mysql에 접속합니다
 
 function insert_sensor(user, type, value, user2, serial, ip)
 {
@@ -65,10 +67,11 @@ function do_get_post(cmd, r, req, res)
 	res.end('X-ACK:' + ret_msg);
 }
 
-
+// server:3000/data 경로에 접속하면 mysql에서 데이터를 읽어와 뿌려줍니다
 app.get("/data", function(req, res){
 	console.log("params=" + req.query);
 
+	// 데이터를 얼마나 받아올 지 설정할 수 있습니다
 	var qstr = 'select * from sensors where time > date_sub(now(), INTERVAL 1 DAY)';
 
 	connection.query(qstr, function(err, rows, cols){
@@ -78,6 +81,7 @@ app.get("/data", function(req, res){
 			return;
 		}
 
+		// html 형식으로 뿌려줍니다
 		console.log("Got " + rows.length +" records");
 		var html = "<!doctype html><html><body>";
 		html += "<H1> Sensor Data for Last 24 Hours </H1>";
@@ -94,8 +98,8 @@ app.get("/data", function(req, res){
 	});
 });
 
-
-
+// server:3000/logone 에 GET 방식으로 접속하면 파라미터 값을 받아서 mysql에 넣는 작업을 수행하고
+// log.txt 파일에 데이터를 저장하는 작업 또한 수행합니다
 app.get('/logone', function(req, res){
 	var i = 0;
 	i++;
@@ -128,7 +132,8 @@ app.get('/logone', function(req, res){
 
 
 
-
+// server:3000/logone 에 POST 방식으로 접속하면 파라미터 값을 받아서 mysql에 넣는 작업을 수행하고
+// log.txt 파일에 데이터를 저장하는 작업 또한 수행합니다
 app.post('/logone', function(req, res){
 	r = {};
 	r.seq = 1;
@@ -158,7 +163,7 @@ app.post('/logone', function(req, res){
 	do_get_post("POST", r, req, res);
 });
 
-
+// 3000번 포트를 사용합니다
 var server = app.listen(3000, function(){
 	var host = server.address().address
 	var port = server.address().port

@@ -3,7 +3,7 @@
 
 Mission #4, #5를 하나의 60초 데모 비디오로 구성.  한 화면에 소스코드 2가지 각각 (온도를 ThingSpeak로도 쏘고, 이어서 여러분 서버로도 쏘는 것) (웹서버인데 화일에도 저장하고, 데이타베이스에도 저장) 화면에 ssh를 여러개 띄워놓고 한번에 비디오 찍도록 함.
 
-- Youtube URL (Mission 4,5) :    [https://youtu.be/9D-_BwH0Was]
+- Youtube URL (Mission 4,5) :    [https://youtu.be/xgScrkX3Ohw]
 - thingspeak URL :             [https://thingspeak.com/channels/248481]
 
 # Mission 4 :
@@ -20,22 +20,24 @@ import json
 import httplib
 import requests
 
+# 5초의 데이터 업데이트 시간을 설정하고 API 값을 저장합니다
 sleep = 5
 key = 'PC45B10F37HRMZ0P'
 
+# 라즈베리파이가 센서데이터를 받는 경로를 설정합니다.
 temp_sensor='/sys/bus/w1/devices/28-0416935fd1ff/w1_slave'
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-
+# 파일의 내용을 읽어오는 함수
 def temp_raw():
     f = open(temp_sensor,'r')
     lines = f.readlines()
     f.close()
     return lines
 
-
+# 읽어온 파일의 구문을 분석해 온도부분만 반환하는 함수
 def read_temp():
     lines = temp_raw()
     while lines[0].strip()[-3:] != 'YES':
@@ -50,7 +52,8 @@ def read_temp():
         temp_f = temp_c * 9.0/5.0 + 32.0
         return temp_c, temp_f
 
-
+# ThingSpeak에 데이터를 전송하는 함수
+# 또한 nodejs에 GET 방식으로 온도 파라미터를 전달하는 역할도 합니다
 def thermometer():
     while True:
         temp = read_temp()[0]
@@ -82,20 +85,22 @@ if __name__ == "__main__":
     while True:
         thermometer()
         time.sleep(sleep)
-
 ```
 
 Node.js 코드입니다
 ```javascript
+// express 패키지를 사용합니다
 var express = require('express');
 var app = express();
 
 bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+// 파일을 저장하기 위해 fs, df 패키지를 사용합니다
 var fs = require("fs");
 var df = require('dataformat');
 
+// mysql에 데이터를 저장하기 위해 mysql 패키지를 사용합니다
 mysql = require('mysql');
 var connection = mysql.createConnection({
 	host:'localhost',
@@ -103,8 +108,7 @@ var connection = mysql.createConnection({
 	password:'qwer1234',
 	database:'data'
 })
-connection.connect();
-
+connection.connect(); // mysql에 접속합니다
 
 function insert_sensor(user, type, value, user2, serial, ip)
 {
@@ -150,10 +154,11 @@ function do_get_post(cmd, r, req, res)
 	res.end('X-ACK:' + ret_msg);
 }
 
-
+// server:3000/data 경로에 접속하면 mysql에서 데이터를 읽어와 뿌려줍니다
 app.get("/data", function(req, res){
 	console.log("params=" + req.query);
 
+	// 데이터를 얼마나 받아올 지 설정할 수 있습니다
 	var qstr = 'select * from sensors where time > date_sub(now(), INTERVAL 1 DAY)';
 
 	connection.query(qstr, function(err, rows, cols){
@@ -163,6 +168,7 @@ app.get("/data", function(req, res){
 			return;
 		}
 
+		// html 형식으로 뿌려줍니다
 		console.log("Got " + rows.length +" records");
 		var html = "<!doctype html><html><body>";
 		html += "<H1> Sensor Data for Last 24 Hours </H1>";
@@ -179,8 +185,8 @@ app.get("/data", function(req, res){
 	});
 });
 
-
-
+// server:3000/logone 에 GET 방식으로 접속하면 파라미터 값을 받아서 mysql에 넣는 작업을 수행하고
+// log.txt 파일에 데이터를 저장하는 작업 또한 수행합니다
 app.get('/logone', function(req, res){
 	var i = 0;
 	i++;
@@ -213,7 +219,8 @@ app.get('/logone', function(req, res){
 
 
 
-
+// server:3000/logone 에 POST 방식으로 접속하면 파라미터 값을 받아서 mysql에 넣는 작업을 수행하고
+// log.txt 파일에 데이터를 저장하는 작업 또한 수행합니다
 app.post('/logone', function(req, res){
 	r = {};
 	r.seq = 1;
@@ -243,7 +250,7 @@ app.post('/logone', function(req, res){
 	do_get_post("POST", r, req, res);
 });
 
-
+// 3000번 포트를 사용합니다
 var server = app.listen(3000, function(){
 	var host = server.address().address
 	var port = server.address().port
