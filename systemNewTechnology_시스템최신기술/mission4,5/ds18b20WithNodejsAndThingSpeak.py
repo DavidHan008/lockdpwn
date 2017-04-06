@@ -58,7 +58,7 @@ def thermometer():
             conn.close()
 
             print "[+] Node.js"
-            r = requests.get('http://localhost:3000/logone', params={'temp':temp})
+            r = requests.get('http://192.168.137.74:3000/logone', params={'temp':temp})
             print r.status_code
 
         except:

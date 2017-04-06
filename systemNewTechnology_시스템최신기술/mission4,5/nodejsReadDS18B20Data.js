@@ -113,7 +113,7 @@ app.get('/logone', function(req, res){
 		{
 			throw err;
 		}
-		console.log("sql injection is done");
+		console.log("[+]SQL injection is done!");
 	});
 	
 	var date = new Date();
