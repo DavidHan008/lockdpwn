@@ -3,6 +3,72 @@
 
 
 -----------------------------------------------------------------------------------
+170410_월
+
+
+# 7장 프렌드와 연산자 중복
+
+	# 프렌드의 의미
+
+
+
+	# 연산자중복 operator overide
+
+		# c++의 다형성 성질을 가진다
+
+		# 반드시 클래스와 관계를 가진다
+
+	ex) 
+		class Power
+		{
+			int kick;
+			int punch;
+		public:
+			Power(int kick = 0, int punch =0)
+			{
+				this->kick = kick;
+				this->punch = punch;
+			}
+			Power operator+(Power op2);
+			Power operator+=(Power op2);
+		};
+
+		// 연산자중복
+		Power Power::operator(Power op2)
+		{
+			Power tmp;
+			tmp.kick = this->kick + op2.kick;
+			tmp.punch = this->punch + op2.punch;
+			return tmp;
+		}
+
+
+		# c = a+b 의 경우 --> 컴파일러는 c = a.+(b) 로 해석한다
+		  c = a+=b 구문 오류 없다!
+		  
+
+
+
+
+
+
+
+
+
+$$ 5장 과제 : p305 실습 2
+	$ 5/2 (화)까지 4장 문제랑 같이 제출하기
+
+
+!! 중간고사는 7장까지
+	! 개념을 잘 파악하기
+	! 문제는 20문제 
+		! 4지선다, 코딩 내용을 분석하기, 코딩을 채우는 내용 등등
+
+	! 4/24일(월) 시험 2시간
+
+
+
+
 
 
 -----------------------------------------------------------------------------------
