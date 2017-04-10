@@ -1,8 +1,4 @@
 
------------------------------------------------------
-
-
-
 ------------------------------------------------------
 
 
@@ -48,40 +44,10 @@
 
 
 ------------------------------------------------------
-/*
- *
- */
-#include <iostream>
-#include <string>
 
-using namespace std;
 
-int main(int argc, const char *argv[])
-{
-	string name[5];
-	string maxlen;
 
-	cout << "5명의 이름을 ';' 으로 구분하여 입력하세요" << endl;
-	cout << ">> ";
-
-	for(int i =0 ; i < 5 ; i++)
-	{
-		getline(cin,name[i],';');
-	}
-
-	for (int i = 0 ; i < 5-1 ; i++)
-	{
-		if(name[i].length() > name[i+1].length())
-		{
-			maxlen = name[i];
-		}
-	}
-
-	cout << "가장 긴 이름은 : " <<  maxlen  << endl;
-
-	return 0;
-}
-
+------------------------------------------------------
 
 
 
