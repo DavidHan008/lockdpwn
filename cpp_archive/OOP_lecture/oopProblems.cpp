@@ -44,10 +44,85 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p89 11, 끝수를 입력받아 1부터 끝수까지 합을 출력하는 코드
+ */
+#include <iostream>
+using namespace std;
+
+int main(int argc, const char *argv[])
+{
+	int k, n = 0;
+	int sum =0;
+
+	cout << "끝 수를 입력하세요>> ";
+	cin >> n;
+
+	for(k =1 ; k <= n ; k++)
+		sum += k;
+	
+	cout << "1에서 " << n << "까지의 합은 " << sum << " 입니다" << endl;
+
+	return 0;
+}
+
+
+
 
 
 
 ------------------------------------------------------
+/*
+	c++ ==> 객체지향 p88 8, 한 라인에 이름을 ;로 구분해서 받고 
+							각각 끊어낸 다음 가장 긴 이름을 출력하는 코드
+*/
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string name;
+	string man[5];
+	string finalName;
+	int i = 0;
+	int count = 0;
+
+	cout << "5명의 이름을 ';'으로 구분하여 입력하세요" << endl;
+	cout << ">> ";
+	cin >> name;
+
+	int startIndex = 0;
+	int fIndex = 0;
+	while (1)
+	{
+		fIndex = name.find(';', startIndex);
+	
+		if (fIndex == -1)  break;
+
+		count = fIndex - startIndex;
+		man[i++] = name.substr(startIndex, count);
+		startIndex = fIndex + 1;
+
+		if (i > 4) break;
+	}
+	
+	for (int i = 0; i < 5 - 1; i++)
+	{
+		if (man[i].length() > man[i + 1].length())
+			finalName = man[i];
+		else
+			finalName = man[i + 1];
+
+	}
+
+	cout << "가장 긴 이름은 " << finalName << endl;
+	return 0;
+}
+
+
 
 
 
