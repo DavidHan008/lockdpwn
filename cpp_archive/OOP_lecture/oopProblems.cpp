@@ -40,6 +40,33 @@
 
 
 ------------------------------------------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, const char *argv[])
+{
+	string sentence;
+	int numAlpha = 0;
+
+	cout << "영문 텍스트를 입력하세요. 히스토그램을 그립니다" << endl;
+	cout << "텍스트의 끝은 ; 입니다. 10000개까지 입력가능합니다";
+	cin >> sentence;
+
+	numAlpha = sentence.length();
+	
+
+	cout << "총 알파벳 수 : " << numAlpha << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
 
 
 
@@ -65,8 +92,6 @@ int main(int argc, const char *argv[])
 
 	return 0;
 }
-
-
 
 
 
