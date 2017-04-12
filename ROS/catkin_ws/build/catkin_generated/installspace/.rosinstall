@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/setup.sh
