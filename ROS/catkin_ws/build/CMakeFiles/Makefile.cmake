@@ -156,6 +156,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/tests.dir/DependInfo.cmake"
   "gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "my_first_ros_pkg/CMakeFiles/rosTest_node.dir/DependInfo.cmake"
   "my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
   "my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake"
   "my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake"

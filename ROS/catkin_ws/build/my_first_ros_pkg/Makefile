@@ -150,6 +150,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+my_first_ros_pkg/CMakeFiles/rosTest_node.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_first_ros_pkg/CMakeFiles/rosTest_node.dir/rule
+.PHONY : my_first_ros_pkg/CMakeFiles/rosTest_node.dir/rule
+
+# Convenience name for target.
+rosTest_node: my_first_ros_pkg/CMakeFiles/rosTest_node.dir/rule
+.PHONY : rosTest_node
+
+# fast build rule for target.
+rosTest_node/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build
+.PHONY : rosTest_node/fast
+
+# Convenience name for target.
 my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -275,6 +289,30 @@ std_msgs_generate_messages_py/fast:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build.make my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/rosTest_node.o: src/rosTest_node.cpp.o
+.PHONY : src/rosTest_node.o
+
+# target to build an object file
+src/rosTest_node.cpp.o:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/src/rosTest_node.cpp.o
+.PHONY : src/rosTest_node.cpp.o
+
+src/rosTest_node.i: src/rosTest_node.cpp.i
+.PHONY : src/rosTest_node.i
+
+# target to preprocess a source file
+src/rosTest_node.cpp.i:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/src/rosTest_node.cpp.i
+.PHONY : src/rosTest_node.cpp.i
+
+src/rosTest_node.s: src/rosTest_node.cpp.s
+.PHONY : src/rosTest_node.s
+
+# target to generate assembly for a file
+src/rosTest_node.cpp.s:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/src/rosTest_node.cpp.s
+.PHONY : src/rosTest_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -287,6 +325,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... rosTest_node"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
@@ -297,6 +336,9 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... test"
+	@echo "... src/rosTest_node.o"
+	@echo "... src/rosTest_node.i"
+	@echo "... src/rosTest_node.s"
 .PHONY : help
 
 

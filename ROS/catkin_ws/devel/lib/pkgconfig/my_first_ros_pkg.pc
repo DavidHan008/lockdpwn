@@ -3,6 +3,6 @@ prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel
 Name: my_first_ros_pkg
 Description: Description of my_first_ros_pkg
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/my_first_ros_pkg/include
 Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: 
+Requires: roscpp std_msgs
