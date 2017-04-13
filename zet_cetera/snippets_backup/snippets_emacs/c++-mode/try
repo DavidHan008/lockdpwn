@@ -5,6 +5,7 @@
 # --
 try {
     $0
-} catch (${1:type}) {
+}
+catch (${1:type}) {
 
 }
