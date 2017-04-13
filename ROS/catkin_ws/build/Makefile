@@ -370,6 +370,136 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build.make my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial
+
+# Build rule for target.
+_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial
+
+# fast build rule for target.
+_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_gencpp
+
+# Build rule for target.
+oroca_ros_tutorials_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_gencpp
+.PHONY : oroca_ros_tutorials_gencpp
+
+# fast build rule for target.
+oroca_ros_tutorials_gencpp/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build
+.PHONY : oroca_ros_tutorials_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_generate_messages
+
+# Build rule for target.
+oroca_ros_tutorials_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_generate_messages
+.PHONY : oroca_ros_tutorials_generate_messages
+
+# fast build rule for target.
+oroca_ros_tutorials_generate_messages/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build
+.PHONY : oroca_ros_tutorials_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_generate_messages_cpp
+
+# Build rule for target.
+oroca_ros_tutorials_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_generate_messages_cpp
+.PHONY : oroca_ros_tutorials_generate_messages_cpp
+
+# fast build rule for target.
+oroca_ros_tutorials_generate_messages_cpp/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build
+.PHONY : oroca_ros_tutorials_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_generate_messages_lisp
+
+# Build rule for target.
+oroca_ros_tutorials_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_generate_messages_lisp
+.PHONY : oroca_ros_tutorials_generate_messages_lisp
+
+# fast build rule for target.
+oroca_ros_tutorials_generate_messages_lisp/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build
+.PHONY : oroca_ros_tutorials_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_generate_messages_py
+
+# Build rule for target.
+oroca_ros_tutorials_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_generate_messages_py
+.PHONY : oroca_ros_tutorials_generate_messages_py
+
+# fast build rule for target.
+oroca_ros_tutorials_generate_messages_py/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build
+.PHONY : oroca_ros_tutorials_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_genlisp
+
+# Build rule for target.
+oroca_ros_tutorials_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_genlisp
+.PHONY : oroca_ros_tutorials_genlisp
+
+# fast build rule for target.
+oroca_ros_tutorials_genlisp/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build
+.PHONY : oroca_ros_tutorials_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named oroca_ros_tutorials_genpy
+
+# Build rule for target.
+oroca_ros_tutorials_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials_genpy
+.PHONY : oroca_ros_tutorials_genpy
+
+# fast build rule for target.
+oroca_ros_tutorials_genpy/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build
+.PHONY : oroca_ros_tutorials_genpy/fast
+
+#=============================================================================
+# Target rules for targets named ros_tutorial_msg_publisher
+
+# Build rule for target.
+ros_tutorial_msg_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_tutorial_msg_publisher
+.PHONY : ros_tutorial_msg_publisher
+
+# fast build rule for target.
+ros_tutorial_msg_publisher/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build
+.PHONY : ros_tutorial_msg_publisher/fast
+
+#=============================================================================
+# Target rules for targets named ros_tutorial_msg_subscriber
+
+# Build rule for target.
+ros_tutorial_msg_subscriber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_tutorial_msg_subscriber
+.PHONY : ros_tutorial_msg_subscriber
+
+# fast build rule for target.
+ros_tutorial_msg_subscriber/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build
+.PHONY : ros_tutorial_msg_subscriber/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -400,6 +530,16 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
+	@echo "... oroca_ros_tutorials_gencpp"
+	@echo "... oroca_ros_tutorials_generate_messages"
+	@echo "... oroca_ros_tutorials_generate_messages_cpp"
+	@echo "... oroca_ros_tutorials_generate_messages_lisp"
+	@echo "... oroca_ros_tutorials_generate_messages_py"
+	@echo "... oroca_ros_tutorials_genlisp"
+	@echo "... oroca_ros_tutorials_genpy"
+	@echo "... ros_tutorial_msg_publisher"
+	@echo "... ros_tutorial_msg_subscriber"
 .PHONY : help
 
 

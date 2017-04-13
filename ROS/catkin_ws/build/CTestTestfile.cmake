@@ -6,3 +6,4 @@
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
 SUBDIRS(my_first_ros_pkg)
+SUBDIRS(oroca_ros_tutorials)

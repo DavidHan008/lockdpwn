@@ -316,7 +316,7 @@ my_first_ros_pkg/preinstall:
 my_first_ros_pkg/CMakeFiles/rosTest_node.dir/all:
 	$(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/depend
 	$(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  7
 	@echo "Built target rosTest_node"
 .PHONY : my_first_ros_pkg/CMakeFiles/rosTest_node.dir/all
 
@@ -621,6 +621,359 @@ my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory oroca_ros_tutorials
+
+# Convenience name for "all" pass in the directory.
+oroca_ros_tutorials/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all
+oroca_ros_tutorials/all: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/all
+oroca_ros_tutorials/all: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/all
+.PHONY : oroca_ros_tutorials/all
+
+# Convenience name for "clean" pass in the directory.
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/clean
+oroca_ros_tutorials/clean: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/clean
+.PHONY : oroca_ros_tutorials/clean
+
+# Convenience name for "preinstall" pass in the directory.
+oroca_ros_tutorials/preinstall:
+.PHONY : oroca_ros_tutorials/preinstall
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 
+	@echo "Built target _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
+.PHONY : oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/rule
+
+# Convenience name for target.
+_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/rule
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 
+	@echo "Built target oroca_ros_tutorials_gencpp"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_gencpp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule
+.PHONY : oroca_ros_tutorials_gencpp
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 
+	@echo "Built target oroca_ros_tutorials_generate_messages"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all
+
+# Include target in all.
+all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_generate_messages: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/rule
+.PHONY : oroca_ros_tutorials_generate_messages
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all: my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  3
+	@echo "Built target oroca_ros_tutorials_generate_messages_cpp"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_generate_messages_cpp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/rule
+.PHONY : oroca_ros_tutorials_generate_messages_cpp
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all: my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  4
+	@echo "Built target oroca_ros_tutorials_generate_messages_lisp"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_generate_messages_lisp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/rule
+.PHONY : oroca_ros_tutorials_generate_messages_lisp
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/all
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all: my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  5 6
+	@echo "Built target oroca_ros_tutorials_generate_messages_py"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_generate_messages_py: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/rule
+.PHONY : oroca_ros_tutorials_generate_messages_py
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 
+	@echo "Built target oroca_ros_tutorials_genlisp"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_genlisp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/rule
+.PHONY : oroca_ros_tutorials_genlisp
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genlisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 
+	@echo "Built target oroca_ros_tutorials_genpy"
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/rule
+
+# Convenience name for target.
+oroca_ros_tutorials_genpy: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/rule
+.PHONY : oroca_ros_tutorials_genpy
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/build.make oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  8
+	@echo "Built target ros_tutorial_msg_publisher"
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/all
+
+# Include target in all.
+all: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/rule
+
+# Convenience name for target.
+ros_tutorial_msg_publisher: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/rule
+.PHONY : ros_tutorial_msg_publisher
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir
+
+# All Build rule for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/all: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/all
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/depend
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles  9
+	@echo "Built target ros_tutorial_msg_subscriber"
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/all
+
+# Include target in all.
+all: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles 0
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/rule
+
+# Convenience name for target.
+ros_tutorial_msg_subscriber: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/rule
+.PHONY : ros_tutorial_msg_subscriber
+
+# clean rule for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/clean:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/clean
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/clean
+
+# clean rule for target.
+clean: oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/clean
 .PHONY : clean
 
 #=============================================================================
