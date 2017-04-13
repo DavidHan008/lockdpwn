@@ -44,14 +44,237 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p205 3, string 클래스를 이용하여 사용자가 입력한 영문 한 줄을 글자하나만 랜덤하게 수정하는 코드
+ */
+#include <iostream>
+#include <string>
+#include <random>
+#include <ctime>
+using namespace std;
+
+static const char alphanum[] =
+"0123456789"
+"!@#$%^&*"
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+"abcdefghijklmnopqrstuvwxyz";
+
+int stringLength = sizeof(alphanum) - 1;
+
+char genRandom()  
+{
+	return alphanum[rand() % stringLength];
+}
+
+class String {
+	string sentence;
+
+public:
+	String() {}
+	~String() {}
+	void setSentence(string sen);
+	void modifyRandomOneWord();
+	string getSentence();
+	void exitProgram();
+};
+
+void String::setSentence(string sen) {
+	if (sen == "exit")
+		this->exitProgram();
+
+	this->sentence = sen;
+}
+
+void String::modifyRandomOneWord() {
+	int index = rand() % sentence.length();
+	string r(1, genRandom());
+
+	this->sentence.replace(index, 1,r);
+}
+
+string String::getSentence() {
+	return this->sentence;
+}
+
+void String::exitProgram() {
+	cout << "Bye! " << endl;
+	exit(0);
+}
+
+int main() {
+	srand((unsigned)time(0));
+	String s;
+	string tmp;
+	
+	cout << "아래에 한 줄을 입력하세요 (exit를 입력하면 종료합니다)" << endl;
+	while (1) {
+		cout << ">> ";
+		getline(cin, tmp, '\n');
+
+		s.setSentence(tmp);
+		s.modifyRandomOneWord();
+		cout << s.getSentence() << endl;
+	}
+	return 0;
+}
 
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p198 open challange, 한글 끝말잇기 게임을 수행하는 코드
+ */
+#include <iostream>
+#include <string>
+
+class Player {
+	string name;
+
+public:
+	Player() {}
+	void setName(string name);
+	string getName();
+
+};
+
+class WordGame{
+	string word[2];
+
+public:
+	WordGame() {}
+	void startGame();
+	void runGame(Player *p, int arrayLen);
+	void loseGame(Player p);
+};
+
+
+void WordGame::startGame() {
+	cout << "시작하는 단어는 아버지입니다" << endl;
+}
+
+void WordGame::runGame(Player *p, int arrayLen){
+	int i = 0;
+	int j = 0;
+	bool isFirst = true;
+	string startWord = "아버지";
+
+	while (1){
+		cout << p[i].getName() << ">> ";
+		cin >> this->word[j];
+
+		/// 첫판인 경우 : 아버지 --> 지oo
+		if (i == 0 && isFirst == true)
+			if (word[0].at(0) != startWord.at(startWord.length() - 2) || word[0].at(1) != startWord.at(startWord.length() - 1))
+				this->loseGame(p[i]);
+			else {
+				i++;
+				j = 1;
+				isFirst = false;
+				continue;
+			}
+
+		/// 두번째 판부터 아래 코드로 동작한다
+		if (j == 0) {
+			if (word[j].at(0) != word[j+1].at(word[j+1].length()-2) || word[j].at(1) != word[j+1].at(word[j+1].length()-1))
+				this->loseGame(p[i]);
+			j = 1;
+		}
+		else if (j == 1) {
+			if (word[j].at(0) != word[j - 1].at(word[j - 1].length()-2) || word[j].at(1) != word[j - 1].at(word[j - 1].length()-1))
+				this->loseGame(p[i]);
+			j = 0;
+		}
+
+		i++;
+		if (i > arrayLen - 1) i = 0;
+	}
+}
+
+void WordGame::loseGame(Player p) {
+	cout << "틀렸습니다 " << p.getName() << endl;
+	exit(0);
+}
+
+void Player::setName(string name){
+	this->name = name;
+}
+
+string Player::getName() {
+	return this->name;
+}
+
+int main(int argc, const char *argv[]){
+	string tmp;
+	int numOfPlayer;
+	WordGame wg;
+
+	cout << "끝말잇기 게임을 시작합니다" << endl;
+	cout << "게임에 참가하는 인원은 몇명입니까? >> ";
+	cin >> numOfPlayer;
+
+	Player *p = new Player[numOfPlayer];
+
+	for (int i = 0; i < numOfPlayer; i++){
+		cout << "참가자의 이름을 입력하세요. 빈칸 없이 >> ";
+		cin >> tmp;
+		p[i].setName(tmp);
+	}
+
+	/// 끝말잇기 게임을 시작한다
+	wg.startGame();
+	wg.runGame(p, numOfPlayer);
+
+	return 0;
+}
+
 
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p149 10, RAM을 추상화한 Ram 클래스를 만들어보고 실제로 사용해본 코드
+ */
+#include <iostream>
+#include <string>
+
+class Ram{
+	char mem[100 * 1024];
+	int size;
+
+public:
+	Ram();
+	~Ram();
+	char read(int address);
+	void write(int address, char value);
+};
+
+Ram::Ram(){
+	mem[100 * 1024] = { 0, };
+}
+
+Ram::~Ram(){
+	cout << "메모리 제거됨" << endl;
+}
+
+char Ram::read(int address){
+	return mem[address];
+}
+
+void Ram::write(int address, char value){
+	mem[address] = value;
+}
+
+
+int main(int argc, const char *argv[]){
+	Ram ram;
+	ram.write(100, 20);
+	ram.write(101, 30);
+	char res = ram.read(100) + ram.read(101);
+	ram.write(102, res);
+	cout << "102 번지의 값 = " << (int)ram.read(102) << endl;
+	return 0;
+}
+
 
 
 
