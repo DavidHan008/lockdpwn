@@ -1,0 +1,6 @@
+# name: pod 
+# key: pod
+# --
+=pod
+	perl ==> $0
+=cut
