@@ -1,0 +1,2 @@
+my_first_ros_pkg
+-DCATKIN_DEVEL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles
