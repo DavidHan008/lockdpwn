@@ -3,6 +3,7 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/doxygen.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/rosTest_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_py.dir

@@ -241,6 +241,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named rosTest_node
+
+# Build rule for target.
+rosTest_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosTest_node
+.PHONY : rosTest_node
+
+# fast build rule for target.
+rosTest_node/fast:
+	$(MAKE) -f my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build.make my_first_ros_pkg/CMakeFiles/rosTest_node.dir/build
+.PHONY : rosTest_node/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -377,6 +390,7 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... rosTest_node"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
