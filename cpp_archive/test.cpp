@@ -1,102 +1,46 @@
 #include <iostream>
 #include <string>
+
+#define PI 3.14159
 using namespace std;
 
-class Player {
-	string name;
+class Circle {
+	int radius;
 
 public:
-	Player() {}
-	void setName(string name);
-	string getName();
-
+	void setRadius(int radius);
+	double getArea();
 };
 
-class WordGame{
-	string word[2];
-
-public:
-	WordGame() {}
-	void startGame();
-	void runGame(Player *p, int arrayLen);
-	void loseGame(Player p);
-};
-
-void WordGame::startGame() {
-	cout << "시작하는 단어는 아버지입니다" << endl;
+void Circle::setRadius(int radius) {
+	this->radius = radius;
 }
 
-void WordGame::runGame(Player *p, int arrayLen){
-	int i = 0;
-	int j = 0;
-	bool isFirst = true;
-	string startWord = "아버지";
-
-	while (1){
-		cout << p[i].getName() << ">> ";
-		cin >> this->word[j];
-
-		/// 첫판인 경우 : 아버지 --> 지oo
-		if (i == 0 && isFirst == true)
-			if (word[0].at(0) != startWord.at(startWord.length() - 2) || word[0].at(1) != startWord.at(startWord.length() - 1))
-				this->loseGame(p[i]);
-			else {
-				i++;
-				j = 1;
-				isFirst = false;
-				continue;
-			}
-
-		/// 두번째 판부터 아래 코드로 동작한다
-		if (j == 0) {
-			if (word[j].at(0) != word[j+1].at(word[j+1].length()-2) || word[j].at(1) != word[j+1].at(word[j+1].length()-1))
-				this->loseGame(p[i]);
-			j = 1;
-		}
-		else if (j == 1) {
-			if (word[j].at(0) != word[j - 1].at(word[j - 1].length()-2) || word[j].at(1) != word[j - 1].at(word[j - 1].length()-1))
-				this->loseGame(p[i]);
-			j = 0;
-		}
-
-		i++;
-		if (i > arrayLen - 1) i = 0;
-	}
+double Circle::getArea() {
+	return this->radius * this->radius * PI;
 }
 
-void WordGame::loseGame(Player p) {
-	cout << "틀렸습니다 " << p.getName() << endl;
-	exit(0);
-}
+int main(int argc, const char *argv[]) {
+	int numCircle;
+	int rad;
+	int count = 0;
+	cout << "원의 개수 >> ";
+	cin >> numCircle;
 
-void Player::setName(string name){
-	this->name = name;
-}
+	Circle *c = new Circle[numCircle];
 
-string Player::getName() {
-	return this->name;
-}
-
-int main(int argc, const char *argv[]){
-	string tmp;
-	int numOfPlayer;
-	WordGame wg;
-
-	cout << "끝말잇기 게임을 시작합니다" << endl;
-	cout << "게임에 참가하는 인원은 몇명입니까? >> ";
-	cin >> numOfPlayer;
-
-	Player *p = new Player[numOfPlayer];
-
-	for (int i = 0; i < numOfPlayer; i++){
-		cout << "참가자의 이름을 입력하세요. 빈칸 없이 >> ";
-		cin >> tmp;
-		p[i].setName(tmp);
+	for (int i = 1; i <= numCircle; i++){
+		cout << "원" << i << "의 반지름 >> ";
+		cin >> rad;
+		c[i - 1].setRadius(rad);
 	}
 
-	wg.startGame();
-	wg.runGame(p, numOfPlayer);
+	for (int j = 0; j < numCircle; j++){
+		if (c[j].getArea() >= 100)
+			count++;
+	}
 
+	cout << "면적이 100보다 큰 원은 " << count << "개 입니다" << endl;
 	return 0;
 }
 

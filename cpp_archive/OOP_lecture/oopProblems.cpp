@@ -37,10 +37,96 @@
 
 ------------------------------------------------------
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person{
+	string name;
+	string tel;
+
+public:
+	Person();
+	string getName() { return name; }
+	string getTel() { return tel; }
+	void set(string name, string tel);
+}
+
+int main(int argc, const char *argv[]){
+	string str[3];
+	Person p[3];
+
+	cout << "이름과 전화번호를 입력해 주세요" << endl;
+	cout << "사람 1>> ";
+	cin >> str[0];
+	cout << "사람 2>> ";
+	cin >> str[1];
+	cout << "사람 3>> ";
+	cin >> str[2];
+
+
+
+
+	cout << "모든 사람의 이름은 " ;
+
+
+	return 0;
+}
+
+
+
+
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p207 6, Circle의 객체의 갯수를 동적할당 받아 원의 넓이를 구하는 코드
+ */
+#include <iostream>
 
+#define PI 3.14159
+using namespace std;
+
+class Circle {
+	int radius;
+
+public:
+	void setRadius(int radius);
+	double getArea();
+};
+
+void Circle::setRadius(int radius) {
+	this->radius = radius;
+}
+
+double Circle::getArea() {
+	return this->radius * this->radius * PI;
+}
+
+int main(int argc, const char *argv[]) {
+	int numCircle;
+	int rad;
+	int count = 0;
+	cout << "원의 개수 >> ";
+	cin >> numCircle;
+
+	// 동적으로 Circle 객체의 수를 지정하는 코드!
+	Circle *c = new Circle[numCircle];
+
+	for (int i = 0; i < numCircle; i++){
+		cout << "원" << i+1 << "의 반지름 >> ";
+		cin >> rad;
+		c[i].setRadius(rad);
+	}
+
+	for (int j = 0; j < numCircle; j++){
+		if (c[j].getArea() >= 100)
+			count++;
+	}
+
+	cout << "면적이 100보다 큰 원은 " << count << "개 입니다" << endl;
+	return 0;
+}
 
 
 ------------------------------------------------------
@@ -53,6 +139,7 @@
 #include <ctime>
 using namespace std;
 
+// 랜덤한 문자 하나를 출력하기 위해 선언한 배열
 static const char alphanum[] =
 "0123456789"
 "!@#$%^&*"
@@ -61,6 +148,7 @@ static const char alphanum[] =
 
 int stringLength = sizeof(alphanum) - 1;
 
+// 랜덤한 문자 하나를 반환하는 함수
 char genRandom()  
 {
 	return alphanum[rand() % stringLength];
@@ -78,6 +166,7 @@ public:
 	void exitProgram();
 };
 
+// 문장을 받아서 저장하는 멤버함수
 void String::setSentence(string sen) {
 	if (sen == "exit")
 		this->exitProgram();
@@ -85,10 +174,12 @@ void String::setSentence(string sen) {
 	this->sentence = sen;
 }
 
+// 문장의 임의의 한 단어를 바꾸는 멤버함수
 void String::modifyRandomOneWord() {
 	int index = rand() % sentence.length();
 	string r(1, genRandom());
 
+	// 특정한 Index 부분의 1단어를 랜덤한 문자로 바꾼다
 	this->sentence.replace(index, 1,r);
 }
 
