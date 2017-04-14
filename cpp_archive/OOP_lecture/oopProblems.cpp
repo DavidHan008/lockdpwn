@@ -24,20 +24,357 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p210 10, 영어 문장의 글자 수를 입력받아서 문장에 포함된 알파벳의 개수만큼 histogram 히스토그램을 생성하는 Histogram 클래스를 생성하고 이를 사용한 코드
+ */
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <boost/regex.hpp>
 
+// regex를 사용하기 위해 boost를 추가해준다
+using namespace std;
+using namespace boost;
 
+class Histogram{
+  string sentence;
 
-------------------------------------------------------
+ public:
+  Histogram(string str) : sentence(str) {
+    sentence += '\n';
+  }
 
+  void put(string str);
+  void putc(char ch);
+  void print();
+};
 
+void Histogram::put(string str){
+  this->sentence += str;
+}
 
-------------------------------------------------------
+void Histogram::putc(char ch){
+  string oneWord(1, ch);
+  this->sentence += oneWord;
+}
+
+void Histogram::print(){
+  int numAlpha = 0;
+  int len = 0;
+  int spaceLen = 0;
+  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
+  char star = '*';
+
+  cout << this->sentence << endl;
+
+  // 대문자를 소문자로 바꿔주는 구문!
+  transform(this->sentence.begin(), this->sentence.end(), this->sentence.begin(), ::tolower);
+
+  len = this->sentence.length();
+
+  // regex 정규표현식을 사용해서 특수문자의 갯수만큼 빼준다
+  regex rx("[^a-zA-z]");
+
+  // 알파벳을 제외한 나머지 특수문자의 개수를 세는 코드!
+  int match_count(distance(sregex_iterator(this->sentence.begin(), this->sentence.end(), rx), sregex_iterator()));
+
+  len -= match_count;
+
+  cout << "총 알파벳 개수 : " << len << endl;
+
+  // count 함수를 사용해 알파벳의 갯수를 리턴한다
+  a = count(sentence.begin(), sentence.end(), 'a');
+  b = count(sentence.begin(), sentence.end(), 'b');
+  c = count(sentence.begin(), sentence.end(), 'c');
+  d = count(sentence.begin(), sentence.end(), 'd');
+  e = count(sentence.begin(), sentence.end(), 'e');
+  f = count(sentence.begin(), sentence.end(), 'f');
+  g = count(sentence.begin(), sentence.end(), 'g');
+  h = count(sentence.begin(), sentence.end(), 'h');
+  i = count(sentence.begin(), sentence.end(), 'i');
+  j = count(sentence.begin(), sentence.end(), 'j');
+  k = count(sentence.begin(), sentence.end(), 'k');
+  l = count(sentence.begin(), sentence.end(), 'l');
+  m = count(sentence.begin(), sentence.end(), 'm');
+  n = count(sentence.begin(), sentence.end(), 'n');
+  o = count(sentence.begin(), sentence.end(), 'o');
+  p = count(sentence.begin(), sentence.end(), 'p');
+  q = count(sentence.begin(), sentence.end(), 'q');
+  r = count(sentence.begin(), sentence.end(), 'r');
+  s = count(sentence.begin(), sentence.end(), 's');
+  t = count(sentence.begin(), sentence.end(), 't');
+  u = count(sentence.begin(), sentence.end(), 'u');
+  v = count(sentence.begin(), sentence.end(), 'v');
+  w = count(sentence.begin(), sentence.end(), 'w');
+  x = count(sentence.begin(), sentence.end(), 'x');
+  y = count(sentence.begin(), sentence.end(), 'y');
+  z = count(sentence.begin(), sentence.end(), 'z');
+
+  cout << "a(" << a <<") " << string(a,star) << endl;
+  cout << "b(" << b <<") " << string(b,star) << endl;
+  cout << "c(" << c <<") " << string(c,star) << endl;
+  cout << "d(" << d <<") " << string(d,star) << endl;
+  cout << "e(" << e <<") " << string(e,star) << endl;
+  cout << "f(" << f <<") " << string(f,star) << endl;
+  cout << "g(" << g <<") " << string(g,star) << endl;
+  cout << "h(" << h <<") " << string(h,star) << endl;
+  cout << "i(" << i <<") " << string(i,star) << endl;
+  cout << "j(" << j <<") " << string(j,star) << endl;
+  cout << "k(" << k <<") " << string(k,star) << endl;
+  cout << "l(" << l <<") " << string(l,star) << endl;
+  cout << "m(" << m <<") " << string(m,star) << endl;
+  cout << "n(" << n <<") " << string(n,star) << endl;
+  cout << "o(" << o <<") " << string(o,star) << endl;
+  cout << "p(" << p <<") " << string(p,star) << endl;
+  cout << "q(" << q <<") " << string(q,star) << endl;
+  cout << "r(" << r <<") " << string(r,star) << endl;
+  cout << "s(" << s <<") " << string(s,star) << endl;
+  cout << "t(" << t <<") " << string(t,star) << endl;
+  cout << "u(" << u <<") " << string(u,star) << endl;
+  cout << "v(" << v <<") " << string(v,star) << endl;
+  cout << "w(" << w <<") " << string(w,star) << endl;
+  cout << "x(" << x <<") " << string(x,star) << endl;
+  cout << "y(" << y <<") " << string(y,star) << endl;
+  cout << "z(" << z <<") " << string(z,star) << endl;
+}
+
+int main(int argc, const char *argv[])
+{
+  Histogram elvisHisto("Wise men say, only fools rush in But I can't help. ");
+  elvisHisto.put("falling in love with you");
+  elvisHisto.putc('-');
+  elvisHisto.put("Elvis Presley");
+  elvisHisto.print();
+
+  return 0;
+}
+
 
 
 
 ------------------------------------------------------
 /*
- *	c++ ==> 객체지향 p207 7, Person 클래스에서
+  c++ ==> 객체지향 p209 9, Circle, CircleManager 클래스를 만들고 원의 이름과 반지름을 입력한 다음 검색을 통해 원하는 결과를 출력하는 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+static const double PI = 3.14159;
+static int index = 0;
+
+class Circle{
+  int radius;
+  string name;
+
+ public:
+  void setCircle(string name, int radius);
+  double getArea();
+  string getName();
+};
+
+// Circle 클래스를 관리하는 CircleManager 객체 선언
+class CircleManager{
+  Circle *p;
+  int size;
+
+ public:
+  CircleManager(int size);
+  ~CircleManager();
+  void setCircle(string name, int radius);
+  void searchByName(string name);
+  void searchByArea(int area);
+};
+
+
+void Circle::setCircle(string name, int radius){
+  this->name = name;
+  this->radius = radius;
+}
+
+double Circle::getArea(){
+  return this->radius * this->radius * PI;
+}
+
+string Circle::getName(){
+  return this->name;
+}
+
+// 원의 개수를 입력받으면 개수만큼의 Circle 객체를 생성한다
+CircleManager::CircleManager(int size)
+    : size(size){
+  p = new Circle[this->size];
+}
+
+// 소멸자에서 Circle 객체배열을 제거해준다
+CircleManager::~CircleManager(){
+  delete[] p;
+}
+
+// Circle 객체배열에 값을 입력하는 함수
+void CircleManager::setCircle(string name, int radius){
+  p[index].setCircle(name, radius);
+  index++;
+}
+
+// 이름을 검색해서 출력하는 함수
+void CircleManager::searchByName(string name){
+  int findIndex = 0;
+
+  while (1){
+    if (p[findIndex].getName() == name)
+      break;
+
+    if(findIndex > 1000){
+      break;
+    }
+    findIndex++;
+  }
+  cout << p[findIndex].getName() << "의 면적은 " << p[findIndex].getArea() << endl;
+}
+
+// 원의 넓이를 검색해서 출력하는 함수
+void CircleManager::searchByArea(int area){
+  int findIndex = 0;
+  int i = 0;
+  int findIndexArray[1000] = {0};
+
+  while (1){
+    if (p[findIndex].getArea() >= area){
+      findIndexArray[i] = findIndex;
+      i++;
+    }
+    if(findIndex > 1000){
+      break;
+    }
+    findIndex++;
+  }
+
+  for (int j = 0; j < i - 1 ; j++) {
+    cout << p[findIndexArray[j]].getName() << "의 면적은 " << p[findIndexArray[j]].getArea() << endl;
+  }
+}
+
+
+int main(int argc, char *argv[]){
+  int numOfCircle;
+  int fIndex;
+  int lastIndex;
+  double circleArea;
+  string tmp;
+  string circleName;
+
+
+  cout << "원의 개수 >> ";
+  cin >> numOfCircle;
+  cin.ignore();
+
+  CircleManager cm(numOfCircle);
+
+  for (int i = 0; i < numOfCircle ; i++) {
+    cout << "원 " << i+1 << "의 이름과 반지름 >> ";
+    getline(cin, tmp, '\n');
+
+    lastIndex = tmp.at(tmp.length() - 1);
+    fIndex = tmp.find(' ' , 0);
+    cm.setCircle(tmp.substr(0,fIndex), stoi(tmp.substr(fIndex,lastIndex)));
+  }
+
+  cout << "검색하고자 하는 원이 이름 >> ";
+  cin >> circleName;
+  cm.searchByName(circleName);
+
+  cout << "최소 면적을 정수로 입력하세요 >> ";
+  cin >> circleArea;
+  cout << circleArea << "보다 큰 원을 검색합니다" << endl;
+  cm.searchByArea(circleArea);
+
+  return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+  c++ ==> 객체지향 p208 8, Person과 Family 클래스를 만들고 각각의 이름을 받아 출력하는 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+static int numOfFamily = 0;
+
+class Person{
+  string name;
+
+ public:
+  Person() {}
+  Person(string name) : name(name) {}
+  void setName(string name);
+  string getName() { return name;}
+};
+
+class Family{
+  Person *p;
+  string familyName;
+  int size;
+  int *index;
+
+ public:
+  Family(string name, int size);
+  void show();
+  void setName(int index, string name);
+  ~Family();
+};
+
+void Person::setName(string name){
+  this->name = name;
+}
+
+Family::Family(string name, int size)
+    :familyName(name) , size(size) {
+
+  // p와 index 객체를 3개 길이의 배열로 초기화시킨다
+  this->p = new Person[3];
+  this->index = new int[3];
+}
+
+// 소멸자에 배열에 대한 처리를 해줘야한다
+Family::~Family() {
+  delete[] p;
+  delete[] index;
+}
+
+void Family::show(){
+  cout << p[0].getName() << "   " << p[1].getName() << "   " << p[2].getName() << endl;
+}
+
+void Family::setName(int index, string name){
+  this->index[numOfFamily] = index;
+  this->p[numOfFamily].setName(name);
+  numOfFamily++;
+}
+
+int main(int argc, char *argv[]) {
+  Family *simpson = new Family("Simpson", 3);
+  simpson->setName(0, "Mr. Simpson");
+  simpson->setName(1, "Mrs. Simpson");
+  simpson->setName(2, "Bart Simpson");
+
+  cout << "Simpson 가족은 다음과 같이 3명 입니다" << endl;
+  simpson->show();
+  delete simpson;
+
+  return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+ *	c++ ==> 객체지향 p207 7, Person 클래스에서 이름과 전화번호를 받고 이를 입력받아 출력하는 코드
  */
 #include <iostream>
 #include <string>
@@ -73,6 +410,8 @@ int main(int argc, const char *argv[]){
   cout << "사람 3>> ";
   getline(cin, str[2], '\n');
 
+  // 이름과 전화번호의 칸만큼 substr로 구분해서 받아들인다
+  // 한글은 한 글자당 3비트씩 먹어서 substr로 0,9까지 자른다
   p[0].set(str[0].substr(0,9), str[0].substr(10,13));
   p[1].set(str[1].substr(0,9), str[1].substr(10,13));
   p[2].set(str[2].substr(0,9), str[2].substr(10,13));
@@ -821,7 +1160,7 @@ int main()
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p91 14, 영문텍스트를 ;가 입력될때까지 입력받아 글자의 수와 알파벳의 수를 모두 집계해서 히스토그램을 그려주는 코드
+ * c++ ==> 객체지향 p91 14, 영문텍스트를 ;가 입력될때까지 입력받아 글자의 수와 알파벳의 수를 모두 집계해서 히스토그램 histogram을 그려주는 코드
  */
 #include <iostream>
 #include <string>
@@ -993,8 +1332,6 @@ int main()
   cout << "가장 긴 이름은 " << finalName << endl;
   return 0;
 }
-
-
 
 
 
