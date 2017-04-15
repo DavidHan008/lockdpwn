@@ -1,0 +1,55 @@
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\bin\Debug\ViewControl3D.dll
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\bin\Debug\ViewControl3D.pdb
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\bin\Debug\ViewControl3D.xml
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.baml
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.g.vb
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D_MarkupCompile.cache
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.g.resources
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.Resources.resources
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.dll
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.xml
+C:\Users\ApsumHome\Documents\Visual Studio 2010\Projects\3DView\3DView\obj\x86\Debug\ViewControl3D.pdb
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.baml
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.g.vb
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D_MarkupCompile.cache
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.g.resources
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.Resources.resources
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\3DView.vbproj.GenerateResource.Cache
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.xml
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.pdb
+C:\Users\edward\Downloads\bin\ViewControl3D.pdb
+C:\Users\edward\Downloads\bin\ViewControl3D.xml
+C:\Users\edward\Downloads\bin\ViewControl3D.exe
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.exe
+C:\Users\edward\Downloads\3DView\3DView\obj\x86\Debug\ViewControl3D.Form1.resources
+C:\Users\edward\Desktop\bin\ViewControl3D.exe
+C:\Users\edward\Desktop\bin\ViewControl3D.pdb
+C:\Users\edward\Desktop\bin\ViewControl3D.xml
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\3DView.vbprojResolveAssemblyReference.cache
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.baml
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.g.vb
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D_MarkupCompile.cache
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.g.resources
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.Form1.resources
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.Resources.resources
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\3DView.vbproj.GenerateResource.Cache
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.exe
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.xml
+C:\Users\edward\Desktop\tigerk\3DView\obj\x86\Debug\ViewControl3D.pdb
+C:\Users\edward\Documents\Visual Studio 2017\bin\ViewControl3D.exe
+C:\Users\edward\Documents\Visual Studio 2017\bin\ViewControl3D.pdb
+C:\Users\edward\Documents\Visual Studio 2017\bin\ViewControl3D.xml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\3DView.vbprojResolveAssemblyReference.cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.baml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.g.vb
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D_MarkupCompile.cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.g.resources
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.Form1.resources
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.Resources.resources
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\3DView.vbproj.GenerateResource.Cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.exe
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.xml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\3DView_vbdotNet\obj\x86\Debug\ViewControl3D.pdb

@@ -16,11 +16,163 @@
 
 
 ------------------------------------------------------
+/*
+ *	c++ ==> 객체지향 p211 11, 겜블링 게임을 만들어서 두 플레이어가 엔터를 칠 때마다 0~2의 숫자가 나와서 일치하면 이기는 게임을 만들어본 코드
+ */	
+#include <iostream>
+#include <string>
+#include <random>
+#include <ctime>
 
+using namespace std;
+
+// 플레이어 클래스
+class Player{
+	string name;
+
+public:
+	void setName(string name);
+	string getName();
+};
+
+// 게임 전체를 담당하는 클래스
+class GamblingGame{
+	Player *p;
+
+public:
+	GamblingGame();
+	void setPlayer(Player p1, Player p2);
+	void run();
+	bool isWin(int arr[]);
+	int randomGenerate();
+};
+
+// 2명의 플레이어 객체를 초기화하는 함수
+GamblingGame::GamblingGame(){
+	p = new Player[2];
+}
+
+// 3개의 숫자가 모두 일치하면 true를 반환하는 함수
+bool GamblingGame::isWin(int arr[]){
+	if(arr[0] == arr[1])
+		if(arr[1] == arr[2])
+			return true;
+	return false;
+}
+
+// 2명의 플레이어를 세팅하는 함수
+void GamblingGame::setPlayer(Player p1, Player p2){
+	p[0] = p1;
+	p[1] = p2;
+}
+
+// 게임 시작 함수
+void GamblingGame::run(){
+	int gameArray[3] = {0};
+
+	// 무한루프를 돌면서 2명의 플레이어가 엔터를 누를때마다 겜블링 숫자를 받는다
+	while (1){
+		cout << p[0].getName()	<<": <Enter>";
+		cin.get();
+		gameArray[0] = randomGenerate();
+		gameArray[1] = randomGenerate();
+		gameArray[2] = randomGenerate();
+
+		if(isWin(gameArray)){
+			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[0].getName() << "님 승리!!" << endl;
+			exit(0);
+		}
+		else
+			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
+
+
+		cout << p[1].getName()	<<": <Enter>";
+		cin.get();
+		gameArray[0] = randomGenerate();
+		gameArray[1] = randomGenerate();
+		gameArray[2] = randomGenerate();
+
+		if(isWin(gameArray)){
+			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[1].getName() << "님 승리!!" << endl;
+			exit(0);
+		}
+		else
+			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
+	}
+}
+
+// 난수를 리턴하는 함수
+int GamblingGame::randomGenerate(){
+	int tmp;
+	tmp = rand() % 3;
+	return tmp;
+}
+
+string Player::getName(){
+	return this->name;
+}
+
+void Player::setName(string name){
+	this->name = name;
+}
+
+int main(int argc, const char *argv[]){
+	// 난수 생성용 코드
+	srand((unsigned)time(0));
+	GamblingGame gg;
+	Player p1;
+	Player p2;
+	string tmp;
+
+	cout << "***** 갬블링 게임을 시작합니다. *****" << endl;
+	cout << "첫번째 선수 이름>> ";
+	cin >> tmp;
+	p1.setName(tmp);
+
+	cout << "두번째 선수 이름>> ";
+	cin >> tmp;
+	cin.ignore();
+	p2.setName(tmp);
+
+	gg.setPlayer(p1,p2);
+	gg.run();
+	return 0;
+}
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p305 2, 디폴트 매개변수와 생성자를 활용해 id와 이름, 몸무게를 받는 코드
+ * 							디폴트매개변수 선언은 클래스 안에서만 해줘야한다!
+ */
+#include <iostream>
+#include <string>
+using namespace std;
 
+class Person{
+	int id;
+	string name;
+	double weight;
+
+public:
+	Person(int id = 1, string name = "Grace", double weight= 20.5);
+	void show() { cout << id << ' ' << weight << ' ' << name << endl; }
+}; 
+
+Person::Person(int id, string name, double weight){
+	this->id = id;
+	this->name = name;
+	this->weight = weight;
+}
+
+int main(int argc, const char *argv[]){
+	Person grace, ashley(2, "Ashley"), helen(3, "Helen", 32.5);
+	grace.show();
+	ashley.show();
+	helen.show();
+
+	return 0;
+}
 
 
 ------------------------------------------------------
