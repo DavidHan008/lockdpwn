@@ -5,12 +5,12 @@ Public Class Form1
     Dim pnts(0 To 16) As Vector3D
     Dim selectedHPnt
     Dim nBushdirection As Integer = 0
-    Private WithEvents myTimer As New System.Windows.Forms.Timer()
+    Private WithEvents myTimer As New Timer()
 
     Private Sub myTimer_Tick() Handles myTimer.Tick
         m3DView.UpdateHardPointVisualModel()
     End Sub
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         m3DView = ElementHost1.Child()
 
 
@@ -45,7 +45,7 @@ Public Class Form1
 
         m3DView.addModel("Bush_LCAF", 6, True, New Vector3D(30, 30, 30), 1, 3, 0, 3, 2, 1, New Vector3D(0, 0, 0))
         m3DView.addModel("Bush_LCAR", 6, True, New Vector3D(30, 30, 30), 3, 1, 0, -3, 2, 1, New Vector3D(0, -90, 0))
- 
+
         m3DView.addModel("Wheel", 1, True, New Vector3D(360, 600, 600), 9, 10, 0, 1, 0, 2, New Vector3D(0, 0, 0))
 
         selectedHPnt = 0
@@ -93,11 +93,11 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ElementHost1_ChildChanged(ByVal sender As System.Object, ByVal e As System.Windows.Forms.Integration.ChildChangedEventArgs)
+    Private Sub ElementHost1_ChildChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.Integration.ChildChangedEventArgs)
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
         If (selectedHPnt < 16) Then
             selectedHPnt = selectedHPnt + 1
         Else
@@ -107,7 +107,7 @@ Public Class Form1
         m3DView.SelectHardPoint(selectedHPnt)
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
         If (selectedHPnt > 0) Then
             selectedHPnt = selectedHPnt - 1
         Else
@@ -118,11 +118,11 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Label1.Click
 
     End Sub
 
-    Private Sub ElementHost1_ChildChanged_1(sender As System.Object, e As System.Windows.Forms.Integration.ChildChangedEventArgs) Handles ElementHost1.ChildChanged
+    Private Sub ElementHost1_ChildChanged_1(sender As Object, e As System.Windows.Forms.Integration.ChildChangedEventArgs) Handles ElementHost1.ChildChanged
 
     End Sub
 

@@ -4414,7 +4414,7 @@
                 </ModelVisual3D>
             </ModelVisual3D>
         </Viewport3D>
-        <ListBox  Height="197" HorizontalAlignment="Left" Margin="545,10,0,0" Name="ListBox1" VerticalAlignment="Top" Width="161" Background="#76BEFFF6" IsManipulationEnabled="False" AllowDrop="False" BorderThickness="10" BorderBrush="#FF20BE20" />
+        <ListBox  Height="197" HorizontalAlignment="Left" Margin="532,10,0,0" Name="ListBox1" VerticalAlignment="Top" Width="161" Background="#76BEFFF6" IsManipulationEnabled="False" AllowDrop="False" BorderThickness="10" BorderBrush="#FF20BE20" />
         <Button Content="InitPos" Height="22" HorizontalAlignment="Left" Margin="16,20,0,0" Name="Button1" VerticalAlignment="Top" Width="78" DataContext="{Binding}" />
         <Button Content="TopView" DataContext="{Binding}" Height="22" HorizontalAlignment="Left" Margin="100,20,0,0" Name="Button4" VerticalAlignment="Top" Width="78" />
         <Button Content="FrontView" DataContext="{Binding}" Height="22" HorizontalAlignment="Left" Margin="184,20,0,0" Name="Button5" VerticalAlignment="Top" Width="78" />
