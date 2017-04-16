@@ -3,6 +3,7 @@
  */
 #include <iostream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 // 알파벳과 숫자를 상수로 선언한다
