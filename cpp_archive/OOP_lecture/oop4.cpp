@@ -15,12 +15,10 @@ int main(int argc, const char *argv[])
 	int sum = 0;
 	int startIndex = 0;
 
-	while (1)
-	{
+	while (1){
 		int fIndex = s.find('+', startIndex);
 
-		if (fIndex == -1) /// 처음에 '+'를 발견하지 못하면
-		{
+		if (fIndex == -1){ /// 처음에 '+'를 발견하지 못하면
 			string part = s.substr(startIndex);
 			if (part == "")
 			{
