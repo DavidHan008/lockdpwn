@@ -12,6 +12,260 @@
 
 
 ------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p267 7, add를 통해 값을 누적하는 Accumulator 클래스를 생성ㅎ고 .add(5).add(6).add(7)을 통해 값을 계속 누적시킨후 출력하는 코드
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Accumulator {
+	int value;
+
+public:
+	Accumulator(int value);
+	Accumulator(Accumulator& a);
+	Accumulator& add(int n);  // 값을 계속 누적하기 위해 참조리턴을 하는 함수
+	int get();
+};
+
+Accumulator::Accumulator(int value) : value(value)
+{}
+
+Accumulator::Accumulator(Accumulator& a) {
+	this->value = a.value;
+}
+
+// add 함수를 통해 value 값을 계속해서 누적하기 위해 *this를 반환하는 함수
+Accumulator& Accumulator::add(int n) {
+	this->value += n;
+	return *this;
+}
+
+int Accumulator::get() {
+	return this->value;
+}
+
+int main(int argc, const char *argv[]) {
+	Accumulator acc(10);
+
+	acc.add(5).add(6).add(7);
+	cout << acc.get() << endl;
+
+	return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p265 6, p265 5번문제에 스택에 저장할 수 있는 크기를 동적할당하게 작성하고 복사생성자 또한 구현해본 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+class MyIntStack {
+	int *p;
+	int size;
+	int tos; // stack의 꼭대기를 가르키는 인덱스
+
+public:
+	MyIntStack();
+	MyIntStack(int size);
+	MyIntStack(MyIntStack& s); // 복사생성자 구현
+	~MyIntStack();
+
+	bool push(int n);
+	bool pop(int &n);
+};
+
+MyIntStack::MyIntStack() :tos(0) {
+	p = new int[10];
+}
+
+MyIntStack::MyIntStack(int size) : size(size), tos(0) {
+	p = new int[size];
+}
+
+// 복사생성자를 사용해본 코드 
+MyIntStack::MyIntStack(MyIntStack& s) {
+	this->size = s.size;
+	this->tos = s.tos;
+
+	// 배열에 대한 복사가 이뤄져야하므로 아래와 같이 복사한다
+	this->p = new int[size];
+	for(int i = 0 ; i < s.size ; i++)
+		this->p[i] = s.p[i];
+}
+
+MyIntStack::~MyIntStack() {
+	delete[] this->p;
+}
+
+bool MyIntStack::push(int n) {
+	if (tos < size) {
+		p[tos] = n;
+		tos++;
+		return true;
+	}
+	return false;
+}
+
+bool MyIntStack::pop(int &n) {
+	if (tos >= 0) {
+		n = p[tos - 1];
+		tos--;
+		return true;
+	}
+	return false;
+}
+
+int main(int argc, const char *argv[]) {
+	MyIntStack a(10);
+	a.push(10);
+	a.push(20);
+
+	MyIntStack b = a;
+	b.push(30);
+
+	int n;
+	a.pop(n);
+	cout << "스택 a에서 팝한 값 " << n << endl;
+	b.pop(n);
+	cout << "스택 b에서 팝한 값 " << n << endl;
+
+	return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p265 5, 정수를 저장하는 MyIntStack 클래스를 작성하고 10개의 배열만 push, pop을 통해 입력출하는 코드
+ */
+#include <iostream>
+#include <string>
+
+class MyIntStack{
+	int p[10]; // 최대 10개의 정수 저장
+	int tos; // stack의 꼭대기를 가르키는 인덱스
+
+public:
+	MyIntStack();
+	bool push(int n);
+	bool pop(int &n);
+};
+
+MyIntStack::MyIntStack() : tos(0) {
+	p[10] = {0,};
+}
+
+bool MyIntStack::push(int n){
+	if(tos < 10){
+		p[tos] = n;
+		tos++;
+		return true;
+	}
+	return false;
+}
+
+bool MyIntStack::pop(int &n){
+	if(tos >= 0){
+		n = p[tos];
+		tos--;
+		return true;
+	}
+	return false;
+}
+
+int main(int argc, const char *argv[]){
+	MyIntStack a;
+
+	for (int i = 0; i < 11; i++) {
+		if(a.push(i))  cout << i << ' ';
+		else cout<< endl << i + 1 << " 번째 stack full" << endl;
+	}
+	int n;
+
+	for (int i = 0; i < 11 ; i++) {
+		if(a.pop(n)) cout << n << ' ';
+		else cout << endl << i + 1 << " 번째 stack empty";
+	}
+	cout << endl;
+	
+	return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p265 4, 참조자를 리턴하는 find() 함수를 작성하고 Mike에서 M 문자를 찾은 다음 m으로 수정하는 코드
+ */
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+// a 문자열에서 c를 찾아 참조자를 리턴하는 함수
+char& find(char a[], char c, bool& success) {
+	int len = strlen(a);
+	
+	for (int i = 0; i < len; i++) {
+		if (a[i] == c) {
+			success = true;
+			return a[i];
+		}
+	}
+	success = false;
+}
+
+int main(int argc, const char *argv[]) {
+	char s[] = "Mike";
+	bool b = false;
+	char& loc = find(s, 'M', b);
+
+	if (b == false) {
+		cout << "M을 발견할 수 없다" << endl;
+		return 0;
+	}
+
+	loc = 'm';
+	cout << s << endl;
+	return 0;
+}
+
+
+
+
+------------------------------------------------------
 /*
  *	c++ ==> 객체지향 p259 open challange, 영문텍스트와 모스부호 변환기를 만들어본 코드. 영문자 + 특수문자 <==> 모스부호가 상호변환 가능하다
  */
