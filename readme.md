@@ -1,7 +1,7 @@
 # 시스템최신기술 과제 제출
 모든 코드는 systemNewTechnology 폴더 안에 있습니다
 
-![Image](.\systemNewTechnology\mission6\mission6.PNG)
+![Image](./systemNewTechnology/mission6/mission6.PNG)
 
 - Youtube URL (Mission 6) :    [https://youtu.be/Goo-BSKXp-U]
 
