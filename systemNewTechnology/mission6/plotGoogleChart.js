@@ -80,10 +80,10 @@ app.get('/logone', function(req, res){
 		}
 		console.log("[+]SQL injection is done!");
 	});
-	
+
 	var date = new Date();
 	fs.appendFile("log.txt",JSON.stringify(req.query) +", "+req.ip+", "+ date +"\n" ,function(err){
-	if(err){
+		if(err){
 			return console.log(err);
 		}
 	})
@@ -92,30 +92,32 @@ app.get('/logone', function(req, res){
 });
 
 
-
+// localhost:3000/graph에 접속하면 googleChartSample.html에서 구글차트 템플릿을 읽어와 mysql의 데이터를 입력받아 뿌려줍니다
 app.get('/graph', function(req, res){
 	// 해당 템플릿 파일을 읽어온다
 	var html = fs.readFile("/home/pi/gitrepo/lockdpwn/systemNewTechnology/mission6/googleChartSample.html", function (err, html) {
 		html = " "+ html
 
-			// mysql로부터 데이터를 읽어온다
-			var qstr = 'select * from sensors';
+		// mysql로부터 데이터를 읽어온다
+		var qstr = 'select * from sensors';
 		connection.query(qstr, function(err, rows, cols) {
 			if (err) throw err;
 
 			var data = "data.addRows([";
 			var comma = "";
 			var date = new Date;
+
 			// 데이터를 날짜/숫자 형식에 맞게 넣어준다
 			for (var i=0; i< rows.length; i++) {
 				r = rows[i];
 				data += comma + "[new Date(" + r.time.getFullYear() +"," +r.time.getMonth() +","+ r.time.getDate()+"," + r.time.getHours() +"," +r.time.getMinutes() + "," + r.time.getSeconds() + ")"  + ","+ r.value +"]";
 				comma = ",";
 			}
+
 			// google chart 형식에 맞게 데이터를 설정한다
 			var header = "data.addColumn('date', 'Date/Time');"
-				header += "data.addColumn('number', 'Temp');"
-				data += "]);";
+			header += "data.addColumn('number', 'Temp');"
+			data += "]);";
 			// sample.html의 <%HEADER%>와 <%DATA%> 부분을 데이터로 교체한다
 			html = html.replace("<%HEADER%>", header);
 			html = html.replace("<%DATA%>", data);
@@ -131,6 +133,6 @@ app.get('/graph', function(req, res){
 // 3000번 포트를 사용합니다
 var server = app.listen(3000, function(){
 	var host = server.address().address
-		var port = server.address().port
-		console.log('listening at http://%s:%s',host,port)
+	var port = server.address().port
+	console.log('listening at http://%s:%s',host,port)
 });

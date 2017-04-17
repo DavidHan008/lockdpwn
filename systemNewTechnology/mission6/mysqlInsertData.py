@@ -40,8 +40,7 @@ def read_temp():
         temp_f = temp_c * 9.0/5.0 + 32.0
         return temp_c, temp_f
 
-# ThingSpeak에 데이터를 전송하는 함수
-# 또한 nodejs에 GET 방식으로 온도 파라미터를 전달하는 역할도 합니다
+# nodejs에 GET 방식으로 온도 파라미터를 전달하는 역할을 하는 함수
 def thermometer():
     while True:
         temp = read_temp()[0]
