@@ -1,43 +1,66 @@
-/*
- * c++ ==> 객체지향 p267 7, add를 통해 값을 누적하는 Accumulator 클래스를 생성ㅎ고 .add(5).add(6).add(7)을 통해 값을 계속 누적시킨후 출력하는 코드
- */
 #include <iostream>
 #include <string>
+#include <cstring>
 using namespace std;
 
-class Accumulator {
-	int value;
+class Book{
+	char *title;
+	int price;
 
 public:
-	Accumulator(int value);
-	Accumulator(Accumulator& a);
-	Accumulator& add(int n);
-	int get();
+	Book(char* title, int price);
+	Book(Book& b);
+	~Book();
+	void set(char* title, int price);
+	void show() { cout << title << ' ' << price << "원" << endl; }
 };
 
-Accumulator::Accumulator(int value) : value(value)
-{}
-
-Accumulator::Accumulator(Accumulator& a) {
-	this->value = a.value;
+Book::Book(char* title, int price){
+	this->title = title;
+	this->price = price;
 }
 
-Accumulator& Accumulator::add(int n) {
-	this->value += n;
-	return *this;
+Book::Book(Book& b){
+	int len = strlen(b.title);
+
+	this->title = new char[len + 1];
+	this->title = "명품자바";
+	this->price = b.price;
 }
 
-int Accumulator::get() {
-	return this->value;
+Book::~Book(){
+	delete[] title;
 }
 
-int main(int argc, const char *argv[]) {
-	Accumulator acc(10);
+void Book::set(char* title, int price){
+	this->title = title;
+	this->price = price;
+}
 
-	acc.add(5).add(6).add(7);
-	cout << acc.get() << endl;
 
+int main(int argc, const char *argv[]){
+	Book cpp("명품C++", 10000);
+	Book java = cpp;
+
+	cpp.show();
+	java.show();
+	
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
