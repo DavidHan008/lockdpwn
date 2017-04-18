@@ -32,6 +32,59 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p   , Book 클래스에서 깊은 복사를 사용해 복사를 해본 코드
+ */
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+class Book{
+	char *title;
+	int price;
+
+public:
+	Book(char* title, int price);
+	Book(Book& b);
+	~Book();
+	void set(char* title, int price);
+	void show() { cout << title << ' ' << price << "원" << endl; }
+};
+
+Book::Book(char* title, int price) : price(price){
+	this->title = new char[strlen(title) +1];
+	strcpy(this->title, title);
+}
+
+Book::Book(Book& b) : price(b.price){ 
+	this->title = new char[strlen(b.title) + 1];
+	strcpy(this->title, b.title);
+	this->title = "명품자바";
+}
+
+Book::~Book(){
+	cout << this->title << " deleted!" << endl;
+	delete[] title;
+}
+
+void Book::set(char* title, int price){
+	this->title = new char[strlen(title) +1];
+	strcpy(this->title, title);
+	this->price = price;
+}
+
+
+int main(int argc, const char *argv[]){
+	Book cpp("명품C++", 10000);
+	Book java = cpp;
+
+	cpp.show();
+	java.show();
+	
+	return 0;
+}
+
 
 
 
