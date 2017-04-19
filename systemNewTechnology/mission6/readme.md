@@ -1,7 +1,7 @@
 # 시스템최신기술 과제 제출
 모든 코드는 systemNewTechnology 폴더 안에 있습니다
 
-아래 사진은 8시간동안 데이터를 축적한 후 그래프를 그린 사진입니다
+아래 사진은 8시간동안 제 방안의 온도데이터를 축적한 후 그래프를 그린 사진입니다
 ![Image](./mission6.PNG)
 
 - Youtube URL (Mission 6) :    [https://youtu.be/Goo-BSKXp-U]
