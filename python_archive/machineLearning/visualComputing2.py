@@ -1,117 +1,351 @@
-#!/usr/bin/env pytohn
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-	python ==> 비주얼컴퓨팅,
+	python ==> 비주얼컴퓨팅, 프로젝트2 선형분류기를 사용해 3 class - 2 features 시스템을 분류해보는 코드
 '''
-# %matplotlib inline # ipython 전용 코드
-import matplotlib.pyplot as plt
-import tensorflow as tf
+import pandas as pd
 import numpy as np
-from tensorflow.examples.tutorials.mnist import input_data
+import matplotlib.pyplot as plt
+from sympy import *
+from sympy import solve
+
+# Sympy 기초 세팅을 한다
+x, y, z, w = symbols('x y z w')
+init_printing()
+
+#--------------------------------------------------------------
+# 1. Perceptron algorithm을 사용하여 w1, w2를 구분하는 선형분류기를 작성하라. 초기 weight vector와 학습율을 다양하게 시도해 볼 것.
+
+class Perceptron():
+	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, w_ = []):
+		self.thresholds = thresholds
+		self.eta = eta
+		self.n_iter = n_iter
+                if(w_ == []):
+                    self.w_ = np.zeros(3)
+                else:
+                    self.w_ = w_
+
+	def fit(self,X,y):
+		self.errors_ = []
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
+		self.y_ = np.array(self.y_)
+
+		for _ in range(self.n_iter):
+			errors = 0
+			for xi, target,i in zip(X,y,range(0,len(X))):
+				update = (target - self.predict(xi))
+				self.w_ += self.eta * update * self.y_[i]
+				errors += int(update != 0.0)
+			self.errors_.append(errors)
+			print(self.w_)
+		return self
+
+	def net_input(self, X):
+		return np.dot(X, self.w_[1:]) + self.w_[0]
+
+	def predict(self, X):
+		return np.where(self.net_input(X) > self.thresholds, 1, -1)
 
 
-# 데이터를 불러와서 mnist 변수에 담는다
-data_dir = './MNIST_data/'
-mnist = input_data.read_data_sets(data_dir, one_hot=True, validation_size=5000)
+project2Data = './project2Data.dat'
+names = ['x1', 'x2', 'class']
+data = pd.read_csv(project2Data, header=None, names=names)
+
+Class = data['class']
+Data = np.array(data)
+
+data1 = data[0:10]
+data2 = data[10:20]
+data3 = data[20:30]
+
+class1 = data1['class']
+class2 = data2['class']
+class3 = data3['class']
+
+del data['class']
+del data1['class']
+del data2['class']
+del data3['class']
+
+# 모든 데이터들의 산점도를 그린다
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo',data3['x1'],data3['x2'],'go')
+plt.grid()
+plt.show()
+
+data12 = np.vstack((data1,data2))
+dataC12 = np.hstack((class1,class2))
+dataC12 = np.where(dataC12 == 'w1' ,-1,1)
+
+data13 = np.vstack((data1,data3))
+dataC13 = np.hstack((class1,class3))
+dataC13 = np.where(dataC13 == 'w1' ,-1,1)
+
+initAvec = np.array([0.5,0.5,0.5])
+
+ptron1 = Perceptron(eta = 0.1)
+ptron2 = Perceptron(eta = 1)
+ptron3 = Perceptron(eta = 0.5, w_ = initAvec)
+
+ptron1.fit(data12, dataC12)
+print("\n")
+ptron2.fit(data12, dataC12)
+print("\n")
+ptron3.fit(data12, dataC12)
+print("\n")
+
+def frange(x, y, jump):
+  while x < y:
+    yield x
+    x += jump
 
 
-# None 은 내가 얼만큼의 데이터를 넣을지 안 정했을 때 사용한다
-x_input = tf.placeholder(tf.float32, [None, 784])
-y_input = tf.placeholder(tf.float32, [None, 10])
+yy = []
+for i in frange(-10,10,0.1):
+    yy.append(0.8879*i  - 1.1206)
+
+xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=0.1, a=[0,0,0]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy) 
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
+plt.grid()
+plt.show()
 
 
-# 가중치를 초기화하는 함수 (정규분포 stddev=0.1로 초기화한다)
-def weight_variable(shape):
-	initial = tf.truncated_normal(shape, stddev=0.1)
-	return tf.Variable(initial)
+yyy = []
+for i in frange(-10,10,0.1):
+    yyy.append(0.8879*i  - 1.1206)
 
-
-# 바이어스를 초기화하는 함수 (0.1로 초기화한다)
-def bias_variable(shape):
-	initial = tf.constant(0.1, shape=shape)
-	return tf.Variable(initial)
-
-
-# 컨벌루션을 실행하는 함수
-# padding = 'same' 입력과 출력의 이미지 크기가 같도록 해준다
-def conv2d(x, W):
-	return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding='SAME')
-
-
-# max pooling을 실행하는 함수
-def max_pool_2x2(x):
-	return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
-
-
-
-# 1st conv layer ----------------------
-W_conv1 = weight_variable([5,5,1,32])
-b_conv1 = bias_variable([32])
-
-# -1 : 아직 디멘젼이 결정되지 않았다
-# x_input은 784x1인데 28x28x1로 행렬을 다시 만들어준다
-x_image = tf.reshape(x_input, [-1,28,28,1])
-
-# y = x*w + b에 ReLU를 적용한다
-h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
-h_pool1 = max_pool_2x2(h_conv1)
+xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=1, a=[0,0,0]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yyy) 
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
+plt.grid()
+plt.show()
 
 
 
+yyy2 = []
+for i in frange(-10,10,0.1):
+    yyy2.append(0.83319*i - 1.5583)
 
-# 2nd conv layer -----------------------
-W_conv2 = weight_variable([5,5,32,64])
-b_conv2 = bias_variable([64])
-
-h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
-h_pool2 = max_pool_2x2(h_conv2)
+xx = np.linspace(-10,10,201)
+plt.title('[w1, w2] eta=0.5, a = [.5,.5,.5]',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yyy2) 
+plt.plot(data1['x1'],data1['x2'],'ro',data2['x1'],data2['x2'],'bo')
+plt.legend(['perceptron','w1','w2'])
+plt.grid()
+plt.show()
 
 
 
 
-# 1st fully connected layer -----------------------
-W_fc1 = weight_variable([7*7*64, 1024])
-b_fc1 = bias_variable([1024])
 
-h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
-h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-# 위 연산으로 1024x1의 벡터가 생성된다
+#--------------------------------------------------------------
+# 2. Batch relaxation algorithm을 사용하여 w1과 w3를 구분하는 선형분류기를 작성하라. Margin b를 0.1과 0.5, 초기 weight vector를 (0, 0, 0)로 하였을 경우의 결과들을 보여라.
 
 
+class BatchRelaxationWithMargin():
+	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, margin = 0.1):
+		self.thresholds = thresholds
+		self.eta = eta
+		self.n_iter = n_iter
+		self.margin = margin
 
-# Dropout ------------------------
-keep_prob = tf.placeholder(tf.float32)
-h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+	def fit(self,X,y):
+		self.w_ = np.zeros(1 + X.shape[1])
+		self.errors_ = []
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
+		self.y_ = np.array(self.y_)
+
+		for _ in range(self.n_iter):
+			errors = 0
+			for xi, target,i in zip(X,y,range(0,len(X))):
+				update = (target - self.predict(xi))
+				if(update != 0):
+					delta = (update * self.y_[i] * (self.margin - self.w_ * update * self.y_[i] )) / ((np.linalg.norm(update * self.y_[i]))**2)
+					self.w_ += delta * self.eta
+				errors += int(update != 0.0)
+			self.errors_.append(errors)
+			print(self.w_)
+		return self
+
+	def net_input(self, X):
+		return np.dot(X, self.w_[1:]) + self.w_[0]
+
+	def predict(self, X):
+		return np.where(self.net_input(X) > self.thresholds, 1, -1)
+
+
+bat = BatchRelaxationWithMargin(eta = 0.1, margin = 0.1)
+bat.fit(data13, dataC13)
+print("\n")
+bat2 = BatchRelaxationWithMargin(eta = 0.5, margin = 0.5)
+bat2.fit(data13, dataC13)
+print("\n")
+bat3 = BatchRelaxationWithMargin(eta = 0.2, margin = 0.1)
+bat3.fit(data13, dataC13)
+
+yy2 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy2.append(0.1668*i + 1.119)
+
+plt.title('[w1, w3] eta=0.1, margin = 0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy2) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
+plt.grid()
+plt.show()
+
+
+yy3 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy3.append(0.6091*i + 0.8582)
+
+plt.title('[w1, w3] eta=0.5, margin = 0.5',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy3) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
+plt.grid()
+plt.show()
+
+
+yy7 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy7.append(0.3437*i + 0.6732)
+
+plt.title('[w1, w3] eta=0.2, margin = 0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy7) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['Batch Relaxation with margin','w1','w3'])
+plt.grid()
+plt.show()
 
 
 
-# 2nd fully connected layer --------------
-W_fc2 = weight_variable([1024, 10])
-b_fc2 = bias_variable([10])
-
-y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
-cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y_conv))
-
-# Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다
-train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
-
-# 세션을 초기화한다
-sess = tf.InteractiveSession()
-sess.run(tf.global_variables_initializer())
-
-for i in range(2000):
-	# [image[50], label[50]]를 6만개의 기존 데이터에서 랜덤으로 한 묶음으로 처리한다음 이것을 학습한다
-	batch = mnist.train.next_batch(50)
-	# 100번 돌릴 때마다 결과를 확인한다
-	if i%100 == 0:
-		train_accuracy = accuracy.eval(feed_dict={x_input:batch[0], y_input:batch[1], keep_prob:1.0})
-
-		print('step', i , 'training_accuracy', train_accuracy)
-	train_step.run(feed_dict={x_input:batch[0],y_input:batch[1], keep_prob:0.5})
 
 
-# 전부 학습이 끝나면 테스트 데이터를 넣는다
-test_accuracy = accuracy.eval(feed_dict={x_input: mnist.test.images, y_input: mnist.test.labels, keep_prob: 1.0})
-print('test accuracy', test_accuracy)
+
+
+
+#--------------------------------------------------------------
+# 3. Widrow-Hoff (LMS) algorithm을 사용하여 w1과 w3를 구분하는 선형분류기를 작성하라. 다양한 initial weight vector a, margin vector b, threshold, learning rate를 시도해 볼 것.
+
+
+class WidrowHoff():
+	def __init__(self, thresholds=0.0, eta=0.01, n_iter=10, b_ = 0.1, w_ = []):
+		self.thresholds = thresholds
+		self.eta = eta
+		self.n_iter = n_iter
+		self.b_ = b_
+                if(w_ == []):
+                    self.w_ = np.zeros(3)
+                else:
+                    self.w_ = w_
+
+	def fit(self,X,y):
+		self.errors_ = []
+                self.one = np.ones(len(X))
+		self.y_ = zip(self.one, X[:,0], X[:,1])
+		self.y_ = np.array(self.y_)
+
+		for _ in range(self.n_iter):
+			errors = 0
+			for xi, target, i in zip(X, y, range(0, len(X))):
+				update = (target - self.predict(xi))
+				if(update != 0):
+					delta = np.dot(update * self.y_[i], self.b_ - np.dot(update * self.y_[i], self.w_.T)) / self.n_iter
+					self.w_ += delta * self.eta
+				errors += int(update != 0.0)
+			self.errors_.append(errors)
+			print(self.w_)
+		return self
+
+	def net_input(self, X):
+		return np.dot(X, self.w_[1:]) + self.w_[0]
+
+	def predict(self, X):
+		return np.where(self.net_input(X) > self.thresholds, 1, -1)
+
+
+initAvec = np.array([0.5,0.5,0.5])
+
+wid = WidrowHoff(eta = 0.1, b_ = 0.001, n_iter = 10)
+wid.fit(data13,dataC13)
+print("\n")
+wid2 = WidrowHoff(eta = 0.001, b_ = 0.1, n_iter = 10)
+wid2.fit(data13,dataC13)
+print("\n")
+wid3 = WidrowHoff(eta = 0.1, b_ = 0.1, n_iter = 10, w_ = initAvec)
+wid3.fit(data13,dataC13)
+
+
+
+
+yy4 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy4.append(1.0244*i + 1.3034)
+
+
+plt.title('[w1, w3] : eta=0.1 , a=[0,0,0], b=0.001',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy4) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
+plt.grid()
+plt.show()
+
+
+
+yy5 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy5.append(0.9624*i + 1.2388)
+
+plt.title('[w1, w3] : eta=0.1 , a=[.5,.5,.5], b=0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy5) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
+plt.grid()
+plt.show()
+
+
+yy6 = []
+xx = np.linspace(-10,10,201)
+for i in frange(-10,10,0.1):
+    yy6.append(0.5019*i + 0.6556)
+
+plt.title('[w1, w3] : eta=0.001 , a=[0,0,0], b=0.1',fontsize=16)
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.plot(xx,yy6) 
+plt.plot(data1['x1'],data1['x2'],'ro',data3['x1'],data3['x2'],'go')
+plt.legend(['widrowHoff','w1','w3'])
+plt.grid()
+plt.show()
+
