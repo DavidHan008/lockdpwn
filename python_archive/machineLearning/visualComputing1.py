@@ -80,6 +80,8 @@ b = tf.Variable(tf.zeros([10]))
 y = tf.matmul(x_input , W ) + b
 
 
+# softmax 알고리즘을 실행해서 y값을 최적화하고 cross_entropy를 정의한다
+# softmax : 값을 0 ~ 1사이로 정규화시키는 함수 (총합은 1이 되도록 정규화하므로 확률로 변경하는 것과 같다)
 y = tf.nn.softmax(y)
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_input * tf.log(y), reduction_indices=[1]))
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y))
@@ -87,7 +89,7 @@ cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_
 # Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
-# 세션
+# 세션을 초기화한다
 sess = tf.InteractiveSession()
 sess.run(tf.global_variables_initializer())
 
