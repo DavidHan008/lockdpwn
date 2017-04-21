@@ -19,6 +19,344 @@
 
 
 
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p358 5, 2차원 행렬을 추상화한 Matrix 클래스를 생성해서 행렬값을 입력받고 + , +=, == 연산자를 오버로딩해 본 코드
+ */ 
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Matrix {
+	int mat[4];
+
+public:
+	Matrix(int a, int b, int c, int d);
+	void show();
+	Matrix operator+(Matrix a);
+	Matrix operator+=(Matrix a);
+	bool operator==(Matrix m);
+};
+
+// 생성자
+Matrix::Matrix(int a = 0, int b = 0, int c = 0, int d=0) {
+	mat[0] = a;
+	mat[1] = b;
+	mat[2] = c;
+	mat[3] = d;
+}
+
+// 행렬을 출력하는 함수
+void Matrix::show() {
+	cout << "{ " << mat[0] << " " << mat[1] << " " << mat[2] << " " << mat[3] << " }" << endl;
+}
+
+// == 연산자 오버로딩
+bool Matrix::operator==(Matrix m) {
+	if (mat[0] == m.mat[0])
+		if (mat[1] == m.mat[1])
+			if (mat[2] == m.mat[2])
+				if (mat[3] == m.mat[3])
+					return true;
+	return false;
+}
+
+// + 연산자 오버로딩
+Matrix Matrix::operator+(Matrix a) {
+	Matrix tmp(a.mat[0] + this->mat[0], a.mat[1] + this->mat[1], a.mat[2] + this->mat[2], a.mat[3] + this->mat[3]);
+	return tmp;
+}
+
+// += 연산자 오버로딩
+Matrix Matrix::operator+=(Matrix a) {
+	this->mat[0] += a.mat[0];
+	this->mat[1] += a.mat[1];
+	this->mat[2] += a.mat[2];
+	this->mat[3] += a.mat[3];
+	return *this;
+}
+
+int main(int argc, const char *argv[]) {
+	Matrix a(1, 2, 3, 4), b(2, 3, 4, 5), c;
+	c = a + b;
+	a += b;
+
+	a.show();
+	b.show();
+	c.show();
+
+	if (a == c)
+		cout << "a and c are the same" << endl;
+	return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+   c++ ==> 객체지향 p357 1,2,3,4, 책의 이름과 가격, 페이지수를 입력받는 Book 클래스를 생성하고 -= += ! < == 의 연산자 오버로딩을 수행하는 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book {
+	string title;
+	int price, pages;
+
+public:
+	Book(string title = "", int price = 0, int pages = 0) {
+		this->title = title, this->price = price, this->pages = pages;
+	}
+	void show() {
+		cout << title << ' ' << price << "원 " << pages << " 페이지" << endl;
+	}
+	string getTitle() { return this->title; }
+	Book operator+=(int a);
+	Book operator-=(int a);
+	bool operator==(int a);
+	bool operator==(string str);
+	bool operator==(Book b);
+	bool operator!();
+	bool operator<(Book b);
+};
+
+// += 연산자 오버로딩
+Book Book::operator+=(int a) {
+	this->price += a;
+	return *this;
+}
+
+// -= 연산자 오버로딩
+Book Book::operator-=(int a) {
+	this->price -= a;
+	return *this;
+}
+
+// == 연산자 오버로딩
+bool Book::operator==(int a) {
+	if (this->price == a)
+		return true;
+	return false;
+}
+
+// == 연산자 오버로딩
+bool Book::operator==(string str) {
+	if (this->title == str)
+		return true;
+	return false;
+}
+
+// == 연산자 오버로딩
+bool Book::operator==(Book b) {
+	if (this->title == b.title)
+		if (this->price == b.price)
+			if (this->pages == b.pages)
+				return true;
+	return false;
+}
+
+// ! 연산자 오버로딩
+bool Book::operator!() {
+	if (this->price == 0)
+		return true;
+	return false;
+}
+
+// < 연산자 오버로딩
+bool Book::operator<(Book b) {
+	if (this->title < b.title)
+		return true;
+	return false;
+}
+
+int main(int argc, const char *argv[]) {
+	Book a("청춘", 20000, 300);
+	Book b("미래", 30000, 500);
+	Book c("명품 c++", 30000, 500);
+	Book d("고품 c++", 30000, 500);
+	Book book("벼룩시장", 0, 50);
+	string bookName;
+
+	// += -= 연산자 오버로딩
+	a += 500;
+	b -= 500;
+	a.show();
+	b.show();
+
+	// == 연산자 오버로딩 3가지 케이스
+	if (c == 30000) cout << "정가 30000원" << endl;
+	if (c == "명품 c++") cout << "명품 c++ 입니다" << endl;
+	if (c == d) cout << "두 책이 같은 책입니다" << endl;
+
+
+	// ! 연산자 오버로딩
+	if (!book) cout << "공짜다" << endl;
+
+
+	// < 연산자 오버로딩
+	cout << "책 이름을 입력하세요>> ";
+	getline(cin, bookName);
+	if (b < a)
+		cout << a.getTitle() << "이 " << bookName << "보다 뒤에 있구나!" << endl;
+
+	return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+  c++ ==> 객체지향 p350 open challange, 히스토그램 클래스에 <<, ! 연산자를 오버로딩해서 << 문으로 문장을 추가하고 ! 문으로 알파벳의 갯수만큼 히스토그램을 만드는 코드
+*/
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <regex>
+using namespace std;
+
+class Histogram{
+	string sentence;
+
+public:
+	Histogram(string str) : sentence(str) {}
+	
+	Histogram& operator<< (string str);
+	Histogram& operator<< (char c);
+	void operator! ();
+};
+
+// << 연산자 오버로딩 : string 버전
+Histogram& Histogram::operator<< (string str){
+	this->sentence += str;
+	return *this;
+}
+
+// << 연산자 오버로딩 : char 버전
+Histogram& Histogram::operator<< (char c){
+	this->sentence += c;
+	return *this;
+}
+
+// ! 연산자로 히스토그램을 출력한다
+void Histogram::operator!(){
+  int len = 0;
+  int spaceLen = 0;
+  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
+  char star = '*';
+
+  cout << this->sentence << endl;
+
+  // 대문자를 소문자로 바꿔주는 구문!
+  transform(this->sentence.begin(), this->sentence.end(), this->sentence.begin(), ::tolower);
+
+  len = this->sentence.length();
+
+  // regex 정규표현식을 사용해서 특수문자의 갯수만큼 빼준다
+  regex rx("[^a-zA-z]");
+
+  // 알파벳을 제외한 나머지 특수문자의 개수를 세는 코드!
+  int match_count(distance(sregex_iterator(this->sentence.begin(), this->sentence.end(), rx), sregex_iterator()));
+
+  len -= match_count;
+
+  cout << "총 알파벳 개수 : " << len << endl;
+
+  // count 함수를 사용해 알파벳의 갯수를 리턴한다
+  a = count(sentence.begin(), sentence.end(), 'a');
+  b = count(sentence.begin(), sentence.end(), 'b');
+  c = count(sentence.begin(), sentence.end(), 'c');
+  d = count(sentence.begin(), sentence.end(), 'd');
+  e = count(sentence.begin(), sentence.end(), 'e');
+  f = count(sentence.begin(), sentence.end(), 'f');
+  g = count(sentence.begin(), sentence.end(), 'g');
+  h = count(sentence.begin(), sentence.end(), 'h');
+  i = count(sentence.begin(), sentence.end(), 'i');
+  j = count(sentence.begin(), sentence.end(), 'j');
+  k = count(sentence.begin(), sentence.end(), 'k');
+  l = count(sentence.begin(), sentence.end(), 'l');
+  m = count(sentence.begin(), sentence.end(), 'm');
+  n = count(sentence.begin(), sentence.end(), 'n');
+  o = count(sentence.begin(), sentence.end(), 'o');
+  p = count(sentence.begin(), sentence.end(), 'p');
+  q = count(sentence.begin(), sentence.end(), 'q');
+  r = count(sentence.begin(), sentence.end(), 'r');
+  s = count(sentence.begin(), sentence.end(), 's');
+  t = count(sentence.begin(), sentence.end(), 't');
+  u = count(sentence.begin(), sentence.end(), 'u');
+  v = count(sentence.begin(), sentence.end(), 'v');
+  w = count(sentence.begin(), sentence.end(), 'w');
+  x = count(sentence.begin(), sentence.end(), 'x');
+  y = count(sentence.begin(), sentence.end(), 'y');
+  z = count(sentence.begin(), sentence.end(), 'z');
+
+  cout << "a(" << a <<") " << string(a,star) << endl;
+  cout << "b(" << b <<") " << string(b,star) << endl;
+  cout << "c(" << c <<") " << string(c,star) << endl;
+  cout << "d(" << d <<") " << string(d,star) << endl;
+  cout << "e(" << e <<") " << string(e,star) << endl;
+  cout << "f(" << f <<") " << string(f,star) << endl;
+  cout << "g(" << g <<") " << string(g,star) << endl;
+  cout << "h(" << h <<") " << string(h,star) << endl;
+  cout << "i(" << i <<") " << string(i,star) << endl;
+  cout << "j(" << j <<") " << string(j,star) << endl;
+  cout << "k(" << k <<") " << string(k,star) << endl;
+  cout << "l(" << l <<") " << string(l,star) << endl;
+  cout << "m(" << m <<") " << string(m,star) << endl;
+  cout << "n(" << n <<") " << string(n,star) << endl;
+  cout << "o(" << o <<") " << string(o,star) << endl;
+  cout << "p(" << p <<") " << string(p,star) << endl;
+  cout << "q(" << q <<") " << string(q,star) << endl;
+  cout << "r(" << r <<") " << string(r,star) << endl;
+  cout << "s(" << s <<") " << string(s,star) << endl;
+  cout << "t(" << t <<") " << string(t,star) << endl;
+  cout << "u(" << u <<") " << string(u,star) << endl;
+  cout << "v(" << v <<") " << string(v,star) << endl;
+  cout << "w(" << w <<") " << string(w,star) << endl;
+  cout << "x(" << x <<") " << string(x,star) << endl;
+  cout << "y(" << y <<") " << string(y,star) << endl;
+  cout << "z(" << z <<") " << string(z,star) << endl;
+}
+
+int main(int argc, char *argv[]){
+	Histogram song("Wise men say, \nonly fools rush in But I can't help, \n");
+	song << "falling" << " in love with you." << "- by ";
+	song << 'k' << 'i' << 't';
+	!song; // histogram 그리기
+
+	return 0;
+}
+
+
 
 ------------------------------------------------------
 /*

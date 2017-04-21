@@ -1,65 +1,76 @@
 /*
-  c++ ==> 객체지향 p309 8, 디버깅에 필요한 Trace 클래스를 만들어 f() 함수가 동작하는 동안 Trace 정보를 저장해서 필요할 때 출력하는 코드
-*/
+ * c++ ==> 객체지향 p358 5, 2차원 행렬을 추상화한 Matrix 클래스를 생성해서 행렬값을 입력받고 + , +=, == 연산자를 오버로딩해 본 코드
+ */ 
 #include <iostream>
 #include <string>
 using namespace std;
 
-// 우선 100개의 트레이스 정보만 저장한다. 프로그램 확장시 동적으로 받도록 변경한다
-static string trace[100] = string();
-static int count =0;
+class Matrix {
+	int mat[4];
 
-class Trace{
-
- public:
-  Trace() {}
-  static void put(string func, string sentence);
-  static void print(string func);
+public:
+	Matrix(int a, int b, int c, int d);
+	void show();
+	Matrix operator+(Matrix a);
+	Matrix operator+=(Matrix a);
+	bool operator==(Matrix m);
 };
 
-void Trace::put(string func, string sentence){
-  trace[count] += func + ": " + sentence;
-  count++;
+Matrix::Matrix(int a = 0, int b = 0, int c = 0, int d=0) {
+	mat[0] = a;
+	mat[1] = b;
+	mat[2] = c;
+	mat[3] = d;
 }
 
-void Trace::print(string func = string()){
-  if(func == string()){
-    cout << "------ 모든 Trace 정보를 출력합니다 -------" << endl;
-
-    for (int i =0 ; i < count ; i++)
-      cout << trace[i] << endl;
-    return;
-  }
-
-  int len = func.length();
-  int isThere = 0;
-
-  cout << "------ " << func << "태그의 정보를 출력합니다 -------" << endl;
-  for(int i = 0 ; i < count ; i++){
-    isThere = trace[i].find(func, 0);
-    if(isThere != -1)
-      cout << trace[i] << endl;
-  }
+void Matrix::show() {
+	cout << "{ " << mat[0] << " " << mat[1] << " " << mat[2] << " " << mat[3] << " }" << endl;
 }
 
-void f(){
-  int a,b,c;
-  cout << "두 개의 정수를 입력하세요>> ";
-  cin >> a >> b;
-
-  Trace::put("f()", "정수를 입력 받았음");  // 디버깅 정보 저장
-  c = a + b;
-  Trace::put("f()", "합 계산"); // 디버깅 정보 저장
-  cout << "합은 " << c << endl;
+bool Matrix::operator==(Matrix m) {
+	if (mat[0] == m.mat[0])
+		if (mat[1] == m.mat[1])
+			if (mat[2] == m.mat[2])
+				if (mat[3] == m.mat[3])
+					return true;
+	return false;
 }
 
-
-int main(int argc, char *argv[]){
-  Trace::put("main()", "프로그램 시작합니다");
-  f();
-  Trace::put("main()" , "종료");
-
-  Trace::print("f()");  // f() 태그를 가진 디버깅 정보를 모두 출력한다
-  Trace::print();  // 모든 디버깅 정보를 출력한다
-  return 0;
+Matrix Matrix::operator+(Matrix a) {
+	Matrix tmp(a.mat[0] + this->mat[0], a.mat[1] + this->mat[1], a.mat[2] + this->mat[2], a.mat[3] + this->mat[3]);
+	return tmp;
 }
+
+Matrix Matrix::operator+=(Matrix a) {
+	this->mat[0] += a.mat[0];
+	this->mat[1] += a.mat[1];
+	this->mat[2] += a.mat[2];
+	this->mat[3] += a.mat[3];
+	return *this;
+}
+
+int main(int argc, const char *argv[]) {
+	Matrix a(1, 2, 3, 4);
+	Matrix b(2, 3, 4, 5);
+	Matrix c;
+	Matrix d(4,3,2,1);
+	Matrix e;
+
+	c = a + b;
+	a += b;
+	a.show();
+	b.show();
+	c.show();
+
+	if (a == c)
+		cout << "a and c are the same" << endl;
+
+	
+
+
+
+
+
+	return 0;
+}
+
