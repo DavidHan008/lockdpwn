@@ -19,21 +19,190 @@
 
 
 
-------------------------------------------------------
-
-
 
 ------------------------------------------------------
+/*
+  c++ ==> 객체지향 p307 5, 동일한 크기로 배열을 int -> double, double -> int로 변환하는 static 함수 2개를 ArrayUtility에 추가시키고 이를 사용한 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
 
+class ArrayUtility{
+
+ public:
+  // 2개의 static 멤버함수 추가
+  static void intToDouble(int source[], double dest[], int size);
+  static void doubleToInt(double source[], int dest[], int size);
+};
+
+void ArrayUtility::intToDouble(int source[], double dest[], int size){
+  for(int i = 0; i < size ; i++)
+    dest[i] = source[i];
+}
+
+void ArrayUtility::doubleToInt(double source[], int dest[], int size){
+  for(int i = 0; i < size ; i++)
+    dest[i] = source[i];
+}
+
+
+int main(int argc, char *argv[]){
+  int x[] = {1,2,3,4,5};
+  double y[5];
+  double z[] = {9.9, 8.8 , 7.7, 6.6, 5.6};
+
+  ArrayUtility::intToDouble(x, y, 5); // x[] -> y[]
+  for(int i = 0; i< 5; i++) cout << y[i] << ' ';
+  cout << endl;
+
+  ArrayUtility::doubleToInt(z, x, 5); // z[] -> x[]
+  for(int i = 0; i< 5; i++) cout << x[i] << ' ';
+  cout << endl;
+
+  return 0;
+}
 
 
 ------------------------------------------------------
+/*
+  c++ ==> 객체지향 p305 1, add 함수를 default parameter를 통해 만들어 배열을 입력받아 합을 출력하는 코드
+*/
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int nullArray[] = {0,0,0,0,0};
+
+// 배열의 default parameter는 다음과 같이 해야 한다
+int add(int a[], int num, int b[] = nullArray){
+  int sum = 0;
+
+  for(int i = 0 ; i < num ; i++)
+    sum += a[i];
+
+  for(int i = 0 ; i < num ; i++)
+    sum += b[i];
+
+  return sum;
+}
+
+int main(int argc, char *argv[]){
+  int a[] = {1,2,3,4,5};
+  int b[] = {6,7,8,9,10};
+
+  int c = add(a, 5);
+  int d = add(a, 5, b);
+
+  cout << c << endl;
+  cout << d << endl;
+
+  return 0;
+}
 
 
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p   , Book 클래스에서 깊은 복사를 사용해 복사를 해본 코드
+  c++ ==> 객체지향 p301 open challange, up & down 게임을 만들어 2명이서 up & down 게임을 해보는 코드
+ */
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+// 정답을 저장하는 static int 변수를 선언한다
+static int answer;
+
+// 2명의 Player를 선언하기 위한 클래스
+class Person {
+  string name;
+
+ public:
+  Person() {}
+  void setName(string name){
+    this->name = name;
+  }
+  string getName() {
+    return this->name;
+  }
+};
+
+// UpAndDownGame을 실제로 수행하는 클래스
+class UpAndDownGame{
+  Person *p;
+
+ public:
+  UpAndDownGame();
+  ~UpAndDownGame();
+  void setPlayer(string name1, string name2);
+  void startGame();
+};
+
+// 생성자
+UpAndDownGame::UpAndDownGame(){
+  int n = rand() % 100;
+  p = new Person[2];
+  answer = n;
+}
+
+// 소멸자
+UpAndDownGame::~UpAndDownGame(){
+  delete[] p;
+}
+
+// 플레이어의 이름을 세팅하는 함수
+void UpAndDownGame::setPlayer(string name1, string name2){
+  p[0].setName(name1);
+  p[1].setName(name2);
+}
+
+// 게임을 시작하는 함수
+void UpAndDownGame::startGame(){
+  int top=99;
+  int bottom=0;
+  int num;
+  int i = 0;
+
+  while(1){
+    cout << "답은 " << bottom << "과 " << top << " 사이에 있습니다" << endl;
+    cout << p[i].getName() << ">> ";
+    cin >> num;
+
+    if(answer > num)
+      bottom = num;
+    else if(answer < num)
+      top = num;
+
+    if(num == answer){
+      cout << p[i].getName() <<"이(가) 이겼습니다!" << endl;
+      break;
+    }
+    i++;
+    if(i > 1) i = 0;
+  }
+}
+
+
+int main(int argc, const char *argv[]){
+  // 난수를 생성하기 위해 srand()함수를 사용한다
+  srand((unsigned)time(0));
+  UpAndDownGame udgame;
+
+  cout << "Up & Down 게임을 시작합니다" << endl;
+  udgame.setPlayer("류현진", "손연재");
+  udgame.startGame();
+  return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p268 8, Book 클래스에서 깊은 복사를 사용해 복사를 해본 코드
  */
 #include <iostream>
 #include <string>
