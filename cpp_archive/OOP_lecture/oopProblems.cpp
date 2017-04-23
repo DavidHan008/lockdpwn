@@ -36,86 +36,326 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p361 10, Stack 클래스르 만들고 Push를 << 연산자를, Pop으로 >> 연산자를 오버로딩한 코드
+ */
+#include <iostream>
+#include <string>
+using namespace std;
 
+static int count = 0;
 
+class Stack{
+  int *data;
 
-------------------------------------------------------
+ public:
+  Stack();
+  ~Stack();
+  Stack& operator<<(int x);
+  void operator>>(int& x);
+  bool operator!();
+};
 
+Stack::Stack(){
+  data = new int[3];
+}
 
+Stack::~Stack(){
+  delete[] data;
+}
 
-------------------------------------------------------
+Stack& Stack::operator<<(int x){
+  this->data[count] = x;
+  count++;
+  return *this;
+}
+
+void Stack::operator>>(int& x){
+  x = this->data[count - 1];
+  count--;
+}
+
+bool Stack::operator!(){
+  if(count == 0) return true;
+  return false;
+}
+
+int main(int argc, char *argv[]){
+  Stack stack;
+  stack << 3 << 5 << 10;
+
+  while(true){
+    if(!stack) break;
+    int x;
+    stack >> x;
+    cout << x << ' ';
+  }
+
+  cout << endl;
+  return 0;
+}
 
 
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p358 5, 2차원 행렬을 추상화한 Matrix 클래스를 생성해서 행렬값을 입력받고 + , +=, == 연산자를 오버로딩해 본 코드
- */ 
+ * c++ ==> 객체지향 p360 9, 통계를 내는 Statistics 클래스를 생성하고 << 연산자를 통해 객체에 값을 받고 >> 값으로 평균을 리턴하며 !를 통해 객체의 값이 있는지 없는지 검사하고 ~를 통해 전체 데이터의 갯수를 출력하는 코드
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+static int count = 0;
+
+class Statistics{
+  int *num;
+
+ public:
+  Statistics();
+  ~Statistics();
+  bool operator!();
+  Statistics& operator<<(int x);
+  void operator>>(int& x);
+  void operator~();
+};
+
+Statistics::Statistics(){
+  num = new int[7];
+}
+
+Statistics::~Statistics(){
+  delete[] num;
+}
+
+// ! 연산자 오버로딩
+bool Statistics::operator!(){
+  if(count == 0)
+    return false;
+
+  return true;
+}
+
+// << 연산자 오버로딩
+Statistics& Statistics::operator<<(int x){
+  this->num[count] = x;
+  count++;
+  return *this;
+}
+
+// 평균을 전달하는 >> 연산자 오버로딩
+void Statistics::operator>>(int& x){
+  int avg = 0;
+
+  for(int i = 0 ; i < count ; i++){
+    avg += this->num[i];
+  }
+  avg /= count;
+  x = avg;
+}
+
+// 데이터를 출력하는 ~ 연산자 오버로딩
+void Statistics::operator~(){
+  for(int i = 0 ; i < count ; i++){
+    cout << this->num[i] << " ";
+  }
+  cout << endl;
+}
+
+int main(int argc, char *argv[]){
+  Statistics stat;
+
+  if(!stat) cout << "현재 통계 데이타가 없습니다." << endl;
+
+  int x[5];
+  cout << "5 개의 정수를 입력하라>> ";
+  for (int i=0; i<5 ; i++) cin >> x[i];
+
+  for(int i = 0; i<5 ; i++) stat << x[i]; // x[i] 값을 통계객체에 삽입한다
+
+  stat << 100 << 200; // 100, 200을 통계 객체에 삽입한다
+  ~stat; // 통계 데이타를 모두 출력한다
+
+  int avg;
+  stat >> avg;   // 통계 객체로부터 평균을 받는다
+  cout << "avg=" << avg << endl; // 평균을 출력한다
+
+  return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p359 7,8, Circle 클래스를 생성하여 전위연산자와 후위연산자, b = 1 + a 같은 연산자를 외부함수로 구현해본 코드
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Circle{
+  int radius;
+
+ public:
+  Circle() :radius(0) {}
+  Circle(int radius) : radius(radius) {}
+  void show();
+  // friend 외부함수 등록
+  friend Circle operator++(Circle& c);
+  friend Circle operator++(Circle& c, int a);
+  friend Circle operator+(int a, Circle& c);
+};
+
+void Circle::show(){
+  cout << "radius = " << this->radius <<" 인 원" << endl;
+}
+
+// 전위연산자 ++a 구현
+Circle operator++(Circle& c){
+  c.radius++;
+  return c;
+}
+
+// 후위연산자 a++ 구현
+Circle operator++(Circle& c, int a){
+  Circle tmp = c;
+  c.radius++;
+  return tmp;
+}
+
+// d = 1 + c 연산자 구현
+Circle operator+(int a, Circle& c){
+  Circle tmp;
+  tmp.radius += 1 + c.radius;
+
+  return tmp;
+}
+
+int main(int argc, char *argv[]){
+  Circle a(5);
+  Circle b(4);
+  Circle c(5);
+  Circle d(4);
+
+  ++a;
+  b = a++;
+
+  a.show();
+  b.show();
+
+  d = 1 + c;
+  c.show();
+  d.show();
+
+  return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p358 5,6, 2차원 행렬을 추상화한 Matrix 클래스를 생성해서 행렬값을 입력받고 + , +=, ==, <<, >> 연산자를 오버로딩해 본 코드
+ */
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Matrix {
-	int mat[4];
+  int mat[4];
 
-public:
-	Matrix(int a, int b, int c, int d);
-	void show();
-	Matrix operator+(Matrix a);
-	Matrix operator+=(Matrix a);
-	bool operator==(Matrix m);
+ public:
+  Matrix(int a, int b, int c, int d);
+  void show();
+  Matrix operator+(Matrix a);
+  Matrix operator+=(Matrix a);
+  bool operator==(Matrix m);
+  void operator>>(int x[]);
+  void operator<<(int x[]);
 };
 
 // 생성자
 Matrix::Matrix(int a = 0, int b = 0, int c = 0, int d=0) {
-	mat[0] = a;
-	mat[1] = b;
-	mat[2] = c;
-	mat[3] = d;
+  mat[0] = a;
+  mat[1] = b;
+  mat[2] = c;
+  mat[3] = d;
 }
 
 // 행렬을 출력하는 함수
 void Matrix::show() {
-	cout << "{ " << mat[0] << " " << mat[1] << " " << mat[2] << " " << mat[3] << " }" << endl;
+  cout << "{ " << mat[0] << " " << mat[1] << " " << mat[2] << " " << mat[3] << " }" << endl;
 }
 
 // == 연산자 오버로딩
 bool Matrix::operator==(Matrix m) {
-	if (mat[0] == m.mat[0])
-		if (mat[1] == m.mat[1])
-			if (mat[2] == m.mat[2])
-				if (mat[3] == m.mat[3])
-					return true;
-	return false;
+  if (mat[0] == m.mat[0])
+    if (mat[1] == m.mat[1])
+      if (mat[2] == m.mat[2])
+        if (mat[3] == m.mat[3])
+          return true;
+  return false;
 }
 
 // + 연산자 오버로딩
 Matrix Matrix::operator+(Matrix a) {
-	Matrix tmp(a.mat[0] + this->mat[0], a.mat[1] + this->mat[1], a.mat[2] + this->mat[2], a.mat[3] + this->mat[3]);
-	return tmp;
+  Matrix tmp(a.mat[0] + this->mat[0], a.mat[1] + this->mat[1], a.mat[2] + this->mat[2], a.mat[3] + this->mat[3]);
+  return tmp;
 }
 
 // += 연산자 오버로딩
 Matrix Matrix::operator+=(Matrix a) {
-	this->mat[0] += a.mat[0];
-	this->mat[1] += a.mat[1];
-	this->mat[2] += a.mat[2];
-	this->mat[3] += a.mat[3];
-	return *this;
+  this->mat[0] += a.mat[0];
+  this->mat[1] += a.mat[1];
+  this->mat[2] += a.mat[2];
+  this->mat[3] += a.mat[3];
+  return *this;
+}
+
+// >> 연산자 오버로딩
+void Matrix::operator>>(int x[]){
+  x[0] = this->mat[0];
+  x[1] = this->mat[1];
+  x[2] = this->mat[2];
+  x[3] = this->mat[3];
+
+}
+
+// << 연산자 오버로딩
+void Matrix::operator<<(int x[]){
+  this->mat[0] = x[0];
+  this->mat[1] = x[1];
+  this->mat[2] = x[2];
+  this->mat[3] = x[3];
+
 }
 
 int main(int argc, const char *argv[]) {
-	Matrix a(1, 2, 3, 4), b(2, 3, 4, 5), c;
-	c = a + b;
-	a += b;
+  Matrix a(1, 2, 3, 4);
+  Matrix b(2, 3, 4, 5);
+  Matrix c;
+  Matrix d(4,3,2,1);
+  Matrix e;
+  int x[4];
+  int y[4] = {1,2,3,4};
 
-	a.show();
-	b.show();
-	c.show();
+  c = a + b;
+  a += b;
 
-	if (a == c)
-		cout << "a and c are the same" << endl;
-	return 0;
+  a.show();
+  b.show();
+  c.show();
+
+  if (a == c)
+    cout << "a and c are the same" << endl;
+
+  d >> x;  // d의 각 원소를 배열 x에 복사
+  e << y;  // 배열 y의 원소 값을 e의 각 원소에 설정
+
+  for(int i = 0 ; i < 4; i++) cout << x[i] << ' '; // x[] 출력
+  cout << endl;
+
+  e.show();
+
+  return 0;
 }
 
 
@@ -123,113 +363,113 @@ int main(int argc, const char *argv[]) {
 
 ------------------------------------------------------
 /*
-   c++ ==> 객체지향 p357 1,2,3,4, 책의 이름과 가격, 페이지수를 입력받는 Book 클래스를 생성하고 -= += ! < == 의 연산자 오버로딩을 수행하는 코드
+  c++ ==> 객체지향 p357 1,2,3,4, 책의 이름과 가격, 페이지수를 입력받는 Book 클래스를 생성하고 -= += ! < == 의 연산자 오버로딩을 수행하는 코드
 */
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Book {
-	string title;
-	int price, pages;
+  string title;
+  int price, pages;
 
-public:
-	Book(string title = "", int price = 0, int pages = 0) {
-		this->title = title, this->price = price, this->pages = pages;
-	}
-	void show() {
-		cout << title << ' ' << price << "원 " << pages << " 페이지" << endl;
-	}
-	string getTitle() { return this->title; }
-	Book operator+=(int a);
-	Book operator-=(int a);
-	bool operator==(int a);
-	bool operator==(string str);
-	bool operator==(Book b);
-	bool operator!();
-	bool operator<(Book b);
+ public:
+  Book(string title = "", int price = 0, int pages = 0) {
+    this->title = title, this->price = price, this->pages = pages;
+  }
+  void show() {
+    cout << title << ' ' << price << "원 " << pages << " 페이지" << endl;
+  }
+  string getTitle() { return this->title; }
+  Book operator+=(int a);
+  Book operator-=(int a);
+  bool operator==(int a);
+  bool operator==(string str);
+  bool operator==(Book b);
+  bool operator!();
+  bool operator<(Book b);
 };
 
 // += 연산자 오버로딩
 Book Book::operator+=(int a) {
-	this->price += a;
-	return *this;
+  this->price += a;
+  return *this;
 }
 
 // -= 연산자 오버로딩
 Book Book::operator-=(int a) {
-	this->price -= a;
-	return *this;
+  this->price -= a;
+  return *this;
 }
 
 // == 연산자 오버로딩
 bool Book::operator==(int a) {
-	if (this->price == a)
-		return true;
-	return false;
+  if (this->price == a)
+    return true;
+  return false;
 }
 
 // == 연산자 오버로딩
 bool Book::operator==(string str) {
-	if (this->title == str)
-		return true;
-	return false;
+  if (this->title == str)
+    return true;
+  return false;
 }
 
 // == 연산자 오버로딩
 bool Book::operator==(Book b) {
-	if (this->title == b.title)
-		if (this->price == b.price)
-			if (this->pages == b.pages)
-				return true;
-	return false;
+  if (this->title == b.title)
+    if (this->price == b.price)
+      if (this->pages == b.pages)
+        return true;
+  return false;
 }
 
 // ! 연산자 오버로딩
 bool Book::operator!() {
-	if (this->price == 0)
-		return true;
-	return false;
+  if (this->price == 0)
+    return true;
+  return false;
 }
 
 // < 연산자 오버로딩
 bool Book::operator<(Book b) {
-	if (this->title < b.title)
-		return true;
-	return false;
+  if (this->title < b.title)
+    return true;
+  return false;
 }
 
 int main(int argc, const char *argv[]) {
-	Book a("청춘", 20000, 300);
-	Book b("미래", 30000, 500);
-	Book c("명품 c++", 30000, 500);
-	Book d("고품 c++", 30000, 500);
-	Book book("벼룩시장", 0, 50);
-	string bookName;
+  Book a("청춘", 20000, 300);
+  Book b("미래", 30000, 500);
+  Book c("명품 c++", 30000, 500);
+  Book d("고품 c++", 30000, 500);
+  Book book("벼룩시장", 0, 50);
+  string bookName;
 
-	// += -= 연산자 오버로딩
-	a += 500;
-	b -= 500;
-	a.show();
-	b.show();
+  // += -= 연산자 오버로딩
+  a += 500;
+  b -= 500;
+  a.show();
+  b.show();
 
-	// == 연산자 오버로딩 3가지 케이스
-	if (c == 30000) cout << "정가 30000원" << endl;
-	if (c == "명품 c++") cout << "명품 c++ 입니다" << endl;
-	if (c == d) cout << "두 책이 같은 책입니다" << endl;
-
-
-	// ! 연산자 오버로딩
-	if (!book) cout << "공짜다" << endl;
+  // == 연산자 오버로딩 3가지 케이스
+  if (c == 30000) cout << "정가 30000원" << endl;
+  if (c == "명품 c++") cout << "명품 c++ 입니다" << endl;
+  if (c == d) cout << "두 책이 같은 책입니다" << endl;
 
 
-	// < 연산자 오버로딩
-	cout << "책 이름을 입력하세요>> ";
-	getline(cin, bookName);
-	if (b < a)
-		cout << a.getTitle() << "이 " << bookName << "보다 뒤에 있구나!" << endl;
+  // ! 연산자 오버로딩
+  if (!book) cout << "공짜다" << endl;
 
-	return 0;
+
+  // < 연산자 오버로딩
+  cout << "책 이름을 입력하세요>> ";
+  getline(cin, bookName);
+  if (b < a)
+    cout << a.getTitle() << "이 " << bookName << "보다 뒤에 있구나!" << endl;
+
+  return 0;
 }
 
 
@@ -245,26 +485,26 @@ int main(int argc, const char *argv[]) {
 using namespace std;
 
 class Histogram{
-	string sentence;
+  string sentence;
 
-public:
-	Histogram(string str) : sentence(str) {}
+ public:
+  Histogram(string str) : sentence(str) {}
 	
-	Histogram& operator<< (string str);
-	Histogram& operator<< (char c);
-	void operator! ();
+  Histogram& operator<< (string str);
+  Histogram& operator<< (char c);
+  void operator! ();
 };
 
 // << 연산자 오버로딩 : string 버전
 Histogram& Histogram::operator<< (string str){
-	this->sentence += str;
-	return *this;
+  this->sentence += str;
+  return *this;
 }
 
 // << 연산자 오버로딩 : char 버전
 Histogram& Histogram::operator<< (char c){
-	this->sentence += c;
-	return *this;
+  this->sentence += c;
+  return *this;
 }
 
 // ! 연산자로 히스토그램을 출력한다
@@ -348,12 +588,83 @@ void Histogram::operator!(){
 }
 
 int main(int argc, char *argv[]){
-	Histogram song("Wise men say, \nonly fools rush in But I can't help, \n");
-	song << "falling" << " in love with you." << "- by ";
-	song << 'k' << 'i' << 't';
-	!song; // histogram 그리기
+  Histogram song("Wise men say, \nonly fools rush in But I can't help, \n");
+  song << "falling" << " in love with you." << "- by ";
+  song << 'k' << 'i' << 't';
+  !song; // histogram 그리기
 
-	return 0;
+  return 0;
+}
+
+
+------------------------------------------------------
+/*
+  c++ ==> 객체지향 p309 8, 디버깅에 필요한 Trace 클래스를 만들어 f() 함수가 동작하는 동안 Trace 정보를 저장해서 필요할 때 출력하는 코드
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+// 우선 100개의 트레이스 정보만 저장한다. 프로그램 확장시 동적으로 받도록 변경한다
+static string trace[100] = string();
+static int count =0;
+
+class Trace{
+
+ public:
+  Trace() {}
+  static void put(string func, string sentence);
+  static void print(string func);
+};
+
+// Trace 객체에 데이터를 입력하는 함수
+void Trace::put(string func, string sentence){
+  trace[count] += func + ": " + sentence;
+  count++;
+}
+
+// Trace 정보를 출력하는 함수. 앞에 함수의 이름을 인식해서 원하는 함수 정보만 출력한다
+void Trace::print(string func = string()){
+  if(func == string()){
+    cout << "------ 모든 Trace 정보를 출력합니다 -------" << endl;
+
+    for (int i =0 ; i < count ; i++)
+      cout << trace[i] << endl;
+    return;
+  }
+
+  int len = func.length();
+  int isThere = 0;
+
+  cout << "------ " << func << "태그의 정보를 출력합니다 -------" << endl;
+  for(int i = 0 ; i < count ; i++){
+    // 함수의 이름이 있다면 있는 것만 출력한다
+    isThere = trace[i].find(func, 0);
+    if(isThere != -1)
+      cout << trace[i] << endl;
+  }
+}
+
+void f(){
+  int a,b,c;
+  cout << "두 개의 정수를 입력하세요>> ";
+  cin >> a >> b;
+
+  Trace::put("f()", "정수를 입력 받았음");  // 디버깅 정보 저장
+  c = a + b;
+  Trace::put("f()", "합 계산"); // 디버깅 정보 저장
+  cout << "합은 " << c << endl;
+}
+
+
+int main(int argc, char *argv[]){
+  Trace::put("main()", "프로그램 시작합니다");
+  f();
+  Trace::put("main()" , "종료");
+
+  Trace::print("f()");  // f() 태그를 가진 디버깅 정보를 모두 출력한다
+  Trace::print();  // 모든 디버깅 정보를 출력한다
+  return 0;
 }
 
 
@@ -444,7 +755,7 @@ int main(int argc, char *argv[]){
 ------------------------------------------------------
 /*
   c++ ==> 객체지향 p301 open challange, up & down 게임을 만들어 2명이서 up & down 게임을 해보는 코드
- */
+*/
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -548,48 +859,48 @@ int main(int argc, const char *argv[]){
 using namespace std;
 
 class Book{
-	char *title;
-	int price;
+  char *title;
+  int price;
 
-public:
-	Book(char* title, int price);
-	Book(Book& b);
-	~Book();
-	void set(char* title, int price);
-	void show() { cout << title << ' ' << price << "원" << endl; }
+ public:
+  Book(char* title, int price);
+  Book(Book& b);
+  ~Book();
+  void set(char* title, int price);
+  void show() { cout << title << ' ' << price << "원" << endl; }
 };
 
 Book::Book(char* title, int price) : price(price){
-	this->title = new char[strlen(title) +1];
-	strcpy(this->title, title);
+  this->title = new char[strlen(title) +1];
+  strcpy(this->title, title);
 }
 
 Book::Book(Book& b) : price(b.price){ 
-	this->title = new char[strlen(b.title) + 1];
-	strcpy(this->title, b.title);
-	this->title = "명품자바";
+  this->title = new char[strlen(b.title) + 1];
+  strcpy(this->title, b.title);
+  this->title = "명품자바";
 }
 
 Book::~Book(){
-	cout << this->title << " deleted!" << endl;
-	delete[] title;
+  cout << this->title << " deleted!" << endl;
+  delete[] title;
 }
 
 void Book::set(char* title, int price){
-	this->title = new char[strlen(title) +1];
-	strcpy(this->title, title);
-	this->price = price;
+  this->title = new char[strlen(title) +1];
+  strcpy(this->title, title);
+  this->price = price;
 }
 
 
 int main(int argc, const char *argv[]){
-	Book cpp("명품C++", 10000);
-	Book java = cpp;
+  Book cpp("명품C++", 10000);
+  Book java = cpp;
 
-	cpp.show();
-	java.show();
+  cpp.show();
+  java.show();
 	
-	return 0;
+  return 0;
 }
 
 
@@ -604,39 +915,39 @@ int main(int argc, const char *argv[]){
 using namespace std;
 
 class Accumulator {
-	int value;
+  int value;
 
-public:
-	Accumulator(int value);
-	Accumulator(Accumulator& a);
-	Accumulator& add(int n);  // 값을 계속 누적하기 위해 참조리턴을 하는 함수
-	int get();
+ public:
+  Accumulator(int value);
+  Accumulator(Accumulator& a);
+  Accumulator& add(int n);  // 값을 계속 누적하기 위해 참조리턴을 하는 함수
+  int get();
 };
 
 Accumulator::Accumulator(int value) : value(value)
 {}
 
 Accumulator::Accumulator(Accumulator& a) {
-	this->value = a.value;
+  this->value = a.value;
 }
 
 // add 함수를 통해 value 값을 계속해서 누적하기 위해 *this를 반환하는 함수
 Accumulator& Accumulator::add(int n) {
-	this->value += n;
-	return *this;
+  this->value += n;
+  return *this;
 }
 
 int Accumulator::get() {
-	return this->value;
+  return this->value;
 }
 
 int main(int argc, const char *argv[]) {
-	Accumulator acc(10);
+  Accumulator acc(10);
 
-	acc.add(5).add(6).add(7);
-	cout << acc.get() << endl;
+  acc.add(5).add(6).add(7);
+  cout << acc.get() << endl;
 
-	return 0;
+  return 0;
 }
 
 
@@ -645,82 +956,82 @@ int main(int argc, const char *argv[]) {
 ------------------------------------------------------
 /*
  * c++ ==> 객체지향 p265 6, p265 5번문제에 스택에 저장할 수 있는 크기를 동적할당하게 작성하고 복사생성자 또한 구현해본 코드
-*/
+ */
 #include <iostream>
 #include <string>
 using namespace std;
 
 class MyIntStack {
-	int *p;
-	int size;
-	int tos; // stack의 꼭대기를 가르키는 인덱스
+  int *p;
+  int size;
+  int tos; // stack의 꼭대기를 가르키는 인덱스
 
-public:
-	MyIntStack();
-	MyIntStack(int size);
-	MyIntStack(MyIntStack& s); // 복사생성자 구현
-	~MyIntStack();
+ public:
+  MyIntStack();
+  MyIntStack(int size);
+  MyIntStack(MyIntStack& s); // 복사생성자 구현
+  ~MyIntStack();
 
-	bool push(int n);
-	bool pop(int &n);
+  bool push(int n);
+  bool pop(int &n);
 };
 
 MyIntStack::MyIntStack() :tos(0) {
-	p = new int[10];
+  p = new int[10];
 }
 
 MyIntStack::MyIntStack(int size) : size(size), tos(0) {
-	p = new int[size];
+  p = new int[size];
 }
 
 // 복사생성자를 사용해본 코드 
 MyIntStack::MyIntStack(MyIntStack& s) {
-	this->size = s.size;
-	this->tos = s.tos;
+  this->size = s.size;
+  this->tos = s.tos;
 
-	// 배열에 대한 복사가 이뤄져야하므로 아래와 같이 복사한다
-	this->p = new int[size];
-	for(int i = 0 ; i < s.size ; i++)
-		this->p[i] = s.p[i];
+  // 배열에 대한 복사가 이뤄져야하므로 아래와 같이 복사한다
+  this->p = new int[size];
+  for(int i = 0 ; i < s.size ; i++)
+    this->p[i] = s.p[i];
 }
 
 MyIntStack::~MyIntStack() {
-	delete[] this->p;
+  delete[] this->p;
 }
 
 bool MyIntStack::push(int n) {
-	if (tos < size) {
-		p[tos] = n;
-		tos++;
-		return true;
-	}
-	return false;
+  if (tos < size) {
+    p[tos] = n;
+    tos++;
+    return true;
+  }
+  return false;
 }
 
 bool MyIntStack::pop(int &n) {
-	if (tos >= 0) {
-		n = p[tos - 1];
-		tos--;
-		return true;
-	}
-	return false;
+  if (tos >= 0) {
+    n = p[tos - 1];
+    tos--;
+    return true;
+  }
+  return false;
 }
 
 int main(int argc, const char *argv[]) {
-	MyIntStack a(10);
-	a.push(10);
-	a.push(20);
+  MyIntStack a(10);
+  a.push(10);
+  a.push(20);
 
-	MyIntStack b = a;
-	b.push(30);
+  MyIntStack b = a;
+  b.push(30);
 
-	int n;
-	a.pop(n);
-	cout << "스택 a에서 팝한 값 " << n << endl;
-	b.pop(n);
-	cout << "스택 b에서 팝한 값 " << n << endl;
+  int n;
+  a.pop(n);
+  cout << "스택 a에서 팝한 값 " << n << endl;
+  b.pop(n);
+  cout << "스택 b에서 팝한 값 " << n << endl;
 
-	return 0;
+  return 0;
 }
 
 
@@ -734,53 +1045,53 @@ int main(int argc, const char *argv[]) {
 #include <string>
 
 class MyIntStack{
-	int p[10]; // 최대 10개의 정수 저장
-	int tos; // stack의 꼭대기를 가르키는 인덱스
+  int p[10]; // 최대 10개의 정수 저장
+  int tos; // stack의 꼭대기를 가르키는 인덱스
 
-public:
-	MyIntStack();
-	bool push(int n);
-	bool pop(int &n);
+ public:
+  MyIntStack();
+  bool push(int n);
+  bool pop(int &n);
 };
 
 MyIntStack::MyIntStack() : tos(0) {
-	p[10] = {0,};
+  p[10] = {0,};
 }
 
 bool MyIntStack::push(int n){
-	if(tos < 10){
-		p[tos] = n;
-		tos++;
-		return true;
-	}
-	return false;
+  if(tos < 10){
+    p[tos] = n;
+    tos++;
+    return true;
+  }
+  return false;
 }
 
 bool MyIntStack::pop(int &n){
-	if(tos >= 0){
-		n = p[tos];
-		tos--;
-		return true;
-	}
-	return false;
+  if(tos >= 0){
+    n = p[tos];
+    tos--;
+    return true;
+  }
+  return false;
 }
 
 int main(int argc, const char *argv[]){
-	MyIntStack a;
+  MyIntStack a;
 
-	for (int i = 0; i < 11; i++) {
-		if(a.push(i))  cout << i << ' ';
-		else cout<< endl << i + 1 << " 번째 stack full" << endl;
-	}
-	int n;
+  for (int i = 0; i < 11; i++) {
+    if(a.push(i))  cout << i << ' ';
+    else cout<< endl << i + 1 << " 번째 stack full" << endl;
+  }
+  int n;
 
-	for (int i = 0; i < 11 ; i++) {
-		if(a.pop(n)) cout << n << ' ';
-		else cout << endl << i + 1 << " 번째 stack empty";
-	}
-	cout << endl;
+  for (int i = 0; i < 11 ; i++) {
+    if(a.pop(n)) cout << n << ' ';
+    else cout << endl << i + 1 << " 번째 stack empty";
+  }
+  cout << endl;
 	
-	return 0;
+  return 0;
 }
 
 
@@ -796,30 +1107,30 @@ using namespace std;
 
 // a 문자열에서 c를 찾아 참조자를 리턴하는 함수
 char& find(char a[], char c, bool& success) {
-	int len = strlen(a);
+  int len = strlen(a);
 	
-	for (int i = 0; i < len; i++) {
-		if (a[i] == c) {
-			success = true;
-			return a[i];
-		}
-	}
-	success = false;
+  for (int i = 0; i < len; i++) {
+    if (a[i] == c) {
+      success = true;
+      return a[i];
+    }
+  }
+  success = false;
 }
 
 int main(int argc, const char *argv[]) {
-	char s[] = "Mike";
-	bool b = false;
-	char& loc = find(s, 'M', b);
+  char s[] = "Mike";
+  bool b = false;
+  char& loc = find(s, 'M', b);
 
-	if (b == false) {
-		cout << "M을 발견할 수 없다" << endl;
-		return 0;
-	}
+  if (b == false) {
+    cout << "M을 발견할 수 없다" << endl;
+    return 0;
+  }
 
-	loc = 'm';
-	cout << s << endl;
-	return 0;
+  loc = 'm';
+  cout << s << endl;
+  return 0;
 }
 
 
@@ -839,197 +1150,197 @@ const char DIGIT[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
 // 문자 하나를 입력받아 그 문자가 어느 위치에 있는지 알려주는 함수 
 int getpos(char c) {
-	int pos;
-	const char * alphabet = "abcdefghijklmnopqrstuvwxyz0123456789/?,.+=";
-	const char * found;
+  int pos;
+  const char * alphabet = "abcdefghijklmnopqrstuvwxyz0123456789/?,.+=";
+  const char * found;
 
-	c = tolower((unsigned char)c);
-	found = strchr(alphabet, c);
-	pos = found - alphabet;
-	if (!found)
-		pos = 0;
-	else if (pos == 42)
-		pos = 0;
-	else
-		pos++;
-	return pos - 1;
+  c = tolower((unsigned char)c);
+  found = strchr(alphabet, c);
+  pos = found - alphabet;
+  if (!found)
+    pos = 0;
+  else if (pos == 42)
+    pos = 0;
+  else
+    pos++;
+  return pos - 1;
 }
 
 // 모스부호 <==> 영문자특수문자 변환을 해주는 클래스
 class Morse {
-	string alphabet[26];
-	string digit[10];
-	string slash, question, comma, period, plus, equal;
+  string alphabet[26];
+  string digit[10];
+  string slash, question, comma, period, plus, equal;
 
-public:
-	Morse();
-	void text2Morse(string text, string& morse);
-	void morse2Text(string morse, string& text);
+ public:
+  Morse();
+  void text2Morse(string text, string& morse);
+  void morse2Text(string morse, string& text);
 };
 
 // 각각의 모스부호를 입력한다
 Morse::Morse() {
-	alphabet[0] = ".-";   //a
-	alphabet[1] = "-..."; //b
-	alphabet[2] = "-.-."; //c
-	alphabet[3] = "-..";  //d
-	alphabet[4] = ".";    //e
-	alphabet[5] = "..-."; //f
-	alphabet[6] = "--."; //g
-	alphabet[7] = "....";//h
-	alphabet[8] = "..";//i
-	alphabet[9] = ".---";//j
-	alphabet[10] = "-.-";//k
-	alphabet[11] = ".-..";//l
-	alphabet[12] = "--";//m
-	alphabet[13] = "-.";//n
-	alphabet[14] = "---";//o
-	alphabet[15] = ".--.";//p
-	alphabet[16] = "--.-";//q
-	alphabet[17] = ".-.";//r
-	alphabet[18] = "...";//s
-	alphabet[19] = "-";//t
-	alphabet[20] = "..-";//u
-	alphabet[21] = "...-";//v
-	alphabet[22] = ".--";//w
-	alphabet[23] = "-..-";//x
-	alphabet[24] = "-.--";//y
-	alphabet[25] = "--..";//z
+  alphabet[0] = ".-";   //a
+  alphabet[1] = "-..."; //b
+  alphabet[2] = "-.-."; //c
+  alphabet[3] = "-..";  //d
+  alphabet[4] = ".";    //e
+  alphabet[5] = "..-."; //f
+  alphabet[6] = "--."; //g
+  alphabet[7] = "....";//h
+  alphabet[8] = "..";//i
+  alphabet[9] = ".---";//j
+  alphabet[10] = "-.-";//k
+  alphabet[11] = ".-..";//l
+  alphabet[12] = "--";//m
+  alphabet[13] = "-.";//n
+  alphabet[14] = "---";//o
+  alphabet[15] = ".--.";//p
+  alphabet[16] = "--.-";//q
+  alphabet[17] = ".-.";//r
+  alphabet[18] = "...";//s
+  alphabet[19] = "-";//t
+  alphabet[20] = "..-";//u
+  alphabet[21] = "...-";//v
+  alphabet[22] = ".--";//w
+  alphabet[23] = "-..-";//x
+  alphabet[24] = "-.--";//y
+  alphabet[25] = "--..";//z
 
-	digit[0] = "-----";
-	digit[1] = ".----";
-	digit[2] = "..---";
-	digit[3] = "...--";
-	digit[4] = "....-";
-	digit[5] = ".....";
-	digit[6] = "-....";
-	digit[7] = "--...";
-	digit[8] = "----..";
-	digit[9] = "----.";
+  digit[0] = "-----";
+  digit[1] = ".----";
+  digit[2] = "..---";
+  digit[3] = "...--";
+  digit[4] = "....-";
+  digit[5] = ".....";
+  digit[6] = "-....";
+  digit[7] = "--...";
+  digit[8] = "----..";
+  digit[9] = "----.";
 
-	slash = "-..-.";
-	question = "..--..";
-	comma = "--..--";
-	period = ".-.-.-";
-	plus = ".-.-.";
-	equal = "-...-";
+  slash = "-..-.";
+  question = "..--..";
+  comma = "--..--";
+  period = ".-.-.-";
+  plus = ".-.-.";
+  equal = "-...-";
 }
 
 // 텍스트를 입력받으면 모스부호를 반환하는 멤버함수
 void Morse::text2Morse(string text, string& morse) {
-	int i = 0;
-	int j = 0;
-	int len = text.length();
+  int i = 0;
+  int j = 0;
+  int len = text.length();
 
-	while (1) {
-		j = getpos(text[i]);
+  while (1) {
+    j = getpos(text[i]);
 
-		if (text[i] == ' ')
-			morse += "  ";
+    if (text[i] == ' ')
+      morse += "  ";
 
-		if (j >= 0 && j < 26)
-			morse += this->alphabet[j] + ' ';
-		else if (j >= 26 && j < 36)
-			morse += this->digit[j - 26] + ' ';
-		else if (j == 36)
-			morse += this->slash + ' ';
-		else if (j == 37)
-			morse += this->question + ' ';
-		else if (j == 38)
-			morse += this->comma + ' ';
-		else if (j == 39)
-			morse += this->period + ' ';
-		else if (j == 40)
-			morse += this->plus + ' ';
-		else if (j == 41)
-			morse += this->equal + ' ';
+    if (j >= 0 && j < 26)
+      morse += this->alphabet[j] + ' ';
+    else if (j >= 26 && j < 36)
+      morse += this->digit[j - 26] + ' ';
+    else if (j == 36)
+      morse += this->slash + ' ';
+    else if (j == 37)
+      morse += this->question + ' ';
+    else if (j == 38)
+      morse += this->comma + ' ';
+    else if (j == 39)
+      morse += this->period + ' ';
+    else if (j == 40)
+      morse += this->plus + ' ';
+    else if (j == 41)
+      morse += this->equal + ' ';
 
-		i++;
-		if (i == len) break;
-	}
+    i++;
+    if (i == len) break;
+  }
 }
 
 // 모스부호를 입력받으면 텍스트를 반환하는 멤버함수
 void Morse::morse2Text(string morse, string& text) {
-	int first = 0;
-	int last = 0;
-	int i = 0;
-	int space = 0;
-	int lenMorse = morse.length();
-	string tmp;
+  int first = 0;
+  int last = 0;
+  int i = 0;
+  int space = 0;
+  int lenMorse = morse.length();
+  string tmp;
 
-	while (1) {
-		// ' ' 스페이스가 모스부호 한 단어를 구분하므로 find로 인덱스값을 찾는다
-		last = morse.find(' ', first);
+  while (1) {
+    // ' ' 스페이스가 모스부호 한 단어를 구분하므로 find로 인덱스값을 찾는다
+    last = morse.find(' ', first);
 		
-		// 문장의 끝에 도달하면 루프탈출
-		if (last == -1)
-			break;
+    // 문장의 끝에 도달하면 루프탈출
+    if (last == -1)
+      break;
 
-		// 한 단어를 tmp에만 뽑아서 저장한다
-		tmp = morse.substr(first, last - first);
+    // 한 단어를 tmp에만 뽑아서 저장한다
+    tmp = morse.substr(first, last - first);
 		
-		// 무한루프 2개를 돌면서 알파벳과 숫자를 발견하면 text에 더해준다 
-		while (1) {
-			if (tmp == this->alphabet[i])
-				text += ALPHA[i];
-			i++;
-			if (i == 26) {
-				i = 0;
-				break;
-			}
-		}
+    // 무한루프 2개를 돌면서 알파벳과 숫자를 발견하면 text에 더해준다
+    while (1) {
+      if (tmp == this->alphabet[i])
+        text += ALPHA[i];
+      i++;
+      if (i == 26) {
+        i = 0;
+        break;
+      }
+    }
 
-		while (1) {
-			if (tmp == this->digit[i])
-				text += DIGIT[i];
-			i++;
-			if (i == 10) {
-				i = 0;
-				break;
-			}
-		}
+    while (1) {
+      if (tmp == this->digit[i])
+        text += DIGIT[i];
+      i++;
+      if (i == 10) {
+        i = 0;
+        break;
+      }
+    }
 
-		// 특수문자를 발견하면 text에 더해준다
-		if (tmp == this->slash)
-			text += '/';
-		else if (tmp == this->question)
-			text += '?';
-		else if (tmp == this->comma)
-			text += ',';
-		else if (tmp == this->period)
-			text += '.';
-		else if (tmp == this->plus)
-			text += '+';
-		else if (tmp == this->equal)
-			text += '=';
+    // 특수문자를 발견하면 text에 더해준다
+    if (tmp == this->slash)
+      text += '/';
+    else if (tmp == this->question)
+      text += '?';
+    else if (tmp == this->comma)
+      text += ',';
+    else if (tmp == this->period)
+      text += '.';
+    else if (tmp == this->plus)
+      text += '+';
+    else if (tmp == this->equal)
+      text += '=';
 
-		// "   " 3칸의 빈칸이 띄어쓰기를 의미하므로 이를 발견하면 현재 위치(last)와 비교해서 문장을 띄울 타이밍에 한 칸 띄어쓴다
-		space = morse.find("   ", last);
-		if(space == last)
-			text += " ";
+    // "   " 3칸의 빈칸이 띄어쓰기를 의미하므로 이를 발견하면 현재 위치(last)와 비교해서 문장을 띄울 타이밍에 한 칸 띄어쓴다
+    space = morse.find("   ", last);
+    if(space == last)
+      text += " ";
 
-		// 다음 루프를 위해 first에 last를 넣는다
-		first = last + 1;
-	}
+    // 다음 루프를 위해 first에 last를 넣는다
+    first = last + 1;
+  }
 }
 
 
 int main(int argc, const char *argv[]) {
-	Morse m;
-	string sentence;
-	string Mor;
-	string Sen;
+  Morse m;
+  string sentence;
+  string Mor;
+  string Sen;
 
-	cout << "아래에 영문 텍스트를 입력하세요. 모스 부호로 바꿉니다" << endl;
-	getline(cin, sentence, '\n');
-	m.text2Morse(sentence, Mor);
-	cout << Mor << endl;
+  cout << "아래에 영문 텍스트를 입력하세요. 모스 부호로 바꿉니다" << endl;
+  getline(cin, sentence, '\n');
+  m.text2Morse(sentence, Mor);
+  cout << Mor << endl;
 
-	cout << "모스 부호를 다시 영문 텍스트로 바꿉니다" << endl;
-	m.morse2Text(Mor, Sen);
-	cout << Sen << endl;
-	return 0;
+  cout << "모스 부호를 다시 영문 텍스트로 바꿉니다" << endl;
+  m.morse2Text(Mor, Sen);
+  cout << Sen << endl;
+  return 0;
 }
 
 
@@ -1047,115 +1358,115 @@ using namespace std;
 
 // 플레이어 클래스
 class Player{
-	string name;
+  string name;
 
-public:
-	void setName(string name);
-	string getName();
+ public:
+  void setName(string name);
+  string getName();
 };
 
 // 게임 전체를 담당하는 클래스
 class GamblingGame{
-	Player *p;
+  Player *p;
 
-public:
-	GamblingGame();
-	void setPlayer(Player p1, Player p2);
-	void run();
-	bool isWin(int arr[]);
-	int randomGenerate();
+ public:
+  GamblingGame();
+  void setPlayer(Player p1, Player p2);
+  void run();
+  bool isWin(int arr[]);
+  int randomGenerate();
 };
 
 // 2명의 플레이어 객체를 초기화하는 함수
 GamblingGame::GamblingGame(){
-	p = new Player[2];
+  p = new Player[2];
 }
 
 // 3개의 숫자가 모두 일치하면 true를 반환하는 함수
 bool GamblingGame::isWin(int arr[]){
-	if(arr[0] == arr[1])
-		if(arr[1] == arr[2])
-			return true;
-	return false;
+  if(arr[0] == arr[1])
+    if(arr[1] == arr[2])
+      return true;
+  return false;
 }
 
 // 2명의 플레이어를 세팅하는 함수
 void GamblingGame::setPlayer(Player p1, Player p2){
-	p[0] = p1;
-	p[1] = p2;
+  p[0] = p1;
+  p[1] = p2;
 }
 
 // 게임 시작 함수
 void GamblingGame::run(){
-	int gameArray[3] = {0};
+  int gameArray[3] = {0};
 
-	// 무한루프를 돌면서 2명의 플레이어가 엔터를 누를때마다 겜블링 숫자를 받는다
-	while (1){
-		cout << p[0].getName()	<<": <Enter>";
-		cin.get();
-		gameArray[0] = randomGenerate();
-		gameArray[1] = randomGenerate();
-		gameArray[2] = randomGenerate();
+  // 무한루프를 돌면서 2명의 플레이어가 엔터를 누를때마다 겜블링 숫자를 받는다
+  while (1){
+    cout << p[0].getName()	<<": <Enter>";
+    cin.get();
+    gameArray[0] = randomGenerate();
+    gameArray[1] = randomGenerate();
+    gameArray[2] = randomGenerate();
 
-		if(isWin(gameArray)){
-			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[0].getName() << "님 승리!!" << endl;
-			exit(0);
-		}
-		else
-			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
+    if(isWin(gameArray)){
+      cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[0].getName() << "님 승리!!" << endl;
+      exit(0);
+    }
+    else
+      cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
 
 
-		cout << p[1].getName()	<<": <Enter>";
-		cin.get();
-		gameArray[0] = randomGenerate();
-		gameArray[1] = randomGenerate();
-		gameArray[2] = randomGenerate();
+    cout << p[1].getName()	<<": <Enter>";
+    cin.get();
+    gameArray[0] = randomGenerate();
+    gameArray[1] = randomGenerate();
+    gameArray[2] = randomGenerate();
 
-		if(isWin(gameArray)){
-			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[1].getName() << "님 승리!!" << endl;
-			exit(0);
-		}
-		else
-			cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
-	}
+    if(isWin(gameArray)){
+      cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   " << p[1].getName() << "님 승리!!" << endl;
+      exit(0);
+    }
+    else
+      cout << gameArray[0] << "     " << gameArray[1] << "    " << gameArray[2] << "   아쉽군요!" << endl;
+  }
 }
 
 // 난수를 리턴하는 함수
 int GamblingGame::randomGenerate(){
-	int tmp;
-	tmp = rand() % 3;
-	return tmp;
+  int tmp;
+  tmp = rand() % 3;
+  return tmp;
 }
 
 string Player::getName(){
-	return this->name;
+  return this->name;
 }
 
 void Player::setName(string name){
-	this->name = name;
+  this->name = name;
 }
 
 int main(int argc, const char *argv[]){
-	// 난수 생성용 코드
-	srand((unsigned)time(0));
-	GamblingGame gg;
-	Player p1;
-	Player p2;
-	string tmp;
+  // 난수 생성용 코드
+  srand((unsigned)time(0));
+  GamblingGame gg;
+  Player p1;
+  Player p2;
+  string tmp;
 
-	cout << "***** 갬블링 게임을 시작합니다. *****" << endl;
-	cout << "첫번째 선수 이름>> ";
-	cin >> tmp;
-	p1.setName(tmp);
+  cout << "***** 갬블링 게임을 시작합니다. *****" << endl;
+  cout << "첫번째 선수 이름>> ";
+  cin >> tmp;
+  p1.setName(tmp);
 
-	cout << "두번째 선수 이름>> ";
-	cin >> tmp;
-	cin.ignore();
-	p2.setName(tmp);
+  cout << "두번째 선수 이름>> ";
+  cin >> tmp;
+  cin.ignore();
+  p2.setName(tmp);
 
-	gg.setPlayer(p1,p2);
-	gg.run();
-	return 0;
+  gg.setPlayer(p1,p2);
+  gg.run();
+  return 0;
 }
 
 
@@ -1169,28 +1480,28 @@ int main(int argc, const char *argv[]){
 using namespace std;
 
 class Person{
-	int id;
-	string name;
-	double weight;
+  int id;
+  string name;
+  double weight;
 
-public:
-	Person(int id = 1, string name = "Grace", double weight= 20.5);
-	void show() { cout << id << ' ' << weight << ' ' << name << endl; }
+ public:
+  Person(int id = 1, string name = "Grace", double weight= 20.5);
+  void show() { cout << id << ' ' << weight << ' ' << name << endl; }
 }; 
 
 Person::Person(int id, string name, double weight){
-	this->id = id;
-	this->name = name;
-	this->weight = weight;
+  this->id = id;
+  this->name = name;
+  this->weight = weight;
 }
 
 int main(int argc, const char *argv[]){
-	Person grace, ashley(2, "Ashley"), helen(3, "Helen", 32.5);
-	grace.show();
-	ashley.show();
-	helen.show();
+  Person grace, ashley(2, "Ashley"), helen(3, "Helen", 32.5);
+  grace.show();
+  ashley.show();
+  helen.show();
 
-	return 0;
+  return 0;
 }
 
 
