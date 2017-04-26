@@ -1,7 +1,7 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> 비주얼컴퓨팅,
+	python ==> 비주얼컴퓨팅, Deep MNIST로 컨벌루션을 통해 여러 층을 만들어본 코드
 '''
 # %matplotlib inline # ipython 전용 코드
 import matplotlib.pyplot as plt

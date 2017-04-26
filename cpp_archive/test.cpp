@@ -1,58 +1,48 @@
-/*
- * c++ ==> 객체지향 p361 10, Stack 클래스르 만들고 Push를 << 연산자를, Pop으로 >> 연산자를 오버로딩한 코드
- */
 #include <iostream>
 #include <string>
 using namespace std;
 
-static int count = 0;
+int array[9] = {0,2,4,6,8,10,14,16,18};
 
-class Stack{
-  int *data;
-
- public:
-  Stack();
-  ~Stack();
-  Stack& operator<<(int x);
-  void operator>>(int& x);
-  bool operator!();
-};
-
-Stack::Stack(){
-  data = new int[3];
-}
-
-Stack::~Stack(){
-  delete[] data;
-}
-
-Stack& Stack::operator<<(int x){
-  this->data[count] = x;
-  count++;
-  return *this;
-}
-
-void Stack::operator>>(int& x){
-  x = this->data[count - 1];
-  count--;
-}
-
-bool Stack::operator!(){
-  if(count == 0) return true;
-  return false;
+int& f(int n){
+  return array[n];
 }
 
 int main(int argc, char *argv[]){
-  Stack stack;
-  stack << 3 << 5 << 10;
+  f(9) = 100;
 
-  while(true){
-    if(!stack) break;
-    int x;
-    stack >> x;
-    cout << x << ' ';
+  for(int i = 0 ; i < 10 ; i++){
+    cout << array[i] << ' ';
   }
 
-  cout << endl;
   return 0;
 }
+
+
+
+/*
+int main(int argc, char *argv[]){
+  string s("I Love");
+  string a;
+  a = s;
+  a.append(" C++");
+
+  cout << a << endl;
+
+  a.erase(6,10);
+  a.append(" You");
+
+  cout << a << endl;
+
+  int len = a.length();
+
+  for(int i = 0 ; i < 3 ;  i++){
+    string first = a.substr(0,1);
+    string sub = a.substr(1, len - 1);
+    a = sub + " " + first;
+    cout << a << endl;
+  }
+
+  return 0;
+}
+*/
