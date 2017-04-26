@@ -86,7 +86,7 @@ y = tf.nn.softmax(y)
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_input * tf.log(y), reduction_indices=[1]))
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y))
 
-# Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다
+# Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다. 학습율은 0.5
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
 # 세션을 초기화한다
