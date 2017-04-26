@@ -1,7 +1,7 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> 비주얼컴퓨팅, Deep MNIST로 컨벌루션을 통해 여러 층을 만들어본 코드
+	python ==> 비주얼컴퓨팅, Deep MNIST로 Convolution, fully connected, dropout등의 기법을 통해 여러 층의 신경망을 만들어본 코드
 '''
 # %matplotlib inline # ipython 전용 코드
 import matplotlib.pyplot as plt
@@ -88,14 +88,20 @@ h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 # 2nd fully connected layer --------------
 W_fc2 = weight_variable([1024, 10])
 b_fc2 = bias_variable([10])
-
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
+# Cross Entropy를 정의한다
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y_conv))
 
-# Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다
+# Adam Optimizer 알고리즘을 사용해서 cross_entropy를 최소화한다. 학습율은 1e-4로 한다
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
+
+
+# 실제 정답과 예측값이 얼마나 일치하는지를 판단하는 accuray 변수를 정의한다
+corerct_predition = tf.equal(tf.argmax(y_conv, 1) , tf.argmax(y_input, 1))
+accuracy = tf.reduce_mean(tf.cast(corerct_predition, tf.float32))
+
 
 # 세션을 초기화한다
 sess = tf.InteractiveSession()
