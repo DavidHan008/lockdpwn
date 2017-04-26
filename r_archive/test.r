@@ -39,12 +39,6 @@ plot(GA)
 
 
 
-
-
-
-
-
-
 # 출처 : https://books.google.co.kr/books?id=2XMRAgAAQBAJ&pg=PT10&lpg=PT10&dq=r+%EC%9C%A0%EC%A0%84%EC%9E%90%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&source=bl&ots=QWFmva3T1p&sig=sRfMP0hCMPlYn3_x47SiOjoQdJU&hl=ko&sa=X&ved=0ahUKEwjAityS1ozTAhXLilQKHWEIDccQ6AEISzAF#v=onepage&q=%EC%9C%A0%EC%A0%84%EC%9E%90&f=false
 
 
@@ -56,3 +50,5 @@ plot(GA)
 
 
 
+
+#
