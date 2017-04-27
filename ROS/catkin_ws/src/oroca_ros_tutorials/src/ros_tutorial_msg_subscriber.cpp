@@ -9,6 +9,7 @@ void msgCallback(const oroca_ros_tutorials::msgTutorial::ConstPtr& msg){
 	ROS_INFO("receive msg : %d", msg->data);
 }
 
+
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "ros_tutorial_msg_subscriber");

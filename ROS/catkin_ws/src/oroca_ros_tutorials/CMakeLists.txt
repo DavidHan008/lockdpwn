@@ -13,6 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
 # 노드에서 사용하는 메세제파일을 추가하는 옵션
 add_message_files(FILES msgTutorial.msg)
 
+# 서비스 파일 추가
+add_service_files(FILES srvTutorial.srv)
+
 # 의존하는 메세지를 설정하는 옵션
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -37,8 +40,21 @@ target_link_libraries(ros_tutorial_msg_publisher ${catkin_LIBRARIES})
 add_dependencies(ros_tutorial_msg_publisher oroca_ros_tutorials_generate_messages_cpp)
 
 
-
 # Subscirber 옵션
 add_executable(ros_tutorial_msg_subscriber src/ros_tutorial_msg_subscriber.cpp)
 target_link_libraries(ros_tutorial_msg_subscriber ${catkin_LIBRARIES})
 add_dependencies(ros_tutorial_msg_subscriber oroca_ros_tutorials_generate_messages_cpp)
+
+
+# Service 옵션 ros_tutorial_srv_server 노드에 대한 빌드 옵션
+add_executable(ros_tutorial_srv_server src/ros_tutorial_srv_server.cpp)
+target_link_libraries(ros_tutorial_srv_server ${catkin_LIBRARIES})
+add_dependencies(ros_tutorial_srv_server oroca_ros_tutorials_generate_messages_cpp)
+
+
+# Service 옵션 ros_tutorial_srv_client 노드에 대한 빌드 옵션
+add_executable(ros_tutorial_srv_client src/ros_tutorial_srv_client.cpp)
+target_link_libraries(ros_tutorial_srv_client ${catkin_LIBRARIES})
+add_dependencies(ros_tutorial_srv_client oroca_ros_tutorials_generate_messages_cpp)
+
+
