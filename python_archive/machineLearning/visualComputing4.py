@@ -59,12 +59,16 @@ h_pool1 = max_pool_2x2(h_conv1)
 
 
 
+
 # 2nd conv layer -----------------------
 W_conv2 = weight_variable([5,5,32,64])
 b_conv2 = bias_variable([64])
 
 h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
 h_pool2 = max_pool_2x2(h_conv2)
+
+
+
 
 
 
@@ -85,14 +89,18 @@ h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
 
 
+
 # 2nd fully connected layer --------------
 W_fc2 = weight_variable([1024, 10])
 b_fc2 = bias_variable([10])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
+
+
 # Cross Entropy를 정의한다
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y_conv))
+
 
 # Adam Optimizer 알고리즘을 사용해서 cross_entropy를 최소화한다. 학습율은 1e-4로 한다
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
@@ -107,6 +115,7 @@ accuracy = tf.reduce_mean(tf.cast(corerct_predition, tf.float32))
 sess = tf.InteractiveSession()
 sess.run(tf.global_variables_initializer())
 
+
 for i in range(2000):
 	# [image[50], label[50]]를 6만개의 기존 데이터에서 랜덤으로 한 묶음으로 처리한다음 이것을 학습한다
 	batch = mnist.train.next_batch(50)
@@ -116,6 +125,7 @@ for i in range(2000):
 
 		print('step', i , 'training_accuracy', train_accuracy)
 	train_step.run(feed_dict={x_input:batch[0],y_input:batch[1], keep_prob:0.5})
+
 
 
 # 전부 학습이 끝나면 테스트 데이터를 넣는다
