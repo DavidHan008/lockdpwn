@@ -46,6 +46,7 @@ CMAKE_BINARY_DIR = /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 include oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/progress.make
 
 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/msg/msgTutorial.lisp
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/srv/srvTutorial.lisp
 
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/msg/msgTutorial.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/msg/msgTutorial.lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg
@@ -53,8 +54,15 @@ oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp: /home
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from oroca_ros_tutorials/msgTutorial.msg"
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/msg
 
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/srv/srvTutorial.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/srv/srvTutorial.lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from oroca_ros_tutorials/srvTutorial.srv"
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/srv
+
 oroca_ros_tutorials_generate_messages_lisp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp
 oroca_ros_tutorials_generate_messages_lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/msg/msgTutorial.lisp
+oroca_ros_tutorials_generate_messages_lisp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/oroca_ros_tutorials/srv/srvTutorial.lisp
 oroca_ros_tutorials_generate_messages_lisp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_lisp.dir/build.make
 .PHONY : oroca_ros_tutorials_generate_messages_lisp
 

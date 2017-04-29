@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "oroca_ros_tutorials: 1 messages, 0 services")
+message(STATUS "oroca_ros_tutorials: 1 messages, 1 services")
 
 set(MSG_I_FLAGS "-Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
@@ -14,6 +14,11 @@ add_custom_target(oroca_ros_tutorials_generate_messages ALL)
 # verify that message/service dependencies have not changed since configure
 
 
+
+get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv" NAME_WE)
+add_custom_target(_oroca_ros_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "oroca_ros_tutorials" "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv" ""
+)
 
 get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg" NAME_WE)
 add_custom_target(_oroca_ros_tutorials_generate_messages_check_deps_${_filename}
@@ -34,6 +39,12 @@ _generate_msg_cpp(oroca_ros_tutorials
 )
 
 ### Generating Services
+_generate_srv_cpp(oroca_ros_tutorials
+  "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/oroca_ros_tutorials
+)
 
 ### Generating Module File
 _generate_module_cpp(oroca_ros_tutorials
@@ -47,6 +58,8 @@ add_custom_target(oroca_ros_tutorials_generate_messages_cpp
 add_dependencies(oroca_ros_tutorials_generate_messages oroca_ros_tutorials_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv" NAME_WE)
+add_dependencies(oroca_ros_tutorials_generate_messages_cpp _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg" NAME_WE)
 add_dependencies(oroca_ros_tutorials_generate_messages_cpp _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 
@@ -67,6 +80,12 @@ _generate_msg_lisp(oroca_ros_tutorials
 )
 
 ### Generating Services
+_generate_srv_lisp(oroca_ros_tutorials
+  "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/oroca_ros_tutorials
+)
 
 ### Generating Module File
 _generate_module_lisp(oroca_ros_tutorials
@@ -80,6 +99,8 @@ add_custom_target(oroca_ros_tutorials_generate_messages_lisp
 add_dependencies(oroca_ros_tutorials_generate_messages oroca_ros_tutorials_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv" NAME_WE)
+add_dependencies(oroca_ros_tutorials_generate_messages_lisp _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg" NAME_WE)
 add_dependencies(oroca_ros_tutorials_generate_messages_lisp _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 
@@ -100,6 +121,12 @@ _generate_msg_py(oroca_ros_tutorials
 )
 
 ### Generating Services
+_generate_srv_py(oroca_ros_tutorials
+  "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/oroca_ros_tutorials
+)
 
 ### Generating Module File
 _generate_module_py(oroca_ros_tutorials
@@ -113,6 +140,8 @@ add_custom_target(oroca_ros_tutorials_generate_messages_py
 add_dependencies(oroca_ros_tutorials_generate_messages oroca_ros_tutorials_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv" NAME_WE)
+add_dependencies(oroca_ros_tutorials_generate_messages_py _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg" NAME_WE)
 add_dependencies(oroca_ros_tutorials_generate_messages_py _oroca_ros_tutorials_generate_messages_check_deps_${_filename})
 

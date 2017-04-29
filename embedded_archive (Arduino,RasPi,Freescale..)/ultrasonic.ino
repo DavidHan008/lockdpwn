@@ -49,8 +49,7 @@ void loop()
 	}
 }
 
-int calculateDistance()
-{
+int calculateDistance(){
 	digitalWrite(trigPin, LOW);
 	delayMicroseconds(2);
 

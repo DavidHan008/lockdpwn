@@ -196,6 +196,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "my_first_ros_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir/DependInfo.cmake"
+  "oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/DependInfo.cmake"
@@ -205,4 +206,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_genpy.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir/DependInfo.cmake"
   "oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/DependInfo.cmake"
+  "oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/DependInfo.cmake"
+  "oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/DependInfo.cmake"
   )

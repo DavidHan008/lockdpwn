@@ -164,6 +164,20 @@ _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast:
 .PHONY : _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast
 
 # Convenience name for target.
+oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/rule
+.PHONY : oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/rule
+
+# Convenience name for target.
+_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial: oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/rule
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial
+
+# fast build rule for target.
+_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/build
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial/fast
+
+# Convenience name for target.
 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule
 .PHONY : oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir/rule
@@ -289,6 +303,34 @@ ros_tutorial_msg_subscriber/fast:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build
 .PHONY : ros_tutorial_msg_subscriber/fast
 
+# Convenience name for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/rule
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/rule
+
+# Convenience name for target.
+ros_tutorial_srv_client: oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/rule
+.PHONY : ros_tutorial_srv_client
+
+# fast build rule for target.
+ros_tutorial_srv_client/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build
+.PHONY : ros_tutorial_srv_client/fast
+
+# Convenience name for target.
+oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/rule
+.PHONY : oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/rule
+
+# Convenience name for target.
+ros_tutorial_srv_server: oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/rule
+.PHONY : ros_tutorial_srv_server
+
+# fast build rule for target.
+ros_tutorial_srv_server/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build
+.PHONY : ros_tutorial_srv_server/fast
+
 src/ros_tutorial_msg_publisher.o: src/ros_tutorial_msg_publisher.cpp.o
 .PHONY : src/ros_tutorial_msg_publisher.o
 
@@ -337,6 +379,54 @@ src/ros_tutorial_msg_subscriber.cpp.s:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/src/ros_tutorial_msg_subscriber.cpp.s
 .PHONY : src/ros_tutorial_msg_subscriber.cpp.s
 
+src/ros_tutorial_srv_client.o: src/ros_tutorial_srv_client.cpp.o
+.PHONY : src/ros_tutorial_srv_client.o
+
+# target to build an object file
+src/ros_tutorial_srv_client.cpp.o:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/src/ros_tutorial_srv_client.cpp.o
+.PHONY : src/ros_tutorial_srv_client.cpp.o
+
+src/ros_tutorial_srv_client.i: src/ros_tutorial_srv_client.cpp.i
+.PHONY : src/ros_tutorial_srv_client.i
+
+# target to preprocess a source file
+src/ros_tutorial_srv_client.cpp.i:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/src/ros_tutorial_srv_client.cpp.i
+.PHONY : src/ros_tutorial_srv_client.cpp.i
+
+src/ros_tutorial_srv_client.s: src/ros_tutorial_srv_client.cpp.s
+.PHONY : src/ros_tutorial_srv_client.s
+
+# target to generate assembly for a file
+src/ros_tutorial_srv_client.cpp.s:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/src/ros_tutorial_srv_client.cpp.s
+.PHONY : src/ros_tutorial_srv_client.cpp.s
+
+src/ros_tutorial_srv_server.o: src/ros_tutorial_srv_server.cpp.o
+.PHONY : src/ros_tutorial_srv_server.o
+
+# target to build an object file
+src/ros_tutorial_srv_server.cpp.o:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/src/ros_tutorial_srv_server.cpp.o
+.PHONY : src/ros_tutorial_srv_server.cpp.o
+
+src/ros_tutorial_srv_server.i: src/ros_tutorial_srv_server.cpp.i
+.PHONY : src/ros_tutorial_srv_server.i
+
+# target to preprocess a source file
+src/ros_tutorial_srv_server.cpp.i:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/src/ros_tutorial_srv_server.cpp.i
+.PHONY : src/ros_tutorial_srv_server.cpp.i
+
+src/ros_tutorial_srv_server.s: src/ros_tutorial_srv_server.cpp.s
+.PHONY : src/ros_tutorial_srv_server.s
+
+# target to generate assembly for a file
+src/ros_tutorial_srv_server.cpp.s:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/src/ros_tutorial_srv_server.cpp.s
+.PHONY : src/ros_tutorial_srv_server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -344,6 +434,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
+	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
@@ -359,6 +450,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ros_tutorial_msg_publisher"
 	@echo "... ros_tutorial_msg_subscriber"
+	@echo "... ros_tutorial_srv_client"
+	@echo "... ros_tutorial_srv_server"
 	@echo "... test"
 	@echo "... src/ros_tutorial_msg_publisher.o"
 	@echo "... src/ros_tutorial_msg_publisher.i"
@@ -366,6 +459,12 @@ help:
 	@echo "... src/ros_tutorial_msg_subscriber.o"
 	@echo "... src/ros_tutorial_msg_subscriber.i"
 	@echo "... src/ros_tutorial_msg_subscriber.s"
+	@echo "... src/ros_tutorial_srv_client.o"
+	@echo "... src/ros_tutorial_srv_client.i"
+	@echo "... src/ros_tutorial_srv_client.s"
+	@echo "... src/ros_tutorial_srv_server.o"
+	@echo "... src/ros_tutorial_srv_server.i"
+	@echo "... src/ros_tutorial_srv_server.s"
 .PHONY : help
 
 

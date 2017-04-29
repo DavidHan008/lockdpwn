@@ -1,4 +1,5 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_msgTutorial.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/clean_test_results.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/download_extra_data.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/doxygen.dir
@@ -14,6 +15,8 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/rosTest_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_publisher.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg/CMakeFiles/roscpp_generate_messages_py.dir

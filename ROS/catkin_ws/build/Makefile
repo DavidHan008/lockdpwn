@@ -384,6 +384,19 @@ _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast:
 .PHONY : _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial/fast
 
 #=============================================================================
+# Target rules for targets named _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial
+
+# Build rule for target.
+_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial
+
+# fast build rule for target.
+_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/build.make oroca_ros_tutorials/CMakeFiles/_oroca_ros_tutorials_generate_messages_check_deps_srvTutorial.dir/build
+.PHONY : _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial/fast
+
+#=============================================================================
 # Target rules for targets named oroca_ros_tutorials_gencpp
 
 # Build rule for target.
@@ -500,6 +513,32 @@ ros_tutorial_msg_subscriber/fast:
 	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_msg_subscriber.dir/build
 .PHONY : ros_tutorial_msg_subscriber/fast
 
+#=============================================================================
+# Target rules for targets named ros_tutorial_srv_client
+
+# Build rule for target.
+ros_tutorial_srv_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_tutorial_srv_client
+.PHONY : ros_tutorial_srv_client
+
+# fast build rule for target.
+ros_tutorial_srv_client/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_client.dir/build
+.PHONY : ros_tutorial_srv_client/fast
+
+#=============================================================================
+# Target rules for targets named ros_tutorial_srv_server
+
+# Build rule for target.
+ros_tutorial_srv_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_tutorial_srv_server
+.PHONY : ros_tutorial_srv_server
+
+# fast build rule for target.
+ros_tutorial_srv_server/fast:
+	$(MAKE) -f oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build.make oroca_ros_tutorials/CMakeFiles/ros_tutorial_srv_server.dir/build
+.PHONY : ros_tutorial_srv_server/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -531,6 +570,7 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
+	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial"
 	@echo "... oroca_ros_tutorials_gencpp"
 	@echo "... oroca_ros_tutorials_generate_messages"
 	@echo "... oroca_ros_tutorials_generate_messages_cpp"
@@ -540,6 +580,8 @@ help:
 	@echo "... oroca_ros_tutorials_genpy"
 	@echo "... ros_tutorial_msg_publisher"
 	@echo "... ros_tutorial_msg_subscriber"
+	@echo "... ros_tutorial_srv_client"
+	@echo "... ros_tutorial_srv_server"
 .PHONY : help
 
 

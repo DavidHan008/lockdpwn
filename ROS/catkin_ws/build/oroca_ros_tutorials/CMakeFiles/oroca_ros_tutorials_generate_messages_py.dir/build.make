@@ -46,7 +46,9 @@ CMAKE_BINARY_DIR = /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 include oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/progress.make
 
 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py
 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/__init__.py
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/__init__.py
 
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg
@@ -54,15 +56,31 @@ oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py: /home/o
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG oroca_ros_tutorials/msgTutorial"
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg
 
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV oroca_ros_tutorials/srvTutorial"
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv
+
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/__init__.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/__init__.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for oroca_ros_tutorials"
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg --initpy
 
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/__init__.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/__init__.py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python srv __init__.py for oroca_ros_tutorials"
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv --initpy
+
 oroca_ros_tutorials_generate_messages_py: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py
 oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/_msgTutorial.py
+oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/_srvTutorial.py
 oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/msg/__init__.py
+oroca_ros_tutorials_generate_messages_py: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/oroca_ros_tutorials/srv/__init__.py
 oroca_ros_tutorials_generate_messages_py: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_py.dir/build.make
 .PHONY : oroca_ros_tutorials_generate_messages_py
 

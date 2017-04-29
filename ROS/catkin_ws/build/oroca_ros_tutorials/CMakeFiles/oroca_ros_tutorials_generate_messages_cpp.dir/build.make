@@ -46,6 +46,7 @@ CMAKE_BINARY_DIR = /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 include oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/progress.make
 
 oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/msgTutorial.h
+oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h
 
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/msgTutorial.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/msgTutorial.h: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg
@@ -54,8 +55,17 @@ oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp: /home/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from oroca_ros_tutorials/msgTutorial.msg"
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials -e /opt/ros/indigo/share/gencpp/cmake/..
 
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h: /opt/ros/indigo/share/gencpp/cmake/../srv.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from oroca_ros_tutorials/srvTutorial.srv"
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv -Ioroca_ros_tutorials:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p oroca_ros_tutorials -o /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials -e /opt/ros/indigo/share/gencpp/cmake/..
+
 oroca_ros_tutorials_generate_messages_cpp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp
 oroca_ros_tutorials_generate_messages_cpp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/msgTutorial.h
+oroca_ros_tutorials_generate_messages_cpp: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/oroca_ros_tutorials/srvTutorial.h
 oroca_ros_tutorials_generate_messages_cpp: oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir/build.make
 .PHONY : oroca_ros_tutorials_generate_messages_cpp
 

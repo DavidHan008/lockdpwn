@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/msg/msgTutorial.msg"
-services_str = ""
+services_str = "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials/srv/srvTutorial.srv"
 pkg_name = "oroca_ros_tutorials"
 dependencies_str = "std_msgs"
 langs = "gencpp;genlisp;genpy"
