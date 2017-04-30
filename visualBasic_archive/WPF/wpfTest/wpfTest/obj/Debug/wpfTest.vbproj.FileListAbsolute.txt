@@ -1,0 +1,15 @@
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\bin\Debug\wpfTest.exe.config
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\bin\Debug\wpfTest.exe
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\bin\Debug\wpfTest.pdb
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\bin\Debug\wpfTest.xml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.vbprojResolveAssemblyReference.cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\MainWindow.g.vb
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\Application.g.vb
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest_MarkupCompile.cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\MainWindow.baml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.g.resources
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.Resources.resources
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.vbproj.GenerateResource.Cache
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.exe
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.xml
+C:\Users\edward\Documents\Visual Studio 2017\Projects\wpfTest\wpfTest\obj\Debug\wpfTest.pdb

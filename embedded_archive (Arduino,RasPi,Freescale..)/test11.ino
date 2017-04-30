@@ -3,8 +3,7 @@
 				모터 + 트랜지스터도 이 코드로 된다
  */
 
-void onall()
-{
+void onall(){
 	digitalWrite(1,LOW);
 	digitalWrite(2,LOW);
 	digitalWrite(3,LOW);
@@ -19,8 +18,7 @@ void onall()
 	digitalWrite(12,LOW);	
 }
 
-void offall()
-{
+void offall(){
 	digitalWrite(1,HIGH);
 	digitalWrite(2,HIGH);
 	digitalWrite(3,HIGH);
@@ -35,8 +33,7 @@ void offall()
 	digitalWrite(12,HIGH);	
 }
 
-void setup()
-{
+void setup(){
 	pinMode(1,OUTPUT);
 	pinMode(2,OUTPUT);
 	pinMode(3,OUTPUT);
@@ -51,8 +48,7 @@ void setup()
 	pinMode(12,OUTPUT);
 }
 
-void loop()
-{
+void loop(){
 	delay(500);
 	onall();
 	delay(500);

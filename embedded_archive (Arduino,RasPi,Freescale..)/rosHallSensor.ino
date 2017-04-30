@@ -2,7 +2,7 @@
   arduino ==> ROS 홀센서의 데이터를 읽어와 노드에 저장하는 코드
  */
 #include <ros.h>
-#include <std_msgs/Float32.h>  // 거리값을 전송하기 위한 헤더 선언
+#include <std_msgs/Float32.h>  // 홀센서값을 전송하기 위한 헤더 선언
 #include <MsTimer2.h>  // 타이머를 사용하는 헤더
 
 #define ALPHA 0.3 // 저역통과필터의 alpha 값을 0.3으로 설정한다

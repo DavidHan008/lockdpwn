@@ -11,21 +11,17 @@ void setup()
   lc.setIntensity(0,2);    // 밝기를 설정합니다(0~15까지 밝기 설정가능합니다)
   lc.clearDisplay(0);      // 화면을 정리합니다
 }
-void loop()
-{
-  for (int row=0; row<8; row++)
-  {
-    for (int col=0; col<8; col++)
-    {
+
+void loop(){
+  for (int row=0; row<8; row++){
+    for (int col=0; col<8; col++){
       lc.setLed(0,col,row,true);      // LED가 켜지면서 밑에서부터 올라갑니다.
       delay(25);                      // 25만큼 지연
     }
   }
 
-  for (int row=0; row<8; row++)
-  {
-    for (int col=0; col<8; col++)
-    {
+  for (int row=0; row<8; row++){
+    for (int col=0; col<8; col++){
       lc.setLed(0,col,row,false);       // LED가 꺼지면서 밑에서부터 올라갑니다
       delay(25);                        //25만큼 지연
     }
