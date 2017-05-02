@@ -12,6 +12,53 @@
 
 
 -----------------------------------------------------------------------------------
+170502_화
+
+# 가상함수를 가진 기본클래스의 목적
+	
+
+
+# 가상함수 오버라이딩
+
+
+
+# 추상클래스와 순수가상함수
+
+class Shape{                           // 추상클래스
+	public:
+		virtual void draw() = 0;
+};
+
+
+
+class Circle : public Shape{            // 추상클래스
+	public:
+		string toString() { return "Circle 객체"; }
+};
+
+
+
+class Circle2 : public Shape{           // 추상클래스 아님
+	public:
+		virtual void draw(){
+			cout << "circle";
+		}
+		string toString() { return "Circle 객체"; }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
