@@ -69,7 +69,6 @@ with open('./MNIST_data/train-labels-idx1-ubyte.gz','rb') as f:
 # Tensorflow 사용 코드
 # -----------------------------------------------------------------
 
-
 # None 은 내가 얼만큼의 데이터를 넣을지 안 정했을 때 사용한다
 x_input = tf.placeholder(tf.float32, [None, 784])
 y_input = tf.placeholder(tf.float32, [None, 10])
