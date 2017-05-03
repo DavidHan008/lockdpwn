@@ -215,7 +215,7 @@ int main(int argc, char* argv[]){
      *   640 x 480    @ 30 fps, 60 fps
      *   320 x 240    @ 30 fps, 60 fps, 90 fps, 120 fps
      */
-    const int default_cam_number = 0;
+    const int default_cam_number = 1;
     const int default_cam_width = 640;
     const int default_cam_height = 480;
     const double default_cam_fps = 30;
@@ -234,7 +234,7 @@ int main(int argc, char* argv[]){
     /*
      * Create the named window.
      */
-    const std::string window_title = "Hello, oCam edward!";
+    const std::string window_title = "Hello, edward!";
     cv::namedWindow(window_title, CV_WINDOW_NORMAL);
 
     /*

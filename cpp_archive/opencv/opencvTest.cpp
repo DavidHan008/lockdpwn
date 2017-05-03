@@ -1,32 +1,47 @@
 /*
-  c++ ==> opencv Test
-          컴파일 할 때 g++ -o main main.cpp `pkg-config opencv --cflags --libs` 와 같이 해줘야 한다
+  c++ ==> opencvTest
+          g++ -o opencvTest opencvTest.cpp `pkg-config opencv --cflags --libs`
  */
-#include "opencv2/opencv.hpp"
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-using namespace cv;
 using namespace std;
 
-int main(int, char**)
-{
-  //웹캡으로 부터 데이터 읽어오기 위해 준비
-  VideoCapture cap1(0);
+cv::Mat function(){
+  // 영상 생성
+  cv::Mat ima(240, 320, CV_8U, cv::Scalar(100));
 
-  if (!cap1.isOpened()){
-    cout << "첫번째 카메라를 열수 없습니다." << endl;
-  }
+  // 영상 반환
+  return ima;
+}
 
-  Mat frame1;
-  namedWindow("camera1", 1);
+int main(int argc, char *argv[]){
+  cv::Mat image;
 
-  for (;;)
-  {
-    //웹캡으로부터 한 프레임을 읽어옴
-    cap1 >> frame1;
-    imshow("camera1", frame1);
-    if (waitKey(20) >= 0) break;
-  }
+  cout << "size: " << image.size().height << ", "
+       << image.size().width << endl;
+
+  image = cv::imread("lenna.jpg");
+
+  if(!image.data)
+    return 0;
+
+  cout << "size (after reading): "<< image.size().height << ", " << image.size().width << endl;
+
+  cv::namedWindow("Original Image");
+  cv::imshow("Original Image", image);
+
+  cv::Mat result;
+
+  cv::flip(image, result, 1);
+
+  cv::namedWindow("Output Image");
+  cv::imshow("Output Image", result);
+
+  cv::waitKey(0);
+  cv::imwrite("output.bmp", result);
+
 
   return 0;
 }
