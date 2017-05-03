@@ -13,8 +13,7 @@ int main(int, char**)
   //웹캡으로 부터 데이터 읽어오기 위해 준비
   VideoCapture cap1(0);
 
-  if (!cap1.isOpened())
-  {
+  if (!cap1.isOpened()){
     cout << "첫번째 카메라를 열수 없습니다." << endl;
   }
 
