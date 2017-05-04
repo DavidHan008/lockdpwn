@@ -6,9 +6,9 @@
 using namespace std;
 using namespace cv;
 
-String face_cascade = "C:\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt.xml";
+String face_cascade = "C:\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_default.xml";
 String eye_cascade = "C:\\opencv\\sources\\data\\haarcascades\\haarcascade_eye.xml";
-String img_name = "face.jpg";
+String img_name = "face2.jpg";
 
 CascadeClassifier face;
 CascadeClassifier eye;
@@ -40,7 +40,6 @@ int main(int argc, const char *argv[]) {
 
 
 #pragma region eye recog
-
 	for (int i = 0; i < (int)face_pos.size(); i++) {
 		vector<Rect> eye_pos; 
 		Mat roi = gray(face_pos[i]);

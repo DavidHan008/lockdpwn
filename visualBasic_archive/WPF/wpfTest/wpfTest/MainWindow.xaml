@@ -29,7 +29,6 @@
             <Button DockPanel.Dock="Bottom">test dock
             </Button>
         </DockPanel>
-
         <DatePicker HorizontalAlignment="Left" Margin="42,264,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

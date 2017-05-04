@@ -1,4 +1,3 @@
-
 #include "opencv2/opencv.hpp"
 #include <iostream>
 
@@ -7,7 +6,7 @@ using namespace std;
 
 int main(int, char**){
 	//웹캡으로 부터 데이터 읽어오기 위해 준비
-	VideoCapture cap1(0);
+	VideoCapture cap1(1);
 
 	if (!cap1.isOpened()) {
 		cout << "첫번째 카메라를 열 수 없습니다." << endl;
