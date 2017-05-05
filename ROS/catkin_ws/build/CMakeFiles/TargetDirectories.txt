@@ -15,6 +15,7 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_test/CMakeFiles/imu_test_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver/CMakeFiles/myahrs_driver.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir

@@ -387,6 +387,19 @@ rosTest_node/fast:
 .PHONY : rosTest_node/fast
 
 #=============================================================================
+# Target rules for targets named imu_test_node
+
+# Build rule for target.
+imu_test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imu_test_node
+.PHONY : imu_test_node
+
+# fast build rule for target.
+imu_test_node/fast:
+	$(MAKE) -f imu_test/CMakeFiles/imu_test_node.dir/build.make imu_test/CMakeFiles/imu_test_node.dir/build
+.PHONY : imu_test_node/fast
+
+#=============================================================================
 # Target rules for targets named _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial
 
 # Build rule for target.
@@ -833,6 +846,7 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosTest_node"
+	@echo "... imu_test_node"
 	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
 	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_srvTutorial"
 	@echo "... oroca_ros_tutorials_gencpp"

@@ -7,5 +7,6 @@
 SUBDIRS(gtest)
 SUBDIRS(arduino_test)
 SUBDIRS(first_ros)
+SUBDIRS(imu_test)
 SUBDIRS(oroca_ros_tutorials)
 SUBDIRS(myahrs_driver)

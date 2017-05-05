@@ -119,6 +119,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/arduino_test/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/first_ros/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_test/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver/cmake_install.cmake")
 
