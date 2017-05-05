@@ -5,5 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
-SUBDIRS(my_first_ros_pkg)
+SUBDIRS(arduino_test)
+SUBDIRS(first_ros)
 SUBDIRS(oroca_ros_tutorials)
+SUBDIRS(myahrs_driver)
