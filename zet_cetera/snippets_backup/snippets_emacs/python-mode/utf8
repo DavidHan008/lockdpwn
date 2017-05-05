@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: utf8
+# key: utf
+# group : control structure
+# --
+#!/usr/bin/env pytohn
+#-*- coding: utf-8 -*-

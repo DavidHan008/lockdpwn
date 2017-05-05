@@ -1,0 +1,1237 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+Account	.\140611.py	/^class Account(object):$/;"	c
+Arrow3D	.\Arrow3D.py	/^class Arrow3D(FancyArrowPatch):$/;"	c
+Arrow3D	.\numplt4.py	/^class Arrow3D(FancyArrowPatch):$/;"	c
+Athlete	.\headfirst_python\chapter6\page231.py	/^class Athlete:$/;"	c
+AthleteList	.\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\chapter6\page245.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\chapter7\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\chapter8\page321.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+AthleteList	.\headfirst_python\webapp\cgi-bin\athletelist.py	/^class AthleteList(list):$/;"	c
+BirthDetails	.\headfirst_python\chapter10\page403.py	/^class BirthDetails(db.Model):$/;"	c
+BirthDetails	.\headfirst_python\hfwwg\birthDB.py	/^class BirthDetails(db.Model):$/;"	c
+BirthDetailsForm	.\headfirst_python\chapter10\page403b.py	/^class BirthDetailsForm(djangoforms.ModelForm):$/;"	c
+BirthDetailsForm	.\headfirst_python\hfwwg\ee.py	/^class BirthDetailsForm(djangoforms.ModelForm):$/;"	c
+CONTEXT	.\my_debugger_defines.py	/^class CONTEXT(Structure):$/;"	c
+CONTEXT	.\pyhacking_programming\my_debugger_defines.py	/^class CONTEXT(Structure):$/;"	c
+Circle	.\140611_property.py	/^class Circle(object):$/;"	c
+Clean	.\fileFuzzer.py	/^	def Clean(self):$/;"	m	class:fileFuzzer
+Client	.\violentPython\2\3-botNet.py	/^class Client:$/;"	c
+Client	.\violentPython\2\tonis_botnet.py	/^class Client:$/;"	c
+Complex	.\140611_complex.py	/^class Complex(object):$/;"	c
+Connection	.\violentPython\5720.py	/^class Connection(Thread):$/;"	c
+Crash_Handler	.\fileFuzzer.py	/^	def Crash_Handler(self,dbg ):$/;"	m	class:fileFuzzer
+DEBUG_EVENT	.\my_debugger_defines.py	/^class DEBUG_EVENT(Structure):$/;"	c
+DEBUG_EVENT	.\pyhacking_programming\my_debugger_defines.py	/^class DEBUG_EVENT(Structure):$/;"	c
+DEBUG_EVENT_UNION	.\my_debugger_defines.py	/^class DEBUG_EVENT_UNION(Union):$/;"	c
+DEBUG_EVENT_UNION	.\pyhacking_programming\my_debugger_defines.py	/^class DEBUG_EVENT_UNION(Union):$/;"	c
+D_q	.\drawRobotics.py	/^def D_q(dx, dy, dz):$/;"	f
+D_q	.\sympy1.py	/^def D_q(a1,a2,a3):$/;"	f
+DataSet	.\mnistDataTraining.py	/^class DataSet(object):$/;"	c
+DataSets	.\mnistDataTraining.py	/^  class DataSets(object):$/;"	c	function:read_data_sets
+Date	.\140611_2.py	/^class Date(object):$/;"	c
+DllMain	.\pyhacking_programming\ghp_inject.cpp	/^BOOL APIENTRY DllMain( HMODULE hModule,$/;"	f
+ETNEWS	.\140611_3.py	/^class ETNEWS:$/;"	c
+EXCEPTION_DEBUG_INFO	.\my_debugger_defines.py	/^class EXCEPTION_DEBUG_INFO(Structure):$/;"	c
+EXCEPTION_DEBUG_INFO	.\pyhacking_programming\my_debugger_defines.py	/^class EXCEPTION_DEBUG_INFO(Structure):$/;"	c
+EXCEPTION_RECORD	.\my_debugger_defines.py	/^class EXCEPTION_RECORD(Structure):$/;"	c
+EXCEPTION_RECORD	.\pyhacking_programming\my_debugger_defines.py	/^class EXCEPTION_RECORD(Structure):$/;"	c
+End	.\violentPython\5720.py	/^class End():$/;"	c
+EuroDate	.\140611_2.py	/^class EuroDate(Date):$/;"	c
+EvilAccount	.\140611.py	/^class EvilAccount(Account):$/;"	c
+Excel	.\getWordExcelPPTInfo.py	/^def Excel():$/;"	f
+FLOATING_SAVE_AREA	.\my_debugger_defines.py	/^class FLOATING_SAVE_AREA(Structure):$/;"	c
+FLOATING_SAVE_AREA	.\pyhacking_programming\my_debugger_defines.py	/^class FLOATING_SAVE_AREA(Structure):$/;"	c
+File_Picker	.\fileFuzzer.py	/^	def File_Picker(self):$/;"	m	class:fileFuzzer
+Finish	.\violentPython\5720.py	/^	def Finish(self):$/;"	m	class:End
+FuncCoverage	.\pyhacking_programming\func_coverage.py	/^class FuncCoverage(DBG_Hooks):$/;"	c
+Fuzzing	.\fileFuzzer.py	/^	def Fuzzing(self, count ):$/;"	m	class:fileFuzzer
+GetEnd	.\violentPython\5720.py	/^	def GetEnd(self):$/;"	m	class:End
+Google_Result	.\violentPython\6\8-anonGoogle.py	/^class Google_Result:$/;"	c
+Hero	.\start_pythonHacking\클래스의 생성.py	/^class Hero:                                                      #(1)$/;"	c
+HiddenLayer	.\machine_learning.py	/^class HiddenLayer(object):$/;"	c
+IndexPage	.\headfirst_python\chapter10\page405.py	/^class IndexPage(webapp.RequestHandler):$/;"	c
+KMeans	.\kmeans.py	/^class KMeans:$/;"	c
+KeyLogger	.\150130_hook.py	/^class KeyLogger:                                                                  #(3)$/;"	c
+KeyLogger	.\start_pythonHacking\MessageHooking.py	/^class KeyLogger:                                                                  #(3)$/;"	c
+LeNetConvPoolLayer	.\machine_learning.py	/^class LeNetConvPoolLayer(object):$/;"	c
+LogisticRegression	.\machine_learning.py	/^class LogisticRegression(object):$/;"	c
+MEMORY_BASIC_INFORMATION	.\my_debugger_defines.py	/^class MEMORY_BASIC_INFORMATION(Structure):$/;"	c
+MEMORY_BASIC_INFORMATION	.\pyhacking_programming\my_debugger_defines.py	/^class MEMORY_BASIC_INFORMATION(Structure):$/;"	c
+Meta	.\headfirst_python\chapter10\page403b.py	/^    class Meta:$/;"	c	class:BirthDetailsForm
+Meta	.\headfirst_python\chapter10\page407.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\headfirst_python\chapter10\page417.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\headfirst_python\chapter10\page425.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    class Meta:$/;"	c	class:SightingForm
+Meta	.\headfirst_python\hfwwg\ee.py	/^    class Meta:$/;"	c	class:BirthDetailsForm
+Meta	.\headfirst_python\hfwwg\hfwwg.py	/^		class Meta:$/;"	c	class:SightingForm
+Monitor	.\fileFuzzer.py	/^	def Monitor(self):$/;"	m	class:fileFuzzer
+MoreEvilAccount	.\140611.py	/^class MoreEvilAccount(EvilAccount):$/;"	c
+Mutate	.\fileFuzzer.py	/^	def Mutate(self):$/;"	m	class:fileFuzzer
+MyHero	.\start_pythonHacking\클래스의 생성.py	/^class MyHero(Hero):                                              #(6)$/;"	c
+POD	.\pingOfDeath.py	/^def POD(id):$/;"	f
+POD	.\start_pythonHacking\Ping Of Death.py	/^def POD(id):                                                    #(1)$/;"	f
+PROCESS_INFORMATION	.\my_debugger_defines.py	/^class PROCESS_INFORMATION(Structure):$/;"	c
+PROCESS_INFORMATION	.\pyhacking_programming\my_debugger_defines.py	/^class PROCESS_INFORMATION(Structure):$/;"	c
+PROC_STRUCT	.\my_debugger_defines.py	/^class PROC_STRUCT(Structure):$/;"	c
+PROC_STRUCT	.\pyhacking_programming\my_debugger_defines.py	/^class PROC_STRUCT(Structure):$/;"	c
+Page	.\violentPython\2\4-massCompromise.py	/^        injectPage(ftp, defPage, redirect)$/;"	f	function:attack/Page
+Page	.\violentPython\2\4-massCompromise.py	/^    for defPage in defPages:$/;"	f	function:attack
+Page	.\violentPython\2\tonis_ftp3.py	/^		injectPage(ftp,defPage,redirect)$/;"	f	function:attack/Page
+Page	.\violentPython\2\tonis_ftp3.py	/^	for defPage in defPages:$/;"	f	function:attack
+Pages	.\violentPython\2\4-massCompromise.py	/^    defPages = returnDefault(ftp)$/;"	f	function:attack
+Pages	.\violentPython\2\tonis_ftp3.py	/^	defPages=returnDefault(ftp)$/;"	f	function:attack
+PowerPoint	.\getWordExcelPPTInfo.py	/^def PowerPoint( ):$/;"	f
+Print_Usage	.\fileFuzzer.py	/^def Print_Usage():$/;"	f
+Report	.\fileFuzzer.py	/^	def Report(self):$/;"	m	class:fileFuzzer
+RotX	.\drawRobotics.py	/^def RotX(phi):$/;"	f
+RotX	.\sympy1.py	/^def RotX(a):$/;"	f
+RotY	.\drawRobotics.py	/^def RotY(theta):$/;"	f
+RotZ	.\drawRobotics.py	/^def RotZ(psi):$/;"	f
+RotZ	.\sympy1.py	/^def RotZ(a):$/;"	f
+Run	.\fileFuzzer.py	/^	def Run (self):$/;"	m	class:fileFuzzer
+STARTUPINFO	.\my_debugger_defines.py	/^class STARTUPINFO(Structure):$/;"	c
+STARTUPINFO	.\pyhacking_programming\my_debugger_defines.py	/^class STARTUPINFO(Structure):$/;"	c
+SYSTEM_INFO	.\my_debugger_defines.py	/^class SYSTEM_INFO(Structure):$/;"	c
+SYSTEM_INFO	.\pyhacking_programming\my_debugger_defines.py	/^class SYSTEM_INFO(Structure):$/;"	c
+SYSTEM_INFO_UNION	.\my_debugger_defines.py	/^class SYSTEM_INFO_UNION(Union):$/;"	c
+SYSTEM_INFO_UNION	.\pyhacking_programming\my_debugger_defines.py	/^class SYSTEM_INFO_UNION(Union):$/;"	c
+Sighting	.\headfirst_python\chapter10\page397.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\headfirst_python\chapter10\page411.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwgDB.py	/^class Sighting(db.Model):$/;"	c
+Sighting	.\headfirst_python\hfwwg\hfwwgDB.py	/^class Sighting(db.Model):$/;"	c
+SightingForm	.\headfirst_python\chapter10\page407.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\headfirst_python\chapter10\page417.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\headfirst_python\chapter10\page425.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingForm	.\headfirst_python\hfwwg\hfwwg.py	/^class SightingForm(djangoforms.ModelForm):$/;"	c
+SightingInputPage	.\headfirst_python\chapter10\page407.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\headfirst_python\chapter10\page417.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\headfirst_python\chapter10\page425.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SightingInputPage	.\headfirst_python\hfwwg\hfwwg.py	/^class SightingInputPage(webapp.RequestHandler):$/;"	c
+SimpleInput	.\headfirst_python\chapter10\page403b.py	/^class SimpleInput(webapp.RequestHandler):$/;"	c
+THREADENTRY32	.\my_debugger_defines.py	/^class THREADENTRY32(Structure):$/;"	c
+THREADENTRY32	.\pyhacking_programming\my_debugger_defines.py	/^class THREADENTRY32(Structure):$/;"	c
+Times	.\140611_2.py	/^class Times(object):$/;"	c
+TwoTimes	.\140611_2.py	/^class TwoTimes(Times):$/;"	c
+Word	.\getWordExcelPPTInfo.py	/^def Word():$/;"	f
+_EXCEPTION_RECORD	.\my_debugger_defines.py	/^class _EXCEPTION_RECORD(Structure):$/;"	c
+_EXCEPTION_RECORD	.\pyhacking_programming\my_debugger_defines.py	/^class _EXCEPTION_RECORD(Structure):$/;"	c
+__add__	.\140611_complex.py	/^    def __add__(self, other):$/;"	m	class:Complex	file:
+__del__	.\140611.py	/^    def __del__(self):$/;"	m	class:Account	file:
+__init__	.\140611.py	/^    def __init__(self,name,balance):$/;"	m	class:Account
+__init__	.\140611.py	/^    def __init__(self,name,balance,evilfactor):$/;"	m	class:EvilAccount
+__init__	.\140611_2.py	/^		def __init__(self,year,month,day):$/;"	m	class:Date
+__init__	.\140611_3.py	/^	def __init__(self):$/;"	m	class:ETNEWS
+__init__	.\140611_complex.py	/^    def __init__(self,real,imag=0):$/;"	m	class:Complex
+__init__	.\140611_property.py	/^    def __init__(self,radius):$/;"	m	class:Circle
+__init__	.\150130_hook.py	/^    def __init__(self):$/;"	m	class:KeyLogger
+__init__	.\Arrow3D.py	/^    def __init__(self, xs, ys, zs, *args, **kwargs):$/;"	m	class:Arrow3D
+__init__	.\anonBrowser.py	/^	def __init__(self, proxies = [], user_agents = []):$/;"	m	class:anonBrowser
+__init__	.\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\fileFuzzer.py	/^	def __init__(self, target ,ext):$/;"	m	class:fileFuzzer
+__init__	.\file_fuzzer.py	/^    def __init__(self, exe_path, ext, notify):$/;"	m	class:file_fuzzer
+__init__	.\headfirst_python\chapter6\page231.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:Athlete
+__init__	.\headfirst_python\chapter6\page245.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\headfirst_python\chapter7\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\headfirst_python\chapter8\page321.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\headfirst_python\webapp\cgi-bin\athletelist.py	/^    def __init__(self, a_name, a_dob=None, a_times=[]):$/;"	m	class:AthleteList
+__init__	.\ioctl_fuzzer.py	/^    def __init__(self):$/;"	m	class:ioctl_hook
+__init__	.\kmeans.py	/^	def __init__(self,k):$/;"	m	class:KMeans
+__init__	.\machine_learning.py	/^    def __init__(self, input, n_in, n_out):$/;"	m	class:LogisticRegression
+__init__	.\machine_learning.py	/^    def __init__(self, rng, input, filter_shape, image_shape, poolsize=(2, 2)):$/;"	m	class:LeNetConvPoolLayer
+__init__	.\machine_learning.py	/^    def __init__(self, rng, input, n_in, n_out, W=None, b=None,$/;"	m	class:HiddenLayer
+__init__	.\mnistDataTraining.py	/^  def __init__(self, images, labels, fake_data=False):$/;"	m	class:DataSet
+__init__	.\my_debugger.py	/^    def __init__(self):$/;"	m	class:debugger
+__init__	.\numplt4.py	/^    def __init__(self, xs, ys, zs, *args, **kwargs):$/;"	m	class:Arrow3D
+__init__	.\pyhacking_programming\file_fuzzer.py	/^    def __init__(self, exe_path, ext, notify):$/;"	m	class:file_fuzzer
+__init__	.\pyhacking_programming\ioctl_fuzzer.py	/^    def __init__( self ):$/;"	m	class:ioctl_hook
+__init__	.\pyhacking_programming\my_debugger.py	/^    def __init__(self):$/;"	m	class:debugger
+__init__	.\snapshot.py	/^    def __init__(self,exe_path):$/;"	m	class:snapshotter
+__init__	.\start_pythonHacking\MessageHooking.py	/^    def __init__(self):$/;"	m	class:KeyLogger
+__init__	.\start_pythonHacking\클래스의 생성.py	/^    def __init__(self, inSkill, inPower, idx):$/;"	m	class:MyHero
+__init__	.\start_pythonHacking\클래스의 생성.py	/^    def __init__(self, name, age, weight):                       #(2)$/;"	m	class:Hero
+__init__	.\violentPython\2\3-botNet.py	/^    def __init__(self, host, user, password):$/;"	m	class:Client
+__init__	.\violentPython\2\tonis_botnet.py	/^	def __init__(self,host,user,password):$/;"	m	class:Client
+__init__	.\violentPython\5720.py	/^	def __init__(self):$/;"	m	class:End
+__init__	.\violentPython\5720.py	/^	def __init__(self,QueueDir,TheEnd,dir,host,user,port='22'):$/;"	m	class:Connection
+__init__	.\violentPython\5\7-uavSniff.py	/^    def __init__(self):$/;"	m	class:interceptThread
+__init__	.\violentPython\6\8-anonGoogle.py	/^    def __init__(self,title,text,url):$/;"	m	class:Google_Result
+__init__	.\violentPython\6\9-twitterClass.py	/^    def __init__(self, handle):$/;"	m	class:reconPerson
+__init__	.\violentPython\6\9-twitterRecon.py	/^      job='',social_media={}):$/;"	m	class:reconPerson
+__init__	.\violentPython\6\anonBrowser.py	/^    def __init__(self, proxies = [], user_agents = []):$/;"	m	class:anonBrowser
+__init__	.\violentPython\6\twitterClass.py	/^    def __init__(self, handle):$/;"	m	class:reconPerson
+__radd__	.\140611_complex.py	/^    def __radd__(self,other):$/;"	m	class:Complex	file:
+__repr__	.\140611_complex.py	/^    def __repr__(self):$/;"	m	class:Complex	file:
+__repr__	.\violentPython\6\8-anonGoogle.py	/^    def __repr__(self):$/;"	m	class:Google_Result	file:
+__repr__	.\violentPython\6\9-twitterRecon.py	/^    def __repr__(self):$/;"	m	class:reconPerson	file:
+__rsub__	.\140611_complex.py	/^    def __rsub__(self,other):$/;"	m	class:Complex	file:
+__str__	.\140611_2.py	/^		def __str__(self):$/;"	m	class:EuroDate	file:
+__str__	.\140611_complex.py	/^    def __str__(self):$/;"	m	class:Complex	file:
+__sub_	.\140611_complex.py	/^    def __sub_(self,other):$/;"	m	class:Complex	file:
+_read32	.\mnistDataTraining.py	/^def _read32(bytestream):$/;"	f
+aa	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def aa(bb, ee):$/;"	f
+access_violation_handler	.\danger_track.py	/^def access_violation_handler(dbg):$/;"	f
+addClient	.\violentPython\2\3-botNet.py	/^def addClient(host, user, password):$/;"	f
+addClient	.\violentPython\2\tonis_botnet.py	/^def addClient(host,user,password):$/;"	f
+addToBoard	.\pygame\inventwithpython2\pentomino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\pygame\inventwithpython2\tetromino.py	/^def addToBoard(board, piece):$/;"	f
+addToBoard	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def addToBoard(board, piece):$/;"	f
+add_number	.\pyhacking_programming\addnum.cpp	/^int add_number( int num1, int num2 )$/;"	f
+animate	.\numplt1.py	/^def animate(i):$/;"	f
+animateComputerMoving	.\pygame\inventwithpython2\fourinarow.py	/^def animateComputerMoving(board, column):$/;"	f
+animateDroppingToken	.\pygame\inventwithpython2\fourinarow.py	/^def animateDroppingToken(board, column, color):$/;"	f
+animateMovingGems	.\pygame\inventwithpython2\gemgem.py	/^def animateMovingGems(board, gems, pointsText, score):$/;"	f
+animateTileChange	.\pygame\inventwithpython2\flippy.py	/^def animateTileChange(tilesToFlip, tileColor, additionalTile):$/;"	f
+anonBrowser	.\anonBrowser.py	/^class anonBrowser(mechanize.Browser):$/;"	c
+anonBrowser	.\violentPython\6\anonBrowser.py	/^class anonBrowser(mechanize.Browser):$/;"	c
+anonLogin	.\violentPython\2\4-anonLogin.py	/^def anonLogin(hostname):$/;"	f
+anonLogin	.\violentPython\2\4-massCompromise.py	/^def anonLogin(hostname):$/;"	f
+anonLogin	.\violentPython\2\tonis_ftp3.py	/^def anonLogin(hostname):$/;"	f
+anonymize	.\anonBrowser.py	/^	def anonymize(self, sleep = False):$/;"	m	class:anonBrowser
+anonymize	.\violentPython\6\anonBrowser.py	/^    def anonymize(self, sleep = False):$/;"	m	class:anonBrowser
+area	.\140611_property.py	/^    def area(self):$/;"	m	class:Circle
+as_dict	.\headfirst_python\chapter8\page321.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+as_dict	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+as_dict	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def as_dict(self):$/;"	m	class:AthleteList
+attach	.\my_debugger.py	/^    def attach(self,pid):$/;"	m	class:debugger
+attach	.\pyhacking_programming\my_debugger.py	/^    def attach(self,pid):$/;"	m	class:debugger
+attack	.\violentPython\2\4-massCompromise.py	/^def attack(username,password,tgtHost,redirect):$/;"	f
+attack	.\violentPython\2\tonis_ftp3.py	/^def attack(username,password,tgtHost,redirect):$/;"	f
+ault	.\pygame\inventwithpython2\inkspill.py	/^        screenNeedsRedraw = False # by default, don't redraw the screen$/;"	f	function:showSettingsScreen
+ault	.\webCheck.py	/^					  type ="int" , help = "Port to connect")$/;"	f	function:main
+botnetCommand	.\violentPython\2\3-botNet.py	/^def botnetCommand(command):$/;"	f
+botnetCommand	.\violentPython\2\tonis_botnet.py	/^def botnetCommand(command):$/;"	f
+bp_del_hw	.\my_debugger.py	/^    def bp_del_hw(self,slot):$/;"	m	class:debugger
+bp_del_hw	.\pyhacking_programming\my_debugger.py	/^    def bp_del_hw(self,slot):$/;"	m	class:debugger
+bp_set	.\my_debugger.py	/^    def bp_set(self,address):$/;"	m	class:debugger
+bp_set	.\pyhacking_programming\my_debugger.py	/^    def bp_set(self,address):$/;"	m	class:debugger
+bp_set_hw	.\my_debugger.py	/^    def bp_set_hw(self,address,length,condition):$/;"	m	class:debugger
+bp_set_hw	.\pyhacking_programming\my_debugger.py	/^    def bp_set_hw(self, address, length, condition):$/;"	m	class:debugger
+bp_set_mem	.\my_debugger.py	/^    def bp_set_mem(self,address,size):$/;"	m	class:debugger
+bp_set_mem	.\pyhacking_programming\my_debugger.py	/^    def bp_set_mem (self, address, size):$/;"	m	class:debugger
+bruteLogin	.\violentPython\2\4-bruteLogin.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+bruteLogin	.\violentPython\2\4-massCompromise.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+bruteLogin	.\violentPython\2\tonis_ftp.py	/^def bruteLogin(hostname,passwdFile):$/;"	f
+bruteLogin	.\violentPython\2\tonis_ftp3.py	/^def bruteLogin(hostname, passwdFile):$/;"	f
+c	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def c():$/;"	f
+calTSN	.\violentPython\4\9-mitnickAttack.py	/^def calTSN(tgt):$/;"	f
+calcBCoordi	.\numplt3.py	/^def calcBCoordi(rotAngle, ORG, hat_X, hat_Y, hat_Z):$/;"	f
+calcODEFunc	.\numpygame1.py	/^def calcODEFunc(tVal, xVal, vVal):$/;"	f
+calculate	.\calc_test.py	/^def calculate(a, operator, b):$/;"	f
+calculateLevelAndFallFreq	.\pygame\inventwithpython2\pentomino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\pygame\inventwithpython2\tetromino.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+calculateLevelAndFallFreq	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def calculateLevelAndFallFreq(score):$/;"	f
+canMakeMove	.\pygame\inventwithpython2\gemgem.py	/^def canMakeMove(board):$/;"	f
+changeBackgroundAnimation	.\pygame\inventwithpython2\simulate.py	/^def changeBackgroundAnimation(animationSpeed=40):$/;"	f
+change_proxy	.\anonBrowser.py	/^	def change_proxy(self):$/;"	m	class:anonBrowser
+change_proxy	.\violentPython\6\anonBrowser.py	/^    def change_proxy(self):$/;"	m	class:anonBrowser
+change_user_agent	.\anonBrowser.py	/^	def change_user_agent(self):$/;"	m	class:anonBrowser
+change_user_agent	.\violentPython\6\anonBrowser.py	/^    def change_user_agent(self):$/;"	m	class:anonBrowser
+checkApache	.\start_pythonHacking\Directory Listing.py	/^def checkApache(dirName1, dirName2):$/;"	f
+checkBluetooth	.\violentPython\5\10-iphoneFinder.py	/^def checkBluetooth(btAddr):$/;"	f
+checkCave	.\pygame\141102_p95.py	/^def checkCave(chosenCave):$/;"	f
+checkCave	.\pygame\inventwithpython\dragon.py	/^def checkCave(chosenCave):$/;"	f
+checkForGemClick	.\pygame\inventwithpython2\gemgem.py	/^def checkForGemClick(pos):$/;"	f
+checkForKeyPress	.\pygame\inventwithpython2\pentomino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\pygame\inventwithpython2\tetromino.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def checkForKeyPress():$/;"	f
+checkForKeyPress	.\pygame\inventwithpython2\wormy.py	/^def checkForKeyPress():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\flippy.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\inkspill.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\pentomino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\simulate.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\slidepuzzle.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\tetromino.py	/^def checkForQuit():$/;"	f
+checkForQuit	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def checkForQuit():$/;"	f
+checkTTL	.\violentPython\4\6-spoofDetect.py	/^def checkTTL(ipsrc, ttl):$/;"	f
+checkVulns	.\ftp_scanner.py	/^def checkVulns(banner, filename):$/;"	f
+checkVulns	.\violentPython\1\1-vulnScanner.py	/^def checkVulns(banner, filename):$/;"	f
+check_accessv	.\access_violation_handler.py	/^def check_accessv(dbg):$/;"	f
+check_accessv	.\file_fuzzer.py	/^    def check_accessv(self,dbg):$/;"	m	class:file_fuzzer
+check_accessv	.\pyhacking_programming\access_violation_handler.py	/^def check_accessv(dbg):$/;"	f
+check_accessv	.\pyhacking_programming\file_fuzzer.py	/^    def check_accessv(self,dbg):$/;"	m	class:file_fuzzer
+chooseCave	.\pygame\141102_p95.py	/^def chooseCave():$/;"	f
+chooseCave	.\pygame\inventwithpython\dragon.py	/^def chooseCave():$/;"	f
+chooseRandomMoveFromList	.\pygame\inventwithpython\tictactoe.py	/^def chooseRandomMoveFromList(board, movesList):$/;"	f
+classify	.\kmeans.py	/^	def classify(self,input):$/;"	m	class:KMeans
+clean_data	.\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\headfirst_python\chapter7\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\headfirst_python\chapter8\page321.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clean_data	.\headfirst_python\webapp\cgi-bin\athletelist.py	/^    def clean_data(self):$/;"	m	class:AthleteList
+clear_cookies	.\anonBrowser.py	/^	def clear_cookies(self):$/;"	m	class:anonBrowser
+clear_cookies	.\violentPython\6\anonBrowser.py	/^    def clear_cookies(self):$/;"	m	class:anonBrowser
+confickerExploit	.\conficker.py	/^def confickerExploit(configFile, tHost, lhost, lport ):$/;"	f
+confickerExploit	.\violentPython\2\5-conficker.py	/^def confickerExploit(configFile,tgtHost,lhost,lport):$/;"	f
+confickerExploit	.\violentPython\2\tonis_conficker.py	/^def confickerExploit(configFile,tgtHost,lhost,lport):$/;"	f
+connScan	.\portScan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+connScan	.\violentPython\2\1-portScan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+connScan	.\violentPython\2\tonis_portscan.py	/^def connScan(tgtHost, tgtPort):$/;"	f
+connect	.\aslr.py	/^def connect(ip,port):$/;"	f
+connect	.\bruteforce.py	/^def connect(ip, port):$/;"	f
+connect	.\leak.py	/^def connect(ip,port):$/;"	f
+connect	.\pwn.py	/^def connect(ip,port):$/;"	f
+connect	.\violentPython\2\3-botNet.py	/^    def connect(self):$/;"	m	class:Client
+connect	.\violentPython\2\3-bruteKey.py	/^def connect(user,host,keyfile,release):$/;"	f
+connect	.\violentPython\2\3-pxsshCommand.py	/^def connect(host, user, password):$/;"	f
+connect	.\violentPython\2\3-sshBrute.py	/^def connect(host, user, password, release):$/;"	f
+connect	.\violentPython\2\3-sshCommand.py	/^def connect(user, host, password):$/;"	f
+connect	.\violentPython\2\tonis_botnet.py	/^	def connect(self):$/;"	m	class:Client
+connect	.\violentPython\2\tonis_sshd.py	/^def connect(user,host,password):$/;"	f
+connect	.\violentPython\2\tonis_sshd2.py	/^def connect(host,user,password,release):$/;"	f
+connect	.\violentPython\2\tonis_sshd3.py	/^def connect(user,host,keyfile,release):$/;"	f
+conv_hex	.\advShellcodeEncoding.py	/^def conv_hex(data):$/;"	f
+conv_hex	.\simpleShellcodeEncoding.py	/^def conv_hex(data):$/;"	f
+convertToPixelCoords	.\pygame\inventwithpython2\pentomino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\pygame\inventwithpython2\tetromino.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+convertToPixelCoords	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def convertToPixelCoords(boxx, boxy):$/;"	f
+costfunc	.\machineLearning\opt_yang.py	/^def costfunc(sol):$/;"	f
+costfunc	.\test.py	/^def costfunc(sol):$/;"	f
+coverBoxesAnimation	.\memoryPuzzle.py	/^def coverBoxesAnimation(board, boxesToCover):$/;"	f
+coverBoxesAnimation	.\pygame\inventwithpython2\memorypuzzle.py	/^def coverBoxesAnimation(board, boxesToCover):$/;"	f
+create_inputs	.\headfirst_python\chapter9\page333.py	/^def create_inputs(inputs_list):$/;"	f
+create_inputs	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def create_inputs(inputs_list):$/;"	f
+create_inputs	.\headfirst_python\webapp\cgi-bin\yate.py	/^def create_inputs(inputs_list):$/;"	f
+create_rop_chain	.\vuplayerCrashROPAutomatic.py	/^def create_rop_chain():$/;"	f
+crossover	.\machineLearning\opt_yang.py	/^  def crossover(r1,r2):$/;"	f	function:geneticoptimize
+crossover	.\machineLearning\opt_yang2.py	/^  def crossover(r1,r2):$/;"	f	function:geneticoptimize
+crossover	.\test.py	/^  def crossover(r1,r2):$/;"	f	function:geneticoptimize
+d	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def d(ccc):$/;"	f
+danger_handler	.\danger_track.py	/^def danger_handler(dbg):$/;"	f
+dbg_bpt	.\pyhacking_programming\func_coverage.py	/^    def dbg_bpt(self, tid, ea):$/;"	m	class:FuncCoverage
+dd	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def dd(bbb, boxes, gg):$/;"	f
+ddosTest	.\violentPython\4\10-idsFoil.py	/^def ddosTest(src, dst, iface, count):$/;"	f
+debugger	.\my_debugger.py	/^class debugger():$/;"	c
+debugger	.\pyhacking_programming\my_debugger.py	/^class debugger():$/;"	c
+decorateMap	.\pygame\inventwithpython2\starpusher.py	/^def decorateMap(mapObj, startxy):$/;"	f
+dense_to_one_hot	.\mnistDataTraining.py	/^def dense_to_one_hot(labels_dense, num_classes=10):$/;"	f
+deposit	.\140611.py	/^    def deposit(self,amount):$/;"	m	class:MoreEvilAccount
+deposit	.\140611.py	/^    def deposit(self,amt):$/;"	m	class:Account
+detach	.\my_debugger.py	/^    def detach(self):$/;"	m	class:debugger
+detach	.\pyhacking_programming\my_debugger.py	/^    def detach(self):$/;"	m	class:debugger
+displayBoard	.\pygame\inventwithpython\hangman.py	/^def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):$/;"	f
+displayIntro	.\pygame\141102_p95.py	/^def displayIntro():$/;"	f
+displayIntro	.\pygame\inventwithpython\dragon.py	/^def displayIntro():$/;"	f
+dnsQRTest	.\violentPython\4\8-testDomainFlux.py	/^def dnsQRTest(pkt):$/;"	f
+doRectsOverlap	.\pygame\inventwithpython\collisionDetection.py	/^def doRectsOverlap(rect1, rect2):$/;"	f
+do_dialog	.\headfirst_python\chapter11\page464.py	/^def do_dialog(title, data, func, ok='Select', notok='Quit'):$/;"	f
+do_form	.\headfirst_python\chapter9\page333.py	/^def do_form(name, the_inputs, method="POST", text="Submit"):$/;"	f
+do_form	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def do_form(name, the_inputs, method="POST", text="Submit"):$/;"	f
+do_form	.\headfirst_python\webapp\cgi-bin\yate.py	/^def do_form(name,the_inputs,method="POST",text='Submit'):$/;"	f
+dormcost	.\machineLearning\opt_yang2.py	/^def dormcost(vec):$/;"	f
+downloadImage	.\exifFetch.py	/^def downloadImage(imgTag):$/;"	f
+downloadImage	.\violentPython\3\4-exifFetch.py	/^def downloadImage(imgTag):$/;"	f
+downloadImage	.\violentPython\3\tonis_beautifulsoup.py	/^def downloadImage(imgTag):$/;"	f
+draw	.\Arrow3D.py	/^    def draw(self, renderer):$/;"	m	class:Arrow3D
+draw	.\numplt4.py	/^    def draw(self, renderer):$/;"	m	class:Arrow3D
+drawApple	.\pygame\inventwithpython2\wormy.py	/^def drawApple(coord):$/;"	f
+drawBoard	.\memoryPuzzle.py	/^def drawBoard(board, revealed):$/;"	f
+drawBoard	.\pygame\inventwithpython2\flippy.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython2\fourinarow.py	/^def drawBoard(board, extraToken=None):$/;"	f
+drawBoard	.\pygame\inventwithpython2\gemgem.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython2\inkspill.py	/^def drawBoard(board, transparency=255):$/;"	f
+drawBoard	.\pygame\inventwithpython2\memorypuzzle.py	/^def drawBoard(board, revealed):$/;"	f
+drawBoard	.\pygame\inventwithpython2\pentomino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython2\slidepuzzle.py	/^def drawBoard(board, message):$/;"	f
+drawBoard	.\pygame\inventwithpython2\tetromino.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\AISim1.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\AISim2.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\AISim3.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\reversi.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\sonar.py	/^def drawBoard(board):$/;"	f
+drawBoard	.\pygame\inventwithpython\tictactoe.py	/^def drawBoard(board):$/;"	f
+drawBox	.\pygame\inventwithpython2\pentomino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\pygame\inventwithpython2\tetromino.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBox	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def drawBox(boxx, boxy, color, pixelx=None, pixely=None):$/;"	f
+drawBoxCovers	.\memoryPuzzle.py	/^def drawBoxCovers(board, boxes, coverage):$/;"	f
+drawBoxCovers	.\pygame\inventwithpython2\memorypuzzle.py	/^def drawBoxCovers(board, boxes, coverage):$/;"	f
+drawButtons	.\pygame\inventwithpython2\simulate.py	/^def drawButtons():$/;"	f
+drawColorSchemeBoxes	.\pygame\inventwithpython2\inkspill.py	/^def drawColorSchemeBoxes(x, y, schemeNum):$/;"	f
+drawCoordinator	.\numplt4.py	/^def drawCoordinator(fig, *args, **kwargs):$/;"	f
+drawGrid	.\pygame\inventwithpython2\wormy.py	/^def drawGrid():$/;"	f
+drawHealthMeter	.\pygame\inventwithpython2\squirrel.py	/^def drawHealthMeter(currentHealth):$/;"	f
+drawHighlightBox	.\memoryPuzzle.py	/^def drawHighlightBox(boxx,boxy):$/;"	f
+drawHighlightBox	.\pygame\inventwithpython2\memorypuzzle.py	/^def drawHighlightBox(boxx, boxy):$/;"	f
+drawIcon	.\memoryPuzzle.py	/^def drawIcon(shape, color, boxx,boxy):$/;"	f
+drawIcon	.\pygame\inventwithpython2\memorypuzzle.py	/^def drawIcon(shape, color, boxx, boxy):$/;"	f
+drawInfo	.\pygame\inventwithpython2\flippy.py	/^def drawInfo(board, playerTile, computerTile, turn):$/;"	f
+drawLifeMeter	.\pygame\inventwithpython2\inkspill.py	/^def drawLifeMeter(currentLife):$/;"	f
+drawLogoAndButtons	.\pygame\inventwithpython2\inkspill.py	/^def drawLogoAndButtons():$/;"	f
+drawMap	.\pygame\inventwithpython2\starpusher.py	/^def drawMap(mapObj, gameStateObj, goals):$/;"	f
+drawMovingGem	.\pygame\inventwithpython2\gemgem.py	/^def drawMovingGem(gem, progress):$/;"	f
+drawNextPiece	.\pygame\inventwithpython2\pentomino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\pygame\inventwithpython2\tetromino.py	/^def drawNextPiece(piece):$/;"	f
+drawNextPiece	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def drawNextPiece(piece):$/;"	f
+drawPalettes	.\pygame\inventwithpython2\inkspill.py	/^def drawPalettes():$/;"	f
+drawPiece	.\pygame\inventwithpython2\pentomino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\pygame\inventwithpython2\tetromino.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPiece	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def drawPiece(piece, pixelx=None, pixely=None):$/;"	f
+drawPointWithAxis	.\drawRobotics.py	/^def drawPointWithAxis(fig, *args, **kwargs):$/;"	f
+drawPressKeyMsg	.\pygame\inventwithpython2\wormy.py	/^def drawPressKeyMsg():$/;"	f
+drawScore	.\pygame\inventwithpython2\gemgem.py	/^def drawScore(score):$/;"	f
+drawScore	.\pygame\inventwithpython2\wormy.py	/^def drawScore(score):$/;"	f
+drawStatus	.\pygame\inventwithpython2\pentomino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\pygame\inventwithpython2\tetromino.py	/^def drawStatus(score, level):$/;"	f
+drawStatus	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def drawStatus(score, level):$/;"	f
+drawText	.\pygame\inventwithpython\dodger.py	/^def drawText(text, font, surface, x, y):$/;"	f
+drawTile	.\pygame\inventwithpython2\slidepuzzle.py	/^def drawTile(tilex, tiley, number, adjx=0, adjy=0):$/;"	f
+drawVector	.\drawRobotics.py	/^def drawVector(fig, pointA, pointB, **kwargs):$/;"	f
+drawVector	.\numplt4.py	/^def drawVector(fig, pointA, pointB, **kwargs):$/;"	f
+drawWorm	.\pygame\inventwithpython2\wormy.py	/^def drawWorm(wormCoords):$/;"	f
+dump_unpacked	.\pyhacking_programming\upx_unpacker.py	/^def dump_unpacked(emu):$/;"	f
+dump_unpacked	.\upx_unpacker.py	/^def dump_unpacked(eum):$/;"	f
+dupDot11	.\violentPython\5\7-dup.py	/^def dupDot11(pkt):$/;"	f
+dupDot11	.\violentPython\5\dup.py	/^def dupDot11(pkt):$/;"	f
+dupIP	.\violentPython\5\7-dup.py	/^def dupIP(pkt):$/;"	f
+dupIP	.\violentPython\5\dup.py	/^def dupIP(pkt):$/;"	f
+dupLLC	.\violentPython\5\7-dup.py	/^def dupLLC(pkt):$/;"	f
+dupLLC	.\violentPython\5\dup.py	/^def dupLLC(pkt):$/;"	f
+dupRadio	.\violentPython\5\7-dup.py	/^def dupRadio(pkt):$/;"	f
+dupRadio	.\violentPython\5\dup.py	/^def dupRadio(pkt):$/;"	f
+dupSNAP	.\violentPython\5\7-dup.py	/^def dupSNAP(pkt):$/;"	f
+dupSNAP	.\violentPython\5\dup.py	/^def dupSNAP(pkt):$/;"	f
+dupUDP	.\violentPython\5\7-dup.py	/^def dupUDP(pkt):$/;"	f
+dupUDP	.\violentPython\5\dup.py	/^def dupUDP(pkt):$/;"	f
+eat	.\pygame\inventwithpython2\inkspill.py	/^                pygame.time.wait(2000) # pause so the player can suffer in their defeat$/;"	f	function:main
+emergencyland	.\violentPython\5\7-uavSniff.py	/^    def emergencyland(self):$/;"	m	class:interceptThread
+encode_multipart_formdata	.\start_pythonHacking\Form 데이터 설정.py	/^def encode_multipart_formdata(fields, files):                                                     #(1)$/;"	f
+encode_multipart_formdata	.\start_pythonHacking\fileupload.py	/^def encode_multipart_formdata(fields, files):$/;"	f
+end_form	.\headfirst_python\chapter7\page262.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\headfirst_python\chapter9\page333.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+end_form	.\headfirst_python\webapp\cgi-bin\yate.py	/^def end_form(submit_msg="Submit"):$/;"	f
+enterPlayerMove	.\pygame\inventwithpython\sonar.py	/^def enterPlayerMove():$/;"	f
+enterPlayerTile	.\pygame\inventwithpython2\flippy.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\pygame\inventwithpython\AISim1.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\pygame\inventwithpython\AISim2.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\pygame\inventwithpython\AISim3.py	/^def enterPlayerTile():$/;"	f
+enterPlayerTile	.\pygame\inventwithpython\reversi.py	/^def enterPlayerTile():$/;"	f
+enumerate_threads	.\my_debugger.py	/^    def enumerate_threads(self):$/;"	m	class:debugger
+enumerate_threads	.\pyhacking_programming\my_debugger.py	/^    def enumerate_threads(self):$/;"	m	class:debugger
+epochs_completed	.\mnistDataTraining.py	/^  def epochs_completed(self):$/;"	m	class:DataSet
+equation	.\scipy1.py	/^def equation(p):$/;"	f
+equation	.\socketTest2.py	/^page = ""$/;"	f
+errors	.\machine_learning.py	/^    def errors(self, y):$/;"	m	class:LogisticRegression
+es	.\mnistDataTraining.py	/^y = tf.placeholder("float", [None, 10]) # 0-9 digits recognition => 10 classes$/;"	c
+evaluate_olivettifaces	.\machine_learning.py	/^def evaluate_olivettifaces(learning_rate=0.05, n_epochs=200,$/;"	f
+exception_handler_breakpoint	.\my_debugger.py	/^    def exception_handler_breakpoint(self):$/;"	m	class:debugger
+exception_handler_breakpoint	.\pyhacking_programming\my_debugger.py	/^    def exception_handler_breakpoint(self):$/;"	m	class:debugger
+exception_handler_single_step	.\my_debugger.py	/^    def exception_handler_single_step(self):$/;"	m	class:debugger
+exception_handler_single_step	.\pyhacking_programming\my_debugger.py	/^    def exception_handler_single_step(self):$/;"	m	class:debugger
+exploitTest	.\violentPython\4\10-idsFoil.py	/^def exploitTest(src, dst, iface, count):$/;"	f
+extractFile	.\violentPython\1\3-zipCrack.py	/^def extractFile(zFile, password):$/;"	f
+extractFile	.\violentPython\1\tonis_zipfile.py	/^def extractFile(zFile,password):$/;"	f
+extract_imagess	.\mnistDataTraining.py	/^def extract_imagess(filename):$/;"	f
+extract_labels	.\mnistDataTraining.py	/^def extract_labels(filename, one_hot=False):$/;"	f
+extractall	.\unzip.py	/^def extractall(zFile, password ):$/;"	f
+f	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def f(bbb, pp):$/;"	f
+fileFuzzer	.\fileFuzzer.py	/^class fileFuzzer:$/;"	c
+file_fuzzer	.\file_fuzzer.py	/^class file_fuzzer:$/;"	c
+file_fuzzer	.\pyhacking_programming\file_fuzzer.py	/^class file_fuzzer:$/;"	c
+file_picker	.\file_fuzzer.py	/^    def file_picker(self):$/;"	m	class:file_fuzzer
+file_picker	.\pyhacking_programming\file_fuzzer.py	/^    def file_picker( self ):$/;"	m	class:file_fuzzer
+fillBoardAndAnimate	.\pygame\inventwithpython2\gemgem.py	/^def fillBoardAndAnimate(board, points, score):$/;"	f
+findAttack	.\violentPython\4\5-findDDoS.py	/^def findAttack(pcap):$/;"	f
+findCreditCard	.\violentPython\5\2-creditSniff.py	/^def findCreditCard(pkt):$/;"	f
+findDevs	.\violentPython\5\9-btScan.py	/^def findDevs():$/;"	f
+findDownload	.\violentPython\4\5-findDDoS.py	/^def findDownload(pcap):$/;"	f
+findGoogle	.\violentPython\5\4-googleSniff.py	/^def findGoogle(pkt):$/;"	f
+findGuest	.\violentPython\5\3-hotelSniff.py	/^def findGuest(pkt):$/;"	f
+findHivemind	.\violentPython\4\5-findDDoS.py	/^def findHivemind(pcap):$/;"	f
+findImages	.\exifFetch.py	/^def findImages(url):$/;"	f
+findImages	.\violentPython\3\4-exifFetch.py	/^def findImages(url):$/;"	f
+findImages	.\violentPython\3\tonis_beautifulsoup.py	/^def findImages(url):$/;"	f
+findMatchingGems	.\pygame\inventwithpython2\gemgem.py	/^def findMatchingGems(board):$/;"	f
+findRecycled	.\violentPython\3\2-dumpRecycleBin.py	/^def findRecycled(recycleDir):$/;"	f
+findRecycled	.\violentPython\3\tonis_recycle.py	/^def findRecycled(recycleDir):$/;"	f
+findTgt	.\violentPython\5\9-btFind.py	/^def findTgt(tgtName):$/;"	f
+findTgts	.\conficker.py	/^def findTgts(subNet):$/;"	f
+findTgts	.\violentPython\2\5-conficker.py	/^def findTgts(subNet):$/;"	f
+findTgts	.\violentPython\2\tonis_conficker.py	/^def findTgts(subNet):$/;"	f
+find_closest	.\headfirst_python\chapter11\find_it.py	/^def find_closest(look_for, target_data):$/;"	f
+find_closest	.\headfirst_python\chapter11\page451.py	/^def find_closest(look_for, target_data):$/;"	f
+find_interests	.\violentPython\6\9-twitterClass.py	/^    def find_interests(self):$/;"	m	class:reconPerson
+find_interests	.\violentPython\6\9-twitterInterests.py	/^def find_interests(tweets):$/;"	f
+find_interests	.\violentPython\6\twitterClass.py	/^    def find_interests(self):$/;"	m	class:reconPerson
+find_nearest_time	.\headfirst_python\chapter11\page456.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+find_nearest_time	.\headfirst_python\chapter11\page457.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+find_nearest_time	.\headfirst_python\chapter11\page464.py	/^def find_nearest_time(look_for, target_data):$/;"	f
+fireCatcher	.\violentPython\5\8-fireCatcher.py	/^def fireCatcher(pkt):$/;"	f
+flashBorderAnimation	.\pygame\inventwithpython2\inkspill.py	/^def flashBorderAnimation(color, board, animationSpeed=30):$/;"	f
+flashButtonAnimation	.\pygame\inventwithpython2\simulate.py	/^def flashButtonAnimation(color, animationSpeed=50):$/;"	f
+floodAnimation	.\pygame\inventwithpython2\inkspill.py	/^def floodAnimation(board, paletteClicked, animationSpeed=25):$/;"	f
+floodFill	.\pygame\inventwithpython2\inkspill.py	/^def floodFill(board, oldColor, newColor, x, y):$/;"	f
+floodFill	.\pygame\inventwithpython2\starpusher.py	/^def floodFill(mapObj, x, y, oldCharacter, newCharacter):$/;"	f
+format_time	.\headfirst_python\chapter11\page454.py	/^def format_time(time_string):$/;"	f
+format_time	.\headfirst_python\chapter11\tm2secs2tm.py	/^def format_time(time_string):$/;"	f
+ftpSniff	.\violentPython\5\5-ftpSniff.py	/^def ftpSniff(pkt):$/;"	f
+func_resolve	.\my_debugger.py	/^    def func_resolve(self,dll,function):$/;"	m	class:debugger
+func_resolve	.\pyhacking_programming\my_debugger.py	/^    def func_resolve(self,dll,function):$/;"	m	class:debugger
+fuzz	.\file_fuzzer.py	/^    def fuzz(self):$/;"	m	class:file_fuzzer
+fuzz	.\pyhacking_programming\file_fuzzer.py	/^    def fuzz( self ):$/;"	m	class:file_fuzzer
+g	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def g(bbb):$/;"	f
+gameOverAnimation	.\pygame\inventwithpython2\simulate.py	/^def gameOverAnimation(color=WHITE, animationSpeed=50):$/;"	f
+gameWonAnimation	.\memoryPuzzle.py	/^def gameWonAnimation(board):$/;"	f
+gameWonAnimation	.\pygame\inventwithpython2\memorypuzzle.py	/^def gameWonAnimation(board):$/;"	f
+generateNewPuzzle	.\pygame\inventwithpython2\slidepuzzle.py	/^def generateNewPuzzle(numSlides):$/;"	f
+generateRandomBoard	.\pygame\inventwithpython2\inkspill.py	/^def generateRandomBoard(width, height, difficulty=MEDIUM):$/;"	f
+generateRevealedBoxesData	.\memoryPuzzle.py	/^def generateRevealedBoxesData(val):$/;"	f
+generateRevealedBoxesData	.\pygame\inventwithpython2\memorypuzzle.py	/^def generateRevealedBoxesData(val):$/;"	f
+geneticoptimize	.\machineLearning\opt_yang.py	/^def geneticoptimize(domain,costf=costfunc,popsize=100,step=1,$/;"	f
+geneticoptimize	.\machineLearning\opt_yang2.py	/^def geneticoptimize(domain,costf=dormcost,popsize=200,step=1,$/;"	f
+geneticoptimize	.\test.py	/^def geneticoptimize(domain, costf=costfunc, popsize=100, $/;"	f
+get	.\headfirst_python\chapter10\page403b.py	/^    def get(self):$/;"	m	class:SimpleInput
+get	.\headfirst_python\chapter10\page405.py	/^    def get(self):$/;"	m	class:IndexPage
+get	.\headfirst_python\chapter10\page407.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\headfirst_python\chapter10\page417.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\headfirst_python\chapter10\page425.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    def get(self):$/;"	m	class:SightingInputPage
+get	.\headfirst_python\hfwwg\hfwwg.py	/^		def get(self):$/;"	m	class:SightingInputPage
+getBlankBoard	.\pygame\inventwithpython2\gemgem.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\pygame\inventwithpython2\pentomino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\pygame\inventwithpython2\tetromino.py	/^def getBlankBoard():$/;"	f
+getBlankBoard	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def getBlankBoard():$/;"	f
+getBlankPosition	.\pygame\inventwithpython2\slidepuzzle.py	/^def getBlankPosition(board):$/;"	f
+getBoardCopy	.\pygame\inventwithpython\AISim1.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\pygame\inventwithpython\AISim2.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\pygame\inventwithpython\AISim3.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\pygame\inventwithpython\reversi.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopy	.\pygame\inventwithpython\tictactoe.py	/^def getBoardCopy(board):$/;"	f
+getBoardCopyMinusGems	.\pygame\inventwithpython2\gemgem.py	/^def getBoardCopyMinusGems(board, gems):$/;"	f
+getBoardWithValidMoves	.\pygame\inventwithpython2\flippy.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\pygame\inventwithpython\AISim1.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\pygame\inventwithpython\AISim2.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\pygame\inventwithpython\AISim3.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBoardWithValidMoves	.\pygame\inventwithpython\reversi.py	/^def getBoardWithValidMoves(board, tile):$/;"	f
+getBounceAmount	.\pygame\inventwithpython2\squirrel.py	/^def getBounceAmount(currentBounce, bounceRate, bounceHeight):$/;"	f
+getBoxAtPixel	.\memoryPuzzle.py	/^def getBoxAtPixel(x,y):$/;"	f
+getBoxAtPixel	.\pygame\inventwithpython2\memorypuzzle.py	/^def getBoxAtPixel(x, y):$/;"	f
+getButtonClicked	.\pygame\inventwithpython2\simulate.py	/^def getButtonClicked(x, y):$/;"	f
+getClues	.\pygame\inventwithpython\bagels.py	/^def getClues(guess, secretNum):$/;"	f
+getColorOfPaletteAt	.\pygame\inventwithpython2\inkspill.py	/^def getColorOfPaletteAt(x, y):$/;"	f
+getComputerMove	.\pygame\inventwithpython2\flippy.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\pygame\inventwithpython2\fourinarow.py	/^def getComputerMove(board):$/;"	f
+getComputerMove	.\pygame\inventwithpython\AISim1.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\pygame\inventwithpython\AISim2.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\pygame\inventwithpython\AISim3.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\pygame\inventwithpython\reversi.py	/^def getComputerMove(board, computerTile):$/;"	f
+getComputerMove	.\pygame\inventwithpython\tictactoe.py	/^def getComputerMove(board, computerLetter):$/;"	f
+getCornerSideBestMove	.\pygame\inventwithpython\AISim3.py	/^def getCornerSideBestMove(board, tile):$/;"	f
+getCornerWorstMove	.\pygame\inventwithpython\AISim3.py	/^def getCornerWorstMove(board, tile):$/;"	f
+getDenies	.\function.py	/^def getDenies(site):$/;"	f
+getDirList	.\start_pythonHacking\Directory Listing.py	/^def getDirList(cftp, name):$/;"	f
+getDropSlots	.\pygame\inventwithpython2\gemgem.py	/^def getDropSlots(board):$/;"	f
+getDroppingGems	.\pygame\inventwithpython2\gemgem.py	/^def getDroppingGems(board):$/;"	f
+getFPTR	.\150130_hook.py	/^def getFPTR(fn):                                                                  #(6)$/;"	f
+getFPTR	.\start_pythonHacking\MessageHooking.py	/^def getFPTR(fn):                                                                  #(6)$/;"	f
+getGemAt	.\pygame\inventwithpython2\gemgem.py	/^def getGemAt(board, x, y):$/;"	f
+getGuess	.\pygame\inventwithpython\hangman.py	/^def getGuess(alreadyGuessed):$/;"	f
+getHumanMove	.\pygame\inventwithpython2\fourinarow.py	/^def getHumanMove(board, isFirstMove):$/;"	f
+getInverseMatrix	.\edward.py	/^def getInverseMatrix(size,a,b,c,d,e=0,f=0,g=0,h=0,i=0):$/;"	f
+getKey	.\pygame\inventwithpython\cipher.py	/^def getKey():$/;"	f
+getLeftTopOfTile	.\pygame\inventwithpython2\slidepuzzle.py	/^def getLeftTopOfTile(tileX, tileY):$/;"	f
+getLowestEmptySpace	.\pygame\inventwithpython2\fourinarow.py	/^def getLowestEmptySpace(board, column):$/;"	f
+getMessage	.\pygame\inventwithpython\cipher.py	/^def getMessage():$/;"	f
+getMode	.\pygame\inventwithpython\cipher.py	/^def getMode():$/;"	f
+getNewBoard	.\pygame\inventwithpython2\flippy.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython2\fourinarow.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython\AISim1.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython\AISim2.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython\AISim3.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython\reversi.py	/^def getNewBoard():$/;"	f
+getNewBoard	.\pygame\inventwithpython\sonar.py	/^def getNewBoard():$/;"	f
+getNewPiece	.\pygame\inventwithpython2\pentomino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\pygame\inventwithpython2\tetromino.py	/^def getNewPiece():$/;"	f
+getNewPiece	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def getNewPiece():$/;"	f
+getPassword	.\start_pythonHacking\FTP Passwrod Cracking.py	/^def getPassword(password):                            #(2)$/;"	f
+getPid	.\getChromeHistory.py	/^def getPid(s):$/;"	f
+getPlayerMove	.\pygame\inventwithpython\AISim1.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\pygame\inventwithpython\AISim2.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\pygame\inventwithpython\AISim3.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\pygame\inventwithpython\reversi.py	/^def getPlayerMove(board, playerTile):$/;"	f
+getPlayerMove	.\pygame\inventwithpython\tictactoe.py	/^def getPlayerMove(board):$/;"	f
+getPotentialMoves	.\pygame\inventwithpython2\fourinarow.py	/^def getPotentialMoves(board, tile, lookAhead):$/;"	f
+getRandomChests	.\pygame\inventwithpython\sonar.py	/^def getRandomChests(numChests):$/;"	f
+getRandomLocation	.\pygame\inventwithpython2\wormy.py	/^def getRandomLocation():$/;"	f
+getRandomMove	.\pygame\inventwithpython2\slidepuzzle.py	/^def getRandomMove(board, lastMove=None):$/;"	f
+getRandomMove	.\pygame\inventwithpython\AISim3.py	/^def getRandomMove(board, tile):$/;"	f
+getRandomOffCameraPos	.\pygame\inventwithpython2\squirrel.py	/^def getRandomOffCameraPos(camerax, cameray, objWidth, objHeight):$/;"	f
+getRandomVelocity	.\pygame\inventwithpython2\squirrel.py	/^def getRandomVelocity():$/;"	f
+getRandomWord	.\pygame\inventwithpython\hangman.py	/^def getRandomWord(wordList):$/;"	f
+getRandomizedBoard	.\memoryPuzzle.py	/^def getRandomizedBoard():$/;"	f
+getRandomizedBoard	.\pygame\inventwithpython2\memorypuzzle.py	/^def getRandomizedBoard():$/;"	f
+getRet	.\pyhacking_programming\hippie_easy.py	/^def getRet(imm, allocaddr, max_opcodes = 300):$/;"	f
+getRow	.\pygame\inventwithpython\sonar.py	/^def getRow(board, row):$/;"	f
+getScoreOfBoard	.\pygame\inventwithpython2\flippy.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\pygame\inventwithpython\AISim1.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\pygame\inventwithpython\AISim2.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\pygame\inventwithpython\AISim3.py	/^def getScoreOfBoard(board):$/;"	f
+getScoreOfBoard	.\pygame\inventwithpython\reversi.py	/^def getScoreOfBoard(board):$/;"	f
+getSecretNum	.\pygame\inventwithpython\bagels.py	/^def getSecretNum(numDigits):$/;"	f
+getShapeAndColor	.\memoryPuzzle.py	/^def getShapeAndColor(board,boxx,boxy):$/;"	f
+getShapeAndColor	.\pygame\inventwithpython2\memorypuzzle.py	/^def getShapeAndColor(board, boxx, boxy):$/;"	f
+getSideBestMove	.\pygame\inventwithpython\AISim3.py	/^def getSideBestMove(board, tile):$/;"	f
+getSpaceClicked	.\pygame\inventwithpython2\flippy.py	/^def getSpaceClicked(mousex, mousey):$/;"	f
+getSpotClicked	.\pygame\inventwithpython2\slidepuzzle.py	/^def getSpotClicked(board, x, y):$/;"	f
+getStartingBoard	.\pygame\inventwithpython2\slidepuzzle.py	/^def getStartingBoard():$/;"	f
+getSwappingGems	.\pygame\inventwithpython2\gemgem.py	/^def getSwappingGems(board, firstXY, secondXY):$/;"	f
+getTranslatedMessage	.\pygame\inventwithpython\cipher.py	/^def getTranslatedMessage(mode, message, key):$/;"	f
+getValidMoves	.\pygame\inventwithpython2\flippy.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\pygame\inventwithpython\AISim1.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\pygame\inventwithpython\AISim2.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\pygame\inventwithpython\AISim3.py	/^def getValidMoves(board, tile):$/;"	f
+getValidMoves	.\pygame\inventwithpython\reversi.py	/^def getValidMoves(board, tile):$/;"	f
+getWorstMove	.\pygame\inventwithpython\AISim3.py	/^def getWorstMove(board, tile):$/;"	f
+get_athlete_from_id	.\athletemodel_sqlite3.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\headfirst_python\chapter9\page368.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_athlete_from_id	.\headfirst_python\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_athlete_from_id(athlete_id):$/;"	f
+get_coach_data	.\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter5\page205.py	/^def get_coach_data(filename): $/;"	f
+get_coach_data	.\headfirst_python\chapter6\page211.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter6\page217.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter6\page222.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter6\page231.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter6\page245.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter7\page259.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_coach_data	.\headfirst_python\webapp\cgi-bin\athletemodel.py	/^def get_coach_data(filename):$/;"	f
+get_content	.\140611_3.py	/^	def get_content(self): $/;"	m	class:ETNEWS
+get_debug_event	.\my_debugger.py	/^    def get_debug_event(self):$/;"	m	class:debugger
+get_debug_event	.\pyhacking_programming\my_debugger.py	/^    def get_debug_event(self):$/;"	m	class:debugger
+get_from_store	.\athletemodel.py	/^def get_from_store():$/;"	f
+get_from_store	.\headfirst_python\chapter7\page259.py	/^def get_from_store():$/;"	f
+get_from_store	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_from_store():$/;"	f
+get_from_store	.\headfirst_python\webapp\cgi-bin\athletemodel.py	/^def get_from_store():$/;"	f
+get_hash	.\hash_calc.py	/^def get_hash(srcstr):$/;"	f
+get_namesID_from_store	.\athletemodel_sqlite3.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\headfirst_python\chapter9\page371.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_namesID_from_store():$/;"	f
+get_namesID_from_store	.\headfirst_python\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_namesID_from_store():$/;"	f
+get_names_from_store	.\athletemodel_sqlite3.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\headfirst_python\chapter9\page367.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletemodel.py	/^def get_names_from_store():$/;"	f
+get_names_from_store	.\headfirst_python\webapp\cgi-bin\athletemodel_sqlite3.py	/^def get_names_from_store():$/;"	f
+get_pdf_data	.\140611_3.py	/^	def get_pdf_data(self, date):$/;"	m	class:ETNEWS
+get_social	.\violentPython\6\9-twitterRecon.py	/^    def get_social(self, media_name):$/;"	m	class:reconPerson
+get_thread_context	.\my_debugger.py	/^    def get_thread_context(self,thread_id=None, h_thread =None):$/;"	m	class:debugger
+get_thread_context	.\pyhacking_programming\my_debugger.py	/^    def get_thread_context (self, thread_id=None,h_thread=None):$/;"	m	class:debugger
+get_tweets	.\violentPython\6\9-twitterClass.py	/^    def get_tweets(self):$/;"	m	class:reconPerson
+get_tweets	.\violentPython\6\9-twitterGeo.py	/^def get_tweets(handle):$/;"	f
+get_tweets	.\violentPython\6\9-twitterInterests.py	/^def get_tweets(handle):$/;"	f
+get_tweets	.\violentPython\6\twitterClass.py	/^    def get_tweets(self):$/;"	m	class:reconPerson
+getprocaddress	.\pyhacking_programming\upx_unpacker.py	/^def getprocaddress(name, address):$/;"	f
+getprocaddress	.\upx_unpacker.py	/^def getprocaddress(name,address):$/;"	f
+google	.\violentPython\6\8-anonGoogle.py	/^def google(search_term):$/;"	f
+google	.\violentPython\6\8-googleJson.py	/^def google(search_term):$/;"	f
+google	.\violentPython\6\8-googleJumbled.py	/^def google(search_term):$/;"	f
+handlePkt	.\violentPython\4\7-testFastFlux.py	/^def handlePkt(pkt):$/;"	f
+handler_av	.\start_pythonHacking\bufferOverflowTest.py	/^def handler_av(dbg):                                                 #(2)$/;"	f
+hasWon	.\memoryPuzzle.py	/^def hasWon(revealedBoxes):$/;"	f
+hasWon	.\pygame\inventwithpython2\inkspill.py	/^def hasWon(board):$/;"	f
+hasWon	.\pygame\inventwithpython2\memorypuzzle.py	/^def hasWon(revealedBoxes):$/;"	f
+header	.\headfirst_python\chapter7\page262.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\headfirst_python\chapter9\page333.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+header	.\headfirst_python\webapp\cgi-bin\yate.py	/^def header(header_text, header_level=2):$/;"	f
+hhh	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def hhh():$/;"	f
+highlightSpace	.\pygame\inventwithpython2\gemgem.py	/^def highlightSpace(x, y):$/;"	f
+hookProc	.\150130_hook.py	/^def hookProc(nCode, wParam, lParam):                                              #(7)$/;"	f
+hookProc	.\start_pythonHacking\MessageHooking.py	/^def hookProc(nCode, wParam, lParam):                                              #(7)$/;"	f
+ify	.\kmeans.py	/^			new_assignments = map(self.classify, inputs)$/;"	c	function:KMeans.train
+ii	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def ii(hh):$/;"	f
+ii	.\pyhacking_programming\backdoor.py	/^"\\x6b\\x69\\x6c\\x6c\\x20\\x2f\\x50\\x49\\x44\\x20\\x41\\x41\\x41\\x41\\x00"$/;"	f
+ii	.\pyhacking_programming\backdoor.py	/^"\\xff\\x77\\xfc\\xff\\xd0\\x68\\xef\\xce\\xe0\\x60\\x53\\xff\\xd6\\xff\\xd0"$/;"	f
+images	.\mnistDataTraining.py	/^  def images(self):$/;"	m	class:DataSet
+include_footer	.\headfirst_python\chapter7\page262.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\headfirst_python\chapter9\page333.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_footer	.\headfirst_python\webapp\cgi-bin\yate.py	/^def include_footer(the_links):$/;"	f
+include_header	.\headfirst_python\chapter7\page262.py	/^def include_header(the_title):$/;"	f
+include_header	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+include_header	.\headfirst_python\chapter9\page333.py	/^def include_header(the_title):$/;"	f
+include_header	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+include_header	.\headfirst_python\webapp\cgi-bin\yate.py	/^def include_header(the_title):$/;"	f
+ines	.\150130_apihooking.py	/^from pydbg.defines import *$/;"	f
+ines	.\access_violation_handler.py	/^from pydbg.defines import *$/;"	f
+ines	.\danger_track.py	/^from pydbg.defines import *$/;"	f
+ines	.\fileFuzzer.py	/^	from pydbg.defines import *$/;"	f
+ines	.\file_fuzzer.py	/^from pydbg.defines import *$/;"	f
+ines	.\firefox_hook.py	/^from pydbg.defines import *$/;"	f
+ines	.\printf_random.py	/^from pydbg.defines import *$/;"	f
+ines	.\pyhacking_programming\access_violation_handler.py	/^from pydbg.defines import *$/;"	f
+ines	.\pyhacking_programming\file_fuzzer.py	/^from pydbg.defines import *$/;"	f
+ines	.\pyhacking_programming\firefox_hook.py	/^from pydbg.defines import *$/;"	f
+ines	.\pyhacking_programming\printf_random.py	/^from pydbg.defines import *$/;"	f
+ines	.\snapshot.py	/^from pydbg.defines import *$/;"	f
+ines	.\start_pythonHacking\APIHooking.py	/^from pydbg.defines import *$/;"	f
+ines	.\start_pythonHacking\bufferOverflowTest.py	/^from pydbg.defines import *$/;"	f
+init	.\numplt1.py	/^def init():$/;"	f
+inject	.\backdoor.py	/^def inject( pid, data, parameter = 0 ):$/;"	f
+inject	.\pyhacking_programming\backdoor.py	/^def inject( pid, data, parameter = 0 ):$/;"	f
+injectCmd	.\violentPython\5\7-uavSniff.py	/^    def injectCmd(self, cmd):$/;"	m	class:interceptThread
+injectPage	.\violentPython\2\4-injectPage.py	/^def injectPage(ftp, page, redirect):$/;"	f
+injectPage	.\violentPython\2\4-massCompromise.py	/^def injectPage(ftp, page, redirect):$/;"	f
+injectPage	.\violentPython\2\tonis_ftp2.py	/^def injectPage(ftp,page,redirect):$/;"	f
+injectPage	.\violentPython\2\tonis_ftp3.py	/^def injectPage(ftp,page,redirect):$/;"	f
+inject_dll	.\pyhacking_programming\injector.py	/^def inject_dll( dll_path ):$/;"	f
+inputPlayerLetter	.\pygame\inventwithpython\tictactoe.py	/^def inputPlayerLetter():$/;"	f
+inquiry	.\140611.py	/^    def inquiry(self):$/;"	m	class:Account
+inquiry	.\140611.py	/^    def inquiry(self):$/;"	m	class:EvilAccount
+installHookProc	.\150130_hook.py	/^    def installHookProc(self, pointer):                                           #(4)$/;"	m	class:KeyLogger
+installHookProc	.\start_pythonHacking\MessageHooking.py	/^    def installHookProc(self, pointer):                                           #(4)$/;"	m	class:KeyLogger
+interact	.\aslr.py	/^def interact(s):$/;"	f
+interact	.\bruteforce.py	/^def interact(s):$/;"	f
+interact	.\leak.py	/^def interact(s):$/;"	f
+interact	.\pwn.py	/^def interact(s):$/;"	f
+interceptPkt	.\violentPython\5\7-uavSniff.py	/^    def interceptPkt(self, pkt):$/;"	m	class:interceptThread
+interceptThread	.\violentPython\5\7-uavSniff.py	/^class interceptThread(threading.Thread):$/;"	c
+ioctl_hook	.\ioctl_fuzzer.py	/^class ioctl_hook(LogBpHook):$/;"	c
+ioctl_hook	.\pyhacking_programming\ioctl_fuzzer.py	/^class ioctl_hook( LogBpHook ):$/;"	c
+isBlocked	.\pygame\inventwithpython2\starpusher.py	/^def isBlocked(mapObj, gameStateObj, x, y):$/;"	f
+isBoardFull	.\pygame\inventwithpython2\fourinarow.py	/^def isBoardFull(board):$/;"	f
+isBoardFull	.\pygame\inventwithpython\tictactoe.py	/^def isBoardFull(board):$/;"	f
+isCompleteLine	.\pygame\inventwithpython2\pentomino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\pygame\inventwithpython2\tetromino.py	/^def isCompleteLine(board, y):$/;"	f
+isCompleteLine	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def isCompleteLine(board, y):$/;"	f
+isLevelFinished	.\pygame\inventwithpython2\starpusher.py	/^def isLevelFinished(levelObj, gameStateObj):$/;"	f
+isMessageTable	.\violentPython\3\7-iphoneMessages.py	/^def isMessageTable(iphoneDB):$/;"	f
+isOnBoard	.\pygame\inventwithpython2\flippy.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython2\pentomino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython2\tetromino.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython\AISim1.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython\AISim2.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython\AISim3.py	/^def isOnBoard(x, y):$/;"	f
+isOnBoard	.\pygame\inventwithpython\reversi.py	/^def isOnBoard(x, y):$/;"	f
+isOnCorner	.\pygame\inventwithpython2\flippy.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\pygame\inventwithpython\AISim1.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\pygame\inventwithpython\AISim2.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\pygame\inventwithpython\AISim3.py	/^def isOnCorner(x, y):$/;"	f
+isOnCorner	.\pygame\inventwithpython\reversi.py	/^def isOnCorner(x, y):$/;"	f
+isOnSide	.\pygame\inventwithpython\AISim3.py	/^def isOnSide(x, y):$/;"	f
+isOnlyDigits	.\pygame\inventwithpython\bagels.py	/^def isOnlyDigits(num):$/;"	f
+isOutsideActiveArea	.\pygame\inventwithpython2\squirrel.py	/^def isOutsideActiveArea(camerax, cameray, obj):$/;"	f
+isPointInsideRect	.\pygame\inventwithpython\collisionDetection.py	/^def isPointInsideRect(x, y, rect):$/;"	f
+isSpaceFree	.\pygame\inventwithpython\tictactoe.py	/^def isSpaceFree(board, move):$/;"	f
+isValidMove	.\pygame\inventwithpython2\flippy.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\pygame\inventwithpython2\fourinarow.py	/^def isValidMove(board, column):$/;"	f
+isValidMove	.\pygame\inventwithpython2\slidepuzzle.py	/^def isValidMove(board, move):$/;"	f
+isValidMove	.\pygame\inventwithpython\AISim1.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\pygame\inventwithpython\AISim2.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\pygame\inventwithpython\AISim3.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\pygame\inventwithpython\reversi.py	/^def isValidMove(board, tile, xstart, ystart):$/;"	f
+isValidMove	.\pygame\inventwithpython\sonar.py	/^def isValidMove(x, y):$/;"	f
+isValidPosition	.\pygame\inventwithpython2\pentomino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\pygame\inventwithpython2\tetromino.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isValidPosition	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def isValidPosition(board, piece, adjX=0, adjY=0):$/;"	f
+isWall	.\pygame\inventwithpython2\starpusher.py	/^def isWall(mapObj, x, y):$/;"	f
+isWinner	.\pygame\inventwithpython2\fourinarow.py	/^def isWinner(board, tile):$/;"	f
+isWinner	.\pygame\inventwithpython\tictactoe.py	/^def isWinner(bo, le):$/;"	f
+jj	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def jj(bbb):$/;"	f
+jmp_handler	.\pyhacking_programming\upx_unpacker.py	/^def jmp_handler(emu, mnemonic, eip, op1, op2, op3):$/;"	f
+jmp_handler	.\upx_unpacker.py	/^def jmp_handler(emu,mnemonic, eip,op1,op2,op3):$/;"	f
+labels	.\mnistDataTraining.py	/^  def labels(self):$/;"	m	class:DataSet
+leftTopCoordsOfBox	.\memoryPuzzle.py	/^def leftTopCoordsOfBox(boxx,boxy):$/;"	f
+leftTopCoordsOfBox	.\pygame\inventwithpython2\memorypuzzle.py	/^def leftTopCoordsOfBox(boxx, boxy):$/;"	f
+leftTopPixelCoordOfBox	.\pygame\inventwithpython2\inkspill.py	/^def leftTopPixelCoordOfBox(boxx, boxy):$/;"	f
+load	.\my_debugger.py	/^    def load(self,path_to_exe):$/;"	m	class:debugger
+load	.\pyhacking_programming\my_debugger.py	/^    def load(self,path_to_exe):$/;"	m	class:debugger
+load_cities	.\violentPython\6\9-twitterGeo.py	/^def load_cities(cityFile):$/;"	f
+load_data	.\machine_learning.py	/^def load_data(dataset_path):$/;"	f
+loadlibrary	.\pyhacking_programming\upx_unpacker.py	/^def loadlibrary(name, address):$/;"	f
+loadlibrary	.\upx_unpacker.py	/^def loadlibrary(name,address):$/;"	f
+login	.\140611_3.py	/^	def login(self, username, password):$/;"	m	class:ETNEWS
+m	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def m(x, y):$/;"	f
+main	.\badchar.py	/^def main(args):$/;"	f
+main	.\calc_test.py	/^def main():$/;"	f
+main	.\conficker.py	/^def main():$/;"	f
+main	.\edward.py	/^def main():$/;"	f
+main	.\exifFetch.py	/^def main():$/;"	f
+main	.\findinstruction.py	/^def main(args):$/;"	f
+main	.\ftp_scanner.py	/^def main():$/;"	f
+main	.\getChromeHistory.py	/^def main():$/;"	f
+main	.\getHWPInfo.py	/^def main( ):$/;"	f
+main	.\headfirst_python\chapter10\page403b.py	/^def main():$/;"	f
+main	.\headfirst_python\chapter10\page405.py	/^def main():$/;"	f
+main	.\headfirst_python\chapter10\page407.py	/^def main():$/;"	f
+main	.\headfirst_python\chapter10\page417.py	/^def main():$/;"	f
+main	.\headfirst_python\chapter10\page425.py	/^def main():$/;"	f
+main	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^def main():$/;"	f
+main	.\headfirst_python\hfwwg\hfwwg.py	/^def main():$/;"	f
+main	.\ioctl_dump.py	/^def main(args):$/;"	f
+main	.\ioctl_fuzzer.py	/^    def main(args):$/;"	m	class:ioctl_hook
+main	.\linkParser.py	/^def main():$/;"	f
+main	.\memoryPuzzle.py	/^def main():$/;"	f
+main	.\nmapScan.py	/^def main():$/;"	f
+main	.\pdfRead.py	/^def main():$/;"	f
+main	.\portScan.py	/^def main():$/;"	f
+main	.\printGeo.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\flippy.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\fourinarow.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\gemgem.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\inkspill.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\memorypuzzle.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\pentomino.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\simulate.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\slidepuzzle.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\squirrel.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\starpusher.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\tetromino.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def main():$/;"	f
+main	.\pygame\inventwithpython2\wormy.py	/^def main():$/;"	f
+main	.\pyhacking_programming\addnum.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	.\pyhacking_programming\badchar.py	/^def main(args):$/;"	f
+main	.\pyhacking_programming\findinstruction.py	/^def main(args):$/;"	f
+main	.\pyhacking_programming\hippie_easy.py	/^def main(args):$/;"	f
+main	.\pyhacking_programming\ioctl_dump.py	/^def main( args ):$/;"	f
+main	.\pyhacking_programming\ioctl_fuzzer.py	/^def main(args):$/;"	f
+main	.\scapyCTF.py	/^def main():$/;"	f
+main	.\scapyCTF2.py	/^def main():$/;"	f
+main	.\unzip.py	/^def main():$/;"	f
+main	.\violentPython\1\1-vulnScanner.py	/^def main():$/;"	f
+main	.\violentPython\1\2-passwdCrack.py	/^def main():$/;"	f
+main	.\violentPython\1\3-zipCrack.py	/^def main():$/;"	f
+main	.\violentPython\1\tonis_zipfile.py	/^def main():$/;"	f
+main	.\violentPython\2\1-portScan.py	/^def main():$/;"	f
+main	.\violentPython\2\2-nmapScan.py	/^def main():$/;"	f
+main	.\violentPython\2\3-bruteKey.py	/^def main():$/;"	f
+main	.\violentPython\2\3-sshBrute.py	/^def main():$/;"	f
+main	.\violentPython\2\3-sshCommand.py	/^def main():$/;"	f
+main	.\violentPython\2\4-massCompromise.py	/^def main():$/;"	f
+main	.\violentPython\2\5-conficker.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_conficker.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_ftp3.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_nmap.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_portscan.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_sshd.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_sshd2.py	/^def main():$/;"	f
+main	.\violentPython\2\tonis_sshd3.py	/^def main():$/;"	f
+main	.\violentPython\3\1-discoverNetworks.py	/^def main():$/;"	f
+main	.\violentPython\3\2-dumpRecycleBin.py	/^def main():$/;"	f
+main	.\violentPython\3\3-pdfRead.py	/^def main():$/;"	f
+main	.\violentPython\3\4-exifFetch.py	/^def main():$/;"	f
+main	.\violentPython\3\5-skypeParse.py	/^def main():$/;"	f
+main	.\violentPython\3\6-firefoxParse.py	/^def main():$/;"	f
+main	.\violentPython\3\7-iphoneMessages.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_beautifulsoup.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_discovernetwork.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_firefox.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_metadata.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_recycle.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_skype.py	/^def main():$/;"	f
+main	.\violentPython\3\tonis_wigle.py	/^def main():$/;"	f
+main	.\violentPython\4\10-idsFoil.py	/^def main():$/;"	f
+main	.\violentPython\4\2-printDirection.py	/^def main():$/;"	f
+main	.\violentPython\4\3-geoPrint.py	/^def main():$/;"	f
+main	.\violentPython\4\4-googleEarthPcap.py	/^def main():$/;"	f
+main	.\violentPython\4\5-findDDoS.py	/^def main():$/;"	f
+main	.\violentPython\4\6-spoofDetect.py	/^def main():$/;"	f
+main	.\violentPython\4\7-testFastFlux.py	/^def main():$/;"	f
+main	.\violentPython\4\8-testDomainFlux.py	/^def main():$/;"	f
+main	.\violentPython\4\9-mitnickAttack.py	/^def main():$/;"	f
+main	.\violentPython\5\2-creditSniff.py	/^def main():$/;"	f
+main	.\violentPython\5\3-hotelSniff.py	/^def main():$/;"	f
+main	.\violentPython\5\4-googleSniff.py	/^def main():$/;"	f
+main	.\violentPython\5\5-ftpSniff.py	/^def main():$/;"	f
+main	.\violentPython\5\7-uavSniff.py	/^def main():$/;"	f
+main	.\violentPython\5\8-fireCatcher.py	/^def main():$/;"	f
+main	.\violentPython\6\10-sendSpam.py	/^def main():$/;"	f
+main	.\violentPython\6\6-linkParser.py	/^def main():$/;"	f
+main	.\violentPython\6\7-imageMirror.py	/^def main():$/;"	f
+main	.\violentPython\6\8-anonGoogle.py	/^def main():$/;"	f
+main	.\violentPython\6\9-twitterGeo.py	/^def main():$/;"	f
+main	.\violentPython\6\9-twitterInterests.py	/^def main():$/;"	f
+main	.\violentPython\7\2-virusCheck.py	/^def main():$/;"	f
+main	.\webCheck.py	/^def main():$/;"	f
+makeChecksum	.\start_pythonHacking\TCP SYN Flood.py	/^def makeChecksum(msg):                                                #(1)$/;"	f
+makeChecksum	.\tcpSynFlood.py	/^def makeChecksum(msg):$/;"	f
+makeFile	.\start_pythonHacking\파일 다루기.py	/^def makeFile(fileName, message, mode):$/;"	f
+makeIPHeader	.\start_pythonHacking\TCP SYN Flood.py	/^def makeIPHeader(sourceIP, destIP):                                   #(2)$/;"	f
+makeIPHeader	.\tcpSynFlood.py	/^def makeIPHeader(sourceIP, destIP):                                   #(2)$/;"	f
+makeMove	.\pygame\inventwithpython2\flippy.py	/^def makeMove(board, tile, xstart, ystart, realMove=False):$/;"	f
+makeMove	.\pygame\inventwithpython2\fourinarow.py	/^def makeMove(board, player, column):$/;"	f
+makeMove	.\pygame\inventwithpython2\slidepuzzle.py	/^def makeMove(board, move):$/;"	f
+makeMove	.\pygame\inventwithpython2\starpusher.py	/^def makeMove(mapObj, gameStateObj, playerMoveTo):$/;"	f
+makeMove	.\pygame\inventwithpython\AISim1.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\pygame\inventwithpython\AISim2.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\pygame\inventwithpython\AISim3.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\pygame\inventwithpython\reversi.py	/^def makeMove(board, tile, xstart, ystart):$/;"	f
+makeMove	.\pygame\inventwithpython\sonar.py	/^def makeMove(board, chests, x, y):$/;"	f
+makeMove	.\pygame\inventwithpython\tictactoe.py	/^def makeMove(board, letter, move):$/;"	f
+makeNewGrass	.\pygame\inventwithpython2\squirrel.py	/^def makeNewGrass(camerax, cameray):$/;"	f
+makeNewSquirrel	.\pygame\inventwithpython2\squirrel.py	/^def makeNewSquirrel(camerax, cameray):$/;"	f
+makeTCPHeader	.\start_pythonHacking\TCP SYN Flood.py	/^def makeTCPHeader(port, icheckSum="none"):                            #(4)$/;"	f
+makeTCPHeader	.\tcpSynFlood.py	/^def makeTCPHeader(port, icheckSum="none"):                            #(4)$/;"	f
+makeText	.\pygame\inventwithpython2\slidepuzzle.py	/^def makeText(text, color, bgcolor, top, left):$/;"	f
+makeTextObjs	.\pygame\inventwithpython2\pentomino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\pygame\inventwithpython2\tetromino.py	/^def makeTextObjs(text, font, color):$/;"	f
+makeTextObjs	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def makeTextObjs(text, font, color):$/;"	f
+maybe_download	.\mnistDataTraining.py	/^def maybe_download(filename, work_directory):$/;"	f
+method	.\140611_2.py	/^		@classmethod$/;"	c	class:Times
+mirrorImages	.\violentPython\6\7-imageMirror.py	/^def mirrorImages(url, dir):$/;"	f
+monitor_debugger	.\file_fuzzer.py	/^    def monitor_debugger(self):$/;"	m	class:file_fuzzer
+monitor_debugger	.\pyhacking_programming\file_fuzzer.py	/^    def monitor_debugger(self):$/;"	m	class:file_fuzzer
+monitor_debugger	.\snapshot.py	/^    def monitor_debugger(self):$/;"	m	class:snapshotter
+moveGems	.\pygame\inventwithpython2\gemgem.py	/^def moveGems(board, movingGems):$/;"	f
+mul	.\140611_2.py	/^		def mul(cls,x):$/;"	m	class:Times
+mutate	.\fuzzertest.py	/^def mutate(data, n = 20):$/;"	f
+mutate	.\machineLearning\opt_yang.py	/^  def mutate(vec):$/;"	f	function:geneticoptimize
+mutate	.\machineLearning\opt_yang2.py	/^  def mutate(vec):$/;"	f	function:geneticoptimize
+mutate	.\pyhacking_programming\ioctl_fuzzer.py	/^    def mutate( self, inbuffer_size ):$/;"	m	class:ioctl_hook
+mutate	.\test.py	/^  def mutate(vec):$/;"	f	function:geneticoptimize
+mutate_file	.\file_fuzzer.py	/^    def mutate_file(self):$/;"	m	class:file_fuzzer
+mutate_file	.\pyhacking_programming\file_fuzzer.py	/^    def mutate_file( self ):$/;"	m	class:file_fuzzer
+mutated	.\ioctl_fuzzer.py	/^    def mutated(self,inbuffer_size):$/;"	m	class:ioctl_hook
+n	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def n(bb, ee):$/;"	f
+negative_log_likelihood	.\machine_learning.py	/^    def negative_log_likelihood(self, y):$/;"	m	class:LogisticRegression
+next_batch	.\mnistDataTraining.py	/^  def next_batch(self, batch_size, fake_data=False):$/;"	m	class:DataSet
+nmapHostFinder	.\edward.py	/^def nmapHostFinder():$/;"	f
+nmapScan	.\nmapScan.py	/^def nmapScan(Host, Port):$/;"	f
+nmapScan	.\violentPython\2\2-nmapScan.py	/^def nmapScan(tgtHost,tgtPort):$/;"	f
+nmapScan	.\violentPython\2\tonis_nmap.py	/^def nmapScan(tgtHost,tgtPort):$/;"	f
+notify	.\file_fuzzer.py	/^    def notify(self):$/;"	m	class:file_fuzzer
+notify	.\pyhacking_programming\file_fuzzer.py	/^    def notify(self):$/;"	m	class:file_fuzzer
+now	.\140611_2.py	/^		def now( ):$/;"	m	class:Date
+nqueen	.\algorithms_ed\n_queen.py	/^def nqueen(sol, N):$/;"	f
+num_examples	.\mnistDataTraining.py	/^  def num_examples(self):$/;"	m	class:DataSet
+o	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def o(bbb, cc):$/;"	f
+openFile	.\start_pythonHacking\파일 다루기.py	/^def openFile(fileName):$/;"	f
+open_process	.\my_debugger.py	/^    def open_process(self,pid):$/;"	m	class:debugger
+open_process	.\pyhacking_programming\my_debugger.py	/^    def open_process(self,pid):$/;"	m	class:debugger
+open_thread	.\my_debugger.py	/^    def open_thread(self,thread_id):$/;"	m	class:debugger
+open_thread	.\pyhacking_programming\my_debugger.py	/^    def open_thread (self, thread_id):$/;"	m	class:debugger
+p	.\aslr.py	/^def p(x):$/;"	f
+p	.\bruteforce.py	/^def p(x):$/;"	f
+p	.\leak.py	/^def p(x):$/;"	f
+p	.\pwn.py	/^def p(x):$/;"	f
+p	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def p(bbb, ff):$/;"	f
+para	.\headfirst_python\chapter7\page262.py	/^def para(para_text):$/;"	f
+para	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+para	.\headfirst_python\chapter9\page333.py	/^def para(para_text):$/;"	f
+para	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+para	.\headfirst_python\webapp\cgi-bin\yate.py	/^def para(para_text):$/;"	f
+perimeter	.\140611_property.py	/^    def perimeter(self):$/;"	m	class:Circle
+pktPrint	.\violentPython\5\1-testSniff.py	/^def pktPrint(pkt):$/;"	f
+playAgain	.\pygame\inventwithpython\AISim1.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\AISim2.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\AISim3.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\bagels.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\hangman.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\reversi.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\sonar.py	/^def playAgain():$/;"	f
+playAgain	.\pygame\inventwithpython\tictactoe.py	/^def playAgain():$/;"	f
+playerHasHitBaddie	.\pygame\inventwithpython\dodger.py	/^def playerHasHitBaddie(playerRect, baddies):$/;"	f
+plotIPs	.\violentPython\4\4-googleEarthPcap.py	/^def plotIPs(pcap):$/;"	f
+portScan	.\portScan.py	/^def portScan(tgtHost, tgtPorts):$/;"	f
+portScan	.\violentPython\2\1-portScan.py	/^def portScan(tgtHost, tgtPorts):$/;"	f
+portScan	.\violentPython\2\tonis_portscan.py	/^def portScan(tgtHost,tgtPorts):$/;"	f
+post	.\headfirst_python\chapter10\page417.py	/^    def post(self): $/;"	m	class:SightingInputPage
+post	.\headfirst_python\chapter10\page425.py	/^    def post(self): $/;"	m	class:SightingInputPage
+post	.\headfirst_python\chapter10\webapp-chapter10-hfwwg\webapp-chapter10-hfwwg\hfwwg.py	/^    def post(self): $/;"	m	class:SightingInputPage
+printCallLog	.\violentPython\3\5-skypeParse.py	/^def printCallLog(skypeDB):$/;"	f
+printCallLog	.\violentPython\3\tonis_skype.py	/^def printCallLog(skypeDB):$/;"	f
+printContacts	.\violentPython\3\5-skypeParse.py	/^def printContacts(skypeDB):$/;"	f
+printContacts	.\violentPython\3\tonis_skype.py	/^def printContacts(skypeDB):$/;"	f
+printCookies	.\violentPython\3\6-firefoxParse.py	/^def printCookies(cookiesDB):$/;"	f
+printCookies	.\violentPython\3\tonis_firefox.py	/^def printCookies(cookiesDB):$/;"	f
+printCookies	.\violentPython\6\4-printCookies.py	/^def printCookies(url):$/;"	f
+printDownloads	.\violentPython\3\6-firefoxParse.py	/^def printDownloads(downloadDB):$/;"	f
+printDownloads	.\violentPython\3\tonis_firefox.py	/^def printDownloads(downloadDB):$/;"	f
+printGoogle	.\violentPython\3\6-firefoxParse.py	/^def printGoogle(placesDB):$/;"	f
+printGoogle	.\violentPython\3\tonis_firefox.py	/^def printGoogle(placesDB):$/;"	f
+printHero	.\start_pythonHacking\클래스의 생성.py	/^    def printHero(self):                                         #(4)$/;"	m	class:Hero
+printHistory	.\violentPython\3\6-firefoxParse.py	/^def printHistory(placesDB):$/;"	f
+printHistory	.\violentPython\3\tonis_firefox.py	/^def printHistory(placesDB):$/;"	f
+printItem	.\start_pythonHacking\modHero.py	/^def printItem(inSkill, idx=0):                        #(2)$/;"	f
+printItem	.\start_pythonHacking\사용자 정의 함수.py	/^def printItem(inSkill, idx=0):                             #(1)$/;"	f
+printLinks	.\linkParser.py	/^def printLinks(url):$/;"	f
+printLinks	.\violentPython\6\6-linkParser.py	/^def printLinks(url):$/;"	f
+printMessage	.\violentPython\3\7-iphoneMessages.py	/^def printMessage(msgDB):$/;"	f
+printMessages	.\violentPython\3\5-skypeParse.py	/^def printMessages(skypeDB):$/;"	f
+printMessages	.\violentPython\3\tonis_skype.py	/^def printMessages(skypeDB):$/;"	f
+printMeta	.\pdfRead.py	/^def printMeta(fileName):$/;"	f
+printMeta	.\violentPython\3\3-pdfRead.py	/^def printMeta(fileName):$/;"	f
+printMeta	.\violentPython\3\tonis_metadata.py	/^def printMeta(fileName):$/;"	f
+printNets	.\violentPython\3\1-discoverNetworks.py	/^def printNets(username, password):$/;"	f
+printNets	.\violentPython\3\tonis_discovernetwork.py	/^def printNets():$/;"	f
+printNets	.\violentPython\3\tonis_wigle.py	/^def printNets(username,password):$/;"	f
+printPcap	.\violentPython\4\2-printDirection.py	/^def printPcap(pcap):$/;"	f
+printPcap	.\violentPython\4\3-geoPrint.py	/^def printPcap(pcap):$/;"	f
+printProfile	.\violentPython\3\5-skypeParse.py	/^def printProfile(skypeDB):$/;"	f
+printProfile	.\violentPython\3\tonis_skype.py	/^def printProfile(skypeDB):$/;"	f
+printRecord	.\printGeo.py	/^def printRecord(target):$/;"	f
+printRecord	.\violentPython\4\1-geoIP.py	/^def printRecord(tgt):$/;"	f
+printResults	.\violentPython\7\2-virusCheck.py	/^def printResults(url):$/;"	f
+printSkill	.\start_pythonHacking\클래스의 생성.py	/^    def printSkill(self):$/;"	m	class:MyHero
+print_lol	.\headfirst_python\chapter1\page65.py	/^def print_lol(a_list):$/;"	f
+print_lol	.\headfirst_python\chapter2\page103.py	/^def print_lol(a_list, indent=True, level=0):$/;"	f
+print_lol	.\headfirst_python\chapter2\page73.py	/^def print_lol(the_list):$/;"	f
+print_lol	.\headfirst_python\chapter2\page94.py	/^def print_lol(a_list, level=0):$/;"	f
+print_lol	.\headfirst_python\chapter4\page163.py	/^def print_lol(the_list, indent=False, level=0, fh=sys.stdout):$/;"	f
+print_usage	.\file_fuzzer.py	/^def print_usage():$/;"	f
+print_usage	.\pyhacking_programming\file_fuzzer.py	/^def print_usage():$/;"	f
+printf_randomizer	.\printf_random.py	/^def printf_randomizer(dbg):$/;"	f
+printf_randomizer	.\pyhacking_programming\printf_random.py	/^def printf_randomizer(dbg):$/;"	f
+printsolution	.\machineLearning\opt_yang2.py	/^def printsolution(vec):$/;"	f
+pullDownAllGems	.\pygame\inventwithpython2\gemgem.py	/^def pullDownAllGems(board):$/;"	f
+put_to_store	.\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\headfirst_python\chapter7\page259.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+put_to_store	.\headfirst_python\webapp\cgi-bin\athletemodel.py	/^def put_to_store(files_list):$/;"	f
+query_twitter	.\violentPython\6\9-twitterRecon.py	/^    def query_twitter(self, query):$/;"	m	class:reconPerson
+radio_button	.\headfirst_python\chapter7\page262.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\headfirst_python\chapter9\page333.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button	.\headfirst_python\webapp\cgi-bin\yate.py	/^def radio_button(rb_name, rb_value):$/;"	f
+radio_button_id	.\headfirst_python\chapter9\page333.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+radio_button_id	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+radio_button_id	.\headfirst_python\webapp\cgi-bin\yate.py	/^def radio_button_id(rb_name, rb_value, rb_id):$/;"	f
+readLevelsFile	.\pygame\inventwithpython2\starpusher.py	/^def readLevelsFile(filename):$/;"	f
+read_data_sets	.\mnistDataTraining.py	/^def read_data_sets(train_dir, fake_data=False, one_hot=False):$/;"	f
+read_process_memory	.\pyhacking_programming\my_debugger.py	/^    def read_process_memory(self,address,length):$/;"	m	class:debugger
+reconPerson	.\violentPython\6\9-twitterClass.py	/^class reconPerson:$/;"	c
+reconPerson	.\violentPython\6\9-twitterRecon.py	/^class reconPerson:$/;"	c
+reconPerson	.\violentPython\6\twitterClass.py	/^class reconPerson:$/;"	c
+removeCompleteLines	.\pygame\inventwithpython2\pentomino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\pygame\inventwithpython2\tetromino.py	/^def removeCompleteLines(board):$/;"	f
+removeCompleteLines	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def removeCompleteLines(board):$/;"	f
+replaceString	.\150130_apihooking.py	/^def replaceString(dbg, args):                                #(1)$/;"	f
+replaceString	.\start_pythonHacking\APIHooking.py	/^def replaceString(dbg, args):                                #(1)$/;"	f
+resetAnimation	.\pygame\inventwithpython2\slidepuzzle.py	/^def resetAnimation(board, allMoves):$/;"	f
+resetBoard	.\pygame\inventwithpython2\flippy.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\pygame\inventwithpython\AISim1.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\pygame\inventwithpython\AISim2.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\pygame\inventwithpython\AISim3.py	/^def resetBoard(board):$/;"	f
+resetBoard	.\pygame\inventwithpython\reversi.py	/^def resetBoard(board):$/;"	f
+retBanner	.\ftp_scanner.py	/^def retBanner(ip, port):$/;"	f
+retBanner	.\violentPython\1\1-vulnScanner.py	/^def retBanner(ip, port):$/;"	f
+retBtAddr	.\violentPython\5\10-iphoneFinder.py	/^def retBtAddr(addr):$/;"	f
+retGeoStr	.\violentPython\4\3-geoPrint.py	/^def retGeoStr(ip):$/;"	f
+retKML	.\violentPython\4\4-googleEarthPcap.py	/^def retKML(ip):$/;"	f
+ret_handler	.\pyhacking_programming\addnum_function_call.py	/^def ret_handler(emu, address):$/;"	f
+ret_path	.\machineLearning\opt_yang.py	/^def ret_path(sol , start=start , end=end):$/;"	f
+ret_path	.\test.py	/^def ret_path(sol, start=start, end=end):$/;"	f
+returnDefault	.\violentPython\2\4-defaultPages.py	/^def returnDefault(ftp):$/;"	f
+returnDefault	.\violentPython\2\4-massCompromise.py	/^def returnDefault(ftp):$/;"	f
+returnDefault	.\violentPython\2\tonis_ftp3.py	/^def returnDefault(ftp):$/;"	f
+returnDir	.\violentPython\3\2-dumpRecycleBin.py	/^def returnDir():$/;"	f
+returnDir	.\violentPython\3\tonis_recycle.py	/^def returnDir():$/;"	f
+revealBoxesAnimation	.\memoryPuzzle.py	/^def revealBoxesAnimation(board, boxesToReveal):$/;"	f
+revealBoxesAnimation	.\pygame\inventwithpython2\memorypuzzle.py	/^def revealBoxesAnimation(board, boxesToReveal):$/;"	f
+rfcommCon	.\violentPython\5\11-rfcommScan.py	/^def rfcommCon(addr, port):$/;"	f
+run	.\ioctl_fuzzer.py	/^    def run(self,regs):$/;"	m	class:ioctl_hook
+run	.\my_debugger.py	/^    def run(self):$/;"	m	class:debugger
+run	.\pyhacking_programming\ioctl_fuzzer.py	/^    def run( self, regs ):$/;"	m	class:ioctl_hook
+run	.\pyhacking_programming\my_debugger.py	/^    def run(self):$/;"	m	class:debugger
+run	.\violentPython\5720.py	/^	def run(self):$/;"	m	class:Connection
+run	.\violentPython\5\7-uavSniff.py	/^    def run(self):$/;"	m	class:interceptThread
+runGame	.\pygame\inventwithpython2\flippy.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\fourinarow.py	/^def runGame(isFirstGame):$/;"	f
+runGame	.\pygame\inventwithpython2\gemgem.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\pentomino.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\squirrel.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\tetromino.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def runGame():$/;"	f
+runGame	.\pygame\inventwithpython2\wormy.py	/^def runGame():$/;"	f
+runLevel	.\pygame\inventwithpython2\starpusher.py	/^def runLevel(levels, levelNum):$/;"	f
+s	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def s(bbb, bb, ee):$/;"	f
+sanitize	.\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\headfirst_python\chapter5\page185.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter5\page187.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter5\page193.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter5\page197.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter5\page203.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter5\page205.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter6\page211.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter6\page217.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter6\page222.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter6\page231.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter6\page245.py	/^def sanitize(time_string):$/;"	f
+sanitize	.\headfirst_python\chapter7\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\headfirst_python\chapter8\page321.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+sanitize	.\headfirst_python\webapp\cgi-bin\athletelist.py	/^    def sanitize(time_string):$/;"	m	class:AthleteList
+save_params	.\machine_learning.py	/^def save_params(param1,param2,param3,param4):  $/;"	f
+save_test_case	.\ioctl_fuzzer.py	/^    def save_test_case(self,ioctl_code,inbuffer_size,in_buffer,mutated_buffer):$/;"	m	class:ioctl_hook
+save_test_case	.\pyhacking_programming\ioctl_fuzzer.py	/^    def save_test_case( self, ioctl_code, in_buffer, mutated_buffer ):$/;"	m	class:ioctl_hook
+scanTest	.\violentPython\4\10-idsFoil.py	/^def scanTest(src, dst, iface, count):$/;"	f
+sdpBrowse	.\violentPython\5\12-sdpScan.py	/^def sdpBrowse(addr):$/;"	f
+secs2time	.\headfirst_python\chapter11\find_it.py	/^def secs2time(seconds):$/;"	f
+secs2time	.\headfirst_python\chapter11\page454.py	/^def secs2time(seconds):$/;"	f
+secs2time	.\headfirst_python\chapter11\tm2secs2tm.py	/^def secs2time(seconds):$/;"	f
+sendMail	.\violentPython\6\10-sendMail.py	/^def sendMail(user,pwd,to,subject,text):$/;"	f
+sendMail	.\violentPython\6\10-sendSpam.py	/^def sendMail(user,pwd,to,subject,text):$/;"	f
+send_command	.\violentPython\2\3-botNet.py	/^    def send_command(self, cmd):$/;"	m	class:Client
+send_command	.\violentPython\2\3-pxsshCommand.py	/^def send_command(s, cmd):$/;"	f
+send_command	.\violentPython\2\3-sshCommand.py	/^def send_command(child, cmd):$/;"	f
+send_command	.\violentPython\2\tonis_botnet.py	/^	def send_command(self,cmd):$/;"	m	class:Client
+send_command	.\violentPython\2\tonis_sshd.py	/^def send_command(child,cmd):$/;"	f
+send_command	.\violentPython\2\tonis_sshd2.py	/^def send_command(s,cmd):$/;"	f
+send_gmail	.\fileFuzzer.py	/^def send_gmail(gmail_id, gmail_pass, to, subject , body):$/;"	f
+send_to_server	.\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\get2inputsapp.py	/^def send_to_server(url,post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter8\page311.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter8\page315.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter8\webapp-chapter8\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter9\page341.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter9\page381.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter9\webapp-chapter9\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\chapter9\webapp-chapter9\get2inputsapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\webapp\coachapp.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\webapp\coachapp_sqlite3.py	/^def send_to_server(url, post_data=None):$/;"	f
+send_to_server	.\headfirst_python\webapp\get2inputsapp.py	/^def send_to_server(url,post_data=None):$/;"	f
+setupHandler	.\conficker.py	/^def setupHandler (configFile, lhost, lport ):$/;"	f
+setupHandler	.\violentPython\2\5-conficker.py	/^def setupHandler(configFile, lhost, lport):$/;"	f
+setupHandler	.\violentPython\2\tonis_conficker.py	/^def setupHandler(configFile,lhost,lport):$/;"	f
+shared_dataset	.\machine_learning.py	/^    def shared_dataset(data_x, data_y, borrow=True):$/;"	f	function:load_data
+showGameOverScreen	.\pygame\inventwithpython2\wormy.py	/^def showGameOverScreen():$/;"	f
+showInstructions	.\pygame\inventwithpython\sonar.py	/^def showInstructions():$/;"	f
+showPoints	.\pygame\inventwithpython\AISim1.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\pygame\inventwithpython\AISim2.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\pygame\inventwithpython\AISim3.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showPoints	.\pygame\inventwithpython\reversi.py	/^def showPoints(playerTile, computerTile):$/;"	f
+showSettingsScreen	.\pygame\inventwithpython2\inkspill.py	/^def showSettingsScreen():$/;"	f
+showStartScreen	.\pygame\inventwithpython2\wormy.py	/^def showStartScreen():$/;"	f
+showTextScreen	.\pygame\inventwithpython2\pentomino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\pygame\inventwithpython2\tetromino.py	/^def showTextScreen(text):$/;"	f
+showTextScreen	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def showTextScreen(text):$/;"	f
+showresult	.\pyhacking_programming\hippie_easy.py	/^def showresult(imm, a, rtlallocate, extra = ""):$/;"	f
+sid2user	.\violentPython\3\2-dumpRecycleBin.py	/^def sid2user(sid):$/;"	f
+sid2user	.\violentPython\3\tonis_recycle.py	/^def sid2user(sid):$/;"	f
+single_step_amder	.\danger_track.py	/^def single_step_amder(dbg):$/;"	f
+slideAnimation	.\pygame\inventwithpython2\slidepuzzle.py	/^def slideAnimation(board, direction, message, animationSpeed):$/;"	f
+smbBrute	.\conficker.py	/^def smbBrute(configFile, tHost, passwdFile, lhost, lport ):$/;"	f
+smbBrute	.\violentPython\2\5-conficker.py	/^def smbBrute(configFile,tgtHost,passwdFile,lhost,lport):$/;"	f
+smbBrute	.\violentPython\2\tonis_conficker.py	/^def smbBrute(configFile,tgtHost,passwdFile,lhost,lport):$/;"	f
+snapshotter	.\snapshot.py	/^class snapshotter(object):$/;"	c
+sniffDot11	.\violentPython\5\6-sniffHidden.py	/^def sniffDot11(p):$/;"	f
+sniffProbe	.\violentPython\5\6-sniffProbe.py	/^def sniffProbe(p):$/;"	f
+solveODE	.\edward.py	/^def solveODE(a, b):$/;"	f
+solveODEusingRK4	.\numpygame1.py	/^def solveODEusingRK4(t, x, v):$/;"	f
+solveSimultaneousEq	.\edward.py	/^def solveSimultaneousEq(a,b,c,d,e,f):$/;"	f
+splitIntoGroupOf	.\memoryPuzzle.py	/^def splitIntoGroupOf(groupSize, theList):$/;"	f
+splitIntoGroupsOf	.\pygame\inventwithpython2\memorypuzzle.py	/^def splitIntoGroupsOf(groupSize, theList):$/;"	f
+spoofConn	.\violentPython\4\9-mitnickAttack.py	/^def spoofConn(src, tgt, ack):$/;"	f
+ssl_sniff	.\firefox_hook.py	/^def ssl_sniff(dbg,args):$/;"	f
+ssl_sniff	.\pyhacking_programming\firefox_hook.py	/^def ssl_sniff( dbg, args ):$/;"	f
+startGameAnimation	.\memoryPuzzle.py	/^def startGameAnimation(board):$/;"	f
+startGameAnimation	.\pygame\inventwithpython2\memorypuzzle.py	/^def startGameAnimation(board):$/;"	f
+startKeyLog	.\150130_hook.py	/^def startKeyLog():                                                                 #(8)$/;"	f
+startKeyLog	.\start_pythonHacking\MessageHooking.py	/^def startKeyLog():$/;"	f
+startScreen	.\pygame\inventwithpython2\starpusher.py	/^def startScreen():$/;"	f
+start_debugger	.\file_fuzzer.py	/^    def start_debugger(self):$/;"	m	class:file_fuzzer
+start_debugger	.\pyhacking_programming\file_fuzzer.py	/^    def start_debugger(self):$/;"	m	class:file_fuzzer
+start_debugger	.\snapshot.py	/^    def start_debugger(self):$/;"	m	class:snapshotter
+start_form	.\headfirst_python\chapter7\page262.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\headfirst_python\chapter9\page333.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_form	.\headfirst_python\webapp\cgi-bin\yate.py	/^def start_form(the_url, form_type="POST"):$/;"	f
+start_response	.\headfirst_python\chapter7\page262.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\headfirst_python\chapter9\page333.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+start_response	.\headfirst_python\webapp\cgi-bin\yate.py	/^def start_response(resp="text\/html"):$/;"	f
+status_update	.\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter11\page464.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter8\page311.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter8\page315.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter8\webapp-chapter8\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter9\page381.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\chapter9\webapp-chapter9\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\webapp\coachapp.py	/^def status_update(msg, how_long=2):$/;"	f
+status_update	.\headfirst_python\webapp\coachapp_sqlite3.py	/^def status_update(msg, how_long=2):$/;"	f
+synFlood	.\violentPython\4\9-mitnickAttack.py	/^def synFlood(src, tgt):$/;"	f
+t	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def t(vv, uu):$/;"	f
+takeoff	.\violentPython\5\7-uavSniff.py	/^    def takeoff(self):$/;"	m	class:interceptThread
+terminate	.\pygame\inventwithpython2\pentomino.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\simulate.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\slidepuzzle.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\squirrel.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\starpusher.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\tetromino.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\tetrominoforidiots.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython2\wormy.py	/^def terminate():$/;"	f
+terminate	.\pygame\inventwithpython\dodger.py	/^def terminate():$/;"	f
+testForExif	.\exifFetch.py	/^def testForExif (imgFileName):$/;"	f
+testForExif	.\violentPython\3\4-exifFetch.py	/^def testForExif(imgFileName):$/;"	f
+testForExif	.\violentPython\3\tonis_beautifulsoup.py	/^def testForExif(imgFileName):$/;"	f
+testPass	.\violentPython\1\2-passwdCrack.py	/^def testPass(cryptPass):$/;"	f
+testProxy	.\violentPython\6\2-proxyTest.py	/^def testProxy(url, proxy):$/;"	f
+testTTL	.\violentPython\4\6-spoofDetect.py	/^def testTTL(pkt):$/;"	f
+testUserAgent	.\violentPython\6\3-userAgentTest.py	/^def testUserAgent(url, userAgent):$/;"	f
+time2secs	.\headfirst_python\chapter11\find_it.py	/^def time2secs(time_string):$/;"	f
+time2secs	.\headfirst_python\chapter11\page454.py	/^def time2secs(time_string):$/;"	f
+time2secs	.\headfirst_python\chapter11\tm2secs2tm.py	/^def time2secs(time_string):$/;"	f
+tomorrow	.\140611_2.py	/^		def tomorrow( ):$/;"	m	class:Date
+top3	.\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\chapter6\page231.py	/^    def top3(self):$/;"	m	class:Athlete
+top3	.\headfirst_python\chapter6\page245.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\chapter7\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\chapter8\page321.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+top3	.\headfirst_python\webapp\cgi-bin\athletelist.py	/^    def top3(self):$/;"	m	class:AthleteList
+train	.\kmeans.py	/^	def train(self, inputs):$/;"	m	class:KMeans
+translateBoardToPixelCoord	.\pygame\inventwithpython2\flippy.py	/^def translateBoardToPixelCoord(x, y):$/;"	f
+twitter_locate	.\violentPython\6\9-twitterClass.py	/^    def twitter_locate(self, cityFile):$/;"	m	class:reconPerson
+twitter_locate	.\violentPython\6\9-twitterGeo.py	/^def twitter_locate(tweets,cities):$/;"	f
+twitter_locate	.\violentPython\6\twitterClass.py	/^    def twitter_locate(self, cityFile):$/;"	m	class:reconPerson
+u	.\aslr.py	/^def u(x):$/;"	f
+u	.\bruteforce.py	/^def u(x):$/;"	f
+u	.\leak.py	/^def u(x):$/;"	f
+u	.\pwn.py	/^def u(x):$/;"	f
+u_list	.\headfirst_python\chapter7\page262.py	/^def u_list(items):$/;"	f
+u_list	.\headfirst_python\chapter8\webapp-chapter8\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+u_list	.\headfirst_python\chapter9\page333.py	/^def u_list(items):$/;"	f
+u_list	.\headfirst_python\chapter9\webapp-chapter9\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+u_list	.\headfirst_python\webapp\cgi-bin\yate.py	/^def u_list(items):$/;"	f
+uninstallHookProc	.\150130_hook.py	/^    def uninstallHookProc(self):                                                  #(5)$/;"	m	class:KeyLogger
+uninstallHookProc	.\start_pythonHacking\MessageHooking.py	/^    def uninstallHookProc(self):                                                  #(5)$/;"	m	class:KeyLogger
+update	.\numplt3.py	/^def update(val):$/;"	f
+uploadFile	.\violentPython\7\2-virusCheck.py	/^def uploadFile(fileName):$/;"	f
+usage	.\hash_calc.py	/^def usage( ):$/;"	f
+val2addr	.\violentPython\3\1-discoverNetworks.py	/^def val2addr(val):$/;"	f
+val2addr	.\violentPython\3\tonis_discovernetwork.py	/^def val2addr(val):$/;"	f
+val2addr	.\violentPython\3\tonis_wigle.py	/^def val2addr(val):$/;"	f
+viewPage	.\violentPython\6\1-viewPage.py	/^def viewPage(url):$/;"	f
+virtualprotect	.\pyhacking_programming\upx_unpacker.py	/^def virtualprotect(name, address):$/;"	f
+virtualprotect	.\upx_unpacker.py	/^def virtualprotect(name,address):$/;"	f
+w	.\pygame\inventwithpython2\memorypuzzle_obfuscated.py	/^def w(ss, tt, bb, ee):$/;"	f
+waitForPlayerToPressKey	.\pygame\inventwithpython\dodger.py	/^def waitForPlayerToPressKey():$/;"	f
+whats_the_difference	.\headfirst_python\chapter11\find_it.py	/^    def whats_the_difference(first, second):$/;"	f	function:find_closest
+whats_the_difference	.\headfirst_python\chapter11\page451.py	/^    def whats_the_difference(first, second):$/;"	f	function:find_closest
+whoGoesFirst	.\pygame\inventwithpython\AISim1.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\pygame\inventwithpython\AISim2.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\pygame\inventwithpython\AISim3.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\pygame\inventwithpython\reversi.py	/^def whoGoesFirst():$/;"	f
+whoGoesFirst	.\pygame\inventwithpython\tictactoe.py	/^def whoGoesFirst():$/;"	f
+wifiPrint	.\violentPython\5\10-iphoneFinder.py	/^def wifiPrint(pkt):$/;"	f
+wiglePrint	.\violentPython\3\1-discoverNetworks.py	/^def wiglePrint(username, password, netid):$/;"	f
+wiglePrint	.\violentPython\3\tonis_wigle.py	/^def wiglePrint(username,password,netid):$/;"	f
+withdraw	.\140611.py	/^    def withdraw(self,amt):$/;"	m	class:Account
+write_data	.\pyhacking_programming\injector.py	/^def write_data( data, length ):$/;"	f
+write_process_memory	.\my_debugger.py	/^    def write_process_memory(self,address,data):$/;"	m	class:debugger
+write_process_memory	.\pyhacking_programming\my_debugger.py	/^    def write_process_memory(self,address,data):$/;"	m	class:debugger
+xor	.\advShellcodeEncoding.py	/^def xor(data,key):$/;"	f
+xor	.\simpleShellcodeEncoding.py	/^def xor(data):$/;"	f
