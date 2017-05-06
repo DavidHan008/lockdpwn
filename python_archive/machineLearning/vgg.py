@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> vgg19, 옥스퍼드대 vgg팀이 ILSVRC 2014에서 2등을 했을 때 사용한 CNN
+                        19층 모델 : 14층 Conv + 5개의 Max Pooling 층
+                        3 x 3 의 필터 사용 stride = 1
+
+
+'''
 # Copyright (c) 2015-2017 Anish Athalye. Released under GPLv3.
 
 import tensorflow as tf

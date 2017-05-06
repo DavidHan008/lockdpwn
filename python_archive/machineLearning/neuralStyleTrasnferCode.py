@@ -17,6 +17,7 @@ import scipy.misc
 import math
 from PIL import Image
 
+
 #-------------------------------------------------------------
 def imread(path):
     img = scipy.misc.imread(path).astype(np.float)  # 사진을 처리 하기 전에 float형으로 바꿔준다. (astype(np.float)에서 색반전이 일어난다)
@@ -39,6 +40,7 @@ def _tensor_size(tensor):
     return reduce(mul, (d.value for d in tensor.get_shape()), 1)
 
 
+
 #-------------------------------------------------------------
 # style.jpg :   640 x 507
 # content.jpg : 600 x 309
@@ -59,6 +61,8 @@ plt.axis('off')
 plt.subplot(1, 2, 2)
 plt.imshow(content_img)
 plt.axis('off')
+
+
 
 #-------------------------------------------------------------
 # target_shape = (399, 600, 3)
@@ -97,6 +101,7 @@ shape = (1,) + content.shape
 style_shape = (1,) + style.shape
 
 
+
 #-------------------------------------------------------------
 # 500mb 상당의 파일을 로딩한다
 # classes, layer, normalization 
@@ -122,6 +127,8 @@ for style_layer in STYLE_LAYERS:
     style_layers_weights[style_layer] /= layer_weights_sum
 
 
+
+
 #-------------------------------------------------------------
 # compute content features in feedforward mode
 content_features = {}
@@ -137,6 +144,8 @@ with g.as_default(), g.device('/cpu:0'), tf.Session() as sess:
     for layer in CONTENT_LAYERS:
         #content_features.keys() ==> ['relu4_2','relu5_2']
         content_features[layer] = net[layer].eval(feed_dict={image: content_pre})  # network를 evaluation으로 각 콘텐츠의 feature를 뽑아낸다
+
+
 
 
 #-------------------------------------------------------------
@@ -186,6 +195,7 @@ image = tf.Variable(initial)
 net = vgg.net_preloaded(vgg_weights, image, POOLING)
 
 
+
 #-------------------------------------------------------------
 # content loss     
 # 타겟사진의 특정 컨벌루션 지점에서 추출한 결과(activation map)와 
@@ -204,6 +214,7 @@ for content_layer in CONTENT_LAYERS:
 content_loss += reduce(tf.add, content_losses)
 
 
+
 #-------------------------------------------------------------
 # style loss
 style_loss = 0
@@ -218,6 +229,8 @@ for style_layer in STYLE_LAYERS:
     style_losses.append(style_layers_weights[style_layer] * 2 * tf.nn.l2_loss(gram - style_gram) / style_gram.size)
 
 style_loss += STYLE_WEIGHT * reduce(tf.add, style_losses)
+
+
 
 #-------------------------------------------------------------
 # total variation denoising
@@ -238,6 +251,7 @@ loss = content_loss + style_loss + tv_loss
 train_step = tf.train.AdamOptimizer(LEARNING_RATE, BETA1, BETA2, EPSILON).minimize(loss)
 
 
+
 #-------------------------------------------------------------
 # optimization
 best_loss = float('inf')
@@ -246,7 +260,7 @@ with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     print('Optimization started...')            
     for i in range(ITERATIONS):
-        if i%100 == 0:
+        if i % 100 == 0:
             print('Iteration %4d/%4d' % (i + 1, ITERATIONS))
         train_step.run()
 
@@ -265,5 +279,7 @@ with tf.Session() as sess:
             img_out = vgg.unprocess(best.reshape(shape[1:]), vgg_mean_pixel)
 
 
+
+#-------------------------------------------------------------
 img = np.clip(img_out, 0, 255).astype(np.uint8)
 plt.imshow(img)
