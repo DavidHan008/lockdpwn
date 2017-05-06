@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> violent python, 정규표현과 BeautifulSoup를 사용해 HREF 링크 구문을 찾아본 예제 코드
+    python ==> violent python, 정규표현과 BeautifulSoup를 사용해 html 코드에서 HREF 링크 구문을 찾아본 예제 코드
 '''
 from anonBrowser import *
 from BeautifulSoup import BeautifulSoup

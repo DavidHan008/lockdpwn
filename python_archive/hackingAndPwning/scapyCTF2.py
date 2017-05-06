@@ -6,7 +6,7 @@
 from scapy.all import *
 
 def main():
-	packets = rdpcap('/home/edward/test_ed/cc_archive/ctfContestChallange/book4b_net/scapy_ex2.pcap')
+	packets = rdpcap('D:\\gitrepo\\lockdpwn\\cc_archive\\ctfContestChallange\\book4b_net\\scapy_ex2.pcap')
 
 	flag = ""
 	for p  in packets:

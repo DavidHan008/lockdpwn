@@ -6,14 +6,14 @@
 from scapy.all import *
 
 def main():
-	packets = rdpcap('/home/edward/test_ed/cc_archive/ctfContestChallange/book4b_net/scapy_ex1.pcap')
+    packets = rdpcap('D:\\gitrepo\\lockdpwn\\cc_archive\\ctfContestChallange\\book4b_net\\scapy_ex1.pcap')
 
-	flag = ""
-	for p  in packets:
-		if p['IP'].type == 8:
-			flag += chr(p['ICMP'].id)
+    flag = ""
+    for p  in packets:
+        if p['IP'].type == 8:
+            flag += chr(p['ICMP'].id)
 
-	print flag
+    print flag
 
 
 if __name__ == '__main__':

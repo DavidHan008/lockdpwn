@@ -1,7 +1,7 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> python ~.py newfilename 172.30.1.48 850(bytes 크기) 를 사용해 파일을 전송받는 예제 코드
+	python ==> python receiveICMP.py newfilename 172.30.1.48 850(bytes 크기) 를 사용해 파일을 전송받는 예제 코드
 '''
 import sys
 from scapy.all import *

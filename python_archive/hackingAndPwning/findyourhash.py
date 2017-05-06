@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
 	python ==> 해킹침투코딩 p89, 리눅스에서 passwd 파일을 분석해주는 코드 
 '''

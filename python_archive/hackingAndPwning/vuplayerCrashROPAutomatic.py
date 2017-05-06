@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 윈도우해킹가이드,
+'''
 import struct
 
 p = open("test.m3u", "w")

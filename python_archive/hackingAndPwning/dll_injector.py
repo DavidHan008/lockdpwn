@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> python dll_injector.py 3720 ~.dll 을 입력해서 해당 PID에 dll을 삽입시키는 예제 코드
+                x86 notepad.exe 에서만 동작한다! 
 '''
 import sys
 from ctypes import *

@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
-	python ==> 해킹침투코딩 p78, python [].py [hostname] [port] 로 호스트를 스캔하는 코드 
+	python ==> 해킹침투코딩 p78, python webCheck.py [hostname] [port] 로 호스트를 스캔하는 코드 
 '''
 import httplib, sys
 from optparse import OptionParser

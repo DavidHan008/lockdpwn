@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> my_debugger.py 를 사용해본 예제 코드인듯
+    python ==> my_debugger.py 를 사용해본 예제 코드
+                특정 PID의 레지스터 데이터를 출력한다
 '''
 import my_debugger
 

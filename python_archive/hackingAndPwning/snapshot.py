@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> calc.exe 프로그램을 열어서 스냅샷을 찍어서 복구해보는 예제 코드
+                calc.exe x86 에서만 가능하다
 '''
 from pydbg import *
 from pydbg.defines import *

@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 취약한 함수인 strcpy, strncpy, sprintf, vsprintf의 주소를 찾아주는 코드
+                맨 아래 bp 거는게 계속 에러가 나서 주석처리 했다
+'''
 from pydbg import *
 from pydbg.defines import *
 
@@ -6,7 +12,7 @@ import utils
 MAX_INSTRUCTIONS =10
 
 dangerous_functions = {
-    "strcpy" : " msvcrt.dll",
+    "strcpy" : "msvcrt.dll",
     "strncpy" : "msvcrt.dll",
     "sprintf"  : "msvcrt.dll",
     "vsprintf"  : "msvcrt.dll",
@@ -83,20 +89,19 @@ def single_step_amder(dbg):
             dbg.single_step(True)
     return DBG_CONTINUE
 
-dbg_pydbg()
+dbg = pydbg()
 
 pid = int(raw_input("Enter the PID you wish to monitor: "))
 
 dbg.attach(pid)
 
 for func in dangerous_functions.keys():
-
-    func_address = dbg.func_resolve(dangerous_functions[func],func)
+    func_address = dbg.func_resolve(dangerous_functions[func], func)
     print "[*] Resolved breakpoint : %s - > 0x%08x" % (func,func_address)
-    dbg.bp_set(func_address,handler =danger_handler)
+    #dbg.bp_set(func_address,handler = danger_handler)
     dangerous_functions_resolved[func_address] = func
 
 dbg.set_callback(EXCEPTION_ACCESS_VIOLATION,access_violation_handler)
-dbg.set_callback(EXCEPTION_SINGLE_STEP, single_step_handler)
+#dbg.set_callback(EXCEPTION_SINGLE_STEP, single_step_handler)
 
 dbg.run()
