@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 헤드퍼스트 파이썬, 
+'''
 import cgi
 import os
 import time

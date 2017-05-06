@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> 객체수업시간에 바탕화면에 있는 코드 가져옴 turtle이라는 패키지 사용한다
 '''

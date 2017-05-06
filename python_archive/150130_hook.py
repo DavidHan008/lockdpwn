@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 파이썬해킹입문, ctype를 사용해 win API를 조작하는 예제 코드
+    python ==> 파이썬해킹입문, ctype를 사용해 winAPI를 조작하는 예제 코드
                                 프로세스를 후킹하는듯 하다.
 '''
 import sys

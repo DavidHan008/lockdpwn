@@ -22,4 +22,3 @@ wscript.sleep 2000
 ws.run("screenSaver.scr")
 
 
-

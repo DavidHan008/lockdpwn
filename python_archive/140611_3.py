@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
-# LICENSE http://aslongas.pe.kr
-# This program is free to use but you should remain these comments without modification.
-# Developement Environment
-# 1. Windows XP
-# 2. Python 2.5.1
-# 3. extra module : mechanize
-
+'''
+    python ==> 
+'''
 from mechanize import Browser
 import re
 import os
