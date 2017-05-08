@@ -7,40 +7,42 @@
 #include <iostream>
 
 using namespace std;
+using namespace cv;
 
-cv::Mat function(){
+
+Mat function(){
   // 영상 생성
-  cv::Mat ima(240, 320, CV_8U, cv::Scalar(100));
+  Mat ima(240, 320, CV_8U, Scalar(100));
 
   // 영상 반환
   return ima;
 }
 
 int main(int argc, char *argv[]){
-  cv::Mat image;
+  Mat image;
 
   cout << "size: " << image.size().height << ", "
        << image.size().width << endl;
 
-  image = cv::imread("lenna.jpg");
+  image = imread("lenna.jpg");
 
   if(!image.data)
     return 0;
 
   cout << "size (after reading): "<< image.size().height << ", " << image.size().width << endl;
 
-  cv::namedWindow("Original Image");
-  cv::imshow("Original Image", image);
+  namedWindow("Original Image");
+  imshow("Original Image", image);
 
-  cv::Mat result;
+  Mat result;
 
-  cv::flip(image, result, 1);
+  flip(image, result, 1);
 
-  cv::namedWindow("Output Image");
-  cv::imshow("Output Image", result);
+  namedWindow("Output Image");
+  imshow("Output Image", result);
 
-  cv::waitKey(0);
-  cv::imwrite("output.bmp", result);
+  waitKey(0);
+  imwrite("output.bmp", result);
 
 
   return 0;
