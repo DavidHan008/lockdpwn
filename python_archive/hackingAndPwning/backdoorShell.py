@@ -6,7 +6,7 @@
 import socket
 import sys
 
-host = '172.30.1.36'
+host = '203.246.114.111'
 port = 4444
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind((host,port))
