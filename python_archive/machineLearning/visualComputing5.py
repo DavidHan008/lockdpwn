@@ -4,6 +4,7 @@ import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
+import cv2
 
 #-------------------------------------------------------------------------------
 # train
@@ -56,9 +57,9 @@ for num in range(0,700):
 #-------------------------------------------------------------------------------
 # train_image 배열 데이터를 0 ~ 1 사이로 정규화시키는 함수
 def normalize(v):
-    norm=np.linalg.norm(v)
-    if norm==0: 
-       return v
+    norm = cv2.normalize(v, v, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
+    #if norm == 0: 
+     #  return v
     return v/norm
 
 

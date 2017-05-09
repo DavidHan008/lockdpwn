@@ -197,7 +197,7 @@ sess = tf.Session()
 sess.run(init)
 
 
-# 정답률을 계산한다  yy  vs  y
+# 정답률을 계산한다  y_conv  vs  y
 correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
@@ -206,7 +206,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 for i in range(2000):
 	batch = next_batch(50)
 	# 100번 돌릴 때마다 결과를 확인한다
-	if i%100 == 0:
+	if i % 100 == 0:
 		train_accuracy = sess.run(accuracy,feed_dict={x:batch[0], y:batch[1], keep_prob:1.0})
 
 		print('step', i , 'training_accuracy', train_accuracy)
