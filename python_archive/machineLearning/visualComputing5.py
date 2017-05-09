@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 비주얼컴퓨팅, 프로젝트4 얼굴 사진 55x40 데이터를 700장 사용해 단순 Neural Network를 사용함으로써 예측모델을 만들어본 코드
+                            10000번 반복하니 75% 정도의 예측율을 보여준다
+'''
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -10,53 +16,66 @@ import random
 train_images = []
 tlabels = []
 
+# train Image 데이터 700장을 불러온다
 for num in range(1,701):
     train_images.append(scipy.misc.imread('train_image/train_'+ str(num)+'.bmp'))
 
-
+# train Label 데이터를 불러온다
 with open("train_label.txt") as f:
     line = [line.rstrip() for line in f]
     tlabels.append(line)
 
+# Image 데이터와 Label 데이터를 numpy 데이터로 수정한다
 train_images = np.array(train_images)
 train_images = train_images.reshape(700, 2200, )
 
 tlabels = np.array(tlabels)     # tlabels = (1,700)
 tlabels = tlabels.reshape(700,1)
 
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
 train_labels  = np.array(np.zeros(70000).reshape(700,100))
 for num in range(0,700):
     train_labels[num][int(tlabels[num][0]) - 1] = 1
+
+
+
 
 #-----------------------------------------------------------------
 # test
 test_images = []
 testlabels = []
 
+# test Image 데이터 700장을 불러온다
 for num in range(1,701):
     test_images.append(scipy.misc.imread('test_image/test_'+ str(num)+'.bmp'))
 
-
+# test Label 데이터를 불러온다
 with open("test_label.txt") as f:
     line = [line.rstrip() for line in f]
     testlabels.append(line)
 
-
+# Image 데이터와 Label 데이터를 numpy 데이터로 수정한다
 test_images = np.array(test_images)
 test_images = test_images.reshape(700, 2200, )
 
 testlabels = np.array(testlabels)     # tlabels = (1,700)
 testlabels = testlabels.reshape(700,1)
 
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
 test_labels  = np.array(np.zeros(70000).reshape(700,100))
 for num in range(0,700):
     test_labels[num][int(testlabels[num][0]) - 1] = 1
 
 
-#------------------------------------------------------------------
-
+# 중요! Image 데이터들은 0~255 사이의 값이므로 255로 나눠주면서 정규화를 한다. 학습이 매우 잘된다
 train_images = train_images / 255.
 test_images = test_images / 255.
+
+
+
+#------------------------------------------------------------------
 
 _num_examples = 700
 _index_in_epoch = 0
@@ -64,6 +83,8 @@ _images = train_images
 _labels = train_labels
 _epochs_completed = 0
 
+# batch 연산을 수행하는 함수
+# 호출될 때마다 랜덤으로 batch_size의 (Image, Label) 데이터를 반환한다
 def next_batch(batch_size):
     """Return the next `batch_size` examples from this data set."""
     global _index_in_epoch
@@ -94,9 +115,9 @@ def next_batch(batch_size):
 
 
 
-#-------------------------------------------------------------------------------
+#-----------------------------------------------------------------
 # Tensorflow 코드
-#-------------------------------------------------------------------------------
+#-----------------------------------------------------------------
 
 x = tf.placeholder("float32", [None, 2200]) # mnist data image of shape 55 x 40 = 2200
 y = tf.placeholder("float32", [None, 100]) 
@@ -106,8 +127,6 @@ b = tf.Variable(tf.zeros([100]))
 yy = tf.nn.softmax(tf.matmul(x, W) + b)
 
 
-
-#cost = tf.reduce_mean(-tf.reduce_sum(y * tf.log(cost), reduction_indices = 1))
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=yy))
 
 learning_rate = 0.5
@@ -131,7 +150,7 @@ for epoch in range(trainig_epochs):
 		#print(batch_xs[0])
 		#print(batch_ys[0])
 		sess.run(optimizer, feed_dict={x: batch_xs, y:batch_ys})
-		avg_cost += sess.run(cost, feed_dict={x: batch_xs, y:batch_ys}) / total_batch
+		avg_cost += sess.run(cost, feed_dict={x: batch_xs, y: batch_ys}) / total_batch
 
 	if epoch % display_step == 0:
 		print ("Epoch:", '%04d' % (epoch +1) , "cost=", "{:.9f}".format(avg_cost))
