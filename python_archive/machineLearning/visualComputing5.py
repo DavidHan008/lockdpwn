@@ -54,6 +54,17 @@ for num in range(0,700):
 
 
 #-------------------------------------------------------------------------------
+
+def normalize(v):
+    norm=np.linalg.norm(v)
+    if norm==0: 
+       return v
+    return v/norm
+
+
+train_images = normalize(train_images)
+test_images = normalize(test_images)
+
 _num_examples = 700
 _index_in_epoch = 0
 _images = train_images
@@ -122,8 +133,8 @@ for epoch in range(trainig_epochs):
 
 	for i  in range(total_batch):
 		batch_xs, batch_ys = next_batch(batch_size)
-		print(batch_xs[0])
-		print(batch_ys[0])
+		#print(batch_xs[0])
+		#print(batch_ys[0])
 		sess.run(optimizer, feed_dict={x: batch_xs, y:batch_ys})
 		avg_cost += sess.run(cost, feed_dict={x: batch_xs, y:batch_ys}) / total_batch
 

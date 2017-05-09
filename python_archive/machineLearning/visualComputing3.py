@@ -96,6 +96,8 @@ sess.run(tf.global_variables_initializer())
 # 1000번의 루프를 돌면서 학습을 진행한다
 for _ in range(1000):
 	batch_xs, batch_ys = mnist.train.next_batch(100)
+	print(batch_xs[0])
+	print(batch_ys[0])
 	sess.run(train_step, feed_dict={x_input: batch_xs, y_input: batch_ys})
 
 
