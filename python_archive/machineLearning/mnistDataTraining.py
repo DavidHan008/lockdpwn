@@ -12,7 +12,8 @@ import urllib
 import gzip
 import matplotlib.pyplot as plt
 
-
+# ------------------------------------------------------------------
+# 아래 함수들은 실제로 Tensorflow 코드에서 사용되지 않는다. 어떻게 TF 코드가 작성되었는지 보여주는 예시이다
 SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
 
 def maybe_download(filename, work_directory):
@@ -28,12 +29,14 @@ def maybe_download(filename, work_directory):
 	return filepath
 
 
+
 def _read32(bytestream):
 	dt = numpy.dtype(numpy.uint32).newbyteorder('>')
 	return numpy.frombuffer(bytestream.read(4), dtype =dt)
 
 
-def extract_imagess(filename):
+
+def extract_images(filename):
 	print('Extracintg', filename)
 
 	with gzip.open(filename) as bytestream:
@@ -46,6 +49,8 @@ def extract_imagess(filename):
 		cols = _read32(bytestream)
 		buf = bytestream.read(rows * cols * num_images)
 		data = numpy.frombuffer(buf, dtype=numpy.uint8)
+
+
 
 def dense_to_one_hot(labels_dense, num_classes=10):
   """Convert class labels from scalars to one-hot vectors."""
@@ -122,20 +127,25 @@ class DataSet(object):
       fake_label = 0
       return [fake_image for _ in xrange(batch_size)], [
           fake_label for _ in xrange(batch_size)]
+
     start = self._index_in_epoch
     self._index_in_epoch += batch_size
+
     if self._index_in_epoch > self._num_examples:
       # Finished epoch
       self._epochs_completed += 1
+
       # Shuffle the data
       perm = numpy.arange(self._num_examples)
       numpy.random.shuffle(perm)
       self._images = self._images[perm]
       self._labels = self._labels[perm]
+
       # Start next epoch
       start = 0
       self._index_in_epoch = batch_size
       assert batch_size <= self._num_examples
+
     end = self._index_in_epoch
     return self._images[start:end], self._labels[start:end]
 
@@ -156,7 +166,9 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
   TRAIN_LABELS = 'train-labels-idx1-ubyte.gz'
   TEST_IMAGES = 't10k-images-idx3-ubyte.gz'
   TEST_LABELS = 't10k-labels-idx1-ubyte.gz'
+
   VALIDATION_SIZE = 5000
+
   local_file = maybe_download(TRAIN_IMAGES, train_dir)
   train_images = extract_images(local_file)
   local_file = maybe_download(TRAIN_LABELS, train_dir)
@@ -177,6 +189,11 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
 
 
 
+
+#-------------------------------------------------------------------------------
+# Tensorflow 코드
+#-------------------------------------------------------------------------------
+
 x = tf.placeholder("float", [None, 784]) # mnist data image of shape 28 * 28 = 784
 y = tf.placeholder("float", [None, 10]) # 0-9 digits recognition => 10 classes
 
@@ -196,6 +213,8 @@ sess.run(init)
 trainig_epochs = 25
 display_step = 1
 batch_size = 100
+
+# MNIST 데이터셋을 불러온다
 mnist = input_data.read_data_sets("./MNIST_data", one_hot=True)
 
 # training_epoch 횟수만큼 반복해서 학습한다
@@ -207,18 +226,20 @@ for epoch in range(trainig_epochs):
 		batch_xs, batch_ys = mnist.train.next_batch(batch_size)
 		sess.run(optimizer, feed_dict={x: batch_xs, y:batch_ys})
 		avg_cost += sess.run(cost, feed_dict={x: batch_xs, y:batch_ys}) / total_batch
+
 	if epoch % display_step == 0:
 		print ("Epoch:", '%04d' % (epoch +1) , "cost=", "{:.9f}".format(avg_cost))
 
 print ("Optimization Finished")
 
 
-# 정답률을 계산한다  activation <==> y
+# 정답률을 계산한다  activation  vs  y
 correct_prediction = tf.equal(tf.argmax(activation, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
 print(sess.run(accuracy, feed_dict=
 			   {x: mnist.test.images,
-				y: mnist.test.labels}))
+                            y: mnist.test.labels}))
 
 
 # 임의의 숫자 하나를 출력한 다음 맞혀보는 코드 
