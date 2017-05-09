@@ -4,7 +4,6 @@ import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
-import cv2
 
 #-------------------------------------------------------------------------------
 # train
@@ -29,7 +28,7 @@ train_labels  = np.array(np.zeros(70000).reshape(700,100))
 for num in range(0,700):
     train_labels[num][int(tlabels[num][0]) - 1] = 1
 
-#-------------------------------------------------------------------------------
+#-----------------------------------------------------------------
 # test
 test_images = []
 testlabels = []
@@ -54,17 +53,10 @@ for num in range(0,700):
     test_labels[num][int(testlabels[num][0]) - 1] = 1
 
 
-#-------------------------------------------------------------------------------
-# train_image 배열 데이터를 0 ~ 1 사이로 정규화시키는 함수
-def normalize(v):
-    norm = cv2.normalize(v, v, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
-    #if norm == 0: 
-     #  return v
-    return v/norm
+#------------------------------------------------------------------
 
-
-train_images = normalize(train_images)
-test_images = normalize(test_images)
+train_images = train_images / 255.
+test_images = test_images / 255.
 
 _num_examples = 700
 _index_in_epoch = 0
@@ -157,8 +149,7 @@ print(sess.run(accuracy, feed_dict= {x: test_images, y: test_labels}))
 # 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
 r = random.randint(0, _num_examples -1)
 print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
-print ("Prediction: ", sess.run(tf.argmax(cost, 1), {x:test_images[r:r+1]}))
-
+print ("Prediction: ", sess.run(tf.argmax(yy, 1), {x:test_images[r:r+1]}))
 
 plt.imshow(test_images[r:r+1].reshape(55, 40), cmap='gray', interpolation='nearest')
 plt.show()
