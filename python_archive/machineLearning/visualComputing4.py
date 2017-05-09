@@ -105,15 +105,13 @@ cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_
 # Adam Optimizer 알고리즘을 사용해서 cross_entropy를 최소화한다. 학습율은 1e-4로 한다
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 
+# 세션을 초기화한다
+sess = tf.InteractiveSession()
+sess.run(tf.global_variables_initializer())
 
 # 실제 정답과 예측값이 얼마나 일치하는지를 판단하는 accuray 변수를 정의한다
 corerct_predition = tf.equal(tf.argmax(y_conv, 1) , tf.argmax(y_input, 1))
 accuracy = tf.reduce_mean(tf.cast(corerct_predition, tf.float32))
-
-
-# 세션을 초기화한다
-sess = tf.InteractiveSession()
-sess.run(tf.global_variables_initializer())
 
 
 for i in range(2000):
