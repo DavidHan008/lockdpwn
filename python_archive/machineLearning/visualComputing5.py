@@ -1,85 +1,129 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-import scipy
+import scipy.misc
+import scipy.io
+import random
 
+#-------------------------------------------------------------------------------
+# train
 train_images = []
-train_labels = []
+tlabels = []
 
 for num in range(1,701):
-    train_images.append(scipy.ndimage.imread('train_image/train_'+ str(num)+'.bmp'))
+    train_images.append(scipy.misc.imread('train_image/train_'+ str(num)+'.bmp'))
 
 
-f = open("train_label.txt", 'r')
-
-for line in f.readline():
-    train_labels.append(line)
+with open("train_label.txt") as f:
+    line = [line.rstrip() for line in f]
+    tlabels.append(line)
 
 train_images = np.array(train_images)
-train_labels = np.array(train_labels)
+train_images = train_images.reshape(700, 2200, )
 
-train_images = train_images.rehape(700, 1, 2200)
+tlabels = np.array(tlabels)     # tlabels = (1,700)
+tlabels = tlabels.reshape(700,1)
 
-def next_batch(batch_size, fake_data=False):
+train_labels  = np.array(np.zeros(70000).reshape(700,100))
+for num in range(0,700):
+    train_labels[num][int(tlabels[num][0]) - 1] = 1
+
+#-------------------------------------------------------------------------------
+# test
+test_images = []
+testlabels = []
+
+for num in range(1,701):
+    test_images.append(scipy.misc.imread('test_image/test_'+ str(num)+'.bmp'))
+
+
+with open("test_label.txt") as f:
+    line = [line.rstrip() for line in f]
+    testlabels.append(line)
+
+
+test_images = np.array(test_images)
+test_images = test_images.reshape(700, 2200, )
+
+testlabels = np.array(testlabels)     # tlabels = (1,700)
+testlabels = testlabels.reshape(700,1)
+
+test_labels  = np.array(np.zeros(70000).reshape(700,100))
+for num in range(0,700):
+    test_labels[num][int(testlabels[num][0]) - 1] = 1
+
+
+#-------------------------------------------------------------------------------
+_num_examples = 700
+_index_in_epoch = 0
+_images = train_images
+_labels = train_labels
+_epochs_completed = 0
+
+def next_batch(batch_size):
     """Return the next `batch_size` examples from this data set."""
-    if fake_data:
-      fake_image = [1.0 for _ in xrange(784)]
-      fake_label = 0
-      return [fake_image for _ in xrange(batch_size)], [
-          fake_label for _ in xrange(batch_size)]
+    global _index_in_epoch
+    global _images
+    global _labels
+    global _epochs_completed
 
-    start = self._index_in_epoch
-    self._index_in_epoch += batch_size
+    start = _index_in_epoch
+    _index_in_epoch += batch_size
 
-    if self._index_in_epoch > self._num_examples:
+    if _index_in_epoch > _num_examples:
       # Finished epoch
-      self._epochs_completed += 1
+      _epochs_completed += 1
 
       # Shuffle the data
-      perm = numpy.arange(self._num_examples)
-      numpy.random.shuffle(perm)
-      self._images = self._images[perm]
-      self._labels = self._labels[perm]
+      perm = np.arange(_num_examples)
+      np.random.shuffle(perm)
+      _images = _images[perm]
+      _labels = _labels[perm]
 
       # Start next epoch
       start = 0
-      self._index_in_epoch = batch_size
-      assert batch_size <= self._num_examples
+      _index_in_epoch = batch_size
+      assert batch_size <= _num_examples
 
-    end = self._index_in_epoch
-    return self._images[start:end], self._labels[start:end]
+    end = _index_in_epoch
+    return _images[start:end], _labels[start:end]
+
+
 
 #-------------------------------------------------------------------------------
 # Tensorflow 코드
 #-------------------------------------------------------------------------------
 
-x = tf.placeholder("float", [None, 784]) # mnist data image of shape 28 * 28 = 784
-y = tf.placeholder("float", [None, 10]) # 0-9 digits recognition => 10 classes
+x = tf.placeholder("float32", [None, 2200]) # mnist data image of shape 55 x 40 = 2200
+y = tf.placeholder("float32", [None, 100]) 
 
-W = tf.Variable(tf.zeros([784,10]))
-b = tf.Variable(tf.zeros([10]))
+W = tf.Variable(tf.zeros([2200,100]))
+b = tf.Variable(tf.zeros([100]))
+yy = tf.nn.softmax(tf.matmul(x, W) + b)
 
-learning_rate = 0.1
+#cost = tf.reduce_mean(-tf.reduce_sum(y * tf.log(cost), reduction_indices = 1))
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=yy))
 
-activation = tf.nn.softmax(tf.matmul(x, W) + b)
-cost = tf.reduce_mean(-tf.reduce_sum(y * tf.log(activation), reduction_indices = 1))
+learning_rate = 0.5
 optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
 init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
 
-trainig_epochs = 25
-display_step = 1
-batch_size = 100
+trainig_epochs = 200
+display_step = 50
+batch_size = 50
 
 # training_epoch 횟수만큼 반복해서 학습한다
 for epoch in range(trainig_epochs):
 	avg_cost = 0.
-	total_batch = int(mnist.train.num_examples/batch_size)
+	total_batch = int(_num_examples/batch_size)
 
 	for i  in range(total_batch):
-		batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+		batch_xs, batch_ys = next_batch(batch_size)
+		print(batch_xs[0])
+		print(batch_ys[0])
 		sess.run(optimizer, feed_dict={x: batch_xs, y:batch_ys})
 		avg_cost += sess.run(cost, feed_dict={x: batch_xs, y:batch_ys}) / total_batch
 
@@ -89,21 +133,19 @@ for epoch in range(trainig_epochs):
 print ("Optimization Finished")
 
 
-# 정답률을 계산한다  activation  vs  y
-correct_prediction = tf.equal(tf.argmax(activation, 1), tf.argmax(y, 1))
+# 정답률을 계산한다  yy  vs  y
+correct_prediction = tf.equal(tf.argmax(yy, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-print(sess.run(accuracy, feed_dict=
-			   {x: mnist.test.images,
-                            y: mnist.test.labels}))
+print(sess.run(accuracy, feed_dict= {x: test_images, y: test_labels}))
 
 
-# 임의의 숫자 하나를 출력한 다음 맞혀보는 코드 
-r = random.randint(0, mnist.test.num_examples -1)
-print ("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r+1], 1)))
-print ("Prediction: ", sess.run(tf.argmax(activation, 1), {x:mnist.test.images[r:r+1]}))
+
+# 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
+r = random.randint(0, _num_examples -1)
+print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
+print ("Prediction: ", sess.run(tf.argmax(cost, 1), {x:test_images[r:r+1]}))
 
 
-plt.imshow(mnist.test.images[r:r+1].reshape(28, 28), cmap='Greys', interpolation='nearest')
+plt.imshow(test_images[r:r+1].reshape(55, 40), cmap='gray', interpolation='nearest')
 plt.show()
 

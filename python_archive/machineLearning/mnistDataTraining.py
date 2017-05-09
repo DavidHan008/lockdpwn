@@ -203,7 +203,8 @@ b = tf.Variable(tf.zeros([10]))
 learning_rate = 0.1
 
 activation = tf.nn.softmax(tf.matmul(x, W) + b)
-cost = tf.reduce_mean(-tf.reduce_sum(y * tf.log(activation), reduction_indices = 1))
+#cost = tf.reduce_mean(-tf.reduce_sum(y * tf.log(activation), reduction_indices = 1))
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=activation))
 optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
 init = tf.global_variables_initializer()
@@ -236,10 +237,7 @@ print ("Optimization Finished")
 # 정답률을 계산한다  activation  vs  y
 correct_prediction = tf.equal(tf.argmax(activation, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-print(sess.run(accuracy, feed_dict=
-			   {x: mnist.test.images,
-                            y: mnist.test.labels}))
+print(sess.run(accuracy, feed_dict=  {x: mnist.test.images,  y: mnist.test.labels}))
 
 
 # 임의의 숫자 하나를 출력한 다음 맞혀보는 코드 

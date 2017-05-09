@@ -25,6 +25,8 @@ def printLinks(url):
 
     try:
         print '\n[+] printing links from beautifulsoup'
+        
+        # 아래 명령어로 html 코드를 긁어온다
         soup = BeautifulSoup(html)
         links = soup.findAll(name = 'a')
 
