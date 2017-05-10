@@ -2,7 +2,8 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> 비주얼컴퓨팅, 프로젝트4 얼굴 사진 55x40 데이터를 700장 사용해 Deep Neural Network를 사용함으로써 예측모델을 만들어본 코드
-                             500번 반복하니 96% 정도의 예측율을 보여준다 굳굳
+                             500번 반복하니 96% 정도의 정확도를 보여준다
+                             5000번 반복하니 99.2% 의 정확도를 보여준다 굳굳!!
 '''
 import matplotlib.pyplot as plt
 import numpy as np
