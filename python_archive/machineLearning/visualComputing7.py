@@ -66,7 +66,7 @@ test_images =  test_images / 255.
 
 #-----------------------------------------------------------------
 
-_num_examples ,rows, cols = train_images.shape
+_num_examples, bins = train_images.shape
 # _num_examples : 데이터 갯수
 
 _index_in_epoch = 0   # epoch
@@ -149,7 +149,7 @@ b = tf.Variable(tf.zeros([13]))
 
 
 # 1st conv layer ----------------------
-W_conv1 = weight_variable([8,5,1,32])
+W_conv1 = weight_variable([5,5,1,32])
 b_conv1 = bias_variable([32])
 
 # -1 : 아직 디멘젼이 결정되지 않았다
@@ -158,10 +158,8 @@ b_conv1 = bias_variable([32])
 x_image = tf.reshape(x, [-1, 52, 52, 1])
 
 # y = x*w + b에 ReLU를 적용한다
-# (55,40) ==> (48,36)
-h_conv1 = tf.nn.relu(conv2d_valid(x_image, W_conv1) + b_conv1)
+h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
-# (48,36) ==> (24, 18)
 
 
 
@@ -169,18 +167,16 @@ h_pool1 = max_pool_2x2(h_conv1)
 W_conv2 = weight_variable([5,5,32,64])
 b_conv2 = bias_variable([64])
 
-# (24, 18) ==> (24, 18)
 h_conv2 = tf.nn.relu(conv2d_same(h_pool1, W_conv2) + b_conv2)
 h_pool2 = max_pool_2x2(h_conv2)
-# (24, 18) ==> (12, 9)
 
 
 
 # 1st fully connected layer -----------------------
-W_fc1 = weight_variable([12*9*64, 3000])
+W_fc1 = weight_variable([13*13*64, 3000])
 b_fc1 = bias_variable([3000])
 
-h_pool2_flat = tf.reshape(h_pool2, [-1, 12*9*64])
+h_pool2_flat = tf.reshape(h_pool2, [-1, 13*13*64])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 # 위 연산으로 1024x1의 벡터가 생성된다
 
