@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 비주얼컴퓨팅,
+    python ==> 비주얼컴퓨팅, 한글인식1 기존 deep MNIST 신경망에 데이터를 넣어서 학습해 본 코드
+                            15000번 돌리니 76% 정도의 정확도를 보인다
 '''
 import h5py
 import matplotlib.pyplot as plt
