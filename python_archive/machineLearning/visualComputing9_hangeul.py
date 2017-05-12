@@ -178,28 +178,29 @@ W_conv3 = weight_variable([4,4,64,128])
 b_conv3 = bias_variable([128])
 
 h_conv3 = tf.nn.relu(conv2d_valid(h_pool2, W_conv3) + b_conv3)  # (13,13) ==> (10,10)
-
+h_pool3 = max_pool_2x2(h_conv3) # (10,10) ==> (5,5)
 
 # 4th conv layer -----------------------------
-W_conv4 = weight_variable([4,4,128,256])
+W_conv4 = weight_variable([2,2,128,256])
 b_conv4 = bias_variable([256])
 
-h_conv4 = tf.nn.relu(conv2d_same(h_conv3, W_conv4) + b_conv4)  # (10,10) ==> (10,10)
+h_conv4 = tf.nn.relu(conv2d_valid(h_pool3, W_conv4) + b_conv4)  # (5,5) ==> (4,4)
+h_pool4 = max_pool_2x2(h_conv4) # (4,4) ==> (2,2)
 
 
 # 4th conv layer -----------------------------
 W_conv5 = weight_variable([4,4,256,512])
 b_conv5 = bias_variable([512])
 
-h_conv5 = tf.nn.relu(conv2d_same(h_conv4, W_conv5) + b_conv5)  # (10,10) ==> (10,10)
+h_conv5 = tf.nn.relu(conv2d_same(h_pool4, W_conv5) + b_conv5)
+h_pool5 = max_pool_2x2(h_conv5) # (2,2) ==> (1,1)
 
 
 # 4th conv layer -----------------------------
 W_conv6 = weight_variable([4,4,512,1024])
 b_conv6 = bias_variable([1024])
 
-h_conv6 = tf.nn.relu(conv2d_same(h_conv5, W_conv6) + b_conv6)  # (10,10) ==> (10,10)
-h_pool6 = max_pool_2x2(h_conv6)  # (10,10) ==> (5,5)
+h_conv6 = tf.nn.relu(conv2d_same(h_pool5, W_conv6) + b_conv6)   # (1,1) ==> (1,1)
 
 
 
@@ -207,7 +208,7 @@ h_pool6 = max_pool_2x2(h_conv6)  # (10,10) ==> (5,5)
 W_fc1 = weight_variable([5*5*1024, 3000])
 b_fc1 = bias_variable([3000])
 
-h_pool2_flat = tf.reshape(h_pool6, [-1, 5*5*1024])
+h_pool2_flat = tf.reshape(h_conv6, [-1, 5*5*1024])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 # 위 연산으로 3000x1의 벡터가 생성된다
 
