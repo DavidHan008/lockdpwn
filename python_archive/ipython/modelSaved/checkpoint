@@ -1,0 +1,2 @@
+model_checkpoint_path: "hangeul2"
+all_model_checkpoint_paths: "hangeul2"
