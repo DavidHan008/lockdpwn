@@ -6,14 +6,17 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+using namespace cv;
+
+
 int main(int argc, char *argv[]){
   // lenna의 이미지 경로를 설정합니다
-  cv::Mat image = cv::imread("lenna.jpg");
-  cv::namedWindow("she is lenna");
+  Mat image = imread("lenna.jpg");
+  namedWindow("she is lenna");
 
   // she is lenna! 이름의 창을 생성합니다
-  cv::imshow("she is lenna!", image);
-  cv::waitKey(50000);
+  imshow("she is lenna!", image);
+  waitKey(50000);
 
   return 0;
 }

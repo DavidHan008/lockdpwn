@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> @property 장식자를 사용해본 코드
+'''
 import math
 
 class Circle(object):

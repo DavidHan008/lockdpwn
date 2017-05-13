@@ -1,14 +1,14 @@
 ﻿# powershell ==> 해킹침투코드, 호스트의 포트를 스캐닝하는 코드 
                 
-#put our arguments into their respective variables
+# put our arguments into their respective variables
 $device = $args[0]
 $port  = $args[1]
 $start = $args[2]
 $stop = $args[3]
 
 
-#function pingdevice
-#ping the device to see if it is on te network
+# function pingdevice
+# ping the device to see if it is on te network
 function pingdevice
 {
     if(test-connection $device -erroraction silentlycontinue)
@@ -22,8 +22,8 @@ function pingdevice
     }
 }
 
-#function checkports
-#check to see if our ports ar open 
+# function checkports
+# check to see if our ports ar open 
 function checkports
 {
     if ($port -match "multi")

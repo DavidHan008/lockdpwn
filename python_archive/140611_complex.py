@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+    python ==> 실수와 허수를 받는 Complex 클래스를 선언한 코드
+'''
 class Complex(object):
     def __init__(self,real,imag=0):
         self.real = float(real)

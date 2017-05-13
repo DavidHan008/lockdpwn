@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 '''
     python ==> 객체수업시간에 바탕화면에 있는 코드 가져옴 turtle이라는 패키지 사용한다
 '''
@@ -7,6 +9,7 @@ import time
 import random
 
 turtle.setup(500,500,0,0)
+turtle.shape("turtle")
 t=turtle.Turtle()
 u=turtle.Turtle()
 turn_trigger=True
