@@ -2,6 +2,8 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> 비주얼컴퓨팅, 한글인식
+               가나다라마바사아자차카 타 파 하
+               0 1 2 3 4 5 6 7 8 9 10 11 12 13
 '''
 import h5py
 import matplotlib.pyplot as plt
@@ -10,6 +12,7 @@ import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
+
 
 #-----------------------------------------------------------------
 # train
