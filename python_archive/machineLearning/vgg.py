@@ -13,6 +13,11 @@ import tensorflow as tf
 import numpy as np
 import scipy.io
 
+# 레이어 정보들
+# ReLU 연산 예시 : y = w2 * ReLU(w1x + b1) + b2
+#               또는 y1 = w1x + b1
+#                    y  = w2*y1 + b2
+
 VGG19_LAYERS = (
     'conv1_1', 'relu1_1', 'conv1_2', 'relu1_2', 'pool1',
 
