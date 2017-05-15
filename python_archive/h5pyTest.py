@@ -8,12 +8,15 @@ import h5py
 import numpy as np
 import matplotlib.pyplot as plt
 
-hf = h5py.File('kalph_train.hf', 'r')
+hf = h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r')
+
+
 
 # 해당파일을 읽은 다음 images, labels 변수에 데이터를 저장합니다
-with h5py.File('kalph_train.hf', 'r') as hf:
+with h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     images = np.array(hf['images'])
     labels = np.array(hf['labels'])
+
 
 
 # hf에 포함된 키들을 확인합니다
