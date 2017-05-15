@@ -11,31 +11,17 @@
 using namespace std;
 using namespace cv;
 
-/// 마우스를 클릭하면 발생하면 콜백함수
-void CallBackFunc(int event, int x, int y, int flags, void* userdata) {
-	if (event == EVENT_LBUTTONDOWN) {
-		cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
-	}
-	else if (event == EVENT_RBUTTONDOWN) {
-		cout << "Right button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
-	}
-	else if (event == EVENT_MBUTTONDOWN) {
-		cout << "Middle button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
-	}
-}
-
-
 int main(int argc, const char *argv[]) {
+	// 사진파일을 읽는다
 	Mat image = imread("hangeulSample.png");
 	if (!image.data) return 0;
 
-	// 이미지 크기를 입력한다
+	// grid 격자의 크기를 입력한다
+    // 그림판에서 해당 파일을 연 다음 한 격자의 크기를 pixel 단위로 알아내서 입력한 값입니다 . 따라서 사진마다 달라집니다 
 	int horizontal = 55;
 	int vertical = 77;
 	Mat tile;
 	stringstream ss;
-	string name = "cropped_";
-	string type = ".jpg";
 	string filename = "";
 	int count = 0;
 
@@ -44,26 +30,28 @@ int main(int argc, const char *argv[]) {
 	// 이미지를 (horizontal,vertical) 사이즈로 자른다음 image%d.jpg로 반복해서 저장하는 코드
 	for (int r = 0; r < image.rows; r += vertical)
 		for (int c = 0; c < image.cols; c += horizontal){
+			
+			// 루프를 돌면서 tile 변수에 grid의 크기만큼 데이터를 잘라서 입력한다
 			tile = image(Range(r, min(r + vertical, image.rows)),
-				Range(c, min(c + horizontal, image.cols)));//no data copying here
+				Range(c, min(c + horizontal, image.cols)));
 
-			// 너무 작은 이미지들은 skip 한다
+			// 너무 작게 잘리는 이미지들은 skip 한다
 			if (tile.rows < vertical - 5 ||  tile.cols < horizontal -5)
 				continue;
 			
 			// 이미지 테두리를 제거한다
 			tile = tile(Rect(5,10, 50, 55));
 			
-			ss << name << (count + 1) << type;
+			// tile 변수를 바로바로 저장한다
+			ss << "cropped_" << (count + 1) << ".jpg";
 			count++;
 			filename = ss.str();
 			ss.str("");
 			imwrite(filename, tile);
 		}
 
-
-
 	waitKey(0);
 	return 0;
 }
+
 
