@@ -205,10 +205,10 @@ h_conv6 = tf.nn.relu(conv2d_same(h_pool5, W_conv6) + b_conv6)   # (1,1) ==> (1,1
 
 
 # 1st fully connected layer -----------------------
-W_fc1 = weight_variable([5*5*1024, 3000])
+W_fc1 = weight_variable([1*1*1024, 3000])
 b_fc1 = bias_variable([3000])
 
-h_pool2_flat = tf.reshape(h_conv6, [-1, 5*5*1024])
+h_pool2_flat = tf.reshape(h_conv6, [-1, 1*1*1024])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 # 위 연산으로 3000x1의 벡터가 생성된다
 

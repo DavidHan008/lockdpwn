@@ -19,7 +19,7 @@ tlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_train.hf', 'r') as hf:
+with h5py.File('C:\\Users\\edward\\GoogleDrive\\private2\\machineLearningData\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     train_images = np.array(hf['images'])
     tlabels = np.array(hf['labels'])
 
@@ -44,7 +44,7 @@ testlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_test.hf', 'r') as hf:
+with h5py.File('C:\\Users\\edward\\GoogleDrive\\private2\\machineLearningData\\visualComputing_hangeul\\kalph_test.hf', 'r') as hf:
     test_images = np.array(hf['images'])
     testlabels = np.array(hf['labels'])
 
