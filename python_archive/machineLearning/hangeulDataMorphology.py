@@ -21,24 +21,56 @@ len_image = len(images)
 aa = np.dstack((images[0], images[1])).swapaxes(0,2)
 bb = np.array([images[0],images[1]])
 
-modified = []
+modified_images = np.array(np.zeros(52998400).reshape(19600,52,52))
+modified_labels = labels
 
+
+# images 이미지들을 랜덤으로 모폴로지 연산을 수행한다
 for i in range(0, len_image):
     rNum = random.randrange(1,8)
 
     if(rNum == 1):
-        erosion = cv2.erode(images[0],kernel,iterations = 1)
-    dilation = cv2.dilate(images[0],kernel,iterations = 1)
-    opening = cv2.morphologyEx(images[0], cv2.MORPH_OPEN, kernel)
-    gradient = cv2.morphologyEx(images[0], cv2.MORPH_GRADIENT, kernel)
-    closing = cv2.morphologyEx(images[0], cv2.MORPH_CLOSE, kernel)
-    tophat = cv2.morphologyEx(images[0], cv2.MORPH_TOPHAT, kernel)
-    blackhat = cv2.morphologyEx(images[0], cv2.MORPH_BLACKHAT, kernel)
+        modified_images[i] = cv2.erode(images[i],kernel,iterations = 1)
+    elif(rNum == 2):
+        modified_images[i] = cv2.dilate(images[i],kernel,iterations = 1)
+    elif(rNum == 3):
+        modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_OPEN, kernel)
+    elif(rNum == 4):
+        modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_GRADIENT, kernel)
+    elif(rNum == 5):
+        modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_CLOSE, kernel)
+    elif(rNum == 6):
+        modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_TOPHAT, kernel)
+    elif(rNum == 7):
+        modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_BLACKHAT, kernel)
+    else:
+        continue
+
+
+# 이미지들을 랜덤순서로 섞는다
+shuf = np.arange(len_image)
+np.random.shuffle(shuf)
+modified_images = modified_images[shuf]
+modified_labels = modified_labels[shuf]
+
+
+# hdf5 파일 포맷으로 위의 데이터를 저장한다 :-)
+f = h5py.File('modified_file.hf','w')
+
+f.create_dataset('modified_images',data=modified_images, compression_opts=9, compression='gzip')
+f.create_dataset('modified_labels',data=modified_labels, compression_opts=9, compression='gzip')
+
+f.close()
 
 
 
+# 저장된 데이터를 불러온다
+g = h5py.File('modified_file.hf','r')
 
+# 키를 확인한다
+for keys in g:
+    print(keys, "---------->" , g[keys])
 
-
-
+mod_images = np.array(g['modified_images'])
+mod_labels = np.array(g['modified_labels'])
 
