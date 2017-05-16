@@ -4,6 +4,100 @@
 
 
 -----------------------------------------------------------------------------------
+170515_월
+
+# 일반화와 템플릿	
+
+template <class T>
+void myswap(T &a, T &b){
+	T tmp;
+	tmp = a;
+	a = b;
+	b = tmp;
+}
+
+	# 단 (int a, double b) 같은 구문은 처리하지 못한다
+
+
+template <class T1, class T2>
+void mcopy(T1 src, T2 dest[], int n){
+	for(int i = 0 ; i < n ; i++)
+		dest[i] = (T2)src[i];
+}
+
+int main(){
+	int x[] = {1,2,3,4,5};
+	double d[5];
+	char c[5] = {'H','e','l','l','o'};
+	char d[5];
+
+	mcopy(..)
+	...
+}
+
+
+
+template <class T>
+void print(T array[], int n){
+	for(int i =0 ; i< n ; i++)
+		cout << array[i] << '\t';
+	cout << endl;
+}
+
+
+void print(char array[], int n){
+	for(int i =0; i < n; i++)
+		cout << (int)array[i] << '\t';
+	cout << endl;
+}
+
+
+
+# 제네릭, 템플릿 클래스 만들기
+
+
+template <class T>
+class MyStack {
+	int tos;
+	T data[100];
+
+public:
+	MyStack();
+	void push(T element);
+	T pop();
+};
+
+template <class T>
+T MyStack<T>::pop(){
+	...
+}
+
+template<class T>
+void MyStack<T>::push(T element){
+	...
+}
+
+
+int main(){
+	MyStack<int> iStack;
+	MyStack<double> dStack;  // 이와 같이 선언해준다
+}
+
+
+
+# 제네릭 스택의 타입을 포인터나 클래스로 구체화할 수 있다 
+
+class Point{
+	int x,y,;
+
+public:
+	Point(int x =0 , int y =0) { this->x = x, this->y = y; }
+	void show() { cout << '(' << x << ',' << y << ')' << endl;
+};
+
+
+
+
 
 
 
@@ -12,9 +106,6 @@
 
 # 중간고사 시험지 체크
 	#  95 + 5점
-
-
-
 
 
 

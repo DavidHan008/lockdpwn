@@ -29,6 +29,7 @@ def imread(path):
         img = img[:,:,:3]
     return img
 
+
 # 사용하지 않는 함수
 def imsave(path, img):
     img = np.clip(img, 0, 255).astype(np.uint8)  # 이미지를 rgb 0~255 값으로 clipping 해준다
@@ -50,9 +51,11 @@ def _tensor_size(tensor):
 style   = imread('style.jpg')
 content = imread('content.jpg')
 
+
 # 이미지 타입을 바꿔준다음 출력한다(다시 색상이 원래대로 돌아온다)
 style_img   = style.astype(np.uint8)
 content_img = content.astype(np.uint8)
+
 
 # 이미지 출력
 plt.subplot(1, 2, 1)
@@ -91,6 +94,10 @@ POOLING = 'max'
 
 from functools import reduce
 
+# 콘텐츠 레이어 : 
+# 스타일 레이어 :
+# 원하는 relu들을 비교하기 위해 선언한다
+# 내가 원하는 relu 들로 설정할 수 있다
 CONTENT_LAYERS = ('relu4_2', 'relu5_2')
 STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
 
@@ -128,8 +135,8 @@ for style_layer in STYLE_LAYERS:
 
 
 
-
 #-------------------------------------------------------------
+# 
 # compute content features in feedforward mode
 content_features = {}
 
@@ -143,7 +150,10 @@ with g.as_default(), g.device('/cpu:0'), tf.Session() as sess:
     
     for layer in CONTENT_LAYERS:
         #content_features.keys() ==> ['relu4_2','relu5_2']
-        content_features[layer] = net[layer].eval(feed_dict={image: content_pre})  # network를 evaluation으로 각 콘텐츠의 feature를 뽑아낸다
+        # content 사진을 넣었을 때 net의 값을 저장해놓는다
+        content_features[layer] = net[layer].eval(feed_dict={image: content_pre})  # network를 evaluation해서 각 콘텐츠의 feature를 뽑아낸다
+
+
 
 
 
@@ -177,6 +187,8 @@ with g.as_default(), g.device('/cpu:0'), tf.Session() as sess:
         style_features[layer] = gram
 
 
+
+
 #-------------------------------------------------------------
 
 initial_content_noise_coeff = 1.0 - initial_noiseblend
@@ -196,16 +208,21 @@ net = vgg.net_preloaded(vgg_weights, image, POOLING)
 
 
 
+
+
+
 #-------------------------------------------------------------
 # content loss     
 # 타겟사진의 특정 컨벌루션 지점에서 추출한 결과(activation map)와 
 # 합성물에서 중간에 추출한 결과가 얼마나 비슷한지를 loss fuction으로 하는듯
 content_layers_weights = {}
-content_layers_weights['relu4_2'] = 1.0
+content_layers_weights['relu4_2'] = 1.0   # 가중치를 얼마줄건지 우리가 직접 설정할 수 있다
 content_layers_weights['relu5_2'] = 1.0 - content_layers_weights['relu4_2']
+
 
 content_loss = 0
 content_losses = []
+
 for content_layer in CONTENT_LAYERS:
     content_losses.append(content_layers_weights[content_layer] * CONTENT_WEIGHT * (2 * tf.nn.l2_loss(
             net[content_layer] - content_features[content_layer]) /
@@ -219,13 +236,16 @@ content_loss += reduce(tf.add, content_losses)
 # style loss
 style_loss = 0
 style_losses = []
+
 for style_layer in STYLE_LAYERS:
+    # gram Matrix를 만든다
     layer = net[style_layer]
     _, height, width, number = map(lambda i: i.value, layer.get_shape())
     size = height * width * number
     feats = tf.reshape(layer, (-1, number))
     gram = tf.matmul(tf.transpose(feats), feats) / size
     style_gram = style_features[style_layer]
+
     style_losses.append(style_layers_weights[style_layer] * 2 * tf.nn.l2_loss(gram - style_gram) / style_gram.size)
 
 style_loss += STYLE_WEIGHT * reduce(tf.add, style_losses)
@@ -239,8 +259,12 @@ style_loss += STYLE_WEIGHT * reduce(tf.add, style_losses)
 # tv_x_size = 717003
 tv_y_size = _tensor_size(image[:,1:,:,:])
 tv_x_size = _tensor_size(image[:,:,1:,:])
+
+# tv loss : 사진에서 윗부분과 아랫부분을 뺀 값을 최소화하는 방향으로 최소화한다
 tv_loss = TV_WEIGHT * 2 * (
-        (tf.nn.l2_loss(image[:,1:,:,:] - image[:,:shape[1]-1,:,:]) / tv_y_size) +
+        # 윗부분
+        (tf.nn.l2_loss(image[:,1:,:,:] - image[:,:shape[1]-1,:,:]) / tv_y_size) +  
+        # 아랫부분
         (tf.nn.l2_loss(image[:,:,1:,:] - image[:,:,:shape[2]-1,:]) / tv_x_size))
 
 
@@ -252,19 +276,22 @@ train_step = tf.train.AdamOptimizer(LEARNING_RATE, BETA1, BETA2, EPSILON).minimi
 
 
 
+
 #-------------------------------------------------------------
 # optimization
 best_loss = float('inf')
 best = None
+
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     print('Optimization started...')            
+
     for i in range(ITERATIONS):
         if i % 100 == 0:
             print('Iteration %4d/%4d' % (i + 1, ITERATIONS))
         train_step.run()
-
         last_step = (i == ITERATIONS - 1)
+
         if last_step:
             print('  content loss: %g' % content_loss.eval())
             print('    style loss: %g' % style_loss.eval())
@@ -280,6 +307,8 @@ with tf.Session() as sess:
 
 
 
+
 #-------------------------------------------------------------
+# img_out은 float형이고 (-)(+)값이 제각각이므로 아래와 같이 데이터를 정제 후 출력해야 한다  
 img = np.clip(img_out, 0, 255).astype(np.uint8)
 plt.imshow(img)
