@@ -26,7 +26,7 @@ with h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\
 rows = 10
 cols = 10
 
-# 크기를 키운다
+# plot 창 크기를 키운 후 plot을 한다
 plt.figure(figsize=(10,10))
 for r in range(rows):
     for c in range(cols):

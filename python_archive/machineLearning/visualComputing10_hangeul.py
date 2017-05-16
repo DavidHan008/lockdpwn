@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 비주얼컴퓨팅, 한글인식
+    python ==> 비주얼컴퓨팅, 한글인식 최종버전. 6층짜리 
                가나다라마바사아자차카 타 파 하
                0 1 2 3 4 5 6 7 8 9 10 11 12 13
 '''
@@ -37,6 +37,20 @@ for num in range(0,19600):
     train_labels[num][int(tlabels[num]) - 1] = 1
 
 
+
+# 10 x 10 짜리 이미지를 확인한다
+rows = 10
+cols = 10
+
+# plot 창 크기를 키운 후 plot을 한다
+plt.figure(figsize=(10,10))
+for r in range(rows):
+    for c in range(cols):
+        idx = r * cols + c
+        plt.subplot(rows, cols , idx +1)
+        plt.imshow(train_images[idx,:,:], cmap='gray_r')
+        plt.axis('off')
+plt.show()
 
 #-----------------------------------------------------------------
 # test
@@ -270,6 +284,76 @@ for i in range(500):
 # 전부 학습이 끝나면 테스트 데이터를 넣어 정확도를 계산한다
 test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
 print('test accuracy', test_accuracy)
+
+
+#----------------------------------------------
+# 기존의 학습된 모델데이터를 불러온다
+saver = tf.train.Saver()
+sess = tf.Session()
+
+saver.restore(sess, 'd:/edward/hangeul3')
+
+
+
+
+#------------------------------------------------------------------
+# 데이터를 모폴로지연산한 또다른 19600개의 데이터셋을 불러온다
+# 저장된 데이터를 불러온다
+g = h5py.File('D:\\edward\\modified_file.hf','r')
+
+# 키를 확인한다
+for keys in g:
+    print(keys, "---------->" , g[keys])
+
+mod_images = np.array(g['modified_images'])
+mlabels = np.array(g['modified_labels'])
+
+
+# Image 데이터와 Label 데이터를 numpy 데이터로 수정한다
+mod_images = mod_images.reshape(19600, 2704, )
+mod_images = mod_images / 255.
+
+
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+mod_labels  = np.array(np.zeros(254800).reshape(19600,13))
+for num in range(0,19600):
+    mod_labels[num][int(mlabels[num]) - 1] = 1
+
+
+#----------------------------------------------
+
+# next_batch() 함수에 사용될 파라미터들을 수정한 후 다시 학습을 시작한다
+_images = mod_images  # Image 변수 
+_labels = mod_labels  # Label 변수
+
+batch_size = 50      # 한 루프에 몇개의 (Image, Label) 데이터를 학습하는지 설정
+display_step = 20   # 루프를 돌면서 화면에 표시할 빈도 설정
+saver = tf.train.Saver()
+
+for i in range(100):
+    costVal = 0.
+    batch = next_batch(batch_size)
+    # 20번 돌릴 때마다 결과를 확인한다
+    if i % display_step == 0:
+        train_accuracy = sess.run(accuracy,feed_dict={x:batch[0], y:batch[1], keep_prob:1.0})
+        costVal = sess.run(cost, feed_dict={x: batch[0], y: batch[1], keep_prob:1.0})
+    
+        print('step', i , 'training_accuracy', train_accuracy,'cost', costVal)
+        
+        # 실제 학습과정 함수, dropout 50%를 토대로 학습한다
+    sess.run(optimizer,feed_dict={x:batch[0],y:batch[1], keep_prob:0.5})
+    # 마지막 루프에서 가중치값들을 저장한다 
+    if(i == 4999):
+        saver.save(sess, "d:/edward/hangeul4")
+        print("[+] Done Save")
+
+
+
+
+
+
+
 
 
 #----------------------------------------------

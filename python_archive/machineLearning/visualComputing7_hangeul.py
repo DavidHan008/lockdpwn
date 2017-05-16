@@ -35,6 +35,20 @@ for num in range(0,19600):
     train_labels[num][int(tlabels[num]) - 1] = 1
 
 
+# 10 x 10 짜리 이미지를 확인한다
+rows = 10
+cols = 10
+
+# plot 창 크기를 키운 후 plot을 한다
+plt.figure(figsize=(10,10))
+for r in range(rows):
+    for c in range(cols):
+        idx = r * cols + c
+        plt.subplot(rows, cols , idx +1)
+        plt.imshow(train_images[idx,:,:], cmap='gray_r')
+        plt.axis('off')
+plt.show()
+
 
 #-----------------------------------------------------------------
 # test
