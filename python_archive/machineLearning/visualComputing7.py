@@ -237,7 +237,7 @@ print('test accuracy', test_accuracy)
 
 
 #----------------------------------------------
-# 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
+# 임의의 단어 하나를 출력한 다음 맞혀보는 코드 
 r = random.randint(0, _num_examples -1)
 print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
 print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:test_images[r:r+1], keep_prob:1.0}))
