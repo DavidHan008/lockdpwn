@@ -50,12 +50,15 @@ for i in range(0, len_image):
 
 
 # 모폴로지 연산 후와 전의 이미지를 비교해본다 
-fig = plt.figure()
-fig.add_subplot(1,2,1)
-plt.imshow(images[0], cmap='gray_r') ; plt.axis('off')
-fig.add_subplot(1,2,2)
-plt.imshow(modified_images[0], cmap='gray_r') ; plt.axis('off')
-plt.show()
+for i in range(0,10):
+    fig = plt.figure()
+    fig.add_subplot(1,2,1)
+    plt.imshow(images[i], cmap='gray_r') ; plt.axis('off')
+    fig.add_subplot(1,2,2)
+    plt.imshow(modified_images[i], cmap='gray_r') ; plt.axis('off')
+    plt.show()
+
+
 
 # 이미지들을 랜덤순서로 섞는다
 shuf = np.arange(len_image)

@@ -2,8 +2,6 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> 비주얼컴퓨팅, 한글인식
-               가나다라마바사아자차카 타 파 하
-               0 1 2 3 4 5 6 7 8 9 10 11 12 13
 '''
 import h5py
 import matplotlib.pyplot as plt
@@ -12,7 +10,6 @@ import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
-
 
 #-----------------------------------------------------------------
 # train
@@ -47,7 +44,7 @@ train_images = train_images.reshape(19600, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-train_labels  = np.array(np.zeros(254800).reshape(19600,13))
+train_labels  = np.array(np.zeros(274400).reshape(19600,14))
 for num in range(0,19600):
     train_labels[num][int(tlabels[num]) - 1] = 1
 
@@ -61,7 +58,7 @@ testlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_test.hf', 'r') as hf:
+with h5py.File('C:\\Users\\edward\\GoogleDrive\\private2\\machineLearningData\\visualComputing_hangeul\\kalph_test.hf', 'r') as hf:
     test_images = np.array(hf['images'])
     testlabels = np.array(hf['labels'])
 
@@ -72,7 +69,7 @@ test_images = test_images.reshape(3920, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-test_labels  = np.array(np.zeros(50960).reshape(3920,13))
+test_labels  = np.array(np.zeros(54880).reshape(3920,14))
 for num in range(0,3920):
     test_labels[num][int(testlabels[num]) - 1] = 1
 
@@ -160,10 +157,10 @@ def max_pool_2x2(x):
 #-----------------------------------------------------------------
 
 x = tf.placeholder("float32", [None, 2704]) # mnist data image of shape 52 * 52 = 2704
-y = tf.placeholder("float32", [None, 13]) 
+y = tf.placeholder("float32", [None, 14]) 
 
-W = tf.Variable(tf.zeros([2704,13]))
-b = tf.Variable(tf.zeros([13]))
+W = tf.Variable(tf.zeros([2704,14]))
+b = tf.Variable(tf.zeros([14]))
 
 
 # 1st conv layer ----------------------
@@ -196,7 +193,8 @@ W_conv3 = weight_variable([4,4,64,128])
 b_conv3 = bias_variable([128])
 
 h_conv3 = tf.nn.relu(conv2d_valid(h_pool2, W_conv3) + b_conv3)  # (13,13) ==> (10,10)
-h_pool3 = max_pool_2x2(h_conv3) # (10,10) ==> (5,5)
+h_pool3 = max_pool_2x2(h_conv3)  # (10,10) ==> (5,5)
+
 
 # 4th conv layer -----------------------------
 W_conv4 = weight_variable([2,2,128,256])
@@ -206,27 +204,12 @@ h_conv4 = tf.nn.relu(conv2d_valid(h_pool3, W_conv4) + b_conv4)  # (5,5) ==> (4,4
 h_pool4 = max_pool_2x2(h_conv4) # (4,4) ==> (2,2)
 
 
-# 4th conv layer -----------------------------
-W_conv5 = weight_variable([4,4,256,512])
-b_conv5 = bias_variable([512])
-
-h_conv5 = tf.nn.relu(conv2d_same(h_pool4, W_conv5) + b_conv5)
-h_pool5 = max_pool_2x2(h_conv5) # (2,2) ==> (1,1)
-
-
-# 4th conv layer -----------------------------
-W_conv6 = weight_variable([4,4,512,1024])
-b_conv6 = bias_variable([1024])
-
-h_conv6 = tf.nn.relu(conv2d_same(h_pool5, W_conv6) + b_conv6)   # (1,1) ==> (1,1)
-
-
 
 # 1st fully connected layer -----------------------
-W_fc1 = weight_variable([1*1*1024, 3000])
+W_fc1 = weight_variable([2*2*256, 3000])
 b_fc1 = bias_variable([3000])
 
-h_pool2_flat = tf.reshape(h_conv6, [-1, 1*1*1024])
+h_pool2_flat = tf.reshape(h_pool4, [-1, 2*2*256])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 # 위 연산으로 3000x1의 벡터가 생성된다
 
@@ -239,8 +222,8 @@ h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
 
 # 2nd fully connected layer --------------
-W_fc2 = weight_variable([3000, 13])
-b_fc2 = bias_variable([13])
+W_fc2 = weight_variable([3000, 14])
+b_fc2 = bias_variable([14])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
