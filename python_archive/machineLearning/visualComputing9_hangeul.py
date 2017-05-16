@@ -21,9 +21,24 @@ tlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_train.hf', 'r') as hf:
+with h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     train_images = np.array(hf['images'])
     tlabels = np.array(hf['labels'])
+
+# 10 x 10 짜리 이미지를 확인한다
+rows = 10
+cols = 10
+
+# 크기를 키운다
+plt.figure(figsize=(10,10))
+for r in range(rows):
+    for c in range(cols):
+        idx = r * cols + c
+        plt.subplot(rows, cols , idx +1)
+        plt.imshow(train_images[idx,:,:], cmap='gray_r')
+        plt.axis('off')
+plt.show()
+
 
 
 # Image 데이터와 Label 데이터를 numpy 데이터로 수정한다

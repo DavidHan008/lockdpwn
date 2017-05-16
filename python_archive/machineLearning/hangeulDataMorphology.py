@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==>
+    python ==> 비주얼컴퓨팅, 한글파일 kalph_train을 랜덤으로 모폴로지연산을 한 다음 modified_file로 저장하는 코드 
 '''
 import h5py
 import cv2
@@ -9,21 +9,23 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
-with h5py.File('D:\\edward\\kalph_train.hf', 'r') as hf:
+# 한글 데이터를 불러온다
+with h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     images = np.array(hf['images'])
     labels = np.array(hf['labels'])
 
+# 필터 kernel을 설정한다
 kernel = np.ones((2,2), np.uint8)
+
 len_image = len(images)
 
 
-# 데이터를 19600x52x52 처럼 3차원 배열데이터로 만들어주는 코드들
-aa = np.dstack((images[0], images[1])).swapaxes(0,2)
-bb = np.array([images[0],images[1]])
+# 데이터를 19600x52x52 처럼 3차원 배열데이터로 만들어주는 코드들(사용안함)
+# aa = np.dstack((images[0], images[1])).swapaxes(0,2)
+# bb = np.array([images[0],images[1]])
 
 modified_images = np.array(np.zeros(52998400).reshape(19600,52,52))
 modified_labels = labels
-
 
 # images 이미지들을 랜덤으로 모폴로지 연산을 수행한다
 for i in range(0, len_image):
@@ -46,6 +48,14 @@ for i in range(0, len_image):
     else:
         continue
 
+
+# 모폴로지 연산 후와 전의 이미지를 비교해본다 
+fig = plt.figure()
+fig.add_subplot(1,2,1)
+plt.imshow(images[0], cmap='gray_r') ; plt.axis('off')
+fig.add_subplot(1,2,2)
+plt.imshow(modified_images[0], cmap='gray_r') ; plt.axis('off')
+plt.show()
 
 # 이미지들을 랜덤순서로 섞는다
 shuf = np.arange(len_image)
