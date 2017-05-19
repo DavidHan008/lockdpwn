@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 비주얼컴퓨팅, 한글인식
+    python ==> 비주얼컴퓨팅, 한글인식1 기존 deep MNIST 신경망에 데이터를 넣어서 학습해 본 코드
+                            15000번 돌리니 76% 정도의 정확도를 보인다
 '''
 import h5py
 import matplotlib.pyplot as plt
@@ -18,7 +19,7 @@ tlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_train.hf', 'r') as hf:
+with h5py.File('C:\\Users\\edward\\GoogleDrive\\private2\\machineLearningData\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     train_images = np.array(hf['images'])
     tlabels = np.array(hf['labels'])
 
@@ -29,7 +30,7 @@ train_images = train_images.reshape(19600, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-train_labels  = np.array(np.zeros(254800).reshape(19600,13))
+train_labels  = np.array(np.zeros(274400).reshape(19600,14))
 for num in range(0,19600):
     train_labels[num][int(tlabels[num]) - 1] = 1
 
@@ -43,7 +44,7 @@ testlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_test.hf', 'r') as hf:
+with h5py.File('C:\\Users\\edward\\GoogleDrive\\private2\\machineLearningData\\visualComputing_hangeul\\kalph_test.hf', 'r') as hf:
     test_images = np.array(hf['images'])
     testlabels = np.array(hf['labels'])
 
@@ -54,7 +55,7 @@ test_images = test_images.reshape(3920, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-test_labels  = np.array(np.zeros(50960).reshape(3920,13))
+test_labels  = np.array(np.zeros(54880).reshape(3920,14))
 for num in range(0,3920):
     test_labels[num][int(testlabels[num]) - 1] = 1
 
@@ -66,8 +67,8 @@ test_images =  test_images / 255.
 
 #-----------------------------------------------------------------
 
-# _num_examples : 데이터 갯수
 _num_examples, bins = train_images.shape
+# _num_examples : 데이터 갯수
 
 _index_in_epoch = 0   # epoch
 _images = train_images  # Image 변수 
@@ -142,10 +143,10 @@ def max_pool_2x2(x):
 #-----------------------------------------------------------------
 
 x = tf.placeholder("float32", [None, 2704]) # mnist data image of shape 52 * 52 = 2704
-y = tf.placeholder("float32", [None, 13]) 
+y = tf.placeholder("float32", [None, 14]) 
 
-W = tf.Variable(tf.zeros([2704,13]))
-b = tf.Variable(tf.zeros([13]))
+W = tf.Variable(tf.zeros([2704,14]))
+b = tf.Variable(tf.zeros([14]))
 
 
 # 1st conv layer ----------------------
@@ -159,7 +160,7 @@ x_image = tf.reshape(x, [-1, 52, 52, 1])
 
 # y = x*w + b에 ReLU를 적용한다
 h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
-h_pool1 = max_pool_2x2(h_conv1)  # (52,52) ==> (26,26)
+h_pool1 = max_pool_2x2(h_conv1)
 
 
 
@@ -168,35 +169,17 @@ W_conv2 = weight_variable([5,5,32,64])
 b_conv2 = bias_variable([64])
 
 h_conv2 = tf.nn.relu(conv2d_same(h_pool1, W_conv2) + b_conv2)
-h_pool2 = max_pool_2x2(h_conv2)  # (26,26) ==> (13,13)
-
-
-
-# 컨벌루션 레이어 추가!
-# 3rd conv layer --------------------------
-W_conv3 = weight_variable([4,4,64,128])
-b_conv3 = bias_variable([128])
-
-h_conv3 = tf.nn.relu(conv2d_valid(h_pool2, W_conv3) + b_conv3)  # (13,13) ==> (10,10)
-h_pool3 = max_pool_2x2(h_conv3)  # (10,10) ==> (5,5)
-
-
-# 4th conv layer -----------------------------
-W_conv4 = weight_variable([2,2,128,256])
-b_conv4 = bias_variable([256])
-
-h_conv4 = tf.nn.relu(conv2d_valid(h_pool3, W_conv4) + b_conv4)  # (5,5) ==> (4,4)
-h_pool4 = max_pool_2x2(h_conv4) # (4,4) ==> (2,2)
+h_pool2 = max_pool_2x2(h_conv2)
 
 
 
 # 1st fully connected layer -----------------------
-W_fc1 = weight_variable([2*2*256, 3000])
+W_fc1 = weight_variable([13*13*64, 3000])
 b_fc1 = bias_variable([3000])
 
-h_pool2_flat = tf.reshape(h_pool4, [-1, 2*2*256])
+h_pool2_flat = tf.reshape(h_pool2, [-1, 13*13*64])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-# 위 연산으로 3000x1의 벡터가 생성된다
+# 위 연산으로 1024x1의 벡터가 생성된다
 
 
 
@@ -207,8 +190,8 @@ h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
 
 # 2nd fully connected layer --------------
-W_fc2 = weight_variable([3000, 13])
-b_fc2 = bias_variable([13])
+W_fc2 = weight_variable([3000, 14])
+b_fc2 = bias_variable([14])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
@@ -262,7 +245,6 @@ print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:test_images[r:r+1], kee
 
 plt.imshow(test_images[r:r+1].reshape(52, 52), cmap='gray', interpolation='nearest')
 plt.show()
-
 
 
 

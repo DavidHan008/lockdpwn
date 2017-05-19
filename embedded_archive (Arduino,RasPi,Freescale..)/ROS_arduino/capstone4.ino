@@ -17,8 +17,7 @@ float dist;							// 센서를 통해 얻은 거리값
 float distFiltered[MAXNUM] = {0}; // 평균이동필터로 필터링된 거리값
 float final = 0; 					// 최종 서보모터에 입력되는 거리값
 
-void setup()
-{
+void setup(){
   // 초음파센서의 TRIG를 OUTPUT으로 ECHO를 INPUT으로 설정합니다
   pinMode(TRIG,OUTPUT);
   pinMode(ECHO,INPUT);
@@ -30,8 +29,7 @@ void setup()
 }
 
 // 배열을 받아 배열 안에 있는 모든 수의 평균을 반환하는 함수
-float getMean(float dist[])
-{
+float getMean(float dist[]) {
   float sum = 0;
   for(int k = 0 ; k < MAXNUM ; k++)
   {
@@ -41,8 +39,7 @@ float getMean(float dist[])
   return sum / MAXNUM;
 }
 
-void loop()
-{
+void loop(){
   // 초음파센서로부터 거리를 읽어오는 코드
   digitalWrite(TRIG,LOW);
   delayMicroseconds(2);

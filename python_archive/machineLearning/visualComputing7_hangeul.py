@@ -19,7 +19,7 @@ tlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_train.hf', 'r') as hf:
+with h5py.File('C:\\Users\\vdl\\Google Drive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
     train_images = np.array(hf['images'])
     tlabels = np.array(hf['labels'])
 
@@ -30,10 +30,24 @@ train_images = train_images.reshape(19600, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-train_labels  = np.array(np.zeros(254800).reshape(19600,13))
+train_labels  = np.array(np.zeros(274400).reshape(19600,14))
 for num in range(0,19600):
     train_labels[num][int(tlabels[num]) - 1] = 1
 
+
+# 10 x 10 짜리 이미지를 확인한다
+rows = 10
+cols = 10
+
+# plot 창 크기를 키운 후 plot을 한다
+plt.figure(figsize=(10,10))
+for r in range(rows):
+    for c in range(cols):
+        idx = r * cols + c
+        plt.subplot(rows, cols , idx +1)
+        plt.imshow(train_images[idx,:,:], cmap='gray_r')
+        plt.axis('off')
+plt.show()
 
 
 #-----------------------------------------------------------------
@@ -44,7 +58,7 @@ testlabels = []
 
 # train Image 데이터 700장을 불러온다
 # train Label 데이터를 불러온다
-with h5py.File('kalph_test.hf', 'r') as hf:
+with h5py.File('C:\\Users\\vdl\\Google Drive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_test.hf', 'r') as hf:
     test_images = np.array(hf['images'])
     testlabels = np.array(hf['labels'])
 
@@ -55,7 +69,7 @@ test_images = test_images.reshape(3920, 2704, )
 
 # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-test_labels  = np.array(np.zeros(50960).reshape(3920,13))
+test_labels  = np.array(np.zeros(54880).reshape(3920,14))
 for num in range(0,3920):
     test_labels[num][int(testlabels[num]) - 1] = 1
 
@@ -106,134 +120,52 @@ def next_batch(batch_size):
     return _images[start:end], _labels[start:end]
 
 
-# 가중치를 초기화하는 함수 (정규분포 stddev=0.1로 초기화한다)
-def weight_variable(shape):
-	initial = tf.truncated_normal(shape, stddev=0.1)
-	return tf.Variable(initial)
-
-
-# 바이어스를 초기화하는 함수 (0.1로 초기화한다)
-def bias_variable(shape):
-	initial = tf.constant(0.1, shape=shape)
-	return tf.Variable(initial)
-
-
-# 컨벌루션을 실행하는 함수
-# padding = 'SAME' 입력과 출력의 이미지 크기가 같도록 해준다
-# (28,28) --> (28,28)
-# padding = 'VALID' 필터의 크기만큼 이미지 크기가 감소한다
-def conv2d_valid(x, W):
-	return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding='VALID')
-
-
-def conv2d_same(x, W):
-	return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding='SAME')
-
-
-# max pooling을 실행하는 함수
-def max_pool_2x2(x):
-	return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
-
-
-
-
 
 #-----------------------------------------------------------------
 # Tensorflow 코드
 #-----------------------------------------------------------------
 
-x = tf.placeholder("float32", [None, 2704]) # mnist data image of shape 52 * 52 = 2704
-y = tf.placeholder("float32", [None, 13]) 
+# None 은 내가 얼만큼의 데이터를 넣을지 안 정했을 때 사용한다
+x_input = tf.placeholder(tf.float32, [None, 2704])
+y_input = tf.placeholder(tf.float32, [None, 14])
 
-W = tf.Variable(tf.zeros([2704,13]))
-b = tf.Variable(tf.zeros([13]))
-
-
-# 1st conv layer ----------------------
-W_conv1 = weight_variable([5,5,1,32])
-b_conv1 = bias_variable([32])
-
-# -1 : 아직 디멘젼이 결정되지 않았다
-# 1 : 흑백이므로 1을 삽입한다. 칼라이면 3을 삽입한다
-# x은 2200x1인데 55x40x1로 행렬을 다시 만들어준다
-x_image = tf.reshape(x, [-1, 52, 52, 1])
-
-# y = x*w + b에 ReLU를 적용한다
-h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
-h_pool1 = max_pool_2x2(h_conv1)
+# 신경망 파라미터들 y = x*w + b
+W = tf.Variable(tf.zeros([2704, 14]))
+b = tf.Variable(tf.zeros([14]))
+y = tf.matmul(x_input , W ) + b
 
 
+# softmax 알고리즘을 실행해서 y값을 최적화하고 cross_entropy를 정의한다
+# softmax : 값을 0 ~ 1사이로 정규화시키는 함수 (총합은 1이 되도록 정규화하므로 확률로 변경하는 것과 같다)
+y = tf.nn.softmax(y)
+cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_input, logits=y))
 
-# 2nd conv layer -----------------------
-W_conv2 = weight_variable([5,5,32,64])
-b_conv2 = bias_variable([64])
+# Gradient Descent 알고리즘을 사용해서 cross_entropy를 최소화한다. 학습율은 0.5
+train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
-h_conv2 = tf.nn.relu(conv2d_same(h_pool1, W_conv2) + b_conv2)
-h_pool2 = max_pool_2x2(h_conv2)
+# 세션을 초기화한다
+sess = tf.InteractiveSession()
+sess.run(tf.global_variables_initializer())
 
 
-
-# 1st fully connected layer -----------------------
-W_fc1 = weight_variable([13*13*64, 3000])
-b_fc1 = bias_variable([3000])
-
-h_pool2_flat = tf.reshape(h_pool2, [-1, 13*13*64])
-h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-# 위 연산으로 1024x1의 벡터가 생성된다
+# 1000번의 루프를 돌면서 학습을 진행한다
+for _ in range(10000):
+	batch_xs, batch_ys = next_batch(100)
+	#print(batch_xs[0])
+	#print(batch_ys[0])
+	sess.run(train_step, feed_dict={x_input: batch_xs, y_input: batch_ys})
+	costVal = sess.run(cross_entropy, feed_dict={x_input: batch_xs, y_input: batch_ys})
+        # 일정주기로 cost 값을 확인한다 
+	if _ % 3333 == 0:
+	    print('step', _ , 'cost', costVal)
+print("train done")
 
 
 
-# Dropout ------------------------
-keep_prob = tf.placeholder(tf.float32)
-h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
-
-
-
-# 2nd fully connected layer --------------
-W_fc2 = weight_variable([3000, 13])
-b_fc2 = bias_variable([13])
-y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
-
-
-# learning_rate 잘 설정하는게 중요하다.. 0.1로 하니 전혀 변화가 없었다
-learning_rate = 1e-4
-
-
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=y_conv))
-optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)
-
-
-init = tf.global_variables_initializer()
-sess = tf.Session()
-sess.run(init)
-
-
-# 정답률을 계산한다  y_conv  vs  y
-correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
+# 정답률을 계산한다
+correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_input, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-
-#----------------------------------------------
-batch_size = 50      # 한 루프에 몇개의 (Image, Label) 데이터를 학습하는지 설정
-display_step = 20    # 루프를 돌면서 화면에 표시할 빈도 설정
-
-for i in range(500):
-	costVal = 0.
-	batch = next_batch(batch_size)
-	# 20번 돌릴 때마다 결과를 확인한다
-	if i % display_step == 0:
-		train_accuracy = sess.run(accuracy,feed_dict={x:batch[0], y:batch[1], keep_prob:1.0})
-		costVal = sess.run(cost, feed_dict={x: batch[0], y: batch[1], keep_prob:1.0})
-    
-		print('step', i , 'training_accuracy', train_accuracy,'cost', costVal)
-        
-        # 실제 학습과정 함수, dropout 50%를 토대로 학습한다
-	sess.run(optimizer,feed_dict={x:batch[0],y:batch[1], keep_prob:0.5})
-
-
-
-# 전부 학습이 끝나면 테스트 데이터를 넣어 정확도를 계산한다
-test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
+test_accuracy = sess.run(accuracy,feed_dict={x_input: test_images, y_input: test_labels})
 print('test accuracy', test_accuracy)
 
 
