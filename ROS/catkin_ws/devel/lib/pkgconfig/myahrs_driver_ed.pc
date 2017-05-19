@@ -1,0 +1,8 @@
+prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: myahrs_driver_ed
+Description: Description of myahrs_driver_ed
+Version: 0.1.1
+Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed/include
+Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -lmyahrs_driver_ed
+Requires: roscpp std_msgs sensor_msgs tf

@@ -7,4 +7,6 @@
 # new environment variables
 
 # modified environment variables
+export PKG_CONFIG_PATH="/opt/ros/indigo/lib/pkgconfig"
 export PWD="/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build"
+export PYTHONPATH="/opt/ros/indigo/lib/python2.7/dist-packages"

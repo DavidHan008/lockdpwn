@@ -1,0 +1,8 @@
+prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: imu_acceleration
+Description: Description of imu_acceleration
+Version: 0.0.0
+Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/include
+Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: roscpp std_msgs

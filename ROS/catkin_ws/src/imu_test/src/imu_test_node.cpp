@@ -1,5 +1,5 @@
 /*
- * c++ ==> ROS, IMU 센서에서 데이터를 얻어와 위치, 속도, 가속도 정보를 얻어오는 코드
+ * c++ ==> ROS, IMU 센서
  */
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>
@@ -13,10 +13,14 @@ using namespace ros;
 const double alpha = 0.5;
 double fXg_old =0;
 double Xg, Yg, Zg;
+double aX, aY, aZ;
 double accSumVector;
 double fXg = 0;
 double fYg = 0;
 double fZg = 0;
+double faX = 0;
+double faY = 0;
+double faZ = 0;
 
 void getImuData(const sensor_msgs::Imu& imu){
 	// ROS_INFO("x : [%lf]", imu.orientation.x);
@@ -37,20 +41,28 @@ void getImuData(const sensor_msgs::Imu& imu){
 	//Time time = Time::now();
 	//ROS_INFO("%ld.%ld" ,time.sec, time.nsec);
 	
-	Xg = imu.linear_acceleration.x;
-	Yg = imu.linear_acceleration.y;
-	Zg = imu.linear_acceleration.z;
+	aX = imu.angular_velocity.x;
+	aY = imu.angular_velocity.y;
+	aZ = imu.angular_velocity.z;
 
-	fXg = Xg * alpha + (fXg * (1.0 - alpha));
-	fYg = Yg * alpha + (fYg * (1.0 - alpha));
-	fZg = Zg * alpha + (fZg * (1.0 - alpha));
+	faX = aX * alpha + (faX * (1.0 - alpha));
+	faY = aY * alpha + (faY * (1.0 - alpha));
+	faZ = aZ * alpha + (faZ * (1.0 - alpha));
 
-	accSumVector = sqrt(pow(fXg,2) + pow(fYg,2) + pow(fZg,2));
+//	Xg = imu.linear_acceleration.x;
+//	Yg = imu.linear_acceleration.y;
+//	Zg = imu.linear_acceleration.z;
+
+//	fXg = Xg * alpha + (fXg * (1.0 - alpha));
+//	fYg = Yg * alpha + (fYg * (1.0 - alpha));
+//	fZg = Zg * alpha + (fZg * (1.0 - alpha));
+
+//	accSumVector = sqrt(pow(fXg,2) + pow(fYg,2) + pow(fZg,2));
 
 	// 소수점 자리를 2자리수로 고정시킨다
 	cout << fixed;
 	cout.precision(2);
-	cout << "linear acc : [" << fXg << " " << fYg << " " << fZg << "], accSumVector : [ "  << accSumVector << " ]" <<endl;
+	cout << "ang vel : [" << faX << " " << faY << " " << faZ << "] " << endl;
 }
 
 int main(int argc, char **argv){
