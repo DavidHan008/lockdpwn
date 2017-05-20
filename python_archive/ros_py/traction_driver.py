@@ -1,10 +1,9 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==>
+	python ==> ROS, barc-project
 '''
 # license removed for brevity
-
 import rospy
 from dataservice.msg import TimeData
 from barc.msg import SPEED
@@ -13,6 +12,7 @@ import time
 import serial
 from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
 from manuevers import TestSettings , StraightBrake
+
 
 def driver():
 	pub = rospy.Publisher('speed', SPEED, queue_size = 10)
