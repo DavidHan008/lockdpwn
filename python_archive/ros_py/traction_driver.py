@@ -1,7 +1,9 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
-	python ==> ROS, barc-project
+	python ==> ROS, barc-project에서 가져온 traction control 관련 코드
+                        
+                        Publish : 오드로이드 --> 아두이노    모터의 속도값을 전송하는 ㅋ드
 '''
 # license removed for brevity
 import rospy
@@ -12,7 +14,6 @@ import time
 import serial
 from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
 from manuevers import TestSettings , StraightBrake
-
 
 def driver():
 	pub = rospy.Publisher('speed', SPEED, queue_size = 10)
