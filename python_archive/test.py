@@ -1,14 +1,20 @@
 #!/usr/bin/env pytohn
 #-*- coding: utf-8 -*-
 '''
+<<<<<<< HEAD
     python ==> 비주얼컴퓨팅, LBP 알고리즘을 학습해본 코드 
                             Local Binary Pattern
                             1 2 3
                             4 5 6
                             7 8 9 
                                   이런 3x3 필터를 만들어서 중앙 5점을 중심으로 주변 값이 크면 1, 작으면 0을 넣어서 새로운 사진을 만들어봤다.
+=======
+	python ==>
+>>>>>>> 5d5e02a825b684d91025e9d5d60f1fb2a8ef6b25
 '''
+# license removed for brevity
 
+<<<<<<< HEAD
 import numpy as np
 import cv2
 
@@ -66,3 +72,43 @@ cv2.imshow('lbp image', lbp_img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+=======
+import rospy
+from dataservice.msg import TimeData
+from barc.msg import SPEED
+from math import pi, sin
+import time
+import serial
+from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
+from manuevers import TestSettings , StraightBrake
+
+def driver():
+	pub = rospy.Publisher('speed', SPEED, queue_size = 10)
+	rospy.init_node('driver', anonymous=True)
+
+	rateHz = 50
+	dt = 1.0 /rateHz
+	rate = rospy.Rate(rateHz)
+	t_i  = 0
+
+	speed = rospy.get_param("driver/speed")
+	t_0 = rospy.get_param("driver/t_0")
+	t_exp = rospy.get_param("driver/t_exp")
+
+	opt = TestSettings(SPD = speed, turn=0, dt =t_exp)
+	opt.t_0 = t_0
+
+	while not rospy.is_shutdown():
+		(motorCMD, _) = StraightBrake(opt, rateHz, t_i)
+		pub.publish(SPEED(motorCMD))
+		rate.sleep()
+		t_i += 1
+
+
+
+if __name__ == '__main__':
+	try:
+		driver()
+	except rospy.ROSInterruptException:
+		pass
+>>>>>>> 5d5e02a825b684d91025e9d5d60f1fb2a8ef6b25

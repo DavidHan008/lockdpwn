@@ -290,17 +290,8 @@ arduino_test_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 //Value Computed by CMake
 arduino_test_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/arduino_test
 
-//The directory containing a CMake configuration file for bond.
-bond_DIR:PATH=/opt/ros/indigo/share/bond/cmake
-
-//The directory containing a CMake configuration file for bondcpp.
-bondcpp_DIR:PATH=/opt/ros/indigo/share/bondcpp/cmake
-
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
-
-//The directory containing a CMake configuration file for class_loader.
-class_loader_DIR:PATH=/opt/ros/indigo/share/class_loader/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
@@ -328,18 +319,6 @@ driver_common_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
-
-//Value Computed by CMake
-firstROSpkg_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/firstROSpkg
-
-//Value Computed by CMake
-firstROSpkg_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/firstROSpkg
-
-//Value Computed by CMake
-firstROSpkg_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/firstROSpkg
-
-//Value Computed by CMake
-firstROSpkg_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/firstROSpkg
 
 //Value Computed by CMake
 first_ros_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/first_ros
@@ -394,6 +373,12 @@ hokuyo_node_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/
 hokuyo_node_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/hokuyo_node
 
 //Value Computed by CMake
+imu_acceleration_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_acceleration
+
+//Value Computed by CMake
+imu_acceleration_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/imu_acceleration
+
+//Value Computed by CMake
 imu_test_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_test
 
 //Value Computed by CMake
@@ -404,30 +389,6 @@ imu_velocity_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 
 //Value Computed by CMake
 imu_velocity_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/imu_veloicty
-
-//The directory containing a CMake configuration file for kobuki_msgs.
-kobuki_msgs_DIR:PATH=/opt/ros/indigo/share/kobuki_msgs/cmake
-
-//Value Computed by CMake
-kobuki_soft_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/kobuki_soft
-
-//Value Computed by CMake
-kobuki_soft_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/kobuki_soft
-
-//Value Computed by CMake
-kobuki_softapps_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/kobuki_softapps
-
-//Value Computed by CMake
-kobuki_softapps_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/kobuki_softapps
-
-//Value Computed by CMake
-kobuki_softnode_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/kobuki_softnode
-
-//Dependencies for the target
-kobuki_softnode_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libnodeletlib.so;general;/opt/ros/indigo/lib/libbondcpp.so;general;/usr/lib/arm-linux-gnueabihf/libuuid.so;general;/opt/ros/indigo/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/arm-linux-gnueabihf/libdl.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/librospack.so;general;/usr/lib/arm-linux-gnueabihf/libpython2.7.so;general;/usr/lib/arm-linux-gnueabihf/libboost_program_options.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml.so;general;/opt/ros/indigo/lib/libtf.so;general;/opt/ros/indigo/lib/libtf2_ros.so;general;/opt/ros/indigo/lib/libactionlib.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libtf2.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;
-
-//Value Computed by CMake
-kobuki_softnode_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/kobuki_softnode
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
@@ -445,22 +406,16 @@ message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
 //Value Computed by CMake
-my_first_ros_pkg_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/my_first_ros_pkg
-
-//Value Computed by CMake
-my_first_ros_pkg_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/my_first_ros_pkg
-
-//Value Computed by CMake
 myahrs_driver_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver
 
 //Value Computed by CMake
 myahrs_driver_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver
 
-//The directory containing a CMake configuration file for nav_msgs.
-nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
+//Value Computed by CMake
+myahrs_driver_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed
 
-//The directory containing a CMake configuration file for nodelet.
-nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
+//Value Computed by CMake
+myahrs_driver_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed
 
 //Value Computed by CMake
 oroca_ros_tutorials_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials
@@ -468,20 +423,11 @@ oroca_ros_tutorials_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_w
 //Value Computed by CMake
 oroca_ros_tutorials_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/oroca_ros_tutorials
 
-//The directory containing a CMake configuration file for pluginlib.
-pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
-
 //Value Computed by CMake
 razor_imu_9dof_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof
 
 //Value Computed by CMake
 razor_imu_9dof_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/razor_imu_9dof
-
-//Value Computed by CMake
-ros_arduino_test_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/ros_arduino_test
-
-//Value Computed by CMake
-ros_arduino_test_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/ros_arduino_test
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/indigo/share/rosconsole/cmake
@@ -518,12 +464,6 @@ self_test_DIR:PATH=/opt/ros/indigo/share/self_test/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
-
-//The directory containing a CMake configuration file for smclib.
-smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
-
-//Dependencies for the target
-softkobuki_nodelet_LIB_DEPENDS:STATIC=general;kobuki_softnode;
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
@@ -670,7 +610,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=13
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -41,10 +41,12 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/hokuyo_node/CMakeFiles/hokuyo_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/hokuyo_node/CMakeFiles/hokuyo_node_gencfg.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_acceleration/CMakeFiles/imu_acceleration_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_test/CMakeFiles/imu_test_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_veloicty/CMakeFiles/imu_velocity_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/hokuyo_node/CMakeFiles/libhokuyo.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver/CMakeFiles/myahrs_driver.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/CMakeFiles/myahrs_driver_ed.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_gencpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials/CMakeFiles/oroca_ros_tutorials_generate_messages_cpp.dir

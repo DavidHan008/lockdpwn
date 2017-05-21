@@ -400,6 +400,19 @@ rosTest_node/fast:
 .PHONY : rosTest_node/fast
 
 #=============================================================================
+# Target rules for targets named imu_acceleration_node
+
+# Build rule for target.
+imu_acceleration_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imu_acceleration_node
+.PHONY : imu_acceleration_node
+
+# fast build rule for target.
+imu_acceleration_node/fast:
+	$(MAKE) -f imu_acceleration/CMakeFiles/imu_acceleration_node.dir/build.make imu_acceleration/CMakeFiles/imu_acceleration_node.dir/build
+.PHONY : imu_acceleration_node/fast
+
+#=============================================================================
 # Target rules for targets named imu_test_node
 
 # Build rule for target.
@@ -1244,6 +1257,19 @@ tf_generate_messages_py/fast:
 	$(MAKE) -f myahrs_driver/CMakeFiles/tf_generate_messages_py.dir/build.make myahrs_driver/CMakeFiles/tf_generate_messages_py.dir/build
 .PHONY : tf_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named myahrs_driver_ed
+
+# Build rule for target.
+myahrs_driver_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myahrs_driver_ed
+.PHONY : myahrs_driver_ed
+
+# fast build rule for target.
+myahrs_driver_ed/fast:
+	$(MAKE) -f myahrs_driver_ed/CMakeFiles/myahrs_driver_ed.dir/build.make myahrs_driver_ed/CMakeFiles/myahrs_driver_ed.dir/build
+.PHONY : myahrs_driver_ed/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1276,6 +1302,7 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosTest_node"
+	@echo "... imu_acceleration_node"
 	@echo "... imu_test_node"
 	@echo "... imu_velocity_node"
 	@echo "... _oroca_ros_tutorials_generate_messages_check_deps_msgTutorial"
@@ -1341,6 +1368,7 @@ help:
 	@echo "... tf_generate_messages_cpp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf_generate_messages_py"
+	@echo "... myahrs_driver_ed"
 .PHONY : help
 
 
