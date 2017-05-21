@@ -66,3 +66,4 @@ cv2.imshow('lbp image', lbp_img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
