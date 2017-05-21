@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 '''
 <<<<<<< HEAD
+<<<<<<< HEAD
     python ==> 비주얼컴퓨팅, LBP 알고리즘을 학습해본 코드 
                             Local Binary Pattern
                             1 2 3
@@ -82,6 +83,21 @@ import serial
 from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
 from manuevers import TestSettings , StraightBrake
 
+=======
+	python ==>
+'''
+# license removed for brevity
+
+import rospy
+from dataservice.msg import TimeData
+from barc.msg import SPEED
+from math import pi, sin
+import time
+import serial
+from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
+from manuevers import TestSettings , StraightBrake
+
+>>>>>>> 5d5e02a825b684d91025e9d5d60f1fb2a8ef6b25
 def driver():
 	pub = rospy.Publisher('speed', SPEED, queue_size = 10)
 	rospy.init_node('driver', anonymous=True)
@@ -111,4 +127,7 @@ if __name__ == '__main__':
 		driver()
 	except rospy.ROSInterruptException:
 		pass
+<<<<<<< HEAD
+>>>>>>> 5d5e02a825b684d91025e9d5d60f1fb2a8ef6b25
+=======
 >>>>>>> 5d5e02a825b684d91025e9d5d60f1fb2a8ef6b25
