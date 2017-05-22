@@ -21,6 +21,59 @@
 
 
 -----------------------------------------------------------------------------------
+170522_월
+
+# 입출력 스트림
+
+	# c++ 입출력 스트림은 버퍼를 가진다
+		# 키 입력용 스트림 버퍼
+		# 스크린 출력용 스트림 버퍼
+
+
+
+	# 구 표준 c++ 입출력 라이브러리의 단점
+		# char ch;
+		  cin >> ch;
+		한글을 입력하지 못한다
+
+
+	# iostream
+		# cin :
+		# cout :
+		# cerr :
+		# clog : 
+
+
+	# ostream
+		ostream& flush()
+		ostream& put(char ch)
+		ostream& write(char *str, int n)
+
+
+
+	# istream
+		int get()
+		istream& get(char& ch)
+
+		istream& get(char *s, int n)
+
+		istream& get(char *s, int n, char delim='\n')
+		istream& getline(char *s, int n, char delim='\n')
+
+		istream& ignore(int n=1, int delim=EOF)
+		int gcount()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------

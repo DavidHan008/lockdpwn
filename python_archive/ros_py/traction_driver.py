@@ -12,7 +12,7 @@ from barc.msg import SPEED
 from math import pi, sin
 import time
 import serial
-from numpy import zeros ,hstack ,cos ,array ,dot ,arctan
+from numpy import zeros, hstack, cos, array, dot, arctan
 from manuevers import TestSettings , StraightBrake
 
 def driver():
