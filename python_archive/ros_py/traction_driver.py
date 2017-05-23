@@ -3,7 +3,7 @@
 '''
 	python ==> ROS, barc-project에서 가져온 traction control 관련 코드
                         
-                        Publish : 오드로이드 --> 아두이노    모터의 속도값을 전송하는 ㅋ드
+                        Publish : 오드로이드 --> 아두이노    모터의 속도값을 전송하는 코드
 '''
 # license removed for brevity
 import rospy
