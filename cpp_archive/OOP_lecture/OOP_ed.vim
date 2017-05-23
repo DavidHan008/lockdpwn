@@ -18,6 +18,92 @@
 
 
 -----------------------------------------------------------------------------------
+170523_화
+
+# 포맷 입출력
+	# 포맷 플래그 : 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
+		long setf(long flags)
+		long unsetf(long flags)
+
+
+	# 포맷 함수
+		int width(int minWidth)
+		char fill(char cFill)
+		int precision(int np)
+
+
+	# 조작자 manipulator
+		# 매개변수 있는 조작자 vs 매개변수 없는 조작자
+			cout << hex << showbase << 30 << endl;
+			cout << dec << showpos << 100 << endl;
+
+			#include <iomanip>
+			cout << setw(10) << setfill('^') << "Hello" << endl;
+
+
+
+
+# 삽입 연산자 << 
+	# 삽입 연산자의 실행 과정
+
+	# 사용자 삽입 연산자 만들기
+
+	class Point{
+		...
+		friend ostream& operator << (ostream& stream, Point a);
+	};
+
+	// couut << a << b 같이 여러번 >>를 사용하는 경우에 대비해 istream& 반환타입을 설정한다
+	ostream& operator << (ostream& stream, Point a){
+		stream << "(" << a.x << "," << a.y << ")";
+		return stream;
+	};
+
+	Point p(3,4);
+	cout << p << endl;
+
+	Point q(1,100), r(2,200);
+	cout << q << r << endl;
+
+	
+
+
+# 추출 연산자 >>
+	class Point{
+		...
+		friend istream& operator >> (istream &ins, Point &a);
+	}; 
+
+	// cin >> a >> b 같이 여러번 >>를 사용하는 경우에 대비해 istream& 반환타입을 설정한다
+	istream& operator >> (istream& ins, Point& a){
+		...
+
+		return ins
+	};
+
+	Point p;
+	cin >> p;
+	cout << p;
+
+
+
+
+# 사용자 정의 조작자 만들기
+	ostream& fivestar(ostream& outs){
+		return otus << "*****";
+	}
+
+	istream& question(istream& ins){
+		cout << " blah blah ";
+		return ins;
+	}
+
+
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------
@@ -62,8 +148,6 @@
 
 		istream& ignore(int n=1, int delim=EOF)
 		int gcount()
-
-
 
 
 
@@ -256,8 +340,6 @@ public:
 	Point(int x =0 , int y =0) { this->x = x, this->y = y; }
 	void show() { cout << '(' << x << ',' << y << ')' << endl;
 };
-
-
 
 
 
