@@ -19,10 +19,10 @@ tlabels = []
 
 # train Image 데이터 700장을 불러온다
 for num in range(1,701):
-    train_images.append(scipy.misc.imread('C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_faceDetection\\train_image\\train_'+ str(num)+'.bmp'))
+    train_images.append(scipy.misc.imread('D:\\edward\\visualComputing_faceDetection\\train_image\\train_'+ str(num)+'.bmp'))
 
 # train Label 데이터를 불러온다
-with open("C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_faceDetection\\train_label.txt") as f:
+with open("D:\\edward\\visualComputing_faceDetection\train_label.txt") as f:
     line = [line.rstrip() for line in f]
     tlabels.append(line)
 
@@ -52,11 +52,11 @@ testlabels = []
 
 # test Image 데이터 700장을 불러온다
 for num in range(1,701):
-    test_images.append(scipy.misc.imread('C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_faceDetection\\test_image\\test_'+ str(num)+'.bmp'))
+    test_images.append(scipy.misc.imread('D:\\edward\\visualComputing_faceDetection\\test_image\\test_'+ str(num)+'.bmp'))
 
 
 # test Label 데이터를 불러온다
-with open("C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_faceDetection\\test_label.txt") as f:
+with open("D:\\edward\\visualComputing_faceDetection\\test_label.txt") as f:
     line = [line.rstrip() for line in f]
     testlabels.append(line)
 
@@ -129,7 +129,7 @@ for x in range(1, rows-1, 2):
     for y in range(1, cols -1, 2):
         for i in range(0, num_img - 1):
             center = train_images2[i][x,y]   # 중앙 픽셀값을 받아온다
-            neighbor_p = neighborpixels(train_images2[i], x, y)  # 주변 점들의 값을 받아온다
+            neighbor_p = neighborPixels(train_images2[i], x, y)  # 주변 점들의 값을 받아온다
             values = thresholded(center, neighbor_p) # center 점보다 주변값이 크면 1 아니면 0 을 반환한다
 
             weights = [1,2,4,8,16,32,64,128]
@@ -158,7 +158,7 @@ for x in range(1, rows-1, 2):
     for y in range(1, cols -1, 2):
         for i in range(0, num_img - 1):
             center = test_images2[i][x,y]   # 중앙 픽셀값을 받아온다
-            neighbor_p = neighborpixels(test_images2[i], x, y)  # 주변 점들의 값을 받아온다
+            neighbor_p = neighborPixels(test_images2[i], x, y)  # 주변 점들의 값을 받아온다
             values = thresholded(center, neighbor_p) # center 점보다 주변값이 크면 1 아니면 0 을 반환한다
 
             weights = [1,2,4,8,16,32,64,128]
