@@ -61,5 +61,6 @@ imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/i
 imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/include/sensor_msgs/Imu.h
+imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/include/std_msgs/Float64.h
 imu_test/CMakeFiles/imu_test_node.dir/src/imu_test_node.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 

@@ -3,6 +3,7 @@
  */
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>
+#include <std_msgs/Float64.h>
 #include <iostream>
 #include <cstdio>
 #include <cmath>
@@ -65,11 +66,18 @@ void getImuData(const sensor_msgs::Imu& imu){
 	cout << "ang vel : [" << faX << " " << faY << " " << faZ << "] " << endl;
 }
 
+void getYawData(const std_msgs::Float64 yaw){
+	cout << "                                      Yaw : " << yaw.data << endl;
+}
+
+
 int main(int argc, char **argv){
 	init(argc, argv, "imu_test_node");
 	NodeHandle nh;
 
-	Subscriber imudata = nh.subscribe("imu/data", 1000, getImuData);
+	Subscriber imudata = nh.subscribe("imu/data", 1, getImuData);
+	Subscriber imuYaw = nh.subscribe("imu/yaw_ed", 1, getYawData);
+
 	spin();
 	return 0;
 }
