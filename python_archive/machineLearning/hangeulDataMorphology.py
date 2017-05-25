@@ -9,16 +9,16 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
-def getDataFromFile():
+def getDataFromFile(path):
     # 한글 데이터를 불러온다
-    with h5py.File('D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf', 'r') as hf:
+    with h5py.File(path, 'r') as hf:
         images = np.array(hf['images'])
         labels = np.array(hf['labels'])
     
+
 def getLenArray(img):
     # 데이터의 길이를 변수로 받는다
     len_image = len(img)
-
 
 
 def applyRandomMorphologyEffect():
@@ -40,6 +40,7 @@ def applyRandomMorphologyEffect():
             modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_TOPHAT, kernel)
         elif(rNum == 7):
             modified_images[i] = cv2.morphologyEx(images[i], cv2.MORPH_BLACKHAT, kernel)
+
 
 def showImage():
     # 모폴로지 연산 후와 전의 이미지를 비교해본다 
@@ -73,13 +74,12 @@ def initProcess():
 # bb = np.array([images[0],images[1]])
 
 
-def saveh5pyData(path, modified_images, modified_labels):
+def saveH5pyData(path, modified_images, modified_labels):
     # hdf5 파일 포맷으로 위의 데이터를 저장한다 :-)
-    f = h5py.File('D:\\edward\\modified_file.hf','w')
+    f = h5py.File(path,'w')
     f.create_dataset('modified_images',data=modified_images, compression_opts=9, compression='gzip')
     f.create_dataset('modified_labels',data=modified_labels, compression_opts=9, compression='gzip')
     f.close()
-
 
 
 def loadData():
@@ -97,12 +97,33 @@ def loadData():
     mod_images = mod_images.reshape(19600, 2704, )
     mod_images = mod_images / 255.
 
+    # train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+    #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+    mod_labels  = np.array(np.zeros(274400).reshape(19600,14))
+    for num in range(0,19600):
+        mod_labels[num][int(mlabels[num]) - 1] = 1
 
-# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
-#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-mod_labels  = np.array(np.zeros(254800).reshape(19600,13))
-for num in range(0,19600):
-    mod_labels[num][int(mlabels[num]) - 1] = 1
+
+
+filepath = 'D:\\googleDrive\\private2\\dataset_ML\\visualComputing_hangeul\\kalph_train.hf'
+savepath = 'D:\\edward\\modified_file.hf'
+
+
+getDataFromFile(filepath)
+
+getLenArray(images)
+
+initProcess()
+applyRandomMorphologyEffect()
+
+showImage()
+
+shuffleData()
+
+saveH5pyData(savepath, modified_images, modified_labels)
+
+loadData()
+
 
 
 # next_batch() 함수에 사용될 파라미터들을 수정한 후 다시 학습을 시작한다

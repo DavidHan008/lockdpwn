@@ -14,8 +14,7 @@ float rpm = 0;
 float LPFvalue = 0; // Low Pass Filter의 값
 
 // DC모터가 회전하면서 Hall 센서를 통해 자석의 값을 읽어들여 모터의 RPM을 구하는 함수
-void getRpm()
-{
+void getRpm(){
   // rpm이므로 60을 곱합니다.
   // 극이 2개이므로 2로 나눕니다 (밀리세컨이므로 1000으로 나눕니다)
   rpm = (n * 60) / (dt * 0.002);
@@ -27,13 +26,11 @@ void getRpm()
 }
 
 // 인터럽트가 발생할 때마다 n값을 1씩 증가시키는 함수
-void Encoder()
-{
+void Encoder(){
   n += 1;
 }
 
-void setup()
-{
+void setup(){
   Serial.begin(115200);					// 시리얼모티러를 115200bps로 설정합니다
   attachInterrupt(0, Encoder, CHANGE); // 2번핀의 신호가 변하면 Encoder 함술를 실행합니다
   MsTimer2::set(dt, getRpm);			// 0.1초에 한 번씩 getRpm() 함수를 실행하는 타이머를 설정합니다
@@ -41,7 +38,6 @@ void setup()
   myservo.attach(9);					// 서보모터를 9번 핀에 설정합니다
 }
 
-void loop()
-{
+void loop(){
   myservo.write(LPFvalue);  // Low Pass Filter를 통과한 값을 서보모터에 입력합니다
 }

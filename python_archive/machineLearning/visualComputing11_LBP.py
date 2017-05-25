@@ -8,7 +8,8 @@
                             7 8 9 
                                   이런 3x3 필터를 만들어서 중앙 5점을 중심으로 주변 값이 크면 1, 작으면 0을 넣어서 새로운 사진을 만들어봤다.
 '''
-# license removed for brevity
+%matplotlib inline
+import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
@@ -37,7 +38,7 @@ def neighborpixels(img, x, y):
 def thresholded(center, neighbor_p):
     out = []
     for a in neighbor_p:
-        if a >= center:
+        if a > center:
             out.append(1)
         else:
             out.append(0)
@@ -60,9 +61,8 @@ for x in range(1, rows-1, 3):
             res += weights[a] + values[a]
             lbp_img.itemset((x//2, y//2), res)
 
-
-cv2.imshow('image', img)
-cv2.imshow('lbp image', lbp_img)
+plt.imshow(img, cmap='gray')  ; plt.show()
+plt.imshow(lbp_img, cmap='gray')  ; plt.show()
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
