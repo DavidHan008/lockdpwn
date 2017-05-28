@@ -1,2 +1,2 @@
-arduino_test:driver_common/driver_base:driver_common/driver_common:driver_common/timestamp_tools:first_ros:hokuyo_node:imu_acceleration:imu_test:imu_veloicty:myahrs_driver:myahrs_driver_ed:oroca_ros_tutorials:razor_imu_9dof
+imu_yaw:myahrs_driver_ed:odroid_control_ed
 -DCATKIN_DEVEL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

@@ -305,8 +305,7 @@ diagnostic_updater_DIR:PATH=/opt/ros/indigo/share/diagnostic_updater/cmake
 //Value Computed by CMake
 driver_base_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/driver_common/driver_base
 
-//The directory containing a CMake configuration file for driver_base.
-driver_base_DIR:PATH=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/driver_base/cmake
+driver_base_DIR:PATH=
 
 //Value Computed by CMake
 driver_base_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/driver_common/driver_base
@@ -390,6 +389,12 @@ imu_velocity_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build
 //Value Computed by CMake
 imu_velocity_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/imu_veloicty
 
+//Value Computed by CMake
+imu_yaw_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw
+
+//Value Computed by CMake
+imu_yaw_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/imu_yaw
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
 
@@ -416,6 +421,12 @@ myahrs_driver_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/b
 
 //Value Computed by CMake
 myahrs_driver_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed
+
+//Value Computed by CMake
+odroid_control_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_ed
+
+//Value Computed by CMake
+odroid_control_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_ed
 
 //Value Computed by CMake
 oroca_ros_tutorials_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/oroca_ros_tutorials
@@ -610,7 +621,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=15
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -54,9 +54,8 @@ void loop(){
   distFiltered[i++] = dist;
 
   if (i > MAXNUM)
-  {
     i = 0;
-  }
+
   // distFiltered[] 배열 안의 값의 평균을 final에 저장합니다
   final = getMean(distFiltered);
 

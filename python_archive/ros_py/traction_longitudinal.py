@@ -28,8 +28,6 @@ from scipy.signal import filtfilt, butter, buttord
 prevtime = 0
 deltatime = 0
 vx = 0
-speed = 0
-ax = 0
 sleeptime = 0.01
 
 N             = rospy.get_param("longitudinal/N")
@@ -70,7 +68,7 @@ def encoder_callback(data):
 	counts = hstack(([data.FR], counts[:-1]))
 	times = hstack(([time.time()], times[:-1]))
 	Ww = (counts[0]-counts[-1])/(times[0] - times[-1])
-	Ww_Reff = Ww * pi / 2*Reff
+	Ww_Reff = Ww * pi / 2 * Reff
 
 
 def speed_callback(data):
