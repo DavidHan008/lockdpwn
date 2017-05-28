@@ -39,16 +39,6 @@ ros::Publisher dist("dist", &float_msg);
 ros::Publisher Rps_front("Rps_front", &float_hallfront_msg);
 ros::Publisher Rps_rear("Rps_rear", &float_hallrear_msg);
 
-
-//Function to print the arrays.
-void printArray(int *a, int n){
-	for (int i = 0; i < n; i++){
-		Serial.print(a[i], DEC);
-		Serial.print(' ');
-	}
-	Serial.println();
-}
-
 //Sorting function
 // sort function (Author: Bill Gentles, Nov. 12, 2010)
 void isort(int *a, int n) {
@@ -98,8 +88,6 @@ int mode(int *x, int n) {
 	}
 }
 
-ros::Subscriber<std_msgs::Int32> servo_steer("angle_msg", servo_control );
-ros::Subscriber<std_msgs::Int32> DC_duty("motor_speed", motor_duty );
 
 // servo_motor steering
 void servo_control(const std_msgs::Int32& angle_msg){
@@ -111,26 +99,23 @@ void motor_duty(const std_msgs::Int32& motor_speed){
 	esc.writeMicroseconds(motor_speed.data);
 }
 
+ros::Subscriber<std_msgs::Int32> servo_steer("angle_msg", servo_control );
+ros::Subscriber<std_msgs::Int32> DC_duty("motor_speed", motor_duty );
 
 void calculateDistance(){
-	pinMode(pwPin, INPUT);
-
 	for (int i = 0; i < arraysize; i++){
 		pulse = pulseIn(pwPin, HIGH);
 		rangevalue[i] = pulse / 58;
 		delay(10);
 	}
 
-	printArray(rangevalue, arraysize);
 	isort(rangevalue, arraysize);
-	printArray(rangevalue, arraysize);
 	modE = mode(rangevalue, arraysize);
 	delay(100);
 
 
 	float_msg.data=modE;
 	dist.publish( &float_msg);
-	nh.spinOnce();
 	delay(10);      
 }
 
@@ -157,10 +142,12 @@ void Encoder_rear(){
 }
 
 void setup() {
-	Serial.begin(115200);
+//	Serial.begin(9600);
 
 	attachInterrupt(1, Encoder_front, CHANGE);    
 	attachInterrupt(0, Encoder_rear, CHANGE);   
+
+	pinMode(pwPin, INPUT);
 
 	myservo.attach(11);
 	esc.attach(5);    
@@ -170,6 +157,7 @@ void setup() {
 	MsTimer2::start();			// 타이머를 실행합니다
 
 	nh.initNode();
+	nh.getHardware()->setBaud(57600);
 	nh.advertise(dist);  
 	nh.advertise(Rps_front);
 	nh.advertise(Rps_rear);
@@ -179,7 +167,6 @@ void setup() {
 
 void loop() {
 	calculateDistance(); 
-
 	nh.spinOnce();
 }
 
