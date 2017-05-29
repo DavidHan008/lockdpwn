@@ -95,7 +95,7 @@ app.get('/logone', function(req, res){
 // localhost:3000/graph에 접속하면 googleChartSample.html에서 구글차트 템플릿을 읽어와 mysql의 데이터를 입력받아 뿌려줍니다
 app.get('/graph', function(req, res){
 	// 해당 템플릿 파일을 읽어온다
-	var html = fs.readFile("/home/pi/gitrepo/lockdpwn/systemNewTechnology/mission6/googleChartSample.html", function (err, html) {
+	var html = fs.readFile("/home/pi/gitrepo/lockdpwn/python_archive/systemNewTechnology/mission6/googleChartSample.html", function (err, html) {
 		html = " "+ html
 
 		// mysql로부터 데이터를 읽어온다
