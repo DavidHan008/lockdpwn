@@ -2,21 +2,542 @@
 -----------------------------------------------------------------------------------
 
 
-
 -----------------------------------------------------------------------------------
-
-
-
------------------------------------------------------------------------------------
-
 
 
 -----------------------------------------------------------------------------------
 
 
+-----------------------------------------------------------------------------------
+
 
 -----------------------------------------------------------------------------------
 
+
+-----------------------------------------------------------------------------------
+170529_월
+
+# 텍스트 파일 <==> 바이너리 파일
+
+	# CRLF
+		# Carriage Return Line Feed 
+		# \x0D\x0A
+		# \r\n
+
+
+	# 바이너리 파일
+		# 각종 실행파일들
+
+
+	# hwp 파일은 바이너리 파일이다 
+		# 텍스트 정보를 포함한 바이너리 파일이다
+
+
+	# typedef basic_ifstream<char, char_traits<char>> ifstream;
+
+
+	# #include <fstream> 이 필요하다
+
+
+
+	# 파일 입출력 모드 
+		# 텍스트 I/O     <==>     바이너리 I/O
+		# 개행문자 \n를 다루는데 차이가 있다
+
+
+
+	# 파일 모드 file mode
+		# ios::in, ios::out, ios::app; ios::binary
+
+
+
+	# pdf 자료 예제 12-3 한번 보기!
+		# 실제 바이트 수가 219 ==> 206으로 표시된다. \r는 전부 생략됨
+
+
+	# get() 과 EOF 
+		# 파일의 끝을 인지하는 방법
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!! 6/13 화 저녁 6시 기말고사 시험본다. 장소는 나중에 알려준다
+	! 다음주 목요일부터 기말고사 기간이다
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170523_화
+
+# 포맷 입출력
+	# 포맷 플래그 : 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
+		long setf(long flags)
+		long unsetf(long flags)
+
+
+	# 포맷 함수
+		int width(int minWidth)
+		char fill(char cFill)
+		int precision(int np)
+
+
+	# 조작자 manipulator
+		# 매개변수 있는 조작자 vs 매개변수 없는 조작자
+			cout << hex << showbase << 30 << endl;
+			cout << dec << showpos << 100 << endl;
+
+			#include <iomanip>
+			cout << setw(10) << setfill('^') << "Hello" << endl;
+
+
+
+
+# 삽입 연산자 << 
+	# 삽입 연산자의 실행 과정
+
+	# 사용자 삽입 연산자 만들기
+
+	class Point{
+		...
+		friend ostream& operator << (ostream& stream, Point a);
+	};
+
+	// couut << a << b 같이 여러번 >>를 사용하는 경우에 대비해 istream& 반환타입을 설정한다
+	ostream& operator << (ostream& stream, Point a){
+		stream << "(" << a.x << "," << a.y << ")";
+		return stream;
+	};
+
+	Point p(3,4);
+	cout << p << endl;
+
+	Point q(1,100), r(2,200);
+	cout << q << r << endl;
+
+	
+
+
+# 추출 연산자 >>
+	class Point{
+		...
+		friend istream& operator >> (istream &ins, Point &a);
+	}; 
+
+	// cin >> a >> b 같이 여러번 >>를 사용하는 경우에 대비해 istream& 반환타입을 설정한다
+	istream& operator >> (istream& ins, Point& a){
+		...
+
+		return ins
+	};
+
+	Point p;
+	cin >> p;
+	cout << p;
+
+
+
+
+# 사용자 정의 조작자 만들기
+	ostream& fivestar(ostream& outs){
+		return otus << "*****";
+	}
+
+	istream& question(istream& ins){
+		cout << " blah blah ";
+		return ins;
+	}
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170522_월
+
+# 입출력 스트림
+
+	# c++ 입출력 스트림은 버퍼를 가진다
+		# 키 입력용 스트림 버퍼
+		# 스크린 출력용 스트림 버퍼
+
+
+
+	# 구 표준 c++ 입출력 라이브러리의 단점
+		# char ch;
+		  cin >> ch;
+		한글을 입력하지 못한다
+
+
+	# iostream
+		# cin :
+		# cout :
+		# cerr :
+		# clog : 
+
+
+	# ostream
+		ostream& flush()
+		ostream& put(char ch)
+		ostream& write(char *str, int n)
+
+
+
+	# istream
+		int get()
+		istream& get(char& ch)
+
+		istream& get(char *s, int n)
+
+		istream& get(char *s, int n, char delim='\n')
+		istream& getline(char *s, int n, char delim='\n')
+
+		istream& ignore(int n=1, int delim=EOF)
+		int gcount()
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170516_화
+
+# cout << a << b << c    의 실행순서 이해하기!
+
+
+# 2개의 제니릭 타입을 가진 클래스 만들기
+
+template <class T1, class T2>
+class GClass{
+	...
+};
+
+
+
+# 표준 템플릿 라이브러리 STL
+	
+	# vector 
+	# deque
+	# list
+	# set
+	# map
+	# stack
+	# queue
+
+
+	# iterator
+	# const_iterator
+	# reverse_iterator
+
+	# copy
+	# equal
+	# find
+	# max
+	# ...
+
+
+
+	# vector containor
+		vector<int> v;
+		
+		v.push_back(1);
+		v.push_back(2);
+		v.push_back(3);
+
+		for(int i = 0; i < v.size(); i++)
+			cout << v[i] << ' ';
+		cout << endl;
+
+		...
+		vector<string> sv;
+		string name;
+	
+
+
+	
+	# iterator : 컨테이너의 원소를 가르키는 포인터
+
+		vector<int> v;
+		vector<int>::iterator it;
+		it = v.begin();
+
+		it++;
+
+		it = v.erase(it);
+		it = v.end();
+
+
+
+	# algorithm
+
+		sort(v.begin(), v.end());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170515_월
+
+# 일반화와 템플릿	
+
+template <class T>
+void myswap(T &a, T &b){
+	T tmp;
+	tmp = a;
+	a = b;
+	b = tmp;
+}
+
+	# 단 (int a, double b) 같은 구문은 처리하지 못한다
+
+
+template <class T1, class T2>
+void mcopy(T1 src, T2 dest[], int n){
+	for(int i = 0 ; i < n ; i++)
+		dest[i] = (T2)src[i];
+}
+
+int main(){
+	int x[] = {1,2,3,4,5};
+	double d[5];
+	char c[5] = {'H','e','l','l','o'};
+	char d[5];
+
+	mcopy(..)
+	...
+}
+
+
+
+template <class T>
+void print(T array[], int n){
+	for(int i =0 ; i< n ; i++)
+		cout << array[i] << '\t';
+	cout << endl;
+}
+
+
+void print(char array[], int n){
+	for(int i =0; i < n; i++)
+		cout << (int)array[i] << '\t';
+	cout << endl;
+}
+
+
+
+# 제네릭, 템플릿 클래스 만들기
+
+
+template <class T>
+class MyStack {
+	int tos;
+	T data[100];
+
+public:
+	MyStack();
+	void push(T element);
+	T pop();
+};
+
+template <class T>
+T MyStack<T>::pop(){
+	...
+}
+
+template<class T>
+void MyStack<T>::push(T element){
+	...
+}
+
+
+int main(){
+	MyStack<int> iStack;
+	MyStack<double> dStack;  // 이와 같이 선언해준다
+}
+
+
+
+# 제네릭 스택의 타입을 포인터나 클래스로 구체화할 수 있다 
+
+class Point{
+	int x,y,;
+
+public:
+	Point(int x =0 , int y =0) { this->x = x, this->y = y; }
+	void show() { cout << '(' << x << ',' << y << ')' << endl;
+};
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170508_월
+
+# 중간고사 시험지 체크
+	#  95 + 5점
+
+
+
+
+$$ p456 6,7번 문제   
+	$ 5/23(화)까지 과제
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170502_화
+
+# 가상함수를 가진 기본클래스의 목적
+	
+
+
+# 가상함수 오버라이딩
+
+
+
+# 추상클래스와 순수가상함수
+
+class Shape{                           // 추상클래스
+	public:
+		virtual void draw() = 0;
+};
+
+
+
+class Circle : public Shape{            // 추상클래스
+	public:
+		string toString() { return "Circle 객체"; }
+};
+
+
+
+class Circle2 : public Shape{           // 추상클래스 아님
+	public:
+		virtual void draw(){
+			cout << "circle";
+		}
+		string toString() { return "Circle 객체"; }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+170501_월
+
+# 가상함수와 추상클래스
+	# Virtual Function  &  Function Overriding
+		# 오버로딩과 오버라이딩의 차이점
+	    	Overloading  <==>  Overriding
+
+		# Overriding의 목적 :
+
+		# 파생클래스의 virtual 키워드는 생략가능하다
+
+		# 동적바인딩
+			# 실행시간까지 함수의 바인딩을 미루는것
+			# virtual 함수의 특성
+
+		# 범위지정연산자(::)
+			# 정적바인딩을 호출한다. 
+			# 기본클래스의 가상함수를 사용하고 싶을 때 사용한다
+
+
+
+# 가상소멸자
+	ex) virtual ~Base();
+	    virtual ~Derived();
+
+		Base *p = new Derived();
+		delete p;
+
+	# ~Base() 소멸자 호출 --> ~Derived() 실행 --> ~Base() 실행
+	# 복잡한 상속관계에서 소멸자 오류발생을 막을 수 있다		
+
+
+
+
+
+
+
+
+
+$ 중간고사 점검
+	$ p261 10번문제(중간고사 16번문제) : 문제가 약간 애매해서 전부 맞게 처리해줬다
+
+
+
+-----------------------------------------------------------------------------------
+170418_화
+
+# 페르마의 마지막 정리 
+	# 페르마가 자신의 책에 마지막장에 x^n + y^n = z^n 의 증명을 풀었으나 용지가 없어서 싣지는 않겠다고 함
+	# 350년정도 된 문제
+	# 앤드류 와일스에 의해 증명되었다
+
+
+
+
+
+$ 중간고사 25 화 저녁 7시 공학관별관 217호 2시간 
 
 
 -----------------------------------------------------------------------------------
@@ -42,12 +563,6 @@
 # pdf 질문 2개! 잘 보기
 	# 상속관계의 생성자와 소멸자의 실행
 	
-
-
-
-
-
-
 
 
 -----------------------------------------------------------------------------------

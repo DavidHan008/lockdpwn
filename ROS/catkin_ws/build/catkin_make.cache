@@ -1,2 +1,2 @@
-my_first_ros_pkg:oroca_ros_tutorials
+imu_yaw:myahrs_driver_ed:odroid_control_ed
 -DCATKIN_DEVEL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

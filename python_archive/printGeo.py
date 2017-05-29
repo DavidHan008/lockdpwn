@@ -8,7 +8,7 @@ import pygeoip
 from socket import *
 import optparse
 
-gi = pygeoip.GeoIP('/home/edward/Downloads/etc/GeoLiteCity.dat')
+gi = pygeoip.GeoIP('.\\GeoLiteCity.dat')
 
 def printRecord(target):
     target = gethostbyname(target)

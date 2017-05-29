@@ -9,7 +9,7 @@ $filetype = @ARGV[1];
 $searchurl = "http://www.google.com/search?hl=en&q=site%3A$site+filetype%3A$filetype";
 
 $mech = WWW::Mechanize->new();
-$mech->agent_alias('Windows_Mozila');
+$mech->agent_alias('Windows Mozila');
 $mech->get($searchurl);
 
 @links = $mech->find_all_links(url_regex => qr/\d+.+\.$filetype/);
@@ -22,7 +22,6 @@ for $link (@links)
 	print "downloading $url\n";
 	$mech->get($url, ':content_file' => $filename);
 }
-
 
 
 
