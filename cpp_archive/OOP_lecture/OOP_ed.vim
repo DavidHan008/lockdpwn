@@ -12,6 +12,89 @@
 
 
 -----------------------------------------------------------------------------------
+170530_화
+
+# 텍스트 파일의 라인 단위 읽기
+	istream getline(char* line, int n)
+	getline(ifstrea fin, string line)
+
+
+	# 예제들 내용 좋다 한번 보기
+
+
+
+
+# 바이너리 IO 모드
+	ios::binary
+	
+	# 문자, 바이트 단위 파일 입출력 함수
+		get()
+		put()
+
+	# 블록 단위 파일 입출력 함수 
+		istream& read(char* s, int n)    // n개 바이트를 배열 s에 읽어들임
+		ostream& write(char* s, int n)
+		int gcount()
+
+
+		
+
+# 텍스트 IO <==> 바이너리 IO의 확실한 차이점
+	# 파일의 끝을 처리하는 방법에는 차이가 없다
+	# 개행문자 '\n' 를 읽고 쓸 때 서로 다르게 작동한다
+
+
+
+# 스트림 상태 검사
+	# 스트림 상태 
+		failbit
+		eofbit
+		badbit
+
+	
+
+
+# 임의 접근과 파일 포인터
+	istream& seekg(streampos pos)
+	istream& seekg(streamoff offset, ios::seekdir seekbase)
+
+	ostream& seekp(streampos pos)
+	ostream& seekp(streamoff offset, ios::seekdir seekbase)
+
+	streampos tellg()
+	streampos tellp()
+
+	# seekbase 옵션 3가지
+		ios::beg
+		ios::cur
+		ios::end
+
+
+
+long getFileSize(ifstream& fin){
+	fin.seekg(0, ios::end);
+	long length = fin.tellg();
+	return length;
+}
+	
+int main(){
+	char *file = "c:\\windows\\system.ini";
+
+	ifstream fin(file);
+	if(!fin){
+		cout << file << " open error " << endl;
+		return 0;
+	}
+
+	cout << file << " size is : " << getFileSize(fin);
+	fin.close();
+}
+
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------
@@ -67,12 +150,8 @@
 
 
 
-
-
-
-
-
-!! 6/13 화 저녁 6시 기말고사 시험본다. 장소는 나중에 알려준다
+!! 6/13 화 저녁 6시 기말고사 시험본다. 공학관 228호
+	!  
 	! 다음주 목요일부터 기말고사 기간이다
 
 
