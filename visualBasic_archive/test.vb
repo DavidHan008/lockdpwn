@@ -1,5 +1,7 @@
-
+''
 '' vb.net ==> string 관련되서 여러가지 연습을 해본 코드
+''
+
 sub main()
 	'' strTest를 string 형식으로 선언한다
 	dim strTest as string = "this is a sample"
