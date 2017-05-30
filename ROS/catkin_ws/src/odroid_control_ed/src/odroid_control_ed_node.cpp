@@ -10,21 +10,23 @@
 #include <std_msgs/Float32.h>
 #include "pid.h"
 
-#define TARGET_VAL 1515
-#define ARRAYNUM 15
+#define TARGET_VAL 1530
+#define ARRAYNUM 5
 
 using namespace std;
 using namespace ros;
 
 int cnt = 0;
 
-double P = 10;
-double I = 2;
+double ult = 0;
+
+double P = 13;
+double I = 3;
 double D = 1;
 
-double P2 = 5;
-double I2 = 0.5;
-double D2 = 0.1;
+double P2 = 50;
+double I2 = 25;
+double D2 = 0;
 
 double v_x = 0;
 double Ww_Reff = 0;
@@ -38,12 +40,12 @@ double desired_slip_ratio = 0.04;
 
 double err_angvel_z = 0;
 double v = 0;
+double vfinal = 0;
 double vv[ARRAYNUM] = {0};
 
 double aZ;
 double faZ;
 double alpha = 0.5;
-
 
 // servo & dc 모터 퍼블리셔에 전달할 변수 선언
 std_msgs::Int32 servo;
@@ -74,7 +76,7 @@ double getMean(double dist[]) {
 
 // 아두이노로부터 초음파센서 값을 Subscribe하는 함수
 void ultra_dist(const std_msgs::Float32& ultra){
-
+	ult = ultra.data;
 }
 
 // FR 홀센서 값을 받아 처리하는 콜백함수
@@ -126,23 +128,26 @@ int main(int argc, char **argv){
 		err = slip_ratio - desired_slip_ratio;
 		u = pid_dcmotor.update(err, dt);
 
-		err_angvel_z = faZ;
+		err_angvel_z = -faZ;
 		v = 65 + pid_yawrate.update(err_angvel_z, dt);
 		
 		vv[cnt++] = v;
-		v = getMean(vv);
+		vfinal = getMean(vv);
 
 		if(cnt > ARRAYNUM) cnt = 0;
 
-		cout << "slip is :  " << slip_ratio << ", WwReff is :  " << Ww_Reff << " , v_x is : " << v_x;
-		cout << ", err1 is : [ "<< err  << " ] u is : [ " << u << " ], v is [ " << v << " ]" << endl;
+		//cout << "slip is :  " << slip_ratio << ", WwReff is :  " << Ww_Reff << " , v_x is : " << v_x;
+		//cout << ", err1 is : [ "<< err  << " ] u is : [ " << u << " ], v is [ " << v << " ]" << endl;
 
 		if(u > 70) u = 70;
 
 		dc_motor.data = TARGET_VAL + u;
-		servo.data = v;
+		//servo.data = vfinal;
+		servo.data = 65;
 		
-		cout << servo << ",  " << dc_motor << endl;
+		//cout << servo << ",  " << dc_motor << endl;
+
+		cout << ult << endl;
 
 		servo_pub.publish(servo);		
 		motor_pub.publish(dc_motor);		
