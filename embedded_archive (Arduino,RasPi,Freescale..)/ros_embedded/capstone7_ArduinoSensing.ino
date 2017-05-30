@@ -168,5 +168,7 @@ void setup() {
 void loop() {
 	calculateDistance(); 
 	nh.spinOnce();
+	
+	delay(50);
 }
 

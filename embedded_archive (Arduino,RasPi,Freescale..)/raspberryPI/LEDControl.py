@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-	python ==> 시스템최신기술, 라즈베리파이를 이용해 1,2,3번을 눌러서 LED 3개를 껏다 켰다 하는 코드
+    raspberry ==> 라즈베리파이를 사용해 11,13,15에 있는 LED를 껏다 켰다 하는 코드
 '''
 import RPi.GPIO as GPIO
 
@@ -45,41 +45,5 @@ while(1):
         print("quitting..")
         GPIO.cleanup()
         exit(0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

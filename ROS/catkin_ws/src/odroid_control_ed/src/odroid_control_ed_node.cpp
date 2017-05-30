@@ -94,8 +94,11 @@ void hall_rear(const std_msgs::Float32& h_rear){
 }
 
 void getAngleVel_z(const sensor_msgs::Imu& imu){
-	aZ = imu.angular_velocity.z;
-	faZ = aZ * alpha + (faZ * (1.0 - alpha));
+	//aZ = imu.angular_velocity.z;
+	//faZ = aZ * alpha + (faZ * (1.0 - alpha));
+	
+	Yaw = imu.yaw;
+	fYaw = Yaw * alpha + (fYaw * (1.0 - alpha));
 }
 
 
@@ -128,7 +131,14 @@ int main(int argc, char **argv){
 		err = slip_ratio - desired_slip_ratio;
 		u = pid_dcmotor.update(err, dt);
 
+<<<<<<< HEAD
 		err_angvel_z = -faZ;
+=======
+		//err_angvel_z = faZ;
+		fYaw -= something;
+		err_angvel_z = fYaw;
+
+>>>>>>> fc54fd0bdf2dee748c343e99e1e56a3edd86fdca
 		v = 65 + pid_yawrate.update(err_angvel_z, dt);
 		
 		vv[cnt++] = v;
@@ -142,8 +152,12 @@ int main(int argc, char **argv){
 		if(u > 70) u = 70;
 
 		dc_motor.data = TARGET_VAL + u;
+<<<<<<< HEAD
 		//servo.data = vfinal;
 		servo.data = 65;
+=======
+		servo.data = vfinal;
+>>>>>>> fc54fd0bdf2dee748c343e99e1e56a3edd86fdca
 		
 		//cout << servo << ",  " << dc_motor << endl;
 
