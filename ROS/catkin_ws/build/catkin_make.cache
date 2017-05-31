@@ -1,2 +1,2 @@
-myahrs_driver_ed:odroid_control_ed
+imu_yaw:myahrs_driver_ed:odroid_control_ed:razor_imu_9dof
 -DCATKIN_DEVEL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

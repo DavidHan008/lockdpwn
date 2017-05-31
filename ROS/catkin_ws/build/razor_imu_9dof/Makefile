@@ -153,6 +153,62 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_gencfg: razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : dynamic_reconfigure_gencfg
+
+# fast build rule for target.
+dynamic_reconfigure_gencfg/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+# Convenience name for target.
+razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_cpp: razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : dynamic_reconfigure_generate_messages_cpp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+# Convenience name for target.
+razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_lisp: razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : dynamic_reconfigure_generate_messages_lisp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_lisp/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
+
+# Convenience name for target.
+razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+.PHONY : razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_py: razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+.PHONY : dynamic_reconfigure_generate_messages_py
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_py/fast:
+	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+# Convenience name for target.
 razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir/rule:
 	cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir/rule
 .PHONY : razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir/rule
@@ -172,6 +228,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

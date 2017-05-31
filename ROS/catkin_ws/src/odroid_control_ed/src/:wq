@@ -8,11 +8,10 @@
 #include <sensor_msgs/Imu.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>
-#include <std_msgs/Float64.h>
 #include "pid.h"
 
-#define TARGET_VAL 1507
-#define ARRAYNUM 15
+#define TARGET_VAL 1520
+#define ARRAYNUM 5
 
 using namespace std;
 using namespace ros;
@@ -21,13 +20,13 @@ int cnt = 0;
 
 double ult = 0;
 
-double P = 0;
-double I = 10;
-double D = 5;
+double P = 12;
+double I = 3;
+double D = 1;
 
-double P2 = 30;
-double I2 = 10;
-double D2 = 10;
+double P2 = 50;
+double I2 = 25;
+double D2 = 0;
 
 double v_x = 0;
 double Ww_Reff = 0;
@@ -37,7 +36,7 @@ double u = 0;
 double uu[ARRAYNUM] = {0};
 double dt = 100;
 double threshold = 0;
-double desired_slip_ratio = 0.0;
+double desired_slip_ratio = 0.04;
 
 double err_angvel_z = 0;
 double v = 0;
@@ -49,7 +48,6 @@ double faZ;
 double alpha = 0.5;
 
 double Yaw;
-double fYaw;
 
 // servo & dc 모터 퍼블리셔에 전달할 변수 선언
 std_msgs::Int32 servo;
@@ -98,14 +96,14 @@ void hall_rear(const std_msgs::Float32& h_rear){
 }
 
 void getAngleVel_z(const sensor_msgs::Imu& imu){
-	aZ = imu.angular_velocity.z;
-	faZ = aZ * alpha + (faZ * (1.0 - alpha));
+	//aZ = imu.angular_velocity.z;
+	//faZ = aZ * alpha + (faZ * (1.0 - alpha));
 	
 }
 
-void getYaw(const std_msgs::Float64 yaw){
-	//Yaw = yaw.data;
-	//fYaw = Yaw * alpha + (fYaw * (1.0 - alpha));
+void getYaw(const std_msgs::Float32 yaw){
+	Yaw = yaw.data;
+	fYaw = Yaw * alpha + (fYaw * (1.0 - alpha));
 }
 
 int main(int argc, char **argv){
@@ -122,8 +120,8 @@ int main(int argc, char **argv){
 	Subscriber hall_front_sub = nh.subscribe("Rps_front", 1, hall_front);
 	Subscriber hall_rear_sub = nh.subscribe("Rps_rear", 1, hall_rear);
 
-	Subscriber imudata = nh.subscribe("imu/data", 1, getAngleVel_z);
-//	Subscriber imudata = nh.subscribe("imu/yaw_ed", 1, getYaw);
+	//Subscriber imudata = nh.subscribe("imu/data", 1, getAngleVel_z);
+	Subscriber imudata = nh.subscribe("imu/yaw_ed", 1, getYaw);
 
 	PID pid_dcmotor(P , I , D);
 	PID pid_yawrate(P2, I2, D2);
@@ -139,10 +137,11 @@ int main(int argc, char **argv){
 		u = pid_dcmotor.update(err, dt);
 
 		err_angvel_z = -faZ;
-	//	fYaw -= 75;
-	//	err_angvel_z = -fYaw;
+		//err_angvel_z = faZ;
+		fYaw -= 
+		err_angvel_z = fYaw;
 
-		v = 80 + pid_yawrate.update(err_angvel_z, dt);
+		v = 65 + pid_yawrate.update(err_angvel_z, dt);
 		
 		vv[cnt++] = v;
 		vfinal = getMean(vv);
@@ -155,15 +154,10 @@ int main(int argc, char **argv){
 		if(u > 70) u = 70;
 
 		dc_motor.data = TARGET_VAL + u;
-
-		if(vfinal > 85) vfinal = 85;
-		if(vfinal < 45) vfinal = 45;
-
-		//servo.data = vfinal;
-		servo.data = 80;
+		servo.data = vfinal;
 		
 		cout << servo << ",  " << dc_motor << endl;
-		cout << fYaw << endl;
+
 		cout << ult << endl;
 
 		servo_pub.publish(servo);		
