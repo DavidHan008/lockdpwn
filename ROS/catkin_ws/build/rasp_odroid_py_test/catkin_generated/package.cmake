@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "rasp_odroid_py_test")
-set(rasp_odroid_py_test_MAINTAINER "root <root@todo.todo>")
-set(rasp_odroid_py_test_DEPRECATED "")
-set(rasp_odroid_py_test_VERSION "0.0.0")
-set(rasp_odroid_py_test_BUILD_DEPENDS "rospy" "std_msgs")
-set(rasp_odroid_py_test_RUN_DEPENDS "rospy" "std_msgs")
-set(rasp_odroid_py_test_BUILDTOOL_DEPENDS "catkin")

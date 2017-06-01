@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "odroid_control_ed")
-set(odroid_control_ed_MAINTAINER "root <root@todo.todo>")
-set(odroid_control_ed_DEPRECATED "")
-set(odroid_control_ed_VERSION "0.0.0")
-set(odroid_control_ed_BUILD_DEPENDS "roscpp" "std_msgs")
-set(odroid_control_ed_RUN_DEPENDS "roscpp" "std_msgs")
-set(odroid_control_ed_BUILDTOOL_DEPENDS "catkin")

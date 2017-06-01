@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "imu_yaw")
-set(imu_yaw_MAINTAINER "root <root@todo.todo>")
-set(imu_yaw_DEPRECATED "")
-set(imu_yaw_VERSION "0.0.0")
-set(imu_yaw_BUILD_DEPENDS "roscpp" "std_msgs")
-set(imu_yaw_RUN_DEPENDS "roscpp" "std_msgs")
-set(imu_yaw_BUILDTOOL_DEPENDS "catkin")

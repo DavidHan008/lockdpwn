@@ -1,8 +1,0 @@
-prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: arduino_test
-Description: Description of arduino_test
-Version: 0.0.0
-Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/arduino_test/include
-Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: roscpp std_msgs

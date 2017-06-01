@@ -99,11 +99,6 @@ void getAngleVel_z(const sensor_msgs::Imu& imu){
 	aZ = imu.angular_velocity.z;
 	faZ = aZ * alpha + (faZ * (1.0 - alpha));
 	
-<<<<<<< HEAD
-//	Yaw = imu.yaw;
-//	fYaw = Yaw * alpha + (fYaw * (1.0 - alpha));
-=======
->>>>>>> d0da8e4ac1273d443f305f4c133f60e220bc0556
 }
 
 void getYaw(const std_msgs::Float64 yaw){
@@ -145,12 +140,6 @@ int main(int argc, char **argv){
 		err = slip_ratio - desired_slip_ratio;
 		u = pid_dcmotor.update(err, dt);
 
-<<<<<<< HEAD
-		err_angvel_z = -faZ;
-		//err_angvel_z = fYaw;
-
-		v = 65 + pid_yawrate.update(err_angvel_z, dt);
-=======
 		//err_angvel_z = -faZ;
 		if(fYaw * firstValue > 0){
 			eYaw = fYaw - firstValue;
@@ -165,7 +154,6 @@ int main(int argc, char **argv){
 		err_angvel_z = -eYaw;
 
 		v =  pid_yawrate.update(err_angvel_z, dt);
->>>>>>> d0da8e4ac1273d443f305f4c133f60e220bc0556
 		
 		if(v > 25) v = 25;
 		else if(v < -25) v = -25;
@@ -185,18 +173,12 @@ int main(int argc, char **argv){
 		if(u > 70) u = 70;
 
 		dc_motor.data = TARGET_VAL + u;
-<<<<<<< HEAD
-		//servo.data = vfinal;
-		servo.data = 65;
-		servo.data = vfinal;
-=======
 
 		if(vfinal > 10) vfinal = 10;
 		if(vfinal < -10) vfinal = -10;
 
 		servo.data = 65 + vfinal;
 		//servo.data = 80;
->>>>>>> d0da8e4ac1273d443f305f4c133f60e220bc0556
 		
 		cout << servo << ",  " << dc_motor << endl;
 		cout << "fYaw is:  " << fYaw <<", eYaw is : "<< eYaw  << ", and firstValue is : " << firstValue << endl;

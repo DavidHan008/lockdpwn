@@ -1,8 +1,0 @@
-prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: first_ros
-Description: Description of first_ros
-Version: 0.0.0
-Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/first_ros/include
-Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: roscpp std_msgs
