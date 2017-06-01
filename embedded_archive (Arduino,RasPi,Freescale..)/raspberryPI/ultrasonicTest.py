@@ -33,6 +33,9 @@ try:
         distance = pulse_duration * 17150
         distance = round(distance, 2)
 
+        if distance > 100:
+            distance = 100;
+
         print "Distance: ", distance, " cm"
 
 except KeyboardInterrupt:
