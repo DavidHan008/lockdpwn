@@ -10,8 +10,8 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 # 8번에 서보모터 pwm을 연결한다
-GPIO.setup(8,GPIO.OUT)
-pwm = GPIO.PWM(8, 50)   # 8번핀 50Hz, 20ms
+GPIO.setup(7,GPIO.OUT)
+pwm = GPIO.PWM(7, 50)   # 8번핀 50Hz, 20ms
 
 pwm.start(7.5)  # duty cycle을 정한다
 
