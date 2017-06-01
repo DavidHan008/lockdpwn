@@ -1,0 +1,8 @@
+prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: odroid_control_ed
+Description: Description of odroid_control_ed
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: roscpp std_msgs

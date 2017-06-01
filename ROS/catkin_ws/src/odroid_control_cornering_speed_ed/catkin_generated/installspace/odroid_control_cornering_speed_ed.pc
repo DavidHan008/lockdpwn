@@ -1,0 +1,8 @@
+prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: odroid_control_cornering_speed_ed
+Description: Description of odroid_control_cornering_speed_ed
+Version: 0.0.0
+Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/include
+Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: roscpp std_msgs
