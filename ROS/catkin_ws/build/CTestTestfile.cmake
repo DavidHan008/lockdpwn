@@ -5,5 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
+SUBDIRS(imu_yaw)
 SUBDIRS(odroid_control_ed)
-SUBDIRS(myahrs_driver_ed)
+SUBDIRS(rasp_odroid_py_test)

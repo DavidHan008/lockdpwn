@@ -114,11 +114,20 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 FILE(INSTALL DESTINATION "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install" TYPE FILE FILES "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/catkin_generated/installspace/.rosinstall")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin_make.bash")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin_make_isolated.bash")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_ed/cmake_install.cmake")
-  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/rasp_odroid_py_test/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
