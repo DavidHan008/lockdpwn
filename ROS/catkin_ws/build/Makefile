@@ -374,6 +374,58 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named odroid_control_cornering_ed_sub
+
+# Build rule for target.
+odroid_control_cornering_ed_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed_sub
+.PHONY : odroid_control_cornering_ed_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed/CMakeFiles/odroid_control_cornering_ed_sub.dir/build.make odroid_control_cornering_ed/CMakeFiles/odroid_control_cornering_ed_sub.dir/build
+.PHONY : odroid_control_cornering_ed_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_ed2_sub
+
+# Build rule for target.
+odroid_control_cornering_ed2_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed2_sub
+.PHONY : odroid_control_cornering_ed2_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed2_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed2/CMakeFiles/odroid_control_cornering_ed2_sub.dir/build.make odroid_control_cornering_ed2/CMakeFiles/odroid_control_cornering_ed2_sub.dir/build
+.PHONY : odroid_control_cornering_ed2_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_ed3_sub
+
+# Build rule for target.
+odroid_control_cornering_ed3_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed3_sub
+.PHONY : odroid_control_cornering_ed3_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed3_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed3/CMakeFiles/odroid_control_cornering_ed3_sub.dir/build.make odroid_control_cornering_ed3/CMakeFiles/odroid_control_cornering_ed3_sub.dir/build
+.PHONY : odroid_control_cornering_ed3_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_speed_ed_sub
+
+# Build rule for target.
+odroid_control_cornering_speed_ed_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_speed_ed_sub
+.PHONY : odroid_control_cornering_speed_ed_sub
+
+# fast build rule for target.
+odroid_control_cornering_speed_ed_sub/fast:
+	$(MAKE) -f odroid_control_cornering_speed_ed/CMakeFiles/odroid_control_cornering_speed_ed_sub.dir/build.make odroid_control_cornering_speed_ed/CMakeFiles/odroid_control_cornering_speed_ed_sub.dir/build
+.PHONY : odroid_control_cornering_speed_ed_sub/fast
+
+#=============================================================================
 # Target rules for targets named odroid_control_ed_sub
 
 # Build rule for target.
@@ -385,71 +437,6 @@ odroid_control_ed_sub: cmake_check_build_system
 odroid_control_ed_sub/fast:
 	$(MAKE) -f odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build.make odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build
 .PHONY : odroid_control_ed_sub/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_gencfg
-
-# Build rule for target.
-dynamic_reconfigure_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	$(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_cpp
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_cpp
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	$(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_lisp
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_lisp
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	$(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_py
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_py
-.PHONY : dynamic_reconfigure_generate_messages_py
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named razor_imu_9dof_gencfg
-
-# Build rule for target.
-razor_imu_9dof_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 razor_imu_9dof_gencfg
-.PHONY : razor_imu_9dof_gencfg
-
-# fast build rule for target.
-razor_imu_9dof_gencfg/fast:
-	$(MAKE) -f razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir/build.make razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir/build
-.PHONY : razor_imu_9dof_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
@@ -728,12 +715,11 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... odroid_control_cornering_ed_sub"
+	@echo "... odroid_control_cornering_ed2_sub"
+	@echo "... odroid_control_cornering_ed3_sub"
+	@echo "... odroid_control_cornering_speed_ed_sub"
 	@echo "... odroid_control_ed_sub"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... razor_imu_9dof_gencfg"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"

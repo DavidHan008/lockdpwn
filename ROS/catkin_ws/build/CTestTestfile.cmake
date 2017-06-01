@@ -6,6 +6,9 @@
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
 SUBDIRS(imu_yaw)
+SUBDIRS(odroid_control_cornering_ed)
+SUBDIRS(odroid_control_cornering_ed2)
+SUBDIRS(odroid_control_cornering_ed3)
+SUBDIRS(odroid_control_cornering_speed_ed)
 SUBDIRS(odroid_control_ed)
-SUBDIRS(razor_imu_9dof)
 SUBDIRS(myahrs_driver_ed)

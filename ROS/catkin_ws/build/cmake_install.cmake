@@ -118,8 +118,11 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed2/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed3/cmake_install.cmake")
+  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_speed_ed/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_ed/cmake_install.cmake")
-  INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/cmake_install.cmake")
   INCLUDE("/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)

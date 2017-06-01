@@ -7,10 +7,6 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/clean_test_results.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/download_extra_data.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/doxygen.dir
-/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/CMakeFiles/dynamic_reconfigure_gencfg.dir
-/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir
-/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir
-/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/CMakeFiles/geometry_msgs_generate_messages_py.dir
@@ -18,8 +14,11 @@
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/CMakeFiles/imu_yaw_node.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/myahrs_driver_ed/CMakeFiles/myahrs_driver_ed.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed2/CMakeFiles/odroid_control_cornering_ed2_sub.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed3/CMakeFiles/odroid_control_cornering_ed3_sub.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed/CMakeFiles/odroid_control_cornering_ed_sub.dir
+/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_speed_ed/CMakeFiles/odroid_control_cornering_speed_ed_sub.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir
-/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/razor_imu_9dof/CMakeFiles/razor_imu_9dof_gencfg.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw/CMakeFiles/roscpp_generate_messages_py.dir
