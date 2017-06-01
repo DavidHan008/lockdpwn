@@ -303,6 +303,12 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+imu_yaw_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/imu_yaw
+
+//Value Computed by CMake
+imu_yaw_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/imu_yaw
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
 
@@ -320,6 +326,30 @@ myahrs_driver_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/b
 
 //Value Computed by CMake
 myahrs_driver_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed
+
+//Value Computed by CMake
+odroid_control_cornering_ed2_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed2
+
+//Value Computed by CMake
+odroid_control_cornering_ed2_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_cornering_ed2
+
+//Value Computed by CMake
+odroid_control_cornering_ed3_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed3
+
+//Value Computed by CMake
+odroid_control_cornering_ed3_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_cornering_ed3
+
+//Value Computed by CMake
+odroid_control_cornering_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_ed
+
+//Value Computed by CMake
+odroid_control_cornering_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_cornering_ed
+
+//Value Computed by CMake
+odroid_control_cornering_speed_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_cornering_speed_ed
+
+//Value Computed by CMake
+odroid_control_cornering_speed_ed_SOURCE_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_cornering_speed_ed
 
 //Value Computed by CMake
 odroid_control_ed_BINARY_DIR:STATIC=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build/odroid_control_ed
@@ -479,7 +509,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

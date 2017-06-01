@@ -63,6 +63,7 @@ odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_nod
 odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/sensor_msgs/Imu.h
 odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/std_msgs/Float32.h
+odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/std_msgs/Float64.h
 odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_node.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
 

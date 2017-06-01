@@ -64,5 +64,6 @@ odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/src/odroid_control_ed_nod
  /opt/ros/indigo/include/rosconsole/macros_generated.h
  /opt/ros/indigo/include/sensor_msgs/Imu.h
  /opt/ros/indigo/include/std_msgs/Float32.h
+ /opt/ros/indigo/include/std_msgs/Float64.h
  /opt/ros/indigo/include/std_msgs/Header.h
  /opt/ros/indigo/include/std_msgs/Int32.h

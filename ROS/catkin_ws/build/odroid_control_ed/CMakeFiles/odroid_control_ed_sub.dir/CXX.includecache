@@ -19,6 +19,8 @@ std_msgs/Int32.h
 -
 std_msgs/Float32.h
 -
+std_msgs/Float64.h
+-
 pid.h
 /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_ed/src/pid.h
 
@@ -727,6 +729,22 @@ geometry_msgs/Vector3.h
 -
 
 /opt/ros/indigo/include/std_msgs/Float32.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/indigo/include/std_msgs/Float64.h
 string
 -
 vector

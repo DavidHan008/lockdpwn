@@ -244,17 +244,17 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named odroid_control_ed_sub
+# Target rules for targets named imu_yaw_node
 
 # Build rule for target.
-odroid_control_ed_sub: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_ed_sub
-.PHONY : odroid_control_ed_sub
+imu_yaw_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imu_yaw_node
+.PHONY : imu_yaw_node
 
 # fast build rule for target.
-odroid_control_ed_sub/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build.make odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build
-.PHONY : odroid_control_ed_sub/fast
+imu_yaw_node/fast:
+	$(MAKE) -f imu_yaw/CMakeFiles/imu_yaw_node.dir/build.make imu_yaw/CMakeFiles/imu_yaw_node.dir/build
+.PHONY : imu_yaw_node/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
@@ -266,7 +266,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make odroid_control_ed/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make imu_yaw/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -279,7 +279,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make odroid_control_ed/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make imu_yaw/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -292,7 +292,7 @@ roscpp_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/roscpp_generate_messages_py.dir/build.make odroid_control_ed/CMakeFiles/roscpp_generate_messages_py.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/roscpp_generate_messages_py.dir/build.make imu_yaw/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
@@ -305,7 +305,7 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -318,7 +318,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -331,7 +331,7 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make odroid_control_ed/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make imu_yaw/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -344,7 +344,7 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make odroid_control_ed/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make imu_yaw/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -357,7 +357,7 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make odroid_control_ed/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make imu_yaw/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -370,8 +370,73 @@ std_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	$(MAKE) -f odroid_control_ed/CMakeFiles/std_msgs_generate_messages_py.dir/build.make odroid_control_ed/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_yaw/CMakeFiles/std_msgs_generate_messages_py.dir/build.make imu_yaw/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_ed_sub
+
+# Build rule for target.
+odroid_control_cornering_ed_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed_sub
+.PHONY : odroid_control_cornering_ed_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed/CMakeFiles/odroid_control_cornering_ed_sub.dir/build.make odroid_control_cornering_ed/CMakeFiles/odroid_control_cornering_ed_sub.dir/build
+.PHONY : odroid_control_cornering_ed_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_ed2_sub
+
+# Build rule for target.
+odroid_control_cornering_ed2_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed2_sub
+.PHONY : odroid_control_cornering_ed2_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed2_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed2/CMakeFiles/odroid_control_cornering_ed2_sub.dir/build.make odroid_control_cornering_ed2/CMakeFiles/odroid_control_cornering_ed2_sub.dir/build
+.PHONY : odroid_control_cornering_ed2_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_ed3_sub
+
+# Build rule for target.
+odroid_control_cornering_ed3_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_ed3_sub
+.PHONY : odroid_control_cornering_ed3_sub
+
+# fast build rule for target.
+odroid_control_cornering_ed3_sub/fast:
+	$(MAKE) -f odroid_control_cornering_ed3/CMakeFiles/odroid_control_cornering_ed3_sub.dir/build.make odroid_control_cornering_ed3/CMakeFiles/odroid_control_cornering_ed3_sub.dir/build
+.PHONY : odroid_control_cornering_ed3_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_cornering_speed_ed_sub
+
+# Build rule for target.
+odroid_control_cornering_speed_ed_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_cornering_speed_ed_sub
+.PHONY : odroid_control_cornering_speed_ed_sub
+
+# fast build rule for target.
+odroid_control_cornering_speed_ed_sub/fast:
+	$(MAKE) -f odroid_control_cornering_speed_ed/CMakeFiles/odroid_control_cornering_speed_ed_sub.dir/build.make odroid_control_cornering_speed_ed/CMakeFiles/odroid_control_cornering_speed_ed_sub.dir/build
+.PHONY : odroid_control_cornering_speed_ed_sub/fast
+
+#=============================================================================
+# Target rules for targets named odroid_control_ed_sub
+
+# Build rule for target.
+odroid_control_ed_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odroid_control_ed_sub
+.PHONY : odroid_control_ed_sub
+
+# fast build rule for target.
+odroid_control_ed_sub/fast:
+	$(MAKE) -f odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build.make odroid_control_ed/CMakeFiles/odroid_control_ed_sub.dir/build
+.PHONY : odroid_control_ed_sub/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
@@ -640,7 +705,7 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... odroid_control_ed_sub"
+	@echo "... imu_yaw_node"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
@@ -650,6 +715,11 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... odroid_control_cornering_ed_sub"
+	@echo "... odroid_control_cornering_ed2_sub"
+	@echo "... odroid_control_cornering_ed3_sub"
+	@echo "... odroid_control_cornering_speed_ed_sub"
+	@echo "... odroid_control_ed_sub"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
