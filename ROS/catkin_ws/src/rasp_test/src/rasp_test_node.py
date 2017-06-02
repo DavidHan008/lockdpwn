@@ -15,8 +15,8 @@ ECHO = 12
 GPIO.setup(TRIG,GPIO.OUT)
 GPIO.setup(ECHO,GPIO.IN)
 
-pwm = GPIO.PWM(8, 50)   # 8번핀 50Hz, 20ms
-pwm.start(7.5)  # duty cycle을 정한다
+pwm = GPIO.PWM(8, 50)   
+pwm.start(7.5) 
 
 GPIO.output(TRIG,False)
 
