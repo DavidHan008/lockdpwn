@@ -1,8 +1,4 @@
 
-	------------------------------------------------------
-
-
-
 ------------------------------------------------------
 
 
@@ -28,11 +24,148 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p409 3,4 , Point 클래스를 상속한 ColorPoint 클래스를 정의하고 사용해본 코드
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point {
+	int x,y;
+public:
+	Point(int x, int y) { this->x = x; this->y = y;}
+
+	int getX() { return x; }
+	int getY() { return y; }
+
+protected:
+	void move(int x, int y) { this->x = x; this->y = y; }
+};
+
+class ColorPoint : public Point {
+	string color;
+
+public:
+	ColorPoint()
+		: Point(0,0), color("BLACK")
+	{}
+	
+	ColorPoint(int x, int y, string color = "RED")
+		: Point(x,y), color(color) 
+	{}
+
+	void setPoint(int x, int y);
+	void setColor(string color);
+	void show();
+};
+
+void ColorPoint::setPoint(int x, int y){
+	move(x,y);
+}
+void ColorPoint::setColor(string color){
+	this->color = color;
+}
+void ColorPoint::show(){
+	cout << color << "색으로 (" << getX() << ", " << getY() <<") 위치한 점입니다" << endl;
+}
+
+int main(int argc, const char *argv[]){
+	ColorPoint zeroPoint;
+	ColorPoint cp(5, 5, "RED");
+	ColorPoint cp2(5, 5);
+
+	zeroPoint.show();
+
+	cp.setPoint(10, 20);
+	cp.setColor("BLUE");
+	cp.show();
+
+	cp2.setPoint(10, 20);
+	cp2.setColor("BLUE");
+	cp2.show();
+
+	return 0;
+}
+
+
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p408 1,2, Circle 클래스를 상속받은 NamedCircle 클래스를 작성하고 사용해본 코드 (미완성)
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Circle {
+	int radius;
+
+public:
+	Circle(int radius=0) { this->radius = radius;}
+
+	int getRadius() { return radius;}
+	void setRadius(int radius) { this->radius = radius;}
+	double getArea() { return 3.14 * radius * radius;}
+};
+
+
+class NamedCircle : public Circle{
+	string name;
+	string *nameArray;
+
+public:
+	NamedCircle();
+	NamedCircle(int radius, string name) : Circle(radius), name(name) {}	
+	~NamedCircle();
+
+	void show();
+	void getDataArray();
+};
+
+NamedCircle::NamedCircle(){
+	
+}	
+
+void NamedCircle::getDataArray(){
+
+}
+
+NamedCircle::~NamedCircle(){
+	delete[] nameArray;
+}
+
+void::show(){
+	cout << "반지름이 " << getRadius() << "인 " << this->name << endl;
+}
+
+
+int main(int argc, const char *argv[]){
+	NamedCircle waffle(3, "waffle");
+	NamedCircle pizza[5];
+
+	waffle.show();
+	return 0;
+}
+
 
 
 
 ------------------------------------------------------
 
+
+기말고사
+기말고사
+기말고사
+기말고사
+중간고사
+중간고사
+중간고사
+중간고사
 
 
 ------------------------------------------------------
