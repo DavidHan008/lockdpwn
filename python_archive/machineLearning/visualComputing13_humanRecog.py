@@ -16,7 +16,7 @@ import os
 
 #-----------------------------------------------------------------
 # train_original
-# pos_train 데이터를 불러오기 위한 데이터 전처리 코드
+# pos_neg_train 데이터를 불러오기 위한 데이터 전처리 코드
 
 pos_path = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\pos\\pos_train\\'
 
@@ -53,7 +53,7 @@ for _ in range(0, 100):
 
 train_images = []
 train_images_hog = []
-train_label = []
+t_labels = []
 
 # pos Image 데이터 700장을 불러온다 (grayscale)
 for num in range(0,700):
@@ -71,7 +71,13 @@ train_images = train_images.reshape(1200, 9380, )
 
 
 # Label 데이터는 1 * 700 , 0 * 500의 행벡터로 생성한다
-train_label = np.append(np.ones([1,700]) , np.zeros([1,500]))
+t_labels = np.append(np.ones([1,700]) , np.zeros([1,500]))
+
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+train_labels  = np.array(np.zeros(2400).reshape(1200,2))
+for num in range(0,1200):
+    train_labels[num][int(t_labels[num]) - 1] = 1
 
 
 
@@ -79,7 +85,7 @@ train_label = np.append(np.ones([1,700]) , np.zeros([1,500]))
 
 #-----------------------------------------------------------------
 # test_original
-# pos_train 데이터를 불러오기 위한 데이터 전처리 코드
+# pos_neg_test 데이터를 불러오기 위한 데이터 전처리 코드
 
 pos_path2 = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\pos\\pos_test\\'
 
@@ -116,7 +122,7 @@ for _ in range(0, 100):
 # train_label를 1,1,1,1,1,......0,0,0,0,0 으로 저장한다
 
 test_images = []
-test_label = []
+te_labels = []
 
 # pos Image 데이터 192장을 불러온다 (grayscale)
 for num in range(0,192):
@@ -133,12 +139,23 @@ test_images_hog = np.array(test_images)
 test_images = test_images.reshape(292, 9380, )
 
 # Label 데이터는 1 * 700 , 0 * 500의 행벡터로 생성한다
-test_label = np.append(np.ones([1,192]) , np.zeros([1,100]))
+te_labels = np.append(np.ones([1,192]) , np.zeros([1,100]))
+
+
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+test_labels  = np.array(np.zeros(584).reshape(292,2))
+for num in range(0,292):
+    test_labels[num][int(te_labels[num]) - 1] = 1
 
 
 
 
-
+# train, test 이미지 데이터를 0 ~ 1 사이 값으로 정규화합니다
+train_images = train_images / 255.
+train_images_hog = train_images_hog / 255.
+test_images = test_images / 255.
+test_images_hog = test_images_hog / 255.
 
 
 #------------------------------------------------------------
@@ -326,9 +343,9 @@ for i in range(0, image_num_test):
 
 #-----------------------------------------------------------------
 
-_num_examples = 700   # 데이터 갯수
+_num_examples = 1200   # 데이터 갯수
 _index_in_epoch = 0   # epoch
-_images = lbp_img  # Image 변수 
+_images = train_images  # Image 변수 
 _labels = train_labels  # Label 변수
 _epochs_completed = 0   
 
@@ -399,48 +416,48 @@ def max_pool_2x2(x):
 # Tensorflow 코드
 #-----------------------------------------------------------------
 
-x = tf.placeholder("float32", [None, 513]) # mnist data image of shape 55 x 40 = 2200
-y = tf.placeholder("float32", [None, 100]) 
+x = tf.placeholder("float32", [None, 9380]) # mnist data image of shape 134 x 70
+y = tf.placeholder("float32", [None, 2]) 
 
-W = tf.Variable(tf.zeros([513,100]))
-b = tf.Variable(tf.zeros([100]))
+W = tf.Variable(tf.zeros([9380,2]))
+b = tf.Variable(tf.zeros([2]))
 
 
 # 1st conv layer ----------------------
-W_conv1 = weight_variable([8,4,1,32])
+W_conv1 = weight_variable([8,8,1,32])
 b_conv1 = bias_variable([32])
 
 # -1 : 아직 디멘젼이 결정되지 않았다
 # 1 : 흑백이므로 1을 삽입한다. 칼라이면 3을 삽입한다
-# x은 513x1인데 27x19x1로 행렬을 다시 만들어준다
-x_image = tf.reshape(x, [-1, 27, 19, 1])
+# x은 9380x1인데 134x70x1로 행렬을 다시 만들어준다
+x_image = tf.reshape(x, [-1, 134, 70, 1])
 
 # y = x*w + b에 ReLU를 적용한다
-# (27,19) ==> (20,16)
-h_conv1 = tf.nn.relu(conv2d_valid(x_image, W_conv1) + b_conv1)
+# (134, 70) ==> (134, 70)
+h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
-# (20,16) ==> (10, 8)
+# (134, 70) ==> (67, 35)
 
 
 
 # 2nd conv layer -----------------------
-W_conv2 = weight_variable([5,5,32,64])
+W_conv2 = weight_variable([4,4,32,64])
 b_conv2 = bias_variable([64])
 
-# (10, 8) ==> (10, 8)
-h_conv2 = tf.nn.relu(conv2d_same(h_pool1, W_conv2) + b_conv2)
+# (67, 35) ==> (64, 32)
+h_conv2 = tf.nn.relu(conv2d_valid(h_pool1, W_conv2) + b_conv2)
 h_pool2 = max_pool_2x2(h_conv2)
-# (10, 8) ==> (5, 4)
+# (64, 32) ==> (32, 16)
 
 
 
 # 1st fully connected layer -----------------------
-W_fc1 = weight_variable([5*4*64, 1000])
-b_fc1 = bias_variable([1000])
+W_fc1 = weight_variable([32*16*64, 5000])
+b_fc1 = bias_variable([5000])
 
-h_pool2_flat = tf.reshape(h_pool2, [-1, 5*4*64])
+h_pool2_flat = tf.reshape(h_pool2, [-1, 32*16*64])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-# 위 연산으로 3000x1의 벡터가 생성된다
+# 위 연산으로 1000x1의 벡터가 생성된다
 
 
 
@@ -451,20 +468,13 @@ h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
 
 # 2nd fully connected layer --------------
-W_fc2 = weight_variable([1000, 100])
-b_fc2 = bias_variable([100])
+W_fc2 = weight_variable([5000, 2])
+b_fc2 = bias_variable([2])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 
 # learning_rate 잘 설정하는게 중요하다.. 0.1로 하니 전혀 변화가 없었다
-# 1000인 경우
-    # 1e-5 : 4500번, 15.4%
-    # 1e-4 : 4500번, 62.2%
-    # 5e-3 : 4500번, 24.7%  .. 먼가 이상하다
-    # 1e-3 : 4500번, 61.7%
-    # 1e-2 : 2100번에서 갑자기 cost가 0.0으로 변한다 (2000번, 21.2%)
-    # 1e-1 : 학습이 안되서 포기
-learning_rate = 5e-3
+learning_rate = 1e-3
 
 
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=y_conv))
@@ -481,11 +491,13 @@ correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 
+
+
 #----------------------------------------------
 batch_size = 50      # 한 루프에 몇개의 (Image, Label) 데이터를 학습하는지 설정
 display_step = 100    # 루프를 돌면서 화면에 표시할 빈도 설정
 
-for i in range(4500):
+for i in range(5000):
 	costVal = 0.
 	batch = next_batch(batch_size)
 	# 20번 돌릴 때마다 결과를 확인한다
@@ -501,18 +513,22 @@ for i in range(4500):
 
 
 # 전부 학습이 끝나면 테스트 데이터를 넣어 정확도를 계산한다
-test_accuracy = sess.run(accuracy,feed_dict={x: lbp_img_test, y: test_labels, keep_prob: 1.0})
+test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
 print('test accuracy', test_accuracy)
+
+
+
 
 
 #----------------------------------------------
 # 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
 r = random.randint(0, _num_examples -1)
 print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
-print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:lbp_img_test[r:r+1], keep_prob:1.0}))
+print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:test_images[r:r+1], keep_prob:1.0}))
 
-plt.imshow(test_images[r:r+1].reshape(55, 40), cmap='gray', interpolation='nearest')
+plt.imshow(test_images[r:r+1].reshape(134, 70), cmap='gray', interpolation='nearest')
 plt.show()
+
 
 
 
