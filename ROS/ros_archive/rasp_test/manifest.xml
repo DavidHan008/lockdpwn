@@ -1,0 +1,16 @@
+<package>
+  <description brief="rasp_test">
+
+     rasp_test
+
+  </description>
+  <author>root</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rasp_test</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+
+</package>
+
+

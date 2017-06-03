@@ -1,5 +1,5 @@
 /*
- * c++ ==> ROS, IMU 센서
+ * c++ ==> ROS, IMU 센서에서 Ang vel x,y,z와 yaw값을 출력하는 코드
  */
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>

@@ -1,6 +1,6 @@
 /*
- * c++ ==> ROS, 
- *								
+ * c++ ==> ROS, 캡스톤프로젝트 정상원주행용 코드
+ * 				1525의 속도 79도의 각도로 계속 정상원선회만 한다
  */
 #include <iostream>
 #include <string>

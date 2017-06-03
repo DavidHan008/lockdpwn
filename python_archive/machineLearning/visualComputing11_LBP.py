@@ -19,7 +19,7 @@ rows, cols = img.shape
 lbp_img = np.zeros(((rows -1 )//2, (cols -1)//2), np.uint8)
 
 # 한 점으로부터 3x3의 픽셀데이터를 반환하는 함수 
-def neighborpixels(img, x, y):
+def neighborPixels(img, x, y):
     npixels = []
 
     npixels.append(img[x-1, y-1])
