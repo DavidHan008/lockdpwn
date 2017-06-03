@@ -1,3 +1,6 @@
+/*
+ * c++ ==> PID 제어 클래스 코드
+ */
 class PID {
 	double Kp;
 	double Ki;

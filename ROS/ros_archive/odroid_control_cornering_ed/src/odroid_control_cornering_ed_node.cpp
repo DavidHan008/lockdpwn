@@ -1,6 +1,9 @@
 /*
- * c++ ==> ROS, 
- *								
+ * c++ ==> ROS, 캡스톤프로젝트 정상원주행용 코드
+ * 				1520의 속도 76도의 각도로 정상원주행을 하고
+ *				30번 루프 후 firstValue = faZ 저장
+ *				40번 루프 후 속도 1505로 감속
+ *				초음파센서 인지해서 벽 만나면 정지
  */
 #include <iostream>
 #include <string>
@@ -12,6 +15,7 @@
 #include "pid.h"
 
 #define TARGET_VAL 1520
+#define TARGET_ANGLE 76
 #define ARRAYNUM 15
 #define ARRAYNUM2 15
 
@@ -20,6 +24,8 @@ using namespace ros;
 
 int cnt = 0;
 int cnt2 = 0;
+
+int startFlag = 0;
 
 double ult = 0;
 
@@ -113,7 +119,8 @@ void getAngleVel_z(const sensor_msgs::Imu& imu){
 	aZ = imu.angular_velocity.z;
 	faZ = aZ * alpha + (faZ * (1.0 - alpha));
 
-	counter++;
+	if(startFlag > 5)
+		counter++;
 	if(counter == 30) firstValue = faZ;
 }
 
@@ -144,30 +151,33 @@ int main(int argc, char **argv){
 	PID pid_yawrate(P2, I2, D2);
 
 	while(ok()){
-
+		// slip ratio 계산
 		if(Ww_Reff == 0)
 			slip_ratio = 0;
 		else
 			slip_ratio = (Ww_Reff - v_x) / Ww_Reff;
 
+		// DC Motor 에러값 설정
 		err = slip_ratio - desired_slip_ratio;
+
+		// DC Motor PID 값 계산
 		u = pid_dcmotor.update(err, dt);
-	
+
+		// Servo Motor 에러값 설정
 		faZ -= firstValue / 2;
 
 		if(firstValue != 0)
 			err_angvel_z = faZ;
 		else
 			err_angvel_z = 0;
-
-		//fYaw -= firstValue / 2;
-		//err_angvel_z = -fYaw;
-
+	
+		// Servo Motor PId 값 계산
 		v =  pid_yawrate.update(err_angvel_z, dt);
 		
 		if(v > 20) v = 20;
 		else if(v < -20) v = -20;
 
+		// 평균이동필터로 서보모터 각도값 보정
 		vv[cnt++] = -v;
 		vfinal = getMean(vv);
 
@@ -176,10 +186,12 @@ int main(int argc, char **argv){
 		cout << "slip is :  " << slip_ratio << ", WwReff is :  " << Ww_Reff << " , v_x is : " << v_x;
 		cout << ", err1 is : [ "<< err  << " ] u is : [ " << u << " ], v is [ " << v << " ]" << endl;
 
+		// 모터의 최고 속도 고정
 		if(u > 70) u = 70;
 
 		dc_motor.data = target_val_final + u;
-
+	
+		// 40번 루프 후 모터 속도를 1505로 감속합니다
 		if(counter > 40) 
 			if(target_val_final > 1506)
 					target_val_final -= 2;
@@ -187,14 +199,18 @@ int main(int argc, char **argv){
 		if(vfinal > 20) vfinal = 20;
 		if(vfinal < -20) vfinal = -20;
 
-		servo.data = 76 + vfinal;
-		//servo.data = 75;
-		
-
+		servo.data = TARGET_ANGLE + vfinal;
+	
+		// 초음파센서를 평균이동필터로 보정합니다
 		ww[cnt2++] = ult;
 		wfinal = getMean(ww);
 
-		if(wfinal > 5 && wfinal < 90) dc_motor.data -= 2;
+		// 초음파센서에 물체가 감지되면 1503 모터 정지
+		if(wfinal > 5 && wfinal < 90 && startFlag > 5) dc_motor.data -= 3;
+	 if(wfinal > 5 && wfinal < 90 && startFlag < 5) dc_motor.data = 1504;
+
+		if(wfinal > 50)
+			startFlag++;
 
 		if(cnt2 > ARRAYNUM2) cnt2 = 0;
 
@@ -204,6 +220,7 @@ int main(int argc, char **argv){
 		cout << servo << ",  " << dc_motor << endl;
 		cout << "faZ is : " << faZ <<", fYaw is : "<< fYaw  << ", and firstValue is : " << firstValue << endl;
 		cout << wfinal << endl;
+		cout <<"startFlag is : "<< startFlag << endl;
 
 		loop_rate.sleep();
 		spinOnce();
