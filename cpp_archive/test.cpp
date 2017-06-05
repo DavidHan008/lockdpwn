@@ -1,14 +1,15 @@
 /*
- * c++ ==> 객체지향 예제 
+ * c++ ==> 객체지향 p614 3, 영문텍스트 파일을 읽고 대문자로 출력하는 코드
  */
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cctype>
 
 using namespace std;
 
 int main(int argc, const char *argv[]){
-	char* file = "c:\\test.txt";
+	char* file = "c:\\windows\\system.ini";
 
 	ifstream fin(file);
 	if(!fin){
@@ -17,15 +18,10 @@ int main(int argc, const char *argv[]){
 	}
 
 	int count = 0;
-	int c;
-	int lineNum = 1;
+	char c;
 
-	while((c=fin.get()) != EOF){
-		cout << lineNum++ << " : " << (char)c;
-		if(c == '\n') 
-			cout << lineNum++ << " : " << (char)c;
-
-		cout << (char)c;
+	while((c = fin.get()) != EOF){
+		cout << char(toupper(c));
 		count++;
 	}
 
