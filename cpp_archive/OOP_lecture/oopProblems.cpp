@@ -33,12 +33,84 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p557 5, exit키를 정확히 입력하면 프로그램이 종료하는 코드  
+ */
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	string cmd;
+
+	cout << "cin.get(char*, int)로 문자열을 읽습니다." << endl;
+
+	while(true){
+		cout << "종료하려면 exit을 입력하세요 >> ";
+		getline(cin, cmd);
+
+		if(cmd == "exit"){
+			cout << "프로그램을 종료합니다....";
+			return 0;
+		}
+	}
+
+	return 0;
+}
+
+
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p557 3, cin.ignore()를 사용해 hello ; 안녕 같은 구문을 입력받으면 ; 앞에 구문은 무시하고 뒤에 구문만 출력하는 예제 코드
+ * 				
+ * 							신기방기 :-) 무쓸모
+ */
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	int c;
+
+	cin.ignore(100, ';');
+
+	while((c = cin.get()) != EOF){
+		cout << (char) c;
+		if(c == '\n')
+			cin.ignore(100, ';');
+	}
+
+	return 0;
+}
+
+
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p556 1, cin.get() 함수를 사용해 키보드로부터 한 라인을 읽은 다음 'a'의 갯수를 세는 코드
+ */
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	int count = 0;
+	int ch;
+
+	while((ch = cin.get()) != EOF){
+		if(ch == 'a')
+			count++;
+		else if(ch == '\n')
+			break;
+	}
+	cout <<  "a 문자는 총 " << count << " 개 입니다." << endl;
+
+	return 0;
+}
 
 
 ------------------------------------------------------
