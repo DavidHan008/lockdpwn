@@ -1,31 +1,43 @@
 /*
- * c++ ==> 객체지향 p614 3, 영문텍스트 파일을 읽고 대문자로 출력하는 코드
+ * c++ ==> 객체지향 p
  */
 #include <iostream>
 #include <string>
+#include <vector>
 #include <fstream>
-#include <cctype>
 
 using namespace std;
 
 int main(int argc, const char *argv[]){
-	char* file = "c:\\windows\\system.ini";
+	string src = "C:\\windows\\system.ini";
+	string word;
+	string tmp;
+	vector<string> vs;
 
-	ifstream fin(file);
+	ifstream fin(src);   // 파일 읽기
+
 	if(!fin){
-		cout << file << " 열기 오류 " << endl;
+		cout << src << " 열기 오류 " << endl;
 		return 0;
 	}
-
-	int count = 0;
-	char c;
-
-	while((c = fin.get()) != EOF){
-		cout << char(toupper(c));
-		count++;
+	else
+		cout << src << "... word.txt 파일 로딩 완료" << endl;
+	
+	while(!fin.eof()){
+		getline(fin, word,' ');
+		vs.push_back(word);
 	}
 
-	cout << "읽은 바이트 수는 " << count << endl;
+	cout << vs.
+
+	cout << "검색을 시작합니다. 단어를 입력해주세요" << endl;
+
+	while(1){
+		cout << "단어>> ";
+		cin >> tmp;
+
+	}
+
 	fin.close();
 
 	return 0;

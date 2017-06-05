@@ -42,12 +42,145 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p616 9, 벡터를 사용해 텍스트 파일을 모두 읽어 원하는 라인을 입력하면 해당 줄만 보여주는 코드
+ */
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	string src = "C:\\windows\\system.ini";
+	string line;
+	int cnt = 0;
+	int num;
+
+	vector<string> vs;
+
+	ifstream fin(src);   // 파일 읽기
+
+	if(!fin){
+		cout << src << " 열기 오류 " << endl;
+		return 0;
+	}
+	else
+		cout << src << " 파일 읽기 완료" << endl;
+	
+	while(getline(fin, line)){
+		vs.push_back(line);
+		cnt++;
+	}
+
+	cout << "라인 번호를 입력하세요. 1보다 작은 값을 입력하면 종료" << endl;
+
+	// num 값을 입력받아서 해당 줄의 내용을 출력한다
+	while(1){
+		cout << " : ";
+		cin >> num;
+
+		if(num <= 0) break;
+		else if(num > cnt) continue;
+
+		cout << vs.at(num - 1) << endl;
+	}
+
+	fin.close();
+
+	return 0;
+}
+
+
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p615 7, 원본 파일을 바이트 단위로 거꾸로 사본에 저장하는 코드
+ */
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	string src = "C:\\windows\\system.ini";
+	string dst = "C:\\system.txt";
+	string line;
+	char s[1024];
+
+	int fIndex;
+
+	ifstream fin;   // 파일 읽기
+	ofstream fout;  // 파일 쓰기
+
+	fin.open(src, ios::binary);
+	fout.open(dst);
+
+	if(!fin){
+		cout << src << " 열기 오류 " << endl;
+		return 0;
+	}
+		
+	// 파일을 읽고
+	fin.read(s, 1024);
+	// 실제 읽은 바이트 수를 계산하고
+	int len = fin.gcount();
+	
+	for(int i = len ; i > 0 ; i--)
+		line += s[i];
+
+	fout << line << endl;
+
+	fin.close();
+	fout.close();
+
+	return 0;
+}
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p615 5, c++ 소스파일에서 `//`주석문을 전부 뺀 상태로 출력하는 코드
+ */
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+	string src = "C:\\Users\\vdl\\Downloads\\test.cpp";
+	string dst = "C:\\Users\\vdl\\Downloads\\test2.cpp";
+	string line;
+
+	int fIndex;
+
+	ifstream fin(src);   // 파일 읽기
+	ofstream fout(dst);  // 파일 쓰기
+
+	if(!fin){
+		cout << src << " 열기 오류 " << endl;
+		return 0;
+	}
+
+	while(getline(fin, line)){
+		fIndex = line.find("//", 0);
+		
+		if(fIndex != -1)
+			line.replace(fIndex, 2 , "");
+
+		cout << line << endl;
+		fout << line << endl;
+	}
+	cout << "Done Save! at : " << dst << endl;
+	fin.close();
+	fout.close();
+
+	return 0;
+}
 
 
 
@@ -98,7 +231,7 @@ int main(int argc, const char *argv[]){
 using namespace std;
 
 int main(int argc, const char *argv[]){
-	char* file = "c:\\test.txt";
+	char* file = "c:\\windows\\system.ini";
 	string line;
 
 	ifstream fin(file);
