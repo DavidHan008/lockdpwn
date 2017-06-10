@@ -9,26 +9,410 @@
 
 
 ------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p504 9, vector를 사용해 값을 입력받으면서 평균을 출력해보는 코드
+ * */
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+double getMean(vector<int> ve){
+		double sum = 0;
+
+		for(vector<int>::iterator iter = ve.begin() ; iter < ve.end() ; iter++){
+			sum += *iter;
+		}
+		return sum / ve.size();
+}
+
+int main(int argc, const char *argv[]){
+		vector<int> ve;
+		int a;
+
+		while(true){
+				cout << "정수를 입력하세요 (0을 입력하면 종료)>> ";
+				cin >> a;
+
+				if(a == 0) break; 
+
+				ve.push_back(a);
+
+				for(int i = 0; i < ve.size(); i++)
+						cout << ve.at(i) << " " ;
+
+				cout << endl << "평균 : " << getMean(ve) << endl;
+
+		}
 
 
-------------------------------------------------------
-
-
-------------------------------------------------------
-
-
-------------------------------------------------------
-
-
-------------------------------------------------------
-
-
-------------------------------------------------------
+	return 0;
+}
 
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p455 3, LoopAdder 클래슬르 상속받는 ForLoopAdder를 구현하고 원하는 두 숫자를 입력하면 그 사이의 합을 리턴하는 코드
+ * c++ ==> 객체지향 p503, bigger() 템플릿 함수에 Circle a, b를 비교할 수 있도록 operator>() 함수를 추가해 두 개의 Circle 객체를 비교한 코드
+ * */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Circle {
+	int radius;
+public:
+	Circle(int radius=1) { this->radius = radius; }
+	int getRadius() { return radius; }
+	bool operator>(Circle &c);
+};
+
+// 와우.. 굳굳
+bool Circle::operator>(Circle &c){
+		if(this->radius > c.getRadius())
+			return true;
+
+		return false;
+}
+
+template<class T>
+T bigger(T a, T b){
+		if(a > b) return a;
+		else return b;
+}
+
+
+int main(int argc, const char *argv[]){
+		int a = 20, b = 50, c;
+		c = bigger(a, b);
+
+		cout << "20과 50 중 큰 값은 " << c << endl;
+
+		Circle waffle(10), pizza(20), y;
+		y = bigger(waffle, pizza);
+		
+		cout << "waffle과 pizza 중 큰 것의 반지름은 " << y.getRadius() << endl;
+
+		return 0;
+}
+
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p502 5, concat 템플릿함수를 사용해 a[]와 b[]을 서로 이어주는 함수를 구현해본 코드
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+template<typename T>
+T *concat(T a[], int sizea, T b[], int sizeb){
+	T *con = new T[sizea + sizeb];
+	int i = 0;
+
+	for(; i < sizea ; i++){
+			con[i] = a[i];
+	}
+
+	for(; i < sizea + sizeb ; i++){
+			con[i] = b[i - sizea];
+	}
+
+	return con;
+}
+
+int main(int argc, const char *argv[]){
+	int x[] = {1,2,3};
+	int y[] = {4,5,6};
+	int *z;
+
+	z = concat(x,3,y,3);
+
+	for(int i = 0; i < 6 ; i++){
+			cout << z[i] << " ";
+	}
+
+
+
+	return 0;
+}
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p501 1,3, 배열을 받아 가장 큰 값을 리턴하는 biggest() 템플릿함수를 만들고 배열을 뒤집는 reverseArray 함수를 만들어 사용해본 코드
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+template<typename T>
+T biggest(T x[], int size){
+		T biggest = x[0];
+
+		for(int i = 0; i < size - 1 ; i++){
+			if(x[i] < x[i+1])
+					biggest = x[i+1];
+		}
+
+		return biggest;
+}
+
+template<typename T>
+void reverseArray(T *x, int size){
+		T rev[size] = {0};
+
+		for(int i = 0; i < size ; i++){
+				rev[size - 1 - i]	= x[i];
+		}
+
+		for(int i = 0; i < size ; i++){
+				x[i] = rev[i];
+		}
+}
+
+int main(int argc, const char *argv[]){
+	int x[] = {1, 10, 100, 5, 4};
+
+	cout << biggest(x, 5) << endl;
+
+	reverseArray(x,5);
+	for(int i = 0 ; i < 5 ; i++) cout << x[i] << ' ';
+	return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p458 9, AbstractPrinter 클래스를 상속받는 InkJetPrinter, LaserPrinter를 생성한 뒤 프린터와 용지의 갯수를 입력하면 해당 숫자만큼 프린트해주는 코드
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class AbstractPrinter {
+	
+protected:
+	string model;
+	string manufacturer;
+
+public:
+	int availableCount;
+	int printedCount;
+
+	AbstractPrinter(string model, string manufacturer, int availableCount)
+	: model(model), manufacturer(manufacturer), availableCount(availableCount)
+	{}
+	virtual void print(int pages) = 0;
+	virtual void show() = 0;
+
+};
+
+
+class InkJetPrinter : public AbstractPrinter {
+
+public:
+	int availableInk;
+
+	InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk)
+	: AbstractPrinter(model, manufacturer, availableCount), availableInk(availableInk)
+	{}
+	virtual void print(int pages);
+	virtual void show();
+
+};
+
+
+class LaserPrinter : public AbstractPrinter {
+
+public:
+	int availableToner;
+
+	LaserPrinter(string model, string manufacturer, int availableCount, int availableToner)
+	: AbstractPrinter(model, manufacturer, availableCount), availableToner(availableToner)
+	{}
+	virtual void print(int pages);
+	virtual void show();
+	
+};
+
+void InkJetPrinter::print(int pages){
+		cout << "프린트하였습니다" << endl;
+		availableCount -= pages;
+		availableInk -= pages;
+		printedCount += pages;
+}
+
+void InkJetPrinter::show(){
+	cout << "잉크젯 : " << this->model << ", " << this->manufacturer << ", 남은 종이 " << this->availableCount <<" 장, 남은 잉크 " << this->availableInk << endl;
+
+}
+
+void LaserPrinter::print(int pages){
+		cout << "프린트하였습니다" << endl;
+		availableCount -= pages;
+		availableToner -= pages;
+		printedCount += pages;
+}
+
+void LaserPrinter::show(){
+	cout << "레이저 : " << this->model << ", " << this->manufacturer << ", 남은 종이 " << this->availableCount <<" 장, 남은 잉크 " << this->availableToner << endl;
+}
+
+
+
+int main(int argc, const char *argv[]){
+	InkJetPrinter ink("Officejet V40", "HP", 5, 10);
+	LaserPrinter laser("SCX-6x45", "삼성전자", 3 , 20);
+
+	cout << "현재 작동중인 2 대의 프린터는 아래와 같다" << endl;
+	
+	ink.show();
+	laser.show();
+
+	int a, b;
+	char answer;
+
+	while(true){
+			cout << "프린터(1:잉크젯, 2:레이저)와 매수 입력 >> " ;
+			cin >> a >> b;
+
+			if(a == 1){
+					if(ink.availableCount < b){
+						cout <<	"용지가 부족하여 프린트할 수 없습니다" << endl;
+						continue;
+					}
+					else if(ink.availableInk < b){
+						cout <<	"잉크가 부족하여 프린트할 수 없습니다" << endl;
+						continue;
+					}
+
+					ink.print(b);
+			}
+			else if(a == 2){
+					if(laser.availableCount < b){
+						cout <<	"용지가 부족하여 프린트할 수 없습니다" << endl;
+						continue;
+					}
+					else if(laser.availableToner < b){
+						cout <<	"토너가 부족하여 프린트할 수 없습니다" << endl;
+						continue;
+					}
+
+					laser.print(b);
+			}
+	
+			ink.show();
+			laser.show();
+
+
+			cout << "계속 프린트하시겠습니까?(y/n)>> ";
+			cin >> answer;
+			if(answer == 'n')
+					break;
+	}
+	return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p455 5, AbstractGate를 상속받은 ANDGate, ORGate, XORGate를 만들고 사용해본 코드
+ */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class AbstractGate {
+protected:
+	bool x,y;
+
+public:
+	void set(bool x, bool y) { this->x = x; this-> y = y; }
+	virtual bool operation() = 0;
+};
+
+
+class ANDGate : public AbstractGate {
+
+public:
+	ANDGate() {}
+	virtual bool operation();
+};
+
+
+class ORGate : public AbstractGate {
+
+public:
+	ORGate() {}
+	virtual bool operation();
+};
+
+
+class XORGate : public AbstractGate {
+
+public:
+	XORGate() {}
+	virtual bool operation();
+};
+
+bool ANDGate::operation(){
+		if(x == true && x == y)
+				return true;
+		else if(x == false && x == y)
+				return true;
+
+		return false;
+}
+
+bool ORGate::operation(){
+		if(x == false && x == y)
+				return false;
+
+		return true;
+}
+
+bool XORGate::operation(){
+		if(x == true && x != y)
+				return true;
+		else if(x == false && x != y)
+				return true;
+
+		return false;
+}
+
+int main(int argc, const char *argv[]){
+	ANDGate aand;
+	ORGate oor;
+	XORGate xxor;
+
+	aand.set(true, false);
+	oor.set(true, false);
+	xxor.set(true, false);
+
+	cout.setf(ios::boolalpha);   // 불린 값을 true, false로 출력한다
+
+	cout << aand.operation() << endl;
+	cout << oor.operation() << endl;
+	cout << xxor.operation() << endl;
+
+	return 0;
+}
+
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p455 3,4 LoopAdder 클래스를 상속받는 ForLoopAdder, WhileLoopAdder, DoWhileLoopAdder를 구현하고 원하는 두 숫자를 입력하면 그 사이의 합을 리턴하는 코드
  */
 #include <iostream>
 #include <string>
@@ -54,6 +438,27 @@ public:
 	void run();
 };
 
+
+class ForLoopAdder : public LoopAdder {
+			
+public:
+	ForLoopAdder(string name) : LoopAdder(name) {}
+	virtual int calculate(); 
+};
+
+class WhileLoopAdder : public LoopAdder{
+public:
+		WhileLoopAdder(string name) : LoopAdder(name) {}
+		virtual int calculate();
+};
+
+
+class DoWhileLoopAdder : public LoopAdder{
+public:
+		DoWhileLoopAdder(string name) : LoopAdder(name) {}
+		virtual int calculate();
+};
+
 void LoopAdder::read(){
 	cout << name << " : " << endl;
 	cout << "처음 수에서 두번째 수까지 더합니다. 두 수를 입력하세요>> ";
@@ -70,14 +475,6 @@ void LoopAdder::run(){
 	write();
 }
 
-class ForLoopAdder : public LoopAdder {
-			
-public:
-	ForLoopAdder(string name) : LoopAdder(name) {}
-	virtual int calculate(); 
-};
-
-
 int ForLoopAdder::calculate(){
 	int tmp = 0;
 	for(int i = getX() ; i <= getY() ; i++)
@@ -86,10 +483,37 @@ int ForLoopAdder::calculate(){
 	return tmp;
 }
 
+int WhileLoopAdder::calculate(){
+		int tmp = 0;
+		int i = getX();
+		while(i <= getY()){
+			tmp += i;
+			i++;
+		}
+
+		return tmp;
+}
+
+int DoWhileLoopAdder::calculate(){
+	int tmp = 0;
+	int i = getX();
+
+	do{
+		tmp += i;
+		i++;
+	} while(i <= getY());
+	return tmp;
+}
 
 int main(int argc, const char *argv[]){
 	ForLoopAdder forLoop("For Loop");
 	forLoop.run();
+
+	WhileLoopAdder whileLoop("While Loop");
+	DoWhileLoopAdder doWhileLoop("Do While Loop");
+
+	whileLoop.run();
+	doWhileLoop.run();
 
 	return 0;
 }
@@ -152,7 +576,7 @@ int main(int argc, const char *argv[]){
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p557 5, exit키를 정확히 입력하면 프로그램이 종료하는 코드  
+ * c++ ==> 객체지향 p557 5, exit키를 정확히 입력해야만 프로그램이 종료하는 코드  
  */
 #include <iostream>
 #include <cstring>
