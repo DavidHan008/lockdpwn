@@ -9,6 +9,252 @@
 
 
 ------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p559 7, 0 ~ 127까지 ASCII 코드와 hex 값과 해당하는 문자를 일렬로 출력해보는 코드
+ */
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main(int argc, const char *argv[]){
+		int c = 0;
+
+		cout << "dec      hexa    char     ";
+		cout << "dec      hexa    char     ";
+		cout << "dec      hexa    char     ";
+
+		cout << endl;
+
+		cout << "----     ----     ----    ";
+		cout << "----     ----     ----    ";
+		cout << "----     ----     ----    ";
+
+		cout << endl;
+
+		while(c < 127){
+				for(int i = 0; i < 3; i++){
+						if(isprint(c))
+								cout << std::dec << c << "        " << std::hex << c << "        " << char(c) << "        " ;
+						else
+								cout << std::dec << c << "        " << std::hex << c << "        " << "." << "        " ;
+						c++;
+				}
+				cout << endl;
+		}
+		return 0;
+}
+
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p507 13, Circle 클래스를 생성하고 vector<Circle*> v; 를 사용해 Circle들의 이름과 반지름을 입력한 다음 원하는 이름의 원들만 삭제할 수 있도록 해본 코드
+ */
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Circle {
+		string name;
+		int radius;
+
+		public:
+		Circle() {}
+		Circle(int radius, string name){
+				this->radius = radius; 
+				this->name = name;
+		}
+
+		void set(int radius, string name){
+				this->radius = radius; 
+				this->name = name;
+		}
+
+		double getArea() { return 3.14*radius*radius;}
+		string getName() { return name; } 
+};
+
+// 여기에 생성해주는게 최선인가 -o- 우선 솔루션은 CircleVectorManager 클래스를 생성해서 관리하니 훨씬 코드가 깔끔하지만 우선 이정도 수준으로만 만족해야징
+vector<Circle*> v;
+
+void create(){
+		int rad;
+		string name;
+		cout << "생성하고자 하는 원의 반지름과 이름은 >> ";
+		cin >> rad >> name;	
+
+		// 굳굳.. 이렇게 vector<Circle*>에 값을 넣는군
+		v.push_back(new Circle(rad, name));
+}
+
+void remove(){
+		string name;
+		vector<Circle*>::iterator it = v.begin();
+		cout << "삭제하고자 하는 원의 이름은 >> ";
+		cin >> name;
+
+		while(it != v.end()){
+				Circle *p = *it;
+				if(p->getName() == name){
+						it = v.erase(it);
+						delete p;
+				}
+				else
+						it++;
+		}
+}
+
+void showAll(){
+		vector<Circle*>::iterator it;
+
+		for(it=v.begin() ; it != v.end() ; it++){
+				Circle* p = *it;
+				cout <<	p->getName() << endl;
+		}
+}
+
+int main(int argc, const char *argv[]){
+		int select;
+		cout << "원을 삽입하고 삭제하는 프로그램입니다." << endl;
+
+		while(true){
+				cout << "삽입:1, 삭제:2, 모두보기:3, 종료:4 >> ";
+				cin >> select;
+
+				// case 문 안에는 변수 생성이 안되는 듯하다. 따라서 아래와 같이 함수 호출문으로 바꿨다
+				switch(select){
+						case 1:
+								create();
+								break;
+						case 2:
+								remove();
+								break;
+						case 3:
+								showAll();
+								break;
+						case 4:
+								exit(0);
+						default:
+								break;
+				}
+		}
+		return 0;
+}
+
+------------------------------------------------------
+/*
+ * c++ ==> 객체지향 p505 11, Book 클래스를 생성해서 vector<Book> v;를 사용해 책을 입고한 다음 검색해보는 코드 
+ * */
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Book {
+	int year;
+	string title;
+	string author;
+
+
+public:
+	Book() {}
+
+	void set(int year, string title, string author){
+		this->year = year;
+		this->title = title;
+		this->author = author;
+	}
+
+	void show() {
+			cout << year << "년도, " << title << ", " << author << endl;
+	}
+
+	string getAuthor() { return author; }
+	int getYear() { return year; } 
+};
+
+
+int main(int argc, const char *argv[]){
+		Book b;
+		vector<Book> v;
+		string author;
+		string title;
+		int year;
+
+		cout << "입고할 책을 입력하세요. 년도에 -1을 입력하면 입고를 종료합니다" << endl;
+
+		while(true){
+				cout << "년도>> ";
+				cin >> year; cin.ignore();
+
+				if(year == -1) break;
+
+				cout << "책이름>> ";
+				getline(cin, title);
+
+				cout << "저자>> ";
+				getline(cin, author);
+
+				b.set(year, title, author);
+				v.push_back(b);
+		}
+
+	cout << "총 입고된 책은 " << v.size() << "권 입니다." << endl;
+
+	string searchAuthor;
+	int searchYear;
+	
+	cout << "검색하고자 하는 저자 이름을 입력하세요>> " ;
+	getline(cin, searchAuthor);
+
+	for(int i = 0 ; i < v.size() ; i++){
+		Book b2 = v[i];
+		if(b2.getAuthor() == searchAuthor){
+			b2.show();
+		}
+	}
+
+	cout << "검색하고자 하는 년도를 입력하세요>> " ;
+	cin >> searchYear;
+	cin.ignore();
+
+	for(int i = 0 ; i < v.size() ; i++){
+			Book b3 = v[i];
+			if(b3.getYear() == searchYear){
+					b3.show();
+			}
+	}
+
+	return 0;
+}
+
+
+------------------------------------------------------
 /*
  * c++ ==> 객체지향 p504 9, vector를 사용해 값을 입력받으면서 평균을 출력해보는 코드
  * */
@@ -633,7 +879,7 @@ int main(int argc, const char *argv[]){
 
 ------------------------------------------------------
 /*
- * c++ ==> 객체지향 p556 1, cin.get() 함수를 사용해 키보드로부터 한 라인을 읽은 다음 'a'의 갯수를 세는 코드
+ * c++ ==> 객체지향 p557 1, cin.get() 함수를 사용해 키보드로부터 한 라인을 읽은 다음 'a'의 갯수를 세는 코드
  */
 #include <iostream>
 

@@ -1,23 +1,29 @@
 /*
  * c++ ==> 객체지향 p
- * */
+ */
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
-class Book {
-  int year;
-  string title;
+class Phone {
 	string name;
+	string telnum;
+	string address;
 
- public:
-  Book(int year, string title, string name)
-			: year(year), title(title), name(name)	
-	{}
-  void show() {
-    cout << year << ' ' << title << "원 " << pages << " 페이지" << endl;
-  }
-  string getTitle() { return this->title; }
+public:
+	Phone(string name="", string telnum="", string address=""){
+		this->name = name;
+		this->telnum = telnum;
+		this->address = address;
+	}
 };
+
+int main(int argc, const char *argv[]){
+		Phone girl, boy;
+	
+		cin >> girl >> boy;
+		cout << girl << endl << boy << endl;
+
+	return 0;
+}
