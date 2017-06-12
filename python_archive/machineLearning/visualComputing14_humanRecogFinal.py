@@ -18,8 +18,13 @@ import os
 
 #-------------------------------------------------------
 # test_original
-# pos 192장 + neg 100장 이미지를 train_images에 저장하고 
-# train_label를 1,1,1,1,1,......0,0,0,0,0 으로 저장한다
+# pos_neg_test 데이터를 불러오기 위한 데이터 전처리 코드
+
+pos_path2 = 'D:\\edward\\visualComputing_humanDetection\\pos\\pos_test\\'
+neg_path2 = 'D:\\edward\\visualComputing_humanDetection\\neg\\neg_test\\'
+
+pos_fnames2 = os.listdir(pos_path2)
+neg_fnames2 = os.listdir(neg_path2)
 
 test_images = []
 te_labels = []
@@ -286,4 +291,5 @@ for i in range(0, num_images):
         end_box = (int(end_x), int(end_y))
         if skip_count == 3:
             skip_count = 0
+            print(i, ", ", point_box)
             cv2.rectangle(orig_img, point_box , end_box ,(0,255,0),3)
