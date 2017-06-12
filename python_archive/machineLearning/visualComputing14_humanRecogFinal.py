@@ -15,6 +15,44 @@ from PIL import Image, ImageDraw
 import math
 import os
 
+
+#-------------------------------------------------------
+# test_original
+# pos 192장 + neg 100장 이미지를 train_images에 저장하고 
+# train_label를 1,1,1,1,1,......0,0,0,0,0 으로 저장한다
+
+test_images = []
+te_labels = []
+
+# pos Image 데이터 192장을 불러온다 (grayscale)
+for num in range(0,192):
+    test_images.append(scipy.misc.imread(pos_path2 + 'pos_test_'+ str(num)+'.png', flatten=True))
+
+# neg Image 데이터 500장을 불러온다 (grayscale)
+for num in range(501,601):
+    test_images.append(scipy.misc.imread(neg_path2 + 'Image'+ str(num)+'.bmp', flatten=True))
+
+# Image 데이터를 numpy 데이터로 수정한다
+test_images = np.array(test_images)
+# HOG Feature 작업을 위한 변수
+test_images_hog = np.array(test_images)
+test_images = test_images.reshape(292, 9380, )
+
+# Label 데이터는 1 * 700 , 0 * 500의 행벡터로 생성한다
+te_labels = np.append(np.ones([1,192]) , np.zeros([1,100]))
+
+
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+test_labels  = np.array(np.zeros(584).reshape(292,2))
+for num in range(0,292):
+    test_labels[num][int(te_labels[num]) - 1]
+
+
+
+
+
+#-------------------------------------------------------
 orig_img = cv2.imread('./FudanPed00005.png', 0)
 cols, rows = orig_img.shape
 
@@ -105,16 +143,16 @@ for i in range(1, num_resize_img+2):
 
 #-------------------------------------------------------------
 # 결과적으로 trim된 이미지들을 불러온다
-test_images = []
+final_images = []
 
 for num in range(0, num_images):
-    test_images.append(scipy.misc.imread('./cropped_image_forVC/'+ str(num)+'.jpg', flatten=True))
+    final_images.append(scipy.misc.imread('./cropped_image_forVC/'+ str(num)+'.jpg', flatten=True))
 
 
 # Image 데이터를 numpy 데이터로 수정한다
-test_images = np.array(test_images)
-test_images = test_images.reshape(num_images, 9380) # (70,134) ==> (9380,1)
-test_images = test_images / 255.   # 데이터 정규화  0~1
+final_images = np.array(final_images)
+final_images = final_images.reshape(num_images, 9380) # (70,134) ==> (9380,1)
+final_images = final_images / 255.   # 데이터 정규화  0~1
 
 
 
@@ -228,7 +266,7 @@ orig_img = cv2.imread('./FudanPed00005.png', 0)
 skip_count = 0
 
 for i in range(0, num_images):
-    flag = sess.run(tf.argmax(y_conv, 1), {x:test_images[i:i+1], keep_prob:1.0})
+    flag = sess.run(tf.argmax(y_conv, 1), {x:final_images[i:i+1], keep_prob:1.0})
 
     if flag[0] ==0:
         skip_count += 1
