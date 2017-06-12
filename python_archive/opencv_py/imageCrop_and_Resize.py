@@ -23,10 +23,10 @@ def im_trim(img):
     print("[*] Trim Done!")
 
 # 이미지 크기를 줄이는 함수
-def im_resize(img):
+def im_resize(img, prop):
     iy, ix = img.shape
 
-    thumbnail = cv2.resize(img, (int(ix/2), int(iy/2)))
+    thumbnail = cv2.resize(img, (int(ix/prop), int(iy/prop)))
 
     newiy, newix = thumbnail.shape
     print(newiy, newix)
@@ -38,4 +38,4 @@ def im_resize(img):
 
 org_img = cv2.imread('PennPed00029.png', 0)
 im_trim(org_img)
-im_resize(org_img)
+im_resize(org_img, 2)
