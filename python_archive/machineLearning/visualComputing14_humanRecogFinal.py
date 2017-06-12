@@ -216,11 +216,12 @@ h_conv4 = tf.nn.relu(conv2d_same(h_pool3, W_conv4) + b_conv4)  # (16,8) ==> (16,
 h_pool4 = max_pool_2x2(h_conv4) 
 # (16,8) ==> (8,4)
 
+
 # 1st fully connected layer -----------------------
 W_fc1 = weight_variable([8*4*256, 5000])
 b_fc1 = bias_variable([5000])
 
-h_pool2_flat = tf.reshape(h_pool2, [-1, 8*4*256])
+h_pool2_flat = tf.reshape(h_pool4, [-1, 8*4*256])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 # 위 연산으로 1000x1의 벡터가 생성된다
 
