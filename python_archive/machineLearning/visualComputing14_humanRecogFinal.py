@@ -16,7 +16,7 @@ import math
 import os
 
 orig_img = cv2.imread('./FudanPed00005.png', 0)
-rows, cols = orig_img.shape
+cols, rows = orig_img.shape
 
 dic = {}  # 딕서녀리 생성
 num_images = 0 # 전체 trim 된 이미지의 갯수
@@ -234,4 +234,14 @@ for i in range(0, num_images):
         
         point_box = (prop*70*xcnt*0.25, prop*(ycnt-1)*134*0.25)
 
-        boxed_img = cv2.rectangle(orig_img, point_box , (point_box[0] + prop*70, point_box[1] +  prop*134) ,(0,255,0),3)
+        end_x = point_box[0] + prop*70 
+        end_y = point_box[1] +  prop*134
+
+        if end_x > rows:
+            end_x = rows
+        if end_y > cols:
+            end_y = cols
+
+        end_box = (end_x, end_y)
+
+        boxed_img = cv2.rectangle(orig_img, point_box , end_box ,(0,255,0),3)
