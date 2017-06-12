@@ -223,17 +223,18 @@ plt.imshow(test_images[r:r+1].reshape(134, 70), cmap='gray', interpolation='near
 plt.show()
 
 
-
 #----------------------------------------------
+orig_img = cv2.imread('./FudanPed00005.png', 0)
 
+boxed_img = 0
 for i in range(0, num_images):
-    flag = sess.run(tf.argmax(y_conv, 1), {x:test_images[i], keep_prob:1.0})
+    flag = sess.run(tf.argmax(y_conv, 1), {x:test_images[i:i+1], keep_prob:1.0})
 
-    if flag:
+    if flag[0] ==0:
         prop, xcnt, ycnt = dic[i]
+    
+        point_box = (int(prop*70*xcnt*0.25), int(prop*(ycnt-1)*134*0.25))
         
-        point_box = (prop*70*xcnt*0.25, prop*(ycnt-1)*134*0.25)
-
         end_x = point_box[0] + prop*70 
         end_y = point_box[1] +  prop*134
 
@@ -242,6 +243,6 @@ for i in range(0, num_images):
         if end_y > cols:
             end_y = cols
 
-        end_box = (end_x, end_y)
-
-        boxed_img = cv2.rectangle(orig_img, point_box , end_box ,(0,255,0),3)
+        end_box = (int(end_x), int(end_y))
+        if prop ==2:
+            cv2.rectangle(orig_img, point_box , end_box ,(0,255,0),3)
