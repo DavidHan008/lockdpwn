@@ -17,34 +17,26 @@ import os
 
 
 #-------------------------------------------------------
-pos_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\pos\\'
-
-neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
-
+neg_path_ed = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\neg\\neg_train\\'
 
 train_images_ed = []
 t_labels = []
 
-# pos Image 데이터 159장을 불러온다 (grayscale)
-for num in range(1,159):
-    train_images_ed.append(scipy.misc.imread(pos_path_ed + str(num)+'.png', flatten=True))
-
-# neg Image 데이터 2514장을 불러온다 (grayscale)
-for num in range(1,2514):
+# neg Image 데이터 1873장을 불러온다 (grayscale)
+for num in range(1,1874):
     train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
 
 # Image 데이터를 numpy 데이터로 수정한다
 train_images_ed = np.array(train_images_ed)
-train_images_ed = train_images_ed.reshape(2673, 9380, )
+train_images_ed = train_images_ed.reshape(1873, 9380, )
 
+# Label 데이터는 0 * 1873의 행벡터로 생성한다
+t_labels = np.append( np.zeros([1,1873]))
 
-# Label 데이터는 1 * 159 , 0 * 2514의 행벡터로 생성한다
-t_labels = np.append(np.ones([1,159]) , np.zeros([1,2514]))
-
-# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
-#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
-train_lables_ed  = np.array(np.zeros(5346).reshape(2673,2))
-for num in range(0,2673):
+# train Label 데이터를 [1 x 2] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,1] 과 같이 설정한다
+train_lables_ed  = np.array(np.zeros(1873*2).reshape(1873,2))
+for num in range(0,1873):
     train_lables_ed[num][int(t_labels[num]) - 1] = 1
 
 
