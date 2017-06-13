@@ -17,20 +17,20 @@ import os
 
 
 #-------------------------------------------------------
-pos_path_ed = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\pos\\pos_train\\'
+pos_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\pos\\'
 
-neg_path_ed = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\neg\\neg_train\\'
+neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
 
 
 train_images_ed = []
 t_labels = []
 
 # pos Image 데이터 159장을 불러온다 (grayscale)
-for num in range(0,159):
+for num in range(1,159):
     train_images_ed.append(scipy.misc.imread(pos_path_ed + str(num)+'.png', flatten=True))
 
 # neg Image 데이터 2514장을 불러온다 (grayscale)
-for num in range(0,2514):
+for num in range(1,2514):
     train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
 
 # Image 데이터를 numpy 데이터로 수정한다
