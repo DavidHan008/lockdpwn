@@ -16,8 +16,10 @@ import math
 import os
 
 
+#-------------------------------------------------------------------------
+# 직접 제작한 트레이닝 데이터 삽입
 #-------------------------------------------------------
-neg_path_ed = 'C:\\Users\\edward\\GoogleDrive\\private2\\dataset_ML\\visualComputing_humanDetection\\neg\\neg_train\\'
+neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
 
 train_images_ed = []
 t_labels = []
@@ -31,16 +33,17 @@ train_images_ed = np.array(train_images_ed)
 train_images_ed = train_images_ed.reshape(1873, 9380, )
 
 # Label 데이터는 0 * 1873의 행벡터로 생성한다
-t_labels = np.append( np.zeros([1,1873]))
+t_labels = np.zeros([1873,1])
 
 # train Label 데이터를 [1 x 2] 의 행렬로 표현한다
 #           예를 들어 3이면 [0,1] 과 같이 설정한다
-train_lables_ed  = np.array(np.zeros(1873*2).reshape(1873,2))
+train_labels_ed  = np.array(np.zeros(1873*2).reshape(1873,2))
 for num in range(0,1873):
-    train_lables_ed[num][int(t_labels[num]) - 1] = 1
+    train_labels_ed[num][int(t_labels[num])-1] = 1
 
 
 train_images_ed = train_images_ed / 255.
+
 
 #-------------------------------------------------------
 # test_original
