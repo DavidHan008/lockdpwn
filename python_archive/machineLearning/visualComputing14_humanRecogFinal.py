@@ -1,53 +1,24 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> 비주얼컴퓨팅, 최종 프로젝트 
+    python ==> 비주얼컴퓨팅, 최종 프로젝트. 큰 사진을 70x134로 잘라서 기존 Human Detection Model에 넣어본 다음 사람을 인식해서 박스를 그려주는 코드
+                            크기가 다른 여러 사름을 인식하도록 사진을 리사이즈하는 피라미드화 작업이 필요하다
+        
 '''
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 import numpy as np
 import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
 import cv2
-from PIL import Image, ImageDraw
+from PIL import Image
 import math
 import os
 
-
-#-------------------------------------------------------------------------
-# 직접 제작한 트레이닝 데이터 삽입
-#-------------------------------------------------------
-neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
-
-train_images_ed = []
-t_labels = []
-
-# neg Image 데이터 1873장을 불러온다 (grayscale)
-for num in range(1,1874):
-    train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
-
-# Image 데이터를 numpy 데이터로 수정한다
-train_images_ed = np.array(train_images_ed)
-train_images_ed = train_images_ed.reshape(1873, 9380, )
-
-# Label 데이터는 0 * 1873의 행벡터로 생성한다
-t_labels = np.zeros([1873,1])
-
-# train Label 데이터를 [1 x 2] 의 행렬로 표현한다
-#           예를 들어 3이면 [0,1] 과 같이 설정한다
-train_labels_ed  = np.array(np.zeros(1873*2).reshape(1873,2))
-for num in range(0,1873):
-    train_labels_ed[num][int(t_labels[num])-1] = 1
-
-
-train_images_ed = train_images_ed / 255.
-
-
 #-------------------------------------------------------
 # test_original
-# pos_neg_test 데이터를 불러오기 위한 데이터 전처리 코드
+#-------------------------------------------------------
 
 pos_path2 = 'D:\\edward\\visualComputing_humanDetection\\pos\\pos_test\\'
 neg_path2 = 'D:\\edward\\visualComputing_humanDetection\\neg\\neg_test\\'
@@ -83,12 +54,252 @@ for num in range(0,292):
     test_labels[num][int(te_labels[num]) - 1]
 
 
+#-------------------------------------------------------
+# 직접 제작한 트레이닝 데이터 삽입 (neg, 사람x)만 삽입
+#-------------------------------------------------------
+neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
+
+train_images_ed = []
+t_labels = []
+
+# neg Image 데이터 장을 불러온다 (grayscale)
+for num in range(1,5595):
+    train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
+
+# Image 데이터를 numpy 데이터로 수정한다
+train_images_ed = np.array(train_images_ed)
+train_images_ed = train_images_ed.reshape(5594, 9380, )
+
+# Label 데이터는 0 * 1873의 행벡터로 생성한다
+t_labels = np.zeros([5594,1])
+
+# train Label 데이터를 [1 x 2] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,1] 과 같이 설정한다
+train_labels_ed  = np.array(np.zeros(5594*2).reshape(5594,2))
+for num in range(0,5594):
+    train_labels_ed[num][int(t_labels[num])-1] = 1
+
+
+train_images_ed = train_images_ed / 255.
+
+train_images = np.append(train_images, train_images_ed)
+train_labels = np.append(train_labels, train_labels_ed)
+
+
+#-----------------------------------------------------------------
+
+_num_examples = 1200   # 데이터 갯수
+_index_in_epoch = 0   # epoch
+_images = train_images  # Image 변수 
+_labels = train_labels  # Label 변수
+_epochs_completed = 0   
+
+# batch 연산을 수행하는 함수
+# 호출될 때마다 랜덤으로 batch_size의 (Image, Label) 데이터를 반환한다
+def next_batch(batch_size):
+    """Return the next `batch_size` examples from this data set."""
+    global _index_in_epoch
+    global _images
+    global _labels
+    global _epochs_completed
+
+    start = _index_in_epoch
+    _index_in_epoch += batch_size
+
+    if _index_in_epoch > _num_examples:
+      # Finished epoch
+      _epochs_completed += 1
+
+      # Shuffle the data
+      perm = np.arange(_num_examples)
+      np.random.shuffle(perm)
+      _images = _images[perm]
+      _labels = _labels[perm]
+
+      # Start next epoch
+      start = 0
+      _index_in_epoch = batch_size
+      assert batch_size <= _num_examples
+
+    end = _index_in_epoch
+    return _images[start:end], _labels[start:end]
+
+
+# 가중치를 초기화하는 함수 (정규분포 stddev=0.1로 초기화한다)
+def weight_variable(shape):
+	initial = tf.truncated_normal(shape, stddev=0.1)
+	return tf.Variable(initial)
+
+
+# 바이어스를 초기화하는 함수 (0.1로 초기화한다)
+def bias_variable(shape):
+	initial = tf.constant(0.1, shape=shape)
+	return tf.Variable(initial)
+
+
+# 컨벌루션을 실행하는 함수
+# padding = 'SAME' 입력과 출력의 이미지 크기가 같도록 해준다
+# (28,28) --> (28,28)
+# padding = 'VALID' 필터의 크기만큼 이미지 크기가 감소한다
+def conv2d_valid(x, W):
+	return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding='VALID')
+
+
+def conv2d_same(x, W):
+	return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding='SAME')
+
+
+# max pooling을 실행하는 함수
+def max_pool_2x2(x):
+	return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
+
+
+
+
+#-----------------------------------------------------------------
+# Tensorflow 코드 
+#-----------------------------------------------------------------
+x = tf.placeholder("float32", [None, 9380]) # mnist data image of shape 134 x 70
+y = tf.placeholder("float32", [None, 2]) 
+
+W = tf.Variable(tf.zeros([9380,2]))
+b = tf.Variable(tf.zeros([2]))
+
+
+# 1st conv layer ----------------------
+W_conv1 = weight_variable([8,8,1,32])
+b_conv1 = bias_variable([32])
+
+# -1 : 아직 디멘젼이 결정되지 않았다
+# 1 : 흑백이므로 1을 삽입한다. 칼라이면 3을 삽입한다
+# x은 9380x1인데 134x70x1로 행렬을 다시 만들어준다
+x_image = tf.reshape(x, [-1, 134, 70, 1])
+
+# y = x*w + b에 ReLU를 적용한다
+# (134, 70) ==> (134, 70)
+h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
+h_pool1 = max_pool_2x2(h_conv1)
+# (134, 70) ==> (67, 35)
+
+
+
+# 2nd conv layer -----------------------
+W_conv2 = weight_variable([4,4,32,64])
+b_conv2 = bias_variable([64])
+
+# (67, 35) ==> (64, 32)
+h_conv2 = tf.nn.relu(conv2d_valid(h_pool1, W_conv2) + b_conv2)
+h_pool2 = max_pool_2x2(h_conv2)
+# (64, 32) ==> (32, 16)
+
+
+# 컨벌루션 레이어 추가!
+# 3rd conv layer --------------------------
+W_conv3 = weight_variable([4,4,64,128])
+b_conv3 = bias_variable([128])
+
+h_conv3 = tf.nn.relu(conv2d_same(h_pool2, W_conv3) + b_conv3)  # (32,16) ==> (32,16)
+h_pool3 = max_pool_2x2(h_conv3) # (32,16) ==> (16,8)
+
+
+# 4th conv layer -----------------------------
+W_conv4 = weight_variable([2,2,128,256])
+b_conv4 = bias_variable([256])
+
+h_conv4 = tf.nn.relu(conv2d_same(h_pool3, W_conv4) + b_conv4)  # (16,8) ==> (16,8)
+h_pool4 = max_pool_2x2(h_conv4) 
+# (16,8) ==> (8,4)
+
+
+# 1st fully connected layer -----------------------
+W_fc1 = weight_variable([8*4*256, 5000])
+b_fc1 = bias_variable([5000])
+
+h_pool2_flat = tf.reshape(h_pool4, [-1, 8*4*256])
+h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
+# 위 연산으로 1000x1의 벡터가 생성된다
+
+
+
+# Dropout ------------------------
+keep_prob = tf.placeholder(tf.float32)
+h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+
+
+
+# 2nd fully connected layer --------------
+W_fc2 = weight_variable([5000, 2])
+b_fc2 = bias_variable([2])
+y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
+
+
+# learning_rate 
+learning_rate = 1e-3
+
+
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=y_conv))
+optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)
+
+
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
+
+
+# 정답률을 계산한다  y_conv  vs  y
+correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+
+
+
+#----------------------------------------------
+# 모델 불러오기 
+saver = tf.train.Saver()
+sess = tf.Session()
+saver.restore(sess, 'd:/edward/hangeul3')
+
+
+
+
+#----------------------------------------------
+batch_size = 50      # 한 루프에 몇개의 (Image, Label) 데이터를 학습하는지 설정
+display_step = 100    # 루프를 돌면서 화면에 표시할 빈도 설정
+
+for i in range(5000):
+	costVal = 0.
+	batch = next_batch(batch_size)
+	# 20번 돌릴 때마다 결과를 확인한다
+	if i % display_step == 0:
+		train_accuracy = sess.run(accuracy,feed_dict={x:batch[0], y:batch[1], keep_prob:1.0})
+		costVal = sess.run(cost, feed_dict={x: batch[0], y: batch[1], keep_prob:1.0})
+    
+		print('step', i , 'training_accuracy', train_accuracy,'cost', costVal)
+        
+     
+# 테스트 데이터를 넣어 정확도를 계산한다
+test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
+print('test accuracy', test_accuracy)
+
+
+
+
+
+#----------------------------------------------
+# 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
+r = random.randint(0, _num_examples -1)
+print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
+print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:test_images[r:r+1], keep_prob:1.0}))
+
+plt.imshow(test_images[r:r+1].reshape(134, 70), cmap='gray', interpolation='nearest')
+plt.show()
 
 
 
 #-------------------------------------------------------
 # Image Processing
 #-------------------------------------------------------
+
 orig_img = cv2.imread('./FudanPed00005.png', 0)
 cols, rows = orig_img.shape
 
@@ -172,13 +383,10 @@ for i in range(1, num_resize_img+2):
 
 
 
-
-
-
-
-
 #-------------------------------------------------------------
 # 결과적으로 trim된 이미지들을 불러온다
+#-------------------------------------------------------------
+
 final_images = []
 
 for num in range(0, num_images):
@@ -192,128 +400,8 @@ final_images = final_images / 255.   # 데이터 정규화  0~1
 
 
 
-
-#-----------------------------------------------------------------
-# Tensorflow 코드
-#-----------------------------------------------------------------
-x = tf.placeholder("float32", [None, 9380]) # mnist data image of shape 134 x 70
-y = tf.placeholder("float32", [None, 2]) 
-
-W = tf.Variable(tf.zeros([9380,2]))
-b = tf.Variable(tf.zeros([2]))
-
-
-# 1st conv layer ----------------------
-W_conv1 = weight_variable([8,8,1,32])
-b_conv1 = bias_variable([32])
-
-# -1 : 아직 디멘젼이 결정되지 않았다
-# 1 : 흑백이므로 1을 삽입한다. 칼라이면 3을 삽입한다
-# x은 9380x1인데 134x70x1로 행렬을 다시 만들어준다
-x_image = tf.reshape(x, [-1, 134, 70, 1])
-
-# y = x*w + b에 ReLU를 적용한다
-# (134, 70) ==> (134, 70)
-h_conv1 = tf.nn.relu(conv2d_same(x_image, W_conv1) + b_conv1)
-h_pool1 = max_pool_2x2(h_conv1)
-# (134, 70) ==> (67, 35)
-
-
-
-# 2nd conv layer -----------------------
-W_conv2 = weight_variable([4,4,32,64])
-b_conv2 = bias_variable([64])
-
-# (67, 35) ==> (64, 32)
-h_conv2 = tf.nn.relu(conv2d_valid(h_pool1, W_conv2) + b_conv2)
-h_pool2 = max_pool_2x2(h_conv2)
-# (64, 32) ==> (32, 16)
-
-
-# 컨벌루션 레이어 추가!
-# 3rd conv layer --------------------------
-W_conv3 = weight_variable([4,4,64,128])
-b_conv3 = bias_variable([128])
-
-h_conv3 = tf.nn.relu(conv2d_same(h_pool2, W_conv3) + b_conv3)  # (32,16) ==> (32,16)
-h_pool3 = max_pool_2x2(h_conv3) # (32,16) ==> (16,8)
-
-
-# 4th conv layer -----------------------------
-W_conv4 = weight_variable([2,2,128,256])
-b_conv4 = bias_variable([256])
-
-h_conv4 = tf.nn.relu(conv2d_same(h_pool3, W_conv4) + b_conv4)  # (16,8) ==> (16,8)
-h_pool4 = max_pool_2x2(h_conv4) 
-# (16,8) ==> (8,4)
-
-
-# 1st fully connected layer -----------------------
-W_fc1 = weight_variable([8*4*256, 5000])
-b_fc1 = bias_variable([5000])
-
-h_pool2_flat = tf.reshape(h_pool4, [-1, 8*4*256])
-h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-# 위 연산으로 1000x1의 벡터가 생성된다
-
-
-
-# Dropout ------------------------
-keep_prob = tf.placeholder(tf.float32)
-h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
-
-
-
-# 2nd fully connected layer --------------
-W_fc2 = weight_variable([5000, 2])
-b_fc2 = bias_variable([2])
-y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
-
-
-# learning_rate 잘 설정하는게 중요하다.. 0.1로 하니 전혀 변화가 없었다
-learning_rate = 1e-3
-
-
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=y_conv))
-optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)
-
-
-init = tf.global_variables_initializer()
-sess = tf.Session()
-sess.run(init)
-
-
-# 정답률을 계산한다  y_conv  vs  y
-correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
-accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-
-
-
 #----------------------------------------------
-saver = tf.train.Saver()
-sess = tf.Session()
-saver.restore(sess, 'd:/edward/hangeul3')
-
-
-# 테스트 데이터를 넣어 정확도를 계산한다
-test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
-print('test accuracy', test_accuracy)
-
-
-
-
-
-#----------------------------------------------
-# 임의의 얼굴 하나를 출력한 다음 맞혀보는 코드 
-r = random.randint(0, _num_examples -1)
-print ("Label: ", sess.run(tf.argmax(test_labels[r:r+1], 1)))
-print ("Prediction: ", sess.run(tf.argmax(y_conv, 1), {x:test_images[r:r+1], keep_prob:1.0}))
-
-plt.imshow(test_images[r:r+1].reshape(134, 70), cmap='gray', interpolation='nearest')
-plt.show()
-
-
+# Model eval을 토대로 box를 그리는 코드
 #----------------------------------------------
 orig_img = cv2.imread('./PennPed00086.png')
 countNum = 3
@@ -324,7 +412,13 @@ for i in range(0, num_images):
 
     if flag[0] ==0:
         skip_count += 1
+
+        # dic 데이터로부터 
+        # prop : 몇번째 리사이징한 사진
+        # xcnt, ycnt : x,y축으로 몇 번 갔는지
         prop, xcnt, ycnt = dic[i]
+
+        # point_box부터 end_box까지 네모 박스를 그린다
         point_box = (int(prop*70*xcnt*0.25), int(prop*(ycnt-1)*134*0.25))
         
         end_x = point_box[0] + prop*70 
@@ -336,6 +430,7 @@ for i in range(0, num_images):
             end_y = cols
 
         end_box = (int(end_x), int(end_y))
+
         if skip_count >= countNum:
             skip_count = 0
             print(i,", ", point_box, ", ", end_box)

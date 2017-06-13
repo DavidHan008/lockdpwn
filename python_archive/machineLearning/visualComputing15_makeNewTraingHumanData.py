@@ -16,7 +16,7 @@ import math
 import os
 
 #-------------------------------------------------------
-orig_img = cv2.imread('./newTrainImage_forVC/1.jpg', 0)
+orig_img = cv2.imread('./newTrainImage_forVC/6.jpg', 0)
 cols, rows = orig_img.shape
 
 dic = {}  # 딕서녀리 생성

@@ -30,6 +30,7 @@ pos_fnames = os.listdir(pos_path)
 neg_fnames = os.listdir(neg_path)
 
 
+#-----------------------------------------------------------
 # 데이터 파일들의 이름을 데이터 처리하기 쉽게 변경한다
 cnt = 0
 for fname in pos_fnames:
@@ -99,6 +100,7 @@ pos_fnames2 = os.listdir(pos_path2)
 neg_fnames2 = os.listdir(neg_path2)
 
 
+#-----------------------------------------------------------
 # 데이터 파일들의 이름을 데이터 처리하기 쉽게 변경한다
 cnt = 0
 for fname in pos_fnames2:
