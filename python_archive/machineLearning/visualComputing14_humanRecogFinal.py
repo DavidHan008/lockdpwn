@@ -16,15 +16,122 @@ from PIL import Image
 import math
 import os
 
-#-------------------------------------------------------
-# test_original
-#-------------------------------------------------------
+pos_path = 'D:\\edward\\visualComputing_humanDetection\\pos\\pos_train\\'
+
+neg_path = 'D:\\edward\\visualComputing_humanDetection\\neg\\neg_train\\'
+
+pos_fnames = os.listdir(pos_path)
+neg_fnames = os.listdir(neg_path)
 
 pos_path2 = 'D:\\edward\\visualComputing_humanDetection\\pos\\pos_test\\'
 neg_path2 = 'D:\\edward\\visualComputing_humanDetection\\neg\\neg_test\\'
 
 pos_fnames2 = os.listdir(pos_path2)
 neg_fnames2 = os.listdir(neg_path2)
+
+
+
+#-----------------------------------------------------------------
+# train_original
+# pos_neg_train 데이터를 불러오기 위한 데이터 전처리 코드
+# 이미 전처리가 완료된 상태라면 할 필요 없다.
+
+# 데이터 파일들의 이름을 데이터 처리하기 쉽게 변경한다
+cnt = 0
+for fname in pos_fnames:
+    os.rename(pos_path + fname, pos_path + 'pos_train_' + str(cnt) +'.png')
+    cnt += 1
+
+# neg 이미지들의 사이즈를 70 x 134으로 수정한다
+cnt = 1
+for _ in range(0, 500):
+    img = Image.open(neg_path + 'Image'+str(cnt) +'.bmp') # image extension *.png,*.jpg
+    new_width  = 70
+    new_height = 134
+    img = img.resize((new_width, new_height), Image.ANTIALIAS)
+    img.save(neg_path + 'Image' + str(cnt) + '.bmp') # format may what u want ,*.png,*jpg,*.gif
+    cnt += 1
+
+# neg 이미지들의 사이즈를 70 x 134으로 수정한다
+cnt = 1
+for _ in range(0, 500):
+    img = Image.open(neg_path + 'Image'+str(cnt) +'.bmp') # image extension *.png,*.jpg
+    new_width  = 70
+    new_height = 134
+    img = img.resize((new_width, new_height), Image.ANTIALIAS)
+    img.save(neg_path + 'Image' + str(cnt) + '.bmp') # format may what u want ,*.png,*jpg,*.gif
+    cnt += 1
+
+
+
+#-----------------------------------------------------------------
+# test_original
+# pos_neg_test 데이터를 불러오기 위한 데이터 전처리 코드
+
+# 데이터 파일들의 이름을 데이터 처리하기 쉽게 변경한다
+cnt = 0
+for fname in pos_fnames2:
+    os.rename(pos_path2 + fname, pos_path2 + 'pos_test_' + str(cnt) +'.png')
+    cnt += 1
+
+# neg 이미지들의 사이즈를 70 x 134으로 수정한다
+# Image533.bmp 파일이 없어서 534파일을 하나 복사해서 사용했다
+cnt = 501
+for _ in range(0, 100):
+    img = Image.open(neg_path2 + 'Image'+str(cnt) +'.bmp') # image extension *.png,*.jpg
+    new_width  = 70
+    new_height = 134
+    img = img.resize((new_width, new_height), Image.ANTIALIAS)
+    img.save(neg_path2 + 'Image' + str(cnt) + '.bmp') # format may what u want ,*.png,*jpg,*.gi
+    cnt += 1
+    
+img = Image.open(neg_path2 + 'Image600.bmp') # image extension *.png,*.jpg
+img = img.resize((new_width, new_height), Image.ANTIALIAS)
+img.save(neg_path2 + 'Image600.bmp')
+
+
+#----------------------------------------------------------
+# train_original
+# pos 700장 + neg 500장 이미지를 train_images에 저장하고 
+# train_label를 1,1,1,1,1,......0,0,0,0,0 으로 저장한다
+
+train_images = []
+train_images_hog = []
+t_labels = []
+
+# pos Image 데이터 700장을 불러온다 (grayscale)
+for num in range(0,700):
+    train_images.append(scipy.misc.imread(pos_path 
+             + 'pos_train_'+ str(num)+'.png', flatten=True))
+
+# neg Image 데이터 500장을 불러온다 (grayscale)
+for num in range(1,501):
+    train_images.append(scipy.misc.imread(neg_path + 'Image'+ str(num)+'.bmp', flatten=True))
+
+# Image 데이터를 numpy 데이터로 수정한다
+train_images = np.array(train_images)
+# HOG Feature 작업을 위한 변수
+train_images_hog = np.array(train_images)
+train_images = train_images.reshape(1200, 9380, )
+
+
+# Label 데이터는 1 * 700 , 0 * 500의 행벡터로 생성한다
+t_labels = np.append(np.ones([1,700]) , np.zeros([1,500]))
+
+# train Label 데이터를 [1 x 100] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
+train_labels  = np.array(np.zeros(2400).reshape(1200,2))
+for num in range(0,1200):
+    train_labels[num][int(t_labels[num]) - 1] = 1
+
+
+
+
+
+#----------------------------------------------------------
+# test_original
+# pos 192장 + neg 100장 이미지를 train_images에 저장하고 
+# train_label를 1,1,1,1,1,......0,0,0,0,0 으로 저장한다
 
 test_images = []
 te_labels = []
@@ -51,43 +158,21 @@ te_labels = np.append(np.ones([1,192]) , np.zeros([1,100]))
 #           예를 들어 3이면 [0,0,1,0,.....,0] 과 같이 설정한다
 test_labels  = np.array(np.zeros(584).reshape(292,2))
 for num in range(0,292):
-    test_labels[num][int(te_labels[num]) - 1]
+    test_labels[num][int(te_labels[num]) - 1] = 1
 
 
-#-------------------------------------------------------
-# 직접 제작한 트레이닝 데이터 삽입 (neg, 사람x)만 삽입
-#-------------------------------------------------------
-neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
-
-train_images_ed = []
-t_labels = []
-
-# neg Image 데이터 장을 불러온다 (grayscale)
-for num in range(1,5595):
-    train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
-
-# Image 데이터를 numpy 데이터로 수정한다
-train_images_ed = np.array(train_images_ed)
-train_images_ed = train_images_ed.reshape(5594, 9380, )
-
-# Label 데이터는 0 * 1873의 행벡터로 생성한다
-t_labels = np.zeros([5594,1])
-
-# train Label 데이터를 [1 x 2] 의 행렬로 표현한다
-#           예를 들어 3이면 [0,1] 과 같이 설정한다
-train_labels_ed  = np.array(np.zeros(5594*2).reshape(5594,2))
-for num in range(0,5594):
-    train_labels_ed[num][int(t_labels[num])-1] = 1
 
 
-train_images_ed = train_images_ed / 255.
+# train, test 이미지 데이터를 0 ~ 1 사이 값으로 정규화합니다
+train_images = train_images / 255.
+train_images_hog = train_images_hog / 255.
+test_images = test_images / 255.
+test_images_hog = test_images_hog / 255.
 
-train_images = np.append(train_images, train_images_ed)
-train_labels = np.append(train_labels, train_labels_ed)
+
 
 
 #-----------------------------------------------------------------
-
 _num_examples = 1200   # 데이터 갯수
 _index_in_epoch = 0   # epoch
 _images = train_images  # Image 변수 
@@ -152,6 +237,14 @@ def conv2d_same(x, W):
 # max pooling을 실행하는 함수
 def max_pool_2x2(x):
 	return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
+
+
+
+
+
+
+
+
 
 
 
@@ -295,6 +388,115 @@ plt.imshow(test_images[r:r+1].reshape(134, 70), cmap='gray', interpolation='near
 plt.show()
 
 
+#-------------------------------------------------------
+# 직접 제작한 트레이닝 데이터 삽입 (neg, 사람x)만 삽입
+#-------------------------------------------------------
+neg_path_ed = 'C:\\Users\\VDLAB\\Desktop\\edward\\gitrepo\lockdpwn\\python_archive\\ipython\\newTrainImage_forVC\\neg\\'
+
+train_images_ed = []
+t_labels = []
+
+# neg Image 데이터 장을 불러온다 (grayscale)
+for num in range(1,5595):
+    train_images_ed.append(scipy.misc.imread(neg_path_ed +  str(num)+'.jpg', flatten=True))
+
+# Image 데이터를 numpy 데이터로 수정한다
+train_images_ed = np.array(train_images_ed)
+train_images_ed = train_images_ed.reshape(5594, 9380, )
+
+# Label 데이터는 0 * 1873의 행벡터로 생성한다
+t_labels = np.zeros([5594,1])
+
+# train Label 데이터를 [1 x 2] 의 행렬로 표현한다
+#           예를 들어 3이면 [0,1] 과 같이 설정한다
+train_labels_ed  = np.array(np.zeros(5594*2).reshape(5594,2))
+for num in range(0,5594):
+    train_labels_ed[num][int(t_labels[num])-1] = 1
+
+
+train_images_ed = train_images_ed / 255.
+
+
+train_images_final = np.vstack((train_images, train_images_ed))
+train_labels_final = np.vstack((train_labels, train_labels_ed))
+
+
+
+
+
+#-----------------------------------------------------------------
+_num_examples = 6794   # 데이터 갯수
+_index_in_epoch = 0   # epoch
+_images = train_images_final  # Image 변수 
+_labels = train_labels_final  # Label 변수
+_epochs_completed = 0   
+
+# batch 연산을 수행하는 함수
+# 호출될 때마다 랜덤으로 batch_size의 (Image, Label) 데이터를 반환한다
+def next_batch(batch_size):
+    """Return the next `batch_size` examples from this data set."""
+    global _index_in_epoch
+    global _images
+    global _labels
+    global _epochs_completed
+
+    start = _index_in_epoch
+    _index_in_epoch += batch_size
+
+    if _index_in_epoch > _num_examples:
+      # Finished epoch
+      _epochs_completed += 1
+
+      # Shuffle the data
+      perm = np.arange(_num_examples)
+      np.random.shuffle(perm)
+      _images = _images[perm]
+      _labels = _labels[perm]
+
+      # Start next epoch
+      start = 0
+      _index_in_epoch = batch_size
+      assert batch_size <= _num_examples
+
+    end = _index_in_epoch
+    return _images[start:end], _labels[start:end]
+
+
+
+
+#----------------------------------------------
+batch_size = 50      # 한 루프에 몇개의 (Image, Label) 데이터를 학습하는지 설정
+display_step = 100    # 루프를 돌면서 화면에 표시할 빈도 설정
+saver = tf.train.Saver()
+loopCount = 5000
+
+for i in range(loopCount):
+    costVal = 0.
+    batch = next_batch(batch_size)
+    # 20번 돌릴 때마다 결과를 확인한다
+    if i % display_step == 0:
+        train_accuracy = sess.run(accuracy,feed_dict={x:batch[0], y:batch[1], keep_prob:1.0})
+        costVal = sess.run(cost, feed_dict={x: batch[0], y: batch[1], keep_prob:1.0})
+    
+        print('step', i , 'training_accuracy', train_accuracy,'cost', costVal)
+        
+        # 실제 학습과정 함수, dropout 50%를 토대로 학습한다
+    sess.run(optimizer,feed_dict={x:batch[0],y:batch[1], keep_prob:0.5})
+    if i == loopCount -1:
+        saver.save(sess, "d:/edward/humanDetectionFinal")
+        print("[+] Done Save")
+
+
+
+# 전부 학습이 끝나면 테스트 데이터를 넣어 정확도를 계산한다
+test_accuracy = sess.run(accuracy,feed_dict={x: test_images, y: test_labels, keep_prob: 1.0})
+print('test accuracy', test_accuracy)
+
+
+
+
+
+
 
 #-------------------------------------------------------
 # Image Processing
@@ -370,7 +572,6 @@ for i in range(2, 11):
 
 
 img_1 = orig_img
-
 # img_1, img_2 같은 변수를 loop 안에서 다루기 위해 namespace 변수를 추가한다
 namespace = globals()
 for i in range(2, num_resize_img+2):

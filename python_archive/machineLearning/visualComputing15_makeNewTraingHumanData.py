@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==>
+    python ==> 비주얼컴퓨팅, 최종 프로젝트 학습용 데이터를 추가로 만들기 위해 im_trim, im_resize 함수를 사용해 neg 데이터를 만드는 코드
 '''
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 import numpy as np
 import tensorflow as tf
 import scipy.misc
 import scipy.io
 import random
 import cv2
-from PIL import Image, ImageDraw
+from PIL import Image
 import math
 import os
 
 #-------------------------------------------------------
+# 1,2,3,4,5... jpg 파일을 resizing 한 후 trim 한다
 orig_img = cv2.imread('./newTrainImage_forVC/6.jpg', 0)
 cols, rows = orig_img.shape
 
