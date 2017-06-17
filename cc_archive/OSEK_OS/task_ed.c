@@ -120,7 +120,7 @@ TASK(RCV){
 					// lateral_error : toLeft의 개념과 비슷.
 					memcpy(&speed_error, buf, sizeof(float));
 					memcpy(&lateral_error, buf+4, sizeof(float));
-					break
+					break;
 				default:
 					break;
 			}
