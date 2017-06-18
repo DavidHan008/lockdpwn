@@ -11,29 +11,43 @@ from visual import *
 Lo = 4
 Lvec = vector(0,3,0)
 Lhat = vector(0,1,0)
-Ks = 7
+
+Ks = 10
 Pi = vector(0,0,0)
-Blockm = 1.3
+Blockm = 1.5  # mass
+
 g = vector(0, -9.8, 0)
 
-time = 0
-deltaT = 0.01
+t = 0
+dt = 0.01
 
 spring = helix(pos=(0,0,0), axis=(0,3,0), radius=.5)
-block = box(pos= (0,3,0), size = (1.2,1,1.2), color=color.blue)
+block = box(pos= (0,3,0), size = (1.2,1,1.2), color=color.blue, opacity=0.8)
 track = box(pos=(0,-0.5,0), size=(4,1,1))
 
-while time < 10:
+label1 =label()
+label2 =label()
+
+while t < 30:
     rate(100)  # frequency, Hz
-    time = time + deltaT
-    Fearth = Blockm * g
+    t += dt
+
+    F_earth = Blockm * g   # Force_gravity = m * g
     Lmag = abs(Lvec.y)
-    Fs = (-Ks) * (Lmag - Lo) * Lhat
-    Fnet = Fs + Fearth
-    Pf = Pi + (Fnet * deltaT)
+    F_s = (-Ks) * (Lmag - Lo) * Lhat
+    F_net = F_s + F_earth
+
+    Pf = Pi + (F_net * dt)
     Pi = Pf
-    Vavg = Pf/ Blockm
-    Xf = Lvec + Vavg * deltaT
+
+    Vavg = Pf / Blockm
+    Xf = Lvec + Vavg * dt
     Lvec = Xf
+
     spring.axis = Xf
     block.pos = Xf
+
+    label1.pos = track.pos + vector(0,0.2,0)
+    label1.text = 'm is : %.2f kg' % Blockm
+    label2.pos = track.pos + vector(0,-0.3,0)
+    label2.text = 'k is : %.2f N/m' % Ks
