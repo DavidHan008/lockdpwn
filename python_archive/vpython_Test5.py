@@ -23,11 +23,11 @@ fio = curve(pos=[(mass1.pos), (mass2.pos)], color=(0,0,0), radius=.03)
 
 L0 = 3
 L = 5.
-teta0 = 10.
+theta0 = 10.
 k = 100.
 m1 = 1
 m2 = .1
-teta = (180-teta0)*pi / 180
+theta = (180-theta0)*pi / 180
 dt = 0.01
 g = -9.81
 t = 0.
@@ -39,15 +39,15 @@ x = 3.3
 
 while True:
     rate(60)
-    a = (m2*L*sin(teta)*omega**2 - m2*g*L*sin(teta)*cos(teta) - k*(x-L0)) / (m1 + m2 + m2*L*(cos(teta))**2)
+    a = (m2*L*sin(theta)*omega**2 - m2*g*L*sin(theta)*cos(theta) - k*(x-L0)) / (m1 + m2 + m2*L*(cos(theta))**2)
 
-    alfa = -g*sin(teta) + a*cos(teta)
+    alfa = -g*sin(theta) + a*cos(theta)
     v += a*dt
     x += v*dt
     omega += alfa*dt
-    teta += omega*dt
+    theta += omega*dt
 
     mass1.pos = (x,0,0)
-    mass2.pos = (x+L*sin(teta), L*cos(teta), 0)
+    mass2.pos = (x+L*sin(theta), L*cos(theta), 0)
     mola.axis = mass1.pos - wall.pos
     fio.pos = [(mass1.pos), (mass2.pos)]
