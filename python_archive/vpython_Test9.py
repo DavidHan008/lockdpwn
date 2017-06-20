@@ -2,6 +2,8 @@
 #-*- coding: utf-8 -*-
 '''
     python ==> vpython을 활용해 N극과 S극 사이에 놓인 전류의 흐름을 보여주는 애니메이션으로 코드 
+
+                http://tcjd71.wixsite.com/vpython/blank-1
 '''
 from visual import *
 

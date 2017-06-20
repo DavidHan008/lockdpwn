@@ -13,13 +13,13 @@ scene.width = 800
 scene.height = 500
 scene.background = (.5,.5,.5)
 
-mass1 = box(pos=(0,0,0), size=(1,1,1), color=(1.0,1.0,0.1))
-mass2 = sphere(pos=(0,0,0), radius=.5, color=(0.1,0.5,1))
+mass = box(pos=(0,0,0), size=(1,1,1), color=(0,1.0,0), opacity=0.8)
+ball = sphere(pos=(0,0,0), radius=.5, color=(1.0,0,0), opacity=0.8)
 
 wall = box(pos=(-3,0,0), size = (1,4,4))
-barra = cylinder(pos = (-3,0,0), axis=(12,0,0), radius = 0.1)
-mola = helix(pos=(-3,0,0), axis=(7,0,0), radius=.3, coils=8, thickness=0.07, color=color.red)
-fio = curve(pos=[(mass1.pos), (mass2.pos)], color=(0,0,0), radius=.03)
+bar = cylinder(pos = (-3,0,0), axis=(12,0,0), radius = 0.1)
+spring = helix(pos=(-3,0,0), axis=(7,0,0), radius=.3, coils=15, thickness=0.07, color=color.gray(0.5))
+line = curve(pos=[(mass.pos), (ball.pos)], color=color.gray(0.5), radius=.03)
 
 L0 = 3
 L = 5.
@@ -28,26 +28,29 @@ k = 100.
 m1 = 1
 m2 = .1
 theta = (180-theta0)*pi / 180
-dt = 0.01
 g = -9.81
-t = 0.
 omega= 0.
 v = 0.
 a = 0.
-alfa = 0.
+alpha = 0.
 x = 3.3
+
+t = 0.
+dt = 0.01
 
 while True:
     rate(60)
     a = (m2*L*sin(theta)*omega**2 - m2*g*L*sin(theta)*cos(theta) - k*(x-L0)) / (m1 + m2 + m2*L*(cos(theta))**2)
 
-    alfa = -g*sin(theta) + a*cos(theta)
+    alpha = -g*sin(theta) + a*cos(theta)
     v += a*dt
     x += v*dt
-    omega += alfa*dt
+    omega += alpha*dt
     theta += omega*dt
 
-    mass1.pos = (x,0,0)
-    mass2.pos = (x+L*sin(theta), L*cos(theta), 0)
-    mola.axis = mass1.pos - wall.pos
-    fio.pos = [(mass1.pos), (mass2.pos)]
+    mass.pos = (x,0,0)
+    ball.pos = (x+L*sin(theta), L*cos(theta), 0)
+    spring.axis = mass.pos - wall.pos
+    line.pos = [(mass.pos), (ball.pos)]
+
+
