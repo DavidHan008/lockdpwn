@@ -1,3 +1,6 @@
+/*
+	 arduino ==> 디지털제어, 텀프로젝트용 PID 제어 코드
+*/
 #include <PID_v1.h>
 #include <TimerOne.h>
 
