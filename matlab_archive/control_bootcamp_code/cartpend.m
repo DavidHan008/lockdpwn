@@ -1,3 +1,5 @@
+% matlab ==> 도립진자의 운동방정식을 계산하는 코드
+%           code from https://www.youtube.com/watch?v=qjhAAQexzLg&t=475s
 function dy = cartpend(y,m,M,L,g,d,u)
 
 Sy = sin(y(3));

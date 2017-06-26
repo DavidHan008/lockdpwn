@@ -1,4 +1,6 @@
-function drawcartpend(y,m,M,L)
+% matlab ==> 도립진자의 운동을 그래픽으로 표현한 코드
+%           code from https://www.youtube.com/watch?v=qjhAAQexzLg&t=475s
+function drawcartpend_bw(y,m,M,L)
 x = y(1);
 th = y(3);
 
@@ -39,7 +41,7 @@ rectangle('Position',[px-mr/2,py-mr/2,mr,mr],'Curvature',1,'FaceColor',[.3 0.3 1
 xlim([-5 5]);
 ylim([-2 2.5]);
 set(gca,'Color','k','XColor','w','YColor','w')
-set(gcf,'Position',[10 900 800 400])
+%set(gcf,'Position',[100 0 600 600])
 set(gcf,'Color','k')
 set(gcf,'InvertHardcopy','off')   
 
