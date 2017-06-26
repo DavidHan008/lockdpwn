@@ -9,77 +9,70 @@ from visual import *
 # 그래픽 그려주는 코드
 #------------------------------------------------------------------
 
-g = 9.81
+# 화면 객체를 생성합니다. background 색과 카메라 center 포인트를 설정한다
+scene = display(background = (0,0,0), center = vector(0, -5, 0), range=(10,8,10))
 
-# 화면 객체를 생성합니다. backgroun 색과 카메라 center 포인트를 설정한다
-scene = display(background = (0.36, 0.47, 0.23), center = vector(0, -0.7, -0.5))
+# 2개의 물체를 생성합니다. 거리는 5m 간격으로 일정합니다
+block1 = box(pos=(0,-5,0), size=(2,2,2), color=color.cyan, opacity=0.8)
+block2 = box(pos=(0,-10,0), size=(2,2,2), color=color.cyan, opacity=0.8)
 
-# 천장의 물체를 생성합니다. 재질은 wood이고 색깔은 orange입니다.
-ceiling = box(length = 1, width = 1, height = 0.01, material = materials.wood, color = color.orange)
+# 벽을 생성합니다
+wall = box(pos=(0,0,0), size=(10,0.5,7))
 
-# ball을 생성합니다. 
-# 반지름은 0.1m
-# 초기 위치는 y방향으로 -0.5m입니다. (vpython에서는 y방향이 밑방향입니다)
-# 질량은 0.5kg
-# 초기속도는 0입니다
-ball = sphere(radius = 0.1, color = color.green, opacity=0.8)
-ball.pos = vector(0, -0.5, 0)
-ball.m = 0.5
-ball.v = vector(0,0,0)
+# 스프링을 생성합니다
+spring1 = helix(pos=wall.pos, radius=0.5, coils=8, thickness=0.1, color=color.gray(0.5))
+spring2 = helix(pos=block1.pos,  radius=0.5, coils=8, thickness=0.1, color=color.gray(0.5))
 
-# 스프링을 생성합니다. 코일 수는 15번, radius(반지름)와 thickness(두께)를 설정합니다 
-# 길이는 천장에서 ball까지로 설정합니다
-spring = helix(coils = 15, radius = 0.05, thickness = 0.01)
-spring.pos = ceiling.pos
-spring.axis = ball.pos - spring.pos
+m = 1    # 질량
+k = 20   # 스프링 강성
 
-# spring.L에는 초기 ball의 위치값이 들어갑니다. (여기서는 0.5m로 고정됩니다)
-# 스프링상수는 10 N/m입니다
-spring.L = abs(ball.pos)
-spring.k = 10.0
+y1 = 2   # 초기 위치
+y2 = 0
 
-# 텍스트를 표시하는 라벨객체를 생성합니다
+v1 = 0   # 초기 속도
+v2 = 0
+
+
+#------------------------------------------------------------------
+# 애니메이션 코드
+#------------------------------------------------------------------
+t = 0
+dt = 0.01
+
+# 텍스트를 표시할 라벨객체를 생성합니다
 label1 = label()
 label2 = label()
 label3 = label()
 
-
-# 스프링의 힘을 리턴하는 함수
-def spring_F(spring):
-    return -spring.k * (spring.length - spring.L) * spring.axis.norm()
-
-
-
-
-#------------------------------------------------------------------
-# 애니메이션 코드 
-#------------------------------------------------------------------
-
-dt = 0.01
-t = 0
-
 while True:
-    rate(100)           # [Hz] 만큼 루프를 지연시킵니다
-
-    F = spring_F(spring)      # 힘을 구해서 F 변수에 저장
-
-    ball.a = vector(0, -g, 0) + F / ball.m   # 가속도
-    ball.v += ball.a * dt                    # 속도
-    ball.pos += ball.v  * dt                 # 위치
-
-    spring.axis = ball.pos - spring.pos   # 스프링이 공을 따라가게 하기 위한 코드
-
+    rate(100) # 100 Hz, 초당 100번씩 루프를 돌고 dt=0.01이므로 시간 t는 실제 시간과 일치합니다
     t += dt
 
-    # 위치, 속도, 가속도를 표시합니다
-    label1.pos = ceiling.pos + vector(0.5,0.2,0)
-    label1.text = ('position is : %1.2f' % ball.pos.y)
-    label2.pos = ceiling.pos + vector(0.5,0.05,0)
-    label2.text = ('velocity is : %1.2f' % ball.v.y)
-    label3.pos = ceiling.pos + vector(0.5,-0.10,0)
-    label3.text = ('acc is : %1.2f' % ball.a.y)
+    # 운동방정식을 통해 a1,a2를 구하고 v,x로 적분합니다
+    a1 = k/m *(y2 - 2*y1)
+    a2 = k/m *(-2*y2 + y1)
 
-    #if ball.v.y >= 0 and ball.v.y + ball.a.y * dt <= 0:
-     #   print (t)
+    v1 += a1*dt
+    v2 += a2*dt
 
+    y1 += v1*dt
+    y2 += v2*dt
 
+    # 블락의 실시간 위치를 업데이트합니다
+    block1.pos.y = y1 - 5
+    block2.pos.y = y2 - 10
+
+    # 스프링 또한 블락과 같이 위치를 업데이트합니다
+    # pos : 스프링 위쪽 좌표
+    spring2.pos = block1.pos
+    
+    # axis : 스프링 아래쪽 좌표
+    spring1.axis = block1.pos - wall.pos
+    spring2.axis = block2.pos - block1.pos
+
+    label1.pos = wall.pos + vector(0,0,0)
+    label1.text = 'time : %.2f s' % t
+    label2.pos = wall.pos + vector(0,1.5,0)
+    label2.text = 'mass : %.2f kg' % m
+    label3.pos = wall.pos + vector(0,3,0)
+    label3.text = 'k : %.2f N/m' % k
