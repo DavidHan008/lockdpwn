@@ -12,7 +12,6 @@
 # by Kiet Lam  (kiet.lam@berkeley.edu). The web-server app Dator was 
 # based on an open source project by Bruce Wootton
 # ---------------------------------------------------------------------------
-
 from numpy import array, dot, eye, copy
 from numpy import dot, zeros
 from scipy.linalg import inv

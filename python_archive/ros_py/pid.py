@@ -76,6 +76,7 @@ def fx(x, u, dt):
     x_next = x +  (3*x + u) * dt
     return x_next
 
+
 #%% Test script to ensure program is functioning properly
 if __name__ == "__main__":
 

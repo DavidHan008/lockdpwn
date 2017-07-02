@@ -126,11 +126,12 @@ tmux split-window -h
 tmux select-pane -L
 tmux attach-session -d'
 
-# set ROS indigo
-source /opt/ros/indigo/setup.bash
-source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
 
 # set ROS alias command
 alias cw='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws'
 alias cs='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src'
 alias cm='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws && catkin_make'
+
+# set ROS indigo
+source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
+source /opt/ros/indigo/setup.bash

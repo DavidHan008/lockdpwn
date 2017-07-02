@@ -43,6 +43,7 @@ buff          = zeros(B)
 (ordin,wn) = buttord(.1,.9, 3, 40)
 (b,a) = butter(ordin,wn)
 
+
 def imu_callback(data):
 	global a_x, v_x, delta_time, prev_time, buff, b, a
 
@@ -55,10 +56,12 @@ def imu_callback(data):
 
 	delta_time = current_time - prev_time
 
-	if(prev_time <= 0):  delta_time=0
+	if(prev_time <= 0):
+		delta_time=0
 
 	v_x += acc_filtered * delta_time
 	prev_time = current_time
+
 
 
 #encoder measurement update
@@ -71,14 +74,17 @@ def encoder_callback(data):
 	Ww_Reff = Ww * pi / 2 * Reff
 
 
+
 def speed_callback(data):
 	global speed
 	speed = data.speed
 
 
+
 def filter_acc_x(acc_raw, filter_obj):
 	filter_obj.update(a_x)
 	return filter_obj.getFilteredSignal()
+
 
 #############################################################
 # main code

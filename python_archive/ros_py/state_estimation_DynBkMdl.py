@@ -16,14 +16,15 @@
 import rospy
 import time
 import os
+from numpy import unwrap, pi, cos, sin, eye, array, zeros
+
 from barc.msg import ECU, Encoder
 from sensor_msgs.msg import Imu
 from geometry_msgs.msg import Vector3
-from numpy import pi, cos, sin, eye, array, zeros
+
 from ekf import ekf
 from system_models import f_3s, h_3s
 from tf import transformations
-from numpy import unwrap
 
 # input variables
 d_f 	    = 0
@@ -67,6 +68,7 @@ def imu_callback(data):
     w_x = data.angular_velocity.x
     w_y = data.angular_velocity.y
     w_z = data.angular_velocity.z
+
     a_x = data.linear_acceleration.x
     a_y = data.linear_acceleration.y
     a_z = data.linear_acceleration.z
@@ -151,7 +153,6 @@ def state_estimation():
     R           = (r_std**2)*eye(2)     # measurement noise coveriance matrix
 
     while not rospy.is_shutdown():
-
 		# publish state estimate
         (v_x, v_y, r) = z_EKF           # note, r = EKF estimate yaw rate
 

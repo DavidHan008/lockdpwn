@@ -170,9 +170,6 @@ tmux split-window -h
 tmux select-pane -L
 tmux attach-session -d'
 
-# set ROS indigo
-source /opt/ros/indigo/setup.bash
-source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
 
 # set ROS alias command
 alias cw='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws'
@@ -185,3 +182,7 @@ alias cm='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws && catkin_make'
 if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
+
+# set ROS indigo
+source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
+source /opt/ros/indigo/setup.bash

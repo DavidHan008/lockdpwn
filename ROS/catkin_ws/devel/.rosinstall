@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.sh
+    local-name: /home/edward/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.sh
