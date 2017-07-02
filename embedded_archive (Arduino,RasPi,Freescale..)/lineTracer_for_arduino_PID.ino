@@ -14,7 +14,6 @@ struct SENSOR{
 	union{
 		int R;
 		struct{
-			 int :5;
 			 int sensor1:1;
 			 int sensor2:1;
 			 int sensor3:1;
@@ -121,7 +120,7 @@ void loop() {
 
 	switch(tracesensor.sen.R){
 		// 전부 흰색인 경우
-		case 0b1111100000:
+		case 0b11111:
 			input_left += 0;
 			input_right -= 0;
 
@@ -130,13 +129,13 @@ void loop() {
 
 			break;
 		// 전부 검정색인 경우
-		case 0b0000000000:
+		case 0b00000:
 			input_left += 0;
 			input_right -= 0;
 
 			break;
 		// 정중앙에 검정선이 있는 경우
-		case 0b1101100000:
+		case 0b11011:
 			input_left -= 5;
 			input_right -= 5;
 
@@ -144,7 +143,7 @@ void loop() {
 			leftFlag = 0;
 
 			break;
-		case 0b0111100000:
+		case 0b01111:
 			input_left -= 5;
 			input_right += 5;
 
@@ -152,38 +151,38 @@ void loop() {
 			leftFlag = 0;
 
 			break;
-		case 0b0011100000:
+		case 0b00111:
 			input_left -= 2.5;
 			input_right += 2.5;
 
 			break;
-		case 0b0001100000:
+		case 0b00011:
 			input_left -= 2;
 			input_right += 2;
 
 			break;
-		case 0b1001100000:
+		case 0b10011:
 			input_left -= 1;
 			input_right += 1;
 
 			break;
-		case 0b1100100000:
+		case 0b11001:
 			input_left += 1;
 			input_right -= 1;
 
 
 			break;
-		case 0b1100000000:
+		case 0b11000:
 			input_left += 2;
 			input_right -= 2;
 
 			break;
-		case 0b1110000000:
+		case 0b11100:
 			input_left += 2.5;
 			input_right -= 2.5;
 
 			break;
-		case 0b1111000000:
+		case 0b11110:
 			input_left += 5;
 			input_right -= 5;
 
@@ -191,12 +190,12 @@ void loop() {
 			leftFlag = 1;
 
 			break;
-		case 0b1110100000:
+		case 0b11101:
 			input_left += 3;
 			input_right -= 3;
 
 			break;
-		case 0b1011100000:
+		case 0b10111:
 			input_left -= 3;
 			input_right += 3;
 

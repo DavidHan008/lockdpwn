@@ -16,7 +16,6 @@ struct SENSOR{
 	union{
 		int R;
 		struct{
-			 int :5;
 			 int sensor1:1;
 			 int sensor2:1;
 			 int sensor3:1;
@@ -95,7 +94,7 @@ void loop() {
 	//                     b : 위에서봤을 때 왼쪽
 	switch(tracesensor.sen.R){
 		// 전부 흰색인 경우
-		case 0b1111100000:
+		case 0b11111:
 			Serial.print("                           ");
 			Serial.print(leftFlag);
 			Serial.println(rightFlag);
@@ -108,10 +107,10 @@ void loop() {
 
 			break;
 		// 전부 검정색인 경우
-		case 0b0000000000:
+		case 0b00000:
 			break;
 		// 정중앙에 검정선이 있는 경우
-		case 0b1101100000:
+		case 0b11011:
 			Serial.println("11011");
 			motorController.move(-MAX_SPEED, -MAX_SPEED, MIN_SPEED); 
 
@@ -120,7 +119,7 @@ void loop() {
 			break;
 
 		// 가장자리1
-		case 0b0111100000:
+		case 0b01111:
 			Serial.println("01111");
 			motorController.move(0, -MAX_SPEED, MIN_SPEED); 
 
@@ -128,29 +127,29 @@ void loop() {
 			leftFlag = 0;
 
 			break;
-		case 0b0011100000:
+		case 0b00111:
 			Serial.println("00111");
 			motorController.move(0, -MAX_SPEED + 40, MIN_SPEED); 
 
 			break;
-		case 0b1001100000:
+		case 0b10011:
 			Serial.println("10011");
 			motorController.move(0, -MAX_SPEED + 50, MIN_SPEED); 
 
 			break;
-		case 0b1100100000:
+		case 0b11001:
 			Serial.println("11001");
 			motorController.move(-MAX_SPEED + 50, 0, MIN_SPEED); 
 
 			break;
-		case 0b1110000000:
+		case 0b11100:
 			Serial.println("11100");
 			motorController.move(-MAX_SPEED + 40, 0, MIN_SPEED); 
 
 			break;
 
 		// 가장자리2
-		case 0b1111000000:
+		case 0b11110:
 			Serial.println("11110");
 			motorController.move(-MAX_SPEED, 0, MIN_SPEED); 
 
@@ -158,12 +157,12 @@ void loop() {
 			leftFlag = 1;
 
 			break;
-		case 0b1110100000:
+		case 0b11101:
 			Serial.println("11101");
 			motorController.move(-MAX_SPEED + 30, 0, MIN_SPEED); 
 
 			break;
-		case 0b1011100000:
+		case 0b10111:
 			Serial.println("10111");
 			motorController.move(0, -MAX_SPEED + 30, MIN_SPEED); 
 
