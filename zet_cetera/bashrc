@@ -188,5 +188,5 @@ if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline
 fi
 
 # set ROS indigo
-source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/setup.bash
+source /home/edward/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
 source /opt/ros/indigo/setup.bash
