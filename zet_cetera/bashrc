@@ -176,6 +176,10 @@ alias cw='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws'
 alias cs='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src'
 alias cm='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws && catkin_make'
 
+alias cwi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo'
+alias csi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src'
+alias cmi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo && catkin_make'
+
 #export ROS_MASTER_URI=http://192.168.137.2:11311
 #export ROS_HOSTNAME=127.0.0.1
 
@@ -184,5 +188,5 @@ if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline
 fi
 
 # set ROS indigo
-source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
+source /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/setup.bash
 source /opt/ros/indigo/setup.bash

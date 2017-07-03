@@ -1,1 +1,2 @@
-
+myahrs_driver_ed
+-DCATKIN_DEVEL_PREFIX=/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel -DCMAKE_INSTALL_PREFIX=/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/install -G Unix Makefiles

@@ -67,14 +67,14 @@ set(myahrs_driver_ed_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(myahrs_driver_ed_SOURCE_PREFIX /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed)
-  set(myahrs_driver_ed_DEVEL_PREFIX /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel)
+  set(myahrs_driver_ed_SOURCE_PREFIX /root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src/myahrs_driver_ed)
+  set(myahrs_driver_ed_DEVEL_PREFIX /root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel)
   set(myahrs_driver_ed_INSTALL_PREFIX "")
   set(myahrs_driver_ed_PREFIX ${myahrs_driver_ed_DEVEL_PREFIX})
 else()
   set(myahrs_driver_ed_SOURCE_PREFIX "")
   set(myahrs_driver_ed_DEVEL_PREFIX "")
-  set(myahrs_driver_ed_INSTALL_PREFIX /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install)
+  set(myahrs_driver_ed_INSTALL_PREFIX /root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/install)
   set(myahrs_driver_ed_PREFIX ${myahrs_driver_ed_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(myahrs_driver_ed_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed/include " STREQUAL " ")
+if(NOT "/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src/myahrs_driver_ed/include " STREQUAL " ")
   set(myahrs_driver_ed_INCLUDE_DIRS "")
-  set(_include_dirs "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed/include")
+  set(_include_dirs "/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src/myahrs_driver_ed/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed/include
         message(FATAL_ERROR "Project 'myahrs_driver_ed' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Yoonseok Pyo <passionvirus@gmail.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'myahrs_driver_ed' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/myahrs_driver_ed/${idir}'.  Ask the maintainer 'Yoonseok Pyo <passionvirus@gmail.com>' to fix it.")
+      message(FATAL_ERROR "Project 'myahrs_driver_ed' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src/myahrs_driver_ed/${idir}'.  Ask the maintainer 'Yoonseok Pyo <passionvirus@gmail.com>' to fix it.")
     endif()
     _list_append_unique(myahrs_driver_ed_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib;/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -162,12 +162,12 @@ foreach(depend ${depends})
   if(${count} EQUAL 1)
     # simple dependencies must only be find_package()-ed once
     if(NOT ${myahrs_driver_ed_dep}_FOUND)
-      find_package(${myahrs_driver_ed_dep} REQUIRED)
+      find_package(${myahrs_driver_ed_dep} REQUIRED NO_MODULE)
     endif()
   else()
     # dependencies with components must be find_package()-ed again
     list(REMOVE_AT depend_list 0)
-    find_package(${myahrs_driver_ed_dep} REQUIRED ${depend_list})
+    find_package(${myahrs_driver_ed_dep} REQUIRED NO_MODULE ${depend_list})
   endif()
   _list_append_unique(myahrs_driver_ed_INCLUDE_DIRS ${${myahrs_driver_ed_dep}_INCLUDE_DIRS})
 

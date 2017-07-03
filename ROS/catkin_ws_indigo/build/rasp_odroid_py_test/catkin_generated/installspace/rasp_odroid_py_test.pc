@@ -1,8 +1,0 @@
-prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install
-
-Name: rasp_odroid_py_test
-Description: Description of rasp_odroid_py_test
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/install/lib -lrasp_odroid_py_test
-Requires: rospy std_msgs

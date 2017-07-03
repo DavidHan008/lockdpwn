@@ -7,6 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH="/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/arm-linux-gnueabihf:/opt/ros/indigo/lib/arm-linux-gnueabihf:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib:/opt/ros/indigo/lib"
-export PKG_CONFIG_PATH="/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/arm-linux-gnueabihf/pkgconfig:/opt/ros/indigo/lib/arm-linux-gnueabihf/pkgconfig:/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig"
-export PWD="/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/build"
+export CMAKE_PREFIX_PATH="/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src:/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src:$ROS_PACKAGE_PATH"
