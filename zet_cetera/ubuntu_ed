@@ -235,6 +235,11 @@
 	
 
 	28. tmux가 좋다고 해서 tmux도 깔았다 : 170409_일
+
+
+	추가
+	29. emacs에서 jedi:install server 에러가 나는 경우
+		apt-get install jedi epc virtualenv를 해주면 된다
 		
 
 
