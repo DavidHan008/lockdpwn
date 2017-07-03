@@ -146,10 +146,12 @@
 	
 	highlight-symbol.elc ==> 이건 컴파일버전이다
 
-    M-x : byte-compile-file highlight-symbol.el로 컴파일 버전을 만든다
+        M-x : byte-compile-file highlight-symbol.el로 컴파일 버전을 만든다
 
 	아래 변수에서 s를 빼야 제대로 인식된다 
 	highlight-symbol-colors ==> highlight-symbol-color
+
+		추가로 highlight-symbol-add-symbol 함수에서 foreground-color를 "black"으로 바꿔준다
 
 
 	# edebug defun ==> Ctrl + b 
@@ -233,6 +235,11 @@
 	
 
 	28. tmux가 좋다고 해서 tmux도 깔았다 : 170409_일
+
+
+	추가
+	29. emacs에서 jedi:install server 에러가 나는 경우
+		apt-get install jedi epc virtualenv를 해주면 된다
 		
 
 
