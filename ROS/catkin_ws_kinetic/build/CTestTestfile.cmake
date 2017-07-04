@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(first_ros)
+subdirs(teleop_bot)
 subdirs(basics)

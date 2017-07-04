@@ -1,8 +1,0 @@
-#name : begin
-#key : begin
-#group : 
-# --
-=begin
-	ruby ==> ${2: }
-${1:}=end
-

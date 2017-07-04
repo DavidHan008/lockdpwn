@@ -1,2 +1,2 @@
-basics:first_ros
+basics:first_ros:teleop_bot
 -DCATKIN_DEVEL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel -DCMAKE_INSTALL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install -G Unix Makefiles

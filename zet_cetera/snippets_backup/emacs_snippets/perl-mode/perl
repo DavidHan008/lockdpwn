@@ -1,6 +1,0 @@
-# name: perl
-# key: perl
-# --
-#!/usr/bin/perl
-$0
-

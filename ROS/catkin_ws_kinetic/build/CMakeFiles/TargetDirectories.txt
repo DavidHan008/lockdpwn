@@ -42,6 +42,14 @@
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/first_ros/CMakeFiles/install/strip.dir
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/first_ros/CMakeFiles/install/local.dir
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/first_ros/CMakeFiles/install.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/rebuild_cache.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/edit_cache.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/list_install_components.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/install.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/_catkin_empty_exported_target.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/install/local.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/install/strip.dir
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/CMakeFiles/test.dir
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/basics/CMakeFiles/list_install_components.dir
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/basics/CMakeFiles/install.dir
 /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/basics/CMakeFiles/rebuild_cache.dir

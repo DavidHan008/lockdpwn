@@ -118,6 +118,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/gtest/cmake_install.cmake")
   include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/first_ros/cmake_install.cmake")
+  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/teleop_bot/cmake_install.cmake")
   include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/basics/cmake_install.cmake")
 
 endif()
