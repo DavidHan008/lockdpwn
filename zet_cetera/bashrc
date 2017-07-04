@@ -92,7 +92,7 @@ fi
 alias ll='ls -alF'
 alias lll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -l'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -152,7 +152,7 @@ LANG=ko_KR.utf-8
 LANGUAGE=ko_KR
 PATH=$PATH:/home/edward/.wine/drive_c/programfilesx86/ida6.8
 ida=/home/edward/.wine/drive_c/programfilesx86/ida6.8
-git=/home/edward/lockdpwn
+git=/home/edward/gitrepo/lockdpwn
 msf=/opt/metasploit/apps/pro/vendor/bundle/ruby/2.3.0/gems/metasploit-framework-4.13.15
 
 PATH="/home/edward/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -161,6 +161,8 @@ PERL_LOCAL_LIB_ROOT="/home/edward/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_
 PERL_MB_OPT="--install_base \"/home/edward/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/edward/perl5"; export PERL_MM_OPT;
 
+
+source /opt/ros/kinetic/setup.bash 
 alias tmux='TERM=xterm-256color tmux -2 -u'
 alias tm='tmux -u new-session -d
 tmux split-window -v
@@ -172,21 +174,23 @@ tmux attach-session -d'
 
 
 # set ROS alias command
-alias cw='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws'
-alias cs='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src'
-alias cm='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws && catkin_make'
+alias cwk='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic'
+alias csk='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/src'
+alias cmk='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic && catkin_make'
 
-alias cwi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo'
-alias csi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src'
-alias cmi='cd /home/odroid/gitrepo/lockdpwn/ROS/catkin_ws_indigo && catkin_make'
+alias cw='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws'
+alias cs='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws/src'
+#alias cm='cd /home/edward/gitrepo/lockdpwn/ROS/catkin_ws && catkin_make'
 
 #export ROS_MASTER_URI=http://192.168.137.2:11311
 #export ROS_HOSTNAME=127.0.0.1
+
+alias cl='cd /home/edward/gitrepo/lockdpwn'
 
 if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
 
-# set ROS indigo
-source /home/edward/gitrepo/lockdpwn/ROS/catkin_ws/devel/setup.bash
-source /opt/ros/indigo/setup.bash
+# set ROS kinetic
+source /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel/setup.bash
+source /opt/ros/kinetic/setup.bash

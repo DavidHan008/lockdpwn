@@ -1,8 +1,0 @@
-prefix=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/install
-
-Name: basics
-Description: Description of basics
-Version: 0.0.0
-Cflags: -I/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/install/include
-Libs: -L/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
-Requires: message_runtime

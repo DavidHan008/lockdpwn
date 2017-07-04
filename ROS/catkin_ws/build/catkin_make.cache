@@ -1,2 +1,2 @@
-basics
+myahrs_driver_ed
 -DCATKIN_DEVEL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

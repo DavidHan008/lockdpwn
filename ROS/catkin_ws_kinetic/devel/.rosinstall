@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel/setup.sh

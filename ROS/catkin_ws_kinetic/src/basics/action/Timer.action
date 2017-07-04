@@ -1,0 +1,15 @@
+# 액션은 목표, 결과, 피드백 세 개의 부분으로 되어있다
+
+# 목표: 클라이언트에서 보냄
+duration time_to_wait
+---
+# 결과: 종료 시 서버가 보냄
+duration time_elapsed
+---
+
+# 피드백 : 실행되는 동안 서버가 주기적으로 보냄
+
+# 시작부터 경과된 시간
+duration time_elapsed
+# 종료될 때까지 남은 시간
+duration time_remaining
