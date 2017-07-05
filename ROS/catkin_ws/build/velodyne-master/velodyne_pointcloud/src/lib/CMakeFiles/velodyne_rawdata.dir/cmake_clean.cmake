@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/velodyne_rawdata.dir/rawdata.cc.o"
   "CMakeFiles/velodyne_rawdata.dir/calibration.cc.o"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/libvelodyne_rawdata.pdb"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/velodyne_rawdata.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/velodyne_rawdata.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

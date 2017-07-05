@@ -46,8 +46,7 @@ tf::TransformBroadcaster *tfBroadcaster2Pointer = NULL;
 nav_msgs::Odometry laserOdometry2;
 tf::StampedTransform laserOdometryTrans2;
 
-void transformAssociateToMap()
-{
+void transformAssociateToMap(){
   float x1 = cos(transformSum[1]) * (transformBefMapped[3] - transformSum[3]) 
            - sin(transformSum[1]) * (transformBefMapped[5] - transformSum[5]);
   float y1 = transformBefMapped[4] - transformSum[4];
@@ -133,8 +132,7 @@ void transformAssociateToMap()
                      - (-sin(transformMapped[1]) * x2 + cos(transformMapped[1]) * z2);
 }
 
-void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry)
-{
+void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   double roll, pitch, yaw;
   geometry_msgs::Quaternion geoQuat = laserOdometry->pose.pose.orientation;
   tf::Matrix3x3(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w)).getRPY(roll, pitch, yaw);
@@ -236,26 +234,26 @@ void setOdomOffsetHandler(const geometry_msgs::Pose2D::ConstPtr& offset)
   transformoffset[5] += 0;
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "transformMaintenance");
   ros::NodeHandle nh("~");
   nh.param<bool>("my_pose_enable", myPoseEnabled, true);
 
+
   ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry> 
                                      ("/laser_odom_to_init", 5, laserOdometryHandler);
-
-  ros::Subscriber subOdomAftMapped = nh.subscribe<nav_msgs::Odometry> 
+  ros::Subscriber subOdomAftMapped = nh.subscribe<nav_msgs::Odometry>
                                      ("/aft_mapped_to_init", 5, odomAftMappedHandler);
   //jh
   ros::Subscriber subOdomOffset = nh.subscribe<geometry_msgs::Pose2D> 
 	                                 ("/odom_Offset", 5, setOdomOffsetHandler);
 
+
+
   ros::Publisher pubLaserOdometry2 = nh.advertise<nav_msgs::Odometry> ("/integrated_to_init", 5);
   pubLaserOdometry2Pointer = &pubLaserOdometry2;
   laserOdometry2.header.frame_id = "/camera_init";
   laserOdometry2.child_frame_id = "/camera";
-
  //jh
 
   ros::Publisher pubPose;
@@ -268,8 +266,7 @@ int main(int argc, char** argv)
   pubPose1 = nh.advertise<geometry_msgs::Pose2D> ("/test", 5);
   pubLaserMypose1 = &pubPose1;
   }
-  else
-  {
+  else{
     ROS_INFO("Use Global 2D Pose with Previous Map");
   }
   tf::TransformBroadcaster tfBroadcaster2;

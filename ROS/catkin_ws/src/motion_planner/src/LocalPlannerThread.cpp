@@ -18,25 +18,26 @@
 #define th_err_range 90*2
 
 // From Localization Module
-void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg)
-{
+void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
     m_pos[0] = msg->data.at(0);
     m_pos[1] = msg->data.at(1);
     m_pos[2] = msg->data.at(2);
+
+
     m_vel = msg->data.at(3); // m/s
 
-//    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
-//    if(switch_dist < 0.9)
-//    {
-//        m_dir_mode = -1;
-//        //cout << "SWITCH" << endl;
-//    }
+    printf("hello");
+    //    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
+    //    if(switch_dist < 0.9)
+    //    {
+    //        m_dir_mode = -1;
+    //        //cout << "SWITCH" << endl;
+    //    }
 
     Compute();
 }
 
-void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg)
-{
+void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg){
     cout << "sub path" << endl;
     // Insertion Global Path Data to Vector Struct
     vector<Vector2d> nodeVec;
@@ -49,7 +50,7 @@ void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg)
     CatmullRomSpline spline;
     vector<Vector2d> curvePath = spline.PathToCurve( nodeVec, 1, 1);
     m_LocalSplinePath = curvePath;
-//m_LocalSplinePath = nodeVec;
+    //m_LocalSplinePath = nodeVec;
 
     cout << m_LocalSplinePath.size() <<endl;
     // Publish for Visualization
@@ -100,165 +101,165 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path)
 void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y, double &resdist)
 {
     double heading_Err = 0.0; //JW 16.07.11.
-        double cross_track_Err = 0.0;//JW 16.07.11.
-        double delta_LookAhead = 0.0;
-        double curvature_norm = 0;
-        double car_heading = 0.0;
+    double cross_track_Err = 0.0;//JW 16.07.11.
+    double delta_LookAhead = 0.0;
+    double curvature_norm = 0;
+    double car_heading = 0.0;
 
 
-        if (m_LocalSplinePath.size() > 1)
+    if (m_LocalSplinePath.size() > 1)
+    {
+        double minDist = 99999;
+        int car_waypoint = -1;
+        //for(int i = (m_cut_back+m_cut_switch)*SPLINE_RESOL ; i < m_LocalSplinePath.size(); i++)
+        for(int i = m_pre_waypoint; i<m_LocalSplinePath.size(); i++)
         {
-            double minDist = 99999;
-            int car_waypoint = -1;
-            //for(int i = (m_cut_back+m_cut_switch)*SPLINE_RESOL ; i < m_LocalSplinePath.size(); i++)
-            for(int i = m_pre_waypoint; i<m_LocalSplinePath.size(); i++)
+            double x2 = m_LocalSplinePath[i][0] - m_pos[0];
+            x2 *= x2;
+            double y2 = m_LocalSplinePath[i][1] - m_pos[1];
+            y2 *= y2;
+            double dist = sqrt(x2+y2);//distŽÂ
+            if ( dist < minDist )
             {
-                double x2 = m_LocalSplinePath[i][0] - m_pos[0];
-                x2 *= x2;
-                double y2 = m_LocalSplinePath[i][1] - m_pos[1];
-                y2 *= y2;
-                double dist = sqrt(x2+y2);//distŽÂ
-                if ( dist < minDist )
-                {
-                    minDist = dist;
-                    car_waypoint = i;
-                }
-            }
-            carIdx = car_waypoint;
-            m_pre_waypoint = car_waypoint;
-    //JW 17.01.09 car pose marker
-            m_model_orig.header.stamp = ros::Time::now();
-            m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
-            m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
-            msgpub_Look_orig.publish(m_model_orig);
-
-            //Velodyne to car rearwheel
-            //m_pos[0] -= m_len_c2r*cos(car_heading);
-            //m_pos[1] -= m_len_c2r*sin(car_heading);
-
-            //Error
-                //cross-track
-                    cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
-                    m_CrossTrack_ERR = cross_track_Err;
-                    if(cross_track_Err > FR_V_MAX)	cross_track_Err = FR_V_MAX;//prohibit the cross-track err overflow
-
-            ////////////////////////////////////////////////////////////////////
-                    car_heading = m_pos[2];//range 0 ~ M_PI*2
-                //car_dir diff
-                    double tmp_dir = atan2((m_LocalSplinePath[car_waypoint][1] - m_LocalSplinePath[car_waypoint+1][1]),
-                            (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
-                    if(tmp_dir < 0)	tmp_dir = M_PI*2 + tmp_dir;
-                    m_TH_ERR = abs(car_heading - tmp_dir);
-                    //cout << "tmp_dir : " << tmp_dir << ", car_heading : " << car_heading<<endl;
-            /////////////////////////////////////////////////////////////
-                //car_heading diff
-                    //range 0 ~ M_PI*2
-                    //JW 16.06.24.test1
-
-                    double tmp_th = atan2((m_LookAhead_Y - m_pos[1]), (m_LookAhead_X - m_pos[0]));
-                    if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
-
-                    heading_Err = abs(car_heading - tmp_th);
-                    if (heading_Err > M_PI)	heading_Err = abs(heading_Err - 2*M_PI)/(M_PI);
-                    else heading_Err /= (M_PI);
-
-            /////////////////////////////////////////////////////////////
-            double TH_ERR = TH_SCALE*(1.0 - sin(heading_Err*M_PI/2));
-            m_TH_ERR = TH_ERR;
-            double LEN_ERR = (1.0 - TH_SCALE)*sin(heading_Err*M_PI/2)*cross_track_Err;
-
-            delta_LookAhead = REV_V_MAX*(TH_ERR + LEN_ERR);//curvature_norm*10;//*(LEN_ERR);
-            //delta_LookAhead = curvature_norm*REV_V_MAX*(TH_ERR + LEN_ERR);
-
-            double min_delta = 3.0;
-            if( delta_LookAhead < min_delta ) delta_LookAhead = min_delta;
-
-            double lookAheadDist = (int)(delta_LookAhead*10) * 0.1;
-
-            //lookAheadDist = delta_LookAhead - m_overall_rev;
-            //lookAheadDist = delta_LookAhead - m_overall;
-            //JW 16.06.24.test1
-
-
-            cout << "th_err : " << (1.0-sin(heading_Err*M_PI/2)) << ", dist_err : " << cross_track_Err << ", rad : " << curvature_norm << endl;
-            cout << "JoonWoo Delta : " << lookAheadDist << ", TH_ERR : " << TH_ERR << ", Dist_ERR : "<< LEN_ERR << endl<< endl;
-
-            double dist = 0;
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //1. just car car_heading to dist
-            //	x = m_LookAhead_X = m_LocalSplinePath[car_waypoint][0] + lookAheadDist*cos(car_heading);
-            //	y = m_LookAhead_Y = m_LocalSplinePath[car_waypoint][1] + lookAheadDist*sin(car_heading);
-
-            for( int i = car_waypoint ; i < m_LocalSplinePath.size()-1 ; i++ )
-                //	for( int i = m_lookAheadIndex; i<m_LocalSplinePath.size()-1; i++ )
-            {
-                double x2 = m_LocalSplinePath[i][0] - m_LocalSplinePath[i+1][0];
-                x2 *= x2;
-                double y2 = m_LocalSplinePath[i][1] - m_LocalSplinePath[i+1][1];
-                y2 *= y2;
-                dist += sqrt(x2+y2);
-
-                if( lookAheadDist <= dist )
-                {
-                    cout << "m_lookAheadIndex : " << i <<endl;
-
-                    m_lookAheadIndex = i;
-                    x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
-                    y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
-
-                    resdist = lookAheadDist;
-
-                    std_msgs::Float32MultiArray m_err;//jw 16.07.11
-                    m_err.data.clear();
-                    m_err.data.push_back(m_pos[0]);
-                    m_err.data.push_back(m_pos[1]);
-                    m_err.data.push_back(m_pos[2]);
-                    m_err.data.push_back(x);
-                    m_err.data.push_back(y);
-                    m_err.data.push_back(lookAheadDist);
-                    m_err.data.push_back(m_vel);
-                    m_err.data.push_back(heading_Err*180);
-                    m_err.data.push_back(cross_track_Err);
-                    msgpub_err_JW.publish(m_err);
-
-                    break;
-                }
-                if(i == m_LocalSplinePath.size()-2)
-                {
-                    m_lookAheadIndex = m_LocalSplinePath.size()-2;
-                    x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
-                    y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
-
-                    resdist = lookAheadDist;
-
-                    std_msgs::Float32MultiArray m_err;//jw 16.07.11
-                    m_err.data.clear();
-                    m_err.data.push_back(m_pos[0]);
-                    m_err.data.push_back(m_pos[1]);
-                    m_err.data.push_back(m_pos[2]);
-                    m_err.data.push_back(x);
-                    m_err.data.push_back(y);
-                    m_err.data.push_back(lookAheadDist);
-                    m_err.data.push_back(m_vel);
-                    m_err.data.push_back(heading_Err*180);
-                    m_err.data.push_back(cross_track_Err);
-                    msgpub_err_JW.publish(m_err);
-
-                    cout << "no Index !!!!" <<endl;
-                    resdist = lookAheadDist;
-                    break;
-                }
-            }
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            if( m_lookAheadIndex == -1 )
-            {
-                x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
-                y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
-                resdist = -1;
+                minDist = dist;
+                car_waypoint = i;
             }
         }
+        carIdx = car_waypoint;
+        m_pre_waypoint = car_waypoint;
+        //JW 17.01.09 car pose marker
+        m_model_orig.header.stamp = ros::Time::now();
+        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
+        m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
+        msgpub_Look_orig.publish(m_model_orig);
+
+        //Velodyne to car rearwheel
+        //m_pos[0] -= m_len_c2r*cos(car_heading);
+        //m_pos[1] -= m_len_c2r*sin(car_heading);
+
+        //Error
+        //cross-track
+        cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
+        m_CrossTrack_ERR = cross_track_Err;
+        if(cross_track_Err > FR_V_MAX)	cross_track_Err = FR_V_MAX;//prohibit the cross-track err overflow
+
+        ////////////////////////////////////////////////////////////////////
+        car_heading = m_pos[2];//range 0 ~ M_PI*2
+        //car_dir diff
+        double tmp_dir = atan2((m_LocalSplinePath[car_waypoint][1] - m_LocalSplinePath[car_waypoint+1][1]),
+                               (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
+        if(tmp_dir < 0)	tmp_dir = M_PI*2 + tmp_dir;
+        m_TH_ERR = abs(car_heading - tmp_dir);
+        //cout << "tmp_dir : " << tmp_dir << ", car_heading : " << car_heading<<endl;
+        /////////////////////////////////////////////////////////////
+        //car_heading diff
+        //range 0 ~ M_PI*2
+        //JW 16.06.24.test1
+
+        double tmp_th = atan2((m_LookAhead_Y - m_pos[1]), (m_LookAhead_X - m_pos[0]));
+        if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
+
+        heading_Err = abs(car_heading - tmp_th);
+        if (heading_Err > M_PI)	heading_Err = abs(heading_Err - 2*M_PI)/(M_PI);
+        else heading_Err /= (M_PI);
+
+        /////////////////////////////////////////////////////////////
+        double TH_ERR = TH_SCALE*(1.0 - sin(heading_Err*M_PI/2));
+        m_TH_ERR = TH_ERR;
+        double LEN_ERR = (1.0 - TH_SCALE)*sin(heading_Err*M_PI/2)*cross_track_Err;
+
+        delta_LookAhead = REV_V_MAX*(TH_ERR + LEN_ERR);//curvature_norm*10;//*(LEN_ERR);
+        //delta_LookAhead = curvature_norm*REV_V_MAX*(TH_ERR + LEN_ERR);
+
+        double min_delta = 3.0;
+        if( delta_LookAhead < min_delta ) delta_LookAhead = min_delta;
+
+        double lookAheadDist = (int)(delta_LookAhead*10) * 0.1;
+
+        //lookAheadDist = delta_LookAhead - m_overall_rev;
+        //lookAheadDist = delta_LookAhead - m_overall;
+        //JW 16.06.24.test1
+
+
+        cout << "th_err : " << (1.0-sin(heading_Err*M_PI/2)) << ", dist_err : " << cross_track_Err << ", rad : " << curvature_norm << endl;
+        cout << "JoonWoo Delta : " << lookAheadDist << ", TH_ERR : " << TH_ERR << ", Dist_ERR : "<< LEN_ERR << endl<< endl;
+
+        double dist = 0;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //1. just car car_heading to dist
+        //	x = m_LookAhead_X = m_LocalSplinePath[car_waypoint][0] + lookAheadDist*cos(car_heading);
+        //	y = m_LookAhead_Y = m_LocalSplinePath[car_waypoint][1] + lookAheadDist*sin(car_heading);
+
+        for( int i = car_waypoint ; i < m_LocalSplinePath.size()-1 ; i++ )
+            //	for( int i = m_lookAheadIndex; i<m_LocalSplinePath.size()-1; i++ )
+        {
+            double x2 = m_LocalSplinePath[i][0] - m_LocalSplinePath[i+1][0];
+            x2 *= x2;
+            double y2 = m_LocalSplinePath[i][1] - m_LocalSplinePath[i+1][1];
+            y2 *= y2;
+            dist += sqrt(x2+y2);
+
+            if( lookAheadDist <= dist )
+            {
+                cout << "m_lookAheadIndex : " << i <<endl;
+
+                m_lookAheadIndex = i;
+                x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
+                y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
+
+                resdist = lookAheadDist;
+
+                std_msgs::Float32MultiArray m_err;//jw 16.07.11
+                m_err.data.clear();
+                m_err.data.push_back(m_pos[0]);
+                m_err.data.push_back(m_pos[1]);
+                m_err.data.push_back(m_pos[2]);
+                m_err.data.push_back(x);
+                m_err.data.push_back(y);
+                m_err.data.push_back(lookAheadDist);
+                m_err.data.push_back(m_vel);
+                m_err.data.push_back(heading_Err*180);
+                m_err.data.push_back(cross_track_Err);
+                msgpub_err_JW.publish(m_err);
+
+                break;
+            }
+            if(i == m_LocalSplinePath.size()-2)
+            {
+                m_lookAheadIndex = m_LocalSplinePath.size()-2;
+                x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
+                y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
+
+                resdist = lookAheadDist;
+
+                std_msgs::Float32MultiArray m_err;//jw 16.07.11
+                m_err.data.clear();
+                m_err.data.push_back(m_pos[0]);
+                m_err.data.push_back(m_pos[1]);
+                m_err.data.push_back(m_pos[2]);
+                m_err.data.push_back(x);
+                m_err.data.push_back(y);
+                m_err.data.push_back(lookAheadDist);
+                m_err.data.push_back(m_vel);
+                m_err.data.push_back(heading_Err*180);
+                m_err.data.push_back(cross_track_Err);
+                msgpub_err_JW.publish(m_err);
+
+                cout << "no Index !!!!" <<endl;
+                resdist = lookAheadDist;
+                break;
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        if( m_lookAheadIndex == -1 )
+        {
+            x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
+            y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
+            resdist = -1;
+        }
+    }
 }
 
 void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y, double &resdist)
@@ -299,22 +300,22 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
         msgpub_Look_orig.publish(m_model_orig);
 
-//Error
-    //cross-track
+        //Error
+        //cross-track
         cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.        
         m_CrossTrack_ERR = cross_track_Err;
         if(cross_track_Err > FR_V_MAX)	cross_track_Err = FR_V_MAX;//prohibit the cross-track err overflow
 
-////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////
         car_heading = m_pos[2];//range 0 ~ M_PI*2
-    //car_dir diff
+        //car_dir diff
         double tmp_dir = atan2((m_LocalSplinePath[car_waypoint][1] - m_LocalSplinePath[car_waypoint+1][1]),
-                (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
+                               (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
         if(tmp_dir < 0)	tmp_dir = M_PI*2 + tmp_dir;
         m_TH_ERR = abs(car_heading - tmp_dir);
         //cout << "tmp_dir : " << tmp_dir << ", car_heading : " << car_heading<<endl;
-/////////////////////////////////////////////////////////////
-    //car_heading diff
+        /////////////////////////////////////////////////////////////
+        //car_heading diff
         //range 0 ~ M_PI*2
         //JW 16.06.24.test1
 
@@ -325,7 +326,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         if (heading_Err > M_PI)	heading_Err = abs(heading_Err - 2*M_PI)/(M_PI);
         else heading_Err /= (M_PI);
 
-/////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////
 
         double TH_ERR = TH_SCALE*(1.0 - sin(heading_Err*M_PI/2));
         //TH_ERR *= TH_ERR;
@@ -333,7 +334,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
 
         //point
         delta_LookAhead = FR_V_MAX*(TH_ERR + LEN_ERR) ;
-////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
 
         double lookAhead_Dist = 0;//- m_len_dist;
 
@@ -350,7 +351,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
 
         double dist = 0;
         for( int i = car_waypoint ; i < m_LocalSplinePath.size()-1 ; i++ )
-        //for( int i = m_lookAheadIndex ; i < m_LocalSplinePath.size()-1; i++ )
+            //for( int i = m_lookAheadIndex ; i < m_LocalSplinePath.size()-1; i++ )
         {
             double x2 = m_LocalSplinePath[i][0] - m_LocalSplinePath[i+1][0];
             x2 *= x2;
@@ -367,12 +368,12 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
                 y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
 
                 /*
-                double cur_tmp;
-                cur_rad(m_LocalSplinePath[m_lookAheadIndex-1][0], m_LocalSplinePath[m_lookAheadIndex-1][1],
-                        m_LocalSplinePath[m_lookAheadIndex][0], m_LocalSplinePath[m_lookAheadIndex][1],
-                        m_LocalSplinePath[m_lookAheadIndex+1][0], m_LocalSplinePath[m_lookAheadIndex+1][1],
-                        cur_tmp);
-                m_cur_lp = cur_tmp;
+                  double cur_tmp;
+                  cur_rad(m_LocalSplinePath[m_lookAheadIndex-1][0], m_LocalSplinePath[m_lookAheadIndex-1][1],
+                  m_LocalSplinePath[m_lookAheadIndex][0], m_LocalSplinePath[m_lookAheadIndex][1],
+                  m_LocalSplinePath[m_lookAheadIndex+1][0], m_LocalSplinePath[m_lookAheadIndex+1][1],
+                  cur_tmp);
+                  m_cur_lp = cur_tmp;
                 */
                 //if(cur_tmp < 100)   m_cur_lp = cur_tmp;
                 //else m_cur_lp = 0;
@@ -413,7 +414,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
                 break;
             }
         }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         if( m_lookAheadIndex == -1 )
         {
@@ -425,9 +426,9 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
 }
 
 double LocalPlannerThread::cur_rad(double x1, double y1,
-                                double x2, double y2,
-                                double x3, double y3
-                                )
+                                   double x2, double y2,
+                                   double x3, double y3
+                                   )
 {
     double rad;
     double d1 = (x2-x1)/(y2-y1);
@@ -499,7 +500,7 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
                 if (heading_Err > M_PI)	heading_Err = abs(heading_Err - 2*M_PI)/M_PI;
                 else heading_Err /= M_PI;
 
-               // cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
+                // cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
 
                 std_msgs::Float32MultiArray m_err;//jw 16.07.11
                 m_err.data.clear();
@@ -584,7 +585,7 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
                 if (heading_Err > M_PI)	heading_Err = abs(heading_Err - 2*M_PI)/M_PI;
                 else heading_Err /= M_PI;
 
-               // cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
+                // cross_track_Err = minDist;//sqrt((m_LocalSplinePath[car_waypoint][1] - m_pos[1])*(m_LocalSplinePath[car_waypoint][1] - m_pos[1]) + (m_LocalSplinePath[car_waypoint][0] - m_pos[0])*(m_LocalSplinePath[car_waypoint][0] - m_pos[0])); //JW 07.28.
 
                 std_msgs::Float32MultiArray m_err;//jw 16.07.11
                 m_err.data.clear();
@@ -611,8 +612,7 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
 }
 
 LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
-    :m_bThreadStop(false),init_argc(argc), init_argv(argv)
-{
+        :m_bThreadStop(false),init_argc(argc), init_argv(argv){
     m_ratio_s2w = 18.6;
     m_limit_steerAngle = 540.0;
     m_CrossTrack_ERR = 0.0;
@@ -665,8 +665,8 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
 
     m_model_jw.type= visualization_msgs::Marker::SPHERE;
     m_model_jw_exp.type= visualization_msgs::Marker::SPHERE;
-    m_model_jw_exp_line.type= visualization_msgs::Marker::LINE_STRIP;//LINE_LIST
-    //m_model_jw_exp_line.type= visualization_msgs::Marker::LINE_LIST;//
+    m_model_jw_exp_line.type= visualization_msgs::Marker::LINE_STRIP;   //LINE_LIST
+    //m_model_jw_exp_line.type= visualization_msgs::Marker::LINE_LIST;  //
 
     m_model_jw.action = visualization_msgs::Marker::ADD;
     m_model_jw_exp.action = visualization_msgs::Marker::ADD;
@@ -742,8 +742,7 @@ void LocalPlannerThread::PubMsg()
 }
 
 ////JW 16.07.11.test1
-void LocalPlannerThread::Pub_JWPathMsg()
-{
+void LocalPlannerThread::Pub_JWPathMsg(){
     //	int count = 0;
     //	double X,Y;
     //	string garbage_X,garbage_Y;
@@ -802,25 +801,22 @@ void LocalPlannerThread::Pub_JWPathMsg()
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170118.txt");//17.01.12 parking for+rev ver3 //far
 
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/path_seho.txt");//circle+lane change
-    fin.open("/home/dyros-vehicle/00_DATA/bag/map/map_sh.txt");//circle+lane change
+    fin.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/0903map.txt");//circle+lane change
 
 
-    while(fin != NULL)
-    {
+    while(fin != NULL){
         _cnt++;
 
         fin >> garbage1>> garbage2 >> garbage3 >> garbage4 >>garbage5 >> garbage6 >>char1 >> X >>garbage8 >> Y>>garbage9 >> th >>garbage10 >> vel >>char2 >> garbage11;
 
-        if ( vel == 9999)
-        {
+        if ( vel == 9999) {
             m_switch_X = X;
             m_switch_Y = Y;
             nodeVec.push_back(Vector2d(X, Y));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
 
-        if (_cnt % MAP_RESOL == 0) // forward push back
-        {
+        if (_cnt % MAP_RESOL == 0) // forward push back {
             nodeVec.push_back(Vector2d(X, Y));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
@@ -840,7 +836,7 @@ void LocalPlannerThread::Pub_JWPathMsg()
     for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++)
     {
         if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
-        m_switch_idx = i;
+            m_switch_idx = i;
     }
     cout << "m_switch_idx : " << m_switch_idx <<endl;
     // Publish for Visualization
@@ -848,47 +844,46 @@ void LocalPlannerThread::Pub_JWPathMsg()
 
     m_dir_mode = 1;
     /////////////////
-/*
-    while(fin != NULL)
-    {
-        fin >> X >> Y >> th >> vel ;
-        X = X + m_len_c2r*cos(th+1.57);
-        Y = Y + m_len_c2r*sin(th+1.57);
+    /*
+      while(fin != NULL)
+      {
+      fin >> X >> Y >> th >> vel ;
+      X = X + m_len_c2r*cos(th+1.57);
+      Y = Y + m_len_c2r*sin(th+1.57);
 
-        Y += 1.5;
-        nodeVec.push_back(Vector2d(X, Y));
+      Y += 1.5;
+      nodeVec.push_back(Vector2d(X, Y));
 
-        if ( vel == 1)
-        {
-            m_switch_X = X;
-            m_switch_Y = Y;
-            nodeVec.push_back(Vector2d(X, Y));
-        }
-        printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
-    }
+      if ( vel == 1)
+      {
+      m_switch_X = X;
+      m_switch_Y = Y;
+      nodeVec.push_back(Vector2d(X, Y));
+      }
+      printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
+      }
 
-    // Generation of Interpolation Curve
-    CatmullRomSpline spline;
-    vector<Vector2d> curvePath = spline.PathToCurve( nodeVec, 1, 1);
-    m_LocalSplinePath = curvePath;
+      // Generation of Interpolation Curve
+      CatmullRomSpline spline;
+      vector<Vector2d> curvePath = spline.PathToCurve( nodeVec, 1, 1);
+      m_LocalSplinePath = curvePath;
 
-    for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++)
-    {
-        if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
-        m_switch_idx = i;
-    }
+      for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++)
+      {
+      if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
+      m_switch_idx = i;
+      }
 
-    cout << ", m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
-    // Publish for Visualization
-    publish_local_path(m_LocalSplinePath);
+      cout << ", m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
+      // Publish for Visualization
+      publish_local_path(m_LocalSplinePath);
 
-    m_dir_mode = 1;
-*/
+      m_dir_mode = 1;
+    */
 }
-////JW 16.07.11.test1
 
-void LocalPlannerThread::Compute()
-{
+////JW 16.07.11.test1
+void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
 
     int carIdx;
@@ -896,25 +891,22 @@ void LocalPlannerThread::Compute()
     double steer_Purepursuit = 0.0, steer_Radius = 0.0;
     double steer = 0.0;
 
-    if (m_LocalSplinePath.size() > 1)
-    {
-        if (m_dir_mode == 1)//m_switch_flag
-        {
-
-            if( m_vel > 5.0 * 0.278 )
-            {
+    if (m_LocalSplinePath.size() > 1){
+        if (m_dir_mode == 1) { //m_switch_flag
+            if( m_vel > 5.0 * 0.278 ) {
                 //printf("%lf\n",m_vel);
                 GetLookAheadPt_For(2.24*m_vel, x, y, resdist, carIdx);
             }
-            else
-            {
+            else{
                 GetLookAheadPt_For(3.3, x, y, resdist, carIdx);
             }
 
             cout << "FORWARD" <<endl;
             cout << "CrossTrack_ERR: " << m_CrossTrack_ERR <<endl;
+
             //Get Look-ahead point
             //GetLookAheadPt_JW_for(carIdx, x, y, resdist);	//JW 16.07.14.test1
+
             ///////
             double a_ = 0.0;
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
@@ -924,33 +916,30 @@ void LocalPlannerThread::Compute()
             m_model_jw.pose.position.x = x;
             m_model_jw.pose.position.y = y;
 
-            //
             steer_Purepursuit = SteeringAng_PurePursuit(x, y, resdist);
 
-            //
             steer_Radius = ((steer_Purepursuit >= 0) ? 1 : (steer_Purepursuit < 0) ? -1 :0)
-                    *SteeringAng_Radius(carIdx);
-            //
+                           *SteeringAng_Radius(carIdx);
             steer = a_*steer_Purepursuit + (1.0-a_)*steer_Radius*0.9;
+
             //steer = steer_Radius;
-    /*
+            /*
             //
             steer_Purepursuit = a_*SteeringAng_PurePursuit(x, y, resdist);
             //
             steer_Radius = ((steer_Purepursuit>0) ? 1 : (steer_Purepursuit < 0) ? -1 :0)*SteeringAng_Radius(carIdx);
             //
             steer = steer_Radius;
-    */
+            */
             cout <<"steer : " << steer
-                << ", steer_Purepursuit : " << steer_Purepursuit
-                    << ", steer_Radius : " << steer_Radius
-                        <<endl;
+                 << ", steer_Purepursuit : " << steer_Purepursuit
+                 << ", steer_Radius : " << steer_Radius
+                 <<endl;
 
             //if(a_ > a_thresh)
             msgpub_Look_JW.publish(m_model_jw);
         }
-        else if (m_dir_mode == -1)
-        {
+        else if (m_dir_mode == -1) {
             cout << "BBBBACKWARD" <<endl;
 
             GetLookAheadPt_Rev(1.0, x, y, resdist, carIdx);
@@ -963,22 +952,22 @@ void LocalPlannerThread::Compute()
             steer_Purepursuit = SteeringAng_PurePursuit(x, y, resdist);
             //
             steer_Radius = ((steer_Purepursuit >= 0) ? 1 : (steer_Purepursuit < 0) ? -1 :0)
-                    *SteeringAng_Radius(carIdx);
+                           *SteeringAng_Radius(carIdx);
             //
             //steer = a_*steer_Purepursuit + (1.0-a_)*steer_Radius*0.8;
             steer = steer_Radius;
-    /*
+            /*
             //
             steer_Purepursuit = a_*SteeringAng_PurePursuit(x, y, resdist);
             //
             steer_Radius = ((steer_Purepursuit>0) ? 1 : (steer_Purepursuit < 0) ? -1 :0)*SteeringAng_Radius(carIdx);
             //
             steer = steer_Radius;
-    */
+            */
             cout <<"steer : " << steer
-                << ", steer_Purepursuit : " << steer_Purepursuit
-                    << ", steer_Radius : " << steer_Radius
-                        <<endl;
+                 << ", steer_Purepursuit : " << steer_Purepursuit
+                 << ", steer_Radius : " << steer_Radius
+                 <<endl;
         }
     }
 
@@ -1058,7 +1047,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
 
         ////eta
         double m_LookAhead_vec = atan2((lookY - m_pos[1]), (lookX - m_pos[0]));
-            if(m_LookAhead_vec < 0)	m_LookAhead_vec = M_PI*2 + m_LookAhead_vec;
+        if(m_LookAhead_vec < 0)	m_LookAhead_vec = M_PI*2 + m_LookAhead_vec;
         // cout << "m_LookAhead_vec : " << m_LookAhead_vec*_RAD2DEG << endl;
         // cout << "heading : " << heading << endl;
 
@@ -1072,7 +1061,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
         //cout << "m_Lfw : " << m_Lfw << endl;
         // double steerAngle = 90 * _DEG2RAD - atan2((m_Lfw / 2 + m_len_c2r*cos(m_eta)), (m_len_f2r * sin(m_eta)));
         steerAngle = -atan((m_len_f2r * sin(m_eta)) / (m_Lfw / 2 + m_len_c2r*cos(m_eta)));
-                //if (abs(steerAngle) > 30 * _DEG2RAD)	break;
+        //if (abs(steerAngle) > 30 * _DEG2RAD)	break;
         steerAngle *= _RAD2DEG;
         steerAngle *= m_ratio_s2w;
         //cout << "steer1 : " << (steerAngle) << endl << endl;
@@ -1088,7 +1077,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
     {
         // Pure Pursuit Algorithm
         //m_pos[0] = m_pos[0] - 2*m_len_c2r*cos(heading*_DEG2RAD);
-       // m_pos[1] = m_pos[1] - 2*m_len_c2r*sin(heading*_DEG2RAD);
+        // m_pos[1] = m_pos[1] - 2*m_len_c2r*sin(heading*_DEG2RAD);
 
         ////eta
         double m_LookAhead_vec = atan2((lookY - m_pos[1]), (lookX - m_pos[0]));
@@ -1125,9 +1114,9 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx)
     //radius
     double Steer_Radius = 0.0;
     double Radius = cur_rad(m_LocalSplinePath[carIdx-Radius_points][1], m_LocalSplinePath[carIdx-Radius_points][0],
-    m_LocalSplinePath[carIdx][1], m_LocalSplinePath[carIdx][0],
-    m_LocalSplinePath[carIdx+Radius_points][1], m_LocalSplinePath[carIdx+Radius_points][0]
-    );
+                            m_LocalSplinePath[carIdx][1], m_LocalSplinePath[carIdx][0],
+                            m_LocalSplinePath[carIdx+Radius_points][1], m_LocalSplinePath[carIdx+Radius_points][0]
+                            );
 
     //cout << ", Radius : " << Radius << endl;
 
@@ -1140,7 +1129,7 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx)
 
     //th err
     double tmp_th = atan2((m_LocalSplinePath[carIdx+Radius_points][1]- m_LocalSplinePath[carIdx][1]),
-            (m_LocalSplinePath[carIdx+Radius_points][0] - m_LocalSplinePath[carIdx][0]));
+                          (m_LocalSplinePath[carIdx+Radius_points][0] - m_LocalSplinePath[carIdx][0]));
     //if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
     double heading = m_pos[2];
     if ( heading > M_PI )  heading = heading - M_PI*2;

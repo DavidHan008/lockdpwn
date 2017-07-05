@@ -341,32 +341,26 @@ int main(int argc, char** argv)
 
   ros::Subscriber subLaserCloudCornerLast = nh.subscribe<sensor_msgs::PointCloud2>
                                             ("/laser_cloud_corner_last", 2, laserCloudCornerLastHandler);
-
   ros::Subscriber subLaserCloudSurfLast = nh.subscribe<sensor_msgs::PointCloud2>
                                           ("/laser_cloud_surf_last", 2, laserCloudSurfLastHandler);
-
-  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry> 
+  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry>
                                      ("/laser_odom_to_init", 5, laserOdometryHandler);
-
-  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2> 
+  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>
                                          ("/velodyne_cloud_3", 2, laserCloudFullResHandler);
-
   ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>
       ("/loam_map_save", 1, mapSaveHandler);
 //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
+
+
   ros::Publisher pubLaserCloudSurround = nh.advertise<sensor_msgs::PointCloud2> 
                                          ("/laser_cloud_surround", 1);
-
-  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2> 
+  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>
                                         ("/velodyne_cloud_registered", 2);
 
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc1", 2);
-
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc2", 2);
-
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc3", 2);
-
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc4", 2);
 
   ros::Publisher pubOdomAftMapped = nh.advertise<nav_msgs::Odometry> ("/aft_mapped_to_init", 5);

@@ -252,8 +252,7 @@ void AccumulateRotation(float cx, float cy, float cz, float lx, float ly, float 
   oz = atan2(srzcrx / cos(ox), crzcrx / cos(ox));
 }
 
-void laserCloudSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsSharp2)
-{
+void laserCloudSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsSharp2){
   timeCornerPointsSharp = cornerPointsSharp2->header.stamp.toSec();
 
   cornerPointsSharp->clear();
@@ -262,8 +261,7 @@ void laserCloudSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPoints
   newCornerPointsSharp = true;
 }
 
-void laserCloudLessSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsLessSharp2)
-{
+void laserCloudLessSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsLessSharp2){
   timeCornerPointsLessSharp = cornerPointsLessSharp2->header.stamp.toSec();
 
   cornerPointsLessSharp->clear();
@@ -272,8 +270,7 @@ void laserCloudLessSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPo
   newCornerPointsLessSharp = true;
 }
 
-void laserCloudFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsFlat2)
-{
+void laserCloudFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsFlat2){
   timeSurfPointsFlat = surfPointsFlat2->header.stamp.toSec();
 
   surfPointsFlat->clear();
@@ -282,8 +279,7 @@ void laserCloudFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsFla
   newSurfPointsFlat = true;
 }
 
-void laserCloudLessFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsLessFlat2)
-{
+void laserCloudLessFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsLessFlat2){
   timeSurfPointsLessFlat = surfPointsLessFlat2->header.stamp.toSec();
 
   surfPointsLessFlat->clear();
@@ -292,8 +288,7 @@ void laserCloudLessFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPoint
   newSurfPointsLessFlat = true;
 }
 
-void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudFullRes2)
-{
+void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudFullRes2){
   timeLaserCloudFullRes = laserCloudFullRes2->header.stamp.toSec();
 
   laserCloudFullRes->clear();
@@ -302,8 +297,7 @@ void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloud
   newLaserCloudFullRes = true;
 }
 
-void imuTransHandler(const sensor_msgs::PointCloud2ConstPtr& imuTrans2)
-{
+void imuTransHandler(const sensor_msgs::PointCloud2ConstPtr& imuTrans2){
   timeImuTrans = imuTrans2->header.stamp.toSec();
 
   imuTrans->clear();
@@ -328,44 +322,35 @@ void imuTransHandler(const sensor_msgs::PointCloud2ConstPtr& imuTrans2)
   newImuTrans = true;
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "laserOdometry");
   ros::NodeHandle nh;
 
+  // ed: Subscribers
   ros::Subscriber subCornerPointsSharp = nh.subscribe<sensor_msgs::PointCloud2>
                                          ("/laser_cloud_sharp", 2, laserCloudSharpHandler);
-
   ros::Subscriber subCornerPointsLessSharp = nh.subscribe<sensor_msgs::PointCloud2>
                                              ("/laser_cloud_less_sharp", 2, laserCloudLessSharpHandler);
-
   ros::Subscriber subSurfPointsFlat = nh.subscribe<sensor_msgs::PointCloud2>
                                       ("/laser_cloud_flat", 2, laserCloudFlatHandler);
-
   ros::Subscriber subSurfPointsLessFlat = nh.subscribe<sensor_msgs::PointCloud2>
                                           ("/laser_cloud_less_flat", 2, laserCloudLessFlatHandler);
-
-  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2> 
+  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>
                                          ("/velodyne_cloud_2", 2, laserCloudFullResHandler);
-
-  ros::Subscriber subImuTrans = nh.subscribe<sensor_msgs::PointCloud2> 
+  ros::Subscriber subImuTrans = nh.subscribe<sensor_msgs::PointCloud2>
                                 ("/imu_trans", 5, imuTransHandler);
 
+  // ed: Publishers
   ros::Publisher pubLaserCloudCornerLast = nh.advertise<sensor_msgs::PointCloud2>
                                            ("/laser_cloud_corner_last", 2);
-
   ros::Publisher pubLaserCloudSurfLast = nh.advertise<sensor_msgs::PointCloud2>
                                          ("/laser_cloud_surf_last", 2);
-
-  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2> 
+  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>
                                         ("/velodyne_cloud_3", 2);
 
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc1", 2);
-
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc2", 2);
-
   //ros::Publisher pub3 = nh.advertise<sensor_msgs::PointCloud2> ("/pc3", 2);
-
   //ros::Publisher pub4 = nh.advertise<sensor_msgs::PointCloud2> ("/pc4", 2);
 
   ros::Publisher pubLaserOdometry = nh.advertise<nav_msgs::Odometry> ("/laser_odom_to_init", 5);

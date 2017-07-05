@@ -6,8 +6,7 @@
 #include "../../../build/controller/ui_controller_gui.h" // ui_*.h
 class PurePursuitThread;
 class VelocityCtrlThread;
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow{
     Q_OBJECT
 
     public:

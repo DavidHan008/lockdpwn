@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/ringcolors_nodelet.dir/ringcolors_nodelet.cc.o"
   "CMakeFiles/ringcolors_nodelet.dir/colors.cc.o"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/libringcolors_nodelet.pdb"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/ringcolors_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/ringcolors_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

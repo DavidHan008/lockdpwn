@@ -1,8 +1,8 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/run_tests_velodyne_driver_rostest_tests_pcap_32e_nodelet_hertz.test"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/run_tests_velodyne_driver_rostest_tests_pcap_32e_nodelet_hertz.test.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/run_tests_velodyne_driver_rostest_tests_pcap_32e_nodelet_hertz.test.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

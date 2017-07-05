@@ -7,8 +7,7 @@
 using namespace std;
 using namespace Eigen;
 
-class CatmullRomSpline
-{
+class CatmullRomSpline{
 private:
     float M11;
     float M12;

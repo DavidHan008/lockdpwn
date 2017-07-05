@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/cloud_nodelet.dir/cloud_nodelet.cc.o"
   "CMakeFiles/cloud_nodelet.dir/convert.cc.o"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/libcloud_nodelet.pdb"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/cloud_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/cloud_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

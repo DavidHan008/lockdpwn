@@ -106,8 +106,7 @@ void ShiftToStartIMU(float pointTime)
   imuShiftFromStartZCur = z2;
 }
 
-void VeloToStartIMU()
-{
+void VeloToStartIMU(){
   imuVeloFromStartXCur = imuVeloXCur - imuVeloXStart;
   imuVeloFromStartYCur = imuVeloYCur - imuVeloYStart;
   imuVeloFromStartZCur = imuVeloZCur - imuVeloZStart;
@@ -125,8 +124,7 @@ void VeloToStartIMU()
   imuVeloFromStartZCur = z2;
 }
 
-void TransformToStartIMU(pcl::PointXYZI *p)
-{
+void TransformToStartIMU(pcl::PointXYZI *p){
   float x1 = cos(imuRollCur) * p->x - sin(imuRollCur) * p->y;
   float y1 = sin(imuRollCur) * p->x + cos(imuRollCur) * p->y;
   float z1 = p->z;
@@ -190,8 +188,8 @@ void AccumulateIMUShift()
   }
 }
 
-void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2)
-{
+// ed: rosbag으로부터 PointCloud2 데이터를 섭스크라이브하는 콜백함수 ( 500줄 :-o )
+void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   if (!systemInited) {
     systemInitCount++;
     if (systemInitCount >= systemDelay) {
@@ -226,41 +224,27 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2)
 
     float angle = atan(point.z / sqrt(point.y * point.y + point.x * point.x)) * 180 / PI;
     int scanID ;
+
 /* 
 if(angle >= 	-14.2 	&& angle < 	-14 	) { scanID =  	0 	;}
-
 else if(angle >= 	-13.5 	&& angle < 	-13 	) { scanID =  	1 	;}
-
 else if(angle >= 	-12.5 	&& angle < 	-12 	) { scanID =  	2 	;}
-
 else if(angle >= 	-11.5 	&& angle < 	-11 	) { scanID =  	3 	;}
-
 else if(angle >= 	-10.5 	&& angle < 	-10 	) { scanID =  	4 	;}
-
 else if(angle >= 	-9.5 	&& angle < 	-9 	) { scanID =  	5 	;}
-
 else if(angle >= 	-8.5 	&& angle < 	-8 	) { scanID =  	6 	;}
-
 else if(angle >= 	-7.5 	&& angle < 	-7 	) { scanID =  	7 	;}
-
 else if(angle >= 	-6.3 	&& angle < 	-6 	) { scanID =  	8 	;}
-
 else if(angle >= 	-5.4 	&& angle < 	-5 	) { scanID =  	9 	;}
-
 else if(angle >= 	-4.4 	&& angle < 	-4 	) { scanID =  	10 	;}
-
 else if(angle >= 	-3.4 	&& angle < 	-3 	) { scanID =  	11 	;}
-
 else if(angle >= 	-2.3 	&& angle < 	-2 	) { scanID =  	12 	;}
-
 else if(angle >= 	-1.3 	&& angle < 	-1 	) { scanID =  	13 	;}
-
 else if(angle >= 	-0.5 	&& angle < 	-0.2 	) { scanID =  	14 	;}
-
 else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
-
-else 
+else
 */
+
 if(angle >= 	-13.5 	&& angle < 	-13.4 	) { scanID =  	0 	;} 
 else if(angle >= 	-13.4 	&& angle < 	-13 	) { scanID =  	1 	;} 
 else if(angle >= 	-12.4 	&& angle < 	-12 	) { scanID =  	2 	;} 
@@ -375,9 +359,10 @@ continue;
 
   for (int i = 0; i < 16; i++) {
     *laserCloud += *laserCloudScans[i];
-//printf("i: %d, %d\n", i, laserCloudScans[i]->size());
+    //printf("i: %d, %d\n", i, laserCloudScans[i]->size());
   }
-cloudSize = laserCloud->points.size(); //JH
+
+cloudSize = laserCloud->points.size();   //JH
 //printf("%d\n",cloudSize);
 
   int scanCount = -1;
@@ -649,6 +634,7 @@ cloudSize = laserCloud->points.size(); //JH
 
   sensor_msgs::PointCloud2 imuTrans2;
   pcl::toROSMsg(*imuTrans, imuTrans2);
+
   imuTrans2.header.stamp = laserCloudIn2->header.stamp;
   imuTrans2.header.frame_id = "/camera";
   pubImuTransPointer->publish(imuTrans2);
@@ -665,6 +651,7 @@ cloudSize = laserCloud->points.size(); //JH
   }
 }
 
+// ed: 주석처리되어 현재는 사용하지 않는 섭스크라이브 콜백함수
 void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn)
 {
   double roll, pitch, yaw;
@@ -695,19 +682,17 @@ yaw=imuIn->orientation.z;
   AccumulateIMUShift();
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "scanRegistration");
   ros::NodeHandle nh;
 
-  for (int i = 0; i < 16; i++) {
+  for (int i = 0; i < 16; i++)
     laserCloudScans[i].reset(new pcl::PointCloud<pcl::PointXYZI>());
-  }
 
   ros::Subscriber subLaserCloud = nh.subscribe<sensor_msgs::PointCloud2> 
                                   ("/velodyne_points", 2, laserCloudHandler);
 
-//  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
+//ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
   ros::Publisher pubLaserCloud = nh.advertise<sensor_msgs::PointCloud2> 
                                  ("/velodyne_cloud_2", 2);
