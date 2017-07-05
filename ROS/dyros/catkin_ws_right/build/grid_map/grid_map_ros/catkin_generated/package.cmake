@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "grid_map_ros")
+set(grid_map_ros_MAINTAINER "Péter Fankhauser <pfankhauser@ethz.ch>")
+set(grid_map_ros_DEPRECATED "")
+set(grid_map_ros_VERSION "1.4.0")
+set(grid_map_ros_BUILD_DEPENDS "roscpp" "grid_map_core" "grid_map_msgs" "grid_map_cv" "sensor_msgs" "nav_msgs" "std_msgs" "geometry_msgs" "cv_bridge" "rosbag" "visualization_msgs")
+set(grid_map_ros_RUN_DEPENDS "roscpp" "grid_map_core" "grid_map_msgs" "grid_map_cv" "sensor_msgs" "nav_msgs" "std_msgs" "geometry_msgs" "cv_bridge" "rosbag" "visualization_msgs")
+set(grid_map_ros_BUILDTOOL_DEPENDS "catkin")

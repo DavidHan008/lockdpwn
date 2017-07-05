@@ -1,0 +1,16 @@
+-I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/opt/ros/indigo/include
+-I/usr/include
+-I/usr/include/eigen3
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="motion_planner"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-DQT_NO_DEBUG
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/motion_planner/inc/moc_CatmullRomSpline.cxx
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/inc/CatmullRomSpline.h

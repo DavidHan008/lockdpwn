@@ -1,0 +1,4 @@
+rostopic echo /LocalizationData > 0903map.txt
+
+
+

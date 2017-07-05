@@ -1,0 +1,395 @@
+0.000000 
+6.283094 
+6.282976 
+6.283118 
+6.283067 
+0.000093 
+0.000244 
+0.000051 
+6.282164 
+6.282092 
+6.281416 
+6.282230 
+6.280722 
+6.281849 
+6.282173 
+6.282995 
+6.282728 
+6.281326 
+6.280935 
+6.282629 
+6.283028 
+6.281211 
+6.279649 
+6.281568 
+6.281097 
+6.282718 
+6.282521 
+6.282704 
+6.283108 
+0.000225 
+0.000535 
+0.000001 
+0.000315 
+0.000140 
+0.000360 
+0.000123 
+0.000286 
+6.282978 
+6.281763 
+6.281420 
+6.275628 
+6.272468 
+6.274466 
+6.278856 
+6.276098 
+6.278817 
+6.276696 
+6.278792 
+6.275730 
+6.280198 
+6.279121 
+6.278106 
+6.281305 
+6.282862 
+6.279954 
+6.279858 
+6.277982 
+6.280501 
+6.280240 
+6.282280 
+6.281562 
+6.281468 
+6.281232 
+6.283058 
+6.282987 
+0.000397 
+6.282271 
+0.000737 
+6.282644 
+6.279814 
+6.278032 
+6.276294 
+6.279196 
+6.280028 
+6.278300 
+6.276465 
+6.276692 
+6.276278 
+6.274173 
+6.271735 
+6.271062 
+6.266987 
+6.264688 
+6.261072 
+6.260635 
+6.260238 
+6.261557 
+6.261160 
+6.251240 
+6.247115 
+6.239235 
+6.234190 
+6.228787 
+6.222320 
+6.210405 
+6.203543 
+6.187128 
+6.175795 
+6.155982 
+6.145836 
+6.124697 
+6.108753 
+6.085041 
+6.068553 
+6.045042 
+6.021166 
+5.988724 
+5.964539 
+5.937710 
+5.914194 
+5.888685 
+5.862465 
+5.825982 
+5.799260 
+5.774118 
+5.743926 
+5.721108 
+5.696388 
+5.672686 
+5.646547 
+5.617452 
+5.594353 
+5.571217 
+5.548251 
+5.523371 
+5.497021 
+5.468917 
+5.445052 
+5.418999 
+5.397326 
+5.373019 
+5.345450 
+5.317645 
+5.291039 
+5.275293 
+5.254655 
+5.246178 
+5.223145 
+5.203134 
+5.182664 
+5.165685 
+5.145991 
+5.129281 
+5.111459 
+5.096631 
+5.079553 
+5.060525 
+5.043396 
+5.024907 
+5.008893 
+4.992043 
+4.975849 
+4.956423 
+4.937871 
+4.918125 
+4.909173 
+4.894377 
+4.878835 
+4.843134 
+4.828091 
+4.803516 
+4.781526 
+4.758599 
+4.732748 
+4.713247 
+4.690779 
+4.666265 
+4.642507 
+4.611803 
+4.585125 
+4.556503 
+4.527550 
+4.497509 
+4.469193 
+4.439771 
+4.410806 
+4.382673 
+4.354983 
+4.323386 
+4.293542 
+4.262092 
+4.235020 
+4.208095 
+4.181006 
+4.153358 
+4.130555 
+4.102138 
+4.074781 
+4.044716 
+4.020571 
+3.996765 
+3.971891 
+3.945398 
+3.921439 
+3.897397 
+3.871700 
+3.848849 
+3.825198 
+3.804190 
+3.779582 
+3.749321 
+3.723818 
+3.698888 
+3.676736 
+3.659898 
+3.639102 
+3.619179 
+3.597876 
+3.571758 
+3.556600 
+3.539368 
+3.523138 
+3.495375 
+3.476827 
+3.447231 
+3.432358 
+3.410286 
+3.385911 
+3.356509 
+3.334850 
+3.322908 
+3.306477 
+3.292686 
+3.279321 
+3.255831 
+3.242333 
+3.227363 
+3.215631 
+3.205266 
+3.196461 
+3.184710 
+3.182978 
+3.181137 
+3.178246 
+3.165987 
+3.161589 
+3.151492 
+3.149410 
+3.144657 
+3.143450 
+3.136268 
+3.135225 
+3.127984 
+3.123976 
+3.124122 
+3.126675 
+3.130174 
+3.132094 
+3.126631 
+3.126272 
+3.118686 
+3.113750 
+3.110823 
+3.101480 
+3.106416 
+3.101789 
+3.103713 
+3.119415 
+3.127487 
+3.127764 
+3.126219 
+3.125543 
+3.121066 
+3.120177 
+3.120254 
+3.112051 
+3.110414 
+3.114158 
+3.123878 
+3.124401 
+3.120849 
+3.123828 
+3.127492 
+3.130827 
+3.129897 
+3.126902 
+3.118483 
+3.117772 
+3.123093 
+3.123295 
+3.118084 
+3.115405 
+3.115045 
+3.115255 
+3.121641 
+3.123235 
+3.123830 
+3.124379 
+3.123595 
+3.124438 
+3.118145 
+3.125104 
+3.125268 
+3.125675 
+3.119754 
+3.120463 
+3.122465 
+3.124326 
+3.125765 
+3.123945 
+3.123827 
+3.119131 
+3.117397 
+3.119801 
+3.122346 
+3.120841 
+3.123333 
+... logging to /home/dyros/.ros/log/757157c8-5c10-11e5-a47b-7df0dacede25/roslaunch-dyros-ThinkPad-T530-3203.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;loam_velodyne.launch
+[1mstarted roslaunch server http://dyros-ThinkPad-T530:54317/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro
+ * /rosversion
+
+NODES
+  /
+    laserMapping (loam_velodyne/laserMapping)
+    laserOdometry (loam_velodyne/laserOdometry)
+    rviz (rviz/rviz)
+    scanRegistration (loam_velodyne/scanRegistration)
+    transformMaintenance (loam_velodyne/transformMaintenance)
+
+auto-starting new master
+[1mprocess[master]: started with pid [3217][0m
+[1mROS_MASTER_URI=http://127.0.0.1:11311[0m
+]2;loam_velodyne.launch http://127.0.0.1:11311
+[1msetting /run_id to 757157c8-5c10-11e5-a47b-7df0dacede25[0m
+[1mprocess[rosout-1]: started with pid [3230][0m
+started core service [/rosout]
+[1mprocess[scanRegistration-2]: started with pid [3242][0m
+[1mprocess[laserOdometry-3]: started with pid [3259][0m
+[1mprocess[laserMapping-4]: started with pid [3280][0m
+[1mprocess[transformMaintenance-5]: started with pid [3298][0m
+[1mprocess[rviz-6]: started with pid [3314][0m
+[rviz-6] killing on exit
+[laserMapping-4] killing on exit
+[laserOdometry-3] killing on exit
+[transformMaintenance-5] killing on exit
+[scanRegistration-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+... logging to /home/dyros/.ros/log/d96008ce-5c15-11e5-9b0d-670115d78577/roslaunch-dyros-ThinkPad-T530-4046.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;loam_velodyne.launch
+[1mstarted roslaunch server http://dyros-ThinkPad-T530:52245/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro
+ * /rosversion
+
+NODES
+  /
+    laserMapping (loam_velodyne/laserMapping)
+    laserOdometry (loam_velodyne/laserOdometry)
+    rviz (rviz/rviz)
+    scanRegistration (loam_velodyne/scanRegistration)
+    transformMaintenance (loam_velodyne/transformMaintenance)
+
+auto-starting new master
+[1mprocess[master]: started with pid [4060][0m
+[1mROS_MASTER_URI=http://127.0.0.1:11311[0m
+]2;loam_velodyne.launch http://127.0.0.1:11311
+[1msetting /run_id to d96008ce-5c15-11e5-9b0d-670115d78577[0m
+[1mprocess[rosout-1]: started with pid [4073][0m
+started core service [/rosout]
+[1mprocess[scanRegistration-2]: started with pid [4085][0m
+[1mprocess[laserOdometry-3]: started with pid [4102][0m
+[1mprocess[laserMapping-4]: started with pid [4123][0m
+[1mprocess[transformMaintenance-5]: started with pid [4141][0m
+[1mprocess[rviz-6]: started with pid [4158][0m
+[rviz-6] killing on exit
+[transformMaintenance-5] killing on exit
+[laserMapping-4] killing on exit
+[laserOdometry-3] killing on exit
+[scanRegistration-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

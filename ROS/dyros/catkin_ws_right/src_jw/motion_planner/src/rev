@@ -1,0 +1,79 @@
+
+void LocalPlannerThread::GetLookAheadPt_JW_rev(double &lookAheadDist,double& x, double& y, double &resdist)
+{
+	double m_th_Err = 0.0; //JW 16.07.11.
+	double m_dist_Err = 0.0;//JW 16.07.11.	
+
+
+    if (m_LocalSplinePath.size() > 1)
+    {
+        double minDist = 99999;
+        int cIndex = -1;
+        int lookIndex = -1;
+        for(int i = 0; i<m_LocalSplinePath.size(); i++)
+        {
+            double x2 = m_LocalSplinePath[i][0] - m_pos[0];
+            x2 *= x2;
+            double y2 = m_LocalSplinePath[i][1] - m_pos[1];
+            y2 *= y2;
+            double dist = sqrt(x2+y2);//distŽÂ 
+            if ( dist < minDist )
+            {
+                minDist = dist;
+                cIndex = i;
+            }
+
+        }
+
+
+
+
+	double dist = 0;
+        int lookAheadIndex = -1;
+        for( int i=cIndex; i<m_LocalSplinePath.size()-1; i++ )
+        {
+            double x2 = m_LocalSplinePath[i][0] - m_LocalSplinePath[i+1][0];
+            x2 *= x2;
+            double y2 = m_LocalSplinePath[i][1] - m_LocalSplinePath[i+1][1];
+            y2 *= y2;
+            dist += sqrt(x2+y2);
+
+            if( lookAheadDist <= dist)
+            {
+                lookAheadIndex = i;
+		x = m_LocalSplinePath[i][0];
+		y = m_LocalSplinePath[i][1];
+                resdist = -dist;
+
+		//range 0 ~ M_PI*2
+		double tmp_th = atan2((y - m_pos[1]), (x - m_pos[0]));
+		if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
+
+		m_th_Err = abs(m_pos[2] - tmp_th);
+		if (m_th_Err > M_PI)	m_th_Err = abs(m_th_Err - 2*M_PI)/M_PI;
+		else m_th_Err /= M_PI;
+
+		m_dist_Err = sqrt((m_LocalSplinePath[cIndex][1] - m_pos[1])*(m_LocalSplinePath[cIndex][1] - m_pos[1]) + (m_LocalSplinePath[cIndex][0] - m_pos[0])*(m_LocalSplinePath[cIndex][0] - m_pos[0])); //JW 07.28.
+
+
+		std_msgs::Float32MultiArray m_err;//jw 16.07.11
+		m_err.data.clear();
+		m_err.data.push_back(lookAheadDist);
+		m_err.data.push_back(m_th_Err*180);
+		m_err.data.push_back(m_dist_Err);
+		msgpub_err_Orig.publish(m_err);
+
+
+                break;
+            }
+        }
+
+        if( lookAheadIndex == -1 )
+        {
+            x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
+            y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
+            resdist = -1;
+        }
+
+    }
+}

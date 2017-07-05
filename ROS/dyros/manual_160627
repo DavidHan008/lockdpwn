@@ -1,0 +1,34 @@
+1. MCU CAN
+	rosrun mcu_can mcu_can
+
+2. Motion Planner
+	rosrun motion_planner motion_planner
+
+3. Controller
+	2번의 Motion Planner UI에서 Tracker Staus 하단의 on 클릭
+		
+	혹은 
+
+	rosrun controller controller
+
+4. 
+###########################################################################################
+
+LAN: 
+	Wired Connection 5 : Front
+		192.168.1.XX, 255.255.255.0 192.168.1.10
+	Wired Connection 6 : Upper
+		192.168.0.XX, 255.255.255.0 192.168.0.95
+
+###########################################################################################
+
+rosrun laser_node laser_node _ip_add:=192.168.0.95 _pub_name:="scan_upper"
+
+rosrun laser_node laser_node __name:=laser_node2 _ip_add:=192.168.1.10 _pub_name:="scan_front"
+
+
+rosrun laser_node laser_node _ip_add:=192.168.1.10 _pub_name:="scan_front"
+
+###########################################################################################
+rostopic echo /LocalizationData > ms_map_161220.txt
+

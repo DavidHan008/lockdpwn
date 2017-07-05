@@ -1,0 +1,55 @@
+#pragma once
+#include <QtGui/QMainWindow>
+#include <QtCore>
+#include <vector>
+#include <Eigen/Core>
+#include <ros/ros.h>
+#include <nav_msgs/Path.h>
+#include <geometry_msgs/Pose2D.h>
+#include <std_msgs/Float32MultiArray.h>
+#include "../../../build/motion_planner/ui_motion_planner_gui.h"
+#include "motion_planner/srvHeightMap.h" //revise by shinsh - 151006
+#include "motion_planner/srvParkingCmd.h" //revise by shinsh - 151006
+
+using namespace std;
+using namespace Eigen;
+
+class ParkingPlannerThread : public QThread
+{
+    Q_OBJECT;
+
+private :
+    int init_argc;
+    char** init_argv;
+
+    ros::Subscriber possub;
+    ros::Publisher msgpub;
+    ros::ServiceServer service_server;// added by shinsh - 151006
+    ////////////////////////////////
+    bool m_bThreadStop;
+    bool m_bSubTopicUpdated;
+    QMutex m_mutex;
+    Vector3d m_pos;
+    float m_vel;
+    vector<Vector2d> m_LocalParkingPath;
+public :
+
+	bool ServiceProcess(motion_planner::srvParkingCmd::Request &req,motion_planner::srvParkingCmd::Response &res);//added by shinsh - 151001
+
+    void SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg);
+   
+    void publish_parking_path(vector<Vector2d> path);
+  
+    ParkingPlannerThread(int argc, char** argv);
+    ~ParkingPlannerThread();
+
+    void PubMsg();
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
+    public slots:
+	
+        void stop();
+private:
+    void run();
+
+};

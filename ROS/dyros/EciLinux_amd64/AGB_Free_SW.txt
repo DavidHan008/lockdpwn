@@ -1,0 +1,115 @@
+End User License Agreement for IXXAT Software Products Provided Free-of-Charge 
+
+This software license agreement (following named "Agreement") is a legal 
+agreement between you and your company ("Client") and IXXAT Automation GmbH 
+("IXXAT"). By using the software program(s) and/or components included in the 
+zip file or package ("Software"), Client agrees to be bound by the terms of this 
+Agreement. If Client does not agree to the terms of this Agreement, Software and 
+the accompanying items (including any written materials, and binders or other 
+containers) shall be promptly deinstalled and deleted or destroyed. 
+
+
+§ 1 Scope of Delivery of Software 
+
+1.1 Software is provided as it is. IXXAT does not guarantee that Software 
+embodies all necessary legal provisions and all standards related to the 
+Software. 
+
+1.2 Software is delivered by IXXAT in a machine-readable format (object code), 
+together with installation instructions and user documentation (if provided). 
+Installation instructions and user documentation may be provided as PDF only. 
+
+
+§ 2 Right to Use Software 
+
+2.1 IXXAT grants to Client the right to use Software to the extent agreed in 
+this agreement. Client may use Software for its own purposes and for the 
+purposes of Client's group of companies. 
+
+2.2 Software is provided free-of-charge to Client as free supplement to the 
+existing IXXAT software and hardware products. 
+
+2.3 The Client agrees to use Software only on configurations that IXXAT has 
+declared to be compatible with Software. 
+
+
+§ 3 Performance 
+
+3.1 Client shall be responsible for the installation of Software on its 
+IT-system. 
+
+3.2 Client shall be responsible for the implementation of Software, Client is 
+also responsible to test Software under the conditions it shall be used before 
+using it productively. 
+
+
+§ 4 Client's Responsibilities for Software Protection 
+
+4.1 Client acknowledges that Software and the related documentation – including 
+future versions – are copyrighted, and represent confidential information and 
+trade secrets proprietary to IXXAT or to IXXAT’s supplier. Client shall take all 
+necessary steps to avoid disclosure of the source-code of Software and the 
+related documentation to any third party. If Software is delivered in 
+source-code, Client shall make it available to any third party only with IXXAT's 
+permission. Client’s obligation shall be permanent. The permission may not be 
+unreasonably withheld, but it need not be given to enable Client to obtain 
+maintenance from a third party. 
+
+4.2 Client may copy Software only for back-up purposes, for replacement or – if 
+source-code has been delivered – in order to search for defects. 
+
+4.3 Client shall not be entitled to develop any Software based on IXXAT’s 
+Software, nor shall Client be entitled to copy, translate, modify or develop any 
+works based on provided user documentation. Client may make copies of the user 
+documentation only if admissible and only for internal purposes. 
+
+4.4 IXXAT may revoke Client's right of use, if Client substantially violates its 
+obligations referring to software protection. 
+
+
+§ 5 Warranty and Maintenance 
+
+5.1 Software is given away for free without maintenance and warranty. Client may 
+report deficiencies to IXXAT. IXXAT may develop, update and upgrade Software at 
+its sole discretion and without prior announcement. This includes implementation 
+of new features and the adaptation to system software. 
+
+
+§ 6 Support 
+
+6.1 IXXAT shall not be obliged to provide support for Software. 
+
+
+§ 7 IXXAT's Liability 
+
+7.1 IXXAT, ITS AFFILIATES AND/OR ITS SUPPLIERS SHALL NOT BE LIABLE FOR ANY 
+DAMAGES WHATSOEVER (INCLUDING WITHOUT LIMITATION, DIRECT OR INDIRECT DAMAGES FOR 
+PERSONAL INJURY, LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF 
+BUSINESS INFORMATION DAMAGES FOR LOSS OF DATA, OR SOFTWARE RESTORATION, OR ANY 
+OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE 
+SOFTWARE, EVEN IF IXXAT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+7.2 IN ANY CASE, THE ENTIRE LIABILITY OF IXXAT, ITS AFFILIATES AND ITS 
+SUPPLIERS', UNDER ANY PROVISION OF THIS AGREEMENT, SHALL BE LIMITED TO THE 
+AMOUNT OF THE PAYMENTS MADE BY CLIENT TO IXXAT FOR THIS SOFTWARE. YOU MAY CLAIM 
+FOR HIGHER LIABILITY OF IXXAT, BUT MUST THEN PAY A THIRD CHARGE FOR THE 
+AGGRAVATED RISK. 
+
+
+§ 8 General Matters 
+
+8.1 This Agreement shall constitute the entire agreement between the parties and 
+shall not be altered, amended or cancelled, except in writing and with the 
+consent and signature of all parties concerned. 
+
+8.2 The parties, if they are merchants by registration, hereby submit to the 
+jurisdiction of IXXAT's main place of business. 
+
+8.3 This Agreement shall conform with and be governed by the laws of Germany. 
+The United Nations Convention on Contracts for the International Sale of Goods 
+(which has been incorporated into German law) shall not apply to foreign 
+Clients. 
+
+
+© 2008, IXXAT GmbH Version: September 12, 2008 
+

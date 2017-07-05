@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/install/setup.sh
+    local-name: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/setup.sh

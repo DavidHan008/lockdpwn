@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/wanderbot_ws/devel/setup.sh

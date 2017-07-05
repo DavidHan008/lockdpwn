@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "grid_map")
+set(grid_map_MAINTAINER "Péter Fankhauser <pfankhauser@ethz.ch>")
+set(grid_map_DEPRECATED "")
+set(grid_map_VERSION "1.4.0")
+set(grid_map_BUILD_DEPENDS )
+set(grid_map_RUN_DEPENDS "grid_map_core" "grid_map_ros" "grid_map_cv" "grid_map_msgs" "grid_map_filters" "grid_map_visualization" "grid_map_rviz_plugin" "grid_map_loader" "grid_map_demos")
+set(grid_map_BUILDTOOL_DEPENDS "catkin")

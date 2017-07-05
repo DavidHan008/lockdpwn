@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/catkin_ws/devel
+
+Name: gps_test
+Description: Description of gps_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/catkin_ws/devel/lib -lgps_test
+Requires: roscpp std_msgs
