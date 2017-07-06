@@ -816,7 +816,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
 
-        if (_cnt % MAP_RESOL == 0) // forward push back {
+        if (_cnt % MAP_RESOL == 0){ // forward push back
             nodeVec.push_back(Vector2d(X, Y));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
