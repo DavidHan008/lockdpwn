@@ -188,13 +188,14 @@ void AccumulateIMUShift()
   }
 }
 
-// ed: rosbag으로부터 PointCloud2 데이터를 섭스크라이브하는 콜백함수 ( 500줄 :-o )
+// ed: rosbag으로부터 PointCloud2 데이터를 섭스크라이브하는 콜백함수 ( 500줄 :-/ )
 void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   if (!systemInited) {
     systemInitCount++;
-    if (systemInitCount >= systemDelay) {
+
+    if (systemInitCount >= systemDelay)
       systemInited = true;
-    }
+
     return;
   }
   
@@ -209,11 +210,11 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   float endOri = -atan2(laserCloudIn->points[cloudSize_tmp - 1].y, 
                         laserCloudIn->points[cloudSize_tmp - 1].x) + 2 * PI;
 
-  if (endOri - startOri > 3 * PI) {
+  if (endOri - startOri > 3 * PI)
     endOri -= 2 * PI;
-  } else if (endOri - startOri < PI) {
+  else if (endOri - startOri < PI)
     endOri += 2 * PI;
-  }
+
 
   bool halfPassed = false;
   pcl::PointXYZI point;
@@ -268,21 +269,23 @@ continue;
     if (!halfPassed) {
       if (ori < startOri - PI / 2) {
         ori += 2 * PI;
-      } else if (ori > startOri + PI * 3 / 2) {
+      }
+      else if (ori > startOri + PI * 3 / 2) {
         ori -= 2 * PI;
       }
 
       if (ori - startOri > PI) {
         halfPassed = true;
       }
-    } else {
+    }
+    else {
       ori += 2 * PI;
 
-      if (ori < endOri - PI * 3 / 2) {
+      if (ori < endOri - PI * 3 / 2)
         ori += 2 * PI;
-      } else if (ori > endOri + PI / 2) {
+
+      else if (ori > endOri + PI / 2)
         ori -= 2 * PI;
-      } 
     }
 
     float relTime = (ori - startOri) / (endOri - startOri);
@@ -290,10 +293,11 @@ continue;
 
     if (imuPointerLast >= 0) {
       float pointTime = relTime * scanPeriod;
+
       while (imuPointerFront != imuPointerLast) {
-        if (timeScanCur + pointTime < imuTime[imuPointerFront]) {
+        if (timeScanCur + pointTime < imuTime[imuPointerFront])
           break;
-        }
+
         imuPointerFront = (imuPointerFront + 1) % imuQueLength;
       }
 
@@ -309,7 +313,8 @@ continue;
         imuShiftXCur = imuShiftX[imuPointerFront];
         imuShiftYCur = imuShiftY[imuPointerFront];
         imuShiftZCur = imuShiftZ[imuPointerFront];
-      } else {
+      }
+      else {
         int imuPointerBack = (imuPointerFront + imuQueLength - 1) % imuQueLength;
         float ratioFront = (timeScanCur + pointTime - imuTime[imuPointerBack]) 
                          / (imuTime[imuPointerFront] - imuTime[imuPointerBack]);
@@ -320,9 +325,11 @@ continue;
         imuPitchCur = imuPitch[imuPointerFront] * ratioFront + imuPitch[imuPointerBack] * ratioBack;
         if (imuYaw[imuPointerFront] - imuYaw[imuPointerBack] > PI) {
           imuYawCur = imuYaw[imuPointerFront] * ratioFront + (imuYaw[imuPointerBack] + 2 * PI) * ratioBack;
-        } else if (imuYaw[imuPointerFront] - imuYaw[imuPointerBack] < -PI) {
+        }
+        else if (imuYaw[imuPointerFront] - imuYaw[imuPointerBack] < -PI) {
           imuYawCur = imuYaw[imuPointerFront] * ratioFront + (imuYaw[imuPointerBack] - 2 * PI) * ratioBack;
-        } else {
+        }
+        else {
           imuYawCur = imuYaw[imuPointerFront] * ratioFront + imuYaw[imuPointerBack] * ratioBack;
         }
 
@@ -347,7 +354,8 @@ continue;
         imuShiftXStart = imuShiftXCur;
         imuShiftYStart = imuShiftYCur;
         imuShiftZStart = imuShiftZCur;
-      } else {
+      }
+      else {
         ShiftToStartIMU(pointTime);
         VeloToStartIMU();
         TransformToStartIMU(&point);
@@ -410,8 +418,7 @@ cloudSize = laserCloud->points.size();   //JH
     float diff = diffX * diffX + diffY * diffY + diffZ * diffZ;
 
     if (diff > 0.1) {
-
-      float depth1 = sqrt(laserCloud->points[i].x * laserCloud->points[i].x + 
+      float depth1 = sqrt(laserCloud->points[i].x * laserCloud->points[i].x +
                      laserCloud->points[i].y * laserCloud->points[i].y +
                      laserCloud->points[i].z * laserCloud->points[i].z);
 
@@ -432,7 +439,8 @@ cloudSize = laserCloud->points.size();   //JH
           cloudNeighborPicked[i - 1] = 1;
           cloudNeighborPicked[i] = 1;
         }
-      } else {
+      }
+      else {
         diffX = laserCloud->points[i + 1].x * depth1 / depth2 - laserCloud->points[i].x;
         diffY = laserCloud->points[i + 1].y * depth1 / depth2 - laserCloud->points[i].y;
         diffZ = laserCloud->points[i + 1].z * depth1 / depth2 - laserCloud->points[i].z;
@@ -457,9 +465,9 @@ cloudSize = laserCloud->points.size();   //JH
               + laserCloud->points[i].y * laserCloud->points[i].y
               + laserCloud->points[i].z * laserCloud->points[i].z;
 
-    if (diff > 0.0002 * dis && diff2 > 0.0002 * dis) {
+    if (diff > 0.0002 * dis && diff2 > 0.0002 * dis)
       cloudNeighborPicked[i] = 1;
-    }
+
   }
 
   for (int i = 0; i < 16; i++) {
@@ -481,18 +489,18 @@ cloudSize = laserCloud->points.size();   //JH
       int largestPickedNum = 0;
       for (int k = ep; k >= sp; k--) {
         int ind = cloudSortInd[k];
-        if (cloudNeighborPicked[ind] == 0 &&
-            cloudCurvature[ind] > 0.1) {
-        
-          largestPickedNum++;
+        if (cloudNeighborPicked[ind] == 0 && cloudCurvature[ind] > 0.1) {
+                  largestPickedNum++;
           if (largestPickedNum <= 2) {
             cloudLabel[ind] = 2;
             cornerPointsSharp->push_back(laserCloud->points[ind]);
             cornerPointsLessSharp->push_back(laserCloud->points[ind]);
-          } else if (largestPickedNum <= 20) {
+          }
+          else if (largestPickedNum <= 20) {
             cloudLabel[ind] = 1;
             cornerPointsLessSharp->push_back(laserCloud->points[ind]);
-          } else {
+          }
+          else {
             break;
           }
 
@@ -551,7 +559,6 @@ cloudSize = laserCloud->points.size();   //JH
             if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05) {
               break;
             }
-
             cloudNeighborPicked[ind + l] = 1;
           }
           for (int l = -1; l >= -5; l--) {
@@ -561,9 +568,8 @@ cloudSize = laserCloud->points.size();   //JH
                         - laserCloud->points[ind + l + 1].y;
             float diffZ = laserCloud->points[ind + l].z 
                         - laserCloud->points[ind + l + 1].z;
-            if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05) {
+            if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05)
               break;
-            }
 
             cloudNeighborPicked[ind + l] = 1;
           }
@@ -571,9 +577,8 @@ cloudSize = laserCloud->points.size();   //JH
       }
 
       for (int k = sp; k <= ep; k++) {
-        if (cloudLabel[k] <= 0) {
+        if (cloudLabel[k] <= 0)
           surfPointsLessFlatScan->push_back(laserCloud->points[k]);
-        }
       }
     }
 
@@ -588,30 +593,35 @@ cloudSize = laserCloud->points.size();   //JH
 
   sensor_msgs::PointCloud2 laserCloud2;
   pcl::toROSMsg(*laserCloud, laserCloud2);
+
   laserCloud2.header.stamp = laserCloudIn2->header.stamp;
   laserCloud2.header.frame_id = "/camera";
   pubLaserCloudPointer->publish(laserCloud2);
 
   sensor_msgs::PointCloud2 cornerPointsSharp2;
   pcl::toROSMsg(*cornerPointsSharp, cornerPointsSharp2);
+
   cornerPointsSharp2.header.stamp = laserCloudIn2->header.stamp;
   cornerPointsSharp2.header.frame_id = "/camera";
   pubCornerPointsSharpPointer->publish(cornerPointsSharp2);
 
   sensor_msgs::PointCloud2 cornerPointsLessSharp2;
   pcl::toROSMsg(*cornerPointsLessSharp, cornerPointsLessSharp2);
+
   cornerPointsLessSharp2.header.stamp = laserCloudIn2->header.stamp;
   cornerPointsLessSharp2.header.frame_id = "/camera";
   pubCornerPointsLessSharpPointer->publish(cornerPointsLessSharp2);
 
   sensor_msgs::PointCloud2 surfPointsFlat2;
   pcl::toROSMsg(*surfPointsFlat, surfPointsFlat2);
+
   surfPointsFlat2.header.stamp = laserCloudIn2->header.stamp;
   surfPointsFlat2.header.frame_id = "/camera";
   pubSurfPointsFlatPointer->publish(surfPointsFlat2);
 
   sensor_msgs::PointCloud2 surfPointsLessFlat2;
   pcl::toROSMsg(*surfPointsLessFlat, surfPointsLessFlat2);
+
   surfPointsLessFlat2.header.stamp = laserCloudIn2->header.stamp;
   surfPointsLessFlat2.header.frame_id = "/camera";
   pubSurfPointsLessFlatPointer->publish(surfPointsLessFlat2);
@@ -646,14 +656,13 @@ cloudSize = laserCloud->points.size();   //JH
   surfPointsFlat->clear();
   surfPointsLessFlat->clear();
 
-  for (int i = 0; i < 16; i++) {
+  for (int i = 0; i < 16; i++)
     laserCloudScans[i]->points.clear();
-  }
+
 }
 
-// ed: 주석처리되어 현재는 사용하지 않는 섭스크라이브 콜백함수
-void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn)
-{
+// ed: 주석처리되어 현재는 사용하지 않는 섭스크라이브의 콜백함수
+void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
   double roll, pitch, yaw;
 //  tf::Quaternion orientation;
 //  tf::quaternionMsgToTF(imuIn->orientation, orientation);

@@ -17,6 +17,7 @@
 #define dist_thresh 0.5
 #define th_err_range 90*2
 
+// ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
 void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
     m_pos[0] = msg->data.at(0);
@@ -24,9 +25,11 @@ void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::Con
     m_pos[2] = msg->data.at(2);
 
 
+    printf("good");
+
     m_vel = msg->data.at(3); // m/s
 
-    printf("hello");
+
     //    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
     //    if(switch_dist < 0.9)
     //    {
@@ -41,8 +44,10 @@ void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg){
     cout << "sub path" << endl;
     // Insertion Global Path Data to Vector Struct
     vector<Vector2d> nodeVec;
-    for( int i=0; i<msg->poses.size(); i++)
-    {
+
+    printf("good333");
+
+    for( int i=0; i<msg->poses.size(); i++){
         nodeVec.push_back(Vector2d(msg->poses[i].pose.position.x, msg->poses[i].pose.position.y));
     }
 
@@ -58,25 +63,27 @@ void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg){
     m_dir_mode = 1;
 }
 
-void LocalPlannerThread::publish_local_path(vector<Vector2d> path)
-{
+// ed: Path 데이터를 받아 rviz상에 초록색선을 그려주는 함수
+void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
     nav_msgs::Path msg;
     std::vector<geometry_msgs::PoseStamped> waypoints;
     msg.header.frame_id = "/camera_init";
     msg.header.stamp = ros::Time::now();
 
-
     ofstream fout;
-    fout.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170118_spline.txt");
+    printf("good444");
+    // ed: rviz에 초록색선을 그리고 해당 좌표파일을 저장한다
+    fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
 
     //////////////////////////////////////////
     // POSE STAMPED
-    for(int i=0; i<path.size(); i++)
-    {
+    for(int i=0; i<path.size(); i++){
         geometry_msgs::PoseStamped waypt;
+
         waypt.header.frame_id = "/camera_init";
         waypt.header.stamp = ros::Time::now();
 
+        // ed: 아래코드 path ==> waypt ==> waypoints ==> msg ==> publish(msg) 순서인듯하다
         waypt.pose.position.x = path[i][0];
         waypt.pose.position.y = path[i][1];
         waypt.pose.position.z = 0;
@@ -89,12 +96,12 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path)
     msg.poses.resize(waypoints.size());
 
     // Extract the plan in world coordinates, we assume the path is all in the same frame
-    for(unsigned int i=0; i < waypoints.size(); i++)
-    {
+    for(unsigned int i=0; i < waypoints.size(); i++){
         msg.poses[i] = waypoints[i];
     }
-    msgpub.publish(msg);
 
+    // ed: msg를 최종적으로 퍼블리시한다
+    msgpub.publish(msg);
 }
 
 
@@ -107,8 +114,7 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
     double car_heading = 0.0;
 
 
-    if (m_LocalSplinePath.size() > 1)
-    {
+    if (m_LocalSplinePath.size() > 1){
         double minDist = 99999;
         int car_waypoint = -1;
         //for(int i = (m_cut_back+m_cut_switch)*SPLINE_RESOL ; i < m_LocalSplinePath.size(); i++)
@@ -127,6 +133,7 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
         }
         carIdx = car_waypoint;
         m_pre_waypoint = car_waypoint;
+
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
@@ -224,8 +231,7 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
 
                 break;
             }
-            if(i == m_LocalSplinePath.size()-2)
-            {
+            if(i == m_LocalSplinePath.size()-2){
                 m_lookAheadIndex = m_LocalSplinePath.size()-2;
                 x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
                 y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
@@ -262,10 +268,9 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
     }
 }
 
-void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y, double &resdist)
-{
-    double heading_Err = 0.0; //JW 16.07.11.
-    double cross_track_Err = 0.0;//JW 16.07.11.
+void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y, double &resdist){
+    double heading_Err = 0.0;        //JW 16.07.11.
+    double cross_track_Err = 0.0;    //JW 16.07.11.
 
     double delta_LookAhead = 0.0;
 
@@ -273,8 +278,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
     double m_velo = 0;
     double car_heading = 0.0;
 
-    if (m_LocalSplinePath.size() > 1)
-    {
+    if (m_LocalSplinePath.size() > 1){
         double minDist = 99999;
         int car_waypoint = -1;
         for(int i = 0 ; i<m_LocalSplinePath.size(); i++)
@@ -416,8 +420,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if( m_lookAheadIndex == -1 )
-        {
+        if( m_lookAheadIndex == -1 ){
             x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
             y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
             resdist = -1;
@@ -445,8 +448,7 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
     double heading_Err = 0.0; //JW 16.07.11.
     double cross_track_Err = 0.0;//JW 16.07.11.
 
-    if (m_LocalSplinePath.size() > 1)
-    {
+    if (m_LocalSplinePath.size() > 1){
         double minDist = 99999;
         int car_waypoint = -1;
         //for(int i = 0 ; i < m_switch_idx; i++)
@@ -525,25 +527,23 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
 }
 
 
-void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx)
-{
+void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx){
 
     double heading_Err = 0.0; //JW 16.07.11.
     double cross_track_Err = 0.0;//JW 16.07.11.
 
-    if (m_LocalSplinePath.size() > 1)
-    {
+    if (m_LocalSplinePath.size() > 1){
         double minDist = 99999;
         int car_waypoint = -1;
-        for(int i = m_switch_idx ; i <= m_LocalSplinePath.size(); i++)
-        {
+
+        for(int i = m_switch_idx ; i <= m_LocalSplinePath.size(); i++){
             double x2 = m_LocalSplinePath[i][0] - m_pos[0];
             x2 *= x2;
             double y2 = m_LocalSplinePath[i][1] - m_pos[1];
             y2 *= y2;
+
             double dist = sqrt(x2+y2);//distŽÂ
-            if ( dist < minDist )
-            {
+            if ( dist < minDist ){
                 minDist = dist;
                 car_waypoint = i;
             }
@@ -610,9 +610,11 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
         }
     }
 }
-
+// ed: 생성자코드
 LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
-        :m_bThreadStop(false),init_argc(argc), init_argv(argv){
+        :m_bThreadStop(false),init_argc(argc), init_argv(argv)
+{
+    printf("good777");
     m_ratio_s2w = 18.6;
     m_limit_steerAngle = 540.0;
     m_CrossTrack_ERR = 0.0;
@@ -707,10 +709,13 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     m_model_orig.color.b = 1.0f;
     //jw 16.07.08
 
-    m_LookAhead_X_pre = 0.0;//JW 16.06.24.test1
-    m_LookAhead_Y_pre = 0.0;//JW 16.06.24.test1
+    m_LookAhead_X_pre = 0.0;    //JW 16.06.24.test1
+    m_LookAhead_Y_pre = 0.0;    //JW 16.06.24.test1
 
+    // ed: Publishers--------------------------------------------------------------------------
+    // ed: rviz상에 초록색선을 표시하는 퍼블리셔
     msgpub = n.advertise<nav_msgs::Path>("LocalPathData", 10);
+
     msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);//real use data
     msgpub_Look_JW_exp = n.advertise<visualization_msgs::Marker>("LookAheadPos", 10);//real use data
     msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);//just visualization
@@ -719,25 +724,22 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );//err_
     msgpub3 = n.advertise<std_msgs::Float32MultiArray>("ControlData", 1 );
 
+    // ed: Subscriber--------------------------------------------------------------------------
     possub = n.subscribe("LocalizationData", 10, &LocalPlannerThread::SubTopicProcess1, this);
     possub2 = n.subscribe("RNDFPathData", 10, &LocalPlannerThread::SubTopicProcess2, this);
 
 }
 
 LocalPlannerThread::~LocalPlannerThread()
-{
+{}
 
-}
-
-void LocalPlannerThread::stop()
-{
-    qDebug()<<"Thread::stop called from main thread:"<<currentThreadId();
+void LocalPlannerThread::stop(){
+    qDebug() << "Thread::stop called from main thread:" << currentThreadId();
     QMutexLocker locker(&m_mutex);
     m_bThreadStop = true;
 }
 
-void LocalPlannerThread::PubMsg()
-{
+void LocalPlannerThread::PubMsg(){
     publish_local_path(m_LocalSplinePath);
 }
 
@@ -777,21 +779,15 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     vector<Vector2d> nodeVec;
 
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/Map_0722_test2.txt");
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/Map_0722_parking2.txt");
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/Map_0722_test1.txt");
     //fin_Y.open("/home/dyros-vehicle/00_DATA/bag/output_Y.txt");
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/0808map.txt");//garage
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/0902map.txt");
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/0902map2.txt");
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/final_test_0219.txt");//circle+lane change
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/parking_complex.txt");//complex
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/map_170322.txt");//21
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/final_test_0219.txt");//complex
     ///fin.open("/home/dyros-vehicle/00_DATA/bag/map/map170105.txt");//17.01.05 parking for+rev ver1 //near
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/parking_back_short.txt");//17.01.05 parking for+rev ver2 //far
@@ -799,11 +795,13 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/Map170106.txt");//17.01.12 parking for+rev ver3 //
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170117.txt");//17.01.12 robot schoool
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170118.txt");//17.01.12 parking for+rev ver3 //far
-
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/path_seho.txt");//circle+lane change
-    fin.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/0903map.txt");//circle+lane change
 
 
+    fin.open("/home/dyros-vehicle/bag_files/0903map.txt");//circle+lane change
+
+
+    // ed: 이 루프를 통해 nodeVec에 들어가는 X, Y 값이 rviz에서 초록색선을 나타낸다
     while(fin != NULL){
         _cnt++;
 
@@ -823,8 +821,9 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     }
     cout << "Finish" << endl;
+    printf("good222");
     nodeVec.push_back(Vector2d(X, Y));
-    printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
+    printf("[%d] X : %lf,  Y : %lf\n",map_cnt++, X, Y);
 
     // Generation of Interpolation Curve
     CatmullRomSpline spline;
@@ -833,12 +832,14 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     cout << ", m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
 
-    for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++)
-    {
+    for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++){
         if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
             m_switch_idx = i;
     }
+
     cout << "m_switch_idx : " << m_switch_idx <<endl;
+
+    // ed: publish_local_path() 함수를 호출해서 해당 초록색 Path를 그린다
     // Publish for Visualization
     publish_local_path(m_LocalSplinePath);
 
@@ -886,6 +887,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
 
+    printf("good555");
     int carIdx;
     double vel_orig, x, y, resdist;
     double steer_Purepursuit = 0.0, steer_Radius = 0.0;
@@ -986,13 +988,9 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[2]);
 
     if( resdist == -1)
-    {
         m_msg.data.push_back(0.0*0.278);
-    }
     else
-    {
         m_msg.data.push_back(4.8*0.278);
-    }
 
     msgpub3.publish(m_msg);
     m_model_jw_exp.header.stamp = ros::Time::now();
@@ -1003,19 +1001,21 @@ void LocalPlannerThread::Compute(){
     //JW 16.07.07
     // My_pos Message Red
     m_CarPos.header.stamp = ros::Time::now();
+
     double heading = m_pos[2];
     if ( heading > M_PI )  heading = heading - M_PI*2;
     m_CarPos.pose.position.x = m_pos[0];
     m_CarPos.pose.position.y = m_pos[1];
+
     geometry_msgs::Quaternion m_CarPos_odom_quat = tf::createQuaternionMsgFromYaw(heading);
     m_CarPos.pose.orientation = m_CarPos_odom_quat;
+
     msgpub_car.publish(m_CarPos);
 
     static int pub_cnt;
     pub_cnt++;
     //cout << pub_cnt <<endl;
-    if(pub_cnt == 55)
-    {
+    if(pub_cnt == 55){
         //JW 16.07.08 Trajectory Red
         m_line_strip.points.push_back(m_CarPos.pose.position);
         m_model_jw_exp_line.points.push_back(m_model_jw.pose.position);
@@ -1028,19 +1028,15 @@ void LocalPlannerThread::Compute(){
     ////////////////////////////////////////////////////////////////
 }
 
-double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, double resdist)
-{
+double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, double resdist){
     double steerAngle = 0.0;
     double heading = m_pos[2]*_RAD2DEG;
     double lookAheadLength = 0.0;
 
-    if( resdist == -1.0)
-    {
+    if( resdist == -1.0){
         steerAngle = 0.0;
     }
-    else if(resdist > 0.0)//forward
-    {
-
+    else if(resdist > 0.0) { //forward
         // Pure Pursuit Algorithm
         //m_pos[0] = m_pos[0] - m_len_c2r*cos(heading*_DEG2RAD);
         //m_pos[1] = m_pos[1] - m_len_c2r*sin(heading*_DEG2RAD);
@@ -1109,8 +1105,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
     }
 }
 
-double LocalPlannerThread::SteeringAng_Radius(int carIdx)
-{
+double LocalPlannerThread::SteeringAng_Radius(int carIdx){
     //radius
     double Steer_Radius = 0.0;
     double Radius = cur_rad(m_LocalSplinePath[carIdx-Radius_points][1], m_LocalSplinePath[carIdx-Radius_points][0],
@@ -1141,19 +1136,16 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx)
     return Steer_Radius = steer_Radius + heading_Err;
 }
 
-void LocalPlannerThread::run()
-{
+void LocalPlannerThread::run(){
     int cntLoop =0;
     int index =0;
     ros::Rate loop_rate(10);
 
-    while(1)
-    {
-        if(m_bThreadStop) break;
+    while(1){
+        if(m_bThreadStop)
+            break;
 
-
-        ros::spinOnce();
         loop_rate.sleep();
-
+        ros::spinOnce();
     }
 }

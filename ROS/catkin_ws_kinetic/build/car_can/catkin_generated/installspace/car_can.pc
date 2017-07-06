@@ -1,0 +1,8 @@
+prefix=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install
+
+Name: car_can
+Description: Description of car_can
+Version: 0.0.0
+Cflags: -I/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/include
+Libs: -L/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/lib 
+Requires: roscpp std_msgs

@@ -197,10 +197,6 @@ class_loader/class_loader_register_macro.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_register_macro.h
 class_loader/class_loader_core.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_core.h
-memory
--
-functional
--
 
 /opt/ros/indigo/include/class_loader/class_loader_core.h
 Poco/SharedLibrary.h
@@ -707,18 +703,12 @@ ros/macros.h
 -
 map
 -
-vector
--
 log4cxx/level.h
 /opt/ros/indigo/include/ros/log4cxx/level.h
 rosconsole/macros_generated.h
 /opt/ros/indigo/include/ros/rosconsole/macros_generated.h
 
 /opt/ros/indigo/include/ros/console_backend.h
-
-/opt/ros/indigo/include/ros/cpp_common_decl.h
-ros/macros.h
--
 
 /opt/ros/indigo/include/ros/datatypes.h
 string
@@ -769,8 +759,6 @@ list
 -
 boost/shared_ptr.hpp
 -
-boost/make_shared.hpp
--
 boost/weak_ptr.hpp
 -
 boost/function.hpp
@@ -791,8 +779,6 @@ boost/shared_array.hpp
 -
 ros/datatypes.h
 /opt/ros/indigo/include/ros/ros/datatypes.h
-cpp_common_decl.h
-/opt/ros/indigo/include/ros/cpp_common_decl.h
 
 /opt/ros/indigo/include/ros/init.h
 ros/forwards.h

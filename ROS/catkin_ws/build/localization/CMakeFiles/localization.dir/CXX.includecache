@@ -343,8 +343,6 @@ ros/macros.h
 -
 map
 -
-vector
--
 log4cxx/level.h
 /opt/ros/indigo/include/ros/log4cxx/level.h
 rosconsole/macros_generated.h
@@ -400,8 +398,6 @@ set
 list
 -
 boost/shared_ptr.hpp
--
-boost/make_shared.hpp
 -
 boost/weak_ptr.hpp
 -

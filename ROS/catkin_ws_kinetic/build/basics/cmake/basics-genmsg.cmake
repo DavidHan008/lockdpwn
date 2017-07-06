@@ -2,7 +2,7 @@
 
 message(STATUS "basics: 8 messages, 1 services")
 
-set(MSG_I_FLAGS "-Ibasics:/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/src/basics/msg;-Ibasics:/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel/share/basics/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ibasics:/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/src/basics/msg;-Ibasics:/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel/share/basics/msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -560,11 +560,11 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ba
     DESTINATION ${gencpp_INSTALL_DIR}
   )
 endif()
-if(TARGET std_msgs_generate_messages_cpp)
-  add_dependencies(basics_generate_messages_cpp std_msgs_generate_messages_cpp)
-endif()
 if(TARGET actionlib_msgs_generate_messages_cpp)
   add_dependencies(basics_generate_messages_cpp actionlib_msgs_generate_messages_cpp)
+endif()
+if(TARGET std_msgs_generate_messages_cpp)
+  add_dependencies(basics_generate_messages_cpp std_msgs_generate_messages_cpp)
 endif()
 
 if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics)
@@ -574,11 +574,11 @@ if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ba
     DESTINATION ${geneus_INSTALL_DIR}
   )
 endif()
-if(TARGET std_msgs_generate_messages_eus)
-  add_dependencies(basics_generate_messages_eus std_msgs_generate_messages_eus)
-endif()
 if(TARGET actionlib_msgs_generate_messages_eus)
   add_dependencies(basics_generate_messages_eus actionlib_msgs_generate_messages_eus)
+endif()
+if(TARGET std_msgs_generate_messages_eus)
+  add_dependencies(basics_generate_messages_eus std_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/basics)
@@ -588,11 +588,11 @@ if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/
     DESTINATION ${genlisp_INSTALL_DIR}
   )
 endif()
-if(TARGET std_msgs_generate_messages_lisp)
-  add_dependencies(basics_generate_messages_lisp std_msgs_generate_messages_lisp)
-endif()
 if(TARGET actionlib_msgs_generate_messages_lisp)
   add_dependencies(basics_generate_messages_lisp actionlib_msgs_generate_messages_lisp)
+endif()
+if(TARGET std_msgs_generate_messages_lisp)
+  add_dependencies(basics_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
 
 if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/basics)
@@ -602,11 +602,11 @@ if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_D
     DESTINATION ${gennodejs_INSTALL_DIR}
   )
 endif()
-if(TARGET std_msgs_generate_messages_nodejs)
-  add_dependencies(basics_generate_messages_nodejs std_msgs_generate_messages_nodejs)
-endif()
 if(TARGET actionlib_msgs_generate_messages_nodejs)
   add_dependencies(basics_generate_messages_nodejs actionlib_msgs_generate_messages_nodejs)
+endif()
+if(TARGET std_msgs_generate_messages_nodejs)
+  add_dependencies(basics_generate_messages_nodejs std_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/basics)
@@ -617,9 +617,9 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/basi
     DESTINATION ${genpy_INSTALL_DIR}
   )
 endif()
-if(TARGET std_msgs_generate_messages_py)
-  add_dependencies(basics_generate_messages_py std_msgs_generate_messages_py)
-endif()
 if(TARGET actionlib_msgs_generate_messages_py)
   add_dependencies(basics_generate_messages_py actionlib_msgs_generate_messages_py)
+endif()
+if(TARGET std_msgs_generate_messages_py)
+  add_dependencies(basics_generate_messages_py std_msgs_generate_messages_py)
 endif()

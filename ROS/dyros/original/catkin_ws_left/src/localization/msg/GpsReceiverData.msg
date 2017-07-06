@@ -1,0 +1,12 @@
+float64 t
+float64 utc
+int32 gps_quality
+int32 no_sats
+float64 hdop
+float64 latitude
+float64 longitude
+float64 altitude
+float64 heading
+float64 velocity
+float64 tm_x
+float64 tm_y

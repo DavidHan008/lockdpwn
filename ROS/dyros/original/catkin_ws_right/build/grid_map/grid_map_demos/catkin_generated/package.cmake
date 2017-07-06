@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "grid_map_demos")
+set(grid_map_demos_MAINTAINER "Péter Fankhauser <pfankhauser@ethz.ch>")
+set(grid_map_demos_DEPRECATED "")
+set(grid_map_demos_VERSION "1.4.0")
+set(grid_map_demos_BUILD_DEPENDS "roscpp" "grid_map_ros" "grid_map_cv" "grid_map_loader" "grid_map_msgs" "grid_map_rviz_plugin" "grid_map_visualization" "geometry_msgs" "sensor_msgs" "cv_bridge")
+set(grid_map_demos_RUN_DEPENDS "roscpp" "grid_map_ros" "grid_map_cv" "grid_map_loader" "grid_map_msgs" "grid_map_rviz_plugin" "grid_map_visualization" "geometry_msgs" "sensor_msgs" "cv_bridge")
+set(grid_map_demos_BUILDTOOL_DEPENDS "catkin")

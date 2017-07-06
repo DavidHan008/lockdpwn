@@ -31,6 +31,7 @@ struct VelodynePacket_
   VelodynePacket_(const ContainerAllocator& _alloc)
     : stamp()
     , data()  {
+  (void)_alloc;
       data.assign(0);
   }
 
@@ -76,7 +77,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'velodyne_msgs': ['/home/dyros-vehicle/catkin_ws/src/velodyne-master/velodyne_msgs/msg'], 'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg']}
+// {'velodyne_msgs': ['/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/velodyne-master/velodyne_msgs/msg'], 'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -170,7 +171,7 @@ namespace serialization
       stream.next(m.data);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct VelodynePacket_
 
 } // namespace serialization

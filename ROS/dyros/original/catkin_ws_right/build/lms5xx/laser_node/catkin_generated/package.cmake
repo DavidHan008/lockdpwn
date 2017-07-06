@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "laser_node")
+set(laser_node_MAINTAINER "tinkerbox <natan.biesmans@hotmail.com>")
+set(laser_node_DEPRECATED "")
+set(laser_node_VERSION "0.0.1")
+set(laser_node_BUILD_DEPENDS "message_generation" "generate_msgs" "roscpp" "rospy")
+set(laser_node_RUN_DEPENDS "message_runtime" "generate_msgs" "roscpp" "rospy")
+set(laser_node_BUILDTOOL_DEPENDS "catkin" "catkin")

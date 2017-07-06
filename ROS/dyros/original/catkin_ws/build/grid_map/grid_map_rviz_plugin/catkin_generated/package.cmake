@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "grid_map_rviz_plugin")
+set(grid_map_rviz_plugin_MAINTAINER "Philipp Krüsi <kruesip@ethz.ch>")
+set(grid_map_rviz_plugin_DEPRECATED "")
+set(grid_map_rviz_plugin_VERSION "1.4.0")
+set(grid_map_rviz_plugin_BUILD_DEPENDS "qtbase5-dev" "rviz" "grid_map_ros" "grid_map_msgs")
+set(grid_map_rviz_plugin_RUN_DEPENDS "libqt5-core" "libqt5-gui" "libqt5-widgets" "rviz" "grid_map_ros" "grid_map_msgs")
+set(grid_map_rviz_plugin_BUILDTOOL_DEPENDS "catkin")

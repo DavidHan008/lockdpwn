@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/catkin_ws/install
+
+Name: laser_node
+Description: Description of laser_node
+Version: 0.0.1
+Cflags: -I/home/dyros-vehicle/catkin_ws/install/include
+Libs: -L/home/dyros-vehicle/catkin_ws/install/lib -llaser_node
+Requires: generate_msgs roscpp rospy

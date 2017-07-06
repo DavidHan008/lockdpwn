@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "car_can")
+set(car_can_MAINTAINER "dyros-vehicle <dyros-vehicle@todo.todo>")
+set(car_can_DEPRECATED "")
+set(car_can_VERSION "0.0.0")
+set(car_can_BUILD_DEPENDS "message_generation" "roscpp" "std_msgs" "ros_py")
+set(car_can_RUN_DEPENDS "roscpp" "std_msgs" "message_generation")
+set(car_can_BUILDTOOL_DEPENDS "catkin")

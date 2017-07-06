@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> ROS programming, ROS를 사용해 퍼블리셔를 만들어본 코드
+    python ==> ROS로봇프로그래밍, ROS를 사용해 퍼블리셔를 만들어본 코드
 '''
 import rospy
 from std_msgs.msg import Int32

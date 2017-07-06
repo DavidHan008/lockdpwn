@@ -46,7 +46,6 @@ velodyne-master/velodyne_driver/src/driver/CMakeFiles/driver_nodelet.dir/driver.
  /opt/ros/indigo/include/ros/common.h
  /opt/ros/indigo/include/ros/console.h
  /opt/ros/indigo/include/ros/console_backend.h
- /opt/ros/indigo/include/ros/cpp_common_decl.h
  /opt/ros/indigo/include/ros/datatypes.h
  /opt/ros/indigo/include/ros/duration.h
  /opt/ros/indigo/include/ros/exception.h
@@ -172,7 +171,6 @@ velodyne-master/velodyne_driver/src/driver/CMakeFiles/driver_nodelet.dir/nodelet
  /opt/ros/indigo/include/ros/common.h
  /opt/ros/indigo/include/ros/console.h
  /opt/ros/indigo/include/ros/console_backend.h
- /opt/ros/indigo/include/ros/cpp_common_decl.h
  /opt/ros/indigo/include/ros/datatypes.h
  /opt/ros/indigo/include/ros/duration.h
  /opt/ros/indigo/include/ros/exception.h

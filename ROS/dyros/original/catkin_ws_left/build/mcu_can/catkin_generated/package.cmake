@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mcu_can")
+set(mcu_can_MAINTAINER "dyros-vehicle <dyros-vehicle@todo.todo>")
+set(mcu_can_DEPRECATED "")
+set(mcu_can_VERSION "0.0.0")
+set(mcu_can_BUILD_DEPENDS "roscpp" "std_msgs" "ros_py")
+set(mcu_can_RUN_DEPENDS "roscpp" "std_msgs")
+set(mcu_can_BUILDTOOL_DEPENDS "catkin")

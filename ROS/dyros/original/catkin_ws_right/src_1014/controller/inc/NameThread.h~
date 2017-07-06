@@ -1,0 +1,38 @@
+#pragma once
+#include <QtGui/QMainWindow>
+#include <QtCore>
+//#include <Eigen/Core>
+#include <ros/ros.h>
+#include <geometry_msgs/path.h>
+#include "../../../build/PKG_NAME/ui_PKG_NAME_gui.h"
+
+//using namespace Eigen;
+
+class NameThread : public QThread
+{
+	Q_OBJECT;
+	
+	private :
+		int init_argc;
+		char** init_argv;
+
+		ros::Subscriber possub;
+        	ros::Publisher msgpub; 
+		////////////////////////////////
+		bool m_bThreadStop;
+		bool m_bSubTopicUpdated;
+		QMutex m_mutex;
+	public :
+		//void SubTopicProcess(const MotionPlanner::LocalizationData::ConstPtr& msg);
+		NameThread(int argc, char** argv);
+		~NameThread();
+
+		void PubMsg();
+		//EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
+	public slots:
+		void stop();
+	private:		
+		void run();
+		
+};

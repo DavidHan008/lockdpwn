@@ -246,7 +246,10 @@
 #define ECI_ISA_ADDRESS_LENGTH              0x0400
 #define ECI_ISA_ADDRESS_STEP                0x0400
 #define ECI_ISA_ADDRESS_START               0x000C0000
-#define ECI_ISA_ADDRESS_END                 0x000FFC00
+#define ECI_ISA_ADDRESS_END               0xffffffff
+
+
+extern bool check_mem_region(unsigned long a, unsigned long b);
 
 
 // For accessing some shadowed interrupt registers

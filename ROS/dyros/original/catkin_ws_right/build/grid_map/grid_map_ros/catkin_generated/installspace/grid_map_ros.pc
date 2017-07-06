@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/catkin_ws/install
+
+Name: grid_map_ros
+Description: Description of grid_map_ros
+Version: 1.4.0
+Cflags: -I/home/dyros-vehicle/catkin_ws/install/include
+Libs: -L/home/dyros-vehicle/catkin_ws/install/lib -lgrid_map_ros
+Requires: roscpp grid_map_core grid_map_msgs sensor_msgs nav_msgs std_msgs geometry_msgs cv_bridge visualization_msgs

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "gps_test")
+set(gps_test_MAINTAINER "dyros-vehicle <dyros-vehicle@todo.todo>")
+set(gps_test_DEPRECATED "")
+set(gps_test_VERSION "0.0.0")
+set(gps_test_BUILD_DEPENDS "roscpp" "std_msgs")
+set(gps_test_RUN_DEPENDS "roscpp" "std_msgs")
+set(gps_test_BUILDTOOL_DEPENDS "catkin")

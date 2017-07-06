@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/catkin_ws/install
+
+Name: mcu_can
+Description: Description of mcu_can
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/catkin_ws/install/lib 
+Requires: roscpp std_msgs

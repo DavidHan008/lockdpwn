@@ -35,7 +35,6 @@ void CmdCommandThread::run(){
   pid = process.pid();
   process.waitForFinished(-1);
 
-
   //	QString p_stdout = process.readAllStandardOutput();
   //	QString p_stderr = process.readAllStandardError();
 
@@ -43,9 +42,8 @@ void CmdCommandThread::run(){
   //	qDebug("cmd Thread End");
 
 }
+
 ///////////////////////////////////////////////////////////////////////////////////
-
-
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     : QMainWindow(parent){
   ui.setupUi(this);
@@ -61,6 +59,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
   trakerThread = NULL;
   rndfThread = NULL;
   rvizThread = NULL;
+
   if(pLocalPlannerThread == NULL){
     pLocalPlannerThread = new LocalPlannerThread(argc,argv);
     pLocalPlannerThread->start();
@@ -68,8 +67,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
 }
 
 MainWindow::~MainWindow() {
-  if(pLocalPlannerThread != NULL)
-  {
+  if(pLocalPlannerThread != NULL){
     pLocalPlannerThread->stop();
     pLocalPlannerThread->wait();
     delete pLocalPlannerThread;
@@ -92,20 +90,17 @@ MainWindow::~MainWindow() {
   }
 }
 
-void MainWindow::on_pushButton_traker1_off_clicked()
-{
-  if( trakerThread != NULL )
-  {
+void MainWindow::on_pushButton_traker1_off_clicked(){
+  if( trakerThread != NULL ){
     trakerThread->stop();
     trakerThread->wait();
     trakerThread = NULL;
     ui.label_traker1->setText("OFF");
   }
 }
-void MainWindow::on_pushButton_traker1_on_clicked()
-{
-  if( trakerThread == NULL )
-  {
+
+void MainWindow::on_pushButton_traker1_on_clicked(){
+  if( trakerThread == NULL ){
     QString cmd = "rosrun controller controller";
     trakerThread = new CmdCommandThread(cmd);
     trakerThread->start();
@@ -113,32 +108,27 @@ void MainWindow::on_pushButton_traker1_on_clicked()
   }
 }
 
-void MainWindow::on_pushButton_rviz_off_clicked()
-{
-  if( rvizThread != NULL )
-  {
+// ed: rviz를 종료하는 함수
+void MainWindow::on_pushButton_rviz_off_clicked(){
+  if( rvizThread != NULL ){
     rvizThread->stop();
     rvizThread->wait();
     rvizThread = NULL;
   }
 }
 
-void MainWindow::on_pushButton_rviz_on_clicked()
-{
-  if( rvizThread == NULL )
-  {
+// ed: rviz를 실행하는 함수
+void MainWindow::on_pushButton_rviz_on_clicked(){
+  if( rvizThread == NULL ){
     QString cmd = "rosrun rviz rviz";
     rvizThread = new CmdCommandThread(cmd);
     rvizThread->start();
   }
 }
 
-void MainWindow::on_pushButton_PubMsg_clicked()
-{
+void MainWindow::on_pushButton_PubMsg_clicked(){
   if( pLocalPlannerThread != NULL)
-  {
     pLocalPlannerThread->PubMsg();
-  }
 }
 
 // ed: JW Path 버튼을 클릭하면 실행되는 함수
@@ -169,7 +159,6 @@ void MainWindow::drive_dir(){
 int main(int argc, char** argv){
   QApplication app(argc, argv);
   MainWindow w(argc, argv);
-
 
   w.show();
   app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));

@@ -1,0 +1,8 @@
+prefix=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install
+
+Name: myahrs_driver_ed
+Description: Description of myahrs_driver_ed
+Version: 0.1.1
+Cflags: -I/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/include
+Libs: -L/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/lib -lmyahrs_driver_ed
+Requires: roscpp std_msgs sensor_msgs tf

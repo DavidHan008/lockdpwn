@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "loam_velodyne")
+set(loam_velodyne_MAINTAINER "Ji Zhang <zhangji@cmu.edu>")
+set(loam_velodyne_DEPRECATED "")
+set(loam_velodyne_VERSION "0.0.1")
+set(loam_velodyne_BUILD_DEPENDS "roscpp" "std_msgs" "sensor_msgs" "pcl_ros")
+set(loam_velodyne_RUN_DEPENDS "roscpp" "std_msgs" "sensor_msgs" "pcl_ros")
+set(loam_velodyne_BUILDTOOL_DEPENDS "catkin")
