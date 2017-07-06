@@ -2,4 +2,4 @@
 source_root_dir = "/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/kinetic".split(';') if "/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel;/opt/ros/kinetic".split(';') if "/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel;/opt/ros/kinetic" != "" else []

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 '''
-    python ==> ROS programming, 퍼블리셔의 데이터를 받아오는 섭스크라이버를 구현한 코드
+    python ==> ROS로봇프로그래밍, 퍼블리셔의 데이터를 받아오는 섭스크라이버를 구현한 코드 
 '''
 import rospy
 from std_msgs.msg import Int32

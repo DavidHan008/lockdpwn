@@ -133,6 +133,7 @@ MSG: basics/TimerGoal
 # 액션은 목표, 결과, 피드백 세 개의 부분으로 되어있다
 
 # 목표: 클라이언트에서 보냄
+# TimerGoal
 duration time_to_wait
 
 ")

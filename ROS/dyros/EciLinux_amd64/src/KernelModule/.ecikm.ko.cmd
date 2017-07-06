@@ -1,1 +1,0 @@
-cmd_/home/dyros-vehicle/Downloads/EciLinux_amd64/src/KernelModule/ecikm.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dyros-vehicle/Downloads/EciLinux_amd64/src/KernelModule/ecikm.ko /home/dyros-vehicle/Downloads/EciLinux_amd64/src/KernelModule/ecikm.o /home/dyros-vehicle/Downloads/EciLinux_amd64/src/KernelModule/ecikm.mod.o

@@ -1,0 +1,17 @@
+-I/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel/include
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/opt/ros/kinetic/include
+-I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
+-I/usr/include
+-I/usr/include/eigen3
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="localization"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/localization/inc/moc_attitude.cxx
+/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/src/localization/inc/attitude.h

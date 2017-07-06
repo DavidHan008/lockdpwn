@@ -1,24 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b77d8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b77d8.dir/build.make CMakeFiles/cmTC_b77d8.dir/build
-make[1]: 디렉터리 '/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_b77d8.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_b77d8.dir/CheckSymbolExists.c.o   -c /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_b77d8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b77d8.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_b77d8.dir/CheckSymbolExists.c.o  -o cmTC_b77d8 -rdynamic 
-CMakeFiles/cmTC_b77d8.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/make "cmTryCompileExec3218134442/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3218134442.dir/build.make CMakeFiles/cmTryCompileExec3218134442.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3218134442.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3218134442.dir/CheckSymbolExists.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3218134442
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3218134442.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3218134442.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3218134442 -rdynamic 
+CMakeFiles/cmTryCompileExec3218134442.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_b77d8.dir/build.make:97: 'cmTC_b77d8' 타겟에 대한 명령이 실패했습니다
-make[1]: *** [cmTC_b77d8] 오류 1
-make[1]: 디렉터리 '/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp' 나감
-Makefile:126: 'cmTC_b77d8/fast' 타겟에 대한 명령이 실패했습니다
-make: *** [cmTC_b77d8/fast] 오류 2
+make[1]: *** [cmTryCompileExec3218134442] Error 1
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3218134442/fast] Error 2
 
-File /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +33,117 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e869a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e869a.dir/build.make CMakeFiles/cmTC_e869a.dir/build
-make[1]: 디렉터리 '/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_e869a.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e869a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_e869a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e869a.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e869a.dir/CheckFunctionExists.c.o  -o cmTC_e869a -rdynamic -lpthreads 
+Run Build Command:/usr/bin/make "cmTryCompileExec4116130698/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4116130698.dir/build.make CMakeFiles/cmTryCompileExec4116130698.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4116130698.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec4116130698.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4116130698
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4116130698.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec4116130698.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4116130698 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_e869a.dir/build.make:97: 'cmTC_e869a' 타겟에 대한 명령이 실패했습니다
-make[1]: *** [cmTC_e869a] 오류 1
-make[1]: 디렉터리 '/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/CMakeFiles/CMakeTmp' 나감
-Makefile:126: 'cmTC_e869a/fast' 타겟에 대한 명령이 실패했습니다
-make: *** [cmTC_e869a/fast] 오류 2
+make[1]: *** [cmTryCompileExec4116130698] Error 1
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4116130698/fast] Error 2
 
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2466506518/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2466506518.dir/build.make CMakeFiles/cmTryCompileExec2466506518.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2466506518.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2466506518.dir/CheckSymbolExists.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec2466506518.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTryCompileExec2466506518/fast] Error 2
+
+File /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4217036341/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4217036341.dir/build.make CMakeFiles/cmTryCompileExec4217036341.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4217036341.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec4217036341.dir/CheckSymbolExists.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+make[1]: *** [CMakeFiles/cmTryCompileExec4217036341.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4217036341/fast] Error 2
+
+File /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2886484572/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2886484572.dir/build.make CMakeFiles/cmTryCompileExec2886484572.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2886484572.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2886484572.dir/CheckSymbolExists.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec2886484572.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTryCompileExec2886484572/fast] Error 2
+
+File /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
 

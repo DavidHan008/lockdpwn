@@ -1,0 +1,8 @@
+prefix=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install
+
+Name: velodyne_pointcloud
+Description: Description of velodyne_pointcloud
+Version: 1.2.0
+Cflags: -I/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/include
+Libs: -L/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install/lib -lvelodyne_rawdata
+Requires: angles nodelet pcl_ros roscpp roslib sensor_msgs tf velodyne_driver velodyne_msgs
