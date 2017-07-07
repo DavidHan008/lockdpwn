@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-car_can:controller:loam_velodyne:localization:mcu_can:motion_planner:torcs_ros/torcs_img_publisher:torcs_ros/torcs_msgs:torcs_ros/torcs_ros_bringup:torcs_ros/torcs_ros_client:torcs_ros/torcs_ros_drive_ctrl
+basics:car_can:controller:loam_velodyne:localization:mcu_can:motion_planner:torcs_ros/torcs_img_publisher:torcs_ros/torcs_msgs:torcs_ros/torcs_ros_bringup:torcs_ros/torcs_ros_client:torcs_ros/torcs_ros_drive_ctrl
 -DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles
-=======
-basics:car_can:controller:loam_velodyne:localization:mcu_can:motion_planner:myahrs_driver_ed:velodyne-master/velodyne:velodyne-master/velodyne_driver:velodyne-master/velodyne_msgs:velodyne-master/velodyne_pointcloud
--DCATKIN_DEVEL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles
->>>>>>> 2b557bc8ce9de83e13c6a1e135fee0e3462e191c

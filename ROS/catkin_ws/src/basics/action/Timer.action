@@ -1,16 +1,22 @@
-# 액션은 목표, 결과, 피드백 세 개의 부분으로 되어있다
-
-# 목표: 클라이언트에서 보냄
-# TimerGoal
+# This is an action definition file, which has three parts: the goal, the
+# result, and the feedback.
+#
+# Part 1: the goal, to be sent by the client
+#
+# The amount of time we want to wait
 duration time_to_wait
 ---
-# 결과: 종료 시 서버가 보냄
+# Part 2: the result, to be sent by the server upon completion
+#
+# How much time we waited
 duration time_elapsed
+# How many updates we provided along the way
+uint32 updates_sent
 ---
-
-# 피드백 : 실행되는 동안 서버가 주기적으로 보냄
-
-# 시작부터 경과된 시간
+# Part 3: the feedback, to be sent periodically by the server during
+# execution.
+#
+# The amount of time that has elapsed from the start
 duration time_elapsed
-# 종료될 때까지 남은 시간
+# The amount of time remaining until we're done
 duration time_remaining

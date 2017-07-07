@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: cpp
+Description: Description of cpp
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: 

@@ -1,18 +1,31 @@
 #!/usr/bin/env python
-#-*- coding: utf-8 -*-
-'''
-    python ==> ROS로봇프로그래밍, ROS를 사용해 퍼블리셔를 만들어본 코드
-'''
+# BEGIN ALL
+# BEGIN SHEBANG
+#!/usr/bin/env python
+# END SHEBANG
+
+# BEGIN IMPORT
 import rospy
+# END IMPORT
+
+# BEGIN STD_MSGS
 from std_msgs.msg import Int32
+# END STD_MSGS
+
 
 rospy.init_node('topic_publisher')
+
+# BEGIN PUB
 pub = rospy.Publisher('counter', Int32)
+# END PUB
+
+# BEGIN LOOP
 rate = rospy.Rate(2)
 
 count = 0
-
 while not rospy.is_shutdown():
     pub.publish(count)
     count += 1
     rate.sleep()
+# END LOOP
+# END ALL
