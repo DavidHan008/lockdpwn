@@ -1,2 +1,2 @@
-basics:car_can:controller:loam_velodyne:localization:mcu_can:motion_planner:velodyne-master/velodyne:velodyne-master/velodyne_driver:velodyne-master/velodyne_msgs:velodyne-master/velodyne_pointcloud
+basics:followbot
 -DCATKIN_DEVEL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/devel -DCMAKE_INSTALL_PREFIX=/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/install -G Unix Makefiles

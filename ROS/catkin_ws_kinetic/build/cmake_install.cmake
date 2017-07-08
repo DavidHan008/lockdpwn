@@ -117,17 +117,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/gtest/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/velodyne-master/velodyne/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/velodyne-master/velodyne_msgs/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/car_can/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/controller/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/localization/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/mcu_can/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/motion_planner/cmake_install.cmake")
+  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/followbot/cmake_install.cmake")
   include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/basics/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/loam_velodyne/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/velodyne-master/velodyne_driver/cmake_install.cmake")
-  include("/home/edward/gitrepo/lockdpwn/ROS/catkin_ws_kinetic/build/velodyne-master/velodyne_pointcloud/cmake_install.cmake")
 
 endif()
 
