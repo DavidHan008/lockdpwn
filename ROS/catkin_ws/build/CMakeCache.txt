@@ -335,7 +335,7 @@ OpenCV_3RDPARTY_LIB_DIR_OPT:PATH=
 OpenCV_CONFIG_PATH:FILEPATH=/usr/local/share/OpenCV
 
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/local/share/OpenCV
+OpenCV_DIR:PATH=/usr/share/OpenCV
 
 //Path where debug OpenCV libraries are located
 OpenCV_LIB_DIR_DBG:PATH=
@@ -513,30 +513,6 @@ PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_visualization.so
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
-
-//Path to a file.
-PROTOBUF_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-PROTOBUF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
-
-//Path to a library.
-PROTOBUF_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
-
-//Path to a library.
-PROTOBUF_LITE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
-
-//Path to a library.
-PROTOBUF_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
-
-//The Google Protocol Buffers Compiler
-PROTOBUF_PROTOC_EXECUTABLE:FILEPATH=PROTOBUF_PROTOC_EXECUTABLE-NOTFOUND
-
-//Path to a library.
-PROTOBUF_PROTOC_LIBRARY:FILEPATH=PROTOBUF_PROTOC_LIBRARY-NOTFOUND
-
-//Path to a library.
-PROTOBUF_PROTOC_LIBRARY_DEBUG:FILEPATH=PROTOBUF_PROTOC_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
@@ -1174,9 +1150,6 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_R
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
-//The directory containing a CMake configuration file for SDFormat.
-SDFormat_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat
-
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
@@ -1199,7 +1172,7 @@ _CATKIN_GTEST_INCLUDE:FILEPATH=/usr/include/gtest/gtest.h
 _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Path to a file.
-_file_name:FILEPATH=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/velodyne-master/velodyne_driver/tests/pcap_vlp16_nodelet_hertz.test
+_file_name:FILEPATH=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/velodyne-master/velodyne_pointcloud/tests/cloud_nodelet_vlp16_hz.test
 
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
@@ -1278,42 +1251,6 @@ dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 
 //The directory containing a CMake configuration file for filters.
 filters_DIR:PATH=/opt/ros/indigo/share/filters/cmake
-
-//The directory containing a CMake configuration file for gazebo.
-gazebo_DIR:PATH=/usr/share/gazebo/cmake
-
-//Value Computed by CMake
-gazebo_gripper_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_simulator/gazebo_gripper
-
-//Dependencies for target
-gazebo_gripper_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-gazebo_gripper_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/gazebo_gripper
-
-//Value Computed by CMake
-gazebo_interface_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_simulator/gazebo_interface
-
-//Dependencies for target
-gazebo_interface_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-gazebo_interface_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/gazebo_interface
-
-//The directory containing a CMake configuration file for gazebo_msgs.
-gazebo_msgs_DIR:PATH=/opt/ros/indigo/share/gazebo_msgs/cmake
-
-//The directory containing a CMake configuration file for gazebo_ros.
-gazebo_ros_DIR:PATH=/opt/ros/indigo/share/gazebo_ros/cmake
-
-//Value Computed by CMake
-gazebo_taskboard_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_simulator/gazebo_taskboard
-
-//Dependencies for target
-gazebo_taskboard_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-gazebo_taskboard_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/gazebo_taskboard
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
@@ -1467,7 +1404,7 @@ laser_node_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/
 laser_node_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/lms5xx/laser_node
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/indigo/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
 
 //Value Computed by CMake
 loam_velodyne_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/loam_velodyne
@@ -1505,35 +1442,11 @@ motion_planner_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin
 //Value Computed by CMake
 motion_planner_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner
 
-//Value Computed by CMake
-nasa_r2_common_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/nasa_r2_common
-
-//Value Computed by CMake
-nasa_r2_common_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/nasa_r2_common
-
-//Value Computed by CMake
-nasa_r2_common_msgs_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/nasa_r2_common_msgs
-
-//The directory containing a CMake configuration file for nasa_r2_common_msgs.
-nasa_r2_common_msgs_DIR:PATH=/home/dyros-vehicle/chessbot/devel/share/nasa_r2_common_msgs/cmake
-
-//Value Computed by CMake
-nasa_r2_common_msgs_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/nasa_r2_common_msgs
-
-//Value Computed by CMake
-nasa_r2_simulator_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_simulator/nasa_r2_simulator
-
-//Value Computed by CMake
-nasa_r2_simulator_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/nasa_r2_simulator
-
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
-
-//Path to a library.
-onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/indigo/share/pcl_conversions/cmake
@@ -1546,36 +1459,6 @@ pcl_ros_DIR:PATH=/opt/ros/indigo/share/pcl_ros/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
-
-//Value Computed by CMake
-r2_control_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/r2_control
-
-//Value Computed by CMake
-r2_control_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/r2_control
-
-//Value Computed by CMake
-r2_description_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/r2_description
-
-//Value Computed by CMake
-r2_description_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/r2_description
-
-//Value Computed by CMake
-r2_fullbody_moveit_config_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/r2_fullbody_moveit_config
-
-//Value Computed by CMake
-r2_fullbody_moveit_config_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/r2_fullbody_moveit_config
-
-//Value Computed by CMake
-r2_gazebo_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_simulator/r2_gazebo
-
-//Value Computed by CMake
-r2_gazebo_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/r2_gazebo
-
-//Value Computed by CMake
-r2_moveit_config_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/deprecated_nasa_r2_common/r2_moveit_config
-
-//Value Computed by CMake
-r2_moveit_config_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_common/r2_moveit_config
 
 //The directory containing a CMake configuration file for resource_retriever.
 resource_retriever_DIR:PATH=/opt/ros/indigo/share/resource_retriever/cmake
@@ -1655,9 +1538,6 @@ smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
-//The directory containing a CMake configuration file for std_srvs.
-std_srvs_DIR:PATH=/opt/ros/indigo/share/std_srvs/cmake
-
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/indigo/share/tf2/cmake
 
@@ -1709,9 +1589,6 @@ torcs_ros_drive_ctrl_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/
 //Value Computed by CMake
 torcs_ros_drive_ctrl_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/torcs_ros/torcs_ros_drive_ctrl
 
-//The directory containing a CMake configuration file for trajectory_msgs.
-trajectory_msgs_DIR:PATH=/opt/ros/indigo/share/trajectory_msgs/cmake
-
 //Dependencies for the target
 transform_nodelet_LIB_DEPENDS:STATIC=general;velodyne_rawdata;general;/opt/ros/indigo/lib/libpcl_ros_filters.so;general;/opt/ros/indigo/lib/libpcl_ros_io.so;general;/opt/ros/indigo/lib/libpcl_ros_tf.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;general;/usr/lib/libvtkCommon.so.5.8.0;general;/usr/lib/libvtkRendering.so.5.8.0;general;/usr/lib/libvtkHybrid.so.5.8.0;general;/usr/lib/libvtkCharts.so.5.8.0;general;/opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/indigo/lib/librosbag.so;general;/opt/ros/indigo/lib/librosbag_storage.so;general;/opt/ros/indigo/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;general;/opt/ros/indigo/lib/libtopic_tools.so;general;velodyne_input;general;/opt/ros/indigo/lib/libnodeletlib.so;general;/opt/ros/indigo/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/indigo/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/indigo/lib/libtf.so;general;/opt/ros/indigo/lib/libtf2_ros.so;general;/opt/ros/indigo/lib/libactionlib.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libtf2.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;yaml-cpp;
 
@@ -1727,7 +1604,8 @@ velodyne_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/sr
 //Value Computed by CMake
 velodyne_driver_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/velodyne-master/velodyne_driver
 
-velodyne_driver_DIR:PATH=
+//The directory containing a CMake configuration file for velodyne_driver.
+velodyne_driver_DIR:PATH=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/velodyne_driver/cmake
 
 //Value Computed by CMake
 velodyne_driver_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/velodyne-master/velodyne_driver
@@ -1815,16 +1693,18 @@ CATKIN_ENV:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/cat
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/test_results
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_BUILD_TOOL
+CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
 CMAKE_BUILD_TOOL:INTERNAL=/usr/bin/make
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build
 //Major version of cmake used to create the current loaded cache
-CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
+CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=5
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=12
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -1907,9 +1787,9 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=17
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=9
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=25
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1917,7 +1797,7 @@ CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.5
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-2.8
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -1959,7 +1839,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding Flann
 FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a][/usr/include][v()]
 //Details about finding PCL
-FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;/usr/lib/libOpenNI.so;vtkCommon;vtkRendering;vtkHybrid;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;vtkCommon;vtkRendering;vtkHybrid;vtkCharts][/usr/include/pcl-1.7;/usr/include/eigen3;/usr/include;/usr/include/ni;/usr/include/vtk-5.8][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;/usr/lib/libOpenNI.so;vtkCommon;vtkRendering;vtkHybrid;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;vtkCommon;vtkRendering;vtkHybrid;vtkCharts][/usr/include/pcl-1.7;/usr/include/eigen3;/usr/include;/usr/include/ni;/usr/include/vtk-5.8][v()]
 //Details about finding PCL_APPS
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_APPS:INTERNAL=[/usr/lib/libpcl_apps.so][/usr/include/pcl-1.7][v()]
 //Details about finding PCL_COMMON
@@ -2000,8 +1880,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_TRACKING:INTERNAL=[/usr/lib/libpcl_tracking.so]
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/usr/lib/libpcl_visualization.so][/usr/include/pcl-1.7][v()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
-//Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
 //Details about finding Qt4
@@ -2016,40 +1894,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_libusb-1.0:INTERNAL=[/usr/include][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_openni:INTERNAL=[/usr/lib/libOpenNI.so][/usr/include/ni][v()]
 //Details about finding qhull
 FIND_PACKAGE_MESSAGE_DETAILS_qhull:INTERNAL=[/usr/lib/x86_64-linux-gnu/libqhull.so][/usr/include][v()]
-GAZEBO_CFLAGS:INTERNAL=-I/usr/include/gazebo-2.2;-I/usr/include/sdformat-1.4
-GAZEBO_CFLAGS_I:INTERNAL=
-GAZEBO_CFLAGS_OTHER:INTERNAL=
-GAZEBO_FOUND:INTERNAL=1
-GAZEBO_INCLUDEDIR:INTERNAL=/usr/include
-GAZEBO_INCLUDE_DIRS:INTERNAL=/usr/include/gazebo-2.2;/usr/include/sdformat-1.4
-GAZEBO_LDFLAGS:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-L/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-lgazebo_transport;-lgazebo_physics;-lgazebo_sensors;-lgazebo_rendering;-lgazebo_gui;-lsdformat;-lgazebo_msgs;-lgazebo_math;-lgazebo_common;-lgazebo
-GAZEBO_LDFLAGS_OTHER:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
-GAZEBO_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-GAZEBO_LIBRARIES:INTERNAL=gazebo_transport;gazebo_physics;gazebo_sensors;gazebo_rendering;gazebo_gui;sdformat;gazebo_msgs;gazebo_math;gazebo_common;gazebo
-GAZEBO_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
-GAZEBO_LIBS:INTERNAL=
-GAZEBO_LIBS_L:INTERNAL=
-GAZEBO_LIBS_OTHER:INTERNAL=
-GAZEBO_LIBS_PATHS:INTERNAL=
-GAZEBO_PREFIX:INTERNAL=/usr
-GAZEBO_STATIC_CFLAGS:INTERNAL=-I/usr/include/gazebo-2.2;-I/usr/include/sdformat-1.4
-GAZEBO_STATIC_CFLAGS_I:INTERNAL=
-GAZEBO_STATIC_CFLAGS_OTHER:INTERNAL=
-GAZEBO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gazebo-2.2;/usr/include/sdformat-1.4
-GAZEBO_STATIC_LDFLAGS:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-L/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-lgazebo_transport;-lgazebo_physics;-lgazebo_sensors;-lgazebo_rendering;-lgazebo_gui;-lsdformat;-lgazebo_msgs;-lgazebo_math;-lgazebo_common;-lgazebo
-GAZEBO_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
-GAZEBO_STATIC_LIBDIR:INTERNAL=
-GAZEBO_STATIC_LIBRARIES:INTERNAL=gazebo_transport;gazebo_physics;gazebo_sensors;gazebo_rendering;gazebo_gui;sdformat;gazebo_msgs;gazebo_math;gazebo_common;gazebo
-GAZEBO_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
-GAZEBO_STATIC_LIBS:INTERNAL=
-GAZEBO_STATIC_LIBS_L:INTERNAL=
-GAZEBO_STATIC_LIBS_OTHER:INTERNAL=
-GAZEBO_STATIC_LIBS_PATHS:INTERNAL=
-GAZEBO_VERSION:INTERNAL=2.2.3
-GAZEBO_gazebo_INCLUDEDIR:INTERNAL=
-GAZEBO_gazebo_LIBDIR:INTERNAL=
-GAZEBO_gazebo_PREFIX:INTERNAL=
-GAZEBO_gazebo_VERSION:INTERNAL=
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
@@ -2241,22 +2085,6 @@ PC_OPENNI_openni-dev_PREFIX:INTERNAL=
 PC_OPENNI_openni-dev_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_INCLUDE_DIR
-PROTOBUF_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_LIBRARY
-PROTOBUF_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_LIBRARY_DEBUG
-PROTOBUF_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_LITE_LIBRARY
-PROTOBUF_LITE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_LITE_LIBRARY_DEBUG
-PROTOBUF_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_PROTOC_EXECUTABLE
-PROTOBUF_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_PROTOC_LIBRARY
-PROTOBUF_PROTOC_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PROTOBUF_PROTOC_LIBRARY_DEBUG
-PROTOBUF_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
@@ -2736,10 +2564,9 @@ _Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
-__pkg_config_checked_GAZEBO:INTERNAL=1
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
 __pkg_config_checked_PC_FLANN:INTERNAL=1
 __pkg_config_checked_PC_OPENNI:INTERNAL=1
 __pkg_config_checked_YAML_CPP:INTERNAL=1
-prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
+prefix_result:INTERNAL=
 

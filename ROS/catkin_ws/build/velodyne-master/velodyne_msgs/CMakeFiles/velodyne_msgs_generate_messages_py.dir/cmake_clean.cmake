@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/velodyne_msgs_generate_messages_py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/velodyne_msgs/msg/_VelodynePacket.py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/velodyne_msgs/msg/_VelodyneScan.py"
@@ -6,6 +6,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
-  include(CMakeFiles/velodyne_msgs_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/velodyne_msgs_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

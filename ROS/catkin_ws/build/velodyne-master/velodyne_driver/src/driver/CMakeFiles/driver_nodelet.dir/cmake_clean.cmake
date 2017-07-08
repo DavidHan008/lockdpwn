@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/driver_nodelet.dir/nodelet.cc.o"
   "CMakeFiles/driver_nodelet.dir/driver.cc.o"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/libdriver_nodelet.pdb"
@@ -6,6 +6,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/driver_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/driver_nodelet.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

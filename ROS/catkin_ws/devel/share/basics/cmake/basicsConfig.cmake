@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib;/home/dyros-vehicle/chessbot/devel/lib;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/wanderbot_ws/devel/lib;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -153,7 +153,7 @@ foreach(t ${basics_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime;actionlib_msgs")
+set(depends "actionlib_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

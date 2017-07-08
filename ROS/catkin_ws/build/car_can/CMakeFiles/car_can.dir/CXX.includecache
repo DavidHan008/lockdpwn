@@ -40,6 +40,22 @@ QtGui/QSpinBox
 QtGui/QWidget
 -
 
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/car_can/CarCanData.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/inc/CAN_OBD2.h
 eCAN.h
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/inc/eCAN.h
@@ -436,6 +452,10 @@ boost/make_shared.hpp
 cstddef
 -
 memory
+-
+
+/opt/ros/indigo/include/ros/message_operations.h
+ostream
 -
 
 /opt/ros/indigo/include/ros/message_traits.h

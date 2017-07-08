@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/cloud_node.dir/cloud_node.cc.o"
   "CMakeFiles/cloud_node.dir/convert.cc.o"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/velodyne_pointcloud/cloud_node.pdb"
@@ -6,6 +6,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/cloud_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/cloud_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

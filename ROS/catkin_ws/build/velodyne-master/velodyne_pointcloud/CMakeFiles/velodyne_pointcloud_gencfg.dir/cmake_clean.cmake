@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/velodyne_pointcloud_gencfg"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/velodyne_pointcloud/VelodyneConfigConfig.h"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/velodyne_pointcloud/docs/VelodyneConfigConfig.dox"
@@ -8,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
-  include(CMakeFiles/velodyne_pointcloud_gencfg.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/velodyne_pointcloud_gencfg.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
