@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: r2_gazebo
+Description: Description of r2_gazebo
+Version: 0.5.4
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: 
