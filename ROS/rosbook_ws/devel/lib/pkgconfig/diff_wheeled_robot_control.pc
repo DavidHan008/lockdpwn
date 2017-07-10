@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel
+
+Name: diff_wheeled_robot_control
+Description: Description of diff_wheeled_robot_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib 
+Requires: 

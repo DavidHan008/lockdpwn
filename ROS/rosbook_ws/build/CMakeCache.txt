@@ -17,6 +17,21 @@
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=Boost_DIR-NOTFOUND
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/include
+
+//Boost library directory
+Boost_LIBRARY_DIR:PATH=/usr/lib/x86_64-linux-gnu
+
+//Boost system library (debug)
+Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
+
+//Boost system library (release)
+Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
+
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
@@ -257,14 +272,41 @@ actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
+//The directory containing a CMake configuration file for angles.
+angles_DIR:PATH=/opt/ros/indigo/share/angles/cmake
+
 //Value Computed by CMake
 basics_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/basics
 
 //Value Computed by CMake
 basics_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/basics
 
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/indigo/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/indigo/share/bondcpp/cmake
+
+//The directory containing a CMake configuration file for camera_info_manager.
+camera_info_manager_DIR:PATH=/opt/ros/indigo/share/camera_info_manager/cmake
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
+
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/indigo/share/class_loader/cmake
+
+//The directory containing a CMake configuration file for control_toolbox.
+control_toolbox_DIR:PATH=/opt/ros/indigo/share/control_toolbox/cmake
+
+//The directory containing a CMake configuration file for controller_interface.
+controller_interface_DIR:PATH=/opt/ros/indigo/share/controller_interface/cmake
+
+//The directory containing a CMake configuration file for controller_manager.
+controller_manager_DIR:PATH=/opt/ros/indigo/share/controller_manager/cmake
+
+//The directory containing a CMake configuration file for controller_manager_msgs.
+controller_manager_msgs_DIR:PATH=/opt/ros/indigo/share/controller_manager_msgs/cmake
 
 //Value Computed by CMake
 cougarbot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/cougarbot
@@ -280,6 +322,42 @@ cougarbot_moveit_config_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/R
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/indigo/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/indigo/share/diagnostic_updater/cmake
+
+//Value Computed by CMake
+diff_wheeled_robot_control_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/diff_wheeled_robot_control
+
+//Value Computed by CMake
+diff_wheeled_robot_control_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/diff_wheeled_robot_control
+
+//Value Computed by CMake
+diff_wheeled_robot_gazebo_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/diff_wheeled_robot_gazebo
+
+//Value Computed by CMake
+diff_wheeled_robot_gazebo_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/diff_wheeled_robot_gazebo
+
+//The directory containing a CMake configuration file for driver_base.
+driver_base_DIR:PATH=/opt/ros/indigo/share/driver_base/cmake
+
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
+
+//The directory containing a CMake configuration file for gazebo_msgs.
+gazebo_msgs_DIR:PATH=/opt/ros/indigo/share/gazebo_msgs/cmake
+
+//The directory containing a CMake configuration file for gazebo_plugins.
+gazebo_plugins_DIR:PATH=/opt/ros/indigo/share/gazebo_plugins/cmake
+
+//The directory containing a CMake configuration file for gazebo_ros.
+gazebo_ros_DIR:PATH=/opt/ros/indigo/share/gazebo_ros/cmake
+
+//The directory containing a CMake configuration file for gazebo_ros_control.
+gazebo_ros_control_DIR:PATH=/opt/ros/indigo/share/gazebo_ros_control/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
@@ -324,8 +402,35 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for hardware_interface.
+hardware_interface_DIR:PATH=/opt/ros/indigo/share/hardware_interface/cmake
+
+//The directory containing a CMake configuration file for image_geometry.
+image_geometry_DIR:PATH=/opt/ros/indigo/share/image_geometry/cmake
+
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/indigo/share/image_transport/cmake
+
+//The directory containing a CMake configuration file for interactive_markers.
+interactive_markers_DIR:PATH=/opt/ros/indigo/share/interactive_markers/cmake
+
+//The directory containing a CMake configuration file for joint_limits_interface.
+joint_limits_interface_DIR:PATH=/opt/ros/indigo/share/joint_limits_interface/cmake
+
+//The directory containing a CMake configuration file for joint_state_controller.
+joint_state_controller_DIR:PATH=/opt/ros/indigo/share/joint_state_controller/cmake
+
+//The directory containing a CMake configuration file for joy.
+joy_DIR:PATH=/opt/ros/indigo/share/joy/cmake
+
+//The directory containing a CMake configuration file for laser_geometry.
+laser_geometry_DIR:PATH=/opt/ros/indigo/share/laser_geometry/cmake
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/indigo/lib/librostime.so
+lib:FILEPATH=/opt/ros/indigo/lib/libresource_retriever.so
+
+//The directory containing a CMake configuration file for map_msgs.
+map_msgs_DIR:PATH=/opt/ros/indigo/share/map_msgs/cmake
 
 //Value Computed by CMake
 mapping_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/mapping
@@ -333,14 +438,50 @@ mapping_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/bu
 //Value Computed by CMake
 mapping_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/mapping
 
+//Value Computed by CMake
+mastering_ros_demo_pkg_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/mastering_ros_demo_pkg
+
+//Value Computed by CMake
+mastering_ros_demo_pkg_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/mastering_ros_demo_pkg
+
+//Value Computed by CMake
+mastering_ros_robot_description_pkg_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/mastering_ros_robot_description_pkg
+
+//The directory containing a CMake configuration file for mastering_ros_robot_description_pkg.
+mastering_ros_robot_description_pkg_DIR:PATH=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/mastering_ros_robot_description_pkg/cmake
+
+//Value Computed by CMake
+mastering_ros_robot_description_pkg_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/mastering_ros_robot_description_pkg
+
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/opt/ros/indigo/share/message_filters/cmake
+
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for nav_msgs.
+nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
+
+//The directory containing a CMake configuration file for realtime_tools.
+realtime_tools_DIR:PATH=/opt/ros/indigo/share/realtime_tools/cmake
+
+//The directory containing a CMake configuration file for resource_retriever.
+resource_retriever_DIR:PATH=/opt/ros/indigo/share/resource_retriever/cmake
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/indigo/share/rosconsole/cmake
+
+//The directory containing a CMake configuration file for rosconsole_bridge.
+rosconsole_bridge_DIR:PATH=/opt/ros/indigo/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
 roscpp_DIR:PATH=/opt/ros/indigo/share/roscpp/cmake
@@ -351,8 +492,17 @@ roscpp_serialization_DIR:PATH=/opt/ros/indigo/share/roscpp_serialization/cmake
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/indigo/share/roscpp_traits/cmake
 
+//The directory containing a CMake configuration file for rosgraph.
+rosgraph_DIR:PATH=/opt/ros/indigo/share/rosgraph/cmake
+
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/indigo/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/indigo/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/indigo/share/rospack/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/indigo/share/rospy/cmake
@@ -360,11 +510,47 @@ rospy_DIR:PATH=/opt/ros/indigo/share/rospy/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 
+//The directory containing a CMake configuration file for rviz.
+rviz_DIR:PATH=/opt/ros/indigo/share/rviz/cmake
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
+//Value Computed by CMake
+seven_dof_arm_gazebo_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/seven_dof_arm_gazebo
+
+//Value Computed by CMake
+seven_dof_arm_gazebo_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/seven_dof_arm_gazebo
+
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
+
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/opt/ros/indigo/share/std_srvs/cmake
+
+//Value Computed by CMake
+stockroom_bot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/stockroom_bot
+
+//Value Computed by CMake
+stockroom_bot_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/stockroom_bot
+
+//The directory containing a CMake configuration file for tf2.
+tf2_DIR:PATH=/opt/ros/indigo/share/tf2/cmake
+
+//The directory containing a CMake configuration file for tf2_msgs.
+tf2_msgs_DIR:PATH=/opt/ros/indigo/share/tf2_msgs/cmake
+
+//The directory containing a CMake configuration file for tf2_py.
+tf2_py_DIR:PATH=/opt/ros/indigo/share/tf2_py/cmake
+
+//The directory containing a CMake configuration file for tf2_ros.
+tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
+
+//The directory containing a CMake configuration file for tf.
+tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
 
 //Value Computed by CMake
 tortoisebot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/tortoisebot
@@ -372,11 +558,26 @@ tortoisebot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_w
 //Value Computed by CMake
 tortoisebot_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/tortoisebot
 
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/indigo/share/trajectory_msgs/cmake
+
+//The directory containing a CMake configuration file for transmission_interface.
+transmission_interface_DIR:PATH=/opt/ros/indigo/share/transmission_interface/cmake
+
+//The directory containing a CMake configuration file for urdf.
+urdf_DIR:PATH=/opt/ros/indigo/share/urdf/cmake
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/indigo/share/visualization_msgs/cmake
+
 //Value Computed by CMake
 wanderbot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/wanderbot
 
 //Value Computed by CMake
 wanderbot_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/wanderbot
+
+//The directory containing a CMake configuration file for xacro.
+xacro_DIR:PATH=/opt/ros/indigo/share/xacro/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
@@ -386,6 +587,16 @@ xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_INCLUDE_DIR
+Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR
+Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
+Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
+Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/test_results
@@ -483,7 +694,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=8
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -549,4 +760,12 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+//Components requested for this build tree.
+_Boost_COMPONENTS_SEARCHED:INTERNAL=system
+//Last used Boost_INCLUDE_DIR value.
+_Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
+//Last used Boost_LIBRARY_DIR value.
+_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
+//Last used Boost_USE_MULTITHREADED value.
+_Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 
