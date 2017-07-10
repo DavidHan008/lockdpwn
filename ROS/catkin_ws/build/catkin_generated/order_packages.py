@@ -2,4 +2,4 @@
 source_root_dir = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel;/opt/ros/indigo".split(';') if "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel;/opt/ros/indigo" != "" else []
+underlay_workspaces = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel;/opt/ros/indigo".split(';') if "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel;/opt/ros/indigo" != "" else []

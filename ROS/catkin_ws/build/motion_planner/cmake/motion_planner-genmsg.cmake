@@ -6,7 +6,6 @@ set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
-find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -27,7 +26,7 @@ add_custom_target(_motion_planner_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;geneus;genlisp;genpy
+#  langs = gencpp;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -70,47 +69,6 @@ add_dependencies(motion_planner_gencpp motion_planner_generate_messages_cpp)
 
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS motion_planner_generate_messages_cpp)
-
-### Section generating for lang: geneus
-### Generating Messages
-
-### Generating Services
-_generate_srv_eus(motion_planner
-  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvHeightMap.srv"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/motion_planner
-)
-_generate_srv_eus(motion_planner
-  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvParkingCmd.srv"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/motion_planner
-)
-
-### Generating Module File
-_generate_module_eus(motion_planner
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/motion_planner
-  "${ALL_GEN_OUTPUT_FILES_eus}"
-)
-
-add_custom_target(motion_planner_generate_messages_eus
-  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
-)
-add_dependencies(motion_planner_generate_messages motion_planner_generate_messages_eus)
-
-# add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvHeightMap.srv" NAME_WE)
-add_dependencies(motion_planner_generate_messages_eus _motion_planner_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvParkingCmd.srv" NAME_WE)
-add_dependencies(motion_planner_generate_messages_eus _motion_planner_generate_messages_check_deps_${_filename})
-
-# target for backward compatibility
-add_custom_target(motion_planner_geneus)
-add_dependencies(motion_planner_geneus motion_planner_generate_messages_eus)
-
-# register target for catkin_package(EXPORTED_TARGETS)
-list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS motion_planner_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
@@ -205,17 +163,6 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mo
 endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(motion_planner_generate_messages_cpp std_msgs_generate_messages_cpp)
-endif()
-
-if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/motion_planner)
-  # install generated code
-  install(
-    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/motion_planner
-    DESTINATION ${geneus_INSTALL_DIR}
-  )
-endif()
-if(TARGET std_msgs_generate_messages_eus)
-  add_dependencies(motion_planner_generate_messages_eus std_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/motion_planner)

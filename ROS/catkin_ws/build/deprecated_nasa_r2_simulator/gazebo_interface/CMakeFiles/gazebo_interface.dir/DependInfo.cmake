@@ -22,7 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/deprecated_nasa_r2_simulator/gazebo_interface/include"
   "/usr/include/gazebo-2.2"
   "/usr/include/sdformat-1.4"
-  "/home/dyros-vehicle/chessbot/devel/include"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include"
   "/opt/ros/indigo/include"
   )
 

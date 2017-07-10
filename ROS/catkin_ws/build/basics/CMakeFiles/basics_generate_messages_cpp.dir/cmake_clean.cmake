@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/basics_generate_messages_cpp"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/basics/TimerActionResult.h"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/basics/TimerAction.h"
@@ -12,6 +12,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/basics_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/basics_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

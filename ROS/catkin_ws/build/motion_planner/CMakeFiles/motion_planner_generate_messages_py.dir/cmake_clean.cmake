@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/motion_planner_generate_messages_py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/motion_planner/srv/_srvHeightMap.py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/motion_planner/srv/_srvParkingCmd.py"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/motion_planner_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/motion_planner_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
