@@ -234,6 +234,20 @@ motion_planner_generate_messages_cpp/fast:
 .PHONY : motion_planner_generate_messages_cpp/fast
 
 # Convenience name for target.
+motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/rule
+.PHONY : motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+motion_planner_generate_messages_eus: motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/rule
+.PHONY : motion_planner_generate_messages_eus
+
+# fast build rule for target.
+motion_planner_generate_messages_eus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/build.make motion_planner/CMakeFiles/motion_planner_generate_messages_eus.dir/build
+.PHONY : motion_planner_generate_messages_eus/fast
+
+# Convenience name for target.
 motion_planner/CMakeFiles/motion_planner_generate_messages_lisp.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 motion_planner/CMakeFiles/motion_planner_generate_messages_lisp.dir/rule
 .PHONY : motion_planner/CMakeFiles/motion_planner_generate_messages_lisp.dir/rule
@@ -260,6 +274,20 @@ motion_planner_generate_messages_py: motion_planner/CMakeFiles/motion_planner_ge
 motion_planner_generate_messages_py/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f motion_planner/CMakeFiles/motion_planner_generate_messages_py.dir/build.make motion_planner/CMakeFiles/motion_planner_generate_messages_py.dir/build
 .PHONY : motion_planner_generate_messages_py/fast
+
+# Convenience name for target.
+motion_planner/CMakeFiles/motion_planner_geneus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 motion_planner/CMakeFiles/motion_planner_geneus.dir/rule
+.PHONY : motion_planner/CMakeFiles/motion_planner_geneus.dir/rule
+
+# Convenience name for target.
+motion_planner_geneus: motion_planner/CMakeFiles/motion_planner_geneus.dir/rule
+.PHONY : motion_planner_geneus
+
+# fast build rule for target.
+motion_planner_geneus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f motion_planner/CMakeFiles/motion_planner_geneus.dir/build.make motion_planner/CMakeFiles/motion_planner_geneus.dir/build
+.PHONY : motion_planner_geneus/fast
 
 # Convenience name for target.
 motion_planner/CMakeFiles/motion_planner_genlisp.dir/rule:
@@ -426,8 +454,10 @@ help:
 	@echo "... motion_planner_gencpp"
 	@echo "... motion_planner_generate_messages"
 	@echo "... motion_planner_generate_messages_cpp"
+	@echo "... motion_planner_generate_messages_eus"
 	@echo "... motion_planner_generate_messages_lisp"
 	@echo "... motion_planner_generate_messages_py"
+	@echo "... motion_planner_geneus"
 	@echo "... motion_planner_genlisp"
 	@echo "... motion_planner_genpy"
 	@echo "... rebuild_cache"

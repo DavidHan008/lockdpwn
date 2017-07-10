@@ -1,0 +1,2 @@
+stockroom_bot
+-DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/install -G Unix Makefiles

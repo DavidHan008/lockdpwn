@@ -1,2 +1,2 @@
-basics:car_can:controller:loam_velodyne:localization:mcu_can:motion_planner
+car_can:controller:followbot:loam_velodyne:localization:mcu_can:motion_planner
 -DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

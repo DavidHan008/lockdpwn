@@ -248,6 +248,20 @@ localization_generate_messages_cpp/fast:
 .PHONY : localization_generate_messages_cpp/fast
 
 # Convenience name for target.
+localization/CMakeFiles/localization_generate_messages_eus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_eus.dir/rule
+.PHONY : localization/CMakeFiles/localization_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+localization_generate_messages_eus: localization/CMakeFiles/localization_generate_messages_eus.dir/rule
+.PHONY : localization_generate_messages_eus
+
+# fast build rule for target.
+localization_generate_messages_eus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_eus.dir/build.make localization/CMakeFiles/localization_generate_messages_eus.dir/build
+.PHONY : localization_generate_messages_eus/fast
+
+# Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_lisp.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_lisp.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_lisp.dir/rule
@@ -274,6 +288,20 @@ localization_generate_messages_py: localization/CMakeFiles/localization_generate
 localization_generate_messages_py/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_py.dir/build.make localization/CMakeFiles/localization_generate_messages_py.dir/build
 .PHONY : localization_generate_messages_py/fast
+
+# Convenience name for target.
+localization/CMakeFiles/localization_geneus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_geneus.dir/rule
+.PHONY : localization/CMakeFiles/localization_geneus.dir/rule
+
+# Convenience name for target.
+localization_geneus: localization/CMakeFiles/localization_geneus.dir/rule
+.PHONY : localization_geneus
+
+# fast build rule for target.
+localization_geneus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f localization/CMakeFiles/localization_geneus.dir/build.make localization/CMakeFiles/localization_geneus.dir/build
+.PHONY : localization_geneus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_genlisp.dir/rule:
@@ -561,8 +589,10 @@ help:
 	@echo "... localization_gencpp"
 	@echo "... localization_generate_messages"
 	@echo "... localization_generate_messages_cpp"
+	@echo "... localization_generate_messages_eus"
 	@echo "... localization_generate_messages_lisp"
 	@echo "... localization_generate_messages_py"
+	@echo "... localization_geneus"
 	@echo "... localization_genlisp"
 	@echo "... localization_genpy"
 	@echo "... rebuild_cache"

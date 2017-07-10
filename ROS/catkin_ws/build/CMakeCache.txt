@@ -1252,8 +1252,17 @@ dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 //The directory containing a CMake configuration file for filters.
 filters_DIR:PATH=/opt/ros/indigo/share/filters/cmake
 
+//Value Computed by CMake
+followbot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/followbot
+
+//Value Computed by CMake
+followbot_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/followbot
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
+
+//The directory containing a CMake configuration file for geneus.
+geneus_DIR:PATH=/opt/ros/indigo/share/geneus/cmake
 
 //The directory containing a CMake configuration file for genlisp.
 genlisp_DIR:PATH=/opt/ros/indigo/share/genlisp/cmake

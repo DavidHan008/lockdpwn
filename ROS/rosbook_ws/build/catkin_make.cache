@@ -1,0 +1,2 @@
+basics:cougarbot:cougarbot_moveit_config:mapping:tortoisebot:wanderbot
+-DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install -G Unix Makefiles

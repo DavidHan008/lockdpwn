@@ -1,0 +1,12 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/localization_generate_messages_eus"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/localization/msg/CarCanData.l"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/localization/msg/GpsReceiverData.l"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/localization/msg/LocalizationData.l"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/localization/manifest.l"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang)
+  INCLUDE(CMakeFiles/localization_generate_messages_eus.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

@@ -220,6 +220,20 @@ car_can_generate_messages_cpp/fast:
 .PHONY : car_can_generate_messages_cpp/fast
 
 # Convenience name for target.
+car_can/CMakeFiles/car_can_generate_messages_eus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 car_can/CMakeFiles/car_can_generate_messages_eus.dir/rule
+.PHONY : car_can/CMakeFiles/car_can_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+car_can_generate_messages_eus: car_can/CMakeFiles/car_can_generate_messages_eus.dir/rule
+.PHONY : car_can_generate_messages_eus
+
+# fast build rule for target.
+car_can_generate_messages_eus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f car_can/CMakeFiles/car_can_generate_messages_eus.dir/build.make car_can/CMakeFiles/car_can_generate_messages_eus.dir/build
+.PHONY : car_can_generate_messages_eus/fast
+
+# Convenience name for target.
 car_can/CMakeFiles/car_can_generate_messages_lisp.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 car_can/CMakeFiles/car_can_generate_messages_lisp.dir/rule
 .PHONY : car_can/CMakeFiles/car_can_generate_messages_lisp.dir/rule
@@ -246,6 +260,20 @@ car_can_generate_messages_py: car_can/CMakeFiles/car_can_generate_messages_py.di
 car_can_generate_messages_py/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f car_can/CMakeFiles/car_can_generate_messages_py.dir/build.make car_can/CMakeFiles/car_can_generate_messages_py.dir/build
 .PHONY : car_can_generate_messages_py/fast
+
+# Convenience name for target.
+car_can/CMakeFiles/car_can_geneus.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 car_can/CMakeFiles/car_can_geneus.dir/rule
+.PHONY : car_can/CMakeFiles/car_can_geneus.dir/rule
+
+# Convenience name for target.
+car_can_geneus: car_can/CMakeFiles/car_can_geneus.dir/rule
+.PHONY : car_can_geneus
+
+# fast build rule for target.
+car_can_geneus/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f car_can/CMakeFiles/car_can_geneus.dir/build.make car_can/CMakeFiles/car_can_geneus.dir/build
+.PHONY : car_can_geneus/fast
 
 # Convenience name for target.
 car_can/CMakeFiles/car_can_genlisp.dir/rule:
@@ -580,8 +608,10 @@ help:
 	@echo "... car_can_gencpp"
 	@echo "... car_can_generate_messages"
 	@echo "... car_can_generate_messages_cpp"
+	@echo "... car_can_generate_messages_eus"
 	@echo "... car_can_generate_messages_lisp"
 	@echo "... car_can_generate_messages_py"
+	@echo "... car_can_geneus"
 	@echo "... car_can_genlisp"
 	@echo "... car_can_genpy"
 	@echo "... edit_cache"

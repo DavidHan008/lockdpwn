@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib;/opt/ros/indigo/lib)
+    foreach(path /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(localization_EXPORTED_TARGETS "localization_generate_messages_cpp;localization_generate_messages_lisp;localization_generate_messages_py")
+set(localization_EXPORTED_TARGETS "localization_generate_messages_cpp;localization_generate_messages_eus;localization_generate_messages_lisp;localization_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${localization_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
