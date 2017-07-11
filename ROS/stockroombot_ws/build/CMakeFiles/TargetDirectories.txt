@@ -1,8 +1,0 @@
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/stockroom_bot/CMakeFiles/_catkin_empty_exported_target.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/CMakeFiles/clean_test_results.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/CMakeFiles/download_extra_data.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/CMakeFiles/doxygen.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/gtest/CMakeFiles/gtest.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/gtest/CMakeFiles/gtest_main.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/CMakeFiles/run_tests.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/build/CMakeFiles/tests.dir

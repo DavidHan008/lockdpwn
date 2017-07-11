@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/devel
-
-Name: stockroom_bot
-Description: Description of stockroom_bot
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/stockroombot_ws/devel/lib 
-Requires: 

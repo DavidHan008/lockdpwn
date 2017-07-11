@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install
-
-Name: gazebo_taskboard
-Description: Description of gazebo_taskboard
-Version: 0.5.3
-Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/include
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
-Requires: std_msgs
