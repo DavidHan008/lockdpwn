@@ -44,18 +44,18 @@ include_directories(
 )
 
 ######################## test_ui_node #################################
-#set( HDR_FILES_QT_UI_NODE inc/all_in_one_main.h inc/LocalPlannerThread.h inc/CatmullRomSpline.h ${HDR_NABO_FILES} )
-#set( SRC_FILES_QT_UI_NODE src/all_in_one_main.cpp src/LocalPlannerThread.cpp  ${MOC_FILES} ${SRC_NABO_FILES})
-#set( FORM_FILES_QT_UI_NODE ui/all_in_one_gui.ui)
+set( HDR_FILES_QT_UI_NODE inc/all_in_one_main.h inc/CatmullRomSpline.h ${HDR_NABO_FILES} )
+set( SRC_FILES_QT_UI_NODE src/all_in_one_main.cpp  ${MOC_FILES} ${SRC_NABO_FILES})
+set( FORM_FILES_QT_UI_NODE ui/all_in_one_gui.ui)
 
-#QT4_WRAP_CPP(MOC_SRC_H_QT_UI_NODE ${HDR_FILES_QT_UI_NODE})
-#QT4_WRAP_UI(MOC_GUI_H_QT_UI_NODE ${FORM_FILES_QT_UI_NODE})
+QT4_WRAP_CPP(MOC_SRC_H_QT_UI_NODE ${HDR_FILES_QT_UI_NODE})
+QT4_WRAP_UI(MOC_GUI_H_QT_UI_NODE ${FORM_FILES_QT_UI_NODE})
 
-#add_executable(all_in_one ${SRC_FILES_QT_UI_NODE} ${HDR_FILES_QT_UI_NODE} ${MOC_SRC_H_QT_UI_NODE} ${MOC_GUI_H_QT_UI_NODE})
+add_executable(all_in_one ${SRC_FILES_QT_UI_NODE} ${HDR_FILES_QT_UI_NODE} ${MOC_SRC_H_QT_UI_NODE} ${MOC_GUI_H_QT_UI_NODE})
 
-#target_link_libraries(
-   # all_in_one
-#   ${QT_LIBRARIES}
-#   ${catkin_LIBRARIES}
-#   ${Eigen_LIBRARIES}
-#)
+target_link_libraries(
+    all_in_one
+   ${QT_LIBRARIES}
+   ${catkin_LIBRARIES}
+   ${Eigen_LIBRARIES}
+)

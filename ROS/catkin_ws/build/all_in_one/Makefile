@@ -255,6 +255,102 @@ rosgraph_msgs_generate_messages_py/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+all_in_one/CMakeFiles/all_in_one.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/all_in_one.dir/rule
+.PHONY : all_in_one/CMakeFiles/all_in_one.dir/rule
+
+# Convenience name for target.
+all_in_one: all_in_one/CMakeFiles/all_in_one.dir/rule
+
+.PHONY : all_in_one
+
+# fast build rule for target.
+all_in_one/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/build
+.PHONY : all_in_one/fast
+
+inc/moc_CatmullRomSpline.o: inc/moc_CatmullRomSpline.cxx.o
+
+.PHONY : inc/moc_CatmullRomSpline.o
+
+# target to build an object file
+inc/moc_CatmullRomSpline.cxx.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_CatmullRomSpline.cxx.o
+.PHONY : inc/moc_CatmullRomSpline.cxx.o
+
+inc/moc_CatmullRomSpline.i: inc/moc_CatmullRomSpline.cxx.i
+
+.PHONY : inc/moc_CatmullRomSpline.i
+
+# target to preprocess a source file
+inc/moc_CatmullRomSpline.cxx.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_CatmullRomSpline.cxx.i
+.PHONY : inc/moc_CatmullRomSpline.cxx.i
+
+inc/moc_CatmullRomSpline.s: inc/moc_CatmullRomSpline.cxx.s
+
+.PHONY : inc/moc_CatmullRomSpline.s
+
+# target to generate assembly for a file
+inc/moc_CatmullRomSpline.cxx.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_CatmullRomSpline.cxx.s
+.PHONY : inc/moc_CatmullRomSpline.cxx.s
+
+inc/moc_all_in_one_main.o: inc/moc_all_in_one_main.cxx.o
+
+.PHONY : inc/moc_all_in_one_main.o
+
+# target to build an object file
+inc/moc_all_in_one_main.cxx.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_all_in_one_main.cxx.o
+.PHONY : inc/moc_all_in_one_main.cxx.o
+
+inc/moc_all_in_one_main.i: inc/moc_all_in_one_main.cxx.i
+
+.PHONY : inc/moc_all_in_one_main.i
+
+# target to preprocess a source file
+inc/moc_all_in_one_main.cxx.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_all_in_one_main.cxx.i
+.PHONY : inc/moc_all_in_one_main.cxx.i
+
+inc/moc_all_in_one_main.s: inc/moc_all_in_one_main.cxx.s
+
+.PHONY : inc/moc_all_in_one_main.s
+
+# target to generate assembly for a file
+inc/moc_all_in_one_main.cxx.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/inc/moc_all_in_one_main.cxx.s
+.PHONY : inc/moc_all_in_one_main.cxx.s
+
+src/all_in_one_main.o: src/all_in_one_main.cpp.o
+
+.PHONY : src/all_in_one_main.o
+
+# target to build an object file
+src/all_in_one_main.cpp.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/src/all_in_one_main.cpp.o
+.PHONY : src/all_in_one_main.cpp.o
+
+src/all_in_one_main.i: src/all_in_one_main.cpp.i
+
+.PHONY : src/all_in_one_main.i
+
+# target to preprocess a source file
+src/all_in_one_main.cpp.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/src/all_in_one_main.cpp.i
+.PHONY : src/all_in_one_main.cpp.i
+
+src/all_in_one_main.s: src/all_in_one_main.cpp.s
+
+.PHONY : src/all_in_one_main.s
+
+# target to generate assembly for a file
+src/all_in_one_main.cpp.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/src/all_in_one_main.cpp.s
+.PHONY : src/all_in_one_main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -274,6 +370,16 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... all_in_one"
+	@echo "... inc/moc_CatmullRomSpline.o"
+	@echo "... inc/moc_CatmullRomSpline.i"
+	@echo "... inc/moc_CatmullRomSpline.s"
+	@echo "... inc/moc_all_in_one_main.o"
+	@echo "... inc/moc_all_in_one_main.i"
+	@echo "... inc/moc_all_in_one_main.s"
+	@echo "... src/all_in_one_main.o"
+	@echo "... src/all_in_one_main.i"
+	@echo "... src/all_in_one_main.s"
 .PHONY : help
 
 

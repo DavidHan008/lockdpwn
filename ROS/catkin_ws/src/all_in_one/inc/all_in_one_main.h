@@ -2,7 +2,7 @@
 #include <QThread>
 #include <QProcess>
 #include <ros/ros.h>
-//#include "../../../build/motion_planner/ui_motion_planner_gui.h" // ui_*.h
+#include "../../../build/all_in_one/ui_all_in_one_gui.h" // ui_*.h
 
 // 메인.
 class ParkingPlannerThread;

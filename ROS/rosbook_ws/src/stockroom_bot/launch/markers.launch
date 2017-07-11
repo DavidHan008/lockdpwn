@@ -17,7 +17,7 @@
   <arg name="tag_rot" default="0 0 0 0 0 -1.57" /> <!--<3>-->
   <arg name="tag_trans" default="0 -0.28 -0.1 0 0 0" />
 
-  
+
   <!--<4>-->
   <node pkg="tf" type="static_transform_publisher" name="ar_0_up"
         args="$(arg tag_rot) ar_marker_0 ar_0_up 100"/>

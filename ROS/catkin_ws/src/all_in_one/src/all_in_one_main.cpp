@@ -47,10 +47,10 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
   //  connect( ui.forward, SIGNAL(clicked()), this, SLOT(drive_dir()) );
   //  connect( ui.reverse, SIGNAL(clicked()), this, SLOT(drive_dir()) );
 
-
 }
 
 MainWindow::~MainWindow() {
+
 }
 
 

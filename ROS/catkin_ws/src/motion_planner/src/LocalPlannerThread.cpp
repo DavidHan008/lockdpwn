@@ -33,6 +33,7 @@ void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::Con
     //        m_dir_mode = -1;
     //        //cout << "SWITCH" << endl;
     //    }
+
     Compute();
 }
 
@@ -101,8 +102,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
 }
 
 
-void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y, double &resdist)
-{
+void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y, double &resdist){
     double heading_Err = 0.0; //JW 16.07.11.
     double cross_track_Err = 0.0;//JW 16.07.11.
     double delta_LookAhead = 0.0;
@@ -114,15 +114,14 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
         double minDist = 99999;
         int car_waypoint = -1;
         //for(int i = (m_cut_back+m_cut_switch)*SPLINE_RESOL ; i < m_LocalSplinePath.size(); i++)
-        for(int i = m_pre_waypoint; i<m_LocalSplinePath.size(); i++)
-        {
+        for(int i = m_pre_waypoint; i<m_LocalSplinePath.size(); i++) {
             double x2 = m_LocalSplinePath[i][0] - m_pos[0];
             x2 *= x2;
             double y2 = m_LocalSplinePath[i][1] - m_pos[1];
             y2 *= y2;
             double dist = sqrt(x2+y2);//distŽÂ
-            if ( dist < minDist )
-            {
+
+            if ( dist < minDist ) {
                 minDist = dist;
                 car_waypoint = i;
             }
@@ -202,8 +201,7 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
             y2 *= y2;
             dist += sqrt(x2+y2);
 
-            if( lookAheadDist <= dist )
-            {
+            if( lookAheadDist <= dist ) {
                 cout << "m_lookAheadIndex : " << i <<endl;
 
                 m_lookAheadIndex = i;
@@ -255,8 +253,7 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if( m_lookAheadIndex == -1 )
-        {
+        if( m_lookAheadIndex == -1 ) {
             x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
             y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
             resdist = -1;
@@ -392,8 +389,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
                 break;
             }
 
-            if(i >= m_LocalSplinePath.size()- 2)
-            {
+            if(i >= m_LocalSplinePath.size()- 2) {
                 m_lookAheadIndex = m_LocalSplinePath.size()-2;
                 x = m_LookAhead_X = m_LocalSplinePath[m_lookAheadIndex][0];
                 y = m_LookAhead_Y = m_LocalSplinePath[m_lookAheadIndex][1];
@@ -546,10 +542,13 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
         carIdx = car_waypoint;
         //cout << "car_waypoint : " << car_waypoint <<endl;
         m_pre_waypoint = car_waypoint;
+
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
         m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+
+        // ed: msgpub_Look_orig, LookAheadPos_orig 토픽으로 퍼블리시한다
         msgpub_Look_orig.publish(m_model_orig);
 
         m_CrossTrack_ERR = minDist;
@@ -596,8 +595,7 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
             }
         }
 
-        if( m_lookAheadIndex == -1 )
-        {
+        if( m_lookAheadIndex == -1 ) {
             x = m_LocalSplinePath[m_LocalSplinePath.size()-1][0];
             y = m_LocalSplinePath[m_LocalSplinePath.size()-1][1];
             resdist = -1;
@@ -625,6 +623,10 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
 
     msg_steer = n.advertise<std_msgs::Float32MultiArray>("SteerAngleData", 10);
 
+
+    // ed: m_CarPos, m_line_strip, m_model_jw, m_model_jw_exp, m_model_jw_exp_line, m_model_orig의 속성을 설정하는 코드들
+    //     크기, 색깔, frame_id등의 정보를 설정한다
+
     //JW 16.07.07//jw 16.07.08
     //my_pose
     m_CarPos.header.frame_id =  m_line_strip.header.frame_id = "/camera_init";
@@ -651,7 +653,7 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     m_line_strip.pose.position.z = 0.1;
     m_line_strip.color.r = 1.0;
     m_line_strip.color.a = 1.0;
-    //JW 16.07.07//jw 16.07.08
+    //JW 16.07.07 //jw 16.07.08
 
     //LookAhead
     m_model_jw.header.frame_id = m_model_jw_exp.header.frame_id = m_model_jw_exp_line.header.frame_id = "/camera_init";
@@ -669,6 +671,7 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     m_model_jw.pose.position.z = 0;
     m_model_jw_exp.pose.position.z = 0;
 
+
     m_model_jw.scale.x = 1.0;	m_model_jw_exp.scale.x = 0.1;
     m_model_jw.scale.y = 1.0;	m_model_jw_exp.scale.y = 0.1;
     m_model_jw.scale.z = 1.0;	m_model_jw_exp.scale.z = 0.1;
@@ -677,6 +680,8 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     m_model_jw.color.g = 1.0f;	m_model_jw_exp.color.g = 1.0f;
     m_model_jw.color.b = 0.0f;	m_model_jw_exp.color.b = 0.0f;
 
+
+    // ed: m_model_jw_exp_line의 크기와 색깔을 설정한다
     m_model_jw_exp_line.scale.x = 0.09;
     m_model_jw_exp_line.pose.position.z = 0.05;
     m_model_jw_exp_line.color.r = 0.0;
@@ -693,6 +698,7 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     m_model_orig.action = visualization_msgs::Marker::ADD;
     m_model_orig.pose.position.z = 0;
 
+    // ed: m_model_orig의 크기와 색깔을 설정한다(파란색)
     m_model_orig.scale.x = 1.0;
     m_model_orig.scale.y = 1.0;
     m_model_orig.scale.z = 1.0;
@@ -876,18 +882,25 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     */
 }
 
-////JW 16.07.11.test1
+
+// ed:
+// $ rosbag play 0903map.bag 을 통해서 LocalizationData 토픽을 섭스크라이브 하면서 아래의 함수가 실행된다
+
+//JW 16.07.11.test1
 void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
+    //printf("good555");
 
-    //    printf("good555");
     int carIdx;
     double vel_orig, x, y, resdist;
     double steer_Purepursuit = 0.0, steer_Radius = 0.0;
     double steer = 0.0;
 
     if (m_LocalSplinePath.size() > 1){
+
+        // ed: 라디오버튼이 forward인 경우
         if (m_dir_mode == 1) {           //m_switch_flag
+
             if( m_vel > 5.0 * 0.278 ) {
                 //printf("%lf\n",m_vel);
                 GetLookAheadPt_For(2.24*m_vel, x, y, resdist, carIdx);
@@ -932,8 +945,12 @@ void LocalPlannerThread::Compute(){
                  <<endl;
 
             //if(a_ > a_thresh)
+
+            // ed: 현재 forward 버튼이 눌린 경우에만 publish를 하는듯하다. 아래 else if문에는 pub이 없네
             msgpub_Look_JW.publish(m_model_jw);
         }
+
+        // ed: 라디오버튼이 reverse인 경우
         else if (m_dir_mode == -1) {
             cout << "BBBBACKWARD" <<endl;
 
@@ -968,7 +985,10 @@ void LocalPlannerThread::Compute(){
 
     std_msgs::Float32MultiArray msg;
     msg.data.push_back(steer);
+
+    // ed: msg_steer, SteeringAngleData 토픽으로 퍼블리시한다
     msg_steer.publish(msg);
+
 
     //////////////////////////////////////////////////////////////
     // ControlData Message
@@ -985,10 +1005,14 @@ void LocalPlannerThread::Compute(){
     else
         m_msg.data.push_back(4.8*0.278);
 
+    // ed: msgpub3, ControlData 토픽으로 퍼블리시한다
     msgpub3.publish(m_msg);
+
     m_model_jw_exp.header.stamp = ros::Time::now();
     m_model_jw_exp.pose.position.x = x;
     m_model_jw_exp.pose.position.y = y;
+
+    // ed: msgpub_Look_JW_exp, LookAheadPos 토픽으로 퍼블리시한다
     msgpub_Look_JW_exp.publish(m_model_jw_exp);
 
     //JW 16.07.07

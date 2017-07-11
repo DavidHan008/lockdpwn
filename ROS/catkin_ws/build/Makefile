@@ -582,6 +582,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named all_in_one
+
+# Build rule for target.
+all_in_one: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 all_in_one
+.PHONY : all_in_one
+
+# fast build rule for target.
+all_in_one/fast:
+	$(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/build
+.PHONY : all_in_one/fast
+
+#=============================================================================
 # Target rules for targets named _car_can_generate_messages_check_deps_CarCanData
 
 # Build rule for target.
@@ -1523,6 +1536,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... all_in_one"
 	@echo "... _car_can_generate_messages_check_deps_CarCanData"
 	@echo "... car_can_gencpp"
 	@echo "... car_can_generate_messages_cpp"
