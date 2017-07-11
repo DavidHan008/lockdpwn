@@ -67,37 +67,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -122,16 +101,37 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : rebuild_cache/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,94 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
+.PHONY : diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+controller_manager_msgs_generate_messages_cpp: diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : diagnostic_msgs_generate_messages_lisp
+.PHONY : controller_manager_msgs_generate_messages_cpp
 
 # fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-controller_manager_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : controller_manager_msgs_generate_messages_lisp
-
-# fast build rule for target.
-controller_manager_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
-.PHONY : controller_manager_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+controller_manager_msgs_generate_messages_cpp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build.make diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build
+.PHONY : controller_manager_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule:
@@ -271,36 +196,6 @@ controller_manager_msgs_generate_messages_py/fast:
 .PHONY : controller_manager_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-controller_manager_msgs_generate_messages_cpp: diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : controller_manager_msgs_generate_messages_cpp
-
-# fast build rule for target.
-controller_manager_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build.make diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build
-.PHONY : controller_manager_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
 .PHONY : diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
@@ -316,34 +211,49 @@ diagnostic_msgs_generate_messages_cpp/fast:
 .PHONY : diagnostic_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
+.PHONY : diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+controller_manager_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_lisp
+.PHONY : controller_manager_msgs_generate_messages_lisp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+controller_manager_msgs_generate_messages_lisp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
+.PHONY : controller_manager_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+.PHONY : diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+diagnostic_msgs_generate_messages_py: diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : diagnostic_msgs_generate_messages_py
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make diff_wheeled_robot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+diagnostic_msgs_generate_messages_py/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+.PHONY : diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_lisp: diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make diff_wheeled_robot_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
 
 # Help Target
 help:
@@ -352,24 +262,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... controller_manager_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... rebuild_cache"
+	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... test"
 	@echo "... controller_manager_msgs_generate_messages_py"
-	@echo "... controller_manager_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... install"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... rebuild_cache"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... install"
+	@echo "... controller_manager_msgs_generate_messages_lisp"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... install/local"
 .PHONY : help
 
 

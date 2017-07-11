@@ -5,10 +5,7 @@
 #include "../inc/main.h"
 #include <iostream>
 
- 
 using namespace std;
-
-
 
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
 	: QMainWindow(parent)
@@ -25,27 +22,21 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
 }
 
 
-
-MainWindow::~MainWindow() 
-{
-	if(qnode!=NULL)
-	{
+MainWindow::~MainWindow(){
+	if(qnode!=NULL)	{
 		qnode->stop();
 		qnode->wait();
 		delete qnode;
 		qnode = NULL;
 	}
 
-	if(_ins!=NULL)
-	{
+	if(_ins!=NULL) {
 		delete _ins;
 		_ins = NULL;
 	}
 }
 
-
-void MainWindow::OnTimer()
-{
+void MainWindow::OnTimer(){
 	char text[1024];
 
 	sprintf (text, "%6.3f(sen %6.3f) e: %6.3f", _ins->m_heading, _ins->m_gps.heading, _ins->m_heading-_ins->m_gps.heading);
@@ -59,11 +50,8 @@ void MainWindow::OnTimer()
 }
 
 
-void MainWindow::on_startButton_clicked()
-{
-
-	if(!_ins)
-	{
+void MainWindow::on_startButton_clicked(){
+	if(!_ins)	{
 		ui.startButton->setText("Stop");
 		
 		_ins = new Filter();
@@ -74,8 +62,7 @@ void MainWindow::on_startButton_clicked()
 
 		timer->start(100);
 	}
-	else
-	{
+	else	{
 		ui.startButton->setText("Start");
 
 		qnode->stop();

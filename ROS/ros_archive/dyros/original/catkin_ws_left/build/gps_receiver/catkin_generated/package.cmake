@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "gps_receiver")
-set(gps_receiver_MAINTAINER "dyros-vehicle <dyros-vehicle@todo.todo>")
-set(gps_receiver_DEPRECATED "")
-set(gps_receiver_VERSION "0.0.0")
-set(gps_receiver_BUILD_DEPENDS "message_generation" "roscpp" "std_msgs")
-set(gps_receiver_RUN_DEPENDS "roscpp" "std_msgs" "message_generation")
-set(gps_receiver_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install
+
+Name: gazebo_gripper
+Description: Description of gazebo_gripper
+Version: 0.5.3
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/lib 
+Requires: 

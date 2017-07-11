@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install
+
+Name: r2_fullbody_moveit_config
+Description: Description of r2_fullbody_moveit_config
+Version: 0.2.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/lib 
+Requires: 

@@ -104,19 +104,19 @@ public :
     char m_dir_mode;            //JW
 
 
-    char m_switch_flag;         //JW17.01.05.
-    char m_start_flag;          //JW17.01.05.
+    char m_switch_flag;         //JW 17.01.05.
+    char m_start_flag;          //JW 17.01.05.
     int _cut_switch;
     int _cut_back;
     char m_LocalSplinePath_cnt_flag;
     int m_LocalSplinePath_cnt;
     int m_pre_waypoint;
-    double m_r_min;              //0215
-    double m_CrossTrack_ERR;     //0215
-    double m_cur_wp;             //0215
-    double m_cur_lp;             //0215
-    double m_pre_lookAheadDist;  //0216
-    double m_pre_len_dist;       //0216
+    double m_r_min;              // 0215
+    double m_CrossTrack_ERR;     // 0215
+    double m_cur_wp;             // 0215
+    double m_cur_lp;             // 0215
+    double m_pre_lookAheadDist;  // 0216
+    double m_pre_len_dist;       // 0216
     double m_pre_steer_Radius;
 
     double m_TH_ERR;

@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/catkin_ws/devel
-
-Name: rndf_global_planner
-Description: Description of rndf_global_planner
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/catkin_ws/devel/lib 
-Requires: roscpp std_msgs

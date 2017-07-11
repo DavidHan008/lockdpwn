@@ -13,6 +13,7 @@ CmdCommandThread::CmdCommandThread(QString cmd, QObject * parent)
   threadStop = false;
 }
 
+
 void CmdCommandThread::stop(){
   threadStop = true;
   char cmd[1024];
@@ -24,8 +25,8 @@ void CmdCommandThread::stop(){
   QProcess kill;
   kill.start(cmd);
   kill.waitForFinished(-1);
-
 }
+
 
 void CmdCommandThread::run(){
   // qDebug("cmd Thread Start");
@@ -37,11 +38,9 @@ void CmdCommandThread::run(){
 
   //	QString p_stdout = process.readAllStandardOutput();
   //	QString p_stderr = process.readAllStandardError();
-
-
   //	qDebug("cmd Thread End");
-
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
@@ -66,6 +65,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
   }
 }
 
+
 MainWindow::~MainWindow() {
   if(pLocalPlannerThread != NULL){
     pLocalPlannerThread->stop();
@@ -74,15 +74,13 @@ MainWindow::~MainWindow() {
     pLocalPlannerThread = NULL;
   }
 
-  if( rvizThread != NULL )
-  {
+  if( rvizThread != NULL )  {
     rvizThread->stop();
     rvizThread->wait();
     rvizThread = NULL;
   }
 
-  if( trakerThread != NULL )
-  {
+  if( trakerThread != NULL )  {
     trakerThread->stop();
     trakerThread->wait();
     trakerThread = NULL;

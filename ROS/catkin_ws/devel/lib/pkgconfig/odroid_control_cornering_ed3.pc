@@ -1,8 +1,0 @@
-prefix=/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: odroid_control_cornering_ed3
-Description: Description of odroid_control_cornering_ed3
-Version: 0.0.0
-Cflags: -I/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/src/odroid_control_cornering_ed3/include
-Libs: -L/home/odroid/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: roscpp std_msgs

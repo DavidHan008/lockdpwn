@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel
+
+Name: gazebo_interface
+Description: Description of gazebo_interface
+Version: 0.5.3
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/gazebo_interface/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib -lr2_gazebo
+Requires: nasa_r2_common_msgs sensor_msgs

@@ -1,8 +1,0 @@
-prefix=/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel
-
-Name: myahrs_driver_ed
-Description: Description of myahrs_driver_ed
-Version: 0.1.1
-Cflags: -I/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/src/myahrs_driver_ed/include
-Libs: -L/root/gitrepo/lockdpwn/ROS/catkin_ws_indigo/devel/lib -lmyahrs_driver_ed
-Requires: roscpp std_msgs sensor_msgs tf

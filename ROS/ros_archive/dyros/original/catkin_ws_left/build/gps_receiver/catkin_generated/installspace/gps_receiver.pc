@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/catkin_ws/install
-
-Name: gps_receiver
-Description: Description of gps_receiver
-Version: 0.0.0
-Cflags: -I/home/dyros-vehicle/catkin_ws/install/include
-Libs: -L/home/dyros-vehicle/catkin_ws/install/lib 
-Requires: roscpp std_msgs

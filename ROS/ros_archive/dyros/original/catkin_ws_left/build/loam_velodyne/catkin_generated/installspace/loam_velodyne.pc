@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/catkin_ws/install
-
-Name: loam_velodyne
-Description: Description of loam_velodyne
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/dyros-vehicle/catkin_ws/install/lib 
-Requires: roscpp std_msgs sensor_msgs pcl_ros

@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "velodyne_height_map")
-set(velodyne_height_map_MAINTAINER "Jack O'Quin <jack.oquin@gmail.com>")
-set(velodyne_height_map_DEPRECATED "")
-set(velodyne_height_map_VERSION "0.4.1")
-set(velodyne_height_map_BUILD_DEPENDS "angles" "nodelet" "pcl_conversions" "pcl_ros" "pluginlib" "roscpp" "rostest" "sensor_msgs" "tf")
-set(velodyne_height_map_RUN_DEPENDS "nodelet" "pcl_ros" "pluginlib" "roscpp" "sensor_msgs" "tf")
-set(velodyne_height_map_BUILDTOOL_DEPENDS "catkin")

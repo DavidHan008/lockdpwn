@@ -6,10 +6,8 @@
 #include "../inc/qnode.h"
  
 //#define SIM
-void QNode::SubTopicProcess(const geometry_msgs::Pose2D::ConstPtr& msg)
-{
-    if(!ssFlag && !spFlag)
-   {
+void QNode::SubTopicProcess(const geometry_msgs::Pose2D::ConstPtr& msg){
+    if(!ssFlag && !spFlag) {
         
 
         _ins->m_tm_x = msg->x;
@@ -22,8 +20,7 @@ void QNode::SubTopicProcess(const geometry_msgs::Pose2D::ConstPtr& msg)
     
 }
 // 토픽에 대한 함수들.
-void QNode::GpsTopicProcess(const localization::GpsReceiverData::ConstPtr& msg)
-{
+void QNode::GpsTopicProcess(const localization::GpsReceiverData::ConstPtr& msg){
 	//printf("test0\n");
 	if(!ssFlag && !spFlag)
 	{
@@ -47,11 +44,8 @@ void QNode::GpsTopicProcess(const localization::GpsReceiverData::ConstPtr& msg)
 	}
 }
 
-void QNode::imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn)
-{
-
-  if(ssFlag && !spFlag)
-  {
+void QNode::imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
+  if(ssFlag && !spFlag)  {
 	  _ins->m_canimu.accl[0] = imuIn->linear_acceleration.x;
 	  _ins->m_canimu.accl[1] = imuIn->linear_acceleration.y;
 	  _ins->m_canimu.accl[2] = imuIn->linear_acceleration.z;

@@ -5,13 +5,11 @@
 #include "../../../build/motion_planner/ui_motion_planner_gui.h" // ui_*.h
 //#include <Eigen/Core>
 
-
 // 메인.
 class LocalPlannerThread;
 class ParkingPlannerThread;
 
-
-class CmdCommandThread : public QThread{
+class CmdCommandThread :public QThread {
   Q_OBJECT;
 
 private :

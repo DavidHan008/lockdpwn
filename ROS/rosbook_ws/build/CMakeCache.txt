@@ -26,12 +26,6 @@ Boost_INCLUDE_DIR:PATH=/usr/include
 //Boost library directory
 Boost_LIBRARY_DIR:PATH=/usr/lib/x86_64-linux-gnu
 
-//Boost system library (debug)
-Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
-
-//Boost system library (release)
-Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
-
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
@@ -239,6 +233,33 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Path to a file.
+PROTOBUF_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+PROTOBUF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
+
+//Path to a library.
+PROTOBUF_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
+
+//Path to a library.
+PROTOBUF_LITE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
+
+//Path to a library.
+PROTOBUF_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
+
+//The Google Protocol Buffers Compiler
+PROTOBUF_PROTOC_EXECUTABLE:FILEPATH=PROTOBUF_PROTOC_EXECUTABLE-NOTFOUND
+
+//Path to a library.
+PROTOBUF_PROTOC_LIBRARY:FILEPATH=PROTOBUF_PROTOC_LIBRARY-NOTFOUND
+
+//Path to a library.
+PROTOBUF_PROTOC_LIBRARY_DEBUG:FILEPATH=PROTOBUF_PROTOC_LIBRARY_DEBUG-NOTFOUND
+
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
@@ -253,6 +274,9 @@ Project_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/sr
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
+
+//The directory containing a CMake configuration file for SDFormat.
+SDFormat_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
@@ -356,6 +380,27 @@ followbot_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/
 //Value Computed by CMake
 followbot_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/followbot
 
+//The directory containing a CMake configuration file for gazebo.
+gazebo_DIR:PATH=/usr/share/gazebo/cmake
+
+//Value Computed by CMake
+gazebo_gripper_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_simulator/gazebo_gripper
+
+//Dependencies for target
+gazebo_gripper_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+gazebo_gripper_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/gazebo_gripper
+
+//Value Computed by CMake
+gazebo_interface_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_simulator/gazebo_interface
+
+//Dependencies for target
+gazebo_interface_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+gazebo_interface_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/gazebo_interface
+
 //The directory containing a CMake configuration file for gazebo_msgs.
 gazebo_msgs_DIR:PATH=/opt/ros/indigo/share/gazebo_msgs/cmake
 
@@ -367,6 +412,15 @@ gazebo_ros_DIR:PATH=/opt/ros/indigo/share/gazebo_ros/cmake
 
 //The directory containing a CMake configuration file for gazebo_ros_control.
 gazebo_ros_control_DIR:PATH=/opt/ros/indigo/share/gazebo_ros_control/cmake
+
+//Value Computed by CMake
+gazebo_taskboard_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_simulator/gazebo_taskboard
+
+//Dependencies for target
+gazebo_taskboard_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+gazebo_taskboard_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/gazebo_taskboard
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
@@ -471,14 +525,68 @@ message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
+//Value Computed by CMake
+nasa_r2_common_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/nasa_r2_common
+
+//Value Computed by CMake
+nasa_r2_common_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/nasa_r2_common
+
+//Value Computed by CMake
+nasa_r2_common_msgs_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/nasa_r2_common_msgs
+
+//The directory containing a CMake configuration file for nasa_r2_common_msgs.
+nasa_r2_common_msgs_DIR:PATH=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/nasa_r2_common_msgs/cmake
+
+//Value Computed by CMake
+nasa_r2_common_msgs_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/nasa_r2_common_msgs
+
+//Value Computed by CMake
+nasa_r2_simulator_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_simulator/nasa_r2_simulator
+
+//Value Computed by CMake
+nasa_r2_simulator_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/nasa_r2_simulator
+
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
 
+//Path to a library.
+onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
+
+//Value Computed by CMake
+r2_control_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/r2_control
+
+//Value Computed by CMake
+r2_control_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/r2_control
+
+//Value Computed by CMake
+r2_description_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/r2_description
+
+//Value Computed by CMake
+r2_description_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/r2_description
+
+//Value Computed by CMake
+r2_fullbody_moveit_config_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/r2_fullbody_moveit_config
+
+//Value Computed by CMake
+r2_fullbody_moveit_config_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/r2_fullbody_moveit_config
+
+//Value Computed by CMake
+r2_gazebo_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_simulator/r2_gazebo
+
+//Value Computed by CMake
+r2_gazebo_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_simulator/r2_gazebo
+
+//Value Computed by CMake
+r2_moveit_config_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/deprecated_nasa_r2_common/r2_moveit_config
+
+//Value Computed by CMake
+r2_moveit_config_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/deprecated_nasa_r2_common/r2_moveit_config
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/indigo/share/realtime_tools/cmake
@@ -602,10 +710,6 @@ Boost_DIR-ADVANCED:INTERNAL=1
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIR
 Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
-Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
-Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build/test_results
@@ -705,7 +809,7 @@ CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=14
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=24
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -746,10 +850,48 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
+//Details about finding Protobuf
+FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+GAZEBO_CFLAGS:INTERNAL=-I/usr/include/gazebo-2.2;-I/usr/include/sdformat-1.4
+GAZEBO_CFLAGS_I:INTERNAL=
+GAZEBO_CFLAGS_OTHER:INTERNAL=
+GAZEBO_FOUND:INTERNAL=1
+GAZEBO_INCLUDEDIR:INTERNAL=/usr/include
+GAZEBO_INCLUDE_DIRS:INTERNAL=/usr/include/gazebo-2.2;/usr/include/sdformat-1.4
+GAZEBO_LDFLAGS:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-L/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-lgazebo_transport;-lgazebo_physics;-lgazebo_sensors;-lgazebo_rendering;-lgazebo_gui;-lsdformat;-lgazebo_msgs;-lgazebo_math;-lgazebo_common;-lgazebo
+GAZEBO_LDFLAGS_OTHER:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
+GAZEBO_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+GAZEBO_LIBRARIES:INTERNAL=gazebo_transport;gazebo_physics;gazebo_sensors;gazebo_rendering;gazebo_gui;sdformat;gazebo_msgs;gazebo_math;gazebo_common;gazebo
+GAZEBO_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
+GAZEBO_LIBS:INTERNAL=
+GAZEBO_LIBS_L:INTERNAL=
+GAZEBO_LIBS_OTHER:INTERNAL=
+GAZEBO_LIBS_PATHS:INTERNAL=
+GAZEBO_PREFIX:INTERNAL=/usr
+GAZEBO_STATIC_CFLAGS:INTERNAL=-I/usr/include/gazebo-2.2;-I/usr/include/sdformat-1.4
+GAZEBO_STATIC_CFLAGS_I:INTERNAL=
+GAZEBO_STATIC_CFLAGS_OTHER:INTERNAL=
+GAZEBO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gazebo-2.2;/usr/include/sdformat-1.4
+GAZEBO_STATIC_LDFLAGS:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-L/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins;-lgazebo_transport;-lgazebo_physics;-lgazebo_sensors;-lgazebo_rendering;-lgazebo_gui;-lsdformat;-lgazebo_msgs;-lgazebo_math;-lgazebo_common;-lgazebo
+GAZEBO_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,-rpath,/usr/lib/x86_64-linux-gnu,-rpath,/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
+GAZEBO_STATIC_LIBDIR:INTERNAL=
+GAZEBO_STATIC_LIBRARIES:INTERNAL=gazebo_transport;gazebo_physics;gazebo_sensors;gazebo_rendering;gazebo_gui;sdformat;gazebo_msgs;gazebo_math;gazebo_common;gazebo
+GAZEBO_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu/gazebo-2.2/plugins
+GAZEBO_STATIC_LIBS:INTERNAL=
+GAZEBO_STATIC_LIBS_L:INTERNAL=
+GAZEBO_STATIC_LIBS_OTHER:INTERNAL=
+GAZEBO_STATIC_LIBS_PATHS:INTERNAL=
+GAZEBO_VERSION:INTERNAL=2.2.3
+GAZEBO_gazebo_INCLUDEDIR:INTERNAL=
+GAZEBO_gazebo_LIBDIR:INTERNAL=
+GAZEBO_gazebo_PREFIX:INTERNAL=
+GAZEBO_gazebo_VERSION:INTERNAL=
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
@@ -765,6 +907,24 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_INCLUDE_DIR
+PROTOBUF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_LIBRARY
+PROTOBUF_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_LIBRARY_DEBUG
+PROTOBUF_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_LITE_LIBRARY
+PROTOBUF_LITE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_LITE_LIBRARY_DEBUG
+PROTOBUF_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_PROTOC_EXECUTABLE
+PROTOBUF_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_PROTOC_LIBRARY
+PROTOBUF_PROTOC_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PROTOBUF_PROTOC_LIBRARY_DEBUG
+PROTOBUF_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
@@ -772,11 +932,19 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=system
+_Boost_COMPONENTS_SEARCHED:INTERNAL=
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
+//Last used Boost_LIBRARY_DIR_DEBUG value.
+_Boost_LIBRARY_DIR_DEBUG_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 //Last used Boost_LIBRARY_DIR value.
 _Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
+//Last used Boost_LIBRARY_DIR_RELEASE value.
+_Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
+//Last used Boost_NAMESPACE value.
+_Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
+__pkg_config_checked_GAZEBO:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

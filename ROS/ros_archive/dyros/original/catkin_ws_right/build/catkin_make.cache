@@ -1,2 +1,0 @@
-controller:gps_test:grid_map/grid_map:grid_map/grid_map_core:grid_map/grid_map_cv:grid_map/grid_map_demos:grid_map/grid_map_filters:grid_map/grid_map_loader:grid_map/grid_map_msgs:grid_map/grid_map_ros:grid_map/grid_map_rviz_plugin:grid_map/grid_map_visualization:lms5xx/laser_node:mcu_can:motion_planner
--DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/catkin_ws/install -G Unix Makefiles

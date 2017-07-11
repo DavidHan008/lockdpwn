@@ -12,7 +12,7 @@
 #define FR_V_MAX 21.0/2.24
 #define REV_V_MAX 5.0
 #define TH_SCALE 0.79
-#define lps_a 0.5 //low pre //high now
+#define lps_a 0.5     //low pre //high now
 #define Radius_points 4
 #define dist_thresh 0.5
 #define th_err_range 90*2
@@ -24,11 +24,8 @@ void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::Con
     m_pos[1] = msg->data.at(1);
     m_pos[2] = msg->data.at(2);
 
-
-    printf("good");
-
+    //    printf("good");
     m_vel = msg->data.at(3); // m/s
-
 
     //    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
     //    if(switch_dist < 0.9)
@@ -36,7 +33,6 @@ void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::Con
     //        m_dir_mode = -1;
     //        //cout << "SWITCH" << endl;
     //    }
-
     Compute();
 }
 
@@ -45,7 +41,7 @@ void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg){
     // Insertion Global Path Data to Vector Struct
     vector<Vector2d> nodeVec;
 
-    printf("good333");
+    //    printf("good333");
 
     for( int i=0; i<msg->poses.size(); i++){
         nodeVec.push_back(Vector2d(msg->poses[i].pose.position.x, msg->poses[i].pose.position.y));
@@ -71,7 +67,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
     msg.header.stamp = ros::Time::now();
 
     ofstream fout;
-    printf("good444");
+    //    printf("good444");
     // ed: rviz에 초록색선을 그리고 해당 좌표파일을 저장한다
     fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
 
@@ -431,8 +427,7 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
 double LocalPlannerThread::cur_rad(double x1, double y1,
                                    double x2, double y2,
                                    double x3, double y3
-                                   )
-{
+                                   ){
     double rad;
     double d1 = (x2-x1)/(y2-y1);
     double d2 = (x3-x2)/(y3-y2);
@@ -442,8 +437,7 @@ double LocalPlannerThread::cur_rad(double x1, double y1,
     return rad = sqrt(pow((x1-c_x),2)+pow(y1-c_y,2));
 }
 
-void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx)
-{
+void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx){
 
     double heading_Err = 0.0; //JW 16.07.11.
     double cross_track_Err = 0.0;//JW 16.07.11.
@@ -612,9 +606,8 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
 }
 // ed: 생성자코드
 LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
-        :m_bThreadStop(false),init_argc(argc), init_argv(argv)
-{
-    printf("good777");
+        :m_bThreadStop(false),init_argc(argc), init_argv(argv){
+    //    printf("good777");
     m_ratio_s2w = 18.6;
     m_limit_steerAngle = 540.0;
     m_CrossTrack_ERR = 0.0;
@@ -821,7 +814,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     }
     cout << "Finish" << endl;
-    printf("good222");
+    //    printf("good222");
     nodeVec.push_back(Vector2d(X, Y));
     printf("[%d] X : %lf,  Y : %lf\n",map_cnt++, X, Y);
 
@@ -887,14 +880,14 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
 
-    printf("good555");
+    //    printf("good555");
     int carIdx;
     double vel_orig, x, y, resdist;
     double steer_Purepursuit = 0.0, steer_Radius = 0.0;
     double steer = 0.0;
 
     if (m_LocalSplinePath.size() > 1){
-        if (m_dir_mode == 1) { //m_switch_flag
+        if (m_dir_mode == 1) {           //m_switch_flag
             if( m_vel > 5.0 * 0.278 ) {
                 //printf("%lf\n",m_vel);
                 GetLookAheadPt_For(2.24*m_vel, x, y, resdist, carIdx);

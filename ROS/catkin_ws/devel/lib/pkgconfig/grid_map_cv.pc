@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/catkin_ws/devel
-
-Name: grid_map_cv
-Description: Description of grid_map_cv
-Version: 1.4.0
-Cflags: -I/home/dyros-vehicle/catkin_ws/src/grid_map/grid_map_cv/include
-Libs: -L/home/dyros-vehicle/catkin_ws/devel/lib -lgrid_map_cv
-Requires: grid_map_core cv_bridge

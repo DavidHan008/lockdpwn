@@ -1,0 +1,9 @@
+<!--ed: motion_planner와 loam velodyne을 동시에 켜는 launch 파일 -->
+<launch>
+
+  <include file="$(find loam_velodyne)/launch/loam_velodyne.launch">
+    <param name="my_pose_enable" type="bool" value="true" />
+  </include >
+
+  <node pkg="motion_planner" name="motion_planner" type="motion_planner"/>
+</launch>

@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/catkin_ws/devel
-
-Name: PKG_NAME
-Description: Description of PKG_NAME
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/catkin_ws/devel/lib 
-Requires: roscpp std_msgs

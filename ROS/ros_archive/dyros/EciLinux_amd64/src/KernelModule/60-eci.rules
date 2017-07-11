@@ -1,2 +1,0 @@
-KERNEL=="eci*", NAME="eci%n", MODE="0666"
-SUBSYSTEM=="usb", ATTR{idVendor}=="08d8", MODE="0666"

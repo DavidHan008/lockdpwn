@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "grid_map_filters")
-set(grid_map_filters_MAINTAINER "Péter Fankhauser <pfankhauser@ethz.ch>")
-set(grid_map_filters_DEPRECATED "")
-set(grid_map_filters_VERSION "1.4.0")
-set(grid_map_filters_BUILD_DEPENDS "grid_map_core" "grid_map_ros" "grid_map_msgs" "filters")
-set(grid_map_filters_RUN_DEPENDS "grid_map_core" "grid_map_ros" "grid_map_msgs" "filters")
-set(grid_map_filters_BUILDTOOL_DEPENDS "catkin")
