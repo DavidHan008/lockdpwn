@@ -87,8 +87,8 @@ ros::Publisher* pubSurfPointsFlatPointer;
 ros::Publisher* pubSurfPointsLessFlatPointer;
 ros::Publisher* pubImuTransPointer;
 
-void ShiftToStartIMU(float pointTime)
-{
+
+void ShiftToStartIMU(float pointTime){
   imuShiftFromStartXCur = imuShiftXCur - imuShiftXStart - imuVeloXStart * pointTime;
   imuShiftFromStartYCur = imuShiftYCur - imuShiftYStart - imuVeloYStart * pointTime;
   imuShiftFromStartZCur = imuShiftZCur - imuShiftZStart - imuVeloZStart * pointTime;
@@ -105,6 +105,7 @@ void ShiftToStartIMU(float pointTime)
   imuShiftFromStartYCur = -sin(imuRollStart) * x2 + cos(imuRollStart) * y2;
   imuShiftFromStartZCur = z2;
 }
+
 
 void VeloToStartIMU(){
   imuVeloFromStartXCur = imuVeloXCur - imuVeloXStart;
@@ -123,6 +124,7 @@ void VeloToStartIMU(){
   imuVeloFromStartYCur = -sin(imuRollStart) * x2 + cos(imuRollStart) * y2;
   imuVeloFromStartZCur = z2;
 }
+
 
 void TransformToStartIMU(pcl::PointXYZI *p){
   float x1 = cos(imuRollCur) * p->x - sin(imuRollCur) * p->y;
@@ -150,8 +152,8 @@ void TransformToStartIMU(pcl::PointXYZI *p){
   p->z = z5 + imuShiftFromStartZCur;
 }
 
-void AccumulateIMUShift()
-{
+
+void AccumulateIMUShift(){
   float roll = imuRoll[imuPointerLast];
   float pitch = imuPitch[imuPointerLast];
   float yaw = imuYaw[imuPointerLast];
@@ -176,11 +178,11 @@ void AccumulateIMUShift()
   if (timeDiff < 0.1) {
 
     imuShiftX[imuPointerLast] = imuShiftX[imuPointerBack] + imuVeloX[imuPointerBack] * timeDiff 
-                              + accX * timeDiff * timeDiff / 2;
+                                + accX * timeDiff * timeDiff / 2;
     imuShiftY[imuPointerLast] = imuShiftY[imuPointerBack] + imuVeloY[imuPointerBack] * timeDiff 
-                              + accY * timeDiff * timeDiff / 2;
+                                + accY * timeDiff * timeDiff / 2;
     imuShiftZ[imuPointerLast] = imuShiftZ[imuPointerBack] + imuVeloZ[imuPointerBack] * timeDiff 
-                              + accZ * timeDiff * timeDiff / 2;
+                                + accZ * timeDiff * timeDiff / 2;
 
     imuVeloX[imuPointerLast] = imuVeloX[imuPointerBack] + accX * timeDiff;
     imuVeloY[imuPointerLast] = imuVeloY[imuPointerBack] + accY * timeDiff;
@@ -218,54 +220,60 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
 
   bool halfPassed = false;
   pcl::PointXYZI point;
+
   for (int i = 0; i < cloudSize_tmp; i++) {
+
+    // ed: 전체 loam의 좌표를 변환하는 아래 코드를 수정했다 (x,y,z) ==> (-y,x,z)
     point.x = laserCloudIn->points[i].x;
     point.y = laserCloudIn->points[i].y;
+    //point.x = -laserCloudIn->points[i].y;
+    //point.y = laserCloudIn->points[i].x;
     point.z = laserCloudIn->points[i].z;
 
     float angle = atan(point.z / sqrt(point.y * point.y + point.x * point.x)) * 180 / PI;
     int scanID ;
 
-/* 
-if(angle >= 	-14.2 	&& angle < 	-14 	) { scanID =  	0 	;}
-else if(angle >= 	-13.5 	&& angle < 	-13 	) { scanID =  	1 	;}
-else if(angle >= 	-12.5 	&& angle < 	-12 	) { scanID =  	2 	;}
-else if(angle >= 	-11.5 	&& angle < 	-11 	) { scanID =  	3 	;}
-else if(angle >= 	-10.5 	&& angle < 	-10 	) { scanID =  	4 	;}
-else if(angle >= 	-9.5 	&& angle < 	-9 	) { scanID =  	5 	;}
-else if(angle >= 	-8.5 	&& angle < 	-8 	) { scanID =  	6 	;}
-else if(angle >= 	-7.5 	&& angle < 	-7 	) { scanID =  	7 	;}
-else if(angle >= 	-6.3 	&& angle < 	-6 	) { scanID =  	8 	;}
-else if(angle >= 	-5.4 	&& angle < 	-5 	) { scanID =  	9 	;}
-else if(angle >= 	-4.4 	&& angle < 	-4 	) { scanID =  	10 	;}
-else if(angle >= 	-3.4 	&& angle < 	-3 	) { scanID =  	11 	;}
-else if(angle >= 	-2.3 	&& angle < 	-2 	) { scanID =  	12 	;}
-else if(angle >= 	-1.3 	&& angle < 	-1 	) { scanID =  	13 	;}
-else if(angle >= 	-0.5 	&& angle < 	-0.2 	) { scanID =  	14 	;}
-else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
-else
-*/
+    /*
+       if(angle >= 	-14.2 	&& angle < 	-14 	) { scanID =  	0 	;}
+       else if(angle >= 	-13.5 	&& angle < 	-13 	) { scanID =  	1 	;}
+       else if(angle >= 	-12.5 	&& angle < 	-12 	) { scanID =  	2 	;}
+       else if(angle >= 	-11.5 	&& angle < 	-11 	) { scanID =  	3 	;}
+       else if(angle >= 	-10.5 	&& angle < 	-10 	) { scanID =  	4 	;}
+       else if(angle >= 	-9.5 	&& angle < 	-9 	) { scanID =  	5 	;}
+       else if(angle >= 	-8.5 	&& angle < 	-8 	) { scanID =  	6 	;}
+       else if(angle >= 	-7.5 	&& angle < 	-7 	) { scanID =  	7 	;}
+       else if(angle >= 	-6.3 	&& angle < 	-6 	) { scanID =  	8 	;}
+       else if(angle >= 	-5.4 	&& angle < 	-5 	) { scanID =  	9 	;}
+       else if(angle >= 	-4.4 	&& angle < 	-4 	) { scanID =  	10 	;}
+       else if(angle >= 	-3.4 	&& angle < 	-3 	) { scanID =  	11 	;}
+       else if(angle >= 	-2.3 	&& angle < 	-2 	) { scanID =  	12 	;}
+       else if(angle >= 	-1.3 	&& angle < 	-1 	) { scanID =  	13 	;}
+       else if(angle >= 	-0.5 	&& angle < 	-0.2 	) { scanID =  	14 	;}
+       else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
+       else
+    */
 
-if(angle >= 	-13.5 	&& angle < 	-13.4 	) { scanID =  	0 	;} 
-else if(angle >= 	-13.4 	&& angle < 	-13 	) { scanID =  	1 	;} 
-else if(angle >= 	-12.4 	&& angle < 	-12 	) { scanID =  	2 	;} 
-else if(angle >= 	-11.3 	&& angle < 	-11 	) { scanID =  	3 	;} 
-else if(angle >= 	-10.3 	&& angle < 	-10 	) { scanID =  	4 	;} 
-else if(angle >= 	-9.4 	&& angle < 	-9.1 	) { scanID =  	5 	;} 
-else if(angle >= 	-8.3 	&& angle < 	-8 	) { scanID =  	6 	;} 
-else if(angle >= 	-7.4 	&& angle < 	-7.0 	) { scanID =  	7 	;} 
-else if(angle >= 	-6.3 	&& angle < 	-6 	) { scanID =  	8 	;} 
-else if(angle >= 	-5.3 	&& angle < 	-5.1 	) { scanID =  	9 	;} 
-else if(angle >= 	-4.3 	&& angle < 	-4.1 	) { scanID =  	10 	;} 
-else if(angle >= 	-3.2 	&& angle < 	-3 	) { scanID =  	11 	;} 
-else if(angle >= 	-2.3 	&& angle < 	-2 	) { scanID =  	12 	;} 
-else if(angle >= 	-1.3 	&& angle < 	-1.1 	) { scanID =  	13 	;} 
-else if(angle >= 	-0.5 	&& angle < 	-0.3 	) { scanID =  	14 	;} 
-else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;} 
-else 
-continue;
+    if(angle >= 	-13.5 	&& angle < 	-13.4 	) { scanID =  	0 	;}
+    else if(angle >= 	-13.4 	&& angle < 	-13 	) { scanID =  	1 	;}
+    else if(angle >= 	-12.4 	&& angle < 	-12 	) { scanID =  	2 	;}
+    else if(angle >= 	-11.3 	&& angle < 	-11 	) { scanID =  	3 	;}
+    else if(angle >= 	-10.3 	&& angle < 	-10 	) { scanID =  	4 	;}
+    else if(angle >= 	-9.4 	&& angle < 	-9.1 	) { scanID =  	5 	;}
+    else if(angle >= 	-8.3 	&& angle < 	-8 	) { scanID =  	6 	;}
+    else if(angle >= 	-7.4 	&& angle < 	-7.0 	) { scanID =  	7 	;}
+    else if(angle >= 	-6.3 	&& angle < 	-6 	) { scanID =  	8 	;}
+    else if(angle >= 	-5.3 	&& angle < 	-5.1 	) { scanID =  	9 	;}
+    else if(angle >= 	-4.3 	&& angle < 	-4.1 	) { scanID =  	10 	;}
+    else if(angle >= 	-3.2 	&& angle < 	-3 	) { scanID =  	11 	;}
+    else if(angle >= 	-2.3 	&& angle < 	-2 	) { scanID =  	12 	;}
+    else if(angle >= 	-1.3 	&& angle < 	-1.1 	) { scanID =  	13 	;}
+    else if(angle >= 	-0.5 	&& angle < 	-0.3 	) { scanID =  	14 	;}
+    else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
+    else
+      continue;
 
     float ori = -atan2(point.y, point.x);
+
     if (!halfPassed) {
       if (ori < startOri - PI / 2) {
         ori += 2 * PI;
@@ -317,9 +325,9 @@ continue;
       else {
         int imuPointerBack = (imuPointerFront + imuQueLength - 1) % imuQueLength;
         float ratioFront = (timeScanCur + pointTime - imuTime[imuPointerBack]) 
-                         / (imuTime[imuPointerFront] - imuTime[imuPointerBack]);
+                           / (imuTime[imuPointerFront] - imuTime[imuPointerBack]);
         float ratioBack = (imuTime[imuPointerFront] - timeScanCur - pointTime) 
-                        / (imuTime[imuPointerFront] - imuTime[imuPointerBack]);
+                          / (imuTime[imuPointerFront] - imuTime[imuPointerBack]);
 
         imuRollCur = imuRoll[imuPointerFront] * ratioFront + imuRoll[imuPointerBack] * ratioBack;
         imuPitchCur = imuPitch[imuPointerFront] * ratioFront + imuPitch[imuPointerBack] * ratioBack;
@@ -342,6 +350,7 @@ continue;
         imuShiftZCur = imuShiftZ[imuPointerFront] * ratioFront + imuShiftZ[imuPointerBack] * ratioBack;
       }
 
+      // ed: 대부분의 경우 i != 0 이므로 아래 else문이 실행될 것 같다
       if (i == 0) {
         imuRollStart = imuRollCur;
         imuPitchStart = imuPitchCur;
@@ -370,29 +379,29 @@ continue;
     //printf("i: %d, %d\n", i, laserCloudScans[i]->size());
   }
 
-cloudSize = laserCloud->points.size();   //JH
-//printf("%d\n",cloudSize);
+  cloudSize = laserCloud->points.size();   //JH
+  //printf("%d\n",cloudSize);
 
   int scanCount = -1;
   for (int i = 5; i < cloudSize - 5; i++) {
     float diffX = laserCloud->points[i - 5].x + laserCloud->points[i - 4].x 
-                + laserCloud->points[i - 3].x + laserCloud->points[i - 2].x 
-                + laserCloud->points[i - 1].x - 10 * laserCloud->points[i].x 
-                + laserCloud->points[i + 1].x + laserCloud->points[i + 2].x
-                + laserCloud->points[i + 3].x + laserCloud->points[i + 4].x
-                + laserCloud->points[i + 5].x;
+                  + laserCloud->points[i - 3].x + laserCloud->points[i - 2].x
+                  + laserCloud->points[i - 1].x - 10 * laserCloud->points[i].x
+                  + laserCloud->points[i + 1].x + laserCloud->points[i + 2].x
+                  + laserCloud->points[i + 3].x + laserCloud->points[i + 4].x
+                  + laserCloud->points[i + 5].x;
     float diffY = laserCloud->points[i - 5].y + laserCloud->points[i - 4].y 
-                + laserCloud->points[i - 3].y + laserCloud->points[i - 2].y 
-                + laserCloud->points[i - 1].y - 10 * laserCloud->points[i].y 
-                + laserCloud->points[i + 1].y + laserCloud->points[i + 2].y
-                + laserCloud->points[i + 3].y + laserCloud->points[i + 4].y
-                + laserCloud->points[i + 5].y;
+                  + laserCloud->points[i - 3].y + laserCloud->points[i - 2].y
+                  + laserCloud->points[i - 1].y - 10 * laserCloud->points[i].y
+                  + laserCloud->points[i + 1].y + laserCloud->points[i + 2].y
+                  + laserCloud->points[i + 3].y + laserCloud->points[i + 4].y
+                  + laserCloud->points[i + 5].y;
     float diffZ = laserCloud->points[i - 5].z + laserCloud->points[i - 4].z 
-                + laserCloud->points[i - 3].z + laserCloud->points[i - 2].z 
-                + laserCloud->points[i - 1].z - 10 * laserCloud->points[i].z 
-                + laserCloud->points[i + 1].z + laserCloud->points[i + 2].z
-                + laserCloud->points[i + 3].z + laserCloud->points[i + 4].z
-                + laserCloud->points[i + 5].z;
+                  + laserCloud->points[i - 3].z + laserCloud->points[i - 2].z
+                  + laserCloud->points[i - 1].z - 10 * laserCloud->points[i].z
+                  + laserCloud->points[i + 1].z + laserCloud->points[i + 2].z
+                  + laserCloud->points[i + 3].z + laserCloud->points[i + 4].z
+                  + laserCloud->points[i + 5].z;
     
     cloudCurvature[i] = diffX * diffX + diffY * diffY + diffZ * diffZ;
     cloudSortInd[i] = i;
@@ -419,12 +428,12 @@ cloudSize = laserCloud->points.size();   //JH
 
     if (diff > 0.1) {
       float depth1 = sqrt(laserCloud->points[i].x * laserCloud->points[i].x +
-                     laserCloud->points[i].y * laserCloud->points[i].y +
-                     laserCloud->points[i].z * laserCloud->points[i].z);
+                          laserCloud->points[i].y * laserCloud->points[i].y +
+                          laserCloud->points[i].z * laserCloud->points[i].z);
 
       float depth2 = sqrt(laserCloud->points[i + 1].x * laserCloud->points[i + 1].x + 
-                     laserCloud->points[i + 1].y * laserCloud->points[i + 1].y +
-                     laserCloud->points[i + 1].z * laserCloud->points[i + 1].z);
+                          laserCloud->points[i + 1].y * laserCloud->points[i + 1].y +
+                          laserCloud->points[i + 1].z * laserCloud->points[i + 1].z);
 
       if (depth1 > depth2) {
         diffX = laserCloud->points[i + 1].x - laserCloud->points[i].x * depth2 / depth1;
@@ -462,8 +471,8 @@ cloudSize = laserCloud->points.size();   //JH
     float diff2 = diffX2 * diffX2 + diffY2 * diffY2 + diffZ2 * diffZ2;
 
     float dis = laserCloud->points[i].x * laserCloud->points[i].x
-              + laserCloud->points[i].y * laserCloud->points[i].y
-              + laserCloud->points[i].z * laserCloud->points[i].z;
+                + laserCloud->points[i].y * laserCloud->points[i].y
+                + laserCloud->points[i].z * laserCloud->points[i].z;
 
     if (diff > 0.0002 * dis && diff2 > 0.0002 * dis)
       cloudNeighborPicked[i] = 1;
@@ -472,6 +481,7 @@ cloudSize = laserCloud->points.size();   //JH
 
   for (int i = 0; i < 16; i++) {
     surfPointsLessFlatScan->clear();
+
     for (int j = 0; j < 6; j++) {
       int sp = (scanStartInd[i] * (6 - j)  + scanEndInd[i] * j) / 6;
       int ep = (scanStartInd[i] * (5 - j)  + scanEndInd[i] * (j + 1)) / 6 - 1;
@@ -485,12 +495,14 @@ cloudSize = laserCloud->points.size();   //JH
           }
         }
       }
-
       int largestPickedNum = 0;
+
       for (int k = ep; k >= sp; k--) {
         int ind = cloudSortInd[k];
+
         if (cloudNeighborPicked[ind] == 0 && cloudCurvature[ind] > 0.1) {
-                  largestPickedNum++;
+          largestPickedNum++;
+
           if (largestPickedNum <= 2) {
             cloudLabel[ind] = 2;
             cornerPointsSharp->push_back(laserCloud->points[ind]);
@@ -507,11 +519,11 @@ cloudSize = laserCloud->points.size();   //JH
           cloudNeighborPicked[ind] = 1;
           for (int l = 1; l <= 5; l++) {
             float diffX = laserCloud->points[ind + l].x 
-                        - laserCloud->points[ind + l - 1].x;
+                          - laserCloud->points[ind + l - 1].x;
             float diffY = laserCloud->points[ind + l].y 
-                        - laserCloud->points[ind + l - 1].y;
+                          - laserCloud->points[ind + l - 1].y;
             float diffZ = laserCloud->points[ind + l].z 
-                        - laserCloud->points[ind + l - 1].z;
+                          - laserCloud->points[ind + l - 1].z;
             if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05) {
               break;
             }
@@ -520,11 +532,11 @@ cloudSize = laserCloud->points.size();   //JH
           }
           for (int l = -1; l >= -5; l--) {
             float diffX = laserCloud->points[ind + l].x 
-                        - laserCloud->points[ind + l + 1].x;
+                          - laserCloud->points[ind + l + 1].x;
             float diffY = laserCloud->points[ind + l].y 
-                        - laserCloud->points[ind + l + 1].y;
+                          - laserCloud->points[ind + l + 1].y;
             float diffZ = laserCloud->points[ind + l].z 
-                        - laserCloud->points[ind + l + 1].z;
+                          - laserCloud->points[ind + l + 1].z;
             if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05) {
               break;
             }
@@ -533,8 +545,8 @@ cloudSize = laserCloud->points.size();   //JH
           }
         }
       }
-
       int smallestPickedNum = 0;
+
       for (int k = sp; k <= ep; k++) {
         int ind = cloudSortInd[k];
         if (cloudNeighborPicked[ind] == 0 &&
@@ -551,11 +563,11 @@ cloudSize = laserCloud->points.size();   //JH
           cloudNeighborPicked[ind] = 1;
           for (int l = 1; l <= 5; l++) {
             float diffX = laserCloud->points[ind + l].x 
-                        - laserCloud->points[ind + l - 1].x;
+                          - laserCloud->points[ind + l - 1].x;
             float diffY = laserCloud->points[ind + l].y 
-                        - laserCloud->points[ind + l - 1].y;
+                          - laserCloud->points[ind + l - 1].y;
             float diffZ = laserCloud->points[ind + l].z 
-                        - laserCloud->points[ind + l - 1].z;
+                          - laserCloud->points[ind + l - 1].z;
             if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05) {
               break;
             }
@@ -563,11 +575,11 @@ cloudSize = laserCloud->points.size();   //JH
           }
           for (int l = -1; l >= -5; l--) {
             float diffX = laserCloud->points[ind + l].x 
-                        - laserCloud->points[ind + l + 1].x;
+                          - laserCloud->points[ind + l + 1].x;
             float diffY = laserCloud->points[ind + l].y 
-                        - laserCloud->points[ind + l + 1].y;
+                          - laserCloud->points[ind + l + 1].y;
             float diffZ = laserCloud->points[ind + l].z 
-                        - laserCloud->points[ind + l + 1].z;
+                          - laserCloud->points[ind + l + 1].z;
             if (diffX * diffX + diffY * diffY + diffZ * diffZ > 0.05)
               break;
 
@@ -596,34 +608,52 @@ cloudSize = laserCloud->points.size();   //JH
 
   laserCloud2.header.stamp = laserCloudIn2->header.stamp;
   laserCloud2.header.frame_id = "/camera";
+
+  // ed: /velodyne_cloud_2 토픽으로 퍼블리시한다
   pubLaserCloudPointer->publish(laserCloud2);
+
+
 
   sensor_msgs::PointCloud2 cornerPointsSharp2;
   pcl::toROSMsg(*cornerPointsSharp, cornerPointsSharp2);
 
   cornerPointsSharp2.header.stamp = laserCloudIn2->header.stamp;
   cornerPointsSharp2.header.frame_id = "/camera";
+
+  // ed: /laser_cloud_sharp 토픽으로 퍼블리시한다
   pubCornerPointsSharpPointer->publish(cornerPointsSharp2);
+
+
 
   sensor_msgs::PointCloud2 cornerPointsLessSharp2;
   pcl::toROSMsg(*cornerPointsLessSharp, cornerPointsLessSharp2);
 
   cornerPointsLessSharp2.header.stamp = laserCloudIn2->header.stamp;
   cornerPointsLessSharp2.header.frame_id = "/camera";
+
+  // ed: /laser_cloud_less_sharp 토픽으로 퍼블리시한다
   pubCornerPointsLessSharpPointer->publish(cornerPointsLessSharp2);
+
+
 
   sensor_msgs::PointCloud2 surfPointsFlat2;
   pcl::toROSMsg(*surfPointsFlat, surfPointsFlat2);
 
   surfPointsFlat2.header.stamp = laserCloudIn2->header.stamp;
   surfPointsFlat2.header.frame_id = "/camera";
+
+  // ed: /laser_cloud_flat으로 퍼블리시한다
   pubSurfPointsFlatPointer->publish(surfPointsFlat2);
+
+
 
   sensor_msgs::PointCloud2 surfPointsLessFlat2;
   pcl::toROSMsg(*surfPointsLessFlat, surfPointsLessFlat2);
 
   surfPointsLessFlat2.header.stamp = laserCloudIn2->header.stamp;
   surfPointsLessFlat2.header.frame_id = "/camera";
+
+  // ed: /laser_cloud_less_flat으로 퍼블리시한다
   pubSurfPointsLessFlatPointer->publish(surfPointsLessFlat2);
 
   imuTrans->points[0].x = imuRollStart;
@@ -647,7 +677,10 @@ cloudSize = laserCloud->points.size();   //JH
 
   imuTrans2.header.stamp = laserCloudIn2->header.stamp;
   imuTrans2.header.frame_id = "/camera";
+
+  // ed: /imu_trans로 퍼블리시한다
   pubImuTransPointer->publish(imuTrans2);
+
 
   laserCloudIn->clear();
   laserCloud->clear();
@@ -664,19 +697,19 @@ cloudSize = laserCloud->points.size();   //JH
 // ed: 주석처리되어 현재는 사용하지 않는 섭스크라이브의 콜백함수
 void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
   double roll, pitch, yaw;
-//  tf::Quaternion orientation;
-//  tf::quaternionMsgToTF(imuIn->orientation, orientation);
-//  tf::Matrix3x3(orientation).getRPY(roll, pitch, yaw);
+  //  tf::Quaternion orientation;
+  //  tf::quaternionMsgToTF(imuIn->orientation, orientation);
+  //  tf::Matrix3x3(orientation).getRPY(roll, pitch, yaw);
 
-//  float accY = imuIn->linear_acceleration.y - sin(roll) * cos(pitch) * 9.81;
-//  float accZ = imuIn->linear_acceleration.z - cos(roll) * cos(pitch) * 9.81;
-//  float accX = imuIn->linear_acceleration.x + sin(pitch) * 9.81;
+  //  float accY = imuIn->linear_acceleration.y - sin(roll) * cos(pitch) * 9.81;
+  //  float accZ = imuIn->linear_acceleration.z - cos(roll) * cos(pitch) * 9.81;
+  //  float accX = imuIn->linear_acceleration.x + sin(pitch) * 9.81;
   float accY = imuIn->linear_acceleration.y;
   float accZ = imuIn->linear_acceleration.z;
   float accX = imuIn->linear_acceleration.x ;
-roll=imuIn->orientation.x;
-pitch=imuIn->orientation.y;
-yaw=imuIn->orientation.z;
+  roll=imuIn->orientation.x;
+  pitch=imuIn->orientation.y;
+  yaw=imuIn->orientation.z;
   imuPointerLast = (imuPointerLast + 1) % imuQueLength;
 
   imuTime[imuPointerLast] = imuIn->header.stamp.toSec();
@@ -686,8 +719,8 @@ yaw=imuIn->orientation.z;
   imuAccX[imuPointerLast] = accX;
   imuAccY[imuPointerLast] = accY;
   imuAccZ[imuPointerLast] = accZ;
-//printf("%lf, %lf, %lf\n", roll, pitch, yaw);
-//printf("%f, %f, %f \n",accX,accY,accZ);
+  //printf("%lf, %lf, %lf\n", roll, pitch, yaw);
+  //printf("%f, %f, %f \n",accX,accY,accZ);
   AccumulateIMUShift();
 }
 
@@ -698,26 +731,14 @@ int main(int argc, char** argv){
   for (int i = 0; i < 16; i++)
     laserCloudScans[i].reset(new pcl::PointCloud<pcl::PointXYZI>());
 
-  ros::Subscriber subLaserCloud = nh.subscribe<sensor_msgs::PointCloud2> 
-                                  ("/velodyne_points", 2, laserCloudHandler);
+  ros::Subscriber subLaserCloud = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 2, laserCloudHandler);
+  //ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
-//ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
-
-  ros::Publisher pubLaserCloud = nh.advertise<sensor_msgs::PointCloud2> 
-                                 ("/velodyne_cloud_2", 2);
-
-  ros::Publisher pubCornerPointsSharp = nh.advertise<sensor_msgs::PointCloud2> 
-                                        ("/laser_cloud_sharp", 2);
-
-  ros::Publisher pubCornerPointsLessSharp = nh.advertise<sensor_msgs::PointCloud2> 
-                                            ("/laser_cloud_less_sharp", 2);
-
-  ros::Publisher pubSurfPointsFlat = nh.advertise<sensor_msgs::PointCloud2> 
-                                       ("/laser_cloud_flat", 2);
-
-  ros::Publisher pubSurfPointsLessFlat = nh.advertise<sensor_msgs::PointCloud2> 
-                                           ("/laser_cloud_less_flat", 2);
-
+  ros::Publisher pubLaserCloud = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_cloud_2", 2);
+  ros::Publisher pubCornerPointsSharp = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_sharp", 2);
+  ros::Publisher pubCornerPointsLessSharp = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_less_sharp", 2);
+  ros::Publisher pubSurfPointsFlat = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_flat", 2);
+  ros::Publisher pubSurfPointsLessFlat = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_less_flat", 2);
   ros::Publisher pubImuTrans = nh.advertise<sensor_msgs::PointCloud2> ("/imu_trans", 5);
 
   pubLaserCloudPointer = &pubLaserCloud;

@@ -50,7 +50,6 @@ struct GpsReceiverData_
     , velocity(0.0)
     , tm_x(0.0)
     , tm_y(0.0)  {
-  (void)_alloc;
     }
 
 
@@ -236,7 +235,7 @@ namespace serialization
       stream.next(m.tm_y);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct GpsReceiverData_
 
 } // namespace serialization

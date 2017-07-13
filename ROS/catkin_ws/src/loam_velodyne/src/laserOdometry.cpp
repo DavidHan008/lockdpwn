@@ -78,8 +78,7 @@ float imuRollLast = 0, imuPitchLast = 0, imuYawLast = 0;
 float imuShiftFromStartX = 0, imuShiftFromStartY = 0, imuShiftFromStartZ = 0;
 float imuVeloFromStartX = 0, imuVeloFromStartY = 0, imuVeloFromStartZ = 0;
 
-void TransformToStart(pcl::PointXYZI *pi, pcl::PointXYZI *po)
-{
+void TransformToStart(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float s = 10 * (pi->intensity - int(pi->intensity));
 
   float rx = s * transform[0];
@@ -103,8 +102,7 @@ void TransformToStart(pcl::PointXYZI *pi, pcl::PointXYZI *po)
   po->intensity = pi->intensity;
 }
 
-void TransformToEnd(pcl::PointXYZI *pi, pcl::PointXYZI *po)
-{
+void TransformToEnd(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float s = 10 * (pi->intensity - int(pi->intensity));
 
   float rx = s * transform[0];
@@ -146,9 +144,9 @@ void TransformToEnd(pcl::PointXYZI *pi, pcl::PointXYZI *po)
   float z6 = z5 + tz;
 
   float x7 = cos(imuRollStart) * (x6 - imuShiftFromStartX) 
-           - sin(imuRollStart) * (y6 - imuShiftFromStartY);
+             - sin(imuRollStart) * (y6 - imuShiftFromStartY);
   float y7 = sin(imuRollStart) * (x6 - imuShiftFromStartX) 
-           + cos(imuRollStart) * (y6 - imuShiftFromStartY);
+             + cos(imuRollStart) * (y6 - imuShiftFromStartY);
   float z7 = z6 - imuShiftFromStartZ;
 
   float x8 = x7;
@@ -198,38 +196,38 @@ void PluginIMURotation(float bcx, float bcy, float bcz, float blx, float bly, fl
   float calz = cos(alz);
 
   float srx = -sbcx*(salx*sblx + calx*caly*cblx*cbly + calx*cblx*saly*sbly) 
-            - cbcx*cbcz*(calx*saly*(cbly*sblz - cblz*sblx*sbly) 
-            - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx) 
-            - cbcx*sbcz*(calx*caly*(cblz*sbly - cbly*sblx*sblz) 
-            - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz);
+              - cbcx*cbcz*(calx*saly*(cbly*sblz - cblz*sblx*sbly)
+                           - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx)
+              - cbcx*sbcz*(calx*caly*(cblz*sbly - cbly*sblx*sblz)
+                           - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz);
   acx = -asin(srx);
 
   float srycrx = (cbcy*sbcz - cbcz*sbcx*sbcy)*(calx*saly*(cbly*sblz - cblz*sblx*sbly) 
-               - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx) 
-               - (cbcy*cbcz + sbcx*sbcy*sbcz)*(calx*caly*(cblz*sbly - cbly*sblx*sblz) 
-               - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz) 
-               + cbcx*sbcy*(salx*sblx + calx*caly*cblx*cbly + calx*cblx*saly*sbly);
+                                               - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx)
+                 - (cbcy*cbcz + sbcx*sbcy*sbcz)*(calx*caly*(cblz*sbly - cbly*sblx*sblz)
+                                                 - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz)
+                 + cbcx*sbcy*(salx*sblx + calx*caly*cblx*cbly + calx*cblx*saly*sbly);
   float crycrx = (cbcz*sbcy - cbcy*sbcx*sbcz)*(calx*caly*(cblz*sbly - cbly*sblx*sblz) 
-               - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz) 
-               - (sbcy*sbcz + cbcy*cbcz*sbcx)*(calx*saly*(cbly*sblz - cblz*sblx*sbly) 
-               - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx) 
-               + cbcx*cbcy*(salx*sblx + calx*caly*cblx*cbly + calx*cblx*saly*sbly);
+                                               - calx*saly*(cbly*cblz + sblx*sbly*sblz) + cblx*salx*sblz)
+                 - (sbcy*sbcz + cbcy*cbcz*sbcx)*(calx*saly*(cbly*sblz - cblz*sblx*sbly)
+                                                 - calx*caly*(sbly*sblz + cbly*cblz*sblx) + cblx*cblz*salx)
+                 + cbcx*cbcy*(salx*sblx + calx*caly*cblx*cbly + calx*cblx*saly*sbly);
   acy = atan2(srycrx / cos(acx), crycrx / cos(acx));
   
   float srzcrx = sbcx*(cblx*cbly*(calz*saly - caly*salx*salz) 
-               - cblx*sbly*(caly*calz + salx*saly*salz) + calx*salz*sblx) 
-               - cbcx*cbcz*((caly*calz + salx*saly*salz)*(cbly*sblz - cblz*sblx*sbly) 
-               + (calz*saly - caly*salx*salz)*(sbly*sblz + cbly*cblz*sblx) 
-               - calx*cblx*cblz*salz) + cbcx*sbcz*((caly*calz + salx*saly*salz)*(cbly*cblz 
-               + sblx*sbly*sblz) + (calz*saly - caly*salx*salz)*(cblz*sbly - cbly*sblx*sblz) 
-               + calx*cblx*salz*sblz);
+                       - cblx*sbly*(caly*calz + salx*saly*salz) + calx*salz*sblx)
+                 - cbcx*cbcz*((caly*calz + salx*saly*salz)*(cbly*sblz - cblz*sblx*sbly)
+                              + (calz*saly - caly*salx*salz)*(sbly*sblz + cbly*cblz*sblx)
+                              - calx*cblx*cblz*salz) + cbcx*sbcz*((caly*calz + salx*saly*salz)*(cbly*cblz
+                                                                                                + sblx*sbly*sblz) + (calz*saly - caly*salx*salz)*(cblz*sbly - cbly*sblx*sblz)
+                                                                  + calx*cblx*salz*sblz);
   float crzcrx = sbcx*(cblx*sbly*(caly*salz - calz*salx*saly) 
-               - cblx*cbly*(saly*salz + caly*calz*salx) + calx*calz*sblx) 
-               + cbcx*cbcz*((saly*salz + caly*calz*salx)*(sbly*sblz + cbly*cblz*sblx) 
-               + (caly*salz - calz*salx*saly)*(cbly*sblz - cblz*sblx*sbly) 
-               + calx*calz*cblx*cblz) - cbcx*sbcz*((saly*salz + caly*calz*salx)*(cblz*sbly 
-               - cbly*sblx*sblz) + (caly*salz - calz*salx*saly)*(cbly*cblz + sblx*sbly*sblz) 
-               - calx*calz*cblx*sblz);
+                       - cblx*cbly*(saly*salz + caly*calz*salx) + calx*calz*sblx)
+                 + cbcx*cbcz*((saly*salz + caly*calz*salx)*(sbly*sblz + cbly*cblz*sblx)
+                              + (caly*salz - calz*salx*saly)*(cbly*sblz - cblz*sblx*sbly)
+                              + calx*calz*cblx*cblz) - cbcx*sbcz*((saly*salz + caly*calz*salx)*(cblz*sbly
+                                                                                                - cbly*sblx*sblz) + (caly*salz - calz*salx*saly)*(cbly*cblz + sblx*sbly*sblz)
+                                                                  - calx*calz*cblx*sblz);
   acz = atan2(srzcrx / cos(acx), crzcrx / cos(acx));
 }
 
@@ -240,15 +238,15 @@ void AccumulateRotation(float cx, float cy, float cz, float lx, float ly, float 
   ox = -asin(srx);
 
   float srycrx = sin(lx)*(cos(cy)*sin(cz) - cos(cz)*sin(cx)*sin(cy)) + cos(lx)*sin(ly)*(cos(cy)*cos(cz) 
-               + sin(cx)*sin(cy)*sin(cz)) + cos(lx)*cos(ly)*cos(cx)*sin(cy);
+                                                                                        + sin(cx)*sin(cy)*sin(cz)) + cos(lx)*cos(ly)*cos(cx)*sin(cy);
   float crycrx = cos(lx)*cos(ly)*cos(cx)*cos(cy) - cos(lx)*sin(ly)*(cos(cz)*sin(cy) 
-               - cos(cy)*sin(cx)*sin(cz)) - sin(lx)*(sin(cy)*sin(cz) + cos(cy)*cos(cz)*sin(cx));
+                                                                    - cos(cy)*sin(cx)*sin(cz)) - sin(lx)*(sin(cy)*sin(cz) + cos(cy)*cos(cz)*sin(cx));
   oy = atan2(srycrx / cos(ox), crycrx / cos(ox));
 
   float srzcrx = sin(cx)*(cos(lz)*sin(ly) - cos(ly)*sin(lx)*sin(lz)) + cos(cx)*sin(cz)*(cos(ly)*cos(lz) 
-               + sin(lx)*sin(ly)*sin(lz)) + cos(lx)*cos(cx)*cos(cz)*sin(lz);
+                                                                                        + sin(lx)*sin(ly)*sin(lz)) + cos(lx)*cos(cx)*cos(cz)*sin(lz);
   float crzcrx = cos(lx)*cos(lz)*cos(cx)*cos(cz) - cos(cx)*sin(cz)*(cos(ly)*sin(lz) 
-               - cos(lz)*sin(lx)*sin(ly)) - sin(cx)*(sin(ly)*sin(lz) + cos(ly)*cos(lz)*sin(lx));
+                                                                    - cos(lz)*sin(lx)*sin(ly)) - sin(cx)*(sin(ly)*sin(lz) + cos(ly)*cos(lz)*sin(lx));
   oz = atan2(srzcrx / cos(ox), crzcrx / cos(ox));
 }
 
@@ -327,33 +325,25 @@ int main(int argc, char** argv){
   ros::NodeHandle nh;
 
   // ed: Subscribers
-  ros::Subscriber subCornerPointsSharp = nh.subscribe<sensor_msgs::PointCloud2>
-                                         ("/laser_cloud_sharp", 2, laserCloudSharpHandler);
-  ros::Subscriber subCornerPointsLessSharp = nh.subscribe<sensor_msgs::PointCloud2>
-                                             ("/laser_cloud_less_sharp", 2, laserCloudLessSharpHandler);
-  ros::Subscriber subSurfPointsFlat = nh.subscribe<sensor_msgs::PointCloud2>
-                                      ("/laser_cloud_flat", 2, laserCloudFlatHandler);
-  ros::Subscriber subSurfPointsLessFlat = nh.subscribe<sensor_msgs::PointCloud2>
-                                          ("/laser_cloud_less_flat", 2, laserCloudLessFlatHandler);
-  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>
-                                         ("/velodyne_cloud_2", 2, laserCloudFullResHandler);
-  ros::Subscriber subImuTrans = nh.subscribe<sensor_msgs::PointCloud2>
-                                ("/imu_trans", 5, imuTransHandler);
+  ros::Subscriber subCornerPointsSharp = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_sharp", 2, laserCloudSharpHandler);
+  ros::Subscriber subCornerPointsLessSharp = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_less_sharp", 2, laserCloudLessSharpHandler);
+  ros::Subscriber subSurfPointsFlat = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_flat", 2, laserCloudFlatHandler);
+  ros::Subscriber subSurfPointsLessFlat = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_less_flat", 2, laserCloudLessFlatHandler);
+  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_cloud_2", 2, laserCloudFullResHandler);
+  ros::Subscriber subImuTrans = nh.subscribe<sensor_msgs::PointCloud2>("/imu_trans", 5, imuTransHandler);
 
-  // ed: Publishers
-  ros::Publisher pubLaserCloudCornerLast = nh.advertise<sensor_msgs::PointCloud2>
-                                           ("/laser_cloud_corner_last", 2);
-  ros::Publisher pubLaserCloudSurfLast = nh.advertise<sensor_msgs::PointCloud2>
-                                         ("/laser_cloud_surf_last", 2);
-  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>
-                                        ("/velodyne_cloud_3", 2);
+
+  // ed: 현재 아래 4개의 토픽들만 퍼블리시한다
+  ros::Publisher pubLaserCloudCornerLast = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_corner_last", 2);
+  ros::Publisher pubLaserCloudSurfLast = nh.advertise<sensor_msgs::PointCloud2> ("/laser_cloud_surf_last", 2);
+  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_cloud_3", 2);
+  ros::Publisher pubLaserOdometry = nh.advertise<nav_msgs::Odometry> ("/laser_odom_to_init", 5);
 
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc1", 2);
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc2", 2);
   //ros::Publisher pub3 = nh.advertise<sensor_msgs::PointCloud2> ("/pc3", 2);
   //ros::Publisher pub4 = nh.advertise<sensor_msgs::PointCloud2> ("/pc4", 2);
 
-  ros::Publisher pubLaserOdometry = nh.advertise<nav_msgs::Odometry> ("/laser_odom_to_init", 5);
   nav_msgs::Odometry laserOdometry;
   laserOdometry.header.frame_id = "/camera_init";
   laserOdometry.child_frame_id = "/laser_odom";
@@ -374,6 +364,7 @@ int main(int argc, char** argv){
   int frameCount = skipFrameNum;
   ros::Rate rate(100);
   bool status = ros::ok();
+
   while (status) {
     ros::spinOnce();
 
@@ -384,6 +375,7 @@ int main(int argc, char** argv){
         fabs(timeSurfPointsFlat - timeSurfPointsLessFlat) < 0.005 &&
         fabs(timeLaserCloudFullRes - timeSurfPointsLessFlat) < 0.005 &&
         fabs(timeImuTrans - timeSurfPointsLessFlat) < 0.005) {
+
       newCornerPointsSharp = false;
       newCornerPointsLessSharp = false;
       newSurfPointsFlat = false;
@@ -403,19 +395,25 @@ int main(int argc, char** argv){
         kdtreeCornerLast->setInputCloud(laserCloudCornerLast);
         kdtreeSurfLast->setInputCloud(laserCloudSurfLast);
 
+
         sensor_msgs::PointCloud2 laserCloudCornerLast2;
         pcl::toROSMsg(*laserCloudCornerLast, laserCloudCornerLast2);
         laserCloudCornerLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
         laserCloudCornerLast2.header.frame_id = "/camera";
+
+        // ed: /laser_cloud_corner_last 토픽으로 퍼블리시한다
         pubLaserCloudCornerLast.publish(laserCloudCornerLast2);
+
 
         sensor_msgs::PointCloud2 laserCloudSurfLast2;
         pcl::toROSMsg(*laserCloudSurfLast, laserCloudSurfLast2);
         laserCloudSurfLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
         laserCloudSurfLast2.header.frame_id = "/camera";
+
+        // ed: /laser_cloud_surf_last 토픽으로 퍼블리시한다
         pubLaserCloudSurfLast.publish(laserCloudSurfLast2);
 
-//jh
+        //jh
         transformSum[0] += imuRollStart;
         transformSum[1] += imuPitchStart;
         //transformSum[2] += imuYawStart;
@@ -438,19 +436,20 @@ int main(int argc, char** argv){
       if (laserCloudCornerLastNum > 10 && laserCloudSurfLastNum > 100) {
         int cornerPointsSharpNum = cornerPointsSharp->points.size();
         int surfPointsFlatNum = surfPointsFlat->points.size();
+
         for (int iterCount = 0; iterCount < 25; iterCount++) {
           for (int i = 0; i < cornerPointsSharpNum; i++) {
             TransformToStart(&cornerPointsSharp->points[i], &pointSel);
 
             if (iterCount % 5 == 0) {
               kdtreeCornerLast->nearestKSearch(pointSel, 1, pointSearchInd, pointSearchSqDis);
-
               int closestPointInd = -1, minPointInd2 = -1;
+
               if (pointSearchSqDis[0] < 25) {
                 closestPointInd = pointSearchInd[0];
                 int closestPointScan = int(laserCloudCornerLast->points[closestPointInd].intensity);
-
                 float pointSqDis, minPointSqDis2 = 25;
+
                 for (int j = closestPointInd + 1; j < cornerPointsSharpNum; j++) {
                   if (int(laserCloudCornerLast->points[j].intensity) > closestPointScan + 2.5) {
                     break;
@@ -470,6 +469,7 @@ int main(int argc, char** argv){
                     }
                   }
                 }
+
                 for (int j = closestPointInd - 1; j >= 0; j--) {
                   if (int(laserCloudCornerLast->points[j].intensity) < closestPointScan - 2.5) {
                     break;
@@ -510,22 +510,22 @@ int main(int argc, char** argv){
               float z2 = tripod2.z;
 
               float a012 = sqrt(((x0 - x1)*(y0 - y2) - (x0 - x2)*(y0 - y1))
-                         * ((x0 - x1)*(y0 - y2) - (x0 - x2)*(y0 - y1)) 
-                         + ((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1))
-                         * ((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1)) 
-                         + ((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))
-                         * ((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1)));
+                                * ((x0 - x1)*(y0 - y2) - (x0 - x2)*(y0 - y1))
+                                + ((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1))
+                                * ((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1))
+                                + ((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))
+                                * ((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1)));
 
               float l12 = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2) + (z1 - z2)*(z1 - z2));
 
               float la = ((y1 - y2)*((x0 - x1)*(y0 - y2) - (x0 - x2)*(y0 - y1)) 
-                       + (z1 - z2)*((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1))) / a012 / l12;
+                          + (z1 - z2)*((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1))) / a012 / l12;
 
               float lb = -((x1 - x2)*((x0 - x1)*(y0 - y2) - (x0 - x2)*(y0 - y1)) 
-                       - (z1 - z2)*((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))) / a012 / l12;
+                           - (z1 - z2)*((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))) / a012 / l12;
 
               float lc = -((x1 - x2)*((x0 - x1)*(z0 - z2) - (x0 - x2)*(z0 - z1)) 
-                       + (y1 - y2)*((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))) / a012 / l12;
+                           + (y1 - y2)*((y0 - y1)*(z0 - z2) - (y0 - y2)*(z0 - z1))) / a012 / l12;
 
               float ld2 = a012 / l12;
 
@@ -535,6 +535,7 @@ int main(int argc, char** argv){
               pointProj.z -= lc * ld2;
 
               float s = 1;
+
               if (iterCount >= 5) {
                 s = 1 - 1.8 * fabs(ld2);
               }
@@ -559,13 +560,13 @@ int main(int argc, char** argv){
 
             if (iterCount % 5 == 0) {
               kdtreeSurfLast->nearestKSearch(pointSel, 1, pointSearchInd, pointSearchSqDis);
-
               int closestPointInd = -1, minPointInd2 = -1, minPointInd3 = -1;
+
               if (pointSearchSqDis[0] < 25) {
                 closestPointInd = pointSearchInd[0];
                 int closestPointScan = int(laserCloudSurfLast->points[closestPointInd].intensity);
-
                 float pointSqDis, minPointSqDis2 = 25, minPointSqDis3 = 25;
+
                 for (int j = closestPointInd + 1; j < surfPointsFlatNum; j++) {
                   if (int(laserCloudSurfLast->points[j].intensity) > closestPointScan + 2.5) {
                     break;
@@ -579,15 +580,15 @@ int main(int argc, char** argv){
                                (laserCloudSurfLast->points[j].z - pointSel.z);
 
                   if (int(laserCloudSurfLast->points[j].intensity) <= closestPointScan) {
-                     if (pointSqDis < minPointSqDis2) {
-                       minPointSqDis2 = pointSqDis;
-                       minPointInd2 = j;
-                     }
+                    if (pointSqDis < minPointSqDis2) {
+                      minPointSqDis2 = pointSqDis;
+                      minPointInd2 = j;
+                    }
                   } else {
-                     if (pointSqDis < minPointSqDis3) {
-                       minPointSqDis3 = pointSqDis;
-                       minPointInd3 = j;
-                     }
+                    if (pointSqDis < minPointSqDis3) {
+                      minPointSqDis3 = pointSqDis;
+                      minPointInd3 = j;
+                    }
                   }
                 }
                 for (int j = closestPointInd - 1; j >= 0; j--) {
@@ -607,7 +608,8 @@ int main(int argc, char** argv){
                       minPointSqDis2 = pointSqDis;
                       minPointInd2 = j;
                     }
-                  } else {
+                  }
+                  else {
                     if (pointSqDis < minPointSqDis3) {
                       minPointSqDis3 = pointSqDis;
                       minPointInd3 = j;
@@ -627,11 +629,11 @@ int main(int argc, char** argv){
               tripod3 = laserCloudSurfLast->points[pointSearchSurfInd3[i]];
 
               float pa = (tripod2.y - tripod1.y) * (tripod3.z - tripod1.z) 
-                       - (tripod3.y - tripod1.y) * (tripod2.z - tripod1.z);
+                         - (tripod3.y - tripod1.y) * (tripod2.z - tripod1.z);
               float pb = (tripod2.z - tripod1.z) * (tripod3.x - tripod1.x) 
-                       - (tripod3.z - tripod1.z) * (tripod2.x - tripod1.x);
+                         - (tripod3.z - tripod1.z) * (tripod2.x - tripod1.x);
               float pc = (tripod2.x - tripod1.x) * (tripod3.y - tripod1.y) 
-                       - (tripod3.x - tripod1.x) * (tripod2.y - tripod1.y);
+                         - (tripod3.x - tripod1.x) * (tripod2.y - tripod1.y);
               float pd = -(pa * tripod1.x + pb * tripod1.y + pc * tripod1.z);
 
               float ps = sqrt(pa * pa + pb * pb + pc * pc);
@@ -650,7 +652,7 @@ int main(int argc, char** argv){
               float s = 1;
               if (iterCount >= 5) {
                 s = 1 - 1.8 * fabs(pd2) / sqrt(sqrt(pointSel.x * pointSel.x
-                  + pointSel.y * pointSel.y + pointSel.z * pointSel.z));
+                                                    + pointSel.y * pointSel.y + pointSel.z * pointSel.z));
               }
 
               coeff.x = s * pa;
@@ -697,33 +699,33 @@ int main(int argc, char** argv){
             float tz = s * transform[5];
 
             float arx = (-s*crx*sry*srz*pointOri.x + s*crx*crz*sry*pointOri.y + s*srx*sry*pointOri.z 
-                      + s*tx*crx*sry*srz - s*ty*crx*crz*sry - s*tz*srx*sry) * coeff.x
-                      + (s*srx*srz*pointOri.x - s*crz*srx*pointOri.y + s*crx*pointOri.z
-                      + s*ty*crz*srx - s*tz*crx - s*tx*srx*srz) * coeff.y
-                      + (s*crx*cry*srz*pointOri.x - s*crx*cry*crz*pointOri.y - s*cry*srx*pointOri.z
-                      + s*tz*cry*srx + s*ty*crx*cry*crz - s*tx*crx*cry*srz) * coeff.z;
+                         + s*tx*crx*sry*srz - s*ty*crx*crz*sry - s*tz*srx*sry) * coeff.x
+                        + (s*srx*srz*pointOri.x - s*crz*srx*pointOri.y + s*crx*pointOri.z
+                           + s*ty*crz*srx - s*tz*crx - s*tx*srx*srz) * coeff.y
+                        + (s*crx*cry*srz*pointOri.x - s*crx*cry*crz*pointOri.y - s*cry*srx*pointOri.z
+                           + s*tz*cry*srx + s*ty*crx*cry*crz - s*tx*crx*cry*srz) * coeff.z;
 
             float ary = ((-s*crz*sry - s*cry*srx*srz)*pointOri.x 
-                      + (s*cry*crz*srx - s*sry*srz)*pointOri.y - s*crx*cry*pointOri.z 
-                      + tx*(s*crz*sry + s*cry*srx*srz) + ty*(s*sry*srz - s*cry*crz*srx) 
-                      + s*tz*crx*cry) * coeff.x
-                      + ((s*cry*crz - s*srx*sry*srz)*pointOri.x 
-                      + (s*cry*srz + s*crz*srx*sry)*pointOri.y - s*crx*sry*pointOri.z
-                      + s*tz*crx*sry - ty*(s*cry*srz + s*crz*srx*sry) 
-                      - tx*(s*cry*crz - s*srx*sry*srz)) * coeff.z;
+                         + (s*cry*crz*srx - s*sry*srz)*pointOri.y - s*crx*cry*pointOri.z
+                         + tx*(s*crz*sry + s*cry*srx*srz) + ty*(s*sry*srz - s*cry*crz*srx)
+                         + s*tz*crx*cry) * coeff.x
+                        + ((s*cry*crz - s*srx*sry*srz)*pointOri.x
+                           + (s*cry*srz + s*crz*srx*sry)*pointOri.y - s*crx*sry*pointOri.z
+                           + s*tz*crx*sry - ty*(s*cry*srz + s*crz*srx*sry)
+                           - tx*(s*cry*crz - s*srx*sry*srz)) * coeff.z;
 
             float arz = ((-s*cry*srz - s*crz*srx*sry)*pointOri.x + (s*cry*crz - s*srx*sry*srz)*pointOri.y
-                      + tx*(s*cry*srz + s*crz*srx*sry) - ty*(s*cry*crz - s*srx*sry*srz)) * coeff.x
-                      + (-s*crx*crz*pointOri.x - s*crx*srz*pointOri.y
-                      + s*ty*crx*srz + s*tx*crx*crz) * coeff.y
-                      + ((s*cry*crz*srx - s*sry*srz)*pointOri.x + (s*crz*sry + s*cry*srx*srz)*pointOri.y
-                      + tx*(s*sry*srz - s*cry*crz*srx) - ty*(s*crz*sry + s*cry*srx*srz)) * coeff.z;
+                         + tx*(s*cry*srz + s*crz*srx*sry) - ty*(s*cry*crz - s*srx*sry*srz)) * coeff.x
+                        + (-s*crx*crz*pointOri.x - s*crx*srz*pointOri.y
+                           + s*ty*crx*srz + s*tx*crx*crz) * coeff.y
+                        + ((s*cry*crz*srx - s*sry*srz)*pointOri.x + (s*crz*sry + s*cry*srx*srz)*pointOri.y
+                           + tx*(s*sry*srz - s*cry*crz*srx) - ty*(s*crz*sry + s*cry*srx*srz)) * coeff.z;
 
             float atx = -s*(cry*crz - srx*sry*srz) * coeff.x + s*crx*srz * coeff.y 
-                      - s*(crz*sry + cry*srx*srz) * coeff.z;
+                        - s*(crz*sry + cry*srx*srz) * coeff.z;
   
             float aty = -s*(cry*srz + crz*srx*sry) * coeff.x - s*crx*crz * coeff.y 
-                      - s*(sry*srz - cry*crz*srx) * coeff.z;
+                        - s*(sry*srz - cry*crz*srx) * coeff.z;
   
             float atz = s*crx*sry * coeff.x - s*srx * coeff.y - s*crx*cry * coeff.z;
 
@@ -737,6 +739,7 @@ int main(int argc, char** argv){
             matA.at<float>(i, 5) = atz;
             matB.at<float>(i, 0) = -0.05 * d2;
           }
+
           cv::transpose(matA, matAt);
           matAtA = matAt * matA;
           matAtB = matAt * matB;
@@ -752,13 +755,15 @@ int main(int argc, char** argv){
 
             isDegenerate = false;
             float eignThre[6] = {10, 10, 10, 10, 10, 10};
+
             for (int i = 5; i >= 0; i--) {
               if (matE.at<float>(0, i) < eignThre[i]) {
                 for (int j = 0; j < 6; j++) {
                   matV2.at<float>(i, j) = 0;
                 }
                 isDegenerate = true;
-              } else {
+              }
+              else {
                 break;
               }
             }
@@ -781,11 +786,11 @@ int main(int argc, char** argv){
           transform[5] += matX.at<float>(5, 0);
 
           float deltaR = sqrt(matX.at<float>(0, 0) * 180 / PI * matX.at<float>(0, 0) * 180 / PI
-                       + matX.at<float>(1, 0) * 180 / PI * matX.at<float>(1, 0) * 180 / PI
-                       + matX.at<float>(2, 0) * 180 / PI * matX.at<float>(2, 0) * 180 / PI);
+                              + matX.at<float>(1, 0) * 180 / PI * matX.at<float>(1, 0) * 180 / PI
+                              + matX.at<float>(2, 0) * 180 / PI * matX.at<float>(2, 0) * 180 / PI);
           float deltaT = sqrt(matX.at<float>(3, 0) * 100 * matX.at<float>(3, 0) * 100
-                       + matX.at<float>(4, 0) * 100 * matX.at<float>(4, 0) * 100
-                       + matX.at<float>(5, 0) * 100 * matX.at<float>(5, 0) * 100);
+                              + matX.at<float>(4, 0) * 100 * matX.at<float>(4, 0) * 100
+                              + matX.at<float>(5, 0) * 100 * matX.at<float>(5, 0) * 100);
 
           if (deltaR < 0.1 && deltaT < 0.1) {
             break;
@@ -800,9 +805,9 @@ int main(int argc, char** argv){
                          -transform[0], -transform[1] * 1.05, -transform[2], rx, ry, rz);
 
       float x1 = cos(rz) * (transform[3] - imuShiftFromStartX) 
-               - sin(rz) * (transform[4] - imuShiftFromStartY);
+                 - sin(rz) * (transform[4] - imuShiftFromStartY);
       float y1 = sin(rz) * (transform[3] - imuShiftFromStartX) 
-               + cos(rz) * (transform[4] - imuShiftFromStartY);
+                 + cos(rz) * (transform[4] - imuShiftFromStartY);
       float z1 = transform[5] * 1.05 - imuShiftFromStartZ;
 
       float x2 = x1;
@@ -833,6 +838,8 @@ int main(int argc, char** argv){
       laserOdometry.pose.pose.position.x = tx;
       laserOdometry.pose.pose.position.y = ty;
       laserOdometry.pose.pose.position.z = tz;
+
+      // ed: /laser_odom_to_init 토픽으로 퍼블리사한다
       pubLaserOdometry.publish(laserOdometry);
 
       laserOdometryTrans.stamp_ = ros::Time().fromSec(timeSurfPointsLessFlat);
@@ -868,6 +875,7 @@ int main(int argc, char** argv){
 
       laserCloudCornerLastNum = laserCloudCornerLast->points.size();
       laserCloudSurfLastNum = laserCloudSurfLast->points.size();
+
       if (laserCloudCornerLastNum > 10 && laserCloudSurfLastNum > 100) {
         kdtreeCornerLast->setInputCloud(laserCloudCornerLast);
         kdtreeSurfLast->setInputCloud(laserCloudSurfLast);
@@ -875,49 +883,56 @@ int main(int argc, char** argv){
 
       if (frameCount >= skipFrameNum + 1) {
         frameCount = 0;
-
         sensor_msgs::PointCloud2 laserCloudCornerLast2;
         pcl::toROSMsg(*laserCloudCornerLast, laserCloudCornerLast2);
         laserCloudCornerLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
         laserCloudCornerLast2.header.frame_id = "/camera";
+
+        // ed: /laser_cloud_corner_last 토픽으로 퍼블리시한다
         pubLaserCloudCornerLast.publish(laserCloudCornerLast2);
 
         sensor_msgs::PointCloud2 laserCloudSurfLast2;
         pcl::toROSMsg(*laserCloudSurfLast, laserCloudSurfLast2);
         laserCloudSurfLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
         laserCloudSurfLast2.header.frame_id = "/camera";
+
+        // ed: /laser_cloud_surf_last 토픽으로 퍼블리시한다
         pubLaserCloudSurfLast.publish(laserCloudSurfLast2);
 
         sensor_msgs::PointCloud2 laserCloudFullRes3;
         pcl::toROSMsg(*laserCloudFullRes, laserCloudFullRes3);
         laserCloudFullRes3.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
         laserCloudFullRes3.header.frame_id = "/camera";
+
+        // ed: /velodyne_cloud_3 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);
       }
 
+
+
       /*sensor_msgs::PointCloud2 pc12;
-      pcl::toROSMsg(*pointSearchCornerLast, pc12);
-      pc12.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-      pc12.header.frame_id = "/camera";
-      pub1.publish(pc12);
+        pcl::toROSMsg(*pointSearchCornerLast, pc12);
+        pc12.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
+        pc12.header.frame_id = "/camera";
+        pub1.publish(pc12);
 
-      sensor_msgs::PointCloud2 pc22;
-      pcl::toROSMsg(*pointSearchSurfLast, pc22);
-      pc22.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-      pc22.header.frame_id = "/camera";
-      pub2.publish(pc22);
+        sensor_msgs::PointCloud2 pc22;
+        pcl::toROSMsg(*pointSearchSurfLast, pc22);
+        pc22.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
+        pc22.header.frame_id = "/camera";
+        pub2.publish(pc22);
 
-      sensor_msgs::PointCloud2 pc32;
-      pcl::toROSMsg(*pointProjCornerLast, pc32);
-      pc32.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-      pc32.header.frame_id = "/camera";
-      pub3.publish(pc32);
+        sensor_msgs::PointCloud2 pc32;
+        pcl::toROSMsg(*pointProjCornerLast, pc32);
+        pc32.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
+        pc32.header.frame_id = "/camera";
+        pub3.publish(pc32);
 
-      sensor_msgs::PointCloud2 pc42;
-      pcl::toROSMsg(*pointProjSurfLast, pc42);
-      pc42.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-      pc42.header.frame_id = "/camera";
-      pub4.publish(pc42);*/
+        sensor_msgs::PointCloud2 pc42;
+        pcl::toROSMsg(*pointProjSurfLast, pc42);
+        pc42.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
+        pc42.header.frame_id = "/camera";
+        pub4.publish(pc42);*/
     }
 
     status = ros::ok();

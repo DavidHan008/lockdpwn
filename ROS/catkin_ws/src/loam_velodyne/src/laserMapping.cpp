@@ -306,8 +306,7 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry)
   newLaserOdometry = true;
 }
 
-void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn)
-{
+void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
   double roll, pitch, yaw;
   tf::Quaternion orientation;
   tf::quaternionMsgToTF(imuIn->orientation, orientation);
@@ -320,9 +319,7 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn)
   imuPitch[imuPointerLast] = pitch;
 }
 
-void mapSaveHandler(const std_msgs::String::ConstPtr& str)
-{
-
+void mapSaveHandler(const std_msgs::String::ConstPtr& str){
   ROS_INFO("Saving the current map... to %s",str->data.c_str());
   int cubeI = laserCloudCenWidth;
   int cubeJ = laserCloudCenHeight;
@@ -334,36 +331,29 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str)
 }
 
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "laserMapping");
   ros::NodeHandle nh;
 
-  ros::Subscriber subLaserCloudCornerLast = nh.subscribe<sensor_msgs::PointCloud2>
-                                            ("/laser_cloud_corner_last", 2, laserCloudCornerLastHandler);
-  ros::Subscriber subLaserCloudSurfLast = nh.subscribe<sensor_msgs::PointCloud2>
-                                          ("/laser_cloud_surf_last", 2, laserCloudSurfLastHandler);
-  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry>
-                                     ("/laser_odom_to_init", 5, laserOdometryHandler);
-  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>
-                                         ("/velodyne_cloud_3", 2, laserCloudFullResHandler);
-  ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>
-      ("/loam_map_save", 1, mapSaveHandler);
+  ros::Subscriber subLaserCloudCornerLast = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_corner_last", 2, laserCloudCornerLastHandler);
+  ros::Subscriber subLaserCloudSurfLast = nh.subscribe<sensor_msgs::PointCloud2>("/laser_cloud_surf_last", 2, laserCloudSurfLastHandler);
+  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry>("/laser_odom_to_init", 5, laserOdometryHandler);
+  ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_cloud_3", 2, laserCloudFullResHandler);
+  ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>("/loam_map_save", 1, mapSaveHandler);
 //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
 
 
-  ros::Publisher pubLaserCloudSurround = nh.advertise<sensor_msgs::PointCloud2> 
-                                         ("/laser_cloud_surround", 1);
-  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>
-                                        ("/velodyne_cloud_registered", 2);
+  // ed: 현재 아래 3개의 토픽만 퍼블리시한다
+  ros::Publisher pubLaserCloudSurround = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_surround", 1);
+  ros::Publisher pubLaserCloudFullRes = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_cloud_registered", 2);
+  ros::Publisher pubOdomAftMapped = nh.advertise<nav_msgs::Odometry> ("/aft_mapped_to_init", 5);
 
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc1", 2);
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc2", 2);
   //ros::Publisher pub1 = nh.advertise<sensor_msgs::PointCloud2> ("/pc3", 2);
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc4", 2);
 
-  ros::Publisher pubOdomAftMapped = nh.advertise<nav_msgs::Odometry> ("/aft_mapped_to_init", 5);
   nav_msgs::Odometry odomAftMapped;
   odomAftMapped.header.frame_id = "/camera_init";
   odomAftMapped.child_frame_id = "/aft_mapped";
@@ -1079,6 +1069,8 @@ int main(int argc, char** argv)
           pcl::toROSMsg(*laserCloudSurround, laserCloudSurround3);
           laserCloudSurround3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
           laserCloudSurround3.header.frame_id = "/camera_init";
+
+          // ed: /laser_cloud_surround 토픽으로 퍼블리시한다
           pubLaserCloudSurround.publish(laserCloudSurround3);
         }
 
@@ -1091,6 +1083,8 @@ int main(int argc, char** argv)
         pcl::toROSMsg(*laserCloudFullRes, laserCloudFullRes3);
         laserCloudFullRes3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
         laserCloudFullRes3.header.frame_id = "/camera_init";
+
+        // ed: /velodyne_cloud_registered 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);
 
         geometry_msgs::Quaternion geoQuat = tf::createQuaternionMsgFromRollPitchYaw
@@ -1110,6 +1104,8 @@ int main(int argc, char** argv)
         odomAftMapped.twist.twist.linear.x = transformBefMapped[3];
         odomAftMapped.twist.twist.linear.y = transformBefMapped[4];
         odomAftMapped.twist.twist.linear.z = transformBefMapped[5];
+
+        // ed: /aft_mapped_to_init 토픽으로 퍼블리시한다
         pubOdomAftMapped.publish(odomAftMapped);
 
         aftMappedTrans.stamp_ = ros::Time().fromSec(timeLaserOdometry);

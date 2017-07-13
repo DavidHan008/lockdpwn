@@ -246,3 +246,8 @@
 		
 
 
+	31. shutter 단축키 설정했다
+	    	    설정 - 키보드 - shortcut에서 설정했다
+		    ctrl + F3 : 전체 스크린샷 shutter -f
+		    ctrl + F4 : 영역 스크린샷 shutter -s
+

@@ -34,7 +34,6 @@ struct LocalizationData_
     , x(0.0)
     , y(0.0)
     , v(0.0)  {
-  (void)_alloc;
     }
 
 
@@ -180,7 +179,7 @@ namespace serialization
       stream.next(m.v);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct LocalizationData_
 
 } // namespace serialization

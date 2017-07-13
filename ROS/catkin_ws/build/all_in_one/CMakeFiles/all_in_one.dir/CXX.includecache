@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/all_in_one/inc/moc_CatmullRomSpline.cxx
-
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/all_in_one/inc/moc_all_in_one_main.cxx
 ../../../src/all_in_one/inc/all_in_one_main.h
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/all_in_one/inc/all_in_one_main.h
@@ -21,15 +19,13 @@ QtGui/QApplication
 -
 QtGui/QButtonGroup
 -
-QtGui/QCheckBox
+QtGui/QComboBox
 -
 QtGui/QFrame
 -
 QtGui/QGroupBox
 -
 QtGui/QHeaderView
--
-QtGui/QLCDNumber
 -
 QtGui/QLabel
 -
@@ -43,11 +39,11 @@ QtGui/QPushButton
 -
 QtGui/QRadioButton
 -
-QtGui/QScrollBar
--
-QtGui/QSlider
--
 QtGui/QSpinBox
+-
+QtGui/QTabWidget
+-
+QtGui/QToolBar
 -
 QtGui/QWidget
 -
@@ -2218,13 +2214,13 @@ qapplication.h
 qbuttongroup.h
 /usr/include/qt4/QtGui/qbuttongroup.h
 
-/usr/include/qt4/QtGui/QCheckBox
-qcheckbox.h
-/usr/include/qt4/QtGui/qcheckbox.h
-
 /usr/include/qt4/QtGui/QCleanlooksStyle
 qcleanlooksstyle.h
 /usr/include/qt4/QtGui/qcleanlooksstyle.h
+
+/usr/include/qt4/QtGui/QComboBox
+qcombobox.h
+/usr/include/qt4/QtGui/qcombobox.h
 
 /usr/include/qt4/QtGui/QCommonStyle
 qcommonstyle.h
@@ -2249,10 +2245,6 @@ qgroupbox.h
 /usr/include/qt4/QtGui/QHeaderView
 qheaderview.h
 /usr/include/qt4/QtGui/qheaderview.h
-
-/usr/include/qt4/QtGui/QLCDNumber
-qlcdnumber.h
-/usr/include/qt4/QtGui/qlcdnumber.h
 
 /usr/include/qt4/QtGui/QLabel
 qlabel.h
@@ -2298,17 +2290,17 @@ qpushbutton.h
 qradiobutton.h
 /usr/include/qt4/QtGui/qradiobutton.h
 
-/usr/include/qt4/QtGui/QScrollBar
-qscrollbar.h
-/usr/include/qt4/QtGui/qscrollbar.h
-
-/usr/include/qt4/QtGui/QSlider
-qslider.h
-/usr/include/qt4/QtGui/qslider.h
-
 /usr/include/qt4/QtGui/QSpinBox
 qspinbox.h
 /usr/include/qt4/QtGui/qspinbox.h
+
+/usr/include/qt4/QtGui/QTabWidget
+qtabwidget.h
+/usr/include/qt4/QtGui/qtabwidget.h
+
+/usr/include/qt4/QtGui/QToolBar
+qtoolbar.h
+/usr/include/qt4/QtGui/qtoolbar.h
 
 /usr/include/qt4/QtGui/QTransform
 qtransform.h

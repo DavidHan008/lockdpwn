@@ -1,2 +1,2 @@
-all_in_one:car_can:controller:loam_velodyne:localization:mcu_can:motion_planner:torcs_ros/torcs_img_publisher:torcs_ros/torcs_msgs:torcs_ros/torcs_ros_bringup:torcs_ros/torcs_ros_client:torcs_ros/torcs_ros_drive_ctrl
+all_in_one:car_can:controller:height_map:loam_velodyne:localization:mcu_can:motion_planner
 -DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install -G Unix Makefiles

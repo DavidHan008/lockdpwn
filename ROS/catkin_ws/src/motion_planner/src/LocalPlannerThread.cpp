@@ -69,6 +69,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
 
     ofstream fout;
     //    printf("good444");
+
     // ed: rviz에 초록색선을 그리고 해당 좌표파일을 저장한다
     fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
 
@@ -80,9 +81,12 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
         waypt.header.frame_id = "/camera_init";
         waypt.header.stamp = ros::Time::now();
 
-        // ed: 아래코드 path ==> waypt ==> waypoints ==> msg ==> publish(msg) 순서인듯하다
+        // ed: 아래코드 path ==> waypt ==> waypoints ==> msg ==> publish(msg) 순서로 데이터를 저장한다
+        // ed: 초록색 Path Line을 회전해서 정확히 Loam축과 맞도록 아래 코드를 수정했다
         waypt.pose.position.x = path[i][0];
         waypt.pose.position.y = path[i][1];
+        //waypt.pose.position.x = path[i][1];
+        //waypt.pose.position.y = -path[i][0];
         waypt.pose.position.z = 0;
         waypoints.push_back(waypt);
 
@@ -742,6 +746,7 @@ void LocalPlannerThread::PubMsg(){
     publish_local_path(m_LocalSplinePath);
 }
 
+// ed: JW Path 버튼을 누르면 실행되는 함수
 ////JW 16.07.11.test1
 void LocalPlannerThread::Pub_JWPathMsg(){
     //	int count = 0;
@@ -819,6 +824,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
         }
 
     }
+
     cout << "Finish" << endl;
     //    printf("good222");
     nodeVec.push_back(Vector2d(X, Y));

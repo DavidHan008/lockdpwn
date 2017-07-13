@@ -22,15 +22,15 @@
 typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
 
 
-class PoseInitializer
-{
+class PoseInitializer{
 
 public:
+  // ed: PoseInitializer 생성자
   PoseInitializer() : nh_("~"), recordStart_(false), isRecordFinished_(false),
     previousMap_(new PointCloud), currentMap_(new PointCloud),
     currentMapFiltered_(new PointCloud), alignedMap_(new PointCloud),
-    transformedMap_ (new PointCloud)
-  {
+    transformedMap_ (new PointCloud) {
+
     nh_.param<bool>("enable_init_map", enable_init_map, false);
     nh_.param<std::string>("map_file", map_file, "init.pcd");
     nh_.param<double>("init_map_record_time", init_map_record_time, 1.0);
@@ -88,17 +88,14 @@ private:  // VARIABLE
   bool isRecordFinished_;
   ros::Time recordEndTime_;
 
-
   // METHOD
-  void loadPrevMap()
-  {
+  void loadPrevMap() {
     int error = pcl::io::loadPCDFile(map_file, *previousMap_);
     if (error < 0)
       ROS_ERROR("PCD File load failed. \n filename = %s",map_file.c_str());
   }
 
-  void filter()
-  {
+  void filter() {
     ROS_INFO("Filtering Start");
     pcl::VoxelGrid<pcl::PointXYZ> downSizeFilter;
     downSizeFilter.setInputCloud(currentMap_);
@@ -106,8 +103,7 @@ private:  // VARIABLE
     downSizeFilter.filter(*currentMapFiltered_);
   }
 
-  void match()
-  {
+  void match() {
     ROS_INFO("Matching Start");
     pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
     gicp.setInputSource(currentMapFiltered_);
@@ -138,8 +134,7 @@ private:  // VARIABLE
     initTfInv_(3,2) = 0;
     initTfInv_(3,3) = 1;
 
-    if (file_debug)
-    {
+    if (file_debug) {
       pcl::io::savePCDFile("source.pcd",*previousMap_);
       pcl::io::savePCDFile("target.pcd",*currentMapFiltered_);
       pcl::io::savePCDFile("aligned.pcd",*alignedMap_);
@@ -167,22 +162,16 @@ private:  // VARIABLE
     */
   }
 
-  void initMessageHandlerStart()
-  {
-
+  void initMessageHandlerStart() {
     odomMsg_.header.frame_id = "/camera_init_global";
     odomMsg_.child_frame_id = "/camera";
     odomTrans3_.frame_id_ = "/camera_init_global";
     odomTrans3_.child_frame_id_ = "/camera";
 
-    pubAdjustedOdometry_ = nh_.advertise<nav_msgs::Odometry>
-        ("/cam_to_global_init", 5);
-    pubAdjustedMap_ = nh_.advertise< PointCloud >
-        ("/laser_cloud_surround_with_init", 1);
-    subOriginalMap_ = nh_.subscribe< PointCloud >
-        ("/laser_cloud_surround", 1, &PoseInitializer::mapCallback, this);
-    subOriginalOdometry_ = nh_.subscribe
-        ("/integrated_to_init", 5, &PoseInitializer::odometryCallback, this);
+    pubAdjustedOdometry_ = nh_.advertise<nav_msgs::Odometry>("/cam_to_global_init", 5);
+    pubAdjustedMap_ = nh_.advertise< PointCloud >("/laser_cloud_surround_with_init", 1);
+    subOriginalMap_ = nh_.subscribe< PointCloud >("/laser_cloud_surround", 1, &PoseInitializer::mapCallback, this);
+    subOriginalOdometry_ = nh_.subscribe("/integrated_to_init", 5, &PoseInitializer::odometryCallback, this);
 
   }
 
@@ -271,14 +260,13 @@ private:  // CALLBACK
     pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
     pose2DMsg_.y = odomMsg_.pose.pose.position.x;
     pose2DMsg_.theta = yaw;  //Mypose.theta = tf::getYaw(geoQuat);
-    if(yaw<0)
-    {
+    if(yaw<0) {
       pose2DMsg_.theta += 2.0 * M_PI;
     }
-    else
-    {
+    else {
       //Mypose.theta += 0.5 * PI;
     }
+
     pubPose2D_.publish(pose2DMsg_);
 
     //printf("%f %f \n",Mypose.x, Mypose.y);
@@ -287,8 +275,7 @@ private:  // CALLBACK
 };
 
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "poseInitializer");
 
   PoseInitializer pi;

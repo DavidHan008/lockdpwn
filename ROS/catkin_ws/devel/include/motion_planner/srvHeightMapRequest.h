@@ -34,7 +34,6 @@ struct srvHeightMapRequest_
     , y(0.0)
     , theta(0.0)
     , mode(0)  {
-  (void)_alloc;
     }
 
 
@@ -180,7 +179,7 @@ namespace serialization
       stream.next(m.mode);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct srvHeightMapRequest_
 
 } // namespace serialization

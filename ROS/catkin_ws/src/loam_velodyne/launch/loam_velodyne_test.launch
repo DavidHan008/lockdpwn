@@ -1,0 +1,7 @@
+<launch>
+  <!-- ed: 여기도 PoseInitializer는 사용하지 않는다 -->
+  <node pkg="loam_velodyne" type="scanRegistration" name="scanRegistration" output="screen"/>
+  <node pkg="loam_velodyne" type="laserOdometry" name="laserOdometry" output="screen"/>
+  <node pkg="loam_velodyne" type="laserMapping" name="laserMapping" output="screen"/>
+  <node pkg="loam_velodyne" type="transformMaintenance" name="transformMaintenance" output="screen"/>
+</launch>

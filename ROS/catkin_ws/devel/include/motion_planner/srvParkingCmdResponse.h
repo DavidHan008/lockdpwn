@@ -28,7 +28,6 @@ struct srvParkingCmdResponse_
     }
   srvParkingCmdResponse_(const ContainerAllocator& _alloc)
     : result(0)  {
-  (void)_alloc;
     }
 
 
@@ -161,7 +160,7 @@ namespace serialization
       stream.next(m.result);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct srvParkingCmdResponse_
 
 } // namespace serialization

@@ -45,7 +45,6 @@ struct CarCanData_
     , sas(0.0)
     , obdVel1(0.0)
     , obdVel2(0.0)  {
-  (void)_alloc;
       gyro.assign(0.0);
 
       accl.assign(0.0);
@@ -211,7 +210,7 @@ namespace serialization
       stream.next(m.obdVel2);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct CarCanData_
 
 } // namespace serialization
