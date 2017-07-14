@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "inc/moc_main.cxx"
   "inc/moc_qnode.cxx"
   "ui_mcu_can_gui.h"
@@ -13,6 +13,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/mcu_can.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/mcu_can.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

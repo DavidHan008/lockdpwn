@@ -37,19 +37,12 @@ Visualization Manager:
       Reference Frame: camera
       Value: true
     - Class: rviz/Axes
-      Enabled: false
-      Length: 5
-      Name: laser_odom
-      Radius: 0.5
-      Reference Frame: laser_odom
-      Value: false
-    - Class: rviz/Axes
-      Enabled: false
+      Enabled: true
       Length: 5
       Name: Fixed Frame
       Radius: 0.5
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -83,16 +76,6 @@ Visualization Manager:
       Name: aft_mapped_to_init
       Position Tolerance: 0.1
       Topic: /aft_mapped_to_init
-      Value: false
-    - Angle Tolerance: 0.1
-      Class: rviz/Odometry
-      Color: 0; 255; 0
-      Enabled: false
-      Keep: 2000
-      Length: 5
-      Name: laser_odom_to_init
-      Position Tolerance: 0.1
-      Topic: /laser_odom_to_init
       Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -136,7 +119,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 15
@@ -153,7 +136,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1000
       Class: rviz/Path
@@ -252,7 +235,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -269,7 +252,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -534,22 +517,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 121.467
+      Distance: 179.869
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 16.5
-        Y: 21.3132
-        Z: -24.7907
+        X: 12.7726
+        Y: 0.92181
+        Z: -23.4698
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.639796
+      Pitch: 0.7598
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.21317
+      Yaw: 3.90817
     Saved: ~
 Window Geometry:
   Displays:

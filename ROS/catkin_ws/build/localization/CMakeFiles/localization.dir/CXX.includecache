@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/localization/inc/moc_Filter.cxx
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/localization/inc/moc_attitude.cxx
+
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/localization/inc/moc_main.cxx
 ../../../src/localization/inc/main.h
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/main.h
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/localization/inc/moc_posvel.cxx
 
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/localization/inc/moc_qnode.cxx
 ../../../src/localization/inc/qnode.h
@@ -158,6 +164,18 @@ std_msgs/Float32MultiArray.h
 QMutex
 -
 
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/src/Filter.cpp
+../inc/Filter.h
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/Filter.h
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/src/attitude.cpp
+../inc/attitude.h
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/attitude.h
+stdio.h
+-
+iostream
+-
+
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/src/main.cpp
 QtGui
 -
@@ -167,6 +185,14 @@ stdio.h
 -
 ../inc/main.h
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/main.h
+iostream
+-
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/src/posvel.cpp
+../inc/posvel.h
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/posvel.h
+../inc/mm.h
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/localization/inc/mm.h
 iostream
 -
 

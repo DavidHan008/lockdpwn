@@ -68,7 +68,6 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
     msg.header.stamp = ros::Time::now();
 
     ofstream fout;
-    //    printf("good444");
 
     // ed: rviz에 초록색선을 그리고 해당 좌표파일을 저장한다
     fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
@@ -83,10 +82,10 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
 
         // ed: 아래코드 path ==> waypt ==> waypoints ==> msg ==> publish(msg) 순서로 데이터를 저장한다
         // ed: 초록색 Path Line을 회전해서 정확히 Loam축과 맞도록 아래 코드를 수정했다
-        waypt.pose.position.x = path[i][0];
-        waypt.pose.position.y = path[i][1];
-        //waypt.pose.position.x = path[i][1];
-        //waypt.pose.position.y = -path[i][0];
+        //waypt.pose.position.x = path[i][0];
+        //waypt.pose.position.y = path[i][1];
+        waypt.pose.position.x = path[i][1];
+        waypt.pose.position.y = -path[i][0];
         waypt.pose.position.z = 0;
         waypoints.push_back(waypt);
 
@@ -135,8 +134,12 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
 
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
+
+        // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*// comments(th);
+        //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
+        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0] ;//+ m_overall*sin(th);
         msgpub_Look_orig.publish(m_model_orig);
 
         //Velodyne to car rearwheel
@@ -297,8 +300,12 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         m_pre_waypoint = car_waypoint;
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+
+        // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
         msgpub_Look_orig.publish(m_model_orig);
 
         //Error
@@ -465,16 +472,19 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
         m_pre_waypoint = car_waypoint;
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+
+        // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
         msgpub_Look_orig.publish(m_model_orig);
 
         m_CrossTrack_ERR = minDist;
 
         double dist = 0;
         int m_lookAheadIndex = -1;
-        for( int i=car_waypoint; i<m_LocalSplinePath.size()-1; i++ )
-        {
+        for( int i=car_waypoint; i<m_LocalSplinePath.size()-1; i++ ){
             double x2 = m_LocalSplinePath[i][0] - m_LocalSplinePath[i+1][0];
             x2 *= x2;
             double y2 = m_LocalSplinePath[i][1] - m_LocalSplinePath[i+1][1];
@@ -549,8 +559,12 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
 
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+
+        // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
+        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
 
         // ed: msgpub_Look_orig, LookAheadPos_orig 토픽으로 퍼블리시한다
         msgpub_Look_orig.publish(m_model_orig);
@@ -801,7 +815,6 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170118.txt");//17.01.12 parking for+rev ver3 //far
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/path_seho.txt");//circle+lane change
 
-
     fin.open("/home/dyros-vehicle/bag_files/0903map.txt");//circle+lane change
 
 
@@ -890,7 +903,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
 
 // ed:
-// $ rosbag play 0903map.bag 을 통해서 LocalizationData 토픽을 섭스크라이브 하면서 아래의 함수가 실행된다
+//     $ rosbag play 0903map.bag 을 통해서 LocalizationData 토픽을 섭스크라이브 하면서 아래의 함수가 실행된다
 
 //JW 16.07.11.test1
 void LocalPlannerThread::Compute(){
@@ -927,8 +940,12 @@ void LocalPlannerThread::Compute(){
             else a_ = m_CrossTrack_ERR/dist_thresh;
 
             m_model_jw.header.stamp = ros::Time::now();
-            m_model_jw.pose.position.x = x;
-            m_model_jw.pose.position.y = y;
+
+            // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+            //m_model_jw.pose.position.x = x;
+            //m_model_jw.pose.position.y = y;
+            m_model_jw.pose.position.x = y;
+            m_model_jw.pose.position.y = -x;
 
             steer_Purepursuit = SteeringAng_PurePursuit(x, y, resdist);
 
@@ -1015,8 +1032,12 @@ void LocalPlannerThread::Compute(){
     msgpub3.publish(m_msg);
 
     m_model_jw_exp.header.stamp = ros::Time::now();
-    m_model_jw_exp.pose.position.x = x;
-    m_model_jw_exp.pose.position.y = y;
+
+    // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+    //   m_model_jw_exp.pose.position.x = x;
+    // m_model_jw_exp.pose.position.y = y;
+    m_model_jw_exp.pose.position.x = y;
+    m_model_jw_exp.pose.position.y = -x;
 
     // ed: msgpub_Look_JW_exp, LookAheadPos 토픽으로 퍼블리시한다
     msgpub_Look_JW_exp.publish(m_model_jw_exp);
@@ -1026,9 +1047,16 @@ void LocalPlannerThread::Compute(){
     m_CarPos.header.stamp = ros::Time::now();
 
     double heading = m_pos[2];
+
     if ( heading > M_PI )  heading = heading - M_PI*2;
-    m_CarPos.pose.position.x = m_pos[0];
-    m_CarPos.pose.position.y = m_pos[1];
+
+    // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
+    //     화살표의 방향을 90도 회전시킨다
+    heading = heading - 0.5 * M_PI;
+    //m_CarPos.pose.position.x = m_pos[0];
+    //m_CarPos.pose.position.y = m_pos[1];
+    m_CarPos.pose.position.x = m_pos[1];
+    m_CarPos.pose.position.y = -m_pos[0];
 
     geometry_msgs::Quaternion m_CarPos_odom_quat = tf::createQuaternionMsgFromYaw(heading);
     m_CarPos.pose.orientation = m_CarPos_odom_quat;

@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "inc/moc_all_in_one_main.cxx"
   "inc/moc_CatmullRomSpline.cxx"
   "ui_all_in_one_gui.h"
@@ -10,6 +10,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/all_in_one.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/all_in_one.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

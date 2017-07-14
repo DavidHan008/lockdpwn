@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "inc/moc_motion_planner_main.cxx"
   "inc/moc_LocalPlannerThread.cxx"
   "inc/moc_CatmullRomSpline.cxx"
@@ -13,6 +13,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/motion_planner.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/motion_planner.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

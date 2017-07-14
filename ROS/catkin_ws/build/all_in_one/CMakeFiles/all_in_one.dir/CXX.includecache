@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/all_in_one/inc/moc_CatmullRomSpline.cxx
+
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/all_in_one/inc/moc_all_in_one_main.cxx
 ../../../src/all_in_one/inc/all_in_one_main.h
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/all_in_one/inc/all_in_one_main.h

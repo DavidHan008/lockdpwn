@@ -222,12 +222,8 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::PointXYZI point;
 
   for (int i = 0; i < cloudSize_tmp; i++) {
-
-    // ed: 전체 loam의 좌표를 변환하는 아래 코드를 수정했다 (x,y,z) ==> (-y,x,z)
     point.x = laserCloudIn->points[i].x;
     point.y = laserCloudIn->points[i].y;
-    //point.x = -laserCloudIn->points[i].y;
-    //point.y = laserCloudIn->points[i].x;
     point.z = laserCloudIn->points[i].z;
 
     float angle = atan(point.z / sqrt(point.y * point.y + point.x * point.x)) * 180 / PI;
