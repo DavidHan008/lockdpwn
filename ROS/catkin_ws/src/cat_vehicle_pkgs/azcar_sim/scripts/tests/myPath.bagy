@@ -1,0 +1,1657 @@
+header: 
+  seq: 115
+  stamp: 
+    secs: 1227
+    nsecs: 386000000
+  frame_id: /azcar_sim/odom
+poses: 
+  - 
+    header: 
+      seq: 1
+      stamp: 
+        secs: 1090
+        nsecs: 100000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 1.0
+        y: 1.0
+        z: 0.0
+      orientation: 
+        x: 5.05796792749e-22
+        y: 2.27840175815e-19
+        z: -3.55475663241e-25
+        w: 1.0
+  - 
+    header: 
+      seq: 2
+      stamp: 
+        secs: 1103
+        nsecs: 480000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 7.03104848166
+        y: 2.00046579502
+        z: 0.0
+      orientation: 
+        x: 4.43317067642e-05
+        y: 0.000338993678818
+        z: 0.115492046984
+        w: 0.993308345984
+  - 
+    header: 
+      seq: 3
+      stamp: 
+        secs: 1104
+        nsecs: 351000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 9.8615823967
+        y: 3.00060358002
+        z: 0.0
+      orientation: 
+        x: -5.52411044567e-05
+        y: 0.000483154341689
+        z: 0.172352874365
+        w: 0.985035151763
+  - 
+    header: 
+      seq: 4
+      stamp: 
+        secs: 1105
+        nsecs: 115000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 11.9830499306
+        y: 4.00112320565
+        z: 0.0
+      orientation: 
+        x: -0.000136971823272
+        y: 0.000598512392251
+        z: 0.216048645077
+        w: 0.976382407657
+  - 
+    header: 
+      seq: 5
+      stamp: 
+        secs: 1106
+        nsecs: 750000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 13.6965293301
+        y: 5.00176823466
+        z: 0.0
+      orientation: 
+        x: -8.50818788764e-05
+        y: 0.000334470482901
+        z: 0.254371284154
+        w: 0.967106576696
+  - 
+    header: 
+      seq: 6
+      stamp: 
+        secs: 1107
+        nsecs: 171000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 15.1615753049
+        y: 6.00194295198
+        z: 0.0
+      orientation: 
+        x: -0.000123343843241
+        y: 0.000471277795271
+        z: 0.287099685712
+        w: 0.957900586255
+  - 
+    header: 
+      seq: 7
+      stamp: 
+        secs: 1107
+        nsecs: 639000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 16.4424325969
+        y: 7.00233794378
+        z: 0.0
+      orientation: 
+        x: -0.000200527856855
+        y: 0.000573471544399
+        z: 0.316552181541
+        w: 0.948574903358
+  - 
+    header: 
+      seq: 8
+      stamp: 
+        secs: 1109
+        nsecs: 309000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 17.5720067265
+        y: 8.00345601968
+        z: 0.0
+      orientation: 
+        x: -8.38638266257e-05
+        y: 0.000267579619295
+        z: 0.34429949094
+        w: 0.938859830809
+  - 
+    header: 
+      seq: 9
+      stamp: 
+        secs: 1109
+        nsecs: 775000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 18.5849318945
+        y: 9.00498825891
+        z: 0.0
+      orientation: 
+        x: -8.82510672758e-05
+        y: 0.000299802284978
+        z: 0.369504962457
+        w: 0.929228704383
+  - 
+    header: 
+      seq: 10
+      stamp: 
+        secs: 1110
+        nsecs: 104000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 19.5865485307
+        y: 10.1145507251
+        z: 0.0
+      orientation: 
+        x: 0.000192915896835
+        y: 0.000664598837082
+        z: 0.395873081418
+        w: 0.918304973579
+  - 
+    header: 
+      seq: 11
+      stamp: 
+        secs: 1110
+        nsecs: 507000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 20.5879531668
+        y: 11.35990389
+        z: 0.0
+      orientation: 
+        x: -0.000207707204975
+        y: 0.000471470212415
+        z: 0.423346150081
+        w: 0.905967864653
+  - 
+    header: 
+      seq: 12
+      stamp: 
+        secs: 1111
+        nsecs: 323000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 21.5881126076
+        y: 12.7832450402
+        z: 0.0
+      orientation: 
+        x: -0.000277498932837
+        y: 0.000529854928366
+        z: 0.453400931696
+        w: 0.89130647781
+  - 
+    header: 
+      seq: 13
+      stamp: 
+        secs: 1113
+        nsecs: 120000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 22.5890583228
+        y: 14.4493315248
+        z: 0.0
+      orientation: 
+        x: 0.000148326336664
+        y: 0.00073550549291
+        z: 0.486149571224
+        w: 0.873875295125
+  - 
+    header: 
+      seq: 14
+      stamp: 
+        secs: 1113
+        nsecs: 671000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 23.5895954985
+        y: 16.4451229524
+        z: 0.0
+      orientation: 
+        x: -0.000317969607969
+        y: 0.000527845564585
+        z: 0.522325248183
+        w: 0.852746125986
+  - 
+    header: 
+      seq: 15
+      stamp: 
+        secs: 1115
+        nsecs: 458000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 24.590076727
+        y: 19.0339771203
+        z: 0.0
+      orientation: 
+        x: -0.000116399241061
+        y: 0.000270949301455
+        z: 0.566693467956
+        w: 0.823928653715
+  - 
+    header: 
+      seq: 16
+      stamp: 
+        secs: 1117
+        nsecs: 651000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 25.5901325635
+        y: 23.2519813005
+        z: 0.0
+      orientation: 
+        x: -0.000161399241766
+        y: 0.000262886304285
+        z: 0.63284409728
+        w: 0.774279183098
+  - 
+    header: 
+      seq: 17
+      stamp: 
+        secs: 1122
+        nsecs: 718000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 24.5900390659
+        y: 35.322148675
+        z: 0.0
+      orientation: 
+        x: -0.000308527270384
+        y: 8.82122193442e-05
+        z: 0.794589062325
+        w: 0.607147526606
+  - 
+    header: 
+      seq: 18
+      stamp: 
+        secs: 1124
+        nsecs: 97000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 23.5897812259
+        y: 37.9046728174
+        z: 0.0
+      orientation: 
+        x: -0.000110954663397
+        y: 0.00027163865583
+        z: 0.825883388956
+        w: 0.56384088336
+  - 
+    header: 
+      seq: 19
+      stamp: 
+        secs: 1124
+        nsecs: 839000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 22.5893735771
+        y: 39.8960317608
+        z: 0.0
+      orientation: 
+        x: -0.000436303426088
+        y: 0.000284629711647
+        z: 0.849052269694
+        w: 0.52830859538
+  - 
+    header: 
+      seq: 20
+      stamp: 
+        secs: 1126
+        nsecs: 148000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 21.589194047
+        y: 41.5453822334
+        z: 0.0
+      orientation: 
+        x: -0.000250048215082
+        y: 0.000158805960793
+        z: 0.868127122519
+        w: 0.496341829189
+  - 
+    header: 
+      seq: 21
+      stamp: 
+        secs: 1126
+        nsecs: 694000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 20.5873079829
+        y: 42.9606315639
+        z: 0.0
+      orientation: 
+        x: -0.000410756796991
+        y: 0.000288117587071
+        z: 0.884143211906
+        w: 0.4672157201
+  - 
+    header: 
+      seq: 22
+      stamp: 
+        secs: 1127
+        nsecs: 131000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 19.5872109551
+        y: 44.2009962613
+        z: 0.0
+      orientation: 
+        x: -0.000700365773055
+        y: 0.000347538095791
+        z: 0.897891478293
+        w: 0.440216176343
+  - 
+    header: 
+      seq: 23
+      stamp: 
+        secs: 1128
+        nsecs: 331000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 18.5863760579
+        y: 45.296965541
+        z: 0.0
+      orientation: 
+        x: -0.000241802773168
+        y: 0.000138663222187
+        z: 0.910254312772
+        w: 0.414049524071
+  - 
+    header: 
+      seq: 24
+      stamp: 
+        secs: 1128
+        nsecs: 677000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 17.5646402861
+        y: 46.2994944531
+        z: 0.0
+      orientation: 
+        x: -0.000465565945031
+        y: 0.000236823976998
+        z: 0.921277549607
+        w: 0.388905391776
+  - 
+    header: 
+      seq: 25
+      stamp: 
+        secs: 1129
+        nsecs: 259000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 16.424628378
+        y: 47.2995712879
+        z: 0.0
+      orientation: 
+        x: -0.000732584834015
+        y: 0.000259806678224
+        z: 0.932150591779
+        w: 0.362069979515
+  - 
+    header: 
+      seq: 26
+      stamp: 
+        secs: 1130
+        nsecs: 372000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 15.1264041077
+        y: 48.3011764994
+        z: 0.0
+      orientation: 
+        x: -0.000219978429824
+        y: 8.36281413846e-05
+        z: 0.943274827906
+        w: 0.332012866702
+  - 
+    header: 
+      seq: 27
+      stamp: 
+        secs: 1130
+        nsecs: 816000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 13.6426915453
+        y: 49.3014177382
+        z: 0.0
+      orientation: 
+        x: -0.000582831098485
+        y: 0.000189434809423
+        z: 0.95401915707
+        w: 0.299745012244
+  - 
+    header: 
+      seq: 28
+      stamp: 
+        secs: 1132
+        nsecs: 192000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 11.8860484243
+        y: 50.3019803887
+        z: 0.0
+      orientation: 
+        x: -0.000282335362023
+        y: 6.44313292475e-05
+        z: 0.965146265003
+        w: 0.261710915487
+  - 
+    header: 
+      seq: 29
+      stamp: 
+        secs: 1132
+        nsecs: 832000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 9.73075054388
+        y: 51.3024701665
+        z: 0.0
+      orientation: 
+        x: -0.000621340143991
+        y: 0.000137575268849
+        z: 0.975998382646
+        w: 0.217776840097
+  - 
+    header: 
+      seq: 30
+      stamp: 
+        secs: 1134
+        nsecs: 383000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 6.79288313112
+        y: 52.3028828057
+        z: 0.0
+      orientation: 
+        x: -0.000605882343901
+        y: 0.000110780727805
+        z: 0.987270047455
+        w: 0.159051796695
+  - 
+    header: 
+      seq: 31
+      stamp: 
+        secs: 1142
+        nsecs: 168000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -10.0095848761
+        y: 51.3026631151
+        z: 0.0
+      orientation: 
+        x: -0.000816750165142
+        y: -0.000140932919427
+        z: 0.985799285113
+        w: -0.167925824484
+  - 
+    header: 
+      seq: 32
+      stamp: 
+        secs: 1143
+        nsecs: 485000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -12.1720341691
+        y: 50.3011833564
+        z: 0.0
+      orientation: 
+        x: -0.000450458695241
+        y: -7.39473520466e-05
+        z: 0.977120493911
+        w: -0.212685993893
+  - 
+    header: 
+      seq: 33
+      stamp: 
+        secs: 1144
+        nsecs: 701000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -13.9268437415
+        y: 49.3010544721
+        z: 0.0
+      orientation: 
+        x: -0.000299948385763
+        y: -5.37966515742e-05
+        z: 0.968064277853
+        w: -0.250701936734
+  - 
+    header: 
+      seq: 34
+      stamp: 
+        secs: 1145
+        nsecs: 271000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -15.4183668156
+        y: 48.2994817617
+        z: 0.0
+      orientation: 
+        x: -0.000353414174771
+        y: -1.63575230864e-05
+        z: 0.95890372408
+        w: -0.283731427193
+  - 
+    header: 
+      seq: 35
+      stamp: 
+        secs: 1145
+        nsecs: 689000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -16.7174099261
+        y: 47.2992496045
+        z: 0.0
+      orientation: 
+        x: -0.000630699394229
+        y: -0.000205797820856
+        z: 0.949613373293
+        w: -0.313423038606
+  - 
+    header: 
+      seq: 36
+      stamp: 
+        secs: 1146
+        nsecs: 903000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -17.8628584222
+        y: 46.2977341406
+        z: 0.0
+      orientation: 
+        x: -0.000305072006986
+        y: -1.53281036082e-05
+        z: 0.939922572924
+        w: -0.341387556311
+  - 
+    header: 
+      seq: 37
+      stamp: 
+        secs: 1147
+        nsecs: 269000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -18.8869104587
+        y: 45.296521347
+        z: 0.0
+      orientation: 
+        x: -0.000492647578735
+        y: -0.000183306349425
+        z: 0.930263842426
+        w: -0.366890865479
+  - 
+    header: 
+      seq: 38
+      stamp: 
+        secs: 1147
+        nsecs: 780000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -19.8874178427
+        y: 44.2038303996
+        z: 0.0
+      orientation: 
+        x: -0.00067949246547
+        y: -0.000296870325206
+        z: 0.919529297778
+        w: -0.393020763682
+  - 
+    header: 
+      seq: 39
+      stamp: 
+        secs: 1148
+        nsecs: 904000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -20.8895019836
+        y: 42.9598899398
+        z: 0.0
+      orientation: 
+        x: -0.000242335025505
+        y: 3.85231134589e-05
+        z: 0.906616484939
+        w: -0.421955553378
+  - 
+    header: 
+      seq: 40
+      stamp: 
+        secs: 1149
+        nsecs: 370000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -21.8904716857
+        y: 41.5489921377
+        z: 0.0
+      orientation: 
+        x: -0.000575697755944
+        y: -0.00029954967191
+        z: 0.892251849188
+        w: -0.451537613564
+  - 
+    header: 
+      seq: 41
+      stamp: 
+        secs: 1150
+        nsecs: 648000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -22.8913278154
+        y: 39.8981688783
+        z: 0.0
+      orientation: 
+        x: -0.000245624678285
+        y: -0.000119263135029
+        z: 0.874778288316
+        w: -0.484523344882
+  - 
+    header: 
+      seq: 42
+      stamp: 
+        secs: 1151
+        nsecs: 230000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -23.8918404708
+        y: 37.9152763109
+        z: 0.0
+      orientation: 
+        x: -0.00057212281575
+        y: -0.000352030940793
+        z: 0.853546063276
+        w: -0.52101695425
+  - 
+    header: 
+      seq: 43
+      stamp: 
+        secs: 1152
+        nsecs: 749000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -24.8919748207
+        y: 35.3379341657
+        z: 0.0
+      orientation: 
+        x: -0.00034630265425
+        y: -0.000206009805454
+        z: 0.824602240534
+        w: -0.565712809242
+  - 
+    header: 
+      seq: 44
+      stamp: 
+        secs: 1154
+        nsecs: 616000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -25.892171923
+        y: 31.188554159
+        z: 0.0
+      orientation: 
+        x: -0.00044726414097
+        y: -0.000336529043092
+        z: 0.775949662247
+        w: -0.630794584917
+  - 
+    header: 
+      seq: 45
+      stamp: 
+        secs: 1160
+        nsecs: 384000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -24.891573418
+        y: 18.8024042639
+        z: 0.0
+      orientation: 
+        x: -0.000329989343855
+        y: -0.000418147038686
+        z: 0.606113179337
+        w: -0.79537823084
+  - 
+    header: 
+      seq: 46
+      stamp: 
+        secs: 1162
+        nsecs: 41000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -23.8911270087
+        y: 16.2450935349
+        z: 0.0
+      orientation: 
+        x: -6.67742240273e-05
+        y: -0.000252685586035
+        z: 0.562785800234
+        w: -0.826602730909
+  - 
+    header: 
+      seq: 47
+      stamp: 
+        secs: 1162
+        nsecs: 618000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -22.8900086471
+        y: 14.2595442468
+        z: 0.0
+      orientation: 
+        x: -0.000314656362727
+        y: -0.00050791487086
+        z: 0.527473703358
+        w: -0.849571147862
+  - 
+    header: 
+      seq: 48
+      stamp: 
+        secs: 1164
+        nsecs: 60000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -21.8889643059
+        y: 12.6223713613
+        z: 0.0
+      orientation: 
+        x: -0.000131963487473
+        y: -0.000278478084705
+        z: 0.495239932139
+        w: -0.868756188266
+  - 
+    header: 
+      seq: 49
+      stamp: 
+        secs: 1164
+        nsecs: 478000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -20.8870237355
+        y: 11.2129097921
+        z: 0.0
+      orientation: 
+        x: -0.000280786971133
+        y: -0.000489740077831
+        z: 0.466302224079
+        w: -0.884625297588
+  - 
+    header: 
+      seq: 50
+      stamp: 
+        secs: 1165
+        nsecs: 645000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -19.8866681023
+        y: 9.98048541824
+        z: 0.0
+      orientation: 
+        x: -0.000133200639797
+        y: -0.000262417994409
+        z: 0.438916099824
+        w: -0.898528002185
+  - 
+    header: 
+      seq: 51
+      stamp: 
+        secs: 1166
+        nsecs: 249000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -18.886562219
+        y: 8.8892564539
+        z: 0.0
+      orientation: 
+        x: -0.000109856158906
+        y: -0.000230550586898
+        z: 0.412929659693
+        w: -0.910762884028
+  - 
+    header: 
+      seq: 52
+      stamp: 
+        secs: 1166
+        nsecs: 588000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -17.8640055903
+        y: 7.88913678325
+        z: 0.0
+      orientation: 
+        x: -0.000243450666401
+        y: -0.000539327204814
+        z: 0.388020330806
+        w: -0.921650624011
+  - 
+    header: 
+      seq: 53
+      stamp: 
+        secs: 1167
+        nsecs: 651000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -16.714357689
+        y: 6.88836026922
+        z: 0.0
+      orientation: 
+        x: -0.000132797652791
+        y: -0.000324679407747
+        z: 0.360467955054
+        w: -0.932771531688
+  - 
+    header: 
+      seq: 54
+      stamp: 
+        secs: 1168
+        nsecs: 209000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -15.414648702
+        y: 5.88759932484
+        z: 0.0
+      orientation: 
+        x: -0.00012779384175
+        y: -0.000353475808508
+        z: 0.331069322034
+        w: -0.943606360053
+  - 
+    header: 
+      seq: 55
+      stamp: 
+        secs: 1168
+        nsecs: 673000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -13.9226931706
+        y: 4.88639902453
+        z: 0.0
+      orientation: 
+        x: -0.000207800776169
+        y: -0.000656872659573
+        z: 0.298644407981
+        w: -0.954364208737
+  - 
+    header: 
+      seq: 56
+      stamp: 
+        secs: 1170
+        nsecs: 79000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -12.1609961305
+        y: 3.88529405122
+        z: 0.0
+      orientation: 
+        x: -0.000112973416205
+        y: -0.00026333646502
+        z: 0.261150918858
+        w: -0.965297941296
+  - 
+    header: 
+      seq: 57
+      stamp: 
+        secs: 1170
+        nsecs: 697000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -9.99875830868
+        y: 2.88511927971
+        z: 0.0
+      orientation: 
+        x: -0.000146868001003
+        y: -0.000650139153782
+        z: 0.217091836092
+        w: -0.976150956795
+  - 
+    header: 
+      seq: 58
+      stamp: 
+        secs: 1172
+        nsecs: 392000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -7.03847748314
+        y: 1.88422636071
+        z: 0.0
+      orientation: 
+        x: -0.000105161104699
+        y: -0.000532918776511
+        z: 0.15773473284
+        w: -0.987481371467
+  - 
+    header: 
+      seq: 59
+      stamp: 
+        secs: 1180
+        nsecs: 468000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 9.62033510653
+        y: 2.88461248963
+        z: 0.0
+      orientation: 
+        x: 4.97075156199e-05
+        y: -0.000456353079848
+        z: -0.166921502151
+        w: -0.985970081387
+  - 
+    header: 
+      seq: 60
+      stamp: 
+        secs: 1181
+        nsecs: 958000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 11.7923415388
+        y: 3.88513639058
+        z: 0.0
+      orientation: 
+        x: 2.56376394807e-05
+        y: -0.000352480784219
+        z: -0.212198775239
+        w: -0.97722646039
+  - 
+    header: 
+      seq: 61
+      stamp: 
+        secs: 1182
+        nsecs: 537000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 13.5534021174
+        y: 4.88519921391
+        z: 0.0
+      orientation: 
+        x: 0.000151623753898
+        y: -0.000465429484483
+        z: -0.249855766779
+        w: -0.968282942219
+  - 
+    header: 
+      seq: 62
+      stamp: 
+        secs: 1183
+        nsecs: 127000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 15.0503743869
+        y: 5.88546037548
+        z: 0.0
+      orientation: 
+        x: 0.000200902946969
+        y: -0.000657809561364
+        z: -0.28286022271
+        w: -0.959160894393
+  - 
+    header: 
+      seq: 63
+      stamp: 
+        secs: 1184
+        nsecs: 317000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 16.3444593751
+        y: 6.88786720307
+        z: 0.0
+      orientation: 
+        x: 7.84138244953e-05
+        y: -0.000273529225084
+        z: -0.313662018627
+        w: -0.949534652924
+  - 
+    header: 
+      seq: 64
+      stamp: 
+        secs: 1184
+        nsecs: 675000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 17.4933744753
+        y: 7.88866055684
+        z: 0.0
+      orientation: 
+        x: 0.000190295280668
+        y: -0.00055671414455
+        z: -0.340924758578
+        w: -0.940090401422
+  - 
+    header: 
+      seq: 65
+      stamp: 
+        secs: 1185
+        nsecs: 817000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 18.5248770503
+        y: 8.88979220682
+        z: 0.0
+      orientation: 
+        x: 0.000105223465441
+        y: -0.000302939538165
+        z: -0.365200488453
+        w: -0.930928837446
+  - 
+    header: 
+      seq: 66
+      stamp: 
+        secs: 1186
+        nsecs: 251000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 19.5249121854
+        y: 9.97292175842
+        z: 0.0
+      orientation: 
+        x: 0.000166611003338
+        y: -0.000448491254867
+        z: -0.391008601061
+        w: -0.92038689962
+  - 
+    header: 
+      seq: 67
+      stamp: 
+        secs: 1186
+        nsecs: 704000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 20.5261236671
+        y: 11.1919745627
+        z: 0.0
+      orientation: 
+        x: 0.000316394137544
+        y: -0.000671036720654
+        z: -0.418450267172
+        w: -0.908239408696
+  - 
+    header: 
+      seq: 68
+      stamp: 
+        secs: 1187
+        nsecs: 941000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 21.5276705143
+        y: 12.5850935627
+        z: 0.0
+      orientation: 
+        x: 8.55345809161e-05
+        y: -0.000248418184888
+        z: -0.448285867073
+        w: -0.893890212696
+  - 
+    header: 
+      seq: 69
+      stamp: 
+        secs: 1188
+        nsecs: 424000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 22.5284322155
+        y: 14.1977347151
+        z: 0.0
+      orientation: 
+        x: 0.000327043689469
+        y: -0.00057726966975
+        z: -0.480212801595
+        w: -0.877151768502
+  - 
+    header: 
+      seq: 70
+      stamp: 
+        secs: 1189
+        nsecs: 663000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 23.5299369554
+        y: 16.1421285435
+        z: 0.0
+      orientation: 
+        x: 0.000233717219715
+        y: -0.000283883554788
+        z: -0.516773041121
+        w: -0.856122356184
+  - 
+    header: 
+      seq: 71
+      stamp: 
+        secs: 1191
+        nsecs: 74000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 24.5303145584
+        y: 18.624215504
+        z: 0.0
+      orientation: 
+        x: 0.000199585148313
+        y: -0.000243959580806
+        z: -0.560046820701
+        w: -0.828460897854
+  - 
+    header: 
+      seq: 72
+      stamp: 
+        secs: 1192
+        nsecs: 835000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 25.5304730188
+        y: 22.4327329332
+        z: 0.0
+      orientation: 
+        x: 0.000304836595603
+        y: -0.000138442587153
+        z: -0.620536807431
+        w: -0.784177249435
+  - 
+    header: 
+      seq: 73
+      stamp: 
+        secs: 1199
+        nsecs: 233000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 24.529502547
+        y: 35.8072680722
+        z: 0.0
+      orientation: 
+        x: 0.000290054878995
+        y: -0.000210224756028
+        z: -0.798872278579
+        w: -0.601500585363
+  - 
+    header: 
+      seq: 74
+      stamp: 
+        secs: 1200
+        nsecs: 680000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 23.529502162
+        y: 38.2977824648
+        z: 0.0
+      orientation: 
+        x: 0.000214969587932
+        y: -7.50289416453e-05
+        z: -0.828830338521
+        w: -0.559499971498
+  - 
+    header: 
+      seq: 75
+      stamp: 
+        secs: 1201
+        nsecs: 321000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 22.5277022369
+        y: 40.2443838466
+        z: 0.0
+      orientation: 
+        x: 0.000412299829971
+        y: -0.000288900845551
+        z: -0.851478621317
+        w: -0.524389076913
+  - 
+    header: 
+      seq: 76
+      stamp: 
+        secs: 1202
+        nsecs: 533000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 21.5266973464
+        y: 41.8624294499
+        z: 0.0
+      orientation: 
+        x: 0.000191089092429
+        y: -0.000189808051154
+        z: -0.870125059764
+        w: -0.492830912005
+  - 
+    header: 
+      seq: 77
+      stamp: 
+        secs: 1203
+        nsecs: 13000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 20.5249312633
+        y: 43.2573633556
+        z: 0.0
+      orientation: 
+        x: 0.000382830707257
+        y: -0.000231491326185
+        z: -0.885753536691
+        w: -0.464155655026
+  - 
+    header: 
+      seq: 78
+      stamp: 
+        secs: 1203
+        nsecs: 497000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 19.5239600839
+        y: 44.48184811
+        z: 0.0
+      orientation: 
+        x: 0.000603780408916
+        y: -0.00028634257913
+        z: -0.899324015808
+        w: -0.437282366496
+  - 
+    header: 
+      seq: 79
+      stamp: 
+        secs: 1204
+        nsecs: 661000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 18.5220318817
+        y: 45.562473913
+        z: 0.0
+      orientation: 
+        x: 0.000162935540646
+        y: -0.000212884365335
+        z: -0.911689995093
+        w: -0.410878669413
+  - 
+    header: 
+      seq: 80
+      stamp: 
+        secs: 1205
+        nsecs: 7000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 17.4889884574
+        y: 46.563291182
+        z: 0.0
+      orientation: 
+        x: 0.00048786193314
+        y: -0.000222562607924
+        z: -0.922593279656
+        w: -0.385773706711
+  - 
+    header: 
+      seq: 81
+      stamp: 
+        secs: 1206
+        nsecs: 139000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 16.3289848344
+        y: 47.5634887393
+        z: 0.0
+      orientation: 
+        x: 0.000256885260625
+        y: -8.1918091931e-05
+        z: -0.933685642395
+        w: -0.35809363089
+  - 
+    header: 
+      seq: 82
+      stamp: 
+        secs: 1206
+        nsecs: 730000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 15.0098282579
+        y: 48.5657304505
+        z: 0.0
+      orientation: 
+        x: 0.000263505460327
+        y: -0.000381188702569
+        z: -0.944656679432
+        w: -0.32806027383
+  - 
+    header: 
+      seq: 83
+      stamp: 
+        secs: 1207
+        nsecs: 197000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 13.4960706405
+        y: 49.5666530624
+        z: 0.0
+      orientation: 
+        x: 0.000619290959721
+        y: -0.000185609641263
+        z: -0.955422677543
+        w: -0.295240731038
+  - 
+    header: 
+      seq: 84
+      stamp: 
+        secs: 1208
+        nsecs: 642000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 11.6972391735
+        y: 50.5682482668
+        z: 0.0
+      orientation: 
+        x: 0.000270588538651
+        y: -5.42274737435e-05
+        z: -0.966509596192
+        w: -0.256630326169
+  - 
+    header: 
+      seq: 85
+      stamp: 
+        secs: 1209
+        nsecs: 287000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 9.47538711053
+        y: 51.5685538418
+        z: 0.0
+      orientation: 
+        x: 0.000670584469215
+        y: -0.000141659147041
+        z: -0.977364832095
+        w: -0.211559720252
+  - 
+    header: 
+      seq: 86
+      stamp: 
+        secs: 1210
+        nsecs: 984000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: 6.37408265274
+        y: 52.5686733809
+        z: 0.0
+      orientation: 
+        x: 0.00052093428173
+        y: -9.83576652195e-05
+        z: -0.988757054864
+        w: -0.149529948207
+  - 
+    header: 
+      seq: 87
+      stamp: 
+        secs: 1219
+        nsecs: 64000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -9.96203700103
+        y: 51.5683998731
+        z: 0.0
+      orientation: 
+        x: 0.000281995286212
+        y: -2.49065303832e-06
+        z: -0.986490319334
+        w: 0.163819322218
+  - 
+    header: 
+      seq: 88
+      stamp: 
+        secs: 1219
+        nsecs: 847000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -12.171228129
+        y: 50.5665363904
+        z: 0.0
+      orientation: 
+        x: 0.000432732368307
+        y: 9.3917067872e-05
+        z: -0.977845184938
+        w: 0.209328923504
+  - 
+    header: 
+      seq: 89
+      stamp: 
+        secs: 1221
+        nsecs: 84000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -13.9512685525
+        y: 49.5659893699
+        z: 0.0
+      orientation: 
+        x: 0.000185412664548
+        y: 9.4810635861e-05
+        z: -0.968723002953
+        w: 0.248144514714
+  - 
+    header: 
+      seq: 90
+      stamp: 
+        secs: 1221
+        nsecs: 601000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -15.4614994315
+        y: 48.5639920241
+        z: 0.0
+      orientation: 
+        x: 0.000468502598754
+        y: 0.00011285013872
+        z: -0.959626923671
+        w: 0.281275550192
+  - 
+    header: 
+      seq: 91
+      stamp: 
+        secs: 1222
+        nsecs: 705000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -16.771258344
+        y: 47.5631081448
+        z: 0.0
+      orientation: 
+        x: 0.000291151076579
+        y: 8.43673913117e-05
+        z: -0.95017086923
+        w: 0.311729413722
+  - 
+    header: 
+      seq: 92
+      stamp: 
+        secs: 1223
+        nsecs: 229000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -17.9277906692
+        y: 46.5624695403
+        z: 0.0
+      orientation: 
+        x: 0.000261805011934
+        y: -0.000113783213204
+        z: -0.940682610346
+        w: 0.339287702553
+  - 
+    header: 
+      seq: 93
+      stamp: 
+        secs: 1223
+        nsecs: 572000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -18.9604358677
+        y: 45.5622982799
+        z: 0.0
+      orientation: 
+        x: 0.000571984148155
+        y: 0.000213213427599
+        z: -0.931063238748
+        w: 0.364857332152
+  - 
+    header: 
+      seq: 94
+      stamp: 
+        secs: 1224
+        nsecs: 750000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -19.9612170309
+        y: 44.4754330358
+        z: 0.0
+      orientation: 
+        x: 0.000233914646569
+        y: 9.12485944304e-05
+        z: -0.920199793137
+        w: 0.39144894644
+  - 
+    header: 
+      seq: 95
+      stamp: 
+        secs: 1225
+        nsecs: 222000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -20.9615776013
+        y: 43.2509255946
+        z: 0.0
+      orientation: 
+        x: 0.000351657306294
+        y: 5.61259937255e-05
+        z: -0.907835718123
+        w: 0.419325866226
+  - 
+    header: 
+      seq: 96
+      stamp: 
+        secs: 1225
+        nsecs: 677000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -21.9626048962
+        y: 41.8578175347
+        z: 0.0
+      orientation: 
+        x: 0.000657793771063
+        y: 0.000332207910786
+        z: -0.893676237083
+        w: 0.448711756274
+  - 
+    header: 
+      seq: 97
+      stamp: 
+        secs: 1226
+        nsecs: 937000000
+      frame_id: /azcar_sim/odom
+    pose: 
+      position: 
+        x: -22.9639342955
+        y: 40.2315324814
+        z: 0.0
+      orientation: 
+        x: 0.000256884828164
+        y: 0.000112640616937
+        z: -0.876469749041
+        w: 0.481456852001
+---

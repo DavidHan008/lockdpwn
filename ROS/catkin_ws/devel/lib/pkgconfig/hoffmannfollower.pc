@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: hoffmannfollower
+Description: Description of hoffmannfollower
+Version: 1.0.1
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: geometry_msgs nav_msgs roscpp std_msgs visualization_msgs

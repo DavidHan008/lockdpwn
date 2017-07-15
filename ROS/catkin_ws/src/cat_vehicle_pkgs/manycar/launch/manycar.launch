@@ -1,0 +1,45 @@
+<launch>
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="false"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find manycar)/worlds/neighbourhood.world"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <group ns="manycar1">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find manycar)/urdf/azcar.xacro' prefix:='1'"/>
+    <include file="$(find manycar)/launch/azcar.launch">
+        <arg name="robot_num" value="1"/>
+        <arg name="init_pose" value="-x -20 -y 20 -z 0 -Y 0 "/>
+    </include>
+    </group>
+
+    <group ns="manycar2">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find manycar)/urdf/azcar.xacro' prefix:='2'"/>
+    <include file="$(find manycar)/launch/azcar.launch">
+        <arg name="robot_num" value="2"/>
+        <arg name="init_pose" value="-x 15 -y 20 -z 0 -Y 0.7 "/>
+    </include>
+    </group>
+    <group ns="manycar3">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find manycar)/urdf/azcar.xacro' prefix:='3'"/>
+    <include file="$(find manycar)/launch/azcar.launch">
+        <arg name="robot_num" value="3"/>
+        <arg name="init_pose" value="-x 40 -y 5 -z 0 -Y 0.37 "/>
+    </include>
+    </group>
+    <group ns="manycar4">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find manycar)/urdf/azcar.xacro' prefix:='4'"/>
+    <include file="$(find manycar)/launch/azcar.launch">
+        <arg name="robot_num" value="4"/>
+        <arg name="init_pose" value="-x 65 -y 9 -z 0 -Y 0 "/>
+    </include>
+    </group>
+</launch>

@@ -6,7 +6,6 @@ set(MSG_I_FLAGS "-Icar_can:/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/sr
 
 # Find all generators
 find_package(gencpp REQUIRED)
-find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -22,7 +21,7 @@ add_custom_target(_car_can_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;geneus;genlisp;genpy
+#  langs = gencpp;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -57,39 +56,6 @@ add_dependencies(car_can_gencpp car_can_generate_messages_cpp)
 
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS car_can_generate_messages_cpp)
-
-### Section generating for lang: geneus
-### Generating Messages
-_generate_msg_eus(car_can
-  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/msg/CarCanData.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/car_can
-)
-
-### Generating Services
-
-### Generating Module File
-_generate_module_eus(car_can
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/car_can
-  "${ALL_GEN_OUTPUT_FILES_eus}"
-)
-
-add_custom_target(car_can_generate_messages_eus
-  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
-)
-add_dependencies(car_can_generate_messages car_can_generate_messages_eus)
-
-# add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/msg/CarCanData.msg" NAME_WE)
-add_dependencies(car_can_generate_messages_eus _car_can_generate_messages_check_deps_${_filename})
-
-# target for backward compatibility
-add_custom_target(car_can_geneus)
-add_dependencies(car_can_geneus car_can_generate_messages_eus)
-
-# register target for catkin_package(EXPORTED_TARGETS)
-list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS car_can_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
@@ -168,17 +134,6 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ca
 endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(car_can_generate_messages_cpp std_msgs_generate_messages_cpp)
-endif()
-
-if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/car_can)
-  # install generated code
-  install(
-    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/car_can
-    DESTINATION ${geneus_INSTALL_DIR}
-  )
-endif()
-if(TARGET std_msgs_generate_messages_eus)
-  add_dependencies(car_can_generate_messages_eus std_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/car_can)

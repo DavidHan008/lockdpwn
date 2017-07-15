@@ -1,0 +1,63 @@
+[System]
+Name='spring1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=20
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='distance'
+Range=[0 30]
+NumMFs=5
+MF1='Zero':'trapmf',[-6.75 -0.75 2.97 3]
+MF2='Close':'trapmf',[2.52 5.69 7.56696428571429 10.8]
+MF3='Good':'trapmf',[8.54260089686099 9.84 12.7 13.9]
+MF4='Far':'trapmf',[11.3 13.7 16.2 16.5401785714286]
+MF5='VF':'trapmf',[15 17.1205357142857 36 75]
+
+[Input2]
+Name='velocity'
+Range=[0 12]
+NumMFs=4
+MF1='Z':'trapmf',[-4.12 -0.92 0.241 1.1875]
+MF2='S':'trapmf',[0.580357142857142 1.29 3.16 3.91]
+MF3='M':'trapmf',[3.75 4.5 6.75 7.5]
+MF4='F':'trapmf',[6.665 7.415 12.325 15.525]
+
+[Output1]
+Name='velocitychange'
+Range=[-1.7143 1.2]
+NumMFs=5
+MF1='NB':'trapmf',[-2.365 -1.783 -0.7622 -0.6548]
+MF2='NS':'trapmf',[-0.8227 -0.5623 -0.1988 -0.02968]
+MF3='Z':'trapmf',[-0.1147 -0.1068 0.1091 0.1631]
+MF4='PS':'trapmf',[0.08587 0.2555 0.6942 0.8023]
+MF5='PB':'trapmf',[0.7016 0.8029 1.226 1.384]
+
+[Rules]
+1 1, 4 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+1 4, 1 (1) : 1
+2 1, 4 (1) : 1
+2 2, 1 (1) : 1
+2 3, 1 (1) : 1
+2 4, 1 (1) : 1
+3 1, 5 (1) : 1
+3 2, 4 (1) : 1
+3 3, 3 (1) : 1
+3 4, 1 (1) : 1
+4 1, 5 (1) : 1
+4 2, 5 (1) : 1
+4 3, 4 (1) : 1
+4 4, 1 (1) : 1
+5 1, 5 (1) : 1
+5 2, 5 (1) : 1
+5 3, 5 (1) : 1
+5 4, 4 (1) : 1

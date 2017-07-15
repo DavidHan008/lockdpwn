@@ -4,7 +4,7 @@ messages_str = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/m
 services_str = ""
 pkg_name = "car_can"
 dependencies_str = "std_msgs"
-langs = "gencpp;geneus;genlisp;genpy"
+langs = "gencpp;genlisp;genpy"
 dep_include_paths_str = "car_can;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/car_can/msg;std_msgs;/opt/ros/indigo/share/std_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python"
 package_has_static_sources = '' == 'TRUE'
