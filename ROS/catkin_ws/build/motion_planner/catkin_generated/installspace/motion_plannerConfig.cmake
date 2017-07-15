@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(motion_planner_EXPORTED_TARGETS "motion_planner_generate_messages_cpp;motion_planner_generate_messages_lisp;motion_planner_generate_messages_py")
+set(motion_planner_EXPORTED_TARGETS "motion_planner_generate_messages_cpp;motion_planner_generate_messages_eus;motion_planner_generate_messages_lisp;motion_planner_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${motion_planner_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

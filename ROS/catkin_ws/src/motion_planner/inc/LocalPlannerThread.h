@@ -1,13 +1,15 @@
 #pragma once
 #include <QtGui/QMainWindow>
 #include <QtCore>
+
 #include <vector>
 #include <Eigen/Core>
 #include <ros/ros.h>
+
 #include <nav_msgs/Path.h>
 #include <geometry_msgs/Pose2D.h>
 #include <std_msgs/Float32MultiArray.h>
-#include <visualization_msgs/Marker.h>  	//Marker messages to visualize objects in Rviz
+#include <visualization_msgs/Marker.h>  //Marker messages to visualize objects in Rviz
 
 #include <iostream>
 #include <fstream>
@@ -21,7 +23,7 @@ using std::ifstream;
 #define _RAD2DEG 180 / M_PI
 #define _DEG2RAD M_PI / 180
 
-class LocalPlannerThread : public QThread{
+class LocalPlannerThread : public QThread {
     Q_OBJECT;
 
 private :
@@ -132,6 +134,7 @@ public :
             public slots:
 
             void stop();
+
 private:
             void run();
 

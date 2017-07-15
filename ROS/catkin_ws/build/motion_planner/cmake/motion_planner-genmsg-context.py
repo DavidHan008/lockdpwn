@@ -4,7 +4,7 @@ messages_str = ""
 services_str = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvHeightMap.srv;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/motion_planner/srv/srvParkingCmd.srv"
 pkg_name = "motion_planner"
 dependencies_str = "std_msgs"
-langs = "gencpp;genlisp;genpy"
+langs = "gencpp;geneus;genlisp;genpy"
 dep_include_paths_str = "std_msgs;/opt/ros/indigo/share/std_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python"
 package_has_static_sources = '' == 'TRUE'

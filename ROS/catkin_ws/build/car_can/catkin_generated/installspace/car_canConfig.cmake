@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(car_can_EXPORTED_TARGETS "car_can_generate_messages_cpp;car_can_generate_messages_lisp;car_can_generate_messages_py")
+set(car_can_EXPORTED_TARGETS "car_can_generate_messages_cpp;car_can_generate_messages_eus;car_can_generate_messages_lisp;car_can_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${car_can_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

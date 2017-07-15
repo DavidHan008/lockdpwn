@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "inc/moc_controller_main.cxx"
   "inc/moc_PurePursuitThread.cxx"
   "inc/moc_VelocityCtrlThread.cxx"
@@ -14,6 +14,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/controller.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/controller.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

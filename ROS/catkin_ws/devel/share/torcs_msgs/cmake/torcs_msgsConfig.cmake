@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(torcs_msgs_EXPORTED_TARGETS "torcs_msgs_generate_messages_cpp;torcs_msgs_generate_messages_lisp;torcs_msgs_generate_messages_py")
+set(torcs_msgs_EXPORTED_TARGETS "torcs_msgs_generate_messages_cpp;torcs_msgs_generate_messages_eus;torcs_msgs_generate_messages_lisp;torcs_msgs_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${torcs_msgs_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

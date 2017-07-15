@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(localization_EXPORTED_TARGETS "localization_generate_messages_cpp;localization_generate_messages_lisp;localization_generate_messages_py")
+set(localization_EXPORTED_TARGETS "localization_generate_messages_cpp;localization_generate_messages_eus;localization_generate_messages_lisp;localization_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${localization_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

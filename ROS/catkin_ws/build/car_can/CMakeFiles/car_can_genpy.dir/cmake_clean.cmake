@@ -1,5 +1,8 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/car_can_genpy"
+)
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
-  include(CMakeFiles/car_can_genpy.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/car_can_genpy.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
