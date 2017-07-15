@@ -5,8 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /PointCloud1
-      Splitter Ratio: 0.450237
+      Splitter Ratio: 0.536946
     Tree Height: 439
   - Class: rviz/Selection
     Name: Selection
@@ -48,17 +47,38 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: false
+    - Class: rviz/TF
+      Enabled: false
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        {}
+      Update Interval: 0
+      Value: false
+    - Class: rviz/Axes
+      Enabled: false
+      Length: 1
+      Name: Axes
+      Radius: 0.1
+      Reference Frame: azcar_sim/main_mass
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: -11.968
-        Min Value: -56.9308
+        Max Value: 3.172
+        Min Value: -0.49554
         Value: true
-      Axis: X
+      Axis: Z
       Channel Name: intensity
       Class: rviz/PointCloud
       Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color Transformer: AxisColor
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -163,9 +183,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0
+      Max Intensity: 999999
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 4.48416e-44
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -180,7 +200,7 @@ Visualization Manager:
       Value: true
     - Angle Tolerance: 0.1
       Class: rviz/Odometry
-      Color: 255; 25; 0
+      Color: 0; 85; 0
       Enabled: true
       Keep: 100
       Length: 1
@@ -192,7 +212,7 @@ Visualization Manager:
       Buffer Length: 1
       Class: rviz/Path
       Color: 25; 255; 0
-      Enabled: true
+      Enabled: false
       Head Diameter: 0.3
       Head Length: 0.2
       Length: 0.3
@@ -210,7 +230,7 @@ Visualization Manager:
       Shaft Length: 0.1
       Topic: /azcar_sim/path
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 0.7
       Class: rviz/Map
       Color Scheme: map
@@ -221,7 +241,7 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Class: rviz/Image
-      Enabled: false
+      Enabled: true
       Image Topic: /azcar_sim/camera_right/image_raw_right
       Max Value: 1
       Median window: 5
@@ -231,9 +251,9 @@ Visualization Manager:
       Queue Size: 2
       Transport Hint: ""
       Unreliable: false
-      Value: false
+      Value: true
     - Class: rviz/Image
-      Enabled: true
+      Enabled: false
       Image Topic: /azcar_sim/camera_left/image_raw_left
       Max Value: 1
       Median window: 5
@@ -243,13 +263,58 @@ Visualization Manager:
       Queue Size: 2
       Transport Hint: ""
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/Polygon
       Color: 25; 255; 0
       Enabled: true
       Name: Polygon
       Topic: /detections
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 999999
+      Min Color: 0; 0; 0
+      Min Intensity: 4.48416e-44
+      Name: PointCloud
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic: /slam_cloud
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.1
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.3
+      Head Radius: 0.1
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.05
+      Shape: Arrow
+      Topic: /slam_out_pose
       Unreliable: false
       Value: true
   Enabled: true
@@ -275,22 +340,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 154.148
+      Distance: 152.713
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -8.97614
-        Y: -6.26597
-        Z: 10.8951
+        X: 11.3094
+        Y: 1.49003
+        Z: -6.04216
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.659797
+      Pitch: 1.0998
       Target Frame: odom
       Value: Orbit (rviz)
-      Yaw: 5.84001
+      Yaw: 3.96
     Saved: ~
 Window Geometry:
   Displays:
@@ -310,5 +375,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1402
-  X: 55
-  Y: 24
+  X: 37
+  Y: 14
