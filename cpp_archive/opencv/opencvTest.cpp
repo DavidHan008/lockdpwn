@@ -26,8 +26,7 @@ int main() {
 	// Transform source image to gray if it is not
 	Mat gray;
 
-	if (rsz.channels() == 3)
-	{
+	if (rsz.channels() == 3){
 		cvtColor(rsz, gray, CV_BGR2GRAY);
 	}
 	else

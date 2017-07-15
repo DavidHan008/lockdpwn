@@ -20,7 +20,7 @@ stdio.h
 opencv2/opencv.hpp
 -
 opencv2/highgui/highgui.hpp
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/torcs_ros/torcs_img_publisher/include/torcs_img_publisher/opencv2/highgui/highgui.hpp
+-
 ros/ros.h
 -
 std_msgs/Header.h
