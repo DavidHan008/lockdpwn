@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install
+
+Name: seven_dof_arm_config
+Description: Description of seven_dof_arm_config
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/lib 
+Requires: 

@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/cmdvel2gazebo_node.dir/cmdvel2gazebo.cpp.o"
   "CMakeFiles/cmdvel2gazebo_node.dir/cmdvel2gazebo_data.cpp.o"
   "CMakeFiles/cmdvel2gazebo_node.dir/ert_main.cpp.o"
@@ -14,6 +14,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/cmdvel2gazebo_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/cmdvel2gazebo_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

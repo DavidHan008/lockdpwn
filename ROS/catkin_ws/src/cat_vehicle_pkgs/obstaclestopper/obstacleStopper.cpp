@@ -163,6 +163,9 @@ void obstacleStopper_step(void)
   //   Product: '<S3>/Product'
   //   Signum: '<S3>/Sign'
 
+  // ed: 여기가 obstacle을 만나서 속도를 0으로 설정해주는 코드인듯
+  //     위에 u0 = 0.0, rtb_safeValue = 0.0으로 설정하는 코드들이 있다
+  //      아오 시뮬링크 자동변환코드 읽기빡시네
   obstacleStopper_B.BusAssignment.Linear.X = u0 * rtb_safeValue;
   obstacleStopper_B.BusAssignment.Angular.Z = obstacleStopper_B.In1.Angular.Z;
 
@@ -176,8 +179,7 @@ void obstacleStopper_step(void)
 }
 
 // Model initialize function
-void obstacleStopper_initialize(void)
-{
+void obstacleStopper_initialize(void){
   // Registration code
 
   // initialize error status
@@ -190,7 +192,6 @@ void obstacleStopper_initialize(void)
   // states (dwork)
   (void) memset((void *)&obstacleStopper_DW, 0,
                 sizeof(DW_obstacleStopper_T));
-
   {
     static const char_T tmp[23] = { '/', 'a', 'z', 'c', 'a', 'r', '_', 's', 'i',
       'm', '/', 'c', 'm', 'd', '_', 'v', 'e', 'l', '_', 's', 'a', 'f', 'e' };
@@ -210,6 +211,7 @@ void obstacleStopper_initialize(void)
     // Start for MATLABSystem: '<S5>/SourceBlock'
     obstacleStopper_DW.obj_e.isInitialized = 0;
     obstacleStopper_DW.obj_e.isInitialized = 1;
+
     for (i = 0; i < 33; i++) {
       obstacleStopper_B.cv0[i] = tmp_1[i];
     }

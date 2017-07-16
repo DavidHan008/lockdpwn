@@ -6,6 +6,7 @@ set(MSG_I_FLAGS "-Ibasics:/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/sr
 
 # Find all generators
 find_package(gencpp REQUIRED)
+find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -96,7 +97,7 @@ add_custom_target(_basics_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;genlisp;genpy
+#  langs = gencpp;geneus;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -251,6 +252,159 @@ add_dependencies(basics_gencpp basics_generate_messages_cpp)
 
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS basics_generate_messages_cpp)
+
+### Section generating for lang: geneus
+### Generating Messages
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerGoal.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkGoal.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/basics/msg/Complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionGoal.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionResult.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerFeedback.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerResult.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerGoal.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionGoal.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionResult.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionFeedback.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkResult.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkGoal.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkFeedback.msg;/opt/ros/indigo/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+_generate_msg_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+
+### Generating Services
+_generate_srv_eus(basics
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/basics/srv/WordCount.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+)
+
+### Generating Module File
+_generate_module_eus(basics
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+  "${ALL_GEN_OUTPUT_FILES_eus}"
+)
+
+add_custom_target(basics_generate_messages_eus
+  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
+)
+add_dependencies(basics_generate_messages basics_generate_messages_eus)
+
+# add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionGoal.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/basics/msg/Complex.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionResult.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkGoal.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerAction.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerResult.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerFeedback.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerGoal.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionResult.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TimerActionFeedback.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionGoal.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkAction.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/src/basics/srv/WordCount.srv" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkActionFeedback.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkFeedback.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/basics/msg/TalkResult.msg" NAME_WE)
+add_dependencies(basics_generate_messages_eus _basics_generate_messages_check_deps_${_filename})
+
+# target for backward compatibility
+add_custom_target(basics_geneus)
+add_dependencies(basics_geneus basics_generate_messages_eus)
+
+# register target for catkin_package(EXPORTED_TARGETS)
+list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS basics_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
@@ -572,6 +726,20 @@ if(TARGET actionlib_msgs_generate_messages_cpp)
 endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(basics_generate_messages_cpp std_msgs_generate_messages_cpp)
+endif()
+
+if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics)
+  # install generated code
+  install(
+    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/basics
+    DESTINATION ${geneus_INSTALL_DIR}
+  )
+endif()
+if(TARGET actionlib_msgs_generate_messages_eus)
+  add_dependencies(basics_generate_messages_eus actionlib_msgs_generate_messages_eus)
+endif()
+if(TARGET std_msgs_generate_messages_eus)
+  add_dependencies(basics_generate_messages_eus std_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/basics)

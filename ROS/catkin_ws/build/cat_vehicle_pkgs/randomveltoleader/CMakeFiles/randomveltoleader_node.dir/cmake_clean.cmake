@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/randomveltoleader_node.dir/ert_main.cpp.o"
   "CMakeFiles/randomveltoleader_node.dir/randomVelToLeader.cpp.o"
   "CMakeFiles/randomveltoleader_node.dir/randomVelToLeader_data.cpp.o"
@@ -14,6 +14,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/randomveltoleader_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/randomveltoleader_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

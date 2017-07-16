@@ -1,4 +1,5 @@
 <launch>
+
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -15,7 +16,6 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
-  
   <!-- Load the URDF into the ROS Parameter Server -->
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find mastering_ros_robot_description_pkg)/urdf/seven_dof_arm.xacro'" /> 
 
