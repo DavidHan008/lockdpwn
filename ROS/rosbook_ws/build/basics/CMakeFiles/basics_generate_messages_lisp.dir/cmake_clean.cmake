@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/basics_generate_messages_lisp"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/common-lisp/ros/basics/msg/TimerActionGoal.lisp"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/common-lisp/ros/basics/msg/TimerActionFeedback.lisp"
@@ -19,6 +19,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/basics_generate_messages_lisp.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/basics_generate_messages_lisp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/humancarfollowercontroller_node.dir/ert_main.cpp.o"
   "CMakeFiles/humancarfollowercontroller_node.dir/humanCarFollowerController.cpp.o"
   "CMakeFiles/humancarfollowercontroller_node.dir/humanCarFollowerController_data.cpp.o"
@@ -11,6 +11,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/humancarfollowercontroller_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/humancarfollowercontroller_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

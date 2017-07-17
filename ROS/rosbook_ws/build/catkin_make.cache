@@ -1,2 +1,2 @@
-basics:cougarbot:cougarbot_moveit_config:diff_wheeled_robot_control:diff_wheeled_robot_gazebo:followbot:mapping:mastering_ros_demo_pkg:mastering_ros_robot_description_pkg:seven_dof_arm_config:seven_dof_arm_gazebo:stockroom_bot:tortoisebot:wanderbot
+basics:cougarbot:cougarbot_moveit_config:diff_wheeled_robot_control:diff_wheeled_robot_gazebo:followbot:mapping:my_controller_pkg:pcl_ros_tutorial:seven_dof_arm_config:seven_dof_arm_gazebo:stockroom_bot:tortoisebot:wanderbot
 -DCATKIN_DEVEL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install -G Unix Makefiles

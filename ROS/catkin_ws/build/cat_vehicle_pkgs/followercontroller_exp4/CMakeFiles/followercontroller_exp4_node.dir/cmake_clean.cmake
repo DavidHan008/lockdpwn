@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/followercontroller_exp4_node.dir/ert_main.cpp.o"
   "CMakeFiles/followercontroller_exp4_node.dir/followerController_exp4.cpp.o"
   "CMakeFiles/followercontroller_exp4_node.dir/followerController_exp4_data.cpp.o"
@@ -11,6 +11,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/followercontroller_exp4_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/followercontroller_exp4_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

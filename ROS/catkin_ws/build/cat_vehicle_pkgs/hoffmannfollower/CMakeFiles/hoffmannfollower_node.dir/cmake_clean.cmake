@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/hoffmannfollower_node.dir/ert_main.cpp.o"
   "CMakeFiles/hoffmannfollower_node.dir/hoffmannFollower.cpp.o"
   "CMakeFiles/hoffmannfollower_node.dir/hoffmannFollower_data.cpp.o"
@@ -14,6 +14,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/hoffmannfollower_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/hoffmannfollower_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

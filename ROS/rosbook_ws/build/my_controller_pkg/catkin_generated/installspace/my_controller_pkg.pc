@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install
+
+Name: my_controller_pkg
+Description: Description of my_controller_pkg
+Version: 0.0.0
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/include -I/usr/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/install/lib -lmy_controller_pkg -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: pluginlib roscpp

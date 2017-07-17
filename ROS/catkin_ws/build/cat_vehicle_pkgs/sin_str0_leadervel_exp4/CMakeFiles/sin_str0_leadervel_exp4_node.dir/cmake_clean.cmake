@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/sin_str0_leadervel_exp4_node.dir/ert_main.cpp.o"
   "CMakeFiles/sin_str0_leadervel_exp4_node.dir/sin_str0_leaderVel_exp4.cpp.o"
   "CMakeFiles/sin_str0_leadervel_exp4_node.dir/sin_str0_leaderVel_exp4_data.cpp.o"
@@ -11,6 +11,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/sin_str0_leadervel_exp4_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/sin_str0_leadervel_exp4_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

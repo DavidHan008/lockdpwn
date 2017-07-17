@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/obstaclestopper_node.dir/ert_main.cpp.o"
   "CMakeFiles/obstaclestopper_node.dir/obstacleStopper.cpp.o"
   "CMakeFiles/obstaclestopper_node.dir/obstacleStopper_data.cpp.o"
@@ -11,6 +11,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/obstaclestopper_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/obstaclestopper_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
