@@ -1,4 +1,5 @@
 #include <moveit/move_group_interface/move_group.h>
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "move_group_interface_demo", ros::init_options::AnonymousName);
