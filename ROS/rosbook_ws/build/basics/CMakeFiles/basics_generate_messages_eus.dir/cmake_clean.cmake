@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/basics_generate_messages_eus"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/roseus/ros/basics/msg/TimerActionGoal.l"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/share/roseus/ros/basics/msg/TimerActionFeedback.l"
@@ -20,6 +20,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
-  include(CMakeFiles/basics_generate_messages_eus.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/basics_generate_messages_eus.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

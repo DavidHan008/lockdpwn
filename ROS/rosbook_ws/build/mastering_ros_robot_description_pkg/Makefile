@@ -192,132 +192,6 @@ map_msgs_generate_messages_py/fast:
 .PHONY : map_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_cpp: mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : nav_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nav_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
-.PHONY : nav_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_lisp: mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : nav_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nav_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
-.PHONY : nav_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/build.make mastering_ros_robot_description_pkg/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
 mastering_ros_robot_description_pkg/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_robot_description_pkg/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
 .PHONY : mastering_ros_robot_description_pkg/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
@@ -373,17 +247,8 @@ help:
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... map_msgs_generate_messages_lisp"
 	@echo "... map_msgs_generate_messages_py"
-	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... nav_msgs_generate_messages_py"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"

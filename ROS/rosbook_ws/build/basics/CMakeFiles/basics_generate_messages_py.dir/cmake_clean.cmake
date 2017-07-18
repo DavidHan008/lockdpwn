@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/basics_generate_messages_py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib/python2.7/dist-packages/basics/msg/_TimerActionGoal.py"
   "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib/python2.7/dist-packages/basics/msg/_TimerActionFeedback.py"
@@ -21,6 +21,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
-  include(CMakeFiles/basics_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/basics_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

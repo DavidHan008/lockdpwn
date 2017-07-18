@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel
+
+Name: chefbot_description
+Description: Description of chefbot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/devel/lib 
+Requires: 

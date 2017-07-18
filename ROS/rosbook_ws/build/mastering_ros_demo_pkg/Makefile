@@ -276,48 +276,6 @@ _mastering_ros_demo_pkg_generate_messages_check_deps_demo_srv/fast:
 .PHONY : _mastering_ros_demo_pkg_generate_messages_check_deps_demo_srv/fast
 
 # Convenience name for target.
-mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/build.make mastering_ros_demo_pkg/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
 mastering_ros_demo_pkg/CMakeFiles/demo_action_client.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/rosbook_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mastering_ros_demo_pkg/CMakeFiles/demo_action_client.dir/rule
 .PHONY : mastering_ros_demo_pkg/CMakeFiles/demo_action_client.dir/rule
@@ -762,9 +720,6 @@ help:
 	@echo "... _mastering_ros_demo_pkg_generate_messages_check_deps_Demo_actionResult"
 	@echo "... _mastering_ros_demo_pkg_generate_messages_check_deps_demo_msg"
 	@echo "... _mastering_ros_demo_pkg_generate_messages_check_deps_demo_srv"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_py"
 	@echo "... demo_action_client"
 	@echo "... demo_action_server"
 	@echo "... demo_msg_publisher"
