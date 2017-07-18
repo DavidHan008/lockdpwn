@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/constantveltoleader_node.dir/constantVelToLeader.cpp.o"
   "CMakeFiles/constantveltoleader_node.dir/constantVelToLeader_data.cpp.o"
   "CMakeFiles/constantveltoleader_node.dir/ert_main.cpp.o"
@@ -11,6 +11,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/constantveltoleader_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/constantveltoleader_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
