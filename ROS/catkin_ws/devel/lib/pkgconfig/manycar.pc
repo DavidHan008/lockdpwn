@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: manycar
-Description: Description of manycar
-Version: 0.0.0
-Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/cat_vehicle_pkgs/manycar/include
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -lmanycar
-Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs velodyne_pointcloud

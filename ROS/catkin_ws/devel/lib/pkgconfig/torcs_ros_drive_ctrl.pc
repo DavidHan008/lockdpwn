@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: torcs_ros_drive_ctrl
-Description: Description of torcs_ros_drive_ctrl
-Version: 0.0.0
-Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/torcs_ros/torcs_ros_drive_ctrl/include
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: geometry_msgs roscpp sensor_msgs std_msgs torcs_msgs

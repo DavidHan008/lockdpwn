@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: all_in_one
-Description: Description of all_in_one
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: roscpp std_msgs

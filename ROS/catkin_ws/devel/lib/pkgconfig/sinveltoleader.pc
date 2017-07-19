@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: sinveltoleader
-Description: Description of sinveltoleader
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: geometry_msgs roscpp std_msgs

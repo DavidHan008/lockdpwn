@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: simplestateflowmodel
-Description: Description of simplestateflowmodel
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: geometry_msgs roscpp std_msgs

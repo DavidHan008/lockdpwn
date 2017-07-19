@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: catvehicle2
-Description: Description of catvehicle2
-Version: 2.0.2
-Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/cat_vehicle_pkgs/catvehicle2/include
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -lcatvehicle2
-Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs velodyne_pointcloud tf

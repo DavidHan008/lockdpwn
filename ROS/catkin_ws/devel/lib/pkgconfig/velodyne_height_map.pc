@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
-
-Name: velodyne_height_map
-Description: Description of velodyne_height_map
-Version: 0.4.1
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
-Requires: nodelet roscpp pcl_ros sensor_msgs tf

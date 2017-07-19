@@ -1,8 +1,0 @@
-prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install
-
-Name: sin_str0_leadervel_exp4
-Description: Description of sin_str0_leadervel_exp4
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
-Requires: geometry_msgs roscpp std_msgs
