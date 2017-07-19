@@ -1,12 +1,6 @@
-// Author: Jonathan Sprinkle
-// This (very simple) node reads a laser scan, and 
-// publishes the distance to the nearest point
-//
-// TODO: ensure nearest few points are somewhat close
-// TODO: what to return if no closest points?
-// TODO: enable angle range we care about
-// TODO: enable distance range we care about
-
+/*
+  c++ ==> ROS, 차량으로부터 레이저스캔 데이터를 활용해 전방의 물체의 거리, 각도를 계산해서 퍼블리시해주는 코드
+ */
 #include "ros/ros.h"
 #include "std_msgs/Float32.h"
 #include "sensor_msgs/LaserScan.h"
@@ -29,9 +23,7 @@ double angle_max;
 
 // This very simple callback looks through the data array, and then
 // returns the value (not the index) of that distance
-void scanCallback( const sensor_msgs::LaserScan::ConstPtr& scan )
-{
-
+void scanCallback( const sensor_msgs::LaserScan::ConstPtr& scan){
     // update what was 1 time ago
     dist_1 = dist;
     vel_1 = vel;
@@ -48,8 +40,8 @@ void scanCallback( const sensor_msgs::LaserScan::ConstPtr& scan )
          it!=scan->ranges.end(); it++, angle_tmp=angle_tmp+inc )  {
 
         if( dist.data > *it && *it > scan->range_min 
-            && angle_tmp > angle_min && angle_tmp < angle_max
-            )        {
+            && angle_tmp > angle_min && angle_tmp < angle_max)
+        {
             dist.data = *it;
             angle.data = angle_tmp;
         }
@@ -125,12 +117,12 @@ int main( int argc, char **argv ){
     ROS_INFO_STREAM("Node namespace is " << ros::this_node::getNamespace());
     ROS_INFO_STREAM("Node name is " << ros::this_node::getName( ) );
 
-
-    // TODO: make this not just a float value
+    // ed: 각도, 거리뿐만 아니라 물체가 이동하는 속도, 가속도까지 계산해서 퍼블리시할 수 있다(현재는 사용x)
     ros::Publisher dist_pub = n.advertise<std_msgs::Float32>(dist_topic, 1);
     ros::Publisher angle_pub = n.advertise<std_msgs::Float32>(angle_topic, 1);
-    //  	ros::Publisher vel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/vel", 100);
-    //  	ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/accel", 100);
+    // ros::Publisher vel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/vel", 100);
+    // ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/accel", 100);
+
 
     // we also want to subscribe to the signaller
     ros::Subscriber sub = n.subscribe(scan_topic, 1, &scanCallback);
@@ -144,13 +136,14 @@ int main( int argc, char **argv ){
     lastUpdate = ros::Time();
     newMessage = false;
 
+
     while( ros::ok() ){
         //		ROS_INFO( "Nearest object=%lf", dist );
-
-        // TODO: publish only if the time stamp is newer from the sensor
         double eps = (double)1/(double)100; // the epsilon time that is 'equal' in diff
 
         if( newMessage )   {
+
+            // ed: azcar 앞에 장애물이 있으면 거리와 각도를 계산해서 퍼블리시한다
             dist_pub.publish(dist);
             angle_pub.publish(angle);
             newMessage = false;

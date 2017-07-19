@@ -56,16 +56,16 @@ CMAKE_BINARY_DIR = /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : edit_cache/fast
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -77,6 +77,29 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -99,39 +122,16 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,156 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_py
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_cpp
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
-.PHONY : gazebo_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-
-# Convenience name for target.
-firstOrderController: cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-
-.PHONY : firstOrderController
-
-# fast build rule for target.
-firstOrderController/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build
-.PHONY : firstOrderController/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
 .PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
@@ -329,36 +179,6 @@ velodyne_pointcloud_gencfg: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_point
 velodyne_pointcloud_gencfg/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/build
 .PHONY : velodyne_pointcloud_gencfg/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-velodyne_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : velodyne_msgs_generate_messages_cpp
-
-# fast build rule for target.
-velodyne_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
-.PHONY : velodyne_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule:
@@ -376,19 +196,79 @@ velodyne_msgs_generate_messages_lisp/fast:
 .PHONY : velodyne_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+distanceEstimator: cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
 
-.PHONY : std_srvs_generate_messages_cpp
+.PHONY : distanceEstimator
 
 # fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
+distanceEstimator/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
+.PHONY : distanceEstimator/fast
+
+# Convenience name for target.
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_cpp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_py
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_py/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+velodyne_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : velodyne_msgs_generate_messages_cpp
+
+# fast build rule for target.
+velodyne_msgs_generate_messages_cpp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
+.PHONY : velodyne_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule:
@@ -421,34 +301,19 @@ azcargazebo/fast:
 .PHONY : azcargazebo/fast
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+firstOrderController: cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_lisp
+.PHONY : firstOrderController
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
-
-# Convenience name for target.
-distanceEstimator: cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
-
-.PHONY : distanceEstimator
-
-# fast build rule for target.
-distanceEstimator/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
-.PHONY : distanceEstimator/fast
+firstOrderController/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build
+.PHONY : firstOrderController/fast
 
 src/cont.o: src/cont.cc.o
 
@@ -537,32 +402,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... list_install_components"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... install/strip"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... gazebo_msgs_generate_messages_cpp"
-	@echo "... firstOrderController"
-	@echo "... install"
 	@echo "... test"
-	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... install/local"
 	@echo "... velodyne_pointcloud_gencfg"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... velodyne_msgs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... distanceEstimator"
+	@echo "... install"
+	@echo "... diagnostic_msgs_generate_messages_cpp"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... velodyne_msgs_generate_messages_cpp"
+	@echo "... edit_cache"
 	@echo "... velodyne_msgs_generate_messages_py"
 	@echo "... azcargazebo"
-	@echo "... gazebo_msgs_generate_messages_lisp"
-	@echo "... distanceEstimator"
-	@echo "... install/local"
+	@echo "... firstOrderController"
 	@echo "... src/cont.o"
 	@echo "... src/cont.i"
 	@echo "... src/cont.s"

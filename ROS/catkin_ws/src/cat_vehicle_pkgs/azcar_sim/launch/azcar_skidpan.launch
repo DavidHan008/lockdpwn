@@ -32,9 +32,7 @@ How to execute this file?
 
 roslaunch azcar_sim azcar_skidpan.launch
 -->
-
 <launch>
-
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="false"/>
@@ -55,6 +53,7 @@ roslaunch azcar_sim azcar_skidpan.launch
   <group ns="azcar_sim">
     <param name="robot_description"
            command="$(find xacro)/xacro.py '$(find azcar_sim)/urdf/azcar.xacro' roboname:='azcar_sim'" />
+    
     <include file="$(find azcar_sim)/launch/azcar.launch">
       <arg name="robot_name" value="azcar_sim"/>
       <arg name="init_pose" value="-x 1 -y 1 -z 0"/>

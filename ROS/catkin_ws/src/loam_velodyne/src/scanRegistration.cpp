@@ -222,6 +222,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::PointXYZI point;
 
   for (int i = 0; i < cloudSize_tmp; i++) {
+    // ed: 이 부분에서 Velodyne --> Loam 으로 좌표계 변환이 되는듯하다. (기존코드 수정 안함)
     point.x = laserCloudIn->points[i].x;
     point.y = laserCloudIn->points[i].y;
     point.z = laserCloudIn->points[i].z;

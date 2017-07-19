@@ -36,9 +36,11 @@ How to execute it:
 roslaunch azcar_sim azcar_empty.launch
 
 -->
-<!-- Inertial parameters selected with the help of 
+<!-- Inertial parameters selected with the help of
+
 http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 -->
+
 <robot name="azcar_sim" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!--  <xacro:property name="base_height" value="0"/> -->
   <gazebo reference="back_right_wheel_link">
@@ -92,49 +94,49 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
   <!--camera-->
   <!-- JMS removed to see if it improves sim times -->
   <!--
-<gazebo reference="camera_link">
-   <mu1>0.6</mu1>
-   <mu2>0.5</mu2>
-</gazebo>
+      <gazebo reference="camera_link">
+      <mu1>0.6</mu1>
+      <mu2>0.5</mu2>
+      </gazebo>
 
 <gazebo reference="camera_link">
-   <sensor type="camera" name="camera1">
-      <update_rate>30.0</update_rate>
-      <camera name="head">
-        <horizontal_fov>1.3962634</horizontal_fov>
-        <image>
-          <width>800</width>
-          <height>800</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>300</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-           <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>0.0</updateRate>
-    	<robotNamespace>/$(arg roboname)</robotNamespace>
-        <cameraName>camera1</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_link</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
+<sensor type="camera" name="camera1">
+<update_rate>30.0</update_rate>
+<camera name="head">
+<horizontal_fov>1.3962634</horizontal_fov>
+<image>
+<width>800</width>
+<height>800</height>
+<format>R8G8B8</format>
+</image>
+<clip>
+<near>0.02</near>
+<far>300</far>
+</clip>
+<noise>
+<type>gaussian</type>
+<mean>0.0</mean>
+<stddev>0.007</stddev>
+</noise>
+</camera>
+<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+<alwaysOn>true</alwaysOn>
+<updateRate>0.0</updateRate>
+<robotNamespace>/$(arg roboname)</robotNamespace>
+<cameraName>camera1</cameraName>
+<imageTopicName>image_raw</imageTopicName>
+<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+<frameName>camera_link</frameName>
+<hackBaseline>0.07</hackBaseline>
+<distortionK1>0.0</distortionK1>
+<distortionK2>0.0</distortionK2>
+<distortionK3>0.0</distortionK3>
+<distortionT1>0.0</distortionT1>
+<distortionT2>0.0</distortionT2>
+</plugin>
+</sensor>
 </gazebo>
--->
+  -->
   <gazebo reference="laser_link">
     <mu1>0.6</mu1>
     <mu2>0.5</mu2>
@@ -167,8 +169,8 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         </range>
       </ray>
       <!--                <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-                   <topicName>/cat/laser/scan</topicName>
-                      <frameName>laser_link</frameName>  -->
+           <topicName>/cat/laser/scan</topicName>
+           <frameName>laser_link</frameName>  -->
       <plugin filename="libgazebo_ros_block_laser.so" name="laser_controller">
         <frameName>laser_link</frameName>
         <hokuyoMinIntensity>101</hokuyoMinIntensity>
@@ -204,12 +206,12 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
           <resolution>0.05</resolution>
         </range>
         <!--
-                           <noise>
-                                <type>gaussian</type>
-                                <mean>0.0</mean>
-                                <stddev>0.02</stddev>
-                           </noise>
--->
+            <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.02</stddev>
+            </noise>
+        -->
       </ray>
       <plugin filename="libgazebo_ros_laser.so" name="sick_lms291_controller">
         <!--			      <robotNamespace>/azcar_sim</robotNamespace>-->
@@ -227,8 +229,8 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
   </gazebo>
   <!--Rear Wheel Drive, cuz why not-->
   <!--
-<gazebo>
-  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <gazebo>
+      <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <robotNamespace>/azcar_sim</robotNamespace>
       <rosDebugLevel>Debug</rosDebugLevel>
       <publishWheelTF>false</publishWheelTF>
@@ -247,9 +249,9 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
       <robotBaseFrame>base_link</robotBaseFrame>
       <cmd_vel_timeout>0.20</cmd_vel_timeout>
       <updateRate>10.0</updateRate>
-  </plugin>
-</gazebo>
--->
+      </plugin>
+      </gazebo>
+  -->
   <gazebo>
     <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_state_publisher">
       <jointName>back_left_wheel_joint, back_right_wheel_joint, front_left_steering_joint, front_right_steering_joint, front_right_wheel_joint, front_left_wheel_joint</jointName>

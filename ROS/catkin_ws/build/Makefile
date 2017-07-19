@@ -1817,82 +1817,43 @@ torcs_ros_drive_ctrl_node/fast:
 .PHONY : torcs_ros_drive_ctrl_node/fast
 
 #=============================================================================
-# Target rules for targets named diagnostic_msgs_generate_messages_lisp
+# Target rules for targets named gazebo_ros_gencfg
 
 # Build rule for target.
-diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_lisp
-.PHONY : diagnostic_msgs_generate_messages_lisp
+gazebo_ros_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_gencfg
+.PHONY : gazebo_ros_gencfg
 
 # fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+gazebo_ros_gencfg/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/gazebo_ros_gencfg.dir/build.make velodyne_gazebo_plugins/CMakeFiles/gazebo_ros_gencfg.dir/build
+.PHONY : gazebo_ros_gencfg/fast
 
 #=============================================================================
-# Target rules for targets named trajectory_msgs_generate_messages_py
+# Target rules for targets named std_srvs_generate_messages_cpp
 
 # Build rule for target.
-trajectory_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_py
-.PHONY : trajectory_msgs_generate_messages_py
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named trajectory_msgs_generate_messages_cpp
+# Target rules for targets named gazebo_ros_velodyne_laser
 
 # Build rule for target.
-trajectory_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_cpp
-.PHONY : trajectory_msgs_generate_messages_cpp
+gazebo_ros_velodyne_laser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_velodyne_laser
+.PHONY : gazebo_ros_velodyne_laser
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_py
-
-# Build rule for target.
-std_srvs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named gazebo_msgs_generate_messages_py
-
-# Build rule for target.
-gazebo_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gazebo_msgs_generate_messages_py
-.PHONY : gazebo_msgs_generate_messages_py
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named trajectory_msgs_generate_messages_lisp
-
-# Build rule for target.
-trajectory_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_lisp
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
+gazebo_ros_velodyne_laser/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/gazebo_ros_velodyne_laser.dir/build.make velodyne_gazebo_plugins/CMakeFiles/gazebo_ros_velodyne_laser.dir/build
+.PHONY : gazebo_ros_velodyne_laser/fast
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_lisp
@@ -1904,7 +1865,7 @@ std_srvs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 std_srvs_generate_messages_lisp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 .PHONY : std_srvs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -1917,34 +1878,86 @@ gazebo_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 gazebo_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
 .PHONY : gazebo_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named firstOrderController
+# Target rules for targets named std_srvs_generate_messages_py
 
 # Build rule for target.
-firstOrderController: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 firstOrderController
-.PHONY : firstOrderController
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
 
 # fast build rule for target.
-firstOrderController/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build
-.PHONY : firstOrderController/fast
+std_srvs_generate_messages_py/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/build.make velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named diagnostic_msgs_generate_messages_py
+# Target rules for targets named gazebo_msgs_generate_messages_py
 
 # Build rule for target.
-diagnostic_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_py
-.PHONY : diagnostic_msgs_generate_messages_py
+gazebo_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gazebo_msgs_generate_messages_py
+.PHONY : gazebo_msgs_generate_messages_py
 
 # fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
+gazebo_msgs_generate_messages_py/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+.PHONY : gazebo_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named gazebo_msgs_generate_messages_lisp
+
+# Build rule for target.
+gazebo_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gazebo_msgs_generate_messages_lisp
+.PHONY : gazebo_msgs_generate_messages_lisp
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+.PHONY : gazebo_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_lisp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_lisp
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_cpp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_cpp
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_py
+
+# Build rule for target.
+trajectory_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_py
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_py/fast:
+	$(MAKE) -f velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make velodyne_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named velodyne_pointcloud_gencfg
@@ -1960,32 +1973,6 @@ velodyne_pointcloud_gencfg/fast:
 .PHONY : velodyne_pointcloud_gencfg/fast
 
 #=============================================================================
-# Target rules for targets named diagnostic_msgs_generate_messages_cpp
-
-# Build rule for target.
-diagnostic_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_cpp
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named velodyne_msgs_generate_messages_cpp
-
-# Build rule for target.
-velodyne_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velodyne_msgs_generate_messages_cpp
-.PHONY : velodyne_msgs_generate_messages_cpp
-
-# fast build rule for target.
-velodyne_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
-.PHONY : velodyne_msgs_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named velodyne_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -1999,17 +1986,69 @@ velodyne_msgs_generate_messages_lisp/fast:
 .PHONY : velodyne_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named std_srvs_generate_messages_cpp
+# Target rules for targets named distanceEstimator
 
 # Build rule for target.
-std_srvs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
-.PHONY : std_srvs_generate_messages_cpp
+distanceEstimator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 distanceEstimator
+.PHONY : distanceEstimator
 
 # fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
+distanceEstimator/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
+.PHONY : distanceEstimator/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_cpp
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_cpp
+.PHONY : diagnostic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_lisp
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_lisp
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_py
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_py
+.PHONY : diagnostic_msgs_generate_messages_py
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_py/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named velodyne_msgs_generate_messages_cpp
+
+# Build rule for target.
+velodyne_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velodyne_msgs_generate_messages_cpp
+.PHONY : velodyne_msgs_generate_messages_cpp
+
+# fast build rule for target.
+velodyne_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
+.PHONY : velodyne_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named velodyne_msgs_generate_messages_py
@@ -2038,30 +2077,17 @@ azcargazebo/fast:
 .PHONY : azcargazebo/fast
 
 #=============================================================================
-# Target rules for targets named gazebo_msgs_generate_messages_lisp
+# Target rules for targets named firstOrderController
 
 # Build rule for target.
-gazebo_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gazebo_msgs_generate_messages_lisp
-.PHONY : gazebo_msgs_generate_messages_lisp
+firstOrderController: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 firstOrderController
+.PHONY : firstOrderController
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named distanceEstimator
-
-# Build rule for target.
-distanceEstimator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 distanceEstimator
-.PHONY : distanceEstimator
-
-# fast build rule for target.
-distanceEstimator/fast:
-	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
-.PHONY : distanceEstimator/fast
+firstOrderController/fast:
+	$(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build
+.PHONY : firstOrderController/fast
 
 #=============================================================================
 # Target rules for targets named catvehiclegazebo
@@ -2554,25 +2580,27 @@ help:
 	@echo "... torcs_img_publisher_node"
 	@echo "... torcs_ros_client_node"
 	@echo "... torcs_ros_drive_ctrl_node"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... gazebo_ros_gencfg"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... gazebo_ros_velodyne_laser"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... gazebo_msgs_generate_messages_cpp"
-	@echo "... firstOrderController"
-	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... gazebo_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... velodyne_pointcloud_gencfg"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... velodyne_msgs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... distanceEstimator"
+	@echo "... diagnostic_msgs_generate_messages_cpp"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... velodyne_msgs_generate_messages_py"
 	@echo "... azcargazebo"
-	@echo "... gazebo_msgs_generate_messages_lisp"
-	@echo "... distanceEstimator"
+	@echo "... firstOrderController"
 	@echo "... catvehiclegazebo"
 	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... controller_manager_msgs_generate_messages_lisp"

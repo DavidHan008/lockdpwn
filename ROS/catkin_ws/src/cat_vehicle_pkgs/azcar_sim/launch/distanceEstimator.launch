@@ -26,18 +26,15 @@ Summary:
 This launch file loads the worlds and models for the azcar
 
 -->
-
 <launch>
+  <arg name="robot" default="catvehicle"/>
 
-	  <arg name="robot" default="catvehicle"/>
-
-<node pkg="azcar_sim" type="distanceEstimator" name="distanceEstimator" output="screen"
-            required="true">
-	<param name="scan_topic" value="/scan"/>
-	<param name="scan_topic" value="/$(arg robot)/scan"/>
-	<param name="dist_topic" value="dist"/>
-	<param name="angle_topic" value="angle"/>
-	<param name="angle_min" value="-0.1"/>
-	<param name="angle_max" value="0.1"/>
-</node>
+  <node pkg="azcar_sim" type="distanceEstimator" name="distanceEstimator" output="screen" required="true">
+    <param name="scan_topic" value="/scan"/>
+    <param name="scan_topic" value="/$(arg robot)/scan"/>
+    <param name="dist_topic" value="dist"/>
+    <param name="angle_topic" value="angle"/>
+    <param name="angle_min" value="-0.1"/>
+    <param name="angle_max" value="0.1"/>
+  </node>
 </launch>

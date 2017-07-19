@@ -33,15 +33,13 @@ How to execute it:
 roslaunch azcar_sim azcar_empty.launch
 
 -->
-
 <!-- Inertial parameters selected with the help of 
 http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 -->
-
 <robot name="$(arg roboname)" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
   <xacro:property name="PI" value="3.1415926835897931"/>
-<!--  <xacro:property name="base_height" value="0"/> -->
+  <!--  <xacro:property name="base_height" value="0"/> -->
   <xacro:property name="base_height" value="1.0639"/>
   <xacro:property name="base_mass" value="2050"/>
   <xacro:property name="base_mass_ixx" value="63"/>
@@ -68,413 +66,367 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
   <xacro:property name="str_angle" value="0.6"/>
   <xacro:property name="car_width" value="1.301"/>
   <xacro:property name="tyre_origin">
-	<origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+    <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
   </xacro:property>
   <xacro:property name="tyre_origin_2">
-        <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
+    <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
   </xacro:property>
   <xacro:property name="tyre_origin_3">
-        <origin xyz="0 0 0" rpy="0 0 ${-PI/2}"/>
+    <origin xyz="0 0 0" rpy="0 0 ${-PI/2}"/>
   </xacro:property>
   
-	<xacro:include filename="$(find azcar_sim)/urdf/azcar_slipping.gazebo"/>
+  <xacro:include filename="$(find azcar_sim)/urdf/azcar_slipping.gazebo"/>
 
-
-
-
-<!--Car Body-->
-
-
-
-
-
-<link name="base_link">
+  <!--Car Body-->
+  <link name="base_link">
     <collision>
-         <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>  
-           <geometry>
-            <box size="2.62 ${car_width} ${car_height}"/>
-        </geometry>
-      </collision>
-     <visual>
-        <origin xyz="-0.25 0 ${base_height + 0.05}" rpy="0 0 0"/>  
-        <geometry>
-          <mesh filename="package://azcar_sim/meshes/ford_escape_no_wheels_2.dae"/>
-        </geometry>
-     </visual>
-</link>
-
-<joint name="inertial_joint" type="fixed">
-      <parent link="base_link"/>
-      <child link="main_mass"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-</joint>
-
-<link name="main_mass" type="fixed">
-     <parent link="inertial_joint"/>
-     <inertial>
-        <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
-        <mass value="${base_mass}"/>
-        <inertia
+      <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>  
+      <geometry>
+        <box size="2.62 ${car_width} ${car_height}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.25 0 ${base_height + 0.05}" rpy="0 0 0"/>  
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/ford_escape_no_wheels_2.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="inertial_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="main_mass"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="main_mass" type="fixed">
+    <parent link="inertial_joint"/>
+    <inertial>
+      <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
+      <mass value="${base_mass}"/>
+      <inertia
           ixx="${base_mass_ixx}"  ixy="0.000000" ixz="${base_mass_ixz}"
           iyy="${base_mass_iyy}" iyz="0.000000"
           izz="${base_mass_izz}"/>
-      </inertial>
-</link>
-
-<!--Back Right Wheel-->
+    </inertial>
+  </link>
 
 
-
-
-<joint name="back_right_wheel_joint" type="continuous">
-      <parent link="base_link"/>
-      <child link="back_right_wheel_link"/>
-      <origin xyz="${-tyre_x} ${-tyre_y} ${tyre_r}" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
-      <dynamics damping="0.1"/>
-     <limit effort="10000" velocity="100" />
-      <joint_properties damping="0.0" friction="0.0" />
-</joint>
-
-<link name="back_right_wheel_link">
-     <collision>
+  
+  <!--Back Right Wheel-->
+  <joint name="back_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_right_wheel_link"/>
+    <origin xyz="${-tyre_x} ${-tyre_y} ${tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1"/>
+    <limit effort="10000" velocity="100" />
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+  <link name="back_right_wheel_link">
+    <collision>
       <xacro:insert_block name="tyre_origin"/>
-        <geometry>
-         <cylinder length="${tyre_length}" radius="${tyre_radius}"/>
-        </geometry>
-     </collision>
+      <geometry>
+        <cylinder length="${tyre_length}" radius="${tyre_radius}"/>
+      </geometry>
+    </collision>
 
-     <visual>
+    <visual>
       <xacro:insert_block name="tyre_origin_3"/>
-        <geometry>
-          <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
-      <scale xyz="1.2 1 1"/>
-        </geometry>
-      </visual>
-
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${tyre_mass}"/>
-        <inertia
-          ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
-          iyy="${tyre_mass_iyy}"  iyz="0.000000"
-          izz="${tyre_mass_izz}"/>
-      </inertial>
-</link>
-
-
-
-
-<!--Back Left Wheel-->
-
-
-
-
-<joint name="back_left_wheel_joint" type="continuous">
-      <parent link="base_link"/>
-      <child link="back_left_wheel_link"/>
-      <origin xyz="${-tyre_x} ${tyre_y} ${tyre_r}" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
-      <dynamics damping="0.1"/>
-      <limit effort="10000" velocity="100" />
-      <joint_properties damping="0.0" friction="0.0" />
-</joint>
-
-<link name="back_left_wheel_link">
-     <collision>
-      <xacro:insert_block name="tyre_origin"/>
-        <geometry>
-         <cylinder length="0.229" radius="${tyre_radius}"/>
-        </geometry>
-     </collision>
-
-     <visual>
-      <xacro:insert_block name="tyre_origin_2"/>
-        <geometry>
-          <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
-          <scale xyz="1.2 1 1"/>
-        </geometry>
-      </visual>
-
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${tyre_mass}"/>
-        <inertia
-          ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
-          iyy="${tyre_mass_iyy}"  iyz="0.000000"
-          izz="${tyre_mass_izz}"/>
-      </inertial>
-</link>
-
-
-
-<!--Right Steering-->
-
-
-
-
-<joint name="front_right_steering_joint" type="revolute">
-	<parent link="base_link"/>
-	<child link="front_right_steering_link"/>
-	<origin xyz="${tyre_x} ${-car_width/2 - str_length/2} ${tyre_r}" rpy="0 0 0"/>
-        <axis xyz="0 0 1"/>
-	<limit effort="1000.0" lower="${-str_angle}" upper="${str_angle}" velocity="0.5"/>
-</joint>
-
-<link name="front_right_steering_link">
-	<collision>
-	      <xacro:insert_block name="tyre_origin"/>
-	        <geometry>
-        	 <cylinder length="${str_length}" radius="${str_radius}"/>
-       		</geometry>
-	</collision>
-
-	<visual>
-              <xacro:insert_block name="tyre_origin"/>
-                <geometry>
-                 <cylinder length="${str_length}" radius="${str_radius}"/>
-                </geometry>
-	</visual>
-
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="10.00"/>
-        <inertia
-          ixx="0.4"  ixy="0.000000"  ixz="0.000000"
-          iyy="0.6"  iyz="0.000000"
-          izz="0.4"/>
-      </inertial>
-</link>
-
-
-
-<!--Right Front Wheel-->
-
-
-
-
-<joint name="front_right_wheel_joint" type="continuous">
-      <parent link="front_right_steering_link"/>
-      <child link="front_right_wheel_link"/>
-      <origin xyz="0 ${-str_length/2 - tyre_length/2} 0" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
-</joint>
-
-<link name="front_right_wheel_link">
-     <collision>
-      <xacro:insert_block name="tyre_origin"/>
-        <geometry>
-         <cylinder length="${tyre_length}" radius="${tyre_radius}"/>
-	</geometry>
-     </collision>
-
-     <visual>
-      <xacro:insert_block name="tyre_origin_3"/>
-        <geometry>
-          <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
         <scale xyz="1.2 1 1"/>
-       </geometry>  
-      </visual>
+      </geometry>
+    </visual>
 
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${tyre_mass}"/>
-        <inertia
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${tyre_mass}"/>
+      <inertia
           ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
           iyy="${tyre_mass_iyy}"  iyz="0.000000"
           izz="${tyre_mass_izz}"/>
-      </inertial>
-</link>
+    </inertial>
+  </link>
 
 
 
+  <!--Back Left Wheel-->
+  <joint name="back_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_left_wheel_link"/>
+    <origin xyz="${-tyre_x} ${tyre_y} ${tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1"/>
+    <limit effort="10000" velocity="100" />
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+  <link name="back_left_wheel_link">
+    <collision>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="0.229" radius="${tyre_radius}"/>
+      </geometry>
+    </collision>
 
-<!--Left Steering-->
+    <visual>
+      <xacro:insert_block name="tyre_origin_2"/>
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
+        <scale xyz="1.2 1 1"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${tyre_mass}"/>
+      <inertia
+          ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+          iyy="${tyre_mass_iyy}"  iyz="0.000000"
+          izz="${tyre_mass_izz}"/>
+    </inertial>
+  </link>
 
 
 
-<joint name="front_left_steering_joint" type="revolute">
-        <parent link="base_link"/>
-        <child link="front_left_steering_link"/>
-        <origin xyz="${tyre_x} ${car_width/2 + str_length/2} ${tyre_r}" rpy="0 0 0"/>
-        <axis xyz="0 0 1"/>
-        <limit effort="1000.0" lower="${-str_angle}" upper="${str_angle}" velocity="0.5"/>
-</joint>
+  <!--Right Steering-->
+  <joint name="front_right_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_right_steering_link"/>
+    <origin xyz="${tyre_x} ${-car_width/2 - str_length/2} ${tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-str_angle}" upper="${str_angle}" velocity="0.5"/>
+  </joint>
+  <link name="front_right_steering_link">
+    <collision>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </collision>
 
-<link name="front_left_steering_link">
-      <parent link="base_link"/>
-        <collision>
-              <xacro:insert_block name="tyre_origin"/>
-                <geometry>
-                 <cylinder length="${str_length}" radius="${str_radius}"/>
-                </geometry>
-        </collision>
+    <visual>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </visual>
 
-        <visual>
-              <xacro:insert_block name="tyre_origin"/>
-                <geometry>
-                 <cylinder length="${str_length}" radius="${str_radius}"/>
-                </geometry>
-        </visual>
-
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="10.00"/>
-        <inertia
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10.00"/>
+      <inertia
           ixx="0.4"  ixy="0.000000"  ixz="0.000000"
           iyy="0.6"  iyz="0.000000"
           izz="0.4"/>
-      </inertial>
-</link>
+    </inertial>
+  </link>
 
 
 
-<!--Front Right Wheel-->
+  <!--Right Front Wheel-->
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="front_right_steering_link"/>
+    <child link="front_right_wheel_link"/>
+    <origin xyz="0 ${-str_length/2 - tyre_length/2} 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="front_right_wheel_link">
+    <collision>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="${tyre_length}" radius="${tyre_radius}"/>
+      </geometry>
+    </collision>
 
+    <visual>
+      <xacro:insert_block name="tyre_origin_3"/>
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
+        <scale xyz="1.2 1 1"/>
+      </geometry>  
+    </visual>
 
-
-<joint name="front_left_wheel_joint" type="continuous">
-      <parent link="front_left_steering_link"/>
-      <child link="front_left_wheel_link"/>
-      <origin xyz="0 ${str_length/2 + tyre_length/2} 0" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
-
-      <dynamics damping="0.1"/>
-      <limit effort="10000" velocity="100" />
-      <joint_properties damping="0.0" friction="0.0" />
-
-</joint>
-
-
-<link name="front_left_wheel_link">
-     <parent link="front_left_wheel_joint"/>
-     <collision>     
-	<origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
-        <geometry>
-         <cylinder length="0.229" radius="${tyre_radius}"/>
-        </geometry>
-     </collision>
-
-     <visual>
-      <xacro:insert_block name="tyre_origin_2"/>
-       <geometry>
-          <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
-            <scale xyz="1.2 1 1"/>
-       </geometry>
-      </visual>
-
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${tyre_mass}"/>
-        <inertia
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${tyre_mass}"/>
+      <inertia
           ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
           iyy="${tyre_mass_iyy}"  iyz="0.000000"
           izz="${tyre_mass_izz}"/>
-      </inertial>
-</link>
+    </inertial>
+  </link>
 
 
 
-<!-- Camera-->
+
+  <!--Left Steering-->
+  <joint name="front_left_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_left_steering_link"/>
+    <origin xyz="${tyre_x} ${car_width/2 + str_length/2} ${tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-str_angle}" upper="${str_angle}" velocity="0.5"/>
+  </joint>
+
+  <link name="front_left_steering_link">
+    <parent link="base_link"/>
+    <collision>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <xacro:insert_block name="tyre_origin"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10.00"/>
+      <inertia
+          ixx="0.4"  ixy="0.000000"  ixz="0.000000"
+          iyy="0.6"  iyz="0.000000"
+          izz="0.4"/>
+    </inertial>
+  </link>
 
 
 
-<joint name="camera_joint" type="fixed">
-<origin xyz="0 0 ${0.725 + sensor_box/2 + 1.25}" rpy="0 0 0"/>
-	<axis xyz="0 0 1"/>
-	<parent link="base_link"/>
-	<child link="camera_link"/>
-</joint>
+  <!--Front Right Wheel-->
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="front_left_steering_link"/>
+    <child link="front_left_wheel_link"/>
+    <origin xyz="0 ${str_length/2 + tyre_length/2} 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
 
-<link name="camera_link">
-	<collision>
-	  <origin xyz="0 0 0" rpy="0 0 0"/>
-	  <geometry>
-	   <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-	  </geometry>
-	</collision>
+    <dynamics damping="0.1"/>
+    <limit effort="10000" velocity="100" />
+    <joint_properties damping="0.0" friction="0.0" />
 
-	<visual>
-	  <origin xyz="0 0 0" rpy="0 0 0"/>
-	  <geometry>
-	  <box size="${sensor_box} ${sensor_box} ${sensor_box}"
-/>
-          </geometry>
-	</visual>
+  </joint>
+  <link name="front_left_wheel_link">
+    <parent link="front_left_wheel_joint"/>
+    <collision>     
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="0.229" radius="${tyre_radius}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <xacro:insert_block name="tyre_origin_2"/>
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/ford_escape_wheel.dae"/>
+        <scale xyz="1.2 1 1"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${tyre_mass}"/>
+      <inertia
+          ixx="${tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+          iyy="${tyre_mass_iyy}"  iyz="0.000000"
+          izz="${tyre_mass_izz}"/>
+    </inertial>
+  </link>
+
+
+  <!-- Camera-->
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0 0 ${0.725 + sensor_box/2 + 1.25}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${sensor_box} ${sensor_box} ${sensor_box}"
+             />
+      </geometry>
+    </visual>
 
     <inertial>
       <mass value="1e-5" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
-</link>
+  </link>
 
 
+  <!--Velodyne LIDAR-->
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0 0 ${sensor_box/2 + 0.01}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="camera_link"/>
+    <child link="laser_link"/>
+  </joint>
+  <link name="laser_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
+      </geometry>
+    </collision>
 
-<!--Velodyne LIDAR-->
-
-
-
-<joint name="laser_joint" type="fixed">
-	<origin xyz="0 0 ${sensor_box/2 + 0.01}" rpy="0 0 0"/>
-	<axis xyz="0 0 1"/>
-	<parent link="camera_link"/>
-	<child link="laser_link"/>
-</joint>
-
-<link name="laser_link">
-        <collision>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <geometry>
-           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-          </geometry>
-        </collision>
-
-        <visual>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <geometry>
-           <mesh filename="package://azcar_sim/meshes/hokuyo.dae"/>
-          </geometry>
-        </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://azcar_sim/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
 
     <inertial>
       <mass value="1e-5" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
-</link>
-
-<joint name="front_laser_joint" type="fixed">
-	<origin xyz="${car_to_bumper} 0 ${front_bumper_height + sensor_box/2 + 0.01}" rpy="0 0 0"/>
-	<axis xyz="0 0 1"/>
-	<parent link="base_link"/>
-	<child link="front_laser_link"/>
-</joint>
-
-<link name="front_laser_link">
-     <parent link="front_laser_joint"/>
-        <collision>
-          <origin xyz="0 0 0" rpy="0 0.0 0"/>
-          <geometry>
-           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-          </geometry>
-        </collision>
-
-        <visual>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <geometry>
-           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-          </geometry>
-        </visual>
+  </link>
+  
+  <joint name="front_laser_joint" type="fixed">
+    <origin xyz="${car_to_bumper} 0 ${front_bumper_height + sensor_box/2 + 0.01}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="front_laser_link"/>
+  </joint>
+  
+  <link name="front_laser_link">
+    <parent link="front_laser_joint"/>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0.0 0"/>
+      <geometry>
+        <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
+      </geometry>
+    </visual>
 
     <inertial>
       <mass value="1e-5" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
-</link>
+  </link>
 
-<!-- motors and transmissions for the two rear wheels -->
+
+  
+  <!-- motors and transmissions for the two rear wheels -->
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="back_right_wheel_joint">
@@ -485,7 +437,6 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="back_left_wheel_joint">
@@ -496,7 +447,6 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
   <transmission name="rack_and_pinion_left">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="front_left_steering_joint">
@@ -507,7 +457,6 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
   <transmission name="rack_and_pinion_right">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="front_right_steering_joint">
