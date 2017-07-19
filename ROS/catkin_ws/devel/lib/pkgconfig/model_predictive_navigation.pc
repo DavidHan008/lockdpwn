@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: model_predictive_navigation
+Description: Description of model_predictive_navigation
+Version: 0.0.0
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/model_predictive_navigation/include -I/opt/ros/indigo/include/navfn/
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -lcontrol_law
+Requires: costmap_2d geometry_msgs nav_msgs navfn roscpp std_msgs nav_core tf sensor_msgs roslib rospy

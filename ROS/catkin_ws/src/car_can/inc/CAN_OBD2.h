@@ -13,31 +13,30 @@
 
 using namespace std;
 
-class CAN_OBD2
-{
-public:
-	CAN_OBD2(int can_I = 0);
-	~CAN_OBD2();
+class CAN_OBD2{
+ public:
+  CAN_OBD2(int can_I = 0);
+  ~CAN_OBD2();
 
-	bool GetCANdata(); 
-	bool GetObdSAS();	
-	bool GetObdVelocity1();	
-	bool GetObdVelocity2();	
+  bool GetCANdata();
+  bool GetObdSAS();
+  bool GetObdVelocity1();
+  bool GetObdVelocity2();
 
-	void DoIMUFilter();
+  void DoIMUFilter();
 
-public:
-	double m_gyro[3];		
-	double m_accl[3];		
-	double m_magnet[3];
-	double m_speed1;
-	double m_speed2;
-	double m_steeringAngle;
-	double m_t;
+ public:
+  double m_gyro[3];
+  double m_accl[3];
+  double m_magnet[3];
+  double m_speed1;
+  double m_speed2;
+  double m_steeringAngle;
+  double m_t;
 
-	Filter m_Filter;
+  Filter m_Filter;
 
-	eCAN * m_canport;
+  eCAN * m_canport;
 };
 
 

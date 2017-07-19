@@ -5,165 +5,145 @@
  
 
 CanReceiveThread::CanReceiveThread(CAN_OBD2* pCarCan, QObject * parent)
-	: QThread(parent)
-	, m_pCarCan(pCarCan)
+    : QThread(parent), m_pCarCan(pCarCan)
 {
-	threadStop = false;
+  threadStop = false;
 }
 
-void CanReceiveThread::stop()
-{
-	threadStop = true;
+void CanReceiveThread::stop(){
+  threadStop = true;
 
 }
-void CanReceiveThread::run()
-{
-	qDebug("can Thread Start");
-	while(!threadStop)
-	{
-		m_pCarCan->m_canport->ReadCanBuffer();
 
-		if(m_pCarCan->GetCANdata())
-			m_pCarCan->DoIMUFilter();
-		m_pCarCan->GetObdSAS();
-		m_pCarCan->GetObdVelocity1();
-		m_pCarCan->GetObdVelocity2();
-	}
-	threadStop = false;
-	qDebug("can Thread End");
+void CanReceiveThread::run(){
+  qDebug("can Thread Start");
+  while(!threadStop){
+    m_pCarCan->m_canport->ReadCanBuffer();
+
+    if(m_pCarCan->GetCANdata())
+      m_pCarCan->DoIMUFilter();
+    m_pCarCan->GetObdSAS();
+    m_pCarCan->GetObdVelocity1();
+    m_pCarCan->GetObdVelocity2();
+  }
+  threadStop = false;
+  qDebug("can Thread End");
 }
 
 
 /////////////////////////////////////////////////////////////////////////////////
-
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
-	: QMainWindow(parent)
-	, _argc(argc), _argv(argv)
-{
-	ui.setupUi(this);
-	m_pCarCan = NULL;
-	canThread = NULL;
+    : QMainWindow(parent) , _argc(argc), _argv(argv) {
 
-	qnode = NULL;
+  ui.setupUi(this);
+  m_pCarCan = NULL;
+  canThread = NULL;
+
+  qnode = NULL;
 	
-	timer = new QTimer(this);
-	connect( timer, SIGNAL(timeout()), this, SLOT(OnTimer()) );
-
+  timer = new QTimer(this);
+  connect( timer, SIGNAL(timeout()), this, SLOT(OnTimer()) );
 }
-
-
 
 MainWindow::~MainWindow() {}
 
+void MainWindow::OnTimer(){
+  char text[2048];
 
-void MainWindow::OnTimer()
-{
-	char text[2048];
+  // ed: UI창에서 각 오브젝트들의 실제 이름은 다음과 같다
+  /*
+    lineEdit_2B0    :  SAS
+    lineEdit_2B0_2  :  Steering
+    lineEdit_316    :  Velocity1
+    lineEdit_316_2  :  Velocity
+    lineEdit_4F0    :  Velocity2
+    lineEdit_4F0_2  :  Velocity
+    lineEdit_220    :  CAN_IMU
+    lineEdit_220_2  :  gyro data
+    lineEdit_220_3  :  accl data
+  */
 
-	// OBD SAS
-	sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[0].text);
-	ui.lineEdit_2B0->setText(text);
-	if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[0].text, "no data") != 0)
-	{
-		sprintf(text, "%f", m_pCarCan->m_steeringAngle);
-		ui.lineEdit_2B0_2->setText(text);
-	}
+  // OBD SAS
+  sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[0].text);
+  ui.lineEdit_2B0->setText(text);
 
-	// OBD VEL1
-	sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[1].text);
-	ui.lineEdit_316->setText(text);
-	if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[1].text, "no data") != 0)
-	{
-		sprintf(text, "%f", m_pCarCan->m_speed1);
-		ui.lineEdit_316_2->setText(text);		
-	}
+  if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[0].text, "no data") != 0)  {
+    sprintf(text, "%f", m_pCarCan->m_steeringAngle);
+    ui.lineEdit_2B0_2->setText(text);
+  }
 
-	// OBD VEL2
-	sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[2].text);
-	ui.lineEdit_4F0->setText(text);
-	if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[2].text, "no data") != 0)
-	{
-		sprintf(text, "%f", m_pCarCan->m_speed2);
-		ui.lineEdit_4F0_2->setText(text);
-	}
+  // OBD VEL1
+  sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[1].text);
+  ui.lineEdit_316->setText(text);
+  if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[1].text, "no data") != 0)  {
+    sprintf(text, "%f", m_pCarCan->m_speed1);
+    ui.lineEdit_316_2->setText(text);
+  }
 
-	// OBD IMU
-	sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[3].text);
-	ui.lineEdit_220->setText(text);
-	if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[3].text, "no data") != 0)
-	{
-		sprintf (text, "% 8.3f, % 8.3f, % 8.3f", m_pCarCan->m_gyro[0], m_pCarCan->m_gyro[1], m_pCarCan->m_gyro[2]);
-		ui.lineEdit_220_2->setText(text);
+  // OBD VEL2
+  sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[2].text);
+  ui.lineEdit_4F0->setText(text);
 
-		sprintf (text, "% 8.3f, % 8.3f, % 8.3f", m_pCarCan->m_accl[0]*9.80665, m_pCarCan->m_accl[1]*9.80665, m_pCarCan->m_accl[2]*9.81);
-		ui.lineEdit_220_3->setText(text);
-	}
+  if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[2].text, "no data") != 0)  {
+    sprintf(text, "%f", m_pCarCan->m_speed2);
+    ui.lineEdit_4F0_2->setText(text);
+  }
+
+  // OBD IMU
+  sprintf(text, "%s", m_pCarCan->m_canport->s_vehicle_obd[3].text);
+  ui.lineEdit_220->setText(text);
+
+  if(strcmp(m_pCarCan->m_canport->s_vehicle_obd[3].text, "no data") != 0) {
+    sprintf (text, "% 8.3f, % 8.3f, % 8.3f", m_pCarCan->m_gyro[0], m_pCarCan->m_gyro[1], m_pCarCan->m_gyro[2]);
+    ui.lineEdit_220_2->setText(text);
+    sprintf (text, "% 8.3f, % 8.3f, % 8.3f", m_pCarCan->m_accl[0]*9.80665, m_pCarCan->m_accl[1]*9.80665, m_pCarCan->m_accl[2]*9.81);
+    ui.lineEdit_220_3->setText(text);
+  }
 }
 
+// ed: car_can에서 start 버튽을 누른 경우 실행되는 함수
+void MainWindow::on_startButton_clicked(){
+  if(!m_pCarCan){
+    ui.startButton->setText("Stop");
 
-void MainWindow::on_startButton_clicked()
-{
-	
-	if(!m_pCarCan)
-	{
-		ui.startButton->setText("Stop");
+    m_pCarCan = new CAN_OBD2(ui.canPort2->value());
+    canThread = new CanReceiveThread(m_pCarCan);
+    canThread->start();
 
-		m_pCarCan = new CAN_OBD2(ui.canPort2->value());
+    qnode = new QNode(_argc, _argv, &ui, m_pCarCan);
+    qnode->start();
+    timer->start(500);
+  }
+  else {
+    ui.startButton->setText("Start");
 
-		canThread = new CanReceiveThread(m_pCarCan);
-		canThread->start();
+    timer->stop();
 
-		qnode = new QNode(_argc, _argv, &ui, m_pCarCan);
-		qnode->start();
+    canThread->stop();
+    canThread->wait();
 
+    qnode->stop();
+    qnode->wait();
 
-		timer->start(500);
+    delete canThread;
+    canThread = NULL;
 
-	}
-	else
-	{
-		ui.startButton->setText("Start");
+    delete qnode;
+    qnode = NULL;
 
-		timer->stop();
+    delete m_pCarCan;
+    m_pCarCan = NULL;
 
-		canThread->stop();
-		canThread->wait();
-
-		
-		qnode->stop();
-		qnode->wait();		
-
-
-		delete canThread;
-		canThread = NULL;
-
-
-		
-		delete qnode;
-		qnode = NULL;
-
-		delete m_pCarCan;
-		m_pCarCan = NULL;
-
-		printf("thread clear\n");
-	}
+    printf("thread clear\n");
+  }
 }
 
+int main(int argc, char** argv){
+  QApplication app(argc, argv);
+  MainWindow w(argc, argv);
 
+  w.show();
+  app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 
-
-
-
-
-
-
-int main(int argc, char** argv)
-{
-	QApplication app(argc, argv);
-	MainWindow w(argc, argv);
-	w.show();
-	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
-
-	return app.exec();
-
+  return app.exec();
 }

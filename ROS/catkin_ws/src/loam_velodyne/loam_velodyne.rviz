@@ -25,7 +25,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: imu_trans
+    SyncSource: laser_cloud_surround
 Visualization Manager:
   Class: ""
   Displays:
@@ -37,12 +37,12 @@ Visualization Manager:
       Reference Frame: camera
       Value: true
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 5
       Name: Fixed Frame
       Radius: 0.5
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -119,7 +119,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 15
@@ -136,7 +136,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1000
       Class: rviz/Path

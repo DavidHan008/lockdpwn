@@ -620,6 +620,7 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
         }
     }
 }
+
 // ed: 생성자코드
 LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
         :m_bThreadStop(false),init_argc(argc), init_argv(argv){
@@ -819,6 +820,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
 
     // ed: 이 루프를 통해 nodeVec에 들어가는 X, Y 값이 rviz에서 초록색선을 나타낸다
+    //     publish_local_path 함수에서 실제적인 방향이 결정된다
     while(fin != NULL){
         _cnt++;
 
@@ -928,8 +930,8 @@ void LocalPlannerThread::Compute(){
                 GetLookAheadPt_For(3.3, x, y, resdist, carIdx);
             }
 
-            cout << "FORWARD" <<endl;
-            cout << "CrossTrack_ERR: " << m_CrossTrack_ERR <<endl;
+            //cout << "FORWARD" <<endl;
+            //cout << "CrossTrack_ERR: " << m_CrossTrack_ERR <<endl;
 
             //Get Look-ahead point
             //GetLookAheadPt_JW_for(carIdx, x, y, resdist);	//JW 16.07.14.test1
@@ -962,10 +964,11 @@ void LocalPlannerThread::Compute(){
             //
             steer = steer_Radius;
             */
-            cout <<"steer : " << steer
-                 << ", steer_Purepursuit : " << steer_Purepursuit
-                 << ", steer_Radius : " << steer_Radius
-                 <<endl;
+
+            //cout <<"steer : " << steer
+            //     << ", steer_Purepursuit : " << steer_Purepursuit
+            //     << ", steer_Radius : " << steer_Radius
+            //     <<endl;
 
             //if(a_ > a_thresh)
 

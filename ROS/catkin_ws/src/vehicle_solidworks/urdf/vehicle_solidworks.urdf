@@ -1,0 +1,32 @@
+<robot name="vehicle_solidworks">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0227583303405084 -0.168816439794675 0.000712620695403705" rpy="0 0 0" />
+      <mass value="0.469936645295087" />
+      <inertia
+          ixx="0.0307319018996626"
+          ixy="-0.23426800112078"
+          ixz="0.000107648758630354"
+          iyy="2.88194777609914"
+          iyz="9.04471590568033E-06"
+          izz="2.89157122725232" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vehicle_solidworks/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vehicle_solidworks/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
