@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: asm2
+Description: Description of asm2
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: 

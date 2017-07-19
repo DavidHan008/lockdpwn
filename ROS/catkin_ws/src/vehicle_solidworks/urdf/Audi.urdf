@@ -1,0 +1,43 @@
+<robot
+  name="Audi">
+  <link
+    name="Audi">
+    <inertial>
+      <origin
+        xyz="0.013397 0.0013272 -0.021722"
+        rpy="0 0 0" />
+      <mass
+        value="0.0014248" />
+      <inertia
+        ixx="1.99281316203623E-06"
+        ixy="8.63245252144242E-08"
+        ixz="-7.38005366802953E-07"
+        iyy="2.92283923133379E-05"
+        iyz="-1.99469775632883E-08"
+        izz="3.08603156759603E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Audi/meshes/Audi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Audi/meshes/Audi.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

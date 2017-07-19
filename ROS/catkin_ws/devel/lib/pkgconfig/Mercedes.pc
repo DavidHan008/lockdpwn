@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: Mercedes
+Description: Description of Mercedes
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: 

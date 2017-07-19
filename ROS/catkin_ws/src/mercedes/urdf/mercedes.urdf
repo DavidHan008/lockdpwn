@@ -1,0 +1,43 @@
+<robot
+  name="mercedes">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.15631 0.3256 0.54121"
+        rpy="0 0 0" />
+      <mass
+        value="0.21541" />
+      <inertia
+        ixx="0.0024248"
+        ixy="0.00015412"
+        ixz="1.3659E-06"
+        iyy="0.012218"
+        iyz="3.7743E-07"
+        izz="0.010168" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mercedes/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mercedes/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
