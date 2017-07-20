@@ -10,7 +10,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find Mercedes C Class.SLDASM)/robots/Mercedes C Class.SLDASM.urdf -urdf -model Mercedes C Class.SLDASM"
+    args="-file $(find mercedes)/robots/mercedes.urdf -urdf -model mercedes"
     output="screen" />
   <node
     name="fake_joint_calibration"

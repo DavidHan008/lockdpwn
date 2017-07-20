@@ -740,6 +740,7 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);//car_pos_ visualization
     msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );//err_
     msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );//err_
+
     msgpub3 = n.advertise<std_msgs::Float32MultiArray>("ControlData", 1 );
 
     // ed: Subscriber--------------------------------------------------------------------------

@@ -8,6 +8,7 @@
 #define _DEG2RAD	(M_PI/180.)
 using namespace std;
 
+// ed: /ControlData 토픽을 섭스크라이브하는 콜백함수
 void PurePursuitThread::SubscribeTopicProcess(const std_msgs::Float32MultiArray::ConstPtr& msg){
   //qDebug()<<"Thread::LocalizationTopicProcess x:"<<msg->x<<" y:"<<msg->y;
   m_lookX =msg->data.at(0);

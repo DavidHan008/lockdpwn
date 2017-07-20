@@ -78,28 +78,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,16 +110,28 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : edit_cache/fast
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -209,51 +209,6 @@ distanceEstimator: cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/r
 distanceEstimator/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
 .PHONY : distanceEstimator/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule:
@@ -404,21 +359,18 @@ help:
 	@echo "... depend"
 	@echo "... test"
 	@echo "... rebuild_cache"
-	@echo "... install/local"
 	@echo "... velodyne_pointcloud_gencfg"
 	@echo "... velodyne_msgs_generate_messages_lisp"
 	@echo "... distanceEstimator"
-	@echo "... install"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... edit_cache"
 	@echo "... velodyne_msgs_generate_messages_py"
 	@echo "... azcargazebo"
 	@echo "... firstOrderController"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
 	@echo "... src/cont.o"
 	@echo "... src/cont.i"
 	@echo "... src/cont.s"
