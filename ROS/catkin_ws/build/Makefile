@@ -1297,6 +1297,19 @@ obstaclestopper_node/fast:
 .PHONY : obstaclestopper_node/fast
 
 #=============================================================================
+# Target rules for targets named obstaclestopper_dyros_node
+
+# Build rule for target.
+obstaclestopper_dyros_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 obstaclestopper_dyros_node
+.PHONY : obstaclestopper_dyros_node
+
+# fast build rule for target.
+obstaclestopper_dyros_node/fast:
+	$(MAKE) -f obstaclestopper_dyros/CMakeFiles/obstaclestopper_dyros_node.dir/build.make obstaclestopper_dyros/CMakeFiles/obstaclestopper_dyros_node.dir/build
+.PHONY : obstaclestopper_dyros_node/fast
+
+#=============================================================================
 # Target rules for targets named randomveltoleader_node
 
 # Build rule for target.
@@ -1321,6 +1334,19 @@ safeopenloopcircle_node: cmake_check_build_system
 safeopenloopcircle_node/fast:
 	$(MAKE) -f cat_vehicle_pkgs/safeopenloopcircle/CMakeFiles/safeopenloopcircle_node.dir/build.make cat_vehicle_pkgs/safeopenloopcircle/CMakeFiles/safeopenloopcircle_node.dir/build
 .PHONY : safeopenloopcircle_node/fast
+
+#=============================================================================
+# Target rules for targets named safeopenloopcircle_dyros_node
+
+# Build rule for target.
+safeopenloopcircle_dyros_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 safeopenloopcircle_dyros_node
+.PHONY : safeopenloopcircle_dyros_node
+
+# fast build rule for target.
+safeopenloopcircle_dyros_node/fast:
+	$(MAKE) -f safeopenloopcircle_dyros/CMakeFiles/safeopenloopcircle_dyros_node.dir/build.make safeopenloopcircle_dyros/CMakeFiles/safeopenloopcircle_dyros_node.dir/build
+.PHONY : safeopenloopcircle_dyros_node/fast
 
 #=============================================================================
 # Target rules for targets named simplestateflowmodel_node
@@ -2761,8 +2787,10 @@ help:
 	@echo "... motion_planner_geneus"
 	@echo "... motion_planner_generate_messages_lisp"
 	@echo "... obstaclestopper_node"
+	@echo "... obstaclestopper_dyros_node"
 	@echo "... randomveltoleader_node"
 	@echo "... safeopenloopcircle_node"
+	@echo "... safeopenloopcircle_dyros_node"
 	@echo "... simplestateflowmodel_node"
 	@echo "... sin_str0_leadervel_exp4_node"
 	@echo "... sinveltoleader_node"

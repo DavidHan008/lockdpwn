@@ -112,11 +112,11 @@ class cmdvel2gazebo:
             #     L : wheel base
             # the left tire's angle is solved directly from geometry
             msgSteerL.data = math.atan2(L,rL)*math.copysign(1,self.z)
-            self.pub_steerL.publish(0.5)
+            self.pub_steerL.publish(msgSteerL)
     
             # the right tire's angle is solved directly from geometry
             msgSteerR.data = math.atan2(L,rR)*math.copysign(1,self.z)
-            self.pub_steerR.publish(0.5)
+            self.pub_steerR.publish(msgSteerR)
 
         else:
             # if we aren't turning, everything is easy!

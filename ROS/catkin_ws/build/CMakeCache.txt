@@ -1488,6 +1488,12 @@ obstaclestopper_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catki
 //Value Computed by CMake
 obstaclestopper_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/cat_vehicle_pkgs/obstaclestopper
 
+//Value Computed by CMake
+obstaclestopper_dyros_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/obstaclestopper_dyros
+
+//Value Computed by CMake
+obstaclestopper_dyros_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/obstaclestopper_dyros
+
 //Path to a library.
 onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
 
@@ -1577,6 +1583,12 @@ safeopenloopcircle_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/ca
 
 //Value Computed by CMake
 safeopenloopcircle_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/cat_vehicle_pkgs/safeopenloopcircle
+
+//Value Computed by CMake
+safeopenloopcircle_dyros_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/safeopenloopcircle_dyros
+
+//Value Computed by CMake
+safeopenloopcircle_dyros_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/safeopenloopcircle_dyros
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
@@ -1871,7 +1883,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=35
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=36
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

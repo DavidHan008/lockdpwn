@@ -183,6 +183,7 @@ void safeOpenLoopCircle_initialize(void)
     // Start for MATLABSystem: '<S4>/SourceBlock'
     safeOpenLoopCircle_DW.obj_d.isInitialized = 0;
     safeOpenLoopCircle_DW.obj_d.isInitialized = 1;
+
     for (i = 0; i < 14; i++) {
       tmp_4[i] = tmp_1[i];
     }

@@ -58,7 +58,8 @@ if (PKG_CONFIG_FOUND)
 endif()
 include_directories(${GAZEBO_INCLUDE_DIRS}
 # ${catkin_INCLUDE_DIRS}
-)
+                   )
+
 link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(include)
 

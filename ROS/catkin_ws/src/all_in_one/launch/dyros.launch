@@ -49,10 +49,10 @@
 
 
   <!-- Let's be safe with obstacles by stopping when we get too close -->
-  <node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper" type="obstaclestopper_node" output="screen">
+  <node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper_dyros" type="obstaclestopper_dyros_node" output="screen">
     <remap from="/all_in_one/cmd_vel" to="/$(arg robot_name)/cmd_vel" />
     <remap from="/all_in_one/distanceEstimator" to="/$(arg robot_name)/distanceEstimator" />
-    <remap from="/all_in_one/cmd_vel_safe" to="/$(arg robot_name)/cmd_vel_safe" />
+    <remap from="/all_in_one/cmd_vel_safe" to="/$(arg robot_name)/cmd_vel_safe" /> 
   </node>
 
 
