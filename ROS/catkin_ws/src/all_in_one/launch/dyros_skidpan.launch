@@ -1,0 +1,33 @@
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="false"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <param name="use_sim_time" value="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find all_in_one)/worlds/skidpan.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <group ns="all_in_one">
+    <param name="robot_description"
+           command="$(find xacro)/xacro.py '$(find all_in_one)/urdf/dyros.xacro' roboname:='all_in_one'" />
+    
+    <include file="$(find all_in_one)/launch/dyros.launch">
+      <arg name="robot_name" value="all_in_one"/>
+      <arg name="init_pose" value="-x 1 -y 1 -z 0"/>
+      <arg name="config_file" value="dyros_control.yaml"/>
+    </include>
+
+    <!-- Uncomment this to get immediate motion from the car
+         <node name="openLoopCircle" pkg="safeopenloopcircle" type="safeopenloopcircle_node"/>
+    -->
+  </group>
+</launch>

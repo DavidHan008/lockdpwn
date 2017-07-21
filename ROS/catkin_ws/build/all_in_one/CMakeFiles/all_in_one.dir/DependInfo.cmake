@@ -27,6 +27,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/qt4/QtCore"
   "/opt/ros/indigo/include"
   "/usr/include/eigen3"
+  "/usr/include/pcl-1.7"
+  "/usr/include/ni"
+  "/usr/include/vtk-5.8"
+  "/usr/include/gazebo-2.2"
+  "/usr/include/sdformat-1.4"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/all_in_one/include"
   )
 
 # Targets to which this target links.

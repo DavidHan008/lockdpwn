@@ -140,17 +140,17 @@ include_directories(
 #   src/${PROJECT_NAME}/azcar_sim.cpp
 # )
 
-add_library(azcargazebo SHARED src/cont.cc ./include/azcar_sim/cont.hh)
-target_link_libraries(azcargazebo ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+add_library(azcargazebo2 SHARED src/cont.cc ./include/azcar_sim/cont.hh)
+target_link_libraries(azcargazebo2 ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
 #add_library(azcargazebonew SHARED src/cmd_vel.cc ./include/azcar_sim/cmd_vel.hh)
 #target_link_libraries(azcargazebonew ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 
-add_executable( distanceEstimator src/distanceEstimator.cpp )
-target_link_libraries( distanceEstimator ${catkin_LIBRARIES} )
+add_executable( distanceEstimator2 src/distanceEstimator.cpp )
+target_link_libraries( distanceEstimator2 ${catkin_LIBRARIES} )
 
-add_executable( firstOrderController src/firstOrderController.cc )
-target_link_libraries( firstOrderController ${catkin_LIBRARIES} )
+add_executable( firstOrderController2 src/firstOrderController.cc )
+target_link_libraries( firstOrderController2 ${catkin_LIBRARIES} )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -198,7 +198,7 @@ install(DIRECTORY worlds
 # JMS: end note
 
 ## Mark executables and/or libraries for installation
-install(TARGETS azcargazebo
+install(TARGETS azcargazebo2
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

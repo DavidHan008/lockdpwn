@@ -13,7 +13,22 @@
   <run_depend>roscpp</run_depend>
   <run_depend>std_msgs</run_depend>
   <build_depend>cmake_modules</build_depend>
-  <run_depend>cmake_modules</run_depend> 
+  <run_depend>cmake_modules</run_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>velodyne_pointcloud</build_depend>
+  <build_depend>tf</build_depend>
+
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>velodyne_pointcloud</run_depend>
+  <run_depend>ros_control</run_depend>
+  <run_depend>ros_controllers</run_depend>
+  <run_depend>tf</run_depend>
+
 
   <export>
   </export>
