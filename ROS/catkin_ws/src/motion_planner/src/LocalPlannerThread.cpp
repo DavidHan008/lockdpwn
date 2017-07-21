@@ -911,7 +911,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 //JW 16.07.11.test1
 void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
-    //printf("good555");
+    //printf("good555\n");
 
     int carIdx;
     double vel_orig, x, y, resdist;

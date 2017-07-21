@@ -21,6 +21,7 @@ void PurePursuitThread::SubscribeTopicProcess(const std_msgs::Float32MultiArray:
 
   m_heading = msg->data.at(5)*_RAD2DEG;
 
+  //printf("good");
   Compute();
   /*
     if( msg->data.at(5)*_RAD2DEG < 0 )
