@@ -67,17 +67,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -89,15 +78,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : list_install_components/fast
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -110,16 +111,15 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : install/local/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -166,109 +166,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/rule
 
 # Convenience name for target.
-velodyne_pointcloud_gencfg: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
+firstOrderController2: cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/rule
 
-.PHONY : velodyne_pointcloud_gencfg
+.PHONY : firstOrderController2
 
 # fast build rule for target.
-velodyne_pointcloud_gencfg/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_pointcloud_gencfg.dir/build
-.PHONY : velodyne_pointcloud_gencfg/fast
+firstOrderController2/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/build
+.PHONY : firstOrderController2/fast
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/rule
 
 # Convenience name for target.
-velodyne_msgs_generate_messages_lisp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
+distanceEstimator2: cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/rule
 
-.PHONY : velodyne_msgs_generate_messages_lisp
+.PHONY : distanceEstimator2
 
 # fast build rule for target.
-velodyne_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/build
-.PHONY : velodyne_msgs_generate_messages_lisp/fast
+distanceEstimator2/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/build
+.PHONY : distanceEstimator2/fast
 
 # Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
+cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/rule
+.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/rule
 
 # Convenience name for target.
-distanceEstimator: cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/rule
+azcargazebo2: cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/rule
 
-.PHONY : distanceEstimator
+.PHONY : azcargazebo2
 
 # fast build rule for target.
-distanceEstimator/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build
-.PHONY : distanceEstimator/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-velodyne_msgs_generate_messages_cpp: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : velodyne_msgs_generate_messages_cpp
-
-# fast build rule for target.
-velodyne_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
-.PHONY : velodyne_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-velodyne_msgs_generate_messages_py: cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
-
-.PHONY : velodyne_msgs_generate_messages_py
-
-# fast build rule for target.
-velodyne_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/velodyne_msgs_generate_messages_py.dir/build
-.PHONY : velodyne_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/rule
-
-# Convenience name for target.
-azcargazebo: cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/rule
-
-.PHONY : azcargazebo
-
-# fast build rule for target.
-azcargazebo/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/build
-.PHONY : azcargazebo/fast
-
-# Convenience name for target.
-cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-.PHONY : cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-
-# Convenience name for target.
-firstOrderController: cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/rule
-
-.PHONY : firstOrderController
-
-# fast build rule for target.
-firstOrderController/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build
-.PHONY : firstOrderController/fast
+azcargazebo2/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/build
+.PHONY : azcargazebo2/fast
 
 src/cont.o: src/cont.cc.o
 
@@ -276,7 +216,7 @@ src/cont.o: src/cont.cc.o
 
 # target to build an object file
 src/cont.cc.o:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/src/cont.cc.o
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/src/cont.cc.o
 .PHONY : src/cont.cc.o
 
 src/cont.i: src/cont.cc.i
@@ -285,7 +225,7 @@ src/cont.i: src/cont.cc.i
 
 # target to preprocess a source file
 src/cont.cc.i:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/src/cont.cc.i
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/src/cont.cc.i
 .PHONY : src/cont.cc.i
 
 src/cont.s: src/cont.cc.s
@@ -294,7 +234,7 @@ src/cont.s: src/cont.cc.s
 
 # target to generate assembly for a file
 src/cont.cc.s:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo.dir/src/cont.cc.s
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/azcargazebo2.dir/src/cont.cc.s
 .PHONY : src/cont.cc.s
 
 src/distanceEstimator.o: src/distanceEstimator.cpp.o
@@ -303,7 +243,7 @@ src/distanceEstimator.o: src/distanceEstimator.cpp.o
 
 # target to build an object file
 src/distanceEstimator.cpp.o:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.o
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/src/distanceEstimator.cpp.o
 .PHONY : src/distanceEstimator.cpp.o
 
 src/distanceEstimator.i: src/distanceEstimator.cpp.i
@@ -312,7 +252,7 @@ src/distanceEstimator.i: src/distanceEstimator.cpp.i
 
 # target to preprocess a source file
 src/distanceEstimator.cpp.i:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.i
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/src/distanceEstimator.cpp.i
 .PHONY : src/distanceEstimator.cpp.i
 
 src/distanceEstimator.s: src/distanceEstimator.cpp.s
@@ -321,7 +261,7 @@ src/distanceEstimator.s: src/distanceEstimator.cpp.s
 
 # target to generate assembly for a file
 src/distanceEstimator.cpp.s:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.s
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/distanceEstimator2.dir/src/distanceEstimator.cpp.s
 .PHONY : src/distanceEstimator.cpp.s
 
 src/firstOrderController.o: src/firstOrderController.cc.o
@@ -330,7 +270,7 @@ src/firstOrderController.o: src/firstOrderController.cc.o
 
 # target to build an object file
 src/firstOrderController.cc.o:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.o
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/src/firstOrderController.cc.o
 .PHONY : src/firstOrderController.cc.o
 
 src/firstOrderController.i: src/firstOrderController.cc.i
@@ -339,7 +279,7 @@ src/firstOrderController.i: src/firstOrderController.cc.i
 
 # target to preprocess a source file
 src/firstOrderController.cc.i:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.i
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/src/firstOrderController.cc.i
 .PHONY : src/firstOrderController.cc.i
 
 src/firstOrderController.s: src/firstOrderController.cc.s
@@ -348,7 +288,7 @@ src/firstOrderController.s: src/firstOrderController.cc.s
 
 # target to generate assembly for a file
 src/firstOrderController.cc.s:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.s
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/build.make cat_vehicle_pkgs/azcar_sim/CMakeFiles/firstOrderController2.dir/src/firstOrderController.cc.s
 .PHONY : src/firstOrderController.cc.s
 
 # Help Target
@@ -358,19 +298,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... velodyne_pointcloud_gencfg"
-	@echo "... velodyne_msgs_generate_messages_lisp"
-	@echo "... distanceEstimator"
-	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... edit_cache"
-	@echo "... velodyne_msgs_generate_messages_py"
-	@echo "... azcargazebo"
-	@echo "... firstOrderController"
-	@echo "... list_install_components"
-	@echo "... install/strip"
+	@echo "... rebuild_cache"
 	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... firstOrderController2"
+	@echo "... distanceEstimator2"
+	@echo "... azcargazebo2"
 	@echo "... src/cont.o"
 	@echo "... src/cont.i"
 	@echo "... src/cont.s"

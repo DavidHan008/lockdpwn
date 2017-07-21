@@ -166,94 +166,94 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
+.PHONY : all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+velodyne_pointcloud_gencfg: all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : velodyne_pointcloud_gencfg
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make all_in_one/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+velodyne_pointcloud_gencfg/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/build.make all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/build
+.PHONY : velodyne_pointcloud_gencfg/fast
 
 # Convenience name for target.
-all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
+.PHONY : all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+velodyne_msgs_generate_messages_lisp: all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : velodyne_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make all_in_one/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+velodyne_msgs_generate_messages_lisp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/build.make all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/build
+.PHONY : velodyne_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/rule
+all_in_one/CMakeFiles/distanceEstimator.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/distanceEstimator.dir/rule
+.PHONY : all_in_one/CMakeFiles/distanceEstimator.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/rule
+distanceEstimator: all_in_one/CMakeFiles/distanceEstimator.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : distanceEstimator
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/build.make all_in_one/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+distanceEstimator/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/distanceEstimator.dir/build.make all_in_one/CMakeFiles/distanceEstimator.dir/build
+.PHONY : distanceEstimator/fast
 
 # Convenience name for target.
-all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
+.PHONY : all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+velodyne_msgs_generate_messages_cpp: all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : velodyne_msgs_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+velodyne_msgs_generate_messages_cpp/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build.make all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/build
+.PHONY : velodyne_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+all_in_one/CMakeFiles/allinonegazebo.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/allinonegazebo.dir/rule
+.PHONY : all_in_one/CMakeFiles/allinonegazebo.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+allinonegazebo: all_in_one/CMakeFiles/allinonegazebo.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : allinonegazebo
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+allinonegazebo/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/allinonegazebo.dir/build.make all_in_one/CMakeFiles/allinonegazebo.dir/build
+.PHONY : allinonegazebo/fast
 
 # Convenience name for target.
-all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
+.PHONY : all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+velodyne_msgs_generate_messages_py: all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : velodyne_msgs_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make all_in_one/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+velodyne_msgs_generate_messages_py/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/build.make all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/build
+.PHONY : velodyne_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 all_in_one/CMakeFiles/all_in_one.dir/rule:
@@ -269,6 +269,21 @@ all_in_one: all_in_one/CMakeFiles/all_in_one.dir/rule
 all_in_one/fast:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/build
 .PHONY : all_in_one/fast
+
+# Convenience name for target.
+all_in_one/CMakeFiles/firstOrderController.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 all_in_one/CMakeFiles/firstOrderController.dir/rule
+.PHONY : all_in_one/CMakeFiles/firstOrderController.dir/rule
+
+# Convenience name for target.
+firstOrderController: all_in_one/CMakeFiles/firstOrderController.dir/rule
+
+.PHONY : firstOrderController
+
+# fast build rule for target.
+firstOrderController/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/firstOrderController.dir/build.make all_in_one/CMakeFiles/firstOrderController.dir/build
+.PHONY : firstOrderController/fast
 
 inc/moc_CatmullRomSpline.o: inc/moc_CatmullRomSpline.cxx.o
 
@@ -351,6 +366,87 @@ src/all_in_one_main.cpp.s:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/all_in_one.dir/build.make all_in_one/CMakeFiles/all_in_one.dir/src/all_in_one_main.cpp.s
 .PHONY : src/all_in_one_main.cpp.s
 
+src/cont.o: src/cont.cc.o
+
+.PHONY : src/cont.o
+
+# target to build an object file
+src/cont.cc.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/allinonegazebo.dir/build.make all_in_one/CMakeFiles/allinonegazebo.dir/src/cont.cc.o
+.PHONY : src/cont.cc.o
+
+src/cont.i: src/cont.cc.i
+
+.PHONY : src/cont.i
+
+# target to preprocess a source file
+src/cont.cc.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/allinonegazebo.dir/build.make all_in_one/CMakeFiles/allinonegazebo.dir/src/cont.cc.i
+.PHONY : src/cont.cc.i
+
+src/cont.s: src/cont.cc.s
+
+.PHONY : src/cont.s
+
+# target to generate assembly for a file
+src/cont.cc.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/allinonegazebo.dir/build.make all_in_one/CMakeFiles/allinonegazebo.dir/src/cont.cc.s
+.PHONY : src/cont.cc.s
+
+src/distanceEstimator.o: src/distanceEstimator.cpp.o
+
+.PHONY : src/distanceEstimator.o
+
+# target to build an object file
+src/distanceEstimator.cpp.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/distanceEstimator.dir/build.make all_in_one/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.o
+.PHONY : src/distanceEstimator.cpp.o
+
+src/distanceEstimator.i: src/distanceEstimator.cpp.i
+
+.PHONY : src/distanceEstimator.i
+
+# target to preprocess a source file
+src/distanceEstimator.cpp.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/distanceEstimator.dir/build.make all_in_one/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.i
+.PHONY : src/distanceEstimator.cpp.i
+
+src/distanceEstimator.s: src/distanceEstimator.cpp.s
+
+.PHONY : src/distanceEstimator.s
+
+# target to generate assembly for a file
+src/distanceEstimator.cpp.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/distanceEstimator.dir/build.make all_in_one/CMakeFiles/distanceEstimator.dir/src/distanceEstimator.cpp.s
+.PHONY : src/distanceEstimator.cpp.s
+
+src/firstOrderController.o: src/firstOrderController.cc.o
+
+.PHONY : src/firstOrderController.o
+
+# target to build an object file
+src/firstOrderController.cc.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/firstOrderController.dir/build.make all_in_one/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.o
+.PHONY : src/firstOrderController.cc.o
+
+src/firstOrderController.i: src/firstOrderController.cc.i
+
+.PHONY : src/firstOrderController.i
+
+# target to preprocess a source file
+src/firstOrderController.cc.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/firstOrderController.dir/build.make all_in_one/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.i
+.PHONY : src/firstOrderController.cc.i
+
+src/firstOrderController.s: src/firstOrderController.cc.s
+
+.PHONY : src/firstOrderController.s
+
+# target to generate assembly for a file
+src/firstOrderController.cc.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f all_in_one/CMakeFiles/firstOrderController.dir/build.make all_in_one/CMakeFiles/firstOrderController.dir/src/firstOrderController.cc.s
+.PHONY : src/firstOrderController.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -359,18 +455,19 @@ help:
 	@echo "... depend"
 	@echo "... test"
 	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
 	@echo "... install"
+	@echo "... velodyne_pointcloud_gencfg"
+	@echo "... velodyne_msgs_generate_messages_lisp"
+	@echo "... distanceEstimator"
+	@echo "... velodyne_msgs_generate_messages_cpp"
+	@echo "... allinonegazebo"
 	@echo "... edit_cache"
-	@echo "... roscpp_generate_messages_py"
+	@echo "... velodyne_msgs_generate_messages_py"
+	@echo "... all_in_one"
+	@echo "... firstOrderController"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... all_in_one"
 	@echo "... inc/moc_CatmullRomSpline.o"
 	@echo "... inc/moc_CatmullRomSpline.i"
 	@echo "... inc/moc_CatmullRomSpline.s"
@@ -380,6 +477,15 @@ help:
 	@echo "... src/all_in_one_main.o"
 	@echo "... src/all_in_one_main.i"
 	@echo "... src/all_in_one_main.s"
+	@echo "... src/cont.o"
+	@echo "... src/cont.i"
+	@echo "... src/cont.s"
+	@echo "... src/distanceEstimator.o"
+	@echo "... src/distanceEstimator.i"
+	@echo "... src/distanceEstimator.s"
+	@echo "... src/firstOrderController.o"
+	@echo "... src/firstOrderController.i"
+	@echo "... src/firstOrderController.s"
 .PHONY : help
 
 

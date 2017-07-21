@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /lidar_points1
-        - /front_laser_points1/Status1
       Splitter Ratio: 0.536946
     Tree Height: 741
   - Class: rviz/Selection
@@ -50,19 +48,65 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: false
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        azcar_sim/back_left_wheel_link:
+          Value: true
+        azcar_sim/back_right_wheel_link:
+          Value: true
+        azcar_sim/base_link:
+          Value: true
+        azcar_sim/camera_link:
+          Value: true
+        azcar_sim/front_laser_link:
+          Value: true
+        azcar_sim/front_left_steering_link:
+          Value: true
+        azcar_sim/front_left_wheel_link:
+          Value: true
+        azcar_sim/front_right_steering_link:
+          Value: true
+        azcar_sim/front_right_wheel_link:
+          Value: true
+        azcar_sim/laser_link:
+          Value: true
+        azcar_sim/main_mass:
+          Value: true
+        azcar_sim/odom:
+          Value: true
+        azcar_sim/slamodom:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        azcar_sim/odom:
+          azcar_sim/base_link:
+            azcar_sim/back_left_wheel_link:
+              {}
+            azcar_sim/back_right_wheel_link:
+              {}
+            azcar_sim/camera_link:
+              azcar_sim/laser_link:
+                {}
+            azcar_sim/front_laser_link:
+              {}
+            azcar_sim/front_left_steering_link:
+              azcar_sim/front_left_wheel_link:
+                {}
+            azcar_sim/front_right_steering_link:
+              azcar_sim/front_right_wheel_link:
+                {}
+            azcar_sim/main_mass:
+              {}
+            azcar_sim/slamodom:
+              {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Class: rviz/Axes
       Enabled: false
       Length: 1
@@ -73,8 +117,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 3.21058
-        Min Value: -0.50268
+        Max Value: 4.20381
+        Min Value: -0.447103
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -100,7 +144,7 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Alpha: 1
+    - Alpha: 0.2
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -185,9 +229,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0
+      Max Intensity: -999999
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 999999
       Name: front_laser_points
       Position Transformer: XYZ
       Queue Size: 10
@@ -342,22 +386,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 38.8885
+      Distance: 6.49499
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 4.33326
-        Y: 2.74765
-        Z: -0.573991
+        X: 1.28227
+        Y: 1.83217
+        Z: 1.14418
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.579801
+      Pitch: 0.0748012
       Target Frame: odom
       Value: Orbit (rviz)
-      Yaw: 5.25498
+      Yaw: 5.04498
     Saved: ~
 Window Geometry:
   Displays:
