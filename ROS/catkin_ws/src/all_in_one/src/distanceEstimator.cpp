@@ -120,8 +120,8 @@ int main( int argc, char **argv ){
     // ed: 각도, 거리뿐만 아니라 물체가 이동하는 속도, 가속도까지 계산해서 퍼블리시할 수 있다(현재는 사용x)
     ros::Publisher dist_pub = n.advertise<std_msgs::Float32>(dist_topic, 1);
     ros::Publisher angle_pub = n.advertise<std_msgs::Float32>(angle_topic, 1);
-    // ros::Publisher vel_pub = n.advertise<std_msgs::Float32>("/all_in_one/vel", 100);
-    // ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/all_in_one/accel", 100);
+    // ros::Publisher vel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/vel", 100);
+    // ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/accel", 100);
 
 
     // we also want to subscribe to the signaller
@@ -143,7 +143,7 @@ int main( int argc, char **argv ){
 
         if( newMessage )   {
 
-            // ed: dyros 앞에 장애물이 있으면 거리와 각도를 계산해서 퍼블리시한다
+            // ed: azcar 앞에 장애물이 있으면 거리와 각도를 계산해서 퍼블리시한다
             dist_pub.publish(dist);
             angle_pub.publish(angle);
             newMessage = false;

@@ -40,6 +40,10 @@
   <!-- we run the python version, so we can be slower-than-real-time -->
   <node name="cmdvel2gazebo$(arg robot_name)" pkg="all_in_one" type="cmdvel2gazebo.py" respawn="false" output="screen"> 
     <remap from="/all_in_one/cmd_vel" to="/$(arg robot_name)/cmd_vel_safe" />
+
+    <!-- ed: 코드 추가했다. 속도, 각도값을 controller로부터 가져오는 코드 -->
+    <remap from="/all_in_one/VelocityCtrlData" to="/VelocityCtrlData" />
+    <remap from="/all_in_one/SteerAngleData" to="/SteerAngleData" />
   </node>
 
   
@@ -59,6 +63,5 @@
   <!-- publish the path information of this vehicle -->
   <node name="odom2path$(arg robot_name)" pkg="all_in_one" type="odom2path.py" respawn="true" output="screen" args="-n /$(arg robot_name)">
   </node>
-
 
 </launch>

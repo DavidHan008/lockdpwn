@@ -14,7 +14,8 @@
   <xacro:property name="tyre_y" value="0.765"/>
   <xacro:property name="tyre_length" value="0.229"/>
   <xacro:property name="tyre_r" value="0.319"/>  <!-- ed: modified-->
-  <xacro:property name="tyre_radius" value="0.356"/>
+  <xacro:property name="tyre_radius" value="0.356"/>  <!-- ed: 1/0.356 = 2.808,  -->
+                                                      <!-- that's why we multiply 2.81 in cmd2gazebo.py to calculate wheel speed. -->
   <xacro:property name="tyre_mass" value="40"/>
   <xacro:property name="tyre_mass_ixx" value="54"/>
   <xacro:property name="tyre_mass_iyy" value="56"/>

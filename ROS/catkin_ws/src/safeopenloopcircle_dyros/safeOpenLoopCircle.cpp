@@ -34,7 +34,7 @@ DW_safeOpenLoopCircle_T safeOpenLoopCircle_DW;
 // Real-time model
 RT_MODEL_safeOpenLoopCircle_T safeOpenLoopCircle_M_;
 RT_MODEL_safeOpenLoopCircle_T *const safeOpenLoopCircle_M =
-  &safeOpenLoopCircle_M_;
+    &safeOpenLoopCircle_M_;
 
 // Model step function
 void safeOpenLoopCircle_step(void)
@@ -78,7 +78,7 @@ void safeOpenLoopCircle_step(void)
     // Entry Internal: Chart
     // Transition: '<S2>:4'
     safeOpenLoopCircle_DW.is_c3_safeOpenLoopCircle =
-      safeOpenLoopCircl_IN_Increasing;
+        safeOpenLoopCircl_IN_Increasing;
 
     // Entry 'Increasing': '<S2>:3'
     // '<S2>:3:1' vOut=0;
@@ -91,7 +91,7 @@ void safeOpenLoopCircle_step(void)
     if (safeOpenLoopCircle_B.In1.Linear.X >= 4.0) {
       // Transition: '<S2>:6'
       safeOpenLoopCircle_DW.is_c3_safeOpenLoopCircle =
-        safeOpenLoopCircle_IN_Stopping;
+          safeOpenLoopCircle_IN_Stopping;
 
       // Entry 'Stopping': '<S2>:5'
     } else {
@@ -112,7 +112,7 @@ void safeOpenLoopCircle_step(void)
     if (safeOpenLoopCircle_B.In1.Linear.X <= 0.1) {
       // Transition: '<S2>:8'
       safeOpenLoopCircle_DW.is_c3_safeOpenLoopCircle =
-        safeOpenLoopCircl_IN_Increasing;
+          safeOpenLoopCircl_IN_Increasing;
 
       // Entry 'Increasing': '<S2>:3'
       // '<S2>:3:1' vOut=0;
@@ -165,15 +165,18 @@ void safeOpenLoopCircle_initialize(void)
                 sizeof(DW_safeOpenLoopCircle_T));
 
   {
-   static const char_T tmp[19] = { '/', 'a', 'l', 'l', '_', 'i', 'n', '_', 'o', 'n', 'e',
-                                  '/', 'c', 'm', 'd', '_', 'v', 'e', 'l' };
+
+    // ed: 퍼블리시하는 토픽이름
+    static const char_T tmp[19] = { '/', 'a', 'l', 'l', '_', 'i', 'n', '_', 'o', 'n', 'e',
+                                    '/', 'c', 'm', 'd', '_', 'v', 'e', 'l' };
 
 
+    // ed: 서브스크라이브를 하는 토픽이름
     static const char_T tmp_0[20] = { '/', 'a', 'l', 'l', '_', 'i', 'n', '_', 'o', 'n', 'e',
                                       '/', 's','t','e','e','r','i','n','g' };
 
     static const char_T tmp_1[15] = { '/', 'a', 'l', 'l', '_', 'i', 'n', '_', 'o', 'n', 'e',
-                                  '/', 'v', 'e', 'l'};
+                                      '/', 'v', 'e', 'l'};
 
 
     char_T tmp_2[19];
@@ -191,7 +194,7 @@ void safeOpenLoopCircle_initialize(void)
 
     tmp_4[15] = '\x00';
     Sub_safeOpenLoopCircle_3.createSubscriber(tmp_4,
-      safeOpenLoopCir_MessageQueueLen);
+                                              safeOpenLoopCir_MessageQueueLen);
 
     // End of Start for MATLABSystem: '<S4>/SourceBlock'
     // End of Start for SubSystem: '<Root>/Subscribe'
@@ -206,7 +209,7 @@ void safeOpenLoopCircle_initialize(void)
 
     tmp_3[20] = '\x00';
     Sub_safeOpenLoopCircle_4.createSubscriber(tmp_3,
-      safeOpenLoopCir_MessageQueueLen);
+                                              safeOpenLoopCir_MessageQueueLen);
 
     // End of Start for MATLABSystem: '<S5>/SourceBlock'
     // End of Start for SubSystem: '<Root>/Subscribe1'
@@ -215,13 +218,14 @@ void safeOpenLoopCircle_initialize(void)
     // Start for MATLABSystem: '<S3>/SinkBlock'
     safeOpenLoopCircle_DW.obj.isInitialized = 0;
     safeOpenLoopCircle_DW.obj.isInitialized = 1;
+
     for (i = 0; i < 19; i++) {
       tmp_2[i] = tmp[i];
     }
 
     tmp_2[19] = '\x00';
     Pub_safeOpenLoopCircle_9.createPublisher(tmp_2,
-      safeOpenLoopCir_MessageQueueLen);
+                                             safeOpenLoopCir_MessageQueueLen);
 
     // End of Start for MATLABSystem: '<S3>/SinkBlock'
     // End of Start for SubSystem: '<Root>/Publish'
@@ -237,7 +241,7 @@ void safeOpenLoopCircle_initialize(void)
     // SystemInitialize for Chart: '<Root>/Chart'
     safeOpenLoopCircle_DW.is_active_c3_safeOpenLoopCircle = 0U;
     safeOpenLoopCircle_DW.is_c3_safeOpenLoopCircle =
-      safeOpenLoop_IN_NO_ACTIVE_CHILD;
+        safeOpenLoop_IN_NO_ACTIVE_CHILD;
   }
 }
 
