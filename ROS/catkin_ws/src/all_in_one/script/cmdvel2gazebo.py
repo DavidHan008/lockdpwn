@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
+'''
+	python ==> DYROS, controller --> gazebo로 속도, 스티어링값을 전송하는 코드
+'''
 
 import rospy
 from std_msgs.msg import String, Float64, Float32MultiArray
@@ -51,7 +54,8 @@ class cmdvel2gazebo:
 
         # how many seconds delay for the dead man's switch
         # TODO: set timeout from launch file or rosparam
-        self.timeout=rospy.Duration.from_sec(0.2);
+        ## ed: 0.2 --> 1로 수정
+        self.timeout=rospy.Duration.from_sec(1);
         self.lastMsg=rospy.Time.now()
 
         ## ed: maxsteerInside 값이 0.6 rad == 34 deg로 정해져있는듯하다
@@ -70,7 +74,7 @@ class cmdvel2gazebo:
 
     ## ed: 속도를 입력받는 함수 추가
     def callback_vel_ed(self, vel):
-        self.x = 2.8101* vel.data[0]
+        self.x = 2.8101* vel.data[1]
         #print("vel: %lf, %lf" % (vel.data[0], vel.data[1]))
 
         self.lastMsg = rospy.Time.now()
@@ -105,8 +109,7 @@ class cmdvel2gazebo:
         ## ed: 특정시간간격으로 서브스크라이브가 안되면 경고를 발생하고 속도를 0으로 하는듯하다
         if rospy.Time.now() - self.lastMsg > self.timeout:
             rospy.loginfo(rospy.get_caller_id() + " timed out waiting for new input, setting velocity to 0.")
-
-            self.x = 0
+            #self.x = 0
             return
 
         if self.z != 0:

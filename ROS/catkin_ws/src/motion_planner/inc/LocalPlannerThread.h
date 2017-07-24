@@ -43,6 +43,9 @@ private :
     ros::Publisher msgpub3;
     ros::Publisher msg_steer;
 
+    ros::Subscriber possub_gazebo;   // ed: 가제보용 섭,펍 추가
+    ros::Publisher msgpub_gazebo;
+
     ////////////////////////////////
     // Message Definition
     // My_pose msg
@@ -57,6 +60,9 @@ private :
 
     // Control Data for Path Tracking & Velocity Control
     std_msgs::Float32MultiArray m_msg;
+
+    // ed: 가제보용 변수 추가
+    std_msgs::Float32MultiArray m_msg_gazebo;
 
 
     double m_len_c2r;
@@ -75,6 +81,8 @@ private :
 
 
 public :
+    void callback_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg);  // ed: 함수 추가
+
     void SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg);
     void SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg);
     

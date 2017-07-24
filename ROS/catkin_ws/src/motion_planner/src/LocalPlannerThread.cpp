@@ -17,6 +17,17 @@
 #define dist_thresh 0.5
 #define th_err_range 90*2
 
+// ed: 함수 추가했다. 가제보용 섭스크라이브 함수
+void LocalPlannerThread::callback_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg){
+    m_pos[0] = msg->data.at(0);
+    m_pos[1] = msg->data.at(1);
+    m_pos[2] = msg->data.at(2);
+    m_vel = msg->data.at(3); // m/s
+
+    Compute();
+}
+
+
 // ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
 void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
@@ -737,9 +748,9 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);//real use data
     msgpub_Look_JW_exp = n.advertise<visualization_msgs::Marker>("LookAheadPos", 10);//real use data
     msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);//just visualization
-    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);//car_pos_ visualization
-    msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );//err_
-    msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );//err_
+    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);     //car_pos_ visualization
+    msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );  //err_
+    msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );  //err_
 
     msgpub3 = n.advertise<std_msgs::Float32MultiArray>("ControlData", 1 );
 
@@ -747,6 +758,10 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     possub = n.subscribe("LocalizationData", 10, &LocalPlannerThread::SubTopicProcess1, this);
     possub2 = n.subscribe("RNDFPathData", 10, &LocalPlannerThread::SubTopicProcess2, this);
 
+
+    // ed: 함수 추가. 가제보용
+    possub_gazebo = n.subscribe("LocalizationData_gazebo", 10, &LocalPlannerThread::callback_gazebo, this);
+    msgpub_gazebo = n.advertise<std_msgs::Float32MultiArray>("ControlData_gazebo", 1 );
 }
 
 LocalPlannerThread::~LocalPlannerThread()
@@ -1027,6 +1042,10 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[1]);
     m_msg.data.push_back(m_pos[2]);
 
+    // ed: 속도값 추가했다.
+    //     추가해야 controller가 ControlData 토픽을 섭스크라이브 할 때 data->at(6)에 속도값을 제대로 받는듯
+    m_msg.data.push_back(m_vel);
+
     if( resdist == -1)
         m_msg.data.push_back(0.0*0.278);
     else
@@ -1034,6 +1053,20 @@ void LocalPlannerThread::Compute(){
 
     // ed: msgpub3, ControlData 토픽으로 퍼블리시한다
     msgpub3.publish(m_msg);
+
+
+    // ed: 가제보 코드 추가
+    m_msg_gazebo.data.clear();
+    m_msg_gazebo.data.push_back(x);
+    m_msg_gazebo.data.push_back(y);
+    m_msg_gazebo.data.push_back(resdist);
+    m_msg_gazebo.data.push_back(m_pos[0]);
+    m_msg_gazebo.data.push_back(m_pos[1]);
+    m_msg_gazebo.data.push_back(m_pos[2]);
+    m_msg_gazebo.data.push_back(m_vel);
+
+    // ed: 퍼블리시
+    msgpub_gazebo.publish(m_msg_gazebo);
 
     m_model_jw_exp.header.stamp = ros::Time::now();
 

@@ -21,9 +21,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     
 
     pVelocityCtrlThread = NULL;
-	
 
-	
     
     connect(ui.horizontalSlider,SIGNAL(sliderMoved(int)),this,SLOT(setLCDValue(int)));
 
@@ -105,10 +103,8 @@ void MainWindow::on_pushButton_start_2_clicked()
     }
 }
 
-void MainWindow::on_pushButton_start_clicked()
-{
-    if(pVelocityCtrlThread == NULL)
-    {
+void MainWindow::on_pushButton_start_clicked(){
+    if(pVelocityCtrlThread == NULL) {
         pVelocityCtrlThread = new VelocityCtrlThread(_argc,_argv,&ui);
         pPurePursuitThread->pVelocityCtrlThread = pVelocityCtrlThread;//JW
         pVelocityCtrlThread->start();

@@ -112,15 +112,13 @@ QNode::QNode(int argc, char** argv, Ui::MainWindow* ui, Filter* ins, QObject *pa
 }
 
 
-void QNode::stop()
-{
+void QNode::stop(){
   threadStop = true;
   ssFlag = false;
   spFlag = false;
 }
 
-void QNode::run()
-{
+void QNode::run(){
   struct timeval timePrev;
   gettimeofday(&timePrev, NULL);
 
@@ -158,18 +156,20 @@ void QNode::run()
     //data.v = m_obdVel1;
     //logpub.publish( data );
     std_msgs::Float32MultiArray msg;
-		
+
 
     double tmpTheta = _ins->m_heading + _DEG2RAD *(90.0);
-    if( tmpTheta >= _DEG2RAD*360.0 )
-    {
+    if( tmpTheta >= _DEG2RAD*360.0 )    {
       tmpTheta -= _DEG2RAD*360.0;
     }
+
     msg.data.push_back(_ins->m_p[0]);
     msg.data.push_back(_ins->m_p[1]);
     msg.data.push_back(tmpTheta);
     msg.data.push_back(m_obdVel1*0.278);
     logpub2.publish( msg );
+
+
 
     timePrev = timeCur;
 		

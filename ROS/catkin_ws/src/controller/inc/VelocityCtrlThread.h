@@ -22,6 +22,11 @@ private :
 	ros::Publisher msgpub;
 	ros::Publisher msgpub_vel_err;
 
+	// ed: 가제보용 코드 추가
+	ros::Subscriber possub_gazebo;
+	ros::Subscriber drcsub_gazebo;
+
+
 	bool m_bThreadStop;
 	bool m_bVelTopicUpdated;
 	QMutex m_mutex;
@@ -44,7 +49,11 @@ private :
 	float m_I_accel;
 	float m_brakingCtrlVal;
 
-public :
+    public :
+
+	// ed: 가제보용 함수 추가
+	void callback_ControlData_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg);
+	void callback_LocalizationData_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg);
 
 	void ControlDataTopicProcess(const std_msgs::Float32MultiArray::ConstPtr& msg);
 	void LocalizationTopicProcess(const std_msgs::Float32MultiArray::ConstPtr& msg);
