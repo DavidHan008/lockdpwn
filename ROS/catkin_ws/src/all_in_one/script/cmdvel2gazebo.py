@@ -9,6 +9,7 @@ from std_msgs.msg import String, Float64, Float32MultiArray
 from geometry_msgs.msg import Twist, Pose
 import sys, getopt, math
 
+
 class cmdvel2gazebo:
     def __init__(self,ns):
         self.ns = ns
@@ -19,11 +20,11 @@ class cmdvel2gazebo:
 
 
         ## ed: 서브스크라이버들 추가
-        rospy.Subscriber('VelocityCtrlData'.format(ns), Float32MultiArray, self.callback_vel_ed)
+        rospy.Subscriber('ControlData_gazebo'.format(ns), Float32MultiArray, self.callback_ctrlData_ed)
         rospy.Subscriber('SteerAngleData'.format(ns), Float32MultiArray, self.callback_steer_ed)
 
 
-                ## ed: 최종적으로 gazebo로 퍼블리시되는 값들
+        ## ed: 최종적으로 gazebo로 퍼블리시되는 값들
         self.pub_steerL = rospy.Publisher('front_left_steering_position_controller/command'.format(ns), Float64, queue_size=1)
         self.pub_steerR = rospy.Publisher('front_right_steering_position_controller/command'.format(ns), Float64, queue_size=1)
         self.pub_rearL = rospy.Publisher('joint1_velocity_controller/command'.format(ns), Float64, queue_size=1)
@@ -73,8 +74,8 @@ class cmdvel2gazebo:
 
 
     ## ed: 속도를 입력받는 함수 추가
-    def callback_vel_ed(self, vel):
-        self.x = 2.8101* vel.data[1]
+    def callback_ctrlData_ed(self, ctrlData):
+        self.x = ctrlData.data[6]
         #print("vel: %lf, %lf" % (vel.data[0], vel.data[1]))
 
         self.lastMsg = rospy.Time.now()
@@ -92,11 +93,11 @@ class cmdvel2gazebo:
     def callback(self,data):
         # 2.8101 is the gain factor in order to account for mechanical reduction of the tyres
         ## ed: 휠의 반지름이 0.356m = 1/2.81이므로 2.81을 곱해준다. 굳굳
-        self.x = 2.8101*data.linear.x
+        #self.x = 2.8101*data.linear.x
 
         ## ed: z는 최대조향각인듯 하다
         # constrain the ideal steering angle such that the ackermann steering is maxed out
-        self.z = max(-self.maxsteer,min(self.maxsteer,data.angular.z))
+        #self.z = max(-self.maxsteer,min(self.maxsteer,data.angular.z))
         self.lastMsg = rospy.Time.now()
 
 

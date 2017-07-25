@@ -1,0 +1,7 @@
+<!--ed: motion_planner_gazebo와 localization_gazebo를 동시에 켜는 launch 파일 -->
+<launch>
+
+  <node pkg="localization_gazebo" name="localization_gazebo" type="localization_gazebo"/>
+  <node pkg="motion_planner_gazebo" name="motion_planner_gazebo" type="motion_planner_gazebo" output="screen"/>
+
+</launch>

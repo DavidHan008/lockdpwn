@@ -16,6 +16,8 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
+  <include file="$(find all_in_one)/launch/localization_motion_planner.launch" />
+
   <group ns="all_in_one">
     <param name="robot_description"
            command="$(find xacro)/xacro.py '$(find all_in_one)/urdf/dyros.xacro' roboname:='all_in_one'" />

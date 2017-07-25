@@ -21,6 +21,11 @@ void QNode::getVelFromGazebo(const geometry_msgs::Twist::ConstPtr& msg){
   gazebo_vel = msg->linear.x;
 }
 
+// ed: 가제보에서 스티어링 값을 섭스크라이브하는 콜백함수
+void QNode::getSteerFromGazebo(const geometry_msgs::Wrench::ConstPtr& msg){
+  gazebo_steer = msg->torque.z;
+}
+
 
 QNode::QNode(int argc, char** argv, Ui::MainWindow* ui, Filter* ins, QObject *parent)
     : QThread(parent)
@@ -39,7 +44,8 @@ QNode::QNode(int argc, char** argv, Ui::MainWindow* ui, Filter* ins, QObject *pa
 
   // ed: 코드 추가했다. 가제보의 차량을 제어하기 위한 코드
   logpub_gazebo = n.advertise<std_msgs::Float32MultiArray>("LocalizationData_gazebo", 10);
-  sub_gazebo = n.subscribe("all_in_one/vel", 10, &QNode::getVelFromGazebo, this);
+  sub_gazebo_vel = n.subscribe("all_in_one/vel", 10, &QNode::getVelFromGazebo, this);
+  sub_gazebo_steer = n.subscribe("all_in_one/steer", 10, &QNode::getSteerFromGazebo, this);
 
   m_obdVel1 = 0.;
 }
@@ -62,8 +68,7 @@ void QNode::run(){
 
   qDebug("qnode Thread Start");
 	
-  while ( !threadStop )
-  {
+  while ( !threadStop ){
     struct timeval timeCur;
     //localization::LocalizationData data;
     //geometry_msgs::Pose2D data2;

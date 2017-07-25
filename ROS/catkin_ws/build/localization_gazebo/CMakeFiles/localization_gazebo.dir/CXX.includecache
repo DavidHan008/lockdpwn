@@ -161,6 +161,8 @@ geometry_msgs/Pose2D.h
 -
 geometry_msgs/Twist.h
 -
+geometry_msgs/Wrench.h
+-
 std_msgs/Float32MultiArray.h
 -
 QMutex
@@ -292,6 +294,26 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/indigo/include/geometry_msgs/Wrench.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+geometry_msgs/Vector3.h
+-
+geometry_msgs/Vector3.h
 -
 
 /opt/ros/indigo/include/ros/advertise_options.h

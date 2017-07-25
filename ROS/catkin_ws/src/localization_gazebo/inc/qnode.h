@@ -13,6 +13,7 @@
 #include <sensor_msgs/Imu.h>
 #include <geometry_msgs/Pose2D.h>
 #include <geometry_msgs/Twist.h>
+#include <geometry_msgs/Wrench.h>
 #include <std_msgs/Float32MultiArray.h>
 #include <QMutex>
 
@@ -30,6 +31,7 @@ public:
 	void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn);
 
 	void getVelFromGazebo(const geometry_msgs::Twist::ConstPtr& msg); // ed: 함수 추가 가제보용
+	void getSteerFromGazebo(const geometry_msgs::Wrench::ConstPtr& msg); // ed: 함수 추가 가제보용
 
 	ros::Subscriber gpssub;
 	ros::Subscriber exsub;
@@ -37,7 +39,8 @@ public:
 	ros::Publisher logpub;
 	ros::Publisher logpub2;
 
-	ros::Subscriber sub_gazebo;  // ed: 섭스크라이버 추가
+	ros::Subscriber sub_gazebo_vel;  // ed: 섭스크라이버 추가
+	ros::Subscriber sub_gazebo_steer;  // ed: 섭스크라이버 추가
 	ros::Publisher logpub_gazebo;
 
 private:
@@ -53,6 +56,7 @@ private:
 	bool spFlag; // subscriber, publisher Flag
 
 	float gazebo_vel;  // ed: 가제보 속도변수 추가
+	float gazebo_steer;  // ed: 가제보 각도변수 추가
 };
 
 

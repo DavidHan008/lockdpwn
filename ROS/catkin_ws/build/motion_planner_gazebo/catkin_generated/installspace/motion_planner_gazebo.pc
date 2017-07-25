@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install
+
+Name: motion_planner_gazebo
+Description: Description of motion_planner_gazebo
+Version: 0.0.0
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
+Requires: roscpp std_msgs

@@ -42,24 +42,11 @@
     <remap from="/all_in_one/cmd_vel" to="/$(arg robot_name)/cmd_vel_safe" />
 
     <!-- ed: 코드 추가했다. 속도, 각도값을 controller로부터 가져오는 코드 -->
-    <remap from="/all_in_one/VelocityCtrlData" to="/VelocityCtrlData" />
     <remap from="/all_in_one/SteerAngleData" to="/SteerAngleData" />
+    <remap from="/all_in_one/ControlData_gazebo" to="/ControlData_gazebo" />
   </node>
 
-  
-  <node name="distanceEstimator" pkg="all_in_one" type="distanceEstimator" output="screen">
-    <param name="scan_topic" value="/$(arg robot_name)/front_laser_points"/>
-  </node>
-
-
-  <!-- Let's be safe with obstacles by stopping when we get too close -->
-  <node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper_dyros" type="obstaclestopper_dyros_node" output="screen">
-    <remap from="/all_in_one/cmd_vel" to="/$(arg robot_name)/cmd_vel" />
-    <remap from="/all_in_one/distanceEstimator" to="/$(arg robot_name)/distanceEstimator" />
-    <remap from="/all_in_one/cmd_vel_safe" to="/$(arg robot_name)/cmd_vel_safe" /> 
-  </node>
-
-
+ 
   <!-- publish the path information of this vehicle -->
   <node name="odom2path$(arg robot_name)" pkg="all_in_one" type="odom2path.py" respawn="true" output="screen" args="-n /$(arg robot_name)">
   </node>

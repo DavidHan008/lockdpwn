@@ -17,12 +17,12 @@
 #define dist_thresh 0.5
 #define th_err_range 90*2
 
-// ed: 함수 추가했다. 가제보용 섭스크라이브 함수
+// ed: 함수 추가했다. Localization_gazebo 가제보용 섭스크라이브 함수
 void LocalPlannerThread::callback_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg){
     m_pos[0] = msg->data.at(0);
     m_pos[1] = msg->data.at(1);
     m_pos[2] = msg->data.at(2);
-    m_vel = msg->data.at(3); // m/s
+    m_vel = msg->data.at(3); // m/s // ed: target_Velocity
 
     Compute();
 }
@@ -1042,9 +1042,9 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[1]);
     m_msg.data.push_back(m_pos[2]);
 
-    // ed: 속도값 추가했다.
+    // ed: 속도값 추가했다. ㄴㄴ 아닌듯. 이렇게하면 currentVel, targetVel이 같아진다
     //     추가해야 controller가 ControlData 토픽을 섭스크라이브 할 때 data->at(6)에 속도값을 제대로 받는듯
-    m_msg.data.push_back(m_vel);
+    // m_msg.data.push_back(m_vel);
 
     if( resdist == -1)
         m_msg.data.push_back(0.0*0.278);
@@ -1055,7 +1055,7 @@ void LocalPlannerThread::Compute(){
     msgpub3.publish(m_msg);
 
 
-    // ed: 가제보 코드 추가
+    // ed: 가제보 코드 추가 publish to ControlData_gazebo
     m_msg_gazebo.data.clear();
     m_msg_gazebo.data.push_back(x);
     m_msg_gazebo.data.push_back(y);

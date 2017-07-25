@@ -21,6 +21,7 @@ localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/assert.h
@@ -459,6 +460,7 @@ localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/assert.h
@@ -1308,6 +1310,7 @@ localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -2225,6 +2228,7 @@ localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization_gazebo/CMakeFiles/localization_gazebo.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/assert.h
