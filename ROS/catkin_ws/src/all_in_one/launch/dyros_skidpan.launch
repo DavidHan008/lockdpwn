@@ -8,7 +8,7 @@
   <param name="use_sim_time" value="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find all_in_one)/worlds/skidpan.world"/>
+    <arg name="world_name" value="$(find all_in_one)/worlds/neighborhood.world"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
@@ -16,6 +16,7 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
+  <!-- ed: localization, motion_planner 동시 실행 -->
   <include file="$(find all_in_one)/launch/localization_motion_planner.launch" />
 
   <group ns="all_in_one">

@@ -2883,19 +2883,6 @@ distanceEstimator/fast:
 .PHONY : distanceEstimator/fast
 
 #=============================================================================
-# Target rules for targets named velodyne_driver_gencfg
-
-# Build rule for target.
-velodyne_driver_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velodyne_driver_gencfg
-.PHONY : velodyne_driver_gencfg
-
-# fast build rule for target.
-velodyne_driver_gencfg/fast:
-	$(MAKE) -f all_in_one/CMakeFiles/velodyne_driver_gencfg.dir/build.make all_in_one/CMakeFiles/velodyne_driver_gencfg.dir/build
-.PHONY : velodyne_driver_gencfg/fast
-
-#=============================================================================
 # Target rules for targets named velodyne_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -3741,7 +3728,6 @@ help:
 	@echo "... velodyne_pointcloud_gencfg"
 	@echo "... velodyne_msgs_generate_messages_lisp"
 	@echo "... distanceEstimator"
-	@echo "... velodyne_driver_gencfg"
 	@echo "... velodyne_msgs_generate_messages_cpp"
 	@echo "... allinonegazebo"
 	@echo "... velodyne_msgs_generate_messages_py"
