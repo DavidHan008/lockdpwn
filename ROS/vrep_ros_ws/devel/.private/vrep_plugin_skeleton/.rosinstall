@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dyros-vehicle/gitrepo/quickstart_ws/devel/.private/vrep_plugin_skeleton/setup.sh

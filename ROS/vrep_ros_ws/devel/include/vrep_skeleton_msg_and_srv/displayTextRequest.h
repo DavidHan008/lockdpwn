@@ -1,0 +1,1 @@
+/home/dyros-vehicle/gitrepo/quickstart_ws/devel/.private/vrep_skeleton_msg_and_srv/include/vrep_skeleton_msg_and_srv/displayTextRequest.h
