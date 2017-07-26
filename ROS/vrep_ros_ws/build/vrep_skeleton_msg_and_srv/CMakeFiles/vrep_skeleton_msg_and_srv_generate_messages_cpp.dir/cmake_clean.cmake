@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vrep_skeleton_msg_and_srv_generate_messages_cpp"
-  "/home/dyros-vehicle/gitrepo/quickstart_ws/devel/.private/vrep_skeleton_msg_and_srv/include/vrep_skeleton_msg_and_srv/displayText.h"
+  "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/devel/.private/vrep_skeleton_msg_and_srv/include/vrep_skeleton_msg_and_srv/displayText.h"
 )
 
 # Per-language clean rules from dependency scanning.

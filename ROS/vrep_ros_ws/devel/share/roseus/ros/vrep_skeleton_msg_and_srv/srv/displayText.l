@@ -1,1 +1,1 @@
-/home/dyros-vehicle/gitrepo/quickstart_ws/devel/.private/vrep_skeleton_msg_and_srv/share/roseus/ros/vrep_skeleton_msg_and_srv/srv/displayText.l
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/devel/.private/vrep_skeleton_msg_and_srv/share/roseus/ros/vrep_skeleton_msg_and_srv/srv/displayText.l

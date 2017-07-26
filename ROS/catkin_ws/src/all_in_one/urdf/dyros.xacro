@@ -88,6 +88,7 @@
     <limit effort="10000" velocity="100" />
     <joint_properties damping="0.0" friction="0.0" />
   </joint>
+
   <link name="back_right_wheel_link">
     <collision>
       <xacro:insert_block name="tyre_origin"/>
@@ -163,6 +164,7 @@
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="${-str_angle}" upper="${str_angle}" velocity="0.5"/>
   </joint>
+  
   <link name="front_right_steering_link">
     <collision>
       <xacro:insert_block name="tyre_origin"/>

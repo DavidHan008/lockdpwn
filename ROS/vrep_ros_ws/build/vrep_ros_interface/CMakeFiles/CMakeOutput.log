@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/3.5.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/3.5.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_34626/fast"
-/usr/bin/make -f CMakeFiles/cmTC_34626.dir/build.make CMakeFiles/cmTC_34626.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_34626.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_34626.dir/testCCompiler.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_34626
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34626.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_34626.dir/testCCompiler.c.o  -o cmTC_34626 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3abee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3abee.dir/build.make CMakeFiles/cmTC_3abee.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3abee.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3abee.dir/testCCompiler.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3abee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3abee.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3abee.dir/testCCompiler.c.o  -o cmTC_3abee -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7d613/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7d613.dir/build.make CMakeFiles/cmTC_7d613.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_7d613
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d613.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o  -o cmTC_7d613 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_f8e93/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8e93.dir/build.make CMakeFiles/cmTC_f8e93.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_f8e93
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8e93.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o  -o cmTC_f8e93 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -59,23 +59,23 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7d613' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7d613 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8e93' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_f8e93 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7d613/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7d613.dir/build.make CMakeFiles/cmTC_7d613.dir/build]
-  ignore line: [make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_7d613]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d613.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o  -o cmTC_7d613 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f8e93/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f8e93.dir/build.make CMakeFiles/cmTC_f8e93.dir/build]
+  ignore line: [make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_f8e93]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8e93.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o  -o cmTC_f8e93 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -85,8 +85,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7d613' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7d613 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8e93' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_f8e93 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -100,7 +100,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7d613] ==> ignore
+    arg [cmTC_f8e93] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_7d613.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_f8e93.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -144,17 +144,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_580c9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_580c9.dir/build.make CMakeFiles/cmTC_580c9.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_580c9.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_580c9.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
-Linking C executable cmTC_580c9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_580c9.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_580c9.dir/feature_tests.c.o  -o cmTC_580c9 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9cb08/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9cb08.dir/build.make CMakeFiles/cmTC_9cb08.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9cb08.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_9cb08.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9cb08
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cb08.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_9cb08.dir/feature_tests.c.o  -o cmTC_9cb08 -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -164,17 +164,17 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_74d85/fast"
-/usr/bin/make -f CMakeFiles/cmTC_74d85.dir/build.make CMakeFiles/cmTC_74d85.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_74d85.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_74d85.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
-Linking C executable cmTC_74d85
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74d85.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_74d85.dir/feature_tests.c.o  -o cmTC_74d85 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_06c8c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_06c8c.dir/build.make CMakeFiles/cmTC_06c8c.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06c8c.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_06c8c.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
+Linking C executable cmTC_06c8c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06c8c.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_06c8c.dir/feature_tests.c.o  -o cmTC_06c8c -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -184,17 +184,17 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3d156/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3d156.dir/build.make CMakeFiles/cmTC_3d156.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3d156.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_3d156.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3d156
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d156.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_3d156.dir/feature_tests.c.o  -o cmTC_3d156 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3fce9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3fce9.dir/build.make CMakeFiles/cmTC_3fce9.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3fce9.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_3fce9.dir/feature_tests.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3fce9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fce9.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3fce9.dir/feature_tests.c.o  -o cmTC_3fce9 -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -202,30 +202,30 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fdfe6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fdfe6.dir/build.make CMakeFiles/cmTC_fdfe6.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_fdfe6.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_fdfe6.dir/testCXXCompiler.cxx.o -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fdfe6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdfe6.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_fdfe6.dir/testCXXCompiler.cxx.o  -o cmTC_fdfe6 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_77a39/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77a39.dir/build.make CMakeFiles/cmTC_77a39.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_77a39.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_77a39.dir/testCXXCompiler.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_77a39
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77a39.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_77a39.dir/testCXXCompiler.cxx.o  -o cmTC_77a39 -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e29c8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e29c8.dir/build.make CMakeFiles/cmTC_e29c8.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_e29c8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e29c8.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e29c8 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_355a2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_355a2.dir/build.make CMakeFiles/cmTC_355a2.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_355a2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_355a2.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_355a2 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -235,23 +235,23 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e29c8' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_e29c8 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_355a2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_355a2 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e29c8/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e29c8.dir/build.make CMakeFiles/cmTC_e29c8.dir/build]
-  ignore line: [make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_e29c8]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e29c8.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e29c8 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_355a2/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_355a2.dir/build.make CMakeFiles/cmTC_355a2.dir/build]
+  ignore line: [make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_355a2]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_355a2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_355a2 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -261,8 +261,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e29c8' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_e29c8 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_355a2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_355a2 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -276,7 +276,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e29c8] ==> ignore
+    arg [cmTC_355a2] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -288,7 +288,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_e29c8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_355a2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -318,17 +318,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d633d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d633d.dir/build.make CMakeFiles/cmTC_d633d.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d633d.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_d633d.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d633d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d633d.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_d633d.dir/feature_tests.cxx.o  -o cmTC_d633d -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_128b9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_128b9.dir/build.make CMakeFiles/cmTC_128b9.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_128b9.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_128b9.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_128b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_128b9.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_128b9.dir/feature_tests.cxx.o  -o cmTC_128b9 -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -391,17 +391,17 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_935d0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_935d0.dir/build.make CMakeFiles/cmTC_935d0.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_935d0.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_935d0.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_935d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_935d0.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_935d0.dir/feature_tests.cxx.o  -o cmTC_935d0 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a98fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a98fb.dir/build.make CMakeFiles/cmTC_a98fb.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a98fb.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_a98fb.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a98fb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a98fb.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_a98fb.dir/feature_tests.cxx.o  -o cmTC_a98fb -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -464,17 +464,17 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f06cf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f06cf.dir/build.make CMakeFiles/cmTC_f06cf.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f06cf.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_f06cf.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_f06cf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f06cf.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_f06cf.dir/feature_tests.cxx.o  -o cmTC_f06cf -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a6e7e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a6e7e.dir/build.make CMakeFiles/cmTC_a6e7e.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a6e7e.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_a6e7e.dir/feature_tests.cxx.o -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a6e7e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6e7e.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_a6e7e.dir/feature_tests.cxx.o  -o cmTC_a6e7e -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -535,30 +535,30 @@ make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ed0e2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ed0e2.dir/build.make CMakeFiles/cmTC_ed0e2.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ed0e2.dir/CheckIncludeFile.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_ed0e2.dir/CheckIncludeFile.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_ed0e2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed0e2.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_ed0e2.dir/CheckIncludeFile.c.o  -o cmTC_ed0e2 -rdynamic 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_73bcf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_73bcf.dir/build.make CMakeFiles/cmTC_73bcf.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73bcf.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_73bcf.dir/CheckIncludeFile.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_73bcf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73bcf.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_73bcf.dir/CheckIncludeFile.c.o  -o cmTC_73bcf -rdynamic 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5e607/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5e607.dir/build.make CMakeFiles/cmTC_5e607.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5e607.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5e607.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5e607
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e607.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5e607.dir/CheckFunctionExists.c.o  -o cmTC_5e607 -rdynamic -lpthread 
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e5e0c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5e0c.dir/build.make CMakeFiles/cmTC_e5e0c.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5e0c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e5e0c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5e0c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5e0c.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e5e0c.dir/CheckFunctionExists.c.o  -o cmTC_e5e0c -rdynamic -lpthread 
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_ros_interface/CMakeFiles/CMakeTmp'
 
 

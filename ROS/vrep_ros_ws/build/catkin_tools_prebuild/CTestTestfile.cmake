@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/dyros-vehicle/gitrepo/quickstart_ws/build/catkin_tools_prebuild
-# Build directory: /home/dyros-vehicle/gitrepo/quickstart_ws/build/catkin_tools_prebuild
+# Source directory: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/catkin_tools_prebuild
+# Build directory: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/catkin_tools_prebuild
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

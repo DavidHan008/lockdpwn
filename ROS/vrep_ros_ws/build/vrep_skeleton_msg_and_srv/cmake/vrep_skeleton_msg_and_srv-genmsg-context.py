@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/dyros-vehicle/gitrepo/quickstart_ws/src/vrep_skeleton_msg_and_srv/srv/displayText.srv"
+services_str = "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/src/vrep_skeleton_msg_and_srv/srv/displayText.srv"
 pkg_name = "vrep_skeleton_msg_and_srv"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;genpy"

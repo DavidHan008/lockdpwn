@@ -20,8 +20,8 @@ class cmdvel2gazebo:
 
 
         ## ed: 서브스크라이버들 추가
-        rospy.Subscriber('ControlData_gazebo'.format(ns), Float32MultiArray, self.callback_ctrlData_ed)
         rospy.Subscriber('SteerAngleData'.format(ns), Float32MultiArray, self.callback_steer_ed)
+        rospy.Subscriber('/ControlData'.format(ns), Float32MultiArray, self.callback_ctrlData_ed)
 
 
         ## ed: 최종적으로 gazebo로 퍼블리시되는 값들
@@ -30,7 +30,8 @@ class cmdvel2gazebo:
         self.pub_rearL = rospy.Publisher('joint1_velocity_controller/command'.format(ns), Float64, queue_size=1)
         self.pub_rearR = rospy.Publisher('joint2_velocity_controller/command'.format(ns), Float64, queue_size=1)
 
-
+        ## ed: 각도변수 추가
+        self.steer2rad = 0
 
         # initial velocity and tire angle are 0
         self.x = 0
@@ -83,7 +84,10 @@ class cmdvel2gazebo:
 
     ## ed: 각도를 입력받는 함수 추가
     def callback_steer_ed(self, steer):
-        self.z = max(-self.maxsteer, min(self.maxsteer, steer.data[0]))
+        ## ed: 각도를 스티어링 --> 바퀴 각도로 변환시키고 /20, 라디안으로 변환한다
+        steer2rad = steer.data[0]
+        steer2rad = steer2rad / 20 * (3.14159/180)
+        self.z = max(-self.maxsteer, min(self.maxsteer, steer2rad))
         #print("steer %lf" % steer.data[0])
 
         self.lastMsg = rospy.Time.now()

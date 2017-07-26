@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/gtest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/dyros-vehicle/gitrepo/quickstart_ws/build/ros_bubble_rob2")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/ros_bubble_rob2")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

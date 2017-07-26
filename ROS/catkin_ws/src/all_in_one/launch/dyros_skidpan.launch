@@ -16,7 +16,6 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
-  <!-- ed: localization, motion_planner 동시 실행 -->
   <include file="$(find all_in_one)/launch/localization_motion_planner.launch" />
 
   <group ns="all_in_one">

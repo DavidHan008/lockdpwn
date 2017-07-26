@@ -1,9 +1,24 @@
-[  0%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target _vrep_skeleton_msg_and_srv_generate_messages_check_deps_displayText[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
 [  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _vrep_skeleton_msg_and_srv_generate_messages_check_deps_displayText
-[ 16%] Built target vrep_skeleton_msg_and_srv_generate_messages_cpp
-[ 33%] Built target vrep_skeleton_msg_and_srv_generate_messages_lisp
-[ 66%] Built target vrep_skeleton_msg_and_srv_generate_messages_py
+[35m[1mScanning dependencies of target vrep_skeleton_msg_and_srv_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target vrep_skeleton_msg_and_srv_generate_messages_eus[0m
+[35m[1mScanning dependencies of target vrep_skeleton_msg_and_srv_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target vrep_skeleton_msg_and_srv_generate_messages_py[0m
+[ 16%] [34m[1mGenerating EusLisp code from vrep_skeleton_msg_and_srv/displayText.srv[0m
+[ 50%] [34m[1mGenerating EusLisp manifest code for vrep_skeleton_msg_and_srv[0m
+[ 50%] [34m[1mGenerating Lisp code from vrep_skeleton_msg_and_srv/displayText.srv[0m
+[ 66%] [34m[1mGenerating C++ code from vrep_skeleton_msg_and_srv/displayText.srv[0m
+[ 83%] [34m[1mGenerating Python code from SRV vrep_skeleton_msg_and_srv/displayText[0m
+[ 83%] Built target vrep_skeleton_msg_and_srv_generate_messages_lisp
+[100%] [34m[1mGenerating Python srv __init__.py for vrep_skeleton_msg_and_srv[0m
+[100%] Built target vrep_skeleton_msg_and_srv_generate_messages_py
+[100%] Built target vrep_skeleton_msg_and_srv_generate_messages_cpp
 [100%] Built target vrep_skeleton_msg_and_srv_generate_messages_eus
+[35m[1mScanning dependencies of target vrep_skeleton_msg_and_srv_generate_messages[0m
 [100%] Built target vrep_skeleton_msg_and_srv_generate_messages

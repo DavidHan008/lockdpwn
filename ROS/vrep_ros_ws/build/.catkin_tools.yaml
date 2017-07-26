@@ -1,6 +1,6 @@
-devel_space: /home/dyros-vehicle/gitrepo/quickstart_ws/devel
+devel_space: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/devel
 install: false
-install_space: /home/dyros-vehicle/gitrepo/quickstart_ws/install
+install_space: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/install
 profile: default
-source_space: /home/dyros-vehicle/gitrepo/quickstart_ws/src
-workspace: /home/dyros-vehicle/gitrepo/quickstart_ws
+source_space: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/src
+workspace: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws

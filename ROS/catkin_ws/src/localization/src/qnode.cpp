@@ -16,6 +16,19 @@ void QNode::SubTopicProcess(const geometry_msgs::Pose2D::ConstPtr& msg){
   }
 }
 
+// ed: 가제보에서 속도값을 서브스크라이브하는 콜백함수
+void QNode::getVelFromGazebo(const geometry_msgs::Twist::ConstPtr& msg){
+  gazebo_vel = msg->linear.x;
+  gazeboFlag = true;
+}
+
+// ed: 가제보에서 스티어링 값을 섭스크라이브하는 콜백함수
+void QNode::getSteerFromGazebo(const geometry_msgs::Wrench::ConstPtr& msg){
+  gazebo_steer = msg->torque.z;
+  gazeboFlag = true;
+}
+
+
 // 토픽에 대한 함수들.
 void QNode::GpsTopicProcess(const localization::GpsReceiverData::ConstPtr& msg){
   //printf("test0\n");
@@ -108,6 +121,12 @@ QNode::QNode(int argc, char** argv, Ui::MainWindow* ui, Filter* ins, QObject *pa
   //logpub2 = n.advertise<geometry_msgs::Pose2D>("my_pose2", 10);
   logpub2 = n.advertise<std_msgs::Float32MultiArray>("LocalizationData", 10);
 
+
+  // ed: 코드 추가했다. 가제보의 차량을 제어하기 위한 코드
+  sub_gazebo_vel = n.subscribe("all_in_one/vel", 10, &QNode::getVelFromGazebo, this);
+  sub_gazebo_steer = n.subscribe("all_in_one/steer", 10, &QNode::getSteerFromGazebo, this);
+  gazeboFlag = false;
+
   m_obdVel1 = 0.;
 }
 
@@ -117,6 +136,7 @@ void QNode::stop(){
   ssFlag = false;
   spFlag = false;
 }
+
 
 void QNode::run(){
   struct timeval timePrev;
@@ -129,8 +149,7 @@ void QNode::run(){
 
   qDebug("qnode Thread Start");
 	
-  while ( !threadStop )
-  {
+  while ( !threadStop )  {
     struct timeval timeCur;
     //localization::LocalizationData data;
     //geometry_msgs::Pose2D data2;
@@ -141,8 +160,7 @@ void QNode::run(){
 
 
     //printf("while flag :%d\n", flag);
-    if( spFlag )
-    {
+    if( spFlag ) {
       //printf("계산 : %f %f \n", _ins->m_p[0],_ins->m_p[1]);
 
       _ins->DoCal(dt);
@@ -155,24 +173,37 @@ void QNode::run(){
     //data.y = _ins->m_p[1];
     //data.v = m_obdVel1;
     //logpub.publish( data );
-    std_msgs::Float32MultiArray msg;
-
 
     double tmpTheta = _ins->m_heading + _DEG2RAD *(90.0);
+
     if( tmpTheta >= _DEG2RAD*360.0 )    {
       tmpTheta -= _DEG2RAD*360.0;
     }
+    std_msgs::Float32MultiArray msg_pub;
 
-    msg.data.push_back(_ins->m_p[0]);
-    msg.data.push_back(_ins->m_p[1]);
-    msg.data.push_back(tmpTheta);
-    msg.data.push_back(m_obdVel1*0.278);
-    logpub2.publish( msg );
+    // ed: gazebo를 사용하지 않는경우
+    if(!gazeboFlag){
+      msg_pub.data.push_back(_ins->m_p[0]);
+      msg_pub.data.push_back(_ins->m_p[1]);
+      msg_pub.data.push_back(tmpTheta);
+      msg_pub.data.push_back(m_obdVel1*0.278);
 
+      // ed: LocalizationData 퍼블리시한다
+      logpub2.publish( msg_pub );
+    }
+    // ed: gazebo를 사용하는 경우
+    else{
+      msg_pub.data.push_back(0);
+      msg_pub.data.push_back(0);
+      msg_pub.data.push_back(0);
+      msg_pub.data.push_back(gazebo_vel);
+
+      // ed: LocalizationData 퍼블리시한다
+      logpub2.publish( msg_pub );
+    }
 
 
     timePrev = timeCur;
-		
 
     ros::spinOnce();
     loop_rate.sleep();

@@ -17,16 +17,6 @@
 #define dist_thresh 0.5
 #define th_err_range 90*2
 
-// ed: 함수 추가했다. Localization_gazebo 가제보용 섭스크라이브 함수
-void LocalPlannerThread::callback_gazebo(const std_msgs::Float32MultiArray::ConstPtr& msg){
-    m_pos[0] = msg->data.at(0);
-    m_pos[1] = msg->data.at(1);
-    m_pos[2] = msg->data.at(2);
-    m_vel = msg->data.at(3); // m/s // ed: target_Velocity
-
-    Compute();
-}
-
 
 // ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
@@ -758,10 +748,6 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     possub = n.subscribe("LocalizationData", 10, &LocalPlannerThread::SubTopicProcess1, this);
     possub2 = n.subscribe("RNDFPathData", 10, &LocalPlannerThread::SubTopicProcess2, this);
 
-
-    // ed: 함수 추가. 가제보용
-    possub_gazebo = n.subscribe("LocalizationData_gazebo", 10, &LocalPlannerThread::callback_gazebo, this);
-    msgpub_gazebo = n.advertise<std_msgs::Float32MultiArray>("ControlData_gazebo", 1 );
 }
 
 LocalPlannerThread::~LocalPlannerThread()
@@ -1026,7 +1012,10 @@ void LocalPlannerThread::Compute(){
     }
 
     std_msgs::Float32MultiArray msg;
-    msg.data.push_back(steer);
+
+    // ed: 여기서 스티어링각도가 설정된다 deg
+    //msg.data.push_back(steer);
+    msg.data.push_back(500);
 
     // ed: msg_steer, SteeringAngleData 토픽으로 퍼블리시한다
     msg_steer.publish(msg);
@@ -1042,31 +1031,22 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[1]);
     m_msg.data.push_back(m_pos[2]);
 
-    // ed: 속도값 추가했다. ㄴㄴ 아닌듯. 이렇게하면 currentVel, targetVel이 같아진다
-    //     추가해야 controller가 ControlData 토픽을 섭스크라이브 할 때 data->at(6)에 속도값을 제대로 받는듯
-    // m_msg.data.push_back(m_vel);
+    // ed: 단위는 m/s
+    float targetVel = 0.5;
 
+    // ed: targetVel을 설정하는 코드인듯하다
     if( resdist == -1)
-        m_msg.data.push_back(0.0*0.278);
+        m_msg.data.push_back(0);
     else
-        m_msg.data.push_back(4.8*0.278);
+        // ed: 2.81은 바퀴의 각속도 rad/s --> 차량의 속도 m/s로 변환하기 위한 값이다
+        m_msg.data.push_back(targetVel * 2.81);
 
-    // ed: msgpub3, ControlData 토픽으로 퍼블리시한다
+
+    // ed: ControlData 토픽으로 퍼블리시한다
     msgpub3.publish(m_msg);
 
-
-    // ed: 가제보 코드 추가 publish to ControlData_gazebo
-    m_msg_gazebo.data.clear();
-    m_msg_gazebo.data.push_back(x);
-    m_msg_gazebo.data.push_back(y);
-    m_msg_gazebo.data.push_back(resdist);
-    m_msg_gazebo.data.push_back(m_pos[0]);
-    m_msg_gazebo.data.push_back(m_pos[1]);
-    m_msg_gazebo.data.push_back(m_pos[2]);
-    m_msg_gazebo.data.push_back(m_vel);
-
-    // ed: 퍼블리시
-    msgpub_gazebo.publish(m_msg_gazebo);
+    // ed: 제대로 작동하는지 속도 보기
+    printf("target : %lf m/s\n current : %lf m/s\n", targetVel , m_vel);
 
     m_model_jw_exp.header.stamp = ros::Time::now();
 

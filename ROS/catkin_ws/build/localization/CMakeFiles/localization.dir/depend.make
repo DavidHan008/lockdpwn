@@ -19,7 +19,9 @@ localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/inc
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/XmlRpcValue.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization/CMakeFiles/localization.dir/inc/moc_main.cxx.o: /opt/ros/indigo/include/ros/assert.h
@@ -456,7 +458,9 @@ localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/in
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/XmlRpcValue.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization/CMakeFiles/localization.dir/inc/moc_qnode.cxx.o: /opt/ros/indigo/include/ros/assert.h
@@ -1304,7 +1308,9 @@ localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization/CMakeFiles/localization.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -2220,7 +2226,9 @@ localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/includ
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
+localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/geometry_msgs/Wrench.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 localization/CMakeFiles/localization.dir/src/qnode.cpp.o: /opt/ros/indigo/include/ros/assert.h

@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e8711/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e8711.dir/build.make CMakeFiles/cmTC_e8711.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e8711.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_e8711.dir/CheckSymbolExists.c.o   -c /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_e8711
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8711.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_e8711.dir/CheckSymbolExists.c.o  -o cmTC_e8711 -rdynamic 
-CMakeFiles/cmTC_e8711.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_8e158/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8e158.dir/build.make CMakeFiles/cmTC_8e158.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e158.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_8e158.dir/CheckSymbolExists.c.o   -c /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8e158
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e158.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_8e158.dir/CheckSymbolExists.c.o  -o cmTC_8e158 -rdynamic 
+CMakeFiles/cmTC_8e158.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTC_e8711] 오류 1
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
-make: *** [cmTC_e8711/fast] 오류 2
+make[1]: *** [cmTC_8e158] 오류 1
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
+make: *** [cmTC_8e158/fast] 오류 2
 
-File /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -32,20 +32,20 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a3ea5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a3ea5.dir/build.make CMakeFiles/cmTC_a3ea5.dir/build
-make[1]: Entering directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a3ea5.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a3ea5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a3ea5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3ea5.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_a3ea5.dir/CheckFunctionExists.c.o  -o cmTC_a3ea5 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_58883/fast"
+/usr/bin/make -f CMakeFiles/cmTC_58883.dir/build.make CMakeFiles/cmTC_58883.dir/build
+make[1]: Entering directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58883.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_58883.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_58883
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58883.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_58883.dir/CheckFunctionExists.c.o  -o cmTC_58883 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTC_a3ea5] 오류 1
-make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/quickstart_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
-make: *** [cmTC_a3ea5/fast] 오류 2
+make[1]: *** [cmTC_58883] 오류 1
+make[1]: Leaving directory `/home/dyros-vehicle/gitrepo/lockdpwn/ROS/vrep_ros_ws/build/vrep_skeleton_msg_and_srv/CMakeFiles/CMakeTmp'
+make: *** [cmTC_58883/fast] 오류 2
 
 

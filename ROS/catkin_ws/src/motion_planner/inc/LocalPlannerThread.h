@@ -43,8 +43,6 @@ private :
     ros::Publisher msgpub3;
     ros::Publisher msg_steer;
 
-    ros::Subscriber possub_gazebo;   // ed: 가제보용 섭,펍 추가
-    ros::Publisher msgpub_gazebo;
 
     ////////////////////////////////
     // Message Definition
@@ -62,7 +60,7 @@ private :
     std_msgs::Float32MultiArray m_msg;
 
     // ed: 가제보용 변수 추가
-    std_msgs::Float32MultiArray m_msg_gazebo;
+    bool gazeboFlag;
 
 
     double m_len_c2r;
