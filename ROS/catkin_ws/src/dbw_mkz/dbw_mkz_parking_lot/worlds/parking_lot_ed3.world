@@ -1,0 +1,2400 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>10000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ds_grass_background/materials/scripts</uri>
+              <uri>model://ds_grass_background/materials/textures</uri>
+              <name>GrassBackground</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0 0.9 0.9 1</background>
+      <shadows>1</shadows>
+      <grid>0</grid>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>14846 735000000</sim_time>
+      <real_time>86 197268768</real_time>
+      <wall_time>1501162615 588205740</wall_time>
+      <model name='BuildingDefaultName'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='Wall_0'>
+          <pose>30 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_10'>
+          <pose>90 -22 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_12'>
+          <pose>-25 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_2'>
+          <pose>45 -31 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_4'>
+          <pose>-0.093576 -15.5 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_6'>
+          <pose>45 -13 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_8'>
+          <pose>60 -6.5 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz'>
+        <pose>8.00306 -8.00798 0.161247 -3e-06 -0.008641 -1.57164</pose>
+        <link name='base_link'>
+          <pose>8.00306 -8.00798 0.161247 -3e-06 -0.008641 -1.57164</pose>
+          <velocity>-0.000615 0.000698 0.002837 -0.004329 -0.003811 0</velocity>
+          <acceleration>-2.44414 5.67362 1.00458 0.227221 0.820697 -3.14155</acceleration>
+          <wrench>-3666.21 8510.43 1506.87 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz1'>
+        <pose>11.0031 -8.00798 0.161244 -7e-06 -0.008637 -1.57164</pose>
+        <link name='base_link'>
+          <pose>11.0031 -8.00798 0.161244 -7e-06 -0.008637 -1.57164</pose>
+          <velocity>0.000344 -0.001527 0.001802 0.009467 0.002132 0</velocity>
+          <acceleration>-2.44567 -3.7401 -2.29589 2.92151 0.823126 3.14158</acceleration>
+          <wrench>-3668.5 -5610.14 -3443.83 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz10'>
+        <pose>38.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+        <link name='base_link'>
+          <pose>38.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+          <velocity>5e-06 0.001828 -0.002065 -0.011337 6e-06 -3e-06</velocity>
+          <acceleration>0.01009 6.78218 3.12114 1.5709 0.010118 -0.002079</acceleration>
+          <wrench>15.135 10173.3 4681.71 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz11'>
+        <pose>41.0031 -8.00798 0.161242 8e-06 -0.008639 -1.57164</pose>
+        <link name='base_link'>
+          <pose>41.0031 -8.00798 0.161242 8e-06 -0.008639 -1.57164</pose>
+          <velocity>-0.000679 -0.000589 -0.000832 0.003655 -0.004214 -3.38816e-21</velocity>
+          <acceleration>1.18219 -1.77304 -6.24655 -0.267247 1.2251 3.14159</acceleration>
+          <wrench>1773.29 -2659.55 -9369.82 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz12'>
+        <pose>44.0031 -8.00798 0.161244 2e-06 -0.008642 -1.57164</pose>
+        <link name='base_link'>
+          <pose>44.0031 -8.00798 0.161244 2e-06 -0.008642 -1.57164</pose>
+          <velocity>-0.000564 5.8e-05 -0.001778 -0.000358 -0.003499 2.1176e-22</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -14700 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz13'>
+        <pose>47.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+        <link name='base_link'>
+          <pose>47.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+          <velocity>5e-06 0.001824 -0.00204 -0.011314 6e-06 -3e-06</velocity>
+          <acceleration>0.012798 6.68211 2.93049 1.73315 0.014564 -0.002023</acceleration>
+          <wrench>19.1967 10023.2 4395.73 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz14'>
+        <pose>7.99695 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+        <link name='base_link'>
+          <pose>7.99695 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+          <velocity>0.000341 0.000232 -0.002844 -0.001439 0.002118 -4.23517e-22</velocity>
+          <acceleration>0.067056 0.102193 -9.59474 -0.16567 0.10871 -1e-06</acceleration>
+          <wrench>100.584 153.29 -14392.1 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz15'>
+        <pose>10.997 -18.992 0.161246 -2e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>10.997 -18.992 0.161246 -2e-06 -0.008642 1.56836</pose>
+          <velocity>0.000419 6.4e-05 0.007847 -0.000398 0.0026 0</velocity>
+          <acceleration>4.77536 -1.46412 7.93697 2.37361 1.45833 1e-05</acceleration>
+          <wrench>7163.05 -2196.18 11905.5 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz16'>
+        <pose>13.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>13.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+          <velocity>0.000315 0.000192 0.006752 -0.00119 0.001955 0</velocity>
+          <acceleration>4.1804 -0.843826 5.57076 1.36794 0.493803 2.7e-05</acceleration>
+          <wrench>6270.6 -1265.74 8356.13 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz17'>
+        <pose>16.997 -18.992 0.161237 5e-06 -0.008647 1.56836</pose>
+        <link name='base_link'>
+          <pose>16.997 -18.992 0.161237 5e-06 -0.008647 1.56836</pose>
+          <velocity>0.00083 -0.000894 -0.007087 0.005547 0.00515 6.77635e-21</velocity>
+          <acceleration>1.04866 -2.44493 -5.14716 0.821954 1.44158 -3.14159</acceleration>
+          <wrench>1572.99 -3667.4 -7720.73 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz18'>
+        <pose>19.997 -18.992 0.161237 -6e-06 -0.008644 1.56836</pose>
+        <link name='base_link'>
+          <pose>19.997 -18.992 0.161237 -6e-06 -0.008644 1.56836</pose>
+          <velocity>-0.001453 0.000638 -9.8e-05 -0.003959 -0.009012 0</velocity>
+          <acceleration>-4.83948 4.65993 5.64885 -1.27193 -1.5681 0.001907</acceleration>
+          <wrench>-7259.22 6989.9 8473.28 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz19'>
+        <pose>22.997 -18.992 0.161237 4e-06 -0.008648 1.56836</pose>
+        <link name='base_link'>
+          <pose>22.997 -18.992 0.161237 4e-06 -0.008648 1.56836</pose>
+          <velocity>0.000442 -0.001189 -0.005722 0.007374 0.002765 -3e-06</velocity>
+          <acceleration>0.262394 -3.62365 -2.89734 -0.408093 0.431188 -0.001914</acceleration>
+          <wrench>393.59 -5435.48 -4346.01 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz2'>
+        <pose>14.0031 -8.00797 0.161235 4e-06 -0.00865 -1.57164</pose>
+        <link name='base_link'>
+          <pose>14.0031 -8.00797 0.161235 4e-06 -0.00865 -1.57164</pose>
+          <velocity>5e-05 0.001371 -0.005869 -0.008498 0.000332 3e-06</velocity>
+          <acceleration>1.69645 3.94742 -2.2777 3.02605 0.385274 -3.13979</acceleration>
+          <wrench>2544.68 5921.12 -3416.54 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz20'>
+        <pose>25.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>25.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+          <velocity>0.000315 0.000192 0.006752 -0.00119 0.001955 0</velocity>
+          <acceleration>4.1804 -0.843826 5.57076 1.36794 0.493803 2.7e-05</acceleration>
+          <wrench>6270.6 -1265.74 8356.13 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz21'>
+        <pose>28.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>28.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+          <velocity>0.000315 0.000192 0.006752 -0.00119 0.001955 0</velocity>
+          <acceleration>4.1804 -0.843826 5.57076 1.36794 0.493803 2.7e-05</acceleration>
+          <wrench>6270.6 -1265.74 8356.13 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz22'>
+        <pose>31.997 -18.992 0.161237 4e-06 -0.008648 1.56836</pose>
+        <link name='base_link'>
+          <pose>31.997 -18.992 0.161237 4e-06 -0.008648 1.56836</pose>
+          <velocity>0.000442 -0.001189 -0.005722 0.007374 0.002765 -3e-06</velocity>
+          <acceleration>0.262393 -3.62365 -2.89734 -0.408093 0.431187 -0.001914</acceleration>
+          <wrench>393.59 -5435.48 -4346.01 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz23'>
+        <pose>34.997 -18.992 0.161246 -2e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>34.997 -18.992 0.161246 -2e-06 -0.008642 1.56836</pose>
+          <velocity>0.000419 6.4e-05 0.007847 -0.000398 0.0026 0</velocity>
+          <acceleration>4.77536 -1.46412 7.93697 2.37362 1.45833 1e-05</acceleration>
+          <wrench>7163.05 -2196.18 11905.5 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz24'>
+        <pose>37.997 -18.992 0.161239 -3e-06 -0.008643 1.56836</pose>
+        <link name='base_link'>
+          <pose>37.997 -18.992 0.161239 -3e-06 -0.008643 1.56836</pose>
+          <velocity>-0.001324 0.000523 0.001177 -0.003242 -0.008211 3.38825e-21</velocity>
+          <acceleration>-5.49439 3.61441 8.28267 -2.71782 -0.517644 3.14156</acceleration>
+          <wrench>-8241.59 5421.61 12424 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz25'>
+        <pose>40.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>40.997 -18.992 0.161246 -1e-06 -0.008642 1.56836</pose>
+          <velocity>0.000315 0.000192 0.006752 -0.00119 0.001955 0</velocity>
+          <acceleration>4.1804 -0.843827 5.57076 1.36794 0.493803 2.7e-05</acceleration>
+          <wrench>6270.6 -1265.74 8356.13 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz26'>
+        <pose>43.997 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+        <link name='base_link'>
+          <pose>43.997 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+          <velocity>0.000341 0.000232 -0.002844 -0.001439 0.002118 -4.23517e-22</velocity>
+          <acceleration>0.067056 0.102193 -9.59474 -0.16567 0.10871 -1e-06</acceleration>
+          <wrench>100.584 153.29 -14392.1 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz27'>
+        <pose>46.997 -18.992 0.161237 -6e-06 -0.008644 1.56836</pose>
+        <link name='base_link'>
+          <pose>46.997 -18.992 0.161237 -6e-06 -0.008644 1.56836</pose>
+          <velocity>-0.001453 0.000638 -9.8e-05 -0.003959 -0.009012 0</velocity>
+          <acceleration>-4.83948 4.65993 5.64885 -1.27193 -1.5681 0.001907</acceleration>
+          <wrench>-7259.22 6989.9 8473.28 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz28'>
+        <pose>49.997 -18.992 0.161244 -8.67394e-19 -0.008642 1.56836</pose>
+        <link name='base_link'>
+          <pose>49.997 -18.992 0.161244 -8.67394e-19 -0.008642 1.56836</pose>
+          <velocity>0.000419 6.4e-05 -0.001953 -0.000398 0.0026 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -14700 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz29'>
+        <pose>52.997 -18.992 0.161239 -3e-06 -0.008643 1.56836</pose>
+        <link name='base_link'>
+          <pose>52.997 -18.992 0.161239 -3e-06 -0.008643 1.56836</pose>
+          <velocity>-0.001324 0.000523 0.001177 -0.003242 -0.008211 3.38825e-21</velocity>
+          <acceleration>-5.49439 3.61441 8.28267 -2.71782 -0.517644 3.14156</acceleration>
+          <wrench>-8241.59 5421.61 12424 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz3'>
+        <pose>17.0031 -8.00798 0.161238 -4e-06 -0.008643 -1.57164</pose>
+        <link name='base_link'>
+          <pose>17.0031 -8.00798 0.161238 -4e-06 -0.008643 -1.57164</pose>
+          <velocity>0.001215 -0.000327 -0.001433 0.002029 0.007535 -3.38823e-21</velocity>
+          <acceleration>3.10458 -2.47864 0.270569 -2.26445 -1.24585 0.001434</acceleration>
+          <wrench>4656.87 -3717.96 405.854 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz30'>
+        <pose>55.997 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+        <link name='base_link'>
+          <pose>55.997 -18.992 0.161243 1e-06 -0.008641 1.56836</pose>
+          <velocity>0.000341 0.000232 -0.002844 -0.001439 0.002118 -4.23517e-22</velocity>
+          <acceleration>0.067056 0.102193 -9.59474 -0.16567 0.10871 -1e-06</acceleration>
+          <wrench>100.584 153.29 -14392.1 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz4'>
+        <pose>20.0031 -8.00798 0.161237 -3e-06 -0.008642 -1.57164</pose>
+        <link name='base_link'>
+          <pose>20.0031 -8.00798 0.161237 -3e-06 -0.008642 -1.57164</pose>
+          <velocity>-0.000225 2.4e-05 -0.010397 -0.000152 -0.001396 5.29396e-23</velocity>
+          <acceleration>0 -0 -9.8 0 -0 0</acceleration>
+          <wrench>0 -0 -14700 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz5'>
+        <pose>23.0031 -8.00797 0.161235 4e-06 -0.00865 -1.57164</pose>
+        <link name='base_link'>
+          <pose>23.0031 -8.00797 0.161235 4e-06 -0.00865 -1.57164</pose>
+          <velocity>2.8e-05 0.001392 -0.005811 -0.00863 0.000171 -2.11758e-22</velocity>
+          <acceleration>1.77124 3.95938 -2.25427 3.0061 0.270178 -3.14159</acceleration>
+          <wrench>2656.87 5939.08 -3381.41 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz6'>
+        <pose>26.0031 -8.00798 0.161242 3e-06 -0.008643 -1.57164</pose>
+        <link name='base_link'>
+          <pose>26.0031 -8.00798 0.161242 3e-06 -0.008643 -1.57164</pose>
+          <velocity>0.000189 8e-06 -7.1e-05 -1.5e-05 0.001221 8e-06</velocity>
+          <acceleration>2.0003 1.29917 -2.32251 1.04443 -0.114321 -3.13615</acceleration>
+          <wrench>3000.45 1948.75 -3483.77 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz7'>
+        <pose>29.0031 -8.00798 0.161243 4e-06 -0.008642 -1.57164</pose>
+        <link name='base_link'>
+          <pose>29.0031 -8.00798 0.161243 4e-06 -0.008642 -1.57164</pose>
+          <velocity>0.000172 4.9e-05 0.009542 -0.000306 0.001068 -5.29396e-23</velocity>
+          <acceleration>1.8783 -0.021399 21.1198 -3.10691 0.096634 3.14159</acceleration>
+          <wrench>2817.46 -32.0987 31679.7 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz8'>
+        <pose>32.0031 -8.00798 0.161241 7e-06 -0.008643 -1.57164</pose>
+        <link name='base_link'>
+          <pose>32.0031 -8.00798 0.161241 7e-06 -0.008643 -1.57164</pose>
+          <velocity>-0.000676 9.5e-05 -0.002176 -0.000587 -0.00419 8.4704e-22</velocity>
+          <acceleration>-2.01697 0.351643 -2.40458 2.57153 0.1282 3.14159</acceleration>
+          <wrench>-3025.46 527.464 -3606.87 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mkz9'>
+        <pose>35.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+        <link name='base_link'>
+          <pose>35.0031 -8.00797 0.161236 4e-06 -0.008649 -1.57164</pose>
+          <velocity>6e-06 0.001828 -0.002071 -0.011338 4e-06 -4e-06</velocity>
+          <acceleration>0.010769 7.13664 3.79661 0.996071 0.008384 -0.002904</acceleration>
+          <wrench>16.1534 10705 5694.91 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-1.9625 -115.499 101.625 0 0.82577 1.41645</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name='BuildingDefaultName'>
+      <link name='Wall_0'>
+        <collision name='Wall_0_Collision'>
+          <geometry>
+            <box>
+              <size>65 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_0_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>65 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>30 0 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_10'>
+        <collision name='Wall_10_Collision'>
+          <geometry>
+            <box>
+              <size>23 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_10_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>23 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>90 -22 0 0 0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_12'>
+        <collision name='Wall_12_Collision'>
+          <geometry>
+            <box>
+              <size>55 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_12_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>55 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>-25 0 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_2'>
+        <collision name='Wall_2_Collision'>
+          <geometry>
+            <box>
+              <size>95 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_2_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>95 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>45 -31 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_4'>
+        <collision name='Wall_4_Collision'>
+          <geometry>
+            <box>
+              <size>36 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_4_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>36 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>-0.093576 -15.5 0 0 0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_6'>
+        <collision name='Wall_6_Collision'>
+          <geometry>
+            <box>
+              <size>95 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_6_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>95 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>45 -13 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_8'>
+        <collision name='Wall_8_Collision'>
+          <geometry>
+            <box>
+              <size>18 5 0.1</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_8_Visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>18 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>60 -6.5 0 0 0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='mkz'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>8 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz1'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>11 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz2'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>14 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz3'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>17 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz4'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>20 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz5'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>23 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz6'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>26 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz7'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>29 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz8'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>32 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz9'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>35 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz10'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>38 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz11'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>41 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz12'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>44 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz13'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>47 -8 0 0 0 -1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz14'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>8 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz15'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>11 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz16'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>14 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz17'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>17 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz18'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>20 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz19'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>23 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz20'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>26 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz21'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>29 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz22'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>32 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz23'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>35 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz24'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>38 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz25'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>41 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz26'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>44 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz27'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>47 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz28'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>50 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz29'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>53 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+    <model name='mkz30'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <mass>1500</mass>
+          <inertia>
+            <ixx>1000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1000</iyy>
+            <iyz>0</iyz>
+            <izz>1000</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0.084967 -0.03046 0.350609 1.5708 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/opt/ros/indigo/share/dbw_mkz_description/meshes/body_collision.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>-0.058415 0 -0.33 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.394 0.394 0.394</scale>
+              <uri>model://dbw_mkz_description/meshes/mkz_13/body.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>56 -19 0 0 -0 1.57</pose>
+      <static>0</static>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 0.7 -->
+  <robot name="dbw_mkz" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="dae_file" default="$(find dbw_mkz_description)/meshes/mkz_13/body.dae"/>
+
+    <link name="base_link">
+      <inertial>
+        <origin xyz="0 0 0.25" rpy="0 0 0"/>
+        <mass value="1500.0"/>
+        <inertia ixx="1000.0" ixy="0" ixz="0" iyy="1000.0" iyz="0" izz="1000.0"/>
+      </inertial>
+      <visual name="chassis">
+        <origin xyz="-0.058415 0 -0.33" rpy="0 0 1.570796"/>
+        <geometry>
+          <mesh filename="file://$(arg dae_file)" scale="0.394 0.394 0.394"/>
+        </geometry>
+        <material name="black.001"/>
+      </visual>
+      <collision name="chassis_collision">
+        <origin xyz="0.084967 -0.03046 0.350609" rpy="1.570796 0 -3.141593"/>
+        <geometry>
+          <mesh filename="package://dbw_mkz_description/meshes/body_collision.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+    
+
+  </robot>

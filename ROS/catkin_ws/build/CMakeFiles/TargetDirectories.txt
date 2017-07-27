@@ -315,6 +315,13 @@
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/cat_vehicle_pkgs/sinveltoleader/CMakeFiles/install/local.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/cat_vehicle_pkgs/sinveltoleader/CMakeFiles/install/strip.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/cat_vehicle_pkgs/sinveltoleader/CMakeFiles/sinveltoleader_node.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/test.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/edit_cache.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/rebuild_cache.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/list_install_components.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/install.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/install/local.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/install/strip.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_twist_controller/CMakeFiles/test.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_twist_controller/CMakeFiles/edit_cache.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_twist_controller/CMakeFiles/rebuild_cache.dir

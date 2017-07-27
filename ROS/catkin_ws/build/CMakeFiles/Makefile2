@@ -4994,6 +4994,24 @@ clean: cat_vehicle_pkgs/sinveltoleader/CMakeFiles/sinveltoleader_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory dbw_mkz/dbw_mkz_parking_lot
+
+# Convenience name for "all" pass in the directory.
+dbw_mkz/dbw_mkz_parking_lot/all:
+
+.PHONY : dbw_mkz/dbw_mkz_parking_lot/all
+
+# Convenience name for "clean" pass in the directory.
+dbw_mkz/dbw_mkz_parking_lot/clean:
+
+.PHONY : dbw_mkz/dbw_mkz_parking_lot/clean
+
+# Convenience name for "preinstall" pass in the directory.
+dbw_mkz/dbw_mkz_parking_lot/preinstall:
+
+.PHONY : dbw_mkz/dbw_mkz_parking_lot/preinstall
+
+#=============================================================================
 # Directory level rules for directory dbw_mkz/dbw_mkz_twist_controller
 
 # Convenience name for "all" pass in the directory.
