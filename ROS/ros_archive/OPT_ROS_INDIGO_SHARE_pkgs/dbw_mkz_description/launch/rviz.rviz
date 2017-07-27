@@ -7,7 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /MKZ Model1
-        - /MKZ Model1/Status1
+        - /velodyne1
       Splitter Ratio: 0.530201
     Tree Height: 683
   - Class: rviz/Selection
@@ -65,9 +65,21 @@ Visualization Manager:
           Value: true
         vehicle/gps:
           Value: true
+        vehicle/steer_fl:
+          Value: true
+        vehicle/steer_fr:
+          Value: true
         vehicle/velodyne2:
           Value: true
         vehicle/velodyne2_base_link:
+          Value: true
+        vehicle/wheel_fl:
+          Value: true
+        vehicle/wheel_fr:
+          Value: true
+        vehicle/wheel_rl:
+          Value: true
+        vehicle/wheel_rr:
           Value: true
       Marker Scale: 0.5
       Name: TF
@@ -77,9 +89,19 @@ Visualization Manager:
       Tree:
         vehicle/base_footprint:
           vehicle/base_link:
+            vehicle/steer_fl:
+              vehicle/wheel_fl:
+                {}
+            vehicle/steer_fr:
+              vehicle/wheel_fr:
+                {}
             vehicle/velodyne2_base_link:
               vehicle/velodyne2:
                 {}
+            vehicle/wheel_rl:
+              {}
+            vehicle/wheel_rr:
+              {}
           vehicle/front_camera_optical:
             vehicle/front_camera:
               {}
@@ -87,7 +109,7 @@ Visualization Manager:
             {}
       Update Interval: 0
       Value: true
-    - Alpha: 0.2
+    - Alpha: 0.5
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -96,7 +118,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         /vehicle/velodyne2_base_link:
           Alpha: 1
           Show Axes: false
@@ -197,8 +218,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 6.46627
-        Min Value: -0.110762
+        Max Value: 6.46624
+        Min Value: -0.197067
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -217,7 +238,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.03
+      Size (m): 0.04
       Style: Flat Squares
       Topic: /velodyne_points2
       Unreliable: false
@@ -248,22 +269,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 18.9209
+      Distance: 23.3926
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.68472
-        Y: -1.58697
-        Z: 2.40191
+        X: -0.411494
+        Y: -1.01789
+        Z: 2.18827
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.470398
+      Pitch: 0.665398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.58858
+      Yaw: 4.01857
     Saved: ~
 Window Geometry:
   Displays:
@@ -281,5 +302,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1552
-  X: 209
-  Y: 47
+  X: 199
+  Y: 37

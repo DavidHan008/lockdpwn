@@ -67,8 +67,8 @@ set(dbw_mkz_vision_sim_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(dbw_mkz_vision_sim_SOURCE_PREFIX /tmp/tmp.TwenF5LHIa/src/dbw_mkz_simulator/dbw_mkz_vision_sim)
-  set(dbw_mkz_vision_sim_DEVEL_PREFIX /tmp/tmp.TwenF5LHIa/src/dbw_mkz_simulator/dbw_mkz_vision_sim/obj-x86_64-linux-gnu/devel)
+  set(dbw_mkz_vision_sim_SOURCE_PREFIX /tmp/tmp.fqIr1xuxCI/src/dbw_mkz_simulator/dbw_mkz_vision_sim)
+  set(dbw_mkz_vision_sim_DEVEL_PREFIX /tmp/tmp.fqIr1xuxCI/src/dbw_mkz_simulator/dbw_mkz_vision_sim/obj-x86_64-linux-gnu/devel)
   set(dbw_mkz_vision_sim_INSTALL_PREFIX "")
   set(dbw_mkz_vision_sim_PREFIX ${dbw_mkz_vision_sim_DEVEL_PREFIX})
 else()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /opt/ros/indigo/lib;/tmp/tmp.TwenF5LHIa/install_isolated/lib;/opt/ros/indigo/lib)
+    foreach(path /opt/ros/indigo/lib;/tmp/tmp.fqIr1xuxCI/install_isolated/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

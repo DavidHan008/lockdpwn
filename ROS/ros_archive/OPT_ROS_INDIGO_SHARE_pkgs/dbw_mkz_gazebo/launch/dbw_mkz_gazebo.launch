@@ -3,7 +3,7 @@
 <launch>
   
   <arg name="use_camera_control" default="false" />
-  <arg name="world_name" default="$(find dbw_mkz_gazebo)/worlds/empty_world.world" />
+  <arg name="world_name" default="$(find dbw_mkz_parking_lot)/worlds/parking_lot_ed4.world" />
   <arg name="sim_param_file" default="$(find dbw_mkz_gazebo)/yaml/default_sim_params.yaml" />
   <arg name="urdf_file" default="$(find dbw_mkz_gazebo)/urdf/mkz.urdf.xacro" />
 
@@ -16,11 +16,12 @@
     <param name="sim_param_file" value="$(arg sim_param_file)" />
     <param name="urdf_file" value="$(arg urdf_file)" />
   </node>
-
+  
   <include file="$(find dbw_mkz_can)/launch/dbw.launch" >
     <arg name="live" value="false" />
     <arg name="load_urdf" value="false" />
     <arg name="can_ns" value="can_bus_dbw" />
   </include>
+
 
 </launch>
