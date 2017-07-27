@@ -6,7 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(dbw_mkz/dbw_mkz)
-subdirs(dbw_mkz/dbw_mkz_description)
 subdirs(dbw_mkz/dbw_mkz_msgs)
 subdirs(torcs_ros/torcs_msgs)
 subdirs(torcs_ros/torcs_ros_bringup)

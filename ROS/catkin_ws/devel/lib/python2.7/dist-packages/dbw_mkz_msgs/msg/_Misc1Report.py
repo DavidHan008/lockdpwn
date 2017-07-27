@@ -9,7 +9,7 @@ import dbw_mkz_msgs.msg
 import std_msgs.msg
 
 class Misc1Report(genpy.Message):
-  _md5sum = "c5c1e0d6ba52586919873bf9b0355143"
+  _md5sum = "9ecd16fb81815b3e46e0550feea1da2f"
   _type = "dbw_mkz_msgs/Misc1Report"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
@@ -38,11 +38,6 @@ bool btn_cc_set_dec   # Cruise Control Set-
 bool btn_cc_gap_inc   # Cruise Control Gap+
 bool btn_cc_gap_dec   # Cruise Control Gap-
 bool btn_la_on_off    # Lane Assist On/Off Toggle
-bool btn_ld_ok        # Left D-Pad OK
-bool btn_ld_up        # Left D-Pad Up
-bool btn_ld_down      # Left D-Pad Down
-bool btn_ld_left      # Left D-Pad Left
-bool btn_ld_right     # Left D-Pad Right
 
 # Faults
 bool fault_bus
@@ -121,8 +116,8 @@ uint8 TUNNEL_ON=3
 uint8 TUNNEL_OFF=4
 uint8 NO_DATA=7
 """
-  __slots__ = ['header','turn_signal','high_beam_headlights','wiper','ambient_light','btn_cc_on','btn_cc_off','btn_cc_on_off','btn_cc_res','btn_cc_cncl','btn_cc_res_cncl','btn_cc_set_inc','btn_cc_set_dec','btn_cc_gap_inc','btn_cc_gap_dec','btn_la_on_off','btn_ld_ok','btn_ld_up','btn_ld_down','btn_ld_left','btn_ld_right','fault_bus','door_driver','door_passenger','door_rear_left','door_rear_right','door_hood','door_trunk','passenger_detect','passenger_airbag','buckle_driver','buckle_passenger']
-  _slot_types = ['std_msgs/Header','dbw_mkz_msgs/TurnSignal','bool','dbw_mkz_msgs/Wiper','dbw_mkz_msgs/AmbientLight','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool']
+  __slots__ = ['header','turn_signal','high_beam_headlights','wiper','ambient_light','btn_cc_on','btn_cc_off','btn_cc_on_off','btn_cc_res','btn_cc_cncl','btn_cc_res_cncl','btn_cc_set_inc','btn_cc_set_dec','btn_cc_gap_inc','btn_cc_gap_dec','btn_la_on_off','fault_bus','door_driver','door_passenger','door_rear_left','door_rear_right','door_hood','door_trunk','passenger_detect','passenger_airbag','buckle_driver','buckle_passenger']
+  _slot_types = ['std_msgs/Header','dbw_mkz_msgs/TurnSignal','bool','dbw_mkz_msgs/Wiper','dbw_mkz_msgs/AmbientLight','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -132,7 +127,7 @@ uint8 NO_DATA=7
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,turn_signal,high_beam_headlights,wiper,ambient_light,btn_cc_on,btn_cc_off,btn_cc_on_off,btn_cc_res,btn_cc_cncl,btn_cc_res_cncl,btn_cc_set_inc,btn_cc_set_dec,btn_cc_gap_inc,btn_cc_gap_dec,btn_la_on_off,btn_ld_ok,btn_ld_up,btn_ld_down,btn_ld_left,btn_ld_right,fault_bus,door_driver,door_passenger,door_rear_left,door_rear_right,door_hood,door_trunk,passenger_detect,passenger_airbag,buckle_driver,buckle_passenger
+       header,turn_signal,high_beam_headlights,wiper,ambient_light,btn_cc_on,btn_cc_off,btn_cc_on_off,btn_cc_res,btn_cc_cncl,btn_cc_res_cncl,btn_cc_set_inc,btn_cc_set_dec,btn_cc_gap_inc,btn_cc_gap_dec,btn_la_on_off,fault_bus,door_driver,door_passenger,door_rear_left,door_rear_right,door_hood,door_trunk,passenger_detect,passenger_airbag,buckle_driver,buckle_passenger
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -173,16 +168,6 @@ uint8 NO_DATA=7
         self.btn_cc_gap_dec = False
       if self.btn_la_on_off is None:
         self.btn_la_on_off = False
-      if self.btn_ld_ok is None:
-        self.btn_ld_ok = False
-      if self.btn_ld_up is None:
-        self.btn_ld_up = False
-      if self.btn_ld_down is None:
-        self.btn_ld_down = False
-      if self.btn_ld_left is None:
-        self.btn_ld_left = False
-      if self.btn_ld_right is None:
-        self.btn_ld_right = False
       if self.fault_bus is None:
         self.fault_bus = False
       if self.door_driver is None:
@@ -222,11 +207,6 @@ uint8 NO_DATA=7
       self.btn_cc_gap_inc = False
       self.btn_cc_gap_dec = False
       self.btn_la_on_off = False
-      self.btn_ld_ok = False
-      self.btn_ld_up = False
-      self.btn_ld_down = False
-      self.btn_ld_left = False
-      self.btn_ld_right = False
       self.fault_bus = False
       self.door_driver = False
       self.door_passenger = False
@@ -263,7 +243,7 @@ uint8 NO_DATA=7
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_31B.pack(_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.btn_ld_ok, _x.btn_ld_up, _x.btn_ld_down, _x.btn_ld_left, _x.btn_ld_right, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger))
+      buff.write(_struct_26B.pack(_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -297,8 +277,8 @@ uint8 NO_DATA=7
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 31
-      (_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.btn_ld_ok, _x.btn_ld_up, _x.btn_ld_down, _x.btn_ld_left, _x.btn_ld_right, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger,) = _struct_31B.unpack(str[start:end])
+      end += 26
+      (_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger,) = _struct_26B.unpack(str[start:end])
       self.high_beam_headlights = bool(self.high_beam_headlights)
       self.btn_cc_on = bool(self.btn_cc_on)
       self.btn_cc_off = bool(self.btn_cc_off)
@@ -311,11 +291,6 @@ uint8 NO_DATA=7
       self.btn_cc_gap_inc = bool(self.btn_cc_gap_inc)
       self.btn_cc_gap_dec = bool(self.btn_cc_gap_dec)
       self.btn_la_on_off = bool(self.btn_la_on_off)
-      self.btn_ld_ok = bool(self.btn_ld_ok)
-      self.btn_ld_up = bool(self.btn_ld_up)
-      self.btn_ld_down = bool(self.btn_ld_down)
-      self.btn_ld_left = bool(self.btn_ld_left)
-      self.btn_ld_right = bool(self.btn_ld_right)
       self.fault_bus = bool(self.fault_bus)
       self.door_driver = bool(self.door_driver)
       self.door_passenger = bool(self.door_passenger)
@@ -351,7 +326,7 @@ uint8 NO_DATA=7
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_31B.pack(_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.btn_ld_ok, _x.btn_ld_up, _x.btn_ld_down, _x.btn_ld_left, _x.btn_ld_right, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger))
+      buff.write(_struct_26B.pack(_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -386,8 +361,8 @@ uint8 NO_DATA=7
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 31
-      (_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.btn_ld_ok, _x.btn_ld_up, _x.btn_ld_down, _x.btn_ld_left, _x.btn_ld_right, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger,) = _struct_31B.unpack(str[start:end])
+      end += 26
+      (_x.turn_signal.value, _x.high_beam_headlights, _x.wiper.status, _x.ambient_light.status, _x.btn_cc_on, _x.btn_cc_off, _x.btn_cc_on_off, _x.btn_cc_res, _x.btn_cc_cncl, _x.btn_cc_res_cncl, _x.btn_cc_set_inc, _x.btn_cc_set_dec, _x.btn_cc_gap_inc, _x.btn_cc_gap_dec, _x.btn_la_on_off, _x.fault_bus, _x.door_driver, _x.door_passenger, _x.door_rear_left, _x.door_rear_right, _x.door_hood, _x.door_trunk, _x.passenger_detect, _x.passenger_airbag, _x.buckle_driver, _x.buckle_passenger,) = _struct_26B.unpack(str[start:end])
       self.high_beam_headlights = bool(self.high_beam_headlights)
       self.btn_cc_on = bool(self.btn_cc_on)
       self.btn_cc_off = bool(self.btn_cc_off)
@@ -400,11 +375,6 @@ uint8 NO_DATA=7
       self.btn_cc_gap_inc = bool(self.btn_cc_gap_inc)
       self.btn_cc_gap_dec = bool(self.btn_cc_gap_dec)
       self.btn_la_on_off = bool(self.btn_la_on_off)
-      self.btn_ld_ok = bool(self.btn_ld_ok)
-      self.btn_ld_up = bool(self.btn_ld_up)
-      self.btn_ld_down = bool(self.btn_ld_down)
-      self.btn_ld_left = bool(self.btn_ld_left)
-      self.btn_ld_right = bool(self.btn_ld_right)
       self.fault_bus = bool(self.fault_bus)
       self.door_driver = bool(self.door_driver)
       self.door_passenger = bool(self.door_passenger)
@@ -421,5 +391,5 @@ uint8 NO_DATA=7
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_31B = struct.Struct("<31B")
+_struct_26B = struct.Struct("<26B")
 _struct_3I = struct.Struct("<3I")

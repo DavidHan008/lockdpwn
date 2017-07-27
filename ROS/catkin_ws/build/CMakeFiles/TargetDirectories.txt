@@ -27,13 +27,6 @@
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/list_install_components.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/install.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/_catkin_empty_exported_target.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/test.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/edit_cache.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/rebuild_cache.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/list_install_components.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/install.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/install/local.dir
-/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_description/CMakeFiles/install/strip.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_msgs/CMakeFiles/edit_cache.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_msgs/CMakeFiles/install.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_msgs/CMakeFiles/install/local.dir

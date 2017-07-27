@@ -177,11 +177,10 @@ void GazeboRosVelodyneLaser::Load(sensors::SensorPtr _parent, sdf::ElementPtr _s
   // start custom queue for laser
   callback_laser_queue_thread_ = boost::thread( boost::bind( &GazeboRosVelodyneLaser::laserQueueThread,this ) );
 
-  ROS_INFO("good333");
 #if GAZEBO_MAJOR_VERSION >= 7
-  ROS_INFO("Velodyne laser plugin ready good111, %i lasers", parent_ray_sensor_->VerticalRangeCount());
+  ROS_INFO("Velodyne laser plugin ready , %i lasers", parent_ray_sensor_->VerticalRangeCount());
 #else
-  ROS_INFO("Velodyne laser plugin ready good222, %i lasers", parent_ray_sensor_->GetVerticalRangeCount());
+  ROS_INFO("Velodyne laser plugin ready , %i lasers", parent_ray_sensor_->GetVerticalRangeCount());
 #endif
 }
 

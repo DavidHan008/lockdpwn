@@ -1,0 +1,23 @@
+<library path="lib/libdbw_mkz_vision_sim" >
+  <class name="dbw_mkz_vision_sim/LaneDetectionNodelet"
+         type="dbw_mkz_vision_sim::LaneDetectionNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description>
+      Detection of white and yellow lines in Gazebo
+    </description>
+  </class>
+  <class name="dbw_mkz_vision_sim/LaneFitNodelet"
+         type="dbw_mkz_vision_sim::LaneFitNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description>
+      Fitting detected lines to Bezier curves
+    </description>
+  </class>
+  <class name="dbw_mkz_vision_sim/LanePlannerNodelet"
+         type="dbw_mkz_vision_sim::LanePlannerNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description>
+      Processing Bezier curves to generate a path for car to follow
+    </description>
+  </class>
+</library>

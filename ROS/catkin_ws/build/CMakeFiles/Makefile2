@@ -353,24 +353,6 @@ clean: dbw_mkz/dbw_mkz/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory dbw_mkz/dbw_mkz_description
-
-# Convenience name for "all" pass in the directory.
-dbw_mkz/dbw_mkz_description/all:
-
-.PHONY : dbw_mkz/dbw_mkz_description/all
-
-# Convenience name for "clean" pass in the directory.
-dbw_mkz/dbw_mkz_description/clean:
-
-.PHONY : dbw_mkz/dbw_mkz_description/clean
-
-# Convenience name for "preinstall" pass in the directory.
-dbw_mkz/dbw_mkz_description/preinstall:
-
-.PHONY : dbw_mkz/dbw_mkz_description/preinstall
-
-#=============================================================================
 # Directory level rules for directory dbw_mkz/dbw_mkz_msgs
 
 # Convenience name for "all" pass in the directory.

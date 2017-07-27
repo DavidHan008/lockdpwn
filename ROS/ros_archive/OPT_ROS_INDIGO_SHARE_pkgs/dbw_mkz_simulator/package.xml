@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dbw_mkz_simulator</name>
+  <version>1.0.3</version>
+  <description>
+    Gazebo simulation of the drive-by-wire interface to the Dataspeed Inc. Lincoln MKZ DBW kit
+  </description>
+
+  <license>Proprietary</license>
+  <author email="mradovnikovich@dataspeedinc.com">Micho Radovnikovich</author>
+  <maintainer email="mradovnikovich@dataspeedinc.com">Micho Radovnikovich</maintainer>
+  <url type="website">http://dataspeedinc.com</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>dbw_mkz_gazebo</exec_depend>
+  <exec_depend>dbw_mkz_vision_sim</exec_depend>
+  
+  <export>
+    <metapackage/>
+  </export>
+
+</package>
