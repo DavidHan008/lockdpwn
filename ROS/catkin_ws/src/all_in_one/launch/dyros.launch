@@ -43,7 +43,7 @@
 
     <!-- ed: 코드 추가했다. 속도, 각도값을 controller로부터 가져오는 코드 -->
     <remap from="/all_in_one/SteerAngleData" to="/SteerAngleData" />
-    <remap from="/all_in_one/ControlData_gazebo" to="/ControlData_gazebo" />
+    <remap from="/all_in_one/ControlData" to="/ControlData" />
   </node>
 
  
