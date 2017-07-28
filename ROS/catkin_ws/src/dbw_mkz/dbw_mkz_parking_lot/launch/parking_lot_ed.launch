@@ -2,10 +2,9 @@
 <launch>
   <include file="$(find dbw_mkz_parking_lot)/launch/parking_lot_ed2.launch" >
     <arg name="use_camera_control" value="false" />
-    <arg name="world_name" value="$(find dbw_mkz_parking_lot)/worlds/parking_lot_ed2.world" />
+    <arg name="world_name" value="$(find dbw_mkz_parking_lot)/worlds/parking_lot_ed5.world" />
     <arg name="sim_param_file" value="$(find dbw_mkz_parking_lot)/yaml/parking_lot_ed.yaml" />
   </include>
-
 
 
   <include file="$(find dbw_mkz_parking_lot)/launch/parking_lot_ed3.launch" >

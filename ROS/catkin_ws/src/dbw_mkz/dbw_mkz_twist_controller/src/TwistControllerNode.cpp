@@ -36,8 +36,7 @@
 
 namespace dbw_mkz_twist_controller {
 
-TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn) : srv_(pn)
-{
+TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn) : srv_(pn){
   lpf_fuel_.setParams(60.0, 0.1);
   accel_pid_.setRange(0.0, 1.0);
 
@@ -82,8 +81,7 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   control_timer_ = n.createTimer(ros::Duration(control_period_), &TwistControllerNode::controlCallback, this);
 }
 
-void TwistControllerNode::controlCallback(const ros::TimerEvent& event)
-{
+void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
   if ((event.current_real - cmd_stamp_).toSec() > (10.0 * control_period_)) {
     speed_pid_.resetIntegrator();
     accel_pid_.resetIntegrator();

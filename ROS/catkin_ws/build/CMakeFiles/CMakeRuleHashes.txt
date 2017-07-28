@@ -1,5 +1,7 @@
 # Hashes of file build rules.
 ea7c49a156723a0191a420913eeea15e /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/car_can/CarCanData.h
+5519ff8205ced716708787a40a618539 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/dataspeed_can_msgs/CanMessage.h
+68fb40dcaa35c5af136c730cd02d12a5 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/dataspeed_can_msgs/CanMessageStamped.h
 a6e312236e74fb10ddcdd3052b1c08f7 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/dbw_mkz_msgs/AmbientLight.h
 e58c8fcc2e67bf0643893b0517a16934 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/dbw_mkz_msgs/BrakeCmd.h
 16f348243240f1df9d7f63893f25939a /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/dbw_mkz_msgs/BrakeInfoReport.h
@@ -41,6 +43,9 @@ bdd0c89e0a7dd475db997f9530647dfe /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin
 ac52419924949c992cc2f985199c4656 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include/torcs_msgs/TORCSSensors.h
 5e9173d602408df01e747fc69bf671dc /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/car_can/msg/_CarCanData.py
 42bff18ea104eceeba8a3b2bd54161a4 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/car_can/msg/__init__.py
+bae925019147af0197ccc0ab7ab4000a /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dataspeed_can_msgs/msg/_CanMessage.py
+a4c487b16586d6a415cdd7cafe6d0752 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dataspeed_can_msgs/msg/_CanMessageStamped.py
+57e453474d09f988486017b84c024569 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dataspeed_can_msgs/msg/__init__.py
 876128d01cf35f1ebcf82d56a1282eb5 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dbw_mkz_msgs/msg/_AmbientLight.py
 2f6eaaad0b4106f469f06f3758fbbb50 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dbw_mkz_msgs/msg/_BrakeCmd.py
 a97319660c7b668b76eded6dea7a8bc3 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/dbw_mkz_msgs/msg/_BrakeInfoReport.py
@@ -86,6 +91,8 @@ aa7c18303801839f306a7aabcbc9a717 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin
 8fcb13c38e9caa0d747869ac6c8eaad5 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/torcs_msgs/msg/_TORCSSensors.py
 f4c3491c5ef4c4f56e0ae69728b710bc /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib/python2.7/dist-packages/torcs_msgs/msg/__init__.py
 c37983b03879bbbb4c01dd8a6f03edd7 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/car_can/msg/CarCanData.lisp
+6ac130e6eab4f6e4a382558d2c449613 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/dataspeed_can_msgs/msg/CanMessage.lisp
+a4fe5fe1caffb983bc6b80100b54d305 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/dataspeed_can_msgs/msg/CanMessageStamped.lisp
 f42c713636b4b804bae5e2717aa2fe45 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/dbw_mkz_msgs/msg/AmbientLight.lisp
 0dd4aeb3a632b96269c1f72e5ffd35c3 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/dbw_mkz_msgs/msg/BrakeCmd.lisp
 84e639e626ce9d964cee6112160b7769 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/dbw_mkz_msgs/msg/BrakeInfoReport.lisp
@@ -125,6 +132,9 @@ a2fe76ed3b15266f4c9ed3b12e453631 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin
 8550d480d2abbdd7e9485869ed22b74b /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/common-lisp/ros/torcs_msgs/msg/TORCSSensors.lisp
 a59e6d2c3254bd283dcb5f8227abf9ae /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/car_can/manifest.l
 6d09a51e7da20aca253b181cc28e7c1b /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/car_can/msg/CarCanData.l
+551de3da4714ada9a7ff67187f88a3c7 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dataspeed_can_msgs/manifest.l
+0d2891d44a1a344e7252285bce2ec3c0 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dataspeed_can_msgs/msg/CanMessage.l
+caa797b5986af65ec6608656e2b7be28 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dataspeed_can_msgs/msg/CanMessageStamped.l
 454555c986b91d3ae409f047f04d0fdd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dbw_mkz_msgs/manifest.l
 e75b8d8f3889715b523b931bbd0eeb59 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dbw_mkz_msgs/msg/AmbientLight.l
 feacd58ab940e7ef1faf28ca2bfd5235 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/share/roseus/ros/dbw_mkz_msgs/msg/BrakeCmd.l
@@ -189,6 +199,12 @@ f45d5622734588eaee2b57cb8305bfc8 car_can/inc/moc_qnode.cxx
 f11f4bda624e75a1a6b5c08a7e29ef59 controller_gazebo/inc/moc_VelocityCtrlThread.cxx
 01aa73bc4cbadc7f5305fd8c58665aa8 controller_gazebo/inc/moc_controller_main.cxx
 4f016ef6b15f6b3a7dd341f2a2197a61 controller_gazebo/ui_controller_gui.h
+1f8a023a478a3450cfda64753b3cf207 dbw_mkz/dataspeed_can_msgs/CMakeFiles/_dataspeed_can_msgs_generate_messages_check_deps_CanMessage
+6303cd2d52cb3733c055822b487379d1 dbw_mkz/dataspeed_can_msgs/CMakeFiles/_dataspeed_can_msgs_generate_messages_check_deps_CanMessageStamped
+878ae5472d808b4edee8e0907ae59894 dbw_mkz/dataspeed_can_msgs/CMakeFiles/dataspeed_can_msgs_generate_messages_cpp
+878ae5472d808b4edee8e0907ae59894 dbw_mkz/dataspeed_can_msgs/CMakeFiles/dataspeed_can_msgs_generate_messages_eus
+878ae5472d808b4edee8e0907ae59894 dbw_mkz/dataspeed_can_msgs/CMakeFiles/dataspeed_can_msgs_generate_messages_lisp
+878ae5472d808b4edee8e0907ae59894 dbw_mkz/dataspeed_can_msgs/CMakeFiles/dataspeed_can_msgs_generate_messages_py
 5dca6ffeb23565339b6a74d34a95d1d3 dbw_mkz/dbw_mkz_msgs/CMakeFiles/_dbw_mkz_msgs_generate_messages_check_deps_AmbientLight
 ed0501fa6a02a9b9174790abce472fb8 dbw_mkz/dbw_mkz_msgs/CMakeFiles/_dbw_mkz_msgs_generate_messages_check_deps_BrakeCmd
 5b7b2990a7857cb242d0d77c79978b5f dbw_mkz/dbw_mkz_msgs/CMakeFiles/_dbw_mkz_msgs_generate_messages_check_deps_BrakeInfoReport

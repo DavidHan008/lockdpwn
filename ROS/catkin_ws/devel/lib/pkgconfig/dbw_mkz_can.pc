@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: dbw_mkz_can
+Description: Description of dbw_mkz_can
+Version: 1.0.6
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dbw_mkz_can/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -ldbw_mkz_can
+Requires: 

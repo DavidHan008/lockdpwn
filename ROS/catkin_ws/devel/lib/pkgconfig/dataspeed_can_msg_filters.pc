@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: dataspeed_can_msg_filters
+Description: Description of dataspeed_can_msg_filters
+Version: 1.0.4
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dataspeed_can_msg_filters/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: roscpp dataspeed_can_msgs

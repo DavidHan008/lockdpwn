@@ -53,13 +53,11 @@ static double yawRateFromRadius(double speed, double radius) {
 }
 
 // Dynamic Reconfigure callback
-void reconfig(dbw_mkz_twist_controller::TwistTestConfig& config, uint32_t level)
-{
+void reconfig(dbw_mkz_twist_controller::TwistTestConfig& config, uint32_t level){
   cfg_ = config;
 }
 
-void timerCallback(const ros::TimerEvent& event)
-{
+void timerCallback(const ros::TimerEvent& event){
   if (cfg_.publish) {
     dbw_mkz_msgs::TwistCmd cmd;
     switch (cfg_.speed_units) {
@@ -83,18 +81,22 @@ void timerCallback(const ros::TimerEvent& event)
         cmd.twist.angular.z = yawRateFromRadius(cmd.twist.linear.x, cfg_.yaw_radius);
         break;
     }
+
     if (cfg_.use_limits) {
       cmd.accel_limit = cfg_.accel_max;
       cmd.decel_limit = cfg_.decel_max;
+      cmd.twist.linear.x = 2;
+
       pub_twist2.publish(cmd);
-    } else {
+    }
+    else {
+      cmd.twist.linear.x = 2;
       pub_twist.publish(cmd.twist);
     }
   }
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
   ros::init(argc, argv, "twist_tester");
   ros::NodeHandle n;
 
