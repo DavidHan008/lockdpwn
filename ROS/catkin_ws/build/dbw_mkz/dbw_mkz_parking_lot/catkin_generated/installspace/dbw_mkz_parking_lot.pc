@@ -5,4 +5,4 @@ Description: Description of dbw_mkz_parking_lot
 Version: 1.0.6
 Cflags: 
 Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/install/lib 
-Requires: 
+Requires: roscpp std_msgs

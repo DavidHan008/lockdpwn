@@ -2220,6 +2220,19 @@ translate_tx_rx_node/fast:
 .PHONY : translate_tx_rx_node/fast
 
 #=============================================================================
+# Target rules for targets named veltest_ed
+
+# Build rule for target.
+veltest_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 veltest_ed
+.PHONY : veltest_ed
+
+# fast build rule for target.
+veltest_ed/fast:
+	$(MAKE) -f dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build.make dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build
+.PHONY : veltest_ed/fast
+
+#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_lisp
 
 # Build rule for target.
@@ -3625,6 +3638,7 @@ help:
 	@echo "... topic_tools_generate_messages_lisp"
 	@echo "... dbc_bag"
 	@echo "... translate_tx_rx_node"
+	@echo "... veltest_ed"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
 	@echo "... twist_tester"
 	@echo "... dynamic_reconfigure_generate_messages_py"

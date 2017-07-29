@@ -37,18 +37,14 @@
 
 #include "DbwNode.h"
 
-namespace dbw_mkz_can
-{
+namespace dbw_mkz_can{
 
-class DbwNodelet : public nodelet::Nodelet
-{
+class DbwNodelet : public nodelet::Nodelet{
 public:
   DbwNodelet()
-  {
-  }
+  {  }
   ~DbwNodelet()
-  {
-  }
+  {  }
 
   void onInit(void)
   {

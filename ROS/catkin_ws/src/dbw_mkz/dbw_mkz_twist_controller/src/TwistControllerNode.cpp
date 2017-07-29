@@ -123,7 +123,8 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     throttle_cmd.pedal_cmd_type = dbw_mkz_msgs::ThrottleCmd::CMD_PERCENT;
     if (accel_cmd >= 0) {
       throttle_cmd.pedal_cmd = accel_pid_.step(accel_cmd - lpf_accel_.get(), control_period_);
-    } else {
+    }
+    else {
       accel_pid_.resetIntegrator();
       throttle_cmd.pedal_cmd = 0;
     }
@@ -137,8 +138,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     }
 
     steering_cmd.enable = true;
-    steering_cmd.steering_wheel_angle_cmd = yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x, cmd_vel_.twist.angular.z, actual_.linear.x)
-        + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
+    steering_cmd.steering_wheel_angle_cmd = yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x, cmd_vel_.twist.angular.z, actual_.linear.x) + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
 
     if (cfg_.pub_pedals) {
       pub_throttle_.publish(throttle_cmd);
@@ -166,8 +166,7 @@ void TwistControllerNode::reconfig(ControllerConfig& config, uint32_t level)
   lpf_accel_.setParams(cfg_.accel_tau, 0.02);
 }
 
-void TwistControllerNode::recvTwist(const geometry_msgs::Twist::ConstPtr& msg)
-{
+void TwistControllerNode::recvTwist(const geometry_msgs::Twist::ConstPtr& msg){
   cmd_vel_.twist = *msg;
   cmd_vel_.accel_limit = 0;
   cmd_vel_.decel_limit = 0;

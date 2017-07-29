@@ -35,8 +35,7 @@
 #include "DbwNode.h"
 #include <dbw_mkz_can/dispatch.h>
 
-namespace dbw_mkz_can
-{
+namespace dbw_mkz_can{
 
 static const struct {float pedal; float torque;} BRAKE_TABLE[] = {
 // Duty,   Nm
@@ -60,13 +59,16 @@ static const struct {float pedal; float percent;} THROTTLE_TABLE[] = {
  {0.166, 0.020},
  {0.800, 1.000},
 };
+
 static inline float brakeTorqueFromPedal(float pedal) {
   const unsigned int size = sizeof(BRAKE_TABLE) / sizeof(BRAKE_TABLE[0]);
   if (pedal <= BRAKE_TABLE[0].pedal) {
     return BRAKE_TABLE[0].torque;
-  } else if (pedal >= BRAKE_TABLE[size - 1].pedal) {
+  }
+  else if (pedal >= BRAKE_TABLE[size - 1].pedal) {
     return BRAKE_TABLE[size - 1].torque;
-  } else {
+  }
+  else {
     for (unsigned int i = 1; i < size; i++) {
       if (pedal < BRAKE_TABLE[i].pedal) {
         float start = BRAKE_TABLE[i - 1].torque;
@@ -83,13 +85,16 @@ static inline float brakeTorqueFromPedal(float pedal) {
   }
   return 0.0;
 }
+
 static inline float brakePedalFromTorque(float torque) {
   const unsigned int size = sizeof(BRAKE_TABLE) / sizeof(BRAKE_TABLE[0]);
   if (torque <= BRAKE_TABLE[0].torque) {
     return BRAKE_TABLE[0].pedal;
-  } else if (torque >= BRAKE_TABLE[size - 1].torque) {
+  }
+  else if (torque >= BRAKE_TABLE[size - 1].torque) {
     return BRAKE_TABLE[size - 1].pedal;
-  } else {
+  }
+  else {
     for (unsigned int i = 1; i < size; i++) {
       if (torque < BRAKE_TABLE[i].torque) {
         float start = BRAKE_TABLE[i - 1].pedal;
@@ -312,23 +317,20 @@ DbwNode::DbwNode(ros::NodeHandle &node, ros::NodeHandle &priv_nh)
 }
 
 DbwNode::~DbwNode()
-{
-}
+{}
 
-void DbwNode::recvEnable(const std_msgs::Empty::ConstPtr& msg)
-{
+void DbwNode::recvEnable(const std_msgs::Empty::ConstPtr& msg){
   enableSystem();
 }
 
-void DbwNode::recvDisable(const std_msgs::Empty::ConstPtr& msg)
-{
+void DbwNode::recvDisable(const std_msgs::Empty::ConstPtr& msg){
   disableSystem();
 }
 
-void DbwNode::recvCAN(const dataspeed_can_msgs::CanMessageStamped::ConstPtr& msg)
-{
+void DbwNode::recvCAN(const dataspeed_can_msgs::CanMessageStamped::ConstPtr& msg){
   sync_imu_.processMsg(msg);
   sync_gps_.processMsg(msg);
+
   if (!msg->msg.extended) {
     switch (msg->msg.id) {
       case ID_BRAKE_REPORT:
@@ -784,8 +786,7 @@ void DbwNode::recvBrakeCmd(const dbw_mkz_msgs::BrakeCmd::ConstPtr& msg)
   pub_can_.publish(out);
 }
 
-void DbwNode::recvThrottleCmd(const dbw_mkz_msgs::ThrottleCmd::ConstPtr& msg)
-{
+void DbwNode::recvThrottleCmd(const dbw_mkz_msgs::ThrottleCmd::ConstPtr& msg){
   dataspeed_can_msgs::CanMessage out;
   out.id = ID_THROTTLE_CMD;
   out.extended = false;
@@ -820,8 +821,7 @@ void DbwNode::recvThrottleCmd(const dbw_mkz_msgs::ThrottleCmd::ConstPtr& msg)
   pub_can_.publish(out);
 }
 
-void DbwNode::recvSteeringCmd(const dbw_mkz_msgs::SteeringCmd::ConstPtr& msg)
-{
+void DbwNode::recvSteeringCmd(const dbw_mkz_msgs::SteeringCmd::ConstPtr& msg){
   dataspeed_can_msgs::CanMessage out;
   out.id = ID_STEERING_CMD;
   out.extended = false;
@@ -1060,8 +1060,7 @@ void DbwNode::faultBrakes(bool fault)
   }
 }
 
-void DbwNode::faultThrottle(bool fault)
-{
+void DbwNode::faultThrottle(bool fault){
   bool en = enabled();
   if (fault && en) {
     enable_ = false;
@@ -1070,14 +1069,14 @@ void DbwNode::faultThrottle(bool fault)
   if (publishDbwEnabled()) {
     if (en) {
       ROS_ERROR("DBW system disabled. Throttle fault.");
-    } else {
+    }
+    else {
       ROS_INFO("DBW system enabled.");
     }
   }
 }
 
-void DbwNode::faultSteering(bool fault)
-{
+void DbwNode::faultSteering(bool fault){
   bool en = enabled();
   if (fault && en) {
     enable_ = false;
@@ -1086,14 +1085,14 @@ void DbwNode::faultSteering(bool fault)
   if (publishDbwEnabled()) {
     if (en) {
       ROS_ERROR("DBW system disabled. Steering fault.");
-    } else {
+    }
+    else {
       ROS_INFO("DBW system enabled.");
     }
   }
 }
 
-void DbwNode::faultSteeringCal(bool fault)
-{
+void DbwNode::faultSteeringCal(bool fault){
   bool en = enabled();
   if (fault && en) {
     enable_ = false;
@@ -1102,14 +1101,14 @@ void DbwNode::faultSteeringCal(bool fault)
   if (publishDbwEnabled()) {
     if (en) {
       ROS_ERROR("DBW system disabled. Steering calibration fault.");
-    } else {
+    }
+    else {
       ROS_INFO("DBW system enabled.");
     }
   }
 }
 
-void DbwNode::faultWatchdog(bool fault, uint8_t src, bool braking)
-{
+void DbwNode::faultWatchdog(bool fault, uint8_t src, bool braking){
   bool en = enabled();
   if (fault && en) {
     enable_ = false;
@@ -1118,15 +1117,19 @@ void DbwNode::faultWatchdog(bool fault, uint8_t src, bool braking)
   if (publishDbwEnabled()) {
     if (en) {
       ROS_ERROR("DBW system disabled. Watchdog fault.");
-    } else {
+    }
+    else {
       ROS_INFO("DBW system enabled.");
     }
   }
+
   if (braking && !fault_watchdog_using_brakes_) {
     ROS_WARN("Watchdog event: Alerting driver and applying brakes.");
-  } else if (!braking && fault_watchdog_using_brakes_) {
+  }
+  else if (!braking && fault_watchdog_using_brakes_) {
     ROS_INFO("Watchdog event: Driver has successfully taken control.");
   }
+
   if (fault && src && !fault_watchdog_warned_) {
       switch (src) {
         case dbw_mkz_msgs::WatchdogCounter::OTHER_BRAKE:
@@ -1189,8 +1192,7 @@ void DbwNode::faultWatchdog(bool fault, uint8_t src) {
   faultWatchdog(fault, src, fault_watchdog_using_brakes_); // No change to 'using brakes' status
 }
 
-void DbwNode::publishJointStates(const ros::Time &stamp, const dbw_mkz_msgs::WheelSpeedReport *wheels, const dbw_mkz_msgs::SteeringReport *steering)
-{
+void DbwNode::publishJointStates(const ros::Time &stamp, const dbw_mkz_msgs::WheelSpeedReport *wheels, const dbw_mkz_msgs::SteeringReport *steering){
   double dt = (stamp - joint_state_.header.stamp).toSec();
   if (wheels) {
     joint_state_.velocity[JOINT_FL] = wheels->front_left;

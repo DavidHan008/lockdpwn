@@ -1,0 +1,8 @@
+- vehicle:
+    x: 3.0
+    y: -5.5
+    z: 1.1
+    yaw: 0.0
+    start_gear: P
+    
+

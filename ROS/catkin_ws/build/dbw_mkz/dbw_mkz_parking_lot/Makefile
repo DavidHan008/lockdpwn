@@ -67,17 +67,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -133,6 +122,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/CMakeFiles /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/progress.marks
@@ -165,6 +165,48 @@ depend:
 	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/rule:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/rule
+.PHONY : dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/rule
+
+# Convenience name for target.
+veltest_ed: dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/rule
+
+.PHONY : veltest_ed
+
+# fast build rule for target.
+veltest_ed/fast:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build.make dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build
+.PHONY : veltest_ed/fast
+
+src/veltest_ed.o: src/veltest_ed.cpp.o
+
+.PHONY : src/veltest_ed.o
+
+# target to build an object file
+src/veltest_ed.cpp.o:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build.make dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/src/veltest_ed.cpp.o
+.PHONY : src/veltest_ed.cpp.o
+
+src/veltest_ed.i: src/veltest_ed.cpp.i
+
+.PHONY : src/veltest_ed.i
+
+# target to preprocess a source file
+src/veltest_ed.cpp.i:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build.make dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/src/veltest_ed.cpp.i
+.PHONY : src/veltest_ed.cpp.i
+
+src/veltest_ed.s: src/veltest_ed.cpp.s
+
+.PHONY : src/veltest_ed.s
+
+# target to generate assembly for a file
+src/veltest_ed.cpp.s:
+	cd /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build && $(MAKE) -f dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/build.make dbw_mkz/dbw_mkz_parking_lot/CMakeFiles/veltest_ed.dir/src/veltest_ed.cpp.s
+.PHONY : src/veltest_ed.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -172,12 +214,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... test"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... edit_cache"
+	@echo "... veltest_ed"
+	@echo "... src/veltest_ed.o"
+	@echo "... src/veltest_ed.i"
+	@echo "... src/veltest_ed.s"
 .PHONY : help
 
 

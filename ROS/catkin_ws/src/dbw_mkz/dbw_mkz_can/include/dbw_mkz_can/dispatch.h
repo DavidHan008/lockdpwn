@@ -36,8 +36,7 @@
 #define _DBW_MKZ_CAN_DISPATCH_H
 #include <stdint.h>
 
-namespace dbw_mkz_can
-{
+namespace dbw_mkz_can{
 
 typedef struct {
   uint16_t PCMD;

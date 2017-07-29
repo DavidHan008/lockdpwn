@@ -35,8 +35,7 @@
 #include <ros/ros.h>
 #include "DbwNode.h"
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
   ros::init(argc, argv, "dbw_mkz");
   ros::NodeHandle node;
   ros::NodeHandle priv_nh("~");
