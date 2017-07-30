@@ -79,7 +79,8 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='mkz_1'>
+    <model name='mkz'>
+      <static>1</static>
       <link name='base_footprint'>
         <pose>0 0 0 0 -0 0</pose>
         <inertial>
@@ -95,11 +96,11 @@
           </inertia>
         </inertial>
         <collision name='base_footprint_collision_base_link'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 -1 0 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://dbw_mkz_description_3/meshes/parking_lot.dae</uri>
+              <uri>model://dbw_mkz_description_3/meshes/parking_lot_tmp.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -117,11 +118,11 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='base_footprint_visual_base_link'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 -1 0 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/dyros-vehicle/.gazebo/models/dbw_mkz_description_3/meshes/parking_lot.dae</uri>
+              <uri>file:///home/dyros-vehicle/.gazebo/models/dbw_mkz_description_3/meshes/parking_lot_tmp.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -142,12 +143,11 @@
         <kinematic>0</kinematic>
       </link>
       <pose>0 0 0 0 -0 0</pose>
-      <static>0</static>
     </model>
     <state world_name='default'>
-      <sim_time>113 869000000</sim_time>
-      <real_time>115 653654364</real_time>
-      <wall_time>1501222493 980327841</wall_time>
+      <sim_time>86 525000000</sim_time>
+      <real_time>24 464118368</real_time>
+      <wall_time>1501427738 62739699</wall_time>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <link name='link'>
@@ -157,19 +157,19 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='mkz_1'>
-        <pose>0.026104 -45.0442 2e-06 2e-06 1e-06 8.07794e-28</pose>
+      <model name='mkz'>
+        <pose>0 0 0.984744 0 -0 0</pose>
         <link name='base_footprint'>
-          <pose>0.026104 -45.0442 2e-06 2e-06 1e-06 8.07794e-28</pose>
+          <pose>0 0 0.984744 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 -4.47112 0.059639 0.375273 2e-06</acceleration>
-          <wrench>-0.19736 0.062266 -4.47112e+06 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-26.0334 15.5435 12.1461 0 0.287642 -0.651807</pose>
+        <pose>-74.2196 -87.5295 100.361 3.70371e-17 0.723643 0.760196</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>

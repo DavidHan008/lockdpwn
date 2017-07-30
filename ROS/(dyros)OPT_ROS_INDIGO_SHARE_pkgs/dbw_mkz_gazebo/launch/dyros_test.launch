@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-
+<!-- ROS ==> dyros 차량의 움직임을 테스트해본 코드 -->
 <launch>
   
   <include file="$(find dbw_mkz_gazebo)/launch/dbw_mkz_gazebo.launch" >
     <arg name="use_camera_control" value="false" />
-    <arg name="world_name" value="$(find dbw_mkz_parking_lot)/worlds/parking_lot_ed6.world" />
+    <arg name="world_name" value="$(find dbw_mkz_parking_lot)/worlds/parking_lot_ed5.world" />
     <arg name="sim_param_file" value="$(find dbw_mkz_gazebo)/yaml/dyros_test.yaml" />
   </include>
   
