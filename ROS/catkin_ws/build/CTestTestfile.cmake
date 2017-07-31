@@ -7,6 +7,7 @@
 subdirs(gtest)
 subdirs(dbw_mkz/dataspeed_can)
 subdirs(dbw_mkz/dbw_mkz)
+subdirs(dyros_teleop_keyboard)
 subdirs(dbw_mkz/DataspeedInc-lusb)
 subdirs(dbw_mkz/dataspeed_can_msgs)
 subdirs(dbw_mkz/dbw_mkz_msgs)

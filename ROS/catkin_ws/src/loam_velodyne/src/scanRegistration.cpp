@@ -230,6 +230,26 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
     float angle = atan(point.z / sqrt(point.y * point.y + point.x * point.x)) * 180 / PI;
     int scanID ;
 
+    // ed: HDL-32E 32채널용 velodyne에 맞게 새로 추가한 코드
+    if(angle >=  -30     && angle <   -29     ) { scanID =    0   ;}
+    else if(angle >=     -28     && angle <   -27     ) { scanID =    1   ;}
+    else if(angle >=     -26     && angle <   -25     ) { scanID =    2   ;}
+    else if(angle >=     -24     && angle <   -23     ) { scanID =    3   ;}
+    else if(angle >=     -22     && angle <   -21     ) { scanID =    4   ;}
+    else if(angle >=     -20     && angle <   -19     ) { scanID =    5   ;}
+    else if(angle >=     -18     && angle <   -17     ) { scanID =    6   ;}
+    else if(angle >=     -16     && angle <   -15     ) { scanID =    7   ;}
+    else if(angle >=     -14     && angle <   -13     ) { scanID =    8   ;}
+    else if(angle >=     -12     && angle <   -11     ) { scanID =    9   ;}
+    else if(angle >=     -10     && angle <   -8.5    ) { scanID =    10  ;}
+    else if(angle >=     -8  && angle <   -7  ) { scanID =    11  ;}
+    else if(angle >=     -6  && angle <   -4.5    ) { scanID =    12  ;}
+    else if(angle >=     -4  && angle <   -2.5    ) { scanID =    13  ;}
+    else if(angle >=     -2  && angle <   0   ) { scanID =    14  ;}
+    else if(angle >=     0   && angle <   1   ) { scanID =    15  ;}
+    else
+      continue;
+
     /*
        if(angle >= 	-14.2 	&& angle < 	-14 	) { scanID =  	0 	;}
        else if(angle >= 	-13.5 	&& angle < 	-13 	) { scanID =  	1 	;}
@@ -248,7 +268,6 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
        else if(angle >= 	-0.5 	&& angle < 	-0.2 	) { scanID =  	14 	;}
        else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
        else
-    */
 
     if(angle >= 	-13.5 	&& angle < 	-13.4 	) { scanID =  	0 	;}
     else if(angle >= 	-13.4 	&& angle < 	-13 	) { scanID =  	1 	;}
@@ -268,6 +287,9 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
     else if(angle >= 	0 	&& angle < 	0.1 	) { scanID =  	15 	;}
     else
       continue;
+
+    */
+
 
     float ori = -atan2(point.y, point.x);
 

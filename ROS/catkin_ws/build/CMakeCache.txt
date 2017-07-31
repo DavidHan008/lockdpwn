@@ -1413,6 +1413,12 @@ diagnostic_updater_DIR:PATH=/opt/ros/indigo/share/diagnostic_updater/cmake
 dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 
 //Value Computed by CMake
+dyros_teleop_keyboard_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard
+
+//Value Computed by CMake
+dyros_teleop_keyboard_SOURCE_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_teleop_keyboard
+
+//Value Computed by CMake
 followercontroller_exp4_BINARY_DIR:STATIC=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/cat_vehicle_pkgs/followercontroller_exp4
 
 //Value Computed by CMake
@@ -2009,7 +2015,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=48
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=49
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

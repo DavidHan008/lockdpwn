@@ -34,6 +34,13 @@
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/install.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/install/local.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/dbw_mkz/CMakeFiles/install/strip.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/test.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/edit_cache.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/rebuild_cache.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/list_install_components.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/install.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/install/local.dir
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dyros_teleop_keyboard/CMakeFiles/install/strip.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/DataspeedInc-lusb/CMakeFiles/test.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/DataspeedInc-lusb/CMakeFiles/edit_cache.dir
 /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/build/dbw_mkz/DataspeedInc-lusb/CMakeFiles/rebuild_cache.dir

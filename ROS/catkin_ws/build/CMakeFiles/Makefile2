@@ -371,6 +371,24 @@ dbw_mkz/dbw_mkz/preinstall:
 .PHONY : dbw_mkz/dbw_mkz/preinstall
 
 #=============================================================================
+# Directory level rules for directory dyros_teleop_keyboard
+
+# Convenience name for "all" pass in the directory.
+dyros_teleop_keyboard/all:
+
+.PHONY : dyros_teleop_keyboard/all
+
+# Convenience name for "clean" pass in the directory.
+dyros_teleop_keyboard/clean:
+
+.PHONY : dyros_teleop_keyboard/clean
+
+# Convenience name for "preinstall" pass in the directory.
+dyros_teleop_keyboard/preinstall:
+
+.PHONY : dyros_teleop_keyboard/preinstall
+
+#=============================================================================
 # Directory level rules for directory dbw_mkz/DataspeedInc-lusb
 
 # Convenience name for "all" pass in the directory.
