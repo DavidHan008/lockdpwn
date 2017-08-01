@@ -3,6 +3,6 @@ prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
 Name: dataspeed_can_usb
 Description: Description of dataspeed_can_usb
 Version: 1.0.4
-Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dataspeed_can_usb/include
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dataspeed_can_usb/include
 Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib -ldataspeed_can_usb
 Requires: 

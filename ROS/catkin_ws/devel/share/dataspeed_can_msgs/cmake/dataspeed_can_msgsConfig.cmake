@@ -67,7 +67,7 @@ set(dataspeed_can_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(dataspeed_can_msgs_SOURCE_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dataspeed_can_msgs)
+  set(dataspeed_can_msgs_SOURCE_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dataspeed_can_msgs)
   set(dataspeed_can_msgs_DEVEL_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel)
   set(dataspeed_can_msgs_INSTALL_PREFIX "")
   set(dataspeed_can_msgs_PREFIX ${dataspeed_can_msgs_DEVEL_PREFIX})
@@ -103,7 +103,7 @@ if(NOT "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include " STREQ
         message(FATAL_ERROR "Project 'dataspeed_can_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'dataspeed_can_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dataspeed_can_msgs/${idir}'.  Ask the maintainer 'Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
+      message(FATAL_ERROR "Project 'dataspeed_can_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dataspeed_can_msgs/${idir}'.  Ask the maintainer 'Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
     endif()
     _list_append_unique(dataspeed_can_msgs_INCLUDE_DIRS ${include})
   endforeach()

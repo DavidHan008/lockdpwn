@@ -19,8 +19,7 @@ double distance = 0;         // 초음파센서 거리값
 double distanceUpper = 0;    // 초음파센서 거리값, 천장용
 int upFlag = 0;              // 천장용 초음파센서 제어 플래그
 
-void setup()
-{
+void setup(){
   Serial.begin(9600);
   pinMode(TRIGUPPER,OUTPUT);
   pinMode(ECHOUPPER,INPUT);
@@ -28,8 +27,7 @@ void setup()
   pinMode(ECHOBOTTOM,INPUT);
 }
 
-void loop()
-{
+void loop(){
   digitalWrite(TRIGUPPER,LOW);
   delayMicroseconds(2);
   digitalWrite(TRIGUPPER,HIGH);

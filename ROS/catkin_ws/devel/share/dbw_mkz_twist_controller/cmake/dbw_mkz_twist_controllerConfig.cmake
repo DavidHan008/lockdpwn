@@ -67,7 +67,7 @@ set(dbw_mkz_twist_controller_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(dbw_mkz_twist_controller_SOURCE_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dbw_mkz_twist_controller)
+  set(dbw_mkz_twist_controller_SOURCE_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dbw_mkz_twist_controller)
   set(dbw_mkz_twist_controller_DEVEL_PREFIX /home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel)
   set(dbw_mkz_twist_controller_INSTALL_PREFIX "")
   set(dbw_mkz_twist_controller_PREFIX ${dbw_mkz_twist_controller_DEVEL_PREFIX})
@@ -103,7 +103,7 @@ if(NOT "/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/include " STREQ
         message(FATAL_ERROR "Project 'dbw_mkz_twist_controller' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Micho Radovnikovich <mradovnikovich@dataspeedinc.com>, Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'dbw_mkz_twist_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/dbw_mkz_twist_controller/${idir}'.  Ask the maintainer 'Micho Radovnikovich <mradovnikovich@dataspeedinc.com>, Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
+      message(FATAL_ERROR "Project 'dbw_mkz_twist_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dbw_mkz_twist_controller/${idir}'.  Ask the maintainer 'Micho Radovnikovich <mradovnikovich@dataspeedinc.com>, Kevin Hallenbeck <khallenbeck@dataspeedinc.com>' to fix it.")
     endif()
     _list_append_unique(dbw_mkz_twist_controller_INCLUDE_DIRS ${include})
   endforeach()

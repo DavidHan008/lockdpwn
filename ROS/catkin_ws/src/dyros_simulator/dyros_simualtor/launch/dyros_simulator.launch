@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- ROS ==> dyros 차량의 움직임을 테스트해본 코드 -->
+<launch>
+  
+  <include file="$(find dyros_simulator)/launch/dbw_mkz_gazebo.launch" >
+    <arg name="use_camera_control" value="false" />
+    <arg name="world_name" value="$(find dyros_simulator)/worlds/parking_lot.world" />
+    <arg name="sim_param_file" value="$(find dyros_simulator)/yaml/dyros.yaml" />
+  </include>
+
+
+  
+  <include file="$(find dbw_mkz_can)/launch/dbw.launch" >
+    <arg name="live" value="false" />
+    <arg name="load_urdf" value="false" />
+    <arg name="can_ns" value="can_bus_dbw" />
+    <arg name="vehicle_ns" value="dyros" />
+  </include>
+
+<!--  <node pkg="dyros_simulator" type="veltest_ed" name="veltest_ed" />
+
+  <node pkg="rviz" type="rviz" name="rviz_dbw" respawn="false" output="screen" args="-d $(find dyros_simulator)/rviz/parking_lot.rviz" />
+-->
+
+</launch>
