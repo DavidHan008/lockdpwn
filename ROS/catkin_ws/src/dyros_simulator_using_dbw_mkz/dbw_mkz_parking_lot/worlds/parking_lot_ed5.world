@@ -109,8 +109,8 @@
             </contact>
             <friction>
               <ode>
-                <mu>0.5</mu>
-                <mu2>0.5</mu2>
+                <mu>100</mu>
+                <mu2>50</mu2>
               </ode>
             </friction>
             <bounce/>
