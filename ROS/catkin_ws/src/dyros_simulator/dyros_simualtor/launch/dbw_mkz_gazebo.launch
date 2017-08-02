@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-  
   <arg name="use_camera_control" default="false" />
   <arg name="world_name" default="$(find dyros_simulator)/worlds/parking_lot.world" />
   <arg name="sim_param_file" default="$(find dyros_simulator)/yaml/dyros.yaml" />

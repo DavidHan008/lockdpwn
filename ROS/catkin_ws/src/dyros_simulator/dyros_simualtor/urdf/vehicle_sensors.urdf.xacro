@@ -116,14 +116,14 @@
   </xacro:macro>
 
   <!-- ed: Velodyne sensor added -->
-  <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
-  <HDL-32E parent="base_link" name="/vehicle/velodyne2" topic="/velodyne_points2">
+  <xacro:include filename="$(find dyros_simulator)/urdf/HDL-32E.urdf.xacro"/>
+  <HDL-32E parent="base_link" name="/dyros/velodyne" topic="/velodyne_points">
     <origin xyz="0 0 1.1" rpy="0 0 0" />
   </HDL-32E>
 
   <!-- ed: sick_laser sensor added -->
-  <xacro:include filename="$(find dbw_mkz_description)/urdf/sick_lms291.urdf.xacro"/>
-  <sick_lms291 parent="base_link" name="/vehicle/front_laser_points" topic="/front_laser_points">
+  <xacro:include filename="$(find dyros_simulator)/urdf/sick_lms291.urdf.xacro"/>
+  <sick_lms291 parent="base_link" name="/dyros/front_laser_points" topic="/front_laser_points">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </sick_lms291>
   

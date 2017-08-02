@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- created with Phobos 0.7 -->
   <robot name="dbw_mkz" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:arg name="dae_file" default="$(find dbw_mkz_description)/meshes/mkz_13/body.dae"/>
+    <xacro:arg name="dae_file" default="$(find dyros_simulator)/meshes/mkz_13/body.dae"/>
     
     <link name="base_footprint">
     </link>
@@ -22,7 +22,7 @@
       <collision name="chassis_collision">
         <origin xyz="0.084967 -0.03046 0.350609" rpy="1.570796 0 -3.141593"/>
         <geometry>
-          <mesh filename="package://dbw_mkz_description/meshes/body_collision.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://dyros_simulator/meshes/mkz_13/body.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -73,7 +73,7 @@
       <visual name="wheel_fr_visual">
         <origin xyz="0 0 -0.043777" rpy="-1.570796 1.570796 0"/>
         <geometry>
-          <mesh filename="package://dbw_mkz_description/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://dyros_simulator/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
         </geometry>
         <material name="carpaint_002.001"/>
       </visual>
@@ -94,7 +94,7 @@
       <visual name="wheel_rl_visual">
         <origin xyz="0 0 0.017382" rpy="-1.570796 -1.570796 0"/>
         <geometry>
-          <mesh filename="package://dbw_mkz_description/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://dyros_simulator/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
         </geometry>
         <material name="carpaint_002.003"/>
       </visual>
@@ -115,7 +115,7 @@
       <visual name="wheel_rr_visual">
         <origin xyz="0 0 -0.019214" rpy="-1.570796 1.570796 0"/>
         <geometry>
-          <mesh filename="package://dbw_mkz_description/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://dyros_simulator/meshes/mkz_13/wheel.dae" scale="0.01 0.01 0.01"/>
         </geometry>
         <material name="carpaint_002.002"/>
       </visual>

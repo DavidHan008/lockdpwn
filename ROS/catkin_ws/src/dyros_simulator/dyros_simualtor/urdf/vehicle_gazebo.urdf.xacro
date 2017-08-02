@@ -2,7 +2,7 @@
 
 <robot name="mkz_gazebo" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="wheel_friction" value="1.2" />
+  <xacro:property name="wheel_friction" value="12" />
   <xacro:arg name="pub_odom" default="false"/>
   <xacro:arg name="pub_tf" default="false"/>
 

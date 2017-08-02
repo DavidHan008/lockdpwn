@@ -850,20 +850,23 @@ void DbwNode::recvSteeringCmd(const dbw_mkz_msgs::SteeringCmd::ConstPtr& msg){
   pub_can_.publish(out);
 }
 
-void DbwNode::recvGearCmd(const dbw_mkz_msgs::GearCmd::ConstPtr& msg)
-{
+void DbwNode::recvGearCmd(const dbw_mkz_msgs::GearCmd::ConstPtr& msg){
   dataspeed_can_msgs::CanMessage out;
   out.id = ID_GEAR_CMD;
   out.extended = false;
   out.dlc = sizeof(MsgGearCmd);
+
   MsgGearCmd *ptr = (MsgGearCmd*)out.data.elems;
   memset(ptr, 0x00, sizeof(*ptr));
+
   if (enabled()) {
     ptr->GCMD = msg->cmd.gear;
   }
+
   if (clear() || msg->clear) {
     ptr->CLEAR = 1;
   }
+
   pub_can_.publish(out);
 }
 

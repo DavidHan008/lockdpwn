@@ -1,10 +1,17 @@
 #!/usr/bin/env python
+#-*- coding: utf-8 -*-
+'''
+	python ==> dyros, 키보드를 통해 가제보로 Twist 메세지를 퍼블리시하는 코드
+'''
+
 import roslib; roslib.load_manifest('dyros_teleop_keyboard')
 import rospy
+import sys, select, termios, tty
 
 from geometry_msgs.msg import Twist
 
-import sys, select, termios, tty
+## ed: 기어를 바꾸기 위해 추가한 메세지
+from dbw_mkz_msgs.msg import GearCmd
 
 msg = """
 Reading from the keyboard  and Publishing to Twist!

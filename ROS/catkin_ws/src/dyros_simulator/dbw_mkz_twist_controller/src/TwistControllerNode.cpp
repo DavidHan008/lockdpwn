@@ -45,16 +45,19 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
 
   // Control rate parameter
   double control_rate;
-  pn.param("control_rate", control_rate, 50.0);
+  pn.param("control_rate", control_rate, 10.0);
   control_period_ = 1.0 / control_rate;
 
+  // ed: 휠베이스, 트랙길이, 스티어링비를 설정하는 코드인듯
   // Ackermann steering parameters
   acker_wheelbase_ = 2.8498; // 112.2 inches
   acker_track_ = 1.5824; // 62.3 inches
   steering_ratio_ = 14.8;
+
   pn.getParam("ackermann_wheelbase", acker_wheelbase_);
   pn.getParam("ackermann_track", acker_track_);
   pn.getParam("steering_ratio", steering_ratio_);
+
   yaw_control_.setWheelBase(acker_wheelbase_);
   yaw_control_.setSteeringRatio(steering_ratio_);
   yaw_control_.setSpeedMin(mphToMps(4.0));
@@ -81,7 +84,9 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   control_timer_ = n.createTimer(ros::Duration(control_period_), &TwistControllerNode::controlCallback, this);
 }
 
+
 void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
+
   if ((event.current_real - cmd_stamp_).toSec() > (10.0 * control_period_)) {
     speed_pid_.resetIntegrator();
     accel_pid_.resetIntegrator();
@@ -90,6 +95,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
 
   double vehicle_mass = cfg_.vehicle_mass + lpf_fuel_.get() / 100.0 * cfg_.fuel_capacity * GAS_DENSITY;
   double vel_error = cmd_vel_.twist.linear.x - actual_.linear.x;
+
   if ((fabs(cmd_vel_.twist.linear.x) < mphToMps(1.0)) || !cfg_.pub_pedals) {
     speed_pid_.resetIntegrator();
   }
@@ -97,21 +103,25 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
   speed_pid_.setRange(
       -std::min(fabs(cmd_vel_.decel_limit) > 0.0 ? fabs(cmd_vel_.decel_limit) : 9.8,
                 cfg_.decel_max > 0.0 ? cfg_.decel_max : 9.8),
-       std::min(fabs(cmd_vel_.accel_limit) > 0.0 ? fabs(cmd_vel_.accel_limit) : 9.8,
-                cfg_.accel_max > 0.0 ? cfg_.accel_max : 9.8)
-  );
+      std::min(fabs(cmd_vel_.accel_limit) > 0.0 ? fabs(cmd_vel_.accel_limit) : 9.8,
+               cfg_.accel_max > 0.0 ? cfg_.accel_max : 9.8)
+                      );
+
   double accel_cmd = speed_pid_.step(vel_error, control_period_);
 
   const double MIN_SPEED = mphToMps(5.0);
+
   if (cmd_vel_.twist.linear.x <= (double)1e-2) {
     accel_cmd = std::min(accel_cmd, -530 / vehicle_mass / cfg_.wheel_radius);
-  } else if (cmd_vel_.twist.linear.x < MIN_SPEED) {
+  }
+  else if (cmd_vel_.twist.linear.x < MIN_SPEED) {
     cmd_vel_.twist.angular.z *= MIN_SPEED / cmd_vel_.twist.linear.x;
     cmd_vel_.twist.linear.x = MIN_SPEED;
   }
 
   std_msgs::Float64 accel_cmd_msg;
   accel_cmd_msg.data = accel_cmd;
+
   pub_req_accel_.publish(accel_cmd_msg);
 
   if (sys_enable_) {
@@ -121,6 +131,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
 
     throttle_cmd.enable = true;
     throttle_cmd.pedal_cmd_type = dbw_mkz_msgs::ThrottleCmd::CMD_PERCENT;
+
     if (accel_cmd >= 0) {
       throttle_cmd.pedal_cmd = accel_pid_.step(accel_cmd - lpf_accel_.get(), control_period_);
     }
@@ -133,7 +144,8 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     brake_cmd.pedal_cmd_type = dbw_mkz_msgs::BrakeCmd::CMD_TORQUE;
     if ((accel_cmd < -cfg_.brake_deadband) || (cmd_vel_.twist.linear.x < MIN_SPEED)) {
       brake_cmd.pedal_cmd = -accel_cmd * vehicle_mass * cfg_.wheel_radius;
-    } else {
+    }
+    else {
       brake_cmd.pedal_cmd = 0;
     }
 
@@ -148,14 +160,14 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     if (cfg_.pub_steering) {
       pub_steering_.publish(steering_cmd);
     }
-  } else {
+  }
+  else {
     speed_pid_.resetIntegrator();
     accel_pid_.resetIntegrator();
   }
 }
 
-void TwistControllerNode::reconfig(ControllerConfig& config, uint32_t level)
-{
+void TwistControllerNode::reconfig(ControllerConfig& config, uint32_t level){
   cfg_ = config;
   cfg_.vehicle_mass -= cfg_.fuel_capacity * GAS_DENSITY; // Subtract weight of full gas tank
   cfg_.vehicle_mass += 150.0; // Account for some passengers
@@ -187,13 +199,11 @@ void TwistControllerNode::recvTwist3(const geometry_msgs::TwistStamped::ConstPtr
   cmd_stamp_ = ros::Time::now();
 }
 
-void TwistControllerNode::recvFuel(const dbw_mkz_msgs::FuelLevelReport::ConstPtr& msg)
-{
+void TwistControllerNode::recvFuel(const dbw_mkz_msgs::FuelLevelReport::ConstPtr& msg){
   lpf_fuel_.filt(msg->fuel_level);
 }
 
-void TwistControllerNode::recvSteeringReport(const dbw_mkz_msgs::SteeringReport::ConstPtr& msg)
-{
+void TwistControllerNode::recvSteeringReport(const dbw_mkz_msgs::SteeringReport::ConstPtr& msg){
   double raw_accel = 50.0 * (msg->speed - actual_.linear.x);
   lpf_accel_.filt(raw_accel);
 
@@ -204,13 +214,11 @@ void TwistControllerNode::recvSteeringReport(const dbw_mkz_msgs::SteeringReport:
   actual_.linear.x = msg->speed;
 }
 
-void TwistControllerNode::recvImu(const sensor_msgs::Imu::ConstPtr& msg)
-{
+void TwistControllerNode::recvImu(const sensor_msgs::Imu::ConstPtr& msg){
   actual_.angular.z = msg->angular_velocity.z;
 }
 
-void TwistControllerNode::recvEnable(const std_msgs::Bool::ConstPtr& msg)
-{
+void TwistControllerNode::recvEnable(const std_msgs::Bool::ConstPtr& msg){
   sys_enable_ = msg->data;
 }
 

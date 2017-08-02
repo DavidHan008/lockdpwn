@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="live" default="true" />
-  <arg name="load_urdf" default="true" />
   <arg name="twist_controller" default="true" />
   <arg name="vehicle_ns" default="vehicle" />
   <arg name="can_ns" default="/can_bus_dbw" />
@@ -61,7 +60,6 @@
       <param name="decel_max" value="$(arg decel_max)" />
       <param name="accel_max" value="$(arg accel_max)" />
     </node>
-    <include if="$(arg load_urdf)" file="$(find dbw_mkz_description)/launch/mkz.launch" />
   </group>
   
 </launch>
