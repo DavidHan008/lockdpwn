@@ -31,8 +31,8 @@ float transformMapped[6] = {0};
 float transformBefMapped[6] = {0};
 float transformAftMapped[6] = {0};
 
-geometry_msgs::Pose2D Mypose;//jh
-geometry_msgs::Pose2D Mypose1;//jh
+geometry_msgs::Pose2D Mypose;  //jh
+geometry_msgs::Pose2D Mypose1;  //jh
 //geometry_msgs::PoseStamped Mypos;//jh
 bool in_offset = true;  
 double transformoffset[6] = {0};
@@ -132,7 +132,7 @@ void transformAssociateToMap(){
                        - (-sin(transformMapped[1]) * x2 + cos(transformMapped[1]) * z2);
 }
 
-
+// ed: /laser_odom_to_init 토픽을 섭스크라이브하는 콜백함수
 void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   double roll, pitch, yaw;
   geometry_msgs::Quaternion geoQuat = laserOdometry->pose.pose.orientation;
@@ -164,9 +164,9 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   laserOdometry2.pose.pose.orientation.z = geoQuat.z;
   laserOdometry2.pose.pose.orientation.w = geoQuat.w;
 
-  laserOdometry2.pose.pose.position.x = transformMapped[3];
-  laserOdometry2.pose.pose.position.y = transformMapped[4];
-  laserOdometry2.pose.pose.position.z = transformMapped[5];
+  laserOdometry2.pose.pose.position.x = transformMapped[3];   // ed: x
+  laserOdometry2.pose.pose.position.y = transformMapped[4];   //     y
+  laserOdometry2.pose.pose.position.z = transformMapped[5];   //     z 인듯
 
   // ed: /integrated_to_init 토픽으로 퍼블리시한다
   pubLaserOdometry2Pointer->publish(laserOdometry2);
@@ -177,7 +177,6 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   tfBroadcaster2Pointer->sendTransform(laserOdometryTrans2);
 
   if(myPoseEnabled){
-
     // ed: 이 코드가 /my_pose, /test 토픽으로 좌표를 변환하는 코드지만 rviz에서는 사용하지 않고 있다
     /***********jh**********************************/
     Mypose.x = -laserOdometry2.pose.pose.position.y;
@@ -252,17 +251,15 @@ int main(int argc, char** argv){
   nh.param<bool>("my_pose_enable", myPoseEnabled, true);
 
 
-  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry> 
-                                     ("/laser_odom_to_init", 5, laserOdometryHandler);
-  ros::Subscriber subOdomAftMapped = nh.subscribe<nav_msgs::Odometry>
-                                     ("/aft_mapped_to_init", 5, odomAftMappedHandler);
+  ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry>("/laser_odom_to_init", 5, laserOdometryHandler);
+  ros::Subscriber subOdomAftMapped = nh.subscribe<nav_msgs::Odometry>("/aft_mapped_to_init", 5, odomAftMappedHandler);
   //jh
   ros::Subscriber subOdomOffset = nh.subscribe<geometry_msgs::Pose2D> 
                                   ("/odom_Offset", 5, setOdomOffsetHandler);
 
 
 
-  ros::Publisher pubLaserOdometry2 = nh.advertise<nav_msgs::Odometry> ("/integrated_to_init", 5);
+  ros::Publisher pubLaserOdometry2 = nh.advertise<nav_msgs::Odometry>("/integrated_to_init", 5);
   pubLaserOdometry2Pointer = &pubLaserOdometry2;
   laserOdometry2.header.frame_id = "/camera_init";
   laserOdometry2.child_frame_id = "/camera";

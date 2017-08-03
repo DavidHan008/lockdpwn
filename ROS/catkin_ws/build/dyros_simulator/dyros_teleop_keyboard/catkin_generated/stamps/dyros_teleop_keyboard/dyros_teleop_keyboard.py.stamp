@@ -13,6 +13,7 @@ from geometry_msgs.msg import Twist
 ## ed: 기어를 바꾸기 위해 추가한 메세지
 from dbw_mkz_msgs.msg import GearCmd
 
+
 msg = """
 Reading from the keyboard  and Publishing to Twist!
 ---------------------------
@@ -44,10 +45,15 @@ moveBindings = {
 		'o':(1,0,0,-1),
 		'j':(0,0,0,1),
 		'l':(0,0,0,-1),
+		'k':(0,0,0,0),
 		'u':(1,0,0,1),
-		',':(-1,0,0,0),
-		'.':(-1,0,0,1),
-		'm':(-1,0,0,-1),
+
+## ed: 후진용 코드 수정
+		',':(1,0,0,0),
+		'.':(1,0,0,-1),
+		'm':(1,0,0,1),
+
+
 		'O':(1,-1,0,0),
 		'I':(1,0,0,0),
 		'J':(0,1,0,0),
@@ -84,6 +90,11 @@ if __name__=="__main__":
     	settings = termios.tcgetattr(sys.stdin)
 	
 	pub = rospy.Publisher('/dyros/cmd_vel', Twist, queue_size = 1)
+
+	## ed: 기어 변경용 퍼블리셔
+	pub_gear = rospy.Publisher('dyros/gear_cmd', GearCmd, queue_size=1)
+	gc = GearCmd()
+
 	rospy.init_node('dyros_teleop_keyboard')
 
 	speed = rospy.get_param("~speed", 0.5)
@@ -99,11 +110,21 @@ if __name__=="__main__":
 		print vels(speed,turn)
 		while(1):
 			key = getKey()
+
 			if key in moveBindings.keys():
+				## ed: 후진용 코드 추가
+				if key == ',' or key == '.' or key == 'm':
+					gc.cmd.gear = 2   ## ed: Reverse
+				elif key =='k' or key == 'j' or key =='l':
+					gc.cmd.gear = 1   ## ed : Park
+				else:
+					gc.cmd.gear = 4   ## ed: Drive
+
 				x = moveBindings[key][0]
 				y = moveBindings[key][1]
 				z = moveBindings[key][2]
 				th = moveBindings[key][3]
+
 			elif key in speedBindings.keys():
 				speed = speed * speedBindings[key][0]
 				turn = turn * speedBindings[key][1]
@@ -124,6 +145,7 @@ if __name__=="__main__":
 			twist.linear.x = x*speed; twist.linear.y = y*speed; twist.linear.z = z*speed;
 			twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = th*turn
 			pub.publish(twist)
+			pub_gear.publish(gc)
 
 	except:
 		print e
@@ -133,7 +155,6 @@ if __name__=="__main__":
 		twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
 		twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
 		pub.publish(twist)
+		pub_gear.publish(gc)
 
-    		termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-
-
+    	termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)

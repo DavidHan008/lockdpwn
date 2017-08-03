@@ -672,6 +672,7 @@ int main(int argc, char** argv){
           }
 
           int pointSelNum = laserCloudOri->points.size();
+
           if (pointSelNum < 10) {
             continue;
           }
