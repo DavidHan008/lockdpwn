@@ -320,14 +320,13 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 }
 
 void mapSaveHandler(const std_msgs::String::ConstPtr& str){
-  ROS_INFO("Saving the current map... to %s",str->data.c_str());
+  ROS_INFO("Saving the current map... to %s", str->data.c_str());
   int cubeI = laserCloudCenWidth;
   int cubeJ = laserCloudCenHeight;
   int cubeK = laserCloudCenDepth;
   int cubeInd = cubeI + laserCloudWidth * cubeJ + laserCloudWidth * laserCloudHeight * cubeK;
 
   pcl::io::savePCDFileASCII(str->data,*laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
-
 }
 
 

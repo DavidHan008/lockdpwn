@@ -260,13 +260,21 @@ class PoseInitializer{
     /*********** sh X jh **********************************/
     double yaw, pitch, roll;
     gh.getBasis().getEulerYPR(yaw,pitch,roll);
-    pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
-    pose2DMsg_.y = odomMsg_.pose.pose.position.x;
+
+
+    // ed: 코드를 원래대로 수정했다
+    // pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
+    // pose2DMsg_.y = odomMsg_.pose.pose.position.x;
+    pose2DMsg_.x = odomMsg_.pose.pose.position.x;
+    pose2DMsg_.y = odomMsg_.pose.pose.position.y;
     pose2DMsg_.theta = yaw;  //Mypose.theta = tf::getYaw(geoQuat);
 
+<<<<<<< HEAD
     if(yaw<0) {
+=======
+    if(yaw<0)
+>>>>>>> 229670762023e3db3a0715b11baf6e4c9341fe24
       pose2DMsg_.theta += 2.0 * M_PI;
-    }
     else {
       //Mypose.theta += 0.5 * PI;
     }
