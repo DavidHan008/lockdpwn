@@ -99,7 +99,7 @@ private:  // VARIABLE
     ROS_INFO("Filtering Start");
     pcl::VoxelGrid<pcl::PointXYZ> downSizeFilter;
     downSizeFilter.setInputCloud(currentMap_);
-    downSizeFilter.setLeafSize(0.05, 0.05, 0.05);
+    downSizeFilter.setLeafSize(0.1, 0.1, 0.1);
     downSizeFilter.filter(*currentMapFiltered_);
   }
 
@@ -254,15 +254,19 @@ private:  // CALLBACK
 
 
     /*********** sh X jh **********************************/
-
     double yaw, pitch, roll;
     gh.getBasis().getEulerYPR(yaw,pitch,roll);
-    pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
-    pose2DMsg_.y = odomMsg_.pose.pose.position.x;
+
+
+    // ed: 코드를 원래대로 수정했다
+    // pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
+    // pose2DMsg_.y = odomMsg_.pose.pose.position.x;
+    pose2DMsg_.x = odomMsg_.pose.pose.position.x;
+    pose2DMsg_.y = odomMsg_.pose.pose.position.y;
     pose2DMsg_.theta = yaw;  //Mypose.theta = tf::getYaw(geoQuat);
-    if(yaw<0) {
+
+    if(yaw<0)
       pose2DMsg_.theta += 2.0 * M_PI;
-    }
     else {
       //Mypose.theta += 0.5 * PI;
     }

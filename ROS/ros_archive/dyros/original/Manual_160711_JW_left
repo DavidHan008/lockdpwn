@@ -13,16 +13,19 @@
 3. Localization
 	rosrun localization localization
 
-4. Hightmap
+4. Heightmap
 	rosrun velodyne_height_map heightmap_node
 
 
 5. Suhan LOAM Velodyne
 	1> Initial map generation
 	roslaunch loam_velodyne loam_velodyne.launch
+
+
 	1-2> After initialized
 	rostopic pub -1 /loam_map_save std_msgs/String "filename.pcd" 
 // filename could be changed
+
 
 	2> Load initial map and match init pose
 	edit loam_velo_global_test.launch (~/catkin_ws/src/loam_velodyne/launch)
