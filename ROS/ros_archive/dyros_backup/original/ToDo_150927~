@@ -1,0 +1,13 @@
+1. Loam Migration from Hydro to Indigo
+2. ICP or Off-line Map Matching algorithm 
+3. User Interface Design Using Service - Seperate ui & algorithm
+4. Launch File Setup
+5. Robot Web Tools Setup for Web Interface
+6. Android Ros Interface
+7. Steering Profiler (MCU)
+8. On-Offline Emergency Button
+9. Velocity Profiler (New Module)
+10. Parking Path Planner (New Module)
+11. Stanley Path Tracking Algorithm (New Module)
+12. Finite State Machine - Decision maker (New Module)
+13. Local Path Planner - Collision Avoidance ( New Module )

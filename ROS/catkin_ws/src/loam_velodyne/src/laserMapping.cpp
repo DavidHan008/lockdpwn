@@ -611,6 +611,7 @@ int main(int argc, char** argv){
 
         int laserCloudValidNum = 0;
         int laserCloudSurroundNum = 0;
+
         for (int i = centerCubeI - 2; i <= centerCubeI + 2; i++) {
           for (int j = centerCubeJ - 2; j <= centerCubeJ + 2; j++) {
             for (int k = centerCubeK - 2; k <= centerCubeK + 2; k++) {
@@ -1075,6 +1076,7 @@ int main(int argc, char** argv){
         }
 
         int laserCloudFullResNum = laserCloudFullRes->points.size();
+
         for (int i = 0; i < laserCloudFullResNum; i++) {
           pointAssociateToMap(&laserCloudFullRes->points[i], &laserCloudFullRes->points[i]);
         }

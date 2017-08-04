@@ -269,6 +269,8 @@ int main(int argc, char** argv){
   ros::Publisher pubPose;
   ros::Publisher pubPose1;
 
+
+  // ed: poseInitializer를 사용하는 경우 myPoseEnabled가 False가 된다
   if(myPoseEnabled) {
     ROS_INFO("Use Original 2D Pose");
     pubPose = nh.advertise<geometry_msgs::Pose2D> ("/my_pose", 5);

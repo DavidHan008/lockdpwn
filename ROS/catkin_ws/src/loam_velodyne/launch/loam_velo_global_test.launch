@@ -7,6 +7,8 @@
     <param name="my_pose_enable" type="bool" value="false" />
   </node>
 
+  
+  <!-- ed: poseInitializerVelo 사용 -->
   <node pkg="loam_velodyne" type="poseInitializerVelo" name="poseInitializer" output="screen">
     <param name="enable_init_map" type="bool" value="true" />
     <param name="map_file" type="string" value="init.pcd" /> <!-- change here ! /-->

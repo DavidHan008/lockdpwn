@@ -23,13 +23,12 @@ typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
 
 
 class PoseInitializer{
-
-public:
+ public:
   // ed: PoseInitializer 생성자
   PoseInitializer() : nh_("~"), recordStart_(false), isRecordFinished_(false),
-    previousMap_(new PointCloud), currentMap_(new PointCloud),
-    currentMapFiltered_(new PointCloud), alignedMap_(new PointCloud),
-    transformedMap_ (new PointCloud) {
+                      previousMap_(new PointCloud), currentMap_(new PointCloud),
+                      currentMapFiltered_(new PointCloud), alignedMap_(new PointCloud),
+                      transformedMap_ (new PointCloud) {
 
     nh_.param<bool>("enable_init_map", enable_init_map, false);
     nh_.param<std::string>("map_file", map_file, "init.pcd");
@@ -38,16 +37,12 @@ public:
 
     loadPrevMap();
 
-    subLaser_ = nh_.subscribe< PointCloud >
-        ("/velodyne_points", 2,
-         &PoseInitializer::laserCloudCallback, this);
+    subLaser_ = nh_.subscribe< PointCloud >("/velodyne_points", 2, &PoseInitializer::laserCloudCallback, this);
     pubPose_ = nh_.advertise<std_msgs::Float32MultiArray>("/init_pose", 1);
     pubPose2D_ = nh_.advertise<geometry_msgs::Pose2D>("/my_pose", 5);
   }
 
-
-
-private:  // VARIABLE
+ private:  // VARIABLE
   ros::NodeHandle nh_;
 
   // nh.param
@@ -55,7 +50,6 @@ private:  // VARIABLE
   bool file_debug;
   double init_map_record_time;
   std::string map_file;
-  // -
 
   ros::Subscriber subLaser_;
   ros::Subscriber subOriginalMap_;
@@ -91,6 +85,7 @@ private:  // VARIABLE
   // METHOD
   void loadPrevMap() {
     int error = pcl::io::loadPCDFile(map_file, *previousMap_);
+
     if (error < 0)
       ROS_ERROR("PCD File load failed. \n filename = %s",map_file.c_str());
   }
@@ -99,23 +94,27 @@ private:  // VARIABLE
     ROS_INFO("Filtering Start");
     pcl::VoxelGrid<pcl::PointXYZ> downSizeFilter;
     downSizeFilter.setInputCloud(currentMap_);
-    downSizeFilter.setLeafSize(0.05, 0.05, 0.05);
+    downSizeFilter.setLeafSize(0.1, 0.1, 0.1);
     downSizeFilter.filter(*currentMapFiltered_);
   }
 
   void match() {
     ROS_INFO("Matching Start");
+
     pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
+
     gicp.setInputSource(currentMapFiltered_);
     gicp.setInputTarget(previousMap_);
     //gicp.setInputSource(previousMap_);
     //gicp.setInputTarget(currentMapFiltered_);
     gicp.align(*alignedMap_);
 
-    std::cout << "has converged:" << gicp.hasConverged() << " score: " <<
-    gicp.getFitnessScore() << std::endl;
+    std::cout << "has converged:" << gicp.hasConverged() << " score: " << gicp.getFitnessScore() << std::endl;
+
     initTf_ = gicp.getFinalTransformation();
+
     std::cout << initTf_ << std::endl;
+
     initTfROS_.setBasis(tf::Matrix3x3(initTf_(0,0), initTf_(0,1), initTf_(0,2),
                                       initTf_(1,0), initTf_(1,1), initTf_(1,2),
                                       initTf_(2,0), initTf_(2,1), initTf_(2,2)));
@@ -140,25 +139,25 @@ private:  // VARIABLE
       pcl::io::savePCDFile("aligned.pcd",*alignedMap_);
     }
     /*
-    tf::Matrix3x3 tfMat(eigTfMat(0,0), eigTfMat(0,1), eigTfMat(0,2),
-                        eigTfMat(1,0), eigTfMat(1,1), eigTfMat(1,2),
-                        eigTfMat(2,0), eigTfMat(2,1), eigTfMat(2,2));
+      tf::Matrix3x3 tfMat(eigTfMat(0,0), eigTfMat(0,1), eigTfMat(0,2),
+      eigTfMat(1,0), eigTfMat(1,1), eigTfMat(1,2),
+      eigTfMat(2,0), eigTfMat(2,1), eigTfMat(2,2));
 
-    Eigen::Vector3d ypr;
-    tfMat.getEulerYPR(ypr(0),ypr(1),ypr(2));
-    ROS_INFO("Matrix T' = %lf \t%lf \t%lf \t%lf \t%lf \t %lf",
-             eigTfMat(0,3),eigTfMat(1,3),eigTfMat(2,3),
-             ypr(2),ypr(1),ypr(0));
+      Eigen::Vector3d ypr;
+      tfMat.getEulerYPR(ypr(0),ypr(1),ypr(2));
+      ROS_INFO("Matrix T' = %lf \t%lf \t%lf \t%lf \t%lf \t %lf",
+      eigTfMat(0,3),eigTfMat(1,3),eigTfMat(2,3),
+      ypr(2),ypr(1),ypr(0));
 
-    std_msgs::Float32MultiArray msg;
-    msg.data.push_back(eigTfMat(0,3));
-    msg.data.push_back(eigTfMat(1,3));
-    msg.data.push_back(eigTfMat(2,3));
-    msg.data.push_back(ypr(2));
-    msg.data.push_back(ypr(1));
-    msg.data.push_back(ypr(0));
+      std_msgs::Float32MultiArray msg;
+      msg.data.push_back(eigTfMat(0,3));
+      msg.data.push_back(eigTfMat(1,3));
+      msg.data.push_back(eigTfMat(2,3));
+      msg.data.push_back(ypr(2));
+      msg.data.push_back(ypr(1));
+      msg.data.push_back(ypr(0));
 
-    pubPose_.publish(msg);
+      pubPose_.publish(msg);
     */
   }
 
@@ -177,11 +176,11 @@ private:  // VARIABLE
 
 
 
-private:  // CALLBACK
-  void laserCloudCallback(const PointCloud::ConstPtr& msg)
-  {
-    if(!recordStart_)
-    {
+ private:  // CALLBACK
+
+  // ed: /velodyne_points를 섭스크라이브하는 콜백함수
+  void laserCloudCallback(const PointCloud::ConstPtr& msg)  {
+    if(!recordStart_) {
       ROS_INFO("Recording starts.");
       recordStart_ = true;
       ros::Duration recordDuration(init_map_record_time);
@@ -193,8 +192,7 @@ private:  // CALLBACK
 
     *currentMap_ = *currentMap_ + *msg;
 
-    if(ros::Time::now() >= recordEndTime_)
-    {
+    if(ros::Time::now() >= recordEndTime_) {
       // finish
       isRecordFinished_ = true;
       // Do a conversion
@@ -207,25 +205,31 @@ private:  // CALLBACK
     }
   }
 
-  void mapCallback(const PointCloud::ConstPtr& msg)
-  {
+  // ed: /laser_cloud_surround를 섭스크라이브하는 콜백함수
+  void mapCallback(const PointCloud::ConstPtr& msg) {
     PointCloud totalPoint;
     PointCloud::Ptr transformedPoint (new PointCloud);
+
     transformedPoint->header.frame_id = "/camera_init_global";
+
     //pcl::transformPointCloud(*msg,*transformedPoint, initTf_);
-    pcl::transformPointCloud(*msg,*transformedPoint, initTf_);
-    totalPoint = *transformedPoint+ *previousMap_;
+    pcl::transformPointCloud(*msg, *transformedPoint, initTf_);
+
+    totalPoint = *transformedPoint + *previousMap_;
     totalPoint.header.frame_id = "/camera_init_global";
     //totalPoint = *transformedPoint + *previousMap_;
 
     pubAdjustedMap_.publish(totalPoint);
   }
 
-  void odometryCallback(const nav_msgs::Odometry::ConstPtr& msg)
-  {
+
+  // ed: /integrated_to_init을 섭스크라이브하는 콜백함수
+  void odometryCallback(const nav_msgs::Odometry::ConstPtr& msg)  {
     tf::Transform g;
-    g = initTfROS_;
     tf::Transform h;
+
+    g = initTfROS_;
+
     h.setRotation(tf::Quaternion(msg->pose.pose.orientation.x,
                                  msg->pose.pose.orientation.y,
                                  msg->pose.pose.orientation.z,
@@ -254,12 +258,12 @@ private:  // CALLBACK
 
 
     /*********** sh X jh **********************************/
-
     double yaw, pitch, roll;
     gh.getBasis().getEulerYPR(yaw,pitch,roll);
     pose2DMsg_.x = -odomMsg_.pose.pose.position.y;
     pose2DMsg_.y = odomMsg_.pose.pose.position.x;
     pose2DMsg_.theta = yaw;  //Mypose.theta = tf::getYaw(geoQuat);
+
     if(yaw<0) {
       pose2DMsg_.theta += 2.0 * M_PI;
     }
