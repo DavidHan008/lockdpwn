@@ -65,6 +65,7 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSurround2(new pcl::PointCloud<pcl
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCornerFromMap(new pcl::PointCloud<pcl::PointXYZI>());
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSurfFromMap(new pcl::PointCloud<pcl::PointXYZI>());
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudFullRes(new pcl::PointCloud<pcl::PointXYZI>());
+
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCornerArray[laserCloudNum];
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSurfArray[laserCloudNum];
 pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCornerArray2[laserCloudNum];
@@ -176,8 +177,7 @@ void transformAssociateToMap()
                          - (-sin(transformTobeMapped[1]) * x2 + cos(transformTobeMapped[1]) * z2);
 }
 
-void transformUpdate()
-{
+void transformUpdate(){
   if (imuPointerLast >= 0) {
     float imuRollLast = 0, imuPitchLast = 0;
     while (imuPointerFront != imuPointerLast) {
@@ -217,8 +217,7 @@ void transformUpdate()
   }
 }
 
-void pointAssociateToMap(pcl::PointXYZI *pi, pcl::PointXYZI *po)
-{
+void pointAssociateToMap(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float x1 = cos(transformTobeMapped[2]) * pi->x
            - sin(transformTobeMapped[2]) * pi->y;
   float y1 = sin(transformTobeMapped[2]) * pi->x
@@ -237,8 +236,8 @@ void pointAssociateToMap(pcl::PointXYZI *pi, pcl::PointXYZI *po)
   po->intensity = pi->intensity;
 }
 
-void pointAssociateTobeMapped(pcl::PointXYZI *pi, pcl::PointXYZI *po)
-{
+
+void pointAssociateTobeMapped(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float x1 = cos(transformTobeMapped[1]) * (pi->x - transformTobeMapped[3]) 
            - sin(transformTobeMapped[1]) * (pi->z - transformTobeMapped[5]);
   float y1 = pi->y - transformTobeMapped[4];
@@ -257,8 +256,9 @@ void pointAssociateTobeMapped(pcl::PointXYZI *pi, pcl::PointXYZI *po)
   po->intensity = pi->intensity;
 }
 
-void laserCloudCornerLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudCornerLast2)
-{
+
+// ed: /laser_cloud_corner_last를 섭스크라이브하는 콜백함수
+void laserCloudCornerLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudCornerLast2){
   timeLaserCloudCornerLast = laserCloudCornerLast2->header.stamp.toSec();
 
   laserCloudCornerLast->clear();
@@ -267,8 +267,9 @@ void laserCloudCornerLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserCl
   newLaserCloudCornerLast = true;
 }
 
-void laserCloudSurfLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudSurfLast2)
-{
+
+// ed: /laser_cloud_surf_last를 섭스크라이브하는 콜백함수
+void laserCloudSurfLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudSurfLast2){
   timeLaserCloudSurfLast = laserCloudSurfLast2->header.stamp.toSec();
 
   laserCloudSurfLast->clear();
@@ -277,8 +278,9 @@ void laserCloudSurfLastHandler(const sensor_msgs::PointCloud2ConstPtr& laserClou
   newLaserCloudSurfLast = true;
 }
 
-void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudFullRes2)
-{
+
+// ed: /velodyne_cloud_3를 섭스크라이브하는 콜백함수
+void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudFullRes2){
   timeLaserCloudFullRes = laserCloudFullRes2->header.stamp.toSec();
 
   laserCloudFullRes->clear();
@@ -287,8 +289,8 @@ void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloud
   newLaserCloudFullRes = true;
 }
 
-void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry)
-{
+// ed: /laser_odom_to_init을 섭스크라이브하는 콜백함수
+void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   timeLaserOdometry = laserOdometry->header.stamp.toSec();
 
   double roll, pitch, yaw;
@@ -306,6 +308,7 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry)
   newLaserOdometry = true;
 }
 
+
 void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
   double roll, pitch, yaw;
   tf::Quaternion orientation;
@@ -319,14 +322,18 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
   imuPitch[imuPointerLast] = pitch;
 }
 
+
+// ed:	rostopic pub -1 /loam_map_save std_msgs/String "edward.pcd"
+//                                                                   를 통해 맵파일을 저장하는 함수
 void mapSaveHandler(const std_msgs::String::ConstPtr& str){
   ROS_INFO("Saving the current map... to %s", str->data.c_str());
+
   int cubeI = laserCloudCenWidth;
   int cubeJ = laserCloudCenHeight;
   int cubeK = laserCloudCenDepth;
   int cubeInd = cubeI + laserCloudWidth * cubeJ + laserCloudWidth * laserCloudHeight * cubeK;
 
-  pcl::io::savePCDFileASCII(str->data,*laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
+  pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
 }
 
 
@@ -339,7 +346,7 @@ int main(int argc, char** argv){
   ros::Subscriber subLaserOdometry = nh.subscribe<nav_msgs::Odometry>("/laser_odom_to_init", 5, laserOdometryHandler);
   ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_cloud_3", 2, laserCloudFullResHandler);
   ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>("/loam_map_save", 1, mapSaveHandler);
-//  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
+  //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
 
 
@@ -398,8 +405,10 @@ int main(int argc, char** argv){
 
   int frameCount = stackFrameNum - 1;
   int mapFrameCount = mapFrameNum - 1;
+
   ros::Rate rate(100);
   bool status = ros::ok();
+
   while (status) {
     ros::spinOnce();
 
@@ -450,10 +459,12 @@ int main(int argc, char** argv){
           for (int j = 0; j < laserCloudHeight; j++) {
             for (int k = 0; k < laserCloudDepth; k++) {
               int i = laserCloudWidth - 1;
+
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeCornerPointer = 
               laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeSurfPointer = 
               laserCloudSurfArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
+
               for (; i >= 1; i--) {
                 laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k] =
                 laserCloudCornerArray[i - 1 + laserCloudWidth*j + laserCloudWidth * laserCloudHeight * k];
@@ -468,7 +479,6 @@ int main(int argc, char** argv){
               laserCloudCubeSurfPointer->clear();
             }
           }
-
           centerCubeI++;
           laserCloudCenWidth++;
         }
@@ -477,10 +487,12 @@ int main(int argc, char** argv){
           for (int j = 0; j < laserCloudHeight; j++) {
             for (int k = 0; k < laserCloudDepth; k++) {
               int i = 0;
+
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeCornerPointer = 
               laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeSurfPointer = 
               laserCloudSurfArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
+
               for (; i < laserCloudWidth - 1; i++) {
                 laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k] =
                 laserCloudCornerArray[i + 1 + laserCloudWidth*j + laserCloudWidth * laserCloudHeight * k];
@@ -495,7 +507,6 @@ int main(int argc, char** argv){
               laserCloudCubeSurfPointer->clear();
             }
           }
-
           centerCubeI--;
           laserCloudCenWidth--;
         }
@@ -558,10 +569,12 @@ int main(int argc, char** argv){
           for (int i = 0; i < laserCloudWidth; i++) {
             for (int j = 0; j < laserCloudHeight; j++) {
               int k = laserCloudDepth - 1;
+
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeCornerPointer = 
               laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeSurfPointer = 
               laserCloudSurfArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
+
               for (; k >= 1; k--) {
                 laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k] =
                 laserCloudCornerArray[i + laserCloudWidth*j + laserCloudWidth * laserCloudHeight*(k - 1)];
@@ -576,7 +589,6 @@ int main(int argc, char** argv){
               laserCloudCubeSurfPointer->clear();
             }
           }
-
           centerCubeK++;
           laserCloudCenDepth++;
         }
@@ -585,10 +597,12 @@ int main(int argc, char** argv){
           for (int i = 0; i < laserCloudWidth; i++) {
             for (int j = 0; j < laserCloudHeight; j++) {
               int k = 0;
+
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeCornerPointer = 
               laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
               pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudCubeSurfPointer = 
               laserCloudSurfArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k];
+
               for (; k < laserCloudDepth - 1; k++) {
                 laserCloudCornerArray[i + laserCloudWidth * j + laserCloudWidth * laserCloudHeight * k] =
                 laserCloudCornerArray[i + laserCloudWidth*j + laserCloudWidth * laserCloudHeight*(k + 1)];
@@ -603,7 +617,6 @@ int main(int argc, char** argv){
               laserCloudCubeSurfPointer->clear();
             }
           }
-
           centerCubeK--;
           laserCloudCenDepth--;
         }
@@ -673,10 +686,11 @@ int main(int argc, char** argv){
           *laserCloudCornerFromMap += *laserCloudCornerArray[laserCloudValidInd[i]];
           *laserCloudSurfFromMap += *laserCloudSurfArray[laserCloudValidInd[i]];
         }
+
         int laserCloudCornerFromMapNum = laserCloudCornerFromMap->points.size();
         int laserCloudSurfFromMapNum = laserCloudSurfFromMap->points.size();
-
         int laserCloudCornerStackNum2 = laserCloudCornerStack2->points.size();
+
         for (int i = 0; i < laserCloudCornerStackNum2; i++) {
           pointAssociateTobeMapped(&laserCloudCornerStack2->points[i], &laserCloudCornerStack2->points[i]);
         }
@@ -734,6 +748,7 @@ int main(int argc, char** argv){
                 float a22 = 0;
                 float a23 = 0; 
                 float a33 = 0;
+
                 for (int j = 0; j < 5; j++) {
                   float ax = laserCloudCornerFromMap->points[pointSearchInd[j]].x - cx;
                   float ay = laserCloudCornerFromMap->points[pointSearchInd[j]].y - cy;
@@ -1050,11 +1065,15 @@ int main(int argc, char** argv){
           laserCloudSurfArray2[ind] = laserCloudTemp;
         }
 
-        mapFrameCount++;
+        // ed: 코드 수정
+        mapFrameCount += 5;
+        // mapFrameCount++;
+
         if (mapFrameCount >= mapFrameNum) {
           mapFrameCount = 0;
 
           laserCloudSurround2->clear();
+
           for (int i = 0; i < laserCloudSurroundNum; i++) {
             int ind = laserCloudSurroundInd[i];
             *laserCloudSurround2 += *laserCloudCornerArray[ind];
@@ -1111,8 +1130,9 @@ int main(int argc, char** argv){
 
         aftMappedTrans.stamp_ = ros::Time().fromSec(timeLaserOdometry);
         aftMappedTrans.setRotation(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w));
-        aftMappedTrans.setOrigin(tf::Vector3(transformAftMapped[3], 
-                                             transformAftMapped[4], transformAftMapped[5]));
+        aftMappedTrans.setOrigin(tf::Vector3(transformAftMapped[3], transformAftMapped[4], transformAftMapped[5]));
+
+        // ed: /aft_mapped tf를 broadcast한다
         tfBroadcaster.sendTransform(aftMappedTrans);
 
         /*sensor_msgs::PointCloud2 pc12;

@@ -190,7 +190,7 @@ void AccumulateIMUShift(){
   }
 }
 
-// ed: rosbag으로부터 PointCloud2 데이터를 섭스크라이브하는 콜백함수 ( 500줄 :-/ )
+// ed: /velodyne_points를 섭스크라이브하는 콜백함수
 void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   if (!systemInited) {
     systemInitCount++;
@@ -675,7 +675,6 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
 
   // ed: /laser_cloud_flat으로 퍼블리시한다
   pubSurfPointsFlatPointer->publish(surfPointsFlat2);
-
 
 
   sensor_msgs::PointCloud2 surfPointsLessFlat2;

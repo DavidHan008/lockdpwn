@@ -57,6 +57,10 @@ add_executable(transformMaintenance src/transformMaintenance.cpp)
 add_executable(poseInitializerVelo src/poseInitializer.cpp)
 
 
+## ed: code added
+add_executable(poseInitializer_ed src/poseInitializer_ed.cpp)
+target_link_libraries(poseInitializer_ed ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
 ## Specify libraries to link a library or executable target against
 target_link_libraries(scanRegistration ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 target_link_libraries(laserOdometry ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})

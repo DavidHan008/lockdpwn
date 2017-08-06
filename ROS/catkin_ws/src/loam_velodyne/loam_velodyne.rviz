@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /velodyne_cloud_registered1
+        - /laser_cloud_surround1/Status1
       Splitter Ratio: 0.559682
     Tree Height: 403
   - Class: rviz/Selection
@@ -519,22 +519,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 122.693
+      Distance: 178.739
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -10.5366
-        Y: -15.7313
-        Z: 8.83283
+        X: -8.94044
+        Y: -13.021
+        Z: 5.88593
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.7098
+      Pitch: 0.7348
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.18317
+      Yaw: 3.97816
     Saved: ~
 Window Geometry:
   Displays:
@@ -552,5 +552,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1457
-  X: 5
-  Y: 15
+  X: 450
+  Y: 173

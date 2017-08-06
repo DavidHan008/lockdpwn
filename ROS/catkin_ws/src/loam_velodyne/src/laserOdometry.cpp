@@ -840,12 +840,14 @@ int main(int argc, char** argv){
       laserOdometry.pose.pose.position.y = ty;
       laserOdometry.pose.pose.position.z = tz;
 
-      // ed: /laser_odom_to_init 토픽으로 퍼블리사한다
+      // ed: /laser_odom_to_init 토픽으로 퍼블리시한다
       pubLaserOdometry.publish(laserOdometry);
 
       laserOdometryTrans.stamp_ = ros::Time().fromSec(timeSurfPointsLessFlat);
       laserOdometryTrans.setRotation(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w));
       laserOdometryTrans.setOrigin(tf::Vector3(tx, ty, tz));
+
+      // ed: /laser_odom tf로 broadcast한다
       tfBroadcaster.sendTransform(laserOdometryTrans);
 
       int cornerPointsLessSharpNum = cornerPointsLessSharp->points.size();

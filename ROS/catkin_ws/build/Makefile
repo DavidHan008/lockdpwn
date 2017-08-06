@@ -2545,6 +2545,19 @@ poseInitializerVelo/fast:
 .PHONY : poseInitializerVelo/fast
 
 #=============================================================================
+# Target rules for targets named poseInitializer_ed
+
+# Build rule for target.
+poseInitializer_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 poseInitializer_ed
+.PHONY : poseInitializer_ed
+
+# fast build rule for target.
+poseInitializer_ed/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/poseInitializer_ed.dir/build.make loam_velodyne/CMakeFiles/poseInitializer_ed.dir/build
+.PHONY : poseInitializer_ed/fast
+
+#=============================================================================
 # Target rules for targets named laserOdometry
 
 # Build rule for target.
@@ -3663,6 +3676,7 @@ help:
 	@echo "... scanRegistration"
 	@echo "... tf_generate_messages_py"
 	@echo "... poseInitializerVelo"
+	@echo "... poseInitializer_ed"
 	@echo "... laserOdometry"
 	@echo "... project3"
 	@echo "... diagnostic_msgs_generate_messages_py"

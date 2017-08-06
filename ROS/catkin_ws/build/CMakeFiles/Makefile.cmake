@@ -796,6 +796,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "loam_velodyne/CMakeFiles/scanRegistration.dir/DependInfo.cmake"
   "loam_velodyne/CMakeFiles/tf_generate_messages_py.dir/DependInfo.cmake"
   "loam_velodyne/CMakeFiles/poseInitializerVelo.dir/DependInfo.cmake"
+  "loam_velodyne/CMakeFiles/poseInitializer_ed.dir/DependInfo.cmake"
   "loam_velodyne/CMakeFiles/laserOdometry.dir/DependInfo.cmake"
   "project3/CMakeFiles/project3.dir/DependInfo.cmake"
   "project3/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/DependInfo.cmake"

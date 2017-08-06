@@ -34,7 +34,7 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
 
-    <model name='mkz'>
+    <model name='parking_lot'>
       <static>1</static>
       <link name='base_footprint'>
         <pose>0 0 0 0 -0 0</pose>
@@ -51,7 +51,7 @@
           </inertia>
         </inertial>
         <collision name='base_footprint_collision_base_link'>
-          <pose>0 0 -1 0 -0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -73,7 +73,7 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='base_footprint_visual_base_link'>
-          <pose>0 0 -1 0 -0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -99,15 +99,15 @@
       </link>
       <pose>0 0 0 0 -0 0</pose>
     </model>
+    
     <state world_name='default'>
       <sim_time>86 525000000</sim_time>
       <real_time>24 464118368</real_time>
       <wall_time>1501427738 62739699</wall_time>
-
-      <model name='mkz'>
-        <pose>0 0 0.984744 0 -0 0</pose>
+      <model name='parking_lot'>
+        <pose>0 0 0 0 -0 0</pose>
         <link name='base_footprint'>
-          <pose>0 0 0.984744 0 -0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
