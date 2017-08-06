@@ -111,19 +111,19 @@ Visualization Manager:
       Update Interval: 0
       Value: true
     - Class: rviz/Axes
-      Enabled: false
+      Enabled: true
       Length: 9
       Name: camera_init
       Radius: 0.25
       Reference Frame: camera_init
-      Value: false
+      Value: true
     - Class: rviz/Axes
-      Enabled: false
+      Enabled: true
       Length: 5
       Name: camera
       Radius: 0.5
       Reference Frame: camera
-      Value: false
+      Value: true
     - Class: rviz/Axes
       Enabled: false
       Length: 5
@@ -307,8 +307,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 52.0089
-        Min Value: -1.1831
+        Max Value: 51.8635
+        Min Value: -1.06658
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -480,22 +480,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 29.7248
+      Distance: 48.865
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 5.44796
-        Y: 0.892181
-        Z: 4.53683
+        X: 8.09254
+        Y: -0.0143725
+        Z: 6.07717
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.509802
+      Pitch: 0.554802
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.10868
+      Yaw: 4.03368
     Saved: ~
 Window Geometry:
   Displays:
@@ -513,5 +513,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1362
-  X: 515
-  Y: 196
+  X: 526
+  Y: 41
