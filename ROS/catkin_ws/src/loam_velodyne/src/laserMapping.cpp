@@ -21,6 +21,8 @@
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/kdtree/kdtree_flann.h>
 
+using namespace std;
+
 const double PI = 3.1415926;
 
 const float scanPeriod = 0.1;
@@ -44,7 +46,7 @@ int laserCloudCenDepth = 10;
 const int laserCloudWidth = 21;
 const int laserCloudHeight = 11;
 const int laserCloudDepth = 21;
-const int laserCloudNum = laserCloudWidth * laserCloudHeight * laserCloudDepth;
+const int laserCloudNum = laserCloudWidth * laserCloudHeight * laserCloudDepth;  // 21*21*11 = 4851
 
 int laserCloudValidInd[125];
 int laserCloudSurroundInd[125];
@@ -88,9 +90,10 @@ double imuTime[imuQueLength] = {0};
 float imuRoll[imuQueLength] = {0};
 float imuPitch[imuQueLength] = {0};
 
-void transformAssociateToMap()
-{
-  float x1 = cos(transformSum[1]) * (transformBefMapped[3] - transformSum[3]) 
+// ed: main()에서 호출되는 함수
+//     transformTobeMapped[6]과 transformIncre[6]의 값을 변경시키는 함수
+void transformAssociateToMap(){
+  float x1 = cos(transformSum[1]) * (transformBefMapped[3] - transformSum[3])
            - sin(transformSum[1]) * (transformBefMapped[5] - transformSum[5]);
   float y1 = transformBefMapped[4] - transformSum[4];
   float z1 = sin(transformSum[1]) * (transformBefMapped[3] - transformSum[3]) 
@@ -177,6 +180,9 @@ void transformAssociateToMap()
                          - (-sin(transformTobeMapped[1]) * x2 + cos(transformTobeMapped[1]) * z2);
 }
 
+
+// ed: main()에서 호출되는 함수
+//     IMU의 pitch, roll 값을 읽어서 transformTobeMapped[6]를 업데이트시키고 transformAftMapped, transformBefMapped의 값을 대입하는 함수
 void transformUpdate(){
   if (imuPointerLast >= 0) {
     float imuRollLast = 0, imuPitchLast = 0;
@@ -202,14 +208,14 @@ void transformUpdate(){
 
     }
 
-//    transformTobeMapped[0] = 0.998 * transformTobeMapped[0] + 0.002 * imuPitchLast;
-//    transformTobeMapped[2] = 0.998 * transformTobeMapped[2] + 0.002 * imuRollLast;
+    // transformTobeMapped[0] = 0.998 * transformTobeMapped[0] + 0.002 * imuPitchLast;
+    // transformTobeMapped[2] = 0.998 * transformTobeMapped[2] + 0.002 * imuRollLast;
     transformTobeMapped[1] = 0.998 * transformTobeMapped[0] + 0.002 * imuPitchLast;
     transformTobeMapped[0] = 0.998 * transformTobeMapped[2] + 0.002 * imuRollLast;
   }
 
-  //transformTobeMapped[0] = 0.998 * transformTobeMapped[0] + 0.002 * transformSum[0];
-  //transformTobeMapped[2] = 0.998 * transformTobeMapped[2] + 0.002 * transformSum[2];
+  // transformTobeMapped[0] = 0.998 * transformTobeMapped[0] + 0.002 * transformSum[0];
+  // transformTobeMapped[2] = 0.998 * transformTobeMapped[2] + 0.002 * transformSum[2];
 
   for (int i = 0; i < 6; i++) {
     transformBefMapped[i] = transformSum[i];
@@ -217,6 +223,7 @@ void transformUpdate(){
   }
 }
 
+// ed: pi와 transformTobeMapped값을 사용해 po의 x,y,z,intensity를 구하는 함수
 void pointAssociateToMap(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float x1 = cos(transformTobeMapped[2]) * pi->x
            - sin(transformTobeMapped[2]) * pi->y;
@@ -236,7 +243,7 @@ void pointAssociateToMap(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   po->intensity = pi->intensity;
 }
 
-
+// ed: pi와 transformTobeMapped값을 사용해 po의 x,y,z,intensity를 구하는 함수2
 void pointAssociateTobeMapped(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float x1 = cos(transformTobeMapped[1]) * (pi->x - transformTobeMapped[3]) 
            - sin(transformTobeMapped[1]) * (pi->z - transformTobeMapped[5]);
@@ -323,17 +330,27 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 }
 
 
-// ed:	rostopic pub -1 /loam_map_save std_msgs/String "edward.pcd"
-//                                                                   를 통해 맵파일을 저장하는 함수
+// ed:	rostopic pub -1 /loam_map_save std_msgs/String "edward2.pcd" 를 통해 맵파일을 저장하는 함수
 void mapSaveHandler(const std_msgs::String::ConstPtr& str){
   ROS_INFO("Saving the current map... to %s", str->data.c_str());
+
 
   int cubeI = laserCloudCenWidth;
   int cubeJ = laserCloudCenHeight;
   int cubeK = laserCloudCenDepth;
   int cubeInd = cubeI + laserCloudWidth * cubeJ + laserCloudWidth * laserCloudHeight * cubeK;
 
-  pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
+  cout << cubeInd << endl;
+
+  // ed: 코드 추가
+  pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
+
+  for (int i = cubeInd ; i < cubeInd + 20 ; i++){
+    *laserCloudSum_ed += *laserCloudSurfArray[i] + *laserCloudCornerArray[i];
+  }
+
+  //pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
+  pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
 }
 
 
@@ -386,11 +403,11 @@ int main(int argc, char** argv){
   cv::Mat matP(6, 6, CV_32F, cv::Scalar::all(0));
 
   pcl::VoxelGrid<pcl::PointXYZI> downSizeFilterCorner;
-//  downSizeFilterCorner.setLeafSize(0.2, 0.2, 0.2);
+  // downSizeFilterCorner.setLeafSize(0.2, 0.2, 0.2);
   downSizeFilterCorner.setLeafSize(0.4, 0.4, 0.4);
 
   pcl::VoxelGrid<pcl::PointXYZI> downSizeFilterSurf;
-//  downSizeFilterSurf.setLeafSize(0.4, 0.4, 0.4);
+  // downSizeFilterSurf.setLeafSize(0.4, 0.4, 0.4);
   downSizeFilterSurf.setLeafSize(0.6, 0.6, 0.6);
 
   pcl::VoxelGrid<pcl::PointXYZI> downSizeFilterMap;
@@ -426,12 +443,14 @@ int main(int argc, char** argv){
         transformAssociateToMap();
 
         int laserCloudCornerLastNum = laserCloudCornerLast->points.size();
+
         for (int i = 0; i < laserCloudCornerLastNum; i++) {
           pointAssociateToMap(&laserCloudCornerLast->points[i], &pointSel);
           laserCloudCornerStack2->push_back(pointSel);
         }
 
         int laserCloudSurfLastNum = laserCloudSurfLast->points.size();
+
         for (int i = 0; i < laserCloudSurfLastNum; i++) {
           pointAssociateToMap(&laserCloudSurfLast->points[i], &pointSel);
           laserCloudSurfStack2->push_back(pointSel);
@@ -1132,7 +1151,7 @@ int main(int argc, char** argv){
         aftMappedTrans.setRotation(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w));
         aftMappedTrans.setOrigin(tf::Vector3(transformAftMapped[3], transformAftMapped[4], transformAftMapped[5]));
 
-        // ed: /aft_mapped tf를 broadcast한다
+        // ed: /camera_init tf <==> /aft_mapped tf를 broadcast한다
         tfBroadcaster.sendTransform(aftMappedTrans);
 
         /*sensor_msgs::PointCloud2 pc12;

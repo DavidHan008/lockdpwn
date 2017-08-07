@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1
         - /laser_cloud_surround_with_init1/Autocompute Value Bounds1
       Splitter Ratio: 0.640777
     Tree Height: 602
@@ -30,6 +31,62 @@ Panels:
 Visualization Manager:
   Class: ""
   Displays:
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        aft_mapped:
+          Value: true
+        camera:
+          Value: true
+        camera_init:
+          Value: true
+        camera_init_global:
+          Value: true
+        dyros/base_footprint:
+          Value: true
+        dyros/base_link:
+          Value: true
+        dyros/front_camera:
+          Value: true
+        dyros/front_camera_optical:
+          Value: true
+        dyros/front_laser_points:
+          Value: true
+        dyros/front_laser_points_base_link:
+          Value: true
+        dyros/gps:
+          Value: true
+        dyros/steer_fl:
+          Value: true
+        dyros/steer_fr:
+          Value: true
+        dyros/velodyne:
+          Value: true
+        dyros/velodyne_base_link:
+          Value: true
+        dyros/wheel_fl:
+          Value: true
+        dyros/wheel_fr:
+          Value: true
+        dyros/wheel_rl:
+          Value: true
+        dyros/wheel_rr:
+          Value: true
+        laser_odom:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        camera_init_global:
+          camera:
+            {}
+      Update Interval: 0
+      Value: true
     - Class: rviz/Axes
       Enabled: true
       Length: 9
@@ -61,13 +118,13 @@ Visualization Manager:
     - Angle Tolerance: 0.01
       Class: rviz/Odometry
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Keep: 4000
       Length: 3
       Name: cam_to_global_init
       Position Tolerance: 0.01
       Topic: /cam_to_global_init
-      Value: true
+      Value: false
     - Angle Tolerance: 0.1
       Class: rviz/Odometry
       Color: 0; 0; 255
@@ -314,22 +371,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 160.308
+      Distance: 108.655
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 10.541
-        Y: 9.00902
-        Z: -13.4827
+        X: 12.2881
+        Y: 6.39824
+        Z: -13.9328
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.6798
+      Pitch: 0.7248
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.06362
+      Yaw: 3.92862
     Saved: ~
 Window Geometry:
   Displays:
@@ -347,5 +404,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1362
-  X: 473
-  Y: 144
+  X: 463
+  Y: 134

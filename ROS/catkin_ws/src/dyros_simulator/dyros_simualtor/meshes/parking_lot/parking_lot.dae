@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>SketchUp 16.1.1450</authoring_tool>
         </contributor>
-        <created>2017-08-06T03:50:09Z</created>
-        <modified>2017-08-06T03:50:09Z</modified>
+        <created>2017-08-07T07:04:15Z</created>
+        <modified>2017-08-07T07:04:15Z</modified>
         <unit meter="0.0254" name="inch" />
         <up_axis>Z_UP</up_axis>
     </asset>
@@ -2034,7 +2034,7 @@
                     </bind_material>
                 </instance_geometry>
                 <node name="skp_camera_Last_Saved_SketchUp_View">
-                    <matrix>0.6472688 0.5427574 -0.5352172 -2647.498 -0.7622618 0.4608783 -0.4544756 -1915.947 -1.387779e-016 0.7021436 0.7120354 3012.634 0 0 0 1</matrix>
+                    <matrix>0.8220592 0.4101152 -0.394999 -1001.352 -0.569402 0.5920931 -0.5702693 -2417.992 -5.551115e-017 0.6937084 0.720256 2260.383 0 0 0 1</matrix>
                     <instance_camera url="#ID1" />
                 </node>
                 <node id="ID3" name="instance_0">
@@ -2082,11 +2082,11 @@
                     <instance_node url="#ID72" />
                 </node>
                 <node id="ID144" name="instance_11">
-                    <matrix>0.0003407962 -0.9998296 -0.01845752 889.5228 0.9998296 -7.377996e-017 0.01846067 -270.6194 -0.01845752 -0.01846067 0.9996592 5.684342e-014 0 0 0 1</matrix>
+                    <matrix>0.0003407962 -0.9998296 -0.01845752 980.074 0.9998296 -7.377996e-017 0.01846067 -270.6194 -0.01845752 -0.01846067 0.9996592 5.684342e-014 0 0 0 1</matrix>
                     <instance_node url="#ID145" />
                 </node>
                 <node id="ID420" name="instance_18">
-                    <matrix>-0.00176457 0.999997 0.001701067 341.1551 -0.9997426 -0.001725637 -0.02262347 -899.5816 -0.02262047 -0.00174055 0.9997426 2.67468 0 0 0 1</matrix>
+                    <matrix>-0.00176457 0.999997 0.001701067 336.189 -0.9997426 -0.001725637 -0.02262347 -935.0765 -0.02262047 -0.00174055 0.9997426 1.979227 0 0 0 1</matrix>
                     <instance_node url="#ID421" />
                 </node>
                 <node id="ID532" name="instance_23">

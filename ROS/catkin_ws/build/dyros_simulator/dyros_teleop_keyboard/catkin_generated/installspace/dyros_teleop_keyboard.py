@@ -9,9 +9,12 @@ import rospy
 import sys, select, termios, tty
 
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Bool         ## ed: 자동주차를 위해 추가한 메시지
+from dbw_mkz_msgs.msg import GearCmd  ## ed: 기어를 바꾸기 위해 추가한 메세지
 
-## ed: 기어를 바꾸기 위해 추가한 메세지
-from dbw_mkz_msgs.msg import GearCmd
+
+## ed: 자동추차를 위한 토글변수 선언
+mode_toggle = False
 
 
 msg = """
@@ -83,20 +86,25 @@ def getKey():
 	return key
 
 
+
 def vels(speed,turn):
 	return "currently:\tspeed %s\tturn %s " % (speed,turn)
 
+
+
 if __name__=="__main__":
-    	settings = termios.tcgetattr(sys.stdin)
-	
-	pub = rospy.Publisher('/dyros/cmd_vel', Twist, queue_size = 1)
+	rospy.init_node('dyros_teleop_keyboard')
+	settings = termios.tcgetattr(sys.stdin)
 
 	## ed: 기어 변경용 퍼블리셔
 	pub_gear = rospy.Publisher('dyros/gear_cmd', GearCmd, queue_size=1)
+	pub = rospy.Publisher('/dyros/cmd_vel', Twist, queue_size = 1)
+
+    ## ed: 자동주차의 모드 ON/OFF를 토글하는 퍼블리셔 선언
+	mode_pub = rospy.Publisher('/dyros/mode_Toggle', Bool, queue_size = 1)
+
+
 	gc = GearCmd()
-
-	rospy.init_node('dyros_teleop_keyboard')
-
 	speed = rospy.get_param("~speed", 0.5)
 	turn = rospy.get_param("~turn", 1.0)
 	x = 0
@@ -140,6 +148,17 @@ if __name__=="__main__":
 				th = 0
 				if (key == '\x03'):
 					break
+
+			## ed: 자동주차용 코드 추가
+			if key == 'p':
+				if mode_toggle == True:
+					mode_toggle = False
+				elif mode_toggle == False:
+					mode_toggle = True
+
+				print "[*] Parking Mode : %r" % mode_toggle
+				mode_pub.publish(mode_toggle)
+
 
 			twist = Twist()
 			twist.linear.x = x*speed; twist.linear.y = y*speed; twist.linear.z = z*speed;

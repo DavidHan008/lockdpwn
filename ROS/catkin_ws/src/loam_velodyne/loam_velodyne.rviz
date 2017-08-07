@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /laser_cloud_surround1/Status1
+        - /camera1
       Splitter Ratio: 0.559682
     Tree Height: 403
   - Class: rviz/Selection
@@ -39,12 +39,12 @@ Visualization Manager:
       Reference Frame: camera
       Value: true
     - Class: rviz/Axes
-      Enabled: false
-      Length: 5
+      Enabled: true
+      Length: 9
       Name: Fixed Frame
       Radius: 0.5
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -519,22 +519,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 178.739
+      Distance: 104.124
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -8.94044
-        Y: -13.021
-        Z: 5.88593
+        X: -3.25203
+        Y: -13.1835
+        Z: 9.97033
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 0.7348
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.97816
+      Yaw: 3.98316
     Saved: ~
 Window Geometry:
   Displays:
@@ -552,5 +552,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1457
-  X: 450
-  Y: 173
+  X: 440
+  Y: 163

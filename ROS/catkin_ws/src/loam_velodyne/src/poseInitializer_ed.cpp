@@ -103,7 +103,7 @@ class PoseInitializer_ed{
 
     // ed: currentMap의 포인트 크기를 작게한 다음 currentMapFiltered에 저장하는 함수인듯하다
     downSizeFilter.setInputCloud(currentMap_);
-    downSizeFilter.setLeafSize(0.07, 0.07, 0.07);
+    downSizeFilter.setLeafSize(0.1, 0.1, 0.1);
     downSizeFilter.filter(*currentMapFiltered_);
   }
 
@@ -183,17 +183,16 @@ class PoseInitializer_ed{
   // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수. 한 번만 실행된다.
   void initMessageHandlerStart() {
     odomMsg_.header.frame_id = "/camera_init";
-    odomMsg_.child_frame_id = "/camera";
-
     odomTrans3_.frame_id_ = "/camera_init";
-    odomTrans3_.child_frame_id_ = "/camera";
 
-    // ed: 코드 추가
+    // ed: 코드 수정
+    //odomMsg_.child_frame_id = "/camera";
+    //odomTrans3_.child_frame_id_ = "/camera";
     odomMsg_.child_frame_id = "/dyros/base_footprint";
     odomTrans3_.child_frame_id_ = "/dyros/base_footprint";
 
 
-    pubAdjustedOdometry_ = nh_.advertise<nav_msgs::Odometry>("/cam_to_global_init", 5);
+    pubAdjustedOdometry_ = nh_.advertise<nav_msgs::Odometry>("/vehicle_from_global_frame", 5);
     pubAdjustedMap_ = nh_.advertise< PointCloud >("/laser_cloud_surround_with_init", 1);
     subOriginalMap_ = nh_.subscribe< PointCloud >("/laser_cloud_surround", 1, &PoseInitializer_ed::mapCallback, this);
     subOriginalOdometry_ = nh_.subscribe("/integrated_to_init", 5, &PoseInitializer_ed::odometryCallback, this);
@@ -282,9 +281,12 @@ class PoseInitializer_ed{
 
     odomMsg_.pose.pose.position.x = gh.getOrigin().m_floats[0];
     odomMsg_.pose.pose.position.y = gh.getOrigin().m_floats[1];
-    odomMsg_.pose.pose.position.z = gh.getOrigin().m_floats[2];
 
-    // ed: /cam_to_global_init으로 퍼블리시
+    // ed: 실제 z방향으로는 차이가 없으므로 0으로 설정한다
+    //odomMsg_.pose.pose.position.z = gh.getOrigin().m_floats[2];
+    odomMsg_.pose.pose.position.z = 0;
+
+    // ed: /vehicle_from_global_frame으로 퍼블리시
     pubAdjustedOdometry_.publish(odomMsg_);
 
     odomTrans3_.stamp_ = msg->header.stamp;

@@ -185,6 +185,7 @@ class PoseInitializer{
   void initMessageHandlerStart() {
     odomMsg_.header.frame_id = "/camera_init_global";
     odomMsg_.child_frame_id = "/camera";
+
     odomTrans3_.frame_id_ = "/camera_init_global";
     odomTrans3_.child_frame_id_ = "/camera";
 
