@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Status1
-        - /camera1
       Splitter Ratio: 0.559682
     Tree Height: 403
   - Class: rviz/Selection
@@ -27,7 +25,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: laser_cloud_surround
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -519,7 +517,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 104.124
+      Distance: 183.502
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -552,5 +550,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1457
-  X: 440
-  Y: 163
+  X: 430
+  Y: 153

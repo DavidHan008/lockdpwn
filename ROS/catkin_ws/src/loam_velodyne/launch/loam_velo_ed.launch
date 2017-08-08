@@ -1,8 +1,8 @@
 <launch>
-  <node pkg="loam_velodyne" type="scanRegistration" name="scanRegistration" output="screen"/>
-  <node pkg="loam_velodyne" type="laserOdometry" name="laserOdometry" output="screen"/>
-  <node pkg="loam_velodyne" type="laserMapping" name="laserMapping" output="screen"/>
-  <node pkg="loam_velodyne" type="transformMaintenance" name="transformMaintenance" output="screen">
+  <node pkg="loam_velodyne" type="scanRegistration_ed" name="scanRegistration_ed" output="screen"/>
+  <node pkg="loam_velodyne" type="laserOdometry_ed" name="laserOdometry_ed" output="screen"/>
+  <node pkg="loam_velodyne" type="laserMapping_ed" name="laserMapping_ed" output="screen"/>
+  <node pkg="loam_velodyne" type="transformMaintenance_ed" name="transformMaintenance_ed" output="screen">
     <param name="my_pose_enable" type="bool" value="false" />
   </node>
 
