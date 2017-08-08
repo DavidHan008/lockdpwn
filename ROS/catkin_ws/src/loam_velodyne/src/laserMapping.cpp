@@ -349,8 +349,8 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
     *laserCloudSum_ed += *laserCloudSurfArray[i] + *laserCloudCornerArray[i];
   }
 
-  //pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
-  pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
+  pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
+  //pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
 }
 
 

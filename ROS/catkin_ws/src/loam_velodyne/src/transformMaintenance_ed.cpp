@@ -265,7 +265,7 @@ int main(int argc, char** argv){
 
   pubLaserOdometry2Pointer = &pubLaserOdometry2;
   laserOdometry2.header.frame_id = "/camera_init";
-  laserOdometry2.child_frame_id = "/camera"; //jh
+  laserOdometry2.child_frame_id = "/dyros/base_footprint"; //jh
 
   ros::Publisher pubPose;
   ros::Publisher pubPose1;
@@ -288,7 +288,7 @@ int main(int argc, char** argv){
   tf::TransformBroadcaster tfBroadcaster2;
   tfBroadcaster2Pointer = &tfBroadcaster2;
   laserOdometryTrans2.frame_id_ = "/camera_init";
-  laserOdometryTrans2.child_frame_id_ = "/camera";
+  laserOdometryTrans2.child_frame_id_ = "/dyros/base_footprint";
 
   ros::spin();
 

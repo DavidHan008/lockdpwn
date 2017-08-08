@@ -43,6 +43,7 @@ bool newLaserOdometry = false;
 int laserCloudCenWidth = 10;
 int laserCloudCenHeight = 5;
 int laserCloudCenDepth = 10;
+
 const int laserCloudWidth = 21;
 const int laserCloudHeight = 11;
 const int laserCloudDepth = 21;
@@ -330,28 +331,34 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 }
 
 
-// ed:	rostopic pub -1 /loam_map_save std_msgs/String "edward2.pcd" 를 통해 맵파일을 저장하는 함수
+// ed: 함수 추가
+void velo_pnts_callback(const sensor_msgs::PointCloud2ConstPtr& velodyne_pnts){
+
+
+}
+
+
+// ed: rostopic pub -1 /loam_map_save std_msgs/String "edward2.pcd" 를 통해 맵파일을 저장하는 함수
 void mapSaveHandler(const std_msgs::String::ConstPtr& str){
   ROS_INFO("Saving the current map... to %s", str->data.c_str());
-
 
   int cubeI = laserCloudCenWidth;
   int cubeJ = laserCloudCenHeight;
   int cubeK = laserCloudCenDepth;
   int cubeInd = cubeI + laserCloudWidth * cubeJ + laserCloudWidth * laserCloudHeight * cubeK;
 
-  cout << cubeInd << endl;
+  cout << "cubeI : " << cubeI << ", cubeJ :" << cubeJ << ", cubeK : " << cubeK <<", " << cubeInd << endl;  // ed: cubeInd 거의 항상 2425
 
   // ed: 코드 추가
   pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
-
-  for (int i = 0 ; i < laserCloudNum ; i++){
+  for (int i = 0 ; i < laserCloudNum ; i++)
     *laserCloudSum_ed += *laserCloudSurfArray[i] + *laserCloudCornerArray[i];
-  }
 
+  // ed: 코드 수정
   //pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
   pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
 }
+
 
 
 int main(int argc, char** argv){
@@ -365,6 +372,9 @@ int main(int argc, char** argv){
   ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>("/loam_map_save", 1, mapSaveHandler);
   //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
+
+  // ed: 코드 추가
+  ros::Subscriber subVelodynePoints = nh.subscribe<sensor_msgs::PointCloud2("/velodyne_points", 2, velo_pnts_callback);
 
 
   // ed: 현재 아래 3개의 토픽만 퍼블리시한다

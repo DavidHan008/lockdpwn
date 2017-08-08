@@ -638,7 +638,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*laserCloud, laserCloud2);
 
   laserCloud2.header.stamp = laserCloudIn2->header.stamp;
-  laserCloud2.header.frame_id = "/camera";
+  laserCloud2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /velodyne_cloud_2 토픽으로 퍼블리시한다
   pubLaserCloudPointer->publish(laserCloud2);
@@ -649,7 +649,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*cornerPointsSharp, cornerPointsSharp2);
 
   cornerPointsSharp2.header.stamp = laserCloudIn2->header.stamp;
-  cornerPointsSharp2.header.frame_id = "/camera";
+  cornerPointsSharp2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /laser_cloud_sharp 토픽으로 퍼블리시한다
   pubCornerPointsSharpPointer->publish(cornerPointsSharp2);
@@ -660,7 +660,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*cornerPointsLessSharp, cornerPointsLessSharp2);
 
   cornerPointsLessSharp2.header.stamp = laserCloudIn2->header.stamp;
-  cornerPointsLessSharp2.header.frame_id = "/camera";
+  cornerPointsLessSharp2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /laser_cloud_less_sharp 토픽으로 퍼블리시한다
   pubCornerPointsLessSharpPointer->publish(cornerPointsLessSharp2);
@@ -671,7 +671,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*surfPointsFlat, surfPointsFlat2);
 
   surfPointsFlat2.header.stamp = laserCloudIn2->header.stamp;
-  surfPointsFlat2.header.frame_id = "/camera";
+  surfPointsFlat2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /laser_cloud_flat으로 퍼블리시한다
   pubSurfPointsFlatPointer->publish(surfPointsFlat2);
@@ -681,7 +681,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*surfPointsLessFlat, surfPointsLessFlat2);
 
   surfPointsLessFlat2.header.stamp = laserCloudIn2->header.stamp;
-  surfPointsLessFlat2.header.frame_id = "/camera";
+  surfPointsLessFlat2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /laser_cloud_less_flat으로 퍼블리시한다
   pubSurfPointsLessFlatPointer->publish(surfPointsLessFlat2);
@@ -706,7 +706,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
   pcl::toROSMsg(*imuTrans, imuTrans2);
 
   imuTrans2.header.stamp = laserCloudIn2->header.stamp;
-  imuTrans2.header.frame_id = "/camera";
+  imuTrans2.header.frame_id = "/dyros/base_footprint";
 
   // ed: /imu_trans로 퍼블리시한다
   pubImuTransPointer->publish(imuTrans2);

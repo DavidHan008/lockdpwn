@@ -39,7 +39,8 @@ class PoseInitializer_ed{
     // ed: map_file을 불러와 previousMap_이 가리키도록한다
     loadPrevMap();
 
-    subLaser_ = nh_.subscribe< PointCloud >("/velodyne_points", 2, &PoseInitializer_ed::laserCloudCallback, this);
+    // ed: 토픽 수정
+    subLaser_ = nh_.subscribe< PointCloud >("/laser_cloud_surround", 2, &PoseInitializer_ed::laserCloudCallback, this);
 
     pubPose_ = nh_.advertise<std_msgs::Float32MultiArray>("/init_pose", 1);
     pubPose2D_ = nh_.advertise<geometry_msgs::Pose2D>("/my_pose", 5);
@@ -180,13 +181,13 @@ class PoseInitializer_ed{
     */
   }
 
-  // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수. 한 번만 실행된다.
+  // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수
   void initMessageHandlerStart() {
     odomMsg_.header.frame_id = "/camera_init";
     odomTrans3_.frame_id_ = "/camera_init";
 
     // ed: 코드 수정
-    //odomMsg_.child_frame_id = "/camera";
+    //odomMsg_.child_frame_id = "/dyros/base_footprint";
     //odomTrans3_.child_frame_id_ = "/camera";
     odomMsg_.child_frame_id = "/dyros/base_footprint";
     odomTrans3_.child_frame_id_ = "/dyros/base_footprint";
@@ -243,7 +244,6 @@ class PoseInitializer_ed{
     // ed: affine Transform을 하는 코드, msg ==> trasnformedPoint로 initTf_를 사용해 transform한다
     pcl::transformPointCloud(*msg, *transformedPoint, initTf_);
 
-
     totalPoint = *transformedPoint + *previousMap_;
     totalPoint.header.frame_id = "/camera_init";
 
@@ -286,8 +286,10 @@ class PoseInitializer_ed{
     //odomMsg_.pose.pose.position.z = gh.getOrigin().m_floats[2];
     odomMsg_.pose.pose.position.z = 0;
 
+
     // ed: /vehicle_from_global_frame으로 퍼블리시
     pubAdjustedOdometry_.publish(odomMsg_);
+
 
     odomTrans3_.stamp_ = msg->header.stamp;
     odomTrans3_.setBasis(gh.getBasis());
