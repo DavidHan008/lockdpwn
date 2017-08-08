@@ -2337,32 +2337,6 @@ actionlib_generate_messages_lisp/fast:
 .PHONY : actionlib_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named laserMapping
-
-# Build rule for target.
-laserMapping: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 laserMapping
-.PHONY : laserMapping
-
-# fast build rule for target.
-laserMapping/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/laserMapping.dir/build.make loam_velodyne/CMakeFiles/laserMapping.dir/build
-.PHONY : laserMapping/fast
-
-#=============================================================================
-# Target rules for targets named transformMaintenance
-
-# Build rule for target.
-transformMaintenance: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 transformMaintenance
-.PHONY : transformMaintenance
-
-# fast build rule for target.
-transformMaintenance/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/transformMaintenance.dir/build.make loam_velodyne/CMakeFiles/transformMaintenance.dir/build
-.PHONY : transformMaintenance/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
 
 # Build rule for target.
@@ -2374,6 +2348,19 @@ actionlib_generate_messages_cpp: cmake_check_build_system
 actionlib_generate_messages_cpp/fast:
 	$(MAKE) -f loam_velodyne/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make loam_velodyne/CMakeFiles/actionlib_generate_messages_cpp.dir/build
 .PHONY : actionlib_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_py
+
+# Build rule for target.
+tf_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
+.PHONY : tf_generate_messages_py
+
+# fast build rule for target.
+tf_generate_messages_py/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/tf_generate_messages_py.dir/build.make loam_velodyne/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named pcl_msgs_generate_messages_cpp
@@ -2428,19 +2415,6 @@ pcl_msgs_generate_messages_py/fast:
 .PHONY : pcl_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_lisp
-
-# Build rule for target.
-tf2_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make loam_velodyne/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -2465,6 +2439,19 @@ pcl_msgs_generate_messages_lisp: cmake_check_build_system
 pcl_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f loam_velodyne/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build.make loam_velodyne/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build
 .PHONY : pcl_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named scanRegistration_ed
+
+# Build rule for target.
+scanRegistration_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scanRegistration_ed
+.PHONY : scanRegistration_ed
+
+# fast build rule for target.
+scanRegistration_ed/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/scanRegistration_ed.dir/build.make loam_velodyne/CMakeFiles/scanRegistration_ed.dir/build
+.PHONY : scanRegistration_ed/fast
 
 #=============================================================================
 # Target rules for targets named tf_generate_messages_cpp
@@ -2506,43 +2493,43 @@ tf2_msgs_generate_messages_py/fast:
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named scanRegistration
+# Target rules for targets named tf2_msgs_generate_messages_lisp
 
 # Build rule for target.
-scanRegistration: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 scanRegistration
-.PHONY : scanRegistration
+tf2_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
+.PHONY : tf2_msgs_generate_messages_lisp
 
 # fast build rule for target.
-scanRegistration/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/scanRegistration.dir/build.make loam_velodyne/CMakeFiles/scanRegistration.dir/build
-.PHONY : scanRegistration/fast
+tf2_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make loam_velodyne/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named tf_generate_messages_py
+# Target rules for targets named laserMapping_ed
 
 # Build rule for target.
-tf_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
-.PHONY : tf_generate_messages_py
+laserMapping_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 laserMapping_ed
+.PHONY : laserMapping_ed
 
 # fast build rule for target.
-tf_generate_messages_py/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/tf_generate_messages_py.dir/build.make loam_velodyne/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
+laserMapping_ed/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/laserMapping_ed.dir/build.make loam_velodyne/CMakeFiles/laserMapping_ed.dir/build
+.PHONY : laserMapping_ed/fast
 
 #=============================================================================
-# Target rules for targets named poseInitializerVelo
+# Target rules for targets named transformMaintenance_ed
 
 # Build rule for target.
-poseInitializerVelo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poseInitializerVelo
-.PHONY : poseInitializerVelo
+transformMaintenance_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 transformMaintenance_ed
+.PHONY : transformMaintenance_ed
 
 # fast build rule for target.
-poseInitializerVelo/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/poseInitializerVelo.dir/build.make loam_velodyne/CMakeFiles/poseInitializerVelo.dir/build
-.PHONY : poseInitializerVelo/fast
+transformMaintenance_ed/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/transformMaintenance_ed.dir/build.make loam_velodyne/CMakeFiles/transformMaintenance_ed.dir/build
+.PHONY : transformMaintenance_ed/fast
 
 #=============================================================================
 # Target rules for targets named poseInitializer_ed
@@ -2558,17 +2545,17 @@ poseInitializer_ed/fast:
 .PHONY : poseInitializer_ed/fast
 
 #=============================================================================
-# Target rules for targets named laserOdometry
+# Target rules for targets named laserOdometry_ed
 
 # Build rule for target.
-laserOdometry: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 laserOdometry
-.PHONY : laserOdometry
+laserOdometry_ed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 laserOdometry_ed
+.PHONY : laserOdometry_ed
 
 # fast build rule for target.
-laserOdometry/fast:
-	$(MAKE) -f loam_velodyne/CMakeFiles/laserOdometry.dir/build.make loam_velodyne/CMakeFiles/laserOdometry.dir/build
-.PHONY : laserOdometry/fast
+laserOdometry_ed/fast:
+	$(MAKE) -f loam_velodyne/CMakeFiles/laserOdometry_ed.dir/build.make loam_velodyne/CMakeFiles/laserOdometry_ed.dir/build
+.PHONY : laserOdometry_ed/fast
 
 #=============================================================================
 # Target rules for targets named project3
@@ -3660,24 +3647,23 @@ help:
 	@echo "... dbw_mkz_twist_controller_gencfg"
 	@echo "... veltest_ed"
 	@echo "... actionlib_generate_messages_lisp"
-	@echo "... laserMapping"
-	@echo "... transformMaintenance"
 	@echo "... actionlib_generate_messages_cpp"
+	@echo "... tf_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_lisp"
+	@echo "... scanRegistration_ed"
 	@echo "... tf_generate_messages_cpp"
 	@echo "... pcl_ros_gencfg"
 	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... scanRegistration"
-	@echo "... tf_generate_messages_py"
-	@echo "... poseInitializerVelo"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... laserMapping_ed"
+	@echo "... transformMaintenance_ed"
 	@echo "... poseInitializer_ed"
-	@echo "... laserOdometry"
+	@echo "... laserOdometry_ed"
 	@echo "... project3"
 	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... gazebo_msgs_generate_messages_cpp"
