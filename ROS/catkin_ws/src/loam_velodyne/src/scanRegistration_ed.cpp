@@ -259,7 +259,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
     else if(angle >=     -6  && angle <   -4.5    ) { scanID =    12  ;}
     else if(angle >=     -4  && angle <   -2.5    ) { scanID =    13  ;}
     else if(angle >=     -2  && angle <   0   ) { scanID =    14  ;}
-    else if(angle >=     0   && angle <   1   ) { scanID =    15  ;}
+    else if(angle >=     0   && angle <   100   ) { scanID =    15  ;}
     else
       continue;
 
@@ -459,10 +459,12 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
     float diff = diffX * diffX + diffY * diffY + diffZ * diffZ;
 
     if (diff > 0.1) {
+      // ed: sqrt(x^2 + y^2 + z^2) for i
       float depth1 = sqrt(laserCloud->points[i].x * laserCloud->points[i].x +
                           laserCloud->points[i].y * laserCloud->points[i].y +
                           laserCloud->points[i].z * laserCloud->points[i].z);
 
+      // ed: sqrt(x^2 + y^2 + z^2) for i+1
       float depth2 = sqrt(laserCloud->points[i + 1].x * laserCloud->points[i + 1].x + 
                           laserCloud->points[i + 1].y * laserCloud->points[i + 1].y +
                           laserCloud->points[i + 1].z * laserCloud->points[i + 1].z);

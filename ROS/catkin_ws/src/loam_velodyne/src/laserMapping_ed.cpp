@@ -77,6 +77,11 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSurfArray2[laserCloudNum];
 pcl::KdTreeFLANN<pcl::PointXYZI>::Ptr kdtreeCornerFromMap(new pcl::KdTreeFLANN<pcl::PointXYZI>());
 pcl::KdTreeFLANN<pcl::PointXYZI>::Ptr kdtreeSurfFromMap(new pcl::KdTreeFLANN<pcl::PointXYZI>());
 
+// ed: 코드 추가
+pcl::PointCloud<pcl::PointXYZI>::Ptr velo_points(new pcl::PointCloud<pcl::PointXYZI>());
+pcl::PointCloud<pcl::PointXYZI>::Ptr velo_points_array[laserCloudNum];
+int ii = 0;
+
 float transformSum[6] = {0};
 float transformIncre[6] = {0};
 float transformTobeMapped[6] = {0};
@@ -333,8 +338,12 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 
 // ed: 함수 추가
 void velo_pnts_callback(const sensor_msgs::PointCloud2ConstPtr& velodyne_pnts){
+  // pcl::fromROSMsg(*velodyne_pnts, *velo_points);
 
-
+  // velo_points_array[ii] = velo_points;
+  // ii++;
+  // cout << ii << endl;
+  // if(ii > laserCloudNum)  ii = 0;
 }
 
 
@@ -351,12 +360,16 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
 
   // ed: 코드 추가
   pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
-  for (int i = 0 ; i < laserCloudNum ; i++)
+  for (int i = 0 ; i < ii ; i++){
+    //cout << i << endl;
+    //*laserCloudSum_ed += *velo_points_array[i];
     *laserCloudSum_ed += *laserCloudSurfArray[i] + *laserCloudCornerArray[i];
+  }
 
   // ed: 코드 수정
   //pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
   pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
+
 }
 
 
@@ -373,8 +386,8 @@ int main(int argc, char** argv){
   //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
 
-  // ed: 코드 추가
-  ros::Subscriber subVelodynePoints = nh.subscribe<sensor_msgs::PointCloud2("/velodyne_points", 2, velo_pnts_callback);
+  // ed: 섭스크라이버 추가
+  ros::Subscriber subVelodynePoints = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 2, velo_pnts_callback);
 
 
   // ed: 현재 아래 3개의 토픽만 퍼블리시한다

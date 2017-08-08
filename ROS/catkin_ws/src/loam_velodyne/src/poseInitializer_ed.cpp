@@ -41,8 +41,8 @@ class PoseInitializer_ed{
     // ed: map_file을 불러와 previousMap_이 가리키도록한다
     loadPrevMap();
 
-    // ed: 토픽 수정
-    subLaser_ = nh_.subscribe< PointCloud >("/laser_cloud_surround", 2, &PoseInitializer_ed::laserCloudCallback, this);
+    // ed: 토픽 수정, /velodyne_points <==> /laser_cloud_surround
+    subLaser_ = nh_.subscribe< PointCloud >("/velodyne_points", 2, &PoseInitializer_ed::laserCloudCallback, this);
 
     pubPose_ = nh_.advertise<std_msgs::Float32MultiArray>("/init_pose", 1);
     pubPose2D_ = nh_.advertise<geometry_msgs::Pose2D>("/my_pose", 5);

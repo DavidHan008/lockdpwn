@@ -73,10 +73,6 @@ target_link_libraries(poseInitializer_ed ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 #--------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 35511086117e645fbaaf65cadaefb7391493b8ef
 # Specify libraries to link a library or executable target against
 target_link_libraries(scanRegistration ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 target_link_libraries(laserOdometry ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
