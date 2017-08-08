@@ -399,7 +399,7 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudCornerLast2;
         pcl::toROSMsg(*laserCloudCornerLast, laserCloudCornerLast2);
         laserCloudCornerLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-        laserCloudCornerLast2.header.frame_id = "/camera";
+        laserCloudCornerLast2.header.frame_id = "/dyros/base_footprint";
 
         // ed: /laser_cloud_corner_last 토픽으로 퍼블리시한다
         pubLaserCloudCornerLast.publish(laserCloudCornerLast2);
@@ -408,7 +408,7 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudSurfLast2;
         pcl::toROSMsg(*laserCloudSurfLast, laserCloudSurfLast2);
         laserCloudSurfLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-        laserCloudSurfLast2.header.frame_id = "/camera";
+        laserCloudSurfLast2.header.frame_id = "/dyros/base_footprint";
 
         // ed: /laser_cloud_surf_last 토픽으로 퍼블리시한다
         pubLaserCloudSurfLast.publish(laserCloudSurfLast2);
@@ -889,7 +889,7 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudCornerLast2;
         pcl::toROSMsg(*laserCloudCornerLast, laserCloudCornerLast2);
         laserCloudCornerLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-        laserCloudCornerLast2.header.frame_id = "/camera";
+        laserCloudCornerLast2.header.frame_id = "/dyros/base_footprint";
 
         // ed: /laser_cloud_corner_last 토픽으로 퍼블리시한다
         pubLaserCloudCornerLast.publish(laserCloudCornerLast2);
@@ -897,7 +897,7 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudSurfLast2;
         pcl::toROSMsg(*laserCloudSurfLast, laserCloudSurfLast2);
         laserCloudSurfLast2.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-        laserCloudSurfLast2.header.frame_id = "/camera";
+        laserCloudSurfLast2.header.frame_id = "/dyros/base_footprint";
 
         // ed: /laser_cloud_surf_last 토픽으로 퍼블리시한다
         pubLaserCloudSurfLast.publish(laserCloudSurfLast2);
@@ -905,7 +905,7 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudFullRes3;
         pcl::toROSMsg(*laserCloudFullRes, laserCloudFullRes3);
         laserCloudFullRes3.header.stamp = ros::Time().fromSec(timeSurfPointsLessFlat);
-        laserCloudFullRes3.header.frame_id = "/camera";
+        laserCloudFullRes3.header.frame_id = "/dyros/base_footprint";
 
         // ed: /velodyne_cloud_3 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);

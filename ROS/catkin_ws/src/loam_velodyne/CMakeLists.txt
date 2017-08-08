@@ -49,12 +49,12 @@ link_directories(
 )
 
 
-## Declare executables
-#add_executable(scanRegistration src/scanRegistration.cpp)
-#add_executable(laserOdometry src/laserOdometry.cpp)
-#add_executable(laserMapping src/laserMapping.cpp)
-#add_executable(transformMaintenance src/transformMaintenance.cpp)
-#add_executable(poseInitializerVelo src/poseInitializer.cpp)
+# Declare executables
+add_executable(scanRegistration src/scanRegistration.cpp)
+add_executable(laserOdometry src/laserOdometry.cpp)
+add_executable(laserMapping src/laserMapping.cpp)
+add_executable(transformMaintenance src/transformMaintenance.cpp)
+add_executable(poseInitializerVelo src/poseInitializer.cpp)
 
 
 #--------------------------------------------------------------------------------
@@ -73,10 +73,9 @@ target_link_libraries(poseInitializer_ed ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 #--------------------------------------------------------------------------------
 
 
-
-## Specify libraries to link a library or executable target against
-#target_link_libraries(scanRegistration ${catkin_LIBRARIES} ${PCL_LIBRARIES})
-#target_link_libraries(laserOdometry ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
-#target_link_libraries(laserMapping ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
-#target_link_libraries(transformMaintenance ${catkin_LIBRARIES} ${PCL_LIBRARIES})
-#target_link_libraries(poseInitializerVelo ${catkin_LIBRARIES} )
+# Specify libraries to link a library or executable target against
+target_link_libraries(scanRegistration ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(laserOdometry ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(laserMapping ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(transformMaintenance ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(poseInitializerVelo ${catkin_LIBRARIES} )

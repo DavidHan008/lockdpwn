@@ -16,6 +16,8 @@
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Pose2D.h>
 
+using namespace std;
+
 // load before map data
 // collect start map data
 // gicp
@@ -96,7 +98,7 @@ class PoseInitializer_ed{
   }
 
 
-  // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수. 한 번만 실행된다. 아래 match()도 마찬가지
+  // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수. 4번정도 실행된다 아래 match()도 마찬가지
   void filter() {
     ROS_INFO("Filtering Start");
     pcl::VoxelGrid<pcl::PointXYZ> downSizeFilter;
@@ -203,7 +205,7 @@ class PoseInitializer_ed{
  private:  // CALLBACK
 
   // ed: /velodyne_points를 섭스크라이브하는 콜백함수
-  //      코드가 딱 한 번만 실행되도록 하는듯하다
+  //      코드가 딱 한 번만 실행되도록 하는듯하다 X   ==> 4번 실행된다
   void laserCloudCallback(const PointCloud::ConstPtr& msg)  {
     if(!recordStart_) {
       ROS_INFO("Recording starts.");
@@ -212,6 +214,9 @@ class PoseInitializer_ed{
       ros::Duration recordDuration(init_map_record_time);
       recordEndTime_ = ros::Time::now() + recordDuration;
     }
+
+    //cout << recordEndTime_.toSec() << endl;
+    //cout << "good?" << endl;
 
     if(isRecordFinished_)
       return;
