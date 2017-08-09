@@ -339,7 +339,6 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 // ed: 함수 추가
 void velo_pnts_callback(const sensor_msgs::PointCloud2ConstPtr& velodyne_pnts){
   // pcl::fromROSMsg(*velodyne_pnts, *velo_points);
-
   // velo_points_array[ii] = velo_points;
   // ii++;
   // cout << ii << endl;
@@ -360,7 +359,7 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
 
   // ed: 코드 추가
   pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
-  for (int i = 0 ; i < ii ; i++){
+  for (int i = 0 ; i < laserCloudNum ; i++){
     //cout << i << endl;
     //*laserCloudSum_ed += *velo_points_array[i];
     *laserCloudSum_ed += *laserCloudSurfArray[i] + *laserCloudCornerArray[i];
@@ -401,11 +400,13 @@ int main(int argc, char** argv){
   //ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2> ("/pc4", 2);
 
   nav_msgs::Odometry odomAftMapped;
+  //odomAftMapped.header.frame_id = "/camera_init";
   odomAftMapped.header.frame_id = "/camera_init";
   odomAftMapped.child_frame_id = "/aft_mapped";
 
   tf::TransformBroadcaster tfBroadcaster;
   tf::StampedTransform aftMappedTrans;
+  //aftMappedTrans.frame_id_ = "/camera_init";
   aftMappedTrans.frame_id_ = "/camera_init";
   aftMappedTrans.child_frame_id_ = "/aft_mapped";
 
@@ -1129,7 +1130,9 @@ int main(int argc, char** argv){
           sensor_msgs::PointCloud2 laserCloudSurround3;
           pcl::toROSMsg(*laserCloudSurround, laserCloudSurround3);
           laserCloudSurround3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-          laserCloudSurround3.header.frame_id = "/camera_init";
+
+          //laserCloudSurround3.header.frame_id = "/camera_init";
+          laserCloudSurround3.header.frame_id = "/dyros/base_footprint";
 
           // ed: /laser_cloud_surround 토픽으로 퍼블리시한다
           pubLaserCloudSurround.publish(laserCloudSurround3);
@@ -1144,7 +1147,9 @@ int main(int argc, char** argv){
         sensor_msgs::PointCloud2 laserCloudFullRes3;
         pcl::toROSMsg(*laserCloudFullRes, laserCloudFullRes3);
         laserCloudFullRes3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-        laserCloudFullRes3.header.frame_id = "/camera_init";
+
+        //laserCloudFullRes3.header.frame_id = "/camera_init";
+        laserCloudFullRes3.header.frame_id = "/dyros/base_footprint";
 
         // ed: /velodyne_cloud_registered 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);

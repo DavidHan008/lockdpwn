@@ -5,6 +5,8 @@
 #include <pcl/conversions.h>
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/registration/gicp.h>
+// ed: kdtree 헤더파일 추가
+#include <pcl/kdtree/kdtree_flann.h>
 
 #include <tf/tf.h>
 #include <tf2/utils.h>
@@ -17,6 +19,7 @@
 #include <geometry_msgs/Pose2D.h>
 
 using namespace std;
+using namespace pcl;
 
 // load before map data
 // collect start map data
@@ -119,6 +122,18 @@ class PoseInitializer_ed{
 
     gicp.setInputSource(currentMapFiltered_);
     gicp.setInputTarget(previousMap_);
+
+    // ed: 코드 추가
+    // Set the max correspondence distance to 5cm (e.g., correspondences with higher distances will be ignored)
+    gicp.setMaxCorrespondenceDistance (100);
+    // Set the maximum number of iterations (criterion 1)
+    gicp.setMaximumIterations (100);
+    // Set the transformation epsilon (criterion 2)
+    gicp.setTransformationEpsilon (1e-8);
+    // Set the euclidean distance difference epsilon (criterion 3)
+    gicp.setEuclideanFitnessEpsilon (1e-3);
+
+
     gicp.align(*alignedMap_);
 
     std::cout << "has converged:" << gicp.hasConverged() << " score: " << gicp.getFitnessScore() << std::endl;
@@ -336,6 +351,19 @@ class PoseInitializer_ed{
     //printf("%f %f \n",Mypose.x, Mypose.y);
   }
 };
+
+vector<PointXYZ> SearchNodeByRadius(PointXYZ searchPoint, float radius){
+    vector<int> pointIdxRadiusSearch;
+    vector<float> pointRadiusSquaredDistance;
+    vector<PointXYZ> pvNode;
+
+    if( m_kdTree.radiusSearch(searchPoint, radius, pointIdxRadiusSearch, pointRadiusSquaredDistance ) > 0) {
+        for (size_t i = 0; i < pointIdxRadiusSearch.size (); ++i) {
+            pvNode.push_back(m_pTree->points[pointIdxRadiusSearch[i]]);
+        }
+    }
+    return pvNode;
+}
 
 
 int main(int argc, char** argv){

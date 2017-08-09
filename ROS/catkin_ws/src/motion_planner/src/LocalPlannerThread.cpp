@@ -1014,8 +1014,12 @@ void LocalPlannerThread::Compute(){
     std_msgs::Float32MultiArray msg;
 
     // ed: 여기서 스티어링각도가 설정된다 deg
-    //msg.data.push_back(steer);
-    msg.data.push_back(500);
+    msg.data.push_back(steer);
+    // ed: 이 부분 dyros_simulator와 연동해보기
+    //     vel publisher만들어서 1,2는 엑셀,브레이크로 정해져있고 3,4를 속도, gear값을 추가해서 테스트해보기
+
+
+    // msg.data.push_back(500);
 
     // ed: msg_steer, SteeringAngleData 토픽으로 퍼블리시한다
     msg_steer.publish(msg);
