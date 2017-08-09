@@ -369,8 +369,12 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /u
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/correspondence.h
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/exceptions.h
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/boost.h
+loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/crop_box.h
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/filter.h
+loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/filter_indices.h
+loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/crop_box.hpp
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/filter.hpp
+loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/filter_indices.hpp
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/voxel_grid.hpp
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/filters/voxel_grid.h
 loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o: /usr/include/pcl-1.7/pcl/for_each_type.h

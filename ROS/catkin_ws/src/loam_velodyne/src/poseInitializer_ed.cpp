@@ -7,6 +7,7 @@
 #include <pcl/registration/gicp.h>
 // ed: kdtree 헤더파일 추가
 #include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/filters/crop_box.h>
 
 #include <tf/tf.h>
 #include <tf2/utils.h>
@@ -19,14 +20,13 @@
 #include <geometry_msgs/Pose2D.h>
 
 using namespace std;
-using namespace pcl;
+
 
 // load before map data
 // collect start map data
 // gicp
 // print out output data
 typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
-
 
 class PoseInitializer_ed{
  public:
@@ -74,6 +74,10 @@ class PoseInitializer_ed{
   PointCloud::Ptr currentMapFiltered_;
   PointCloud::Ptr alignedMap_;
 
+  // ed: cropbox용 변수 추가
+  PointCloud cloud_out;
+  PointCloud::Ptr cloud_out_ptr;
+
   Eigen::Matrix4f initTf_;
   Eigen::Matrix4f initTfInv_;
 
@@ -120,27 +124,42 @@ class PoseInitializer_ed{
     // ed: ICP 알고리즘을 사용할 객체 생성
     pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
 
-    gicp.setInputSource(currentMapFiltered_);
-    gicp.setInputTarget(previousMap_);
-
     // ed: 코드 추가
     // Set the max correspondence distance to 5cm (e.g., correspondences with higher distances will be ignored)
     gicp.setMaxCorrespondenceDistance (100);
     // Set the maximum number of iterations (criterion 1)
-    gicp.setMaximumIterations (100);
+    gicp.setMaximumIterations (5000);
     // Set the transformation epsilon (criterion 2)
     gicp.setTransformationEpsilon (1e-8);
     // Set the euclidean distance difference epsilon (criterion 3)
     gicp.setEuclideanFitnessEpsilon (1e-3);
+    gicp.setRANSACOutlierRejectionThreshold(.5);
 
 
+    // ed: CropBox 코드 추가
+    pcl::CropBox<pcl::PointXYZ> cropBoxFilter (true);
+    cropBoxFilter.setInputCloud (previousMap_);
+    Eigen::Vector4f min_pt (-50.0f, -50.0f, -50.0f, 50.0f);
+    Eigen::Vector4f max_pt (50.0f, 50.0f, 50.0f, 50.0f);
+
+    // Cropbox slighlty bigger then bounding box of points
+    cropBoxFilter.setMin (min_pt);
+    cropBoxFilter.setMax (max_pt);
+
+    // Cloud
+    cropBoxFilter.filter (cloud_out);
+
+    cloud_out_ptr = cloud_out.makeShared();
+    pcl::io::savePCDFile("good.pcd",*cloud_out_ptr);
+
+    gicp.setInputSource(currentMapFiltered_);
+    gicp.setInputTarget(cloud_out_ptr);
     gicp.align(*alignedMap_);
 
     std::cout << "has converged:" << gicp.hasConverged() << " score: " << gicp.getFitnessScore() << std::endl;
 
     // ed: 이 코드에서 최종적인 변환행렬을 얻어 initTF_에 저장하는듯
     initTf_ = gicp.getFinalTransformation();
-
     std::cout << initTf_ << std::endl;
 
     // ed: Rotationnal Matrix 3x3 성분들을 입력한다
@@ -150,7 +169,6 @@ class PoseInitializer_ed{
 
     // ed: Transitional Vector3 성분을 입력한다
     initTfROS_.setOrigin(tf::Vector3(initTf_(0,3), initTf_(1,3), initTf_(3,3)));
-
     Eigen::Matrix3f mRot;
     Eigen::Vector3f vOri;
 
@@ -168,13 +186,11 @@ class PoseInitializer_ed{
     initTfInv_(3,2) = 0;
     initTfInv_(3,3) = 1;
 
-
     if (file_debug) {
-      pcl::io::savePCDFile("source.pcd",*previousMap_);
-      pcl::io::savePCDFile("target.pcd",*currentMapFiltered_);
-      pcl::io::savePCDFile("aligned.pcd",*alignedMap_);
+      pcl::io::savePCDFile("source.pcd",  *previousMap_);
+      pcl::io::savePCDFile("target.pcd",  *currentMapFiltered_);
+      pcl::io::savePCDFile("aligned.pcd",  *alignedMap_);
     }
-
     /*
       tf ::Matrix3x3 tfMat(eigTfMat(0,0), eigTfMat(0,1), eigTfMat(0,2),
       eigTfMat(1,0), eigTfMat(1,1), eigTfMat(1,2),
@@ -259,7 +275,7 @@ class PoseInitializer_ed{
     PointCloud totalPoint;
     PointCloud::Ptr transformedPoint (new PointCloud);
 
-    transformedPoint->header.frame_id = "/camera_init";
+    transformedPoint->header.frame_id = "/dyros/base_footprint";
 
     // ed: affine Transform을 하는 코드, msg ==> trasnformedPoint로 initTf_를 사용해 transform한다
     pcl::transformPointCloud(*msg, *transformedPoint, initTf_);
@@ -301,7 +317,6 @@ class PoseInitializer_ed{
 
     odomMsg_.pose.pose.position.x = gh.getOrigin().m_floats[0];
     odomMsg_.pose.pose.position.y = gh.getOrigin().m_floats[1];
-
     // ed: 실제 z방향으로는 차이가 없으므로 0으로 설정한다
     //odomMsg_.pose.pose.position.z = gh.getOrigin().m_floats[2];
     odomMsg_.pose.pose.position.z = 0;
@@ -320,7 +335,6 @@ class PoseInitializer_ed{
                             0));
 
     odomTrans3_.setOrigin(gh.getOrigin());
-
 
     // ed: /camera_init tf <==> /dyros/base_footprint와 /camera tf를 broadcast하는 코드
     tfBroadcaster3.sendTransform(odomTrans3_);
@@ -352,6 +366,7 @@ class PoseInitializer_ed{
   }
 };
 
+/*
 vector<PointXYZ> SearchNodeByRadius(PointXYZ searchPoint, float radius){
     vector<int> pointIdxRadiusSearch;
     vector<float> pointRadiusSquaredDistance;
@@ -364,7 +379,7 @@ vector<PointXYZ> SearchNodeByRadius(PointXYZ searchPoint, float radius){
     }
     return pvNode;
 }
-
+*/
 
 int main(int argc, char** argv){
   ros::init(argc, argv, "poseInitializer_ed");
