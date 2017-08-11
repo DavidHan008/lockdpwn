@@ -328,14 +328,24 @@ class PoseInitializer_ed{
     odomTrans3_.stamp_ = msg->header.stamp;
     odomTrans3_.setBasis(gh.getBasis());
 
+
     // ed: 아래 코드 추가. z방향을 0으로 설정 안하면 /camera_init과 /dyros/base_footprint가 z방향 1의 차이를 갖기 때문에 0으로 설정한다
     gh.setOrigin(tf::Vector3(gh.getOrigin().m_floats[0],
                             gh.getOrigin().m_floats[1],
-                            0));
+                             0));
+
+
+    // ed: 차량의 Pitch 방향으로 좌표계가 기울이지지 않도록 y축 회전량을 0으로 설정한다
+    gh.setRotation(tf::Quaternion(gh.getRotation().getX(),
+                                  0,
+                                  gh.getRotation().getZ(),
+                                  gh.getRotation().getW()));
+
 
     odomTrans3_.setOrigin(gh.getOrigin());
+    odomTrans3_.setRotation(gh.getRotation());
 
-    // ed: /camera_init tf <==> /dyros/base_footprint와 /camera tf를 broadcast하는 코드
+    // ed: /camera_init tf <==> /dyros/base_footprint tf를 broadcast하는 코드
     tfBroadcaster3.sendTransform(odomTrans3_);
 
 

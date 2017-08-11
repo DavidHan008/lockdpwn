@@ -26,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: laser_cloud_surround
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -35,10 +35,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        aft_mapped:
-          Value: true
-        camera_init:
-          Value: true
         dyros/base_footprint:
           Value: true
         dyros/base_link:
@@ -69,37 +65,13 @@ Visualization Manager:
           Value: true
         dyros/wheel_rr:
           Value: true
-        laser_odom:
-          Value: true
       Marker Scale: 0.75
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        camera_init:
-          dyros/base_footprint:
-            dyros/base_link:
-              dyros/front_laser_points_base_link:
-                {}
-              dyros/steer_fl:
-                dyros/wheel_fl:
-                  {}
-              dyros/steer_fr:
-                dyros/wheel_fr:
-                  {}
-              dyros/velodyne_base_link:
-                {}
-              dyros/wheel_rl:
-                {}
-              dyros/wheel_rr:
-                {}
-            dyros/front_camera_optical:
-              {}
-            dyros/gps:
-              {}
-          laser_odom:
-            {}
+        {}
       Update Interval: 0
       Value: true
     - Class: rviz/Axes
@@ -479,7 +451,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 89.467
+      Distance: 53.653
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -491,10 +463,10 @@ Visualization Manager:
         Z: -1.54468
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.984797
+      Pitch: 0.594797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.0686
+      Yaw: 3.8236
     Saved: ~
 Window Geometry:
   Displays:
@@ -512,5 +484,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1298
-  X: 610
+  X: 590
   Y: 14
