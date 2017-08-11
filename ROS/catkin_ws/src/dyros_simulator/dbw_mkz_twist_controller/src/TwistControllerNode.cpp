@@ -34,11 +34,16 @@
 
 #include "TwistControllerNode.h"
 
+using namespace std;
+
+
 namespace dbw_mkz_twist_controller {
 
 TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn) : srv_(pn){
   lpf_fuel_.setParams(60.0, 0.1);
   accel_pid_.setRange(0.0, 1.0);
+
+  sub_steering_ang =false;
 
   // Dynamic reconfigure
   srv_.setCallback(boost::bind(&TwistControllerNode::reconfig, this, _1, _2));
@@ -46,13 +51,14 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   // Control rate parameter
   double control_rate;
   pn.param("control_rate", control_rate, 10.0);
-  control_period_ = 1.0 / control_rate;
+  control_period_ = 1.0 / control_rate; // ed: 0.1
 
   // ed: 휠베이스, 트랙길이, 스티어링비를 설정하는 코드인듯
   // Ackermann steering parameters
-  acker_wheelbase_ = 2.8498; // 112.2 inches
-  acker_track_ = 1.5824; // 62.3 inches
-  steering_ratio_ = 14.8;
+  acker_wheelbase_ = 2.780; // for grandeur
+  acker_track_ = 1.58; //  for grandeur
+  //steering_ratio_ = 14.8;
+  steering_ratio_ = 18.6; // for grandeur
 
   pn.getParam("ackermann_wheelbase", acker_wheelbase_);
   pn.getParam("ackermann_track", acker_track_);
@@ -71,6 +77,13 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   sub_enable_ = n.subscribe("dbw_enabled", 1, &TwistControllerNode::recvEnable, this);
   sub_fuel_level_ = n.subscribe("fuel_level_report", 1, &TwistControllerNode::recvFuel, this);
 
+  // ed: motion_planner와 연동하기 위한 퍼블리셔, 섭스크라이버 추가
+  sub_motion_planner = n.subscribe("SteerAngleData", 1, &TwistControllerNode::SteeringAngle_callback, this);
+  sub_gazebo_model_states = n.subscribe("/gazebo/model_states", 1, &TwistControllerNode::Gazebo_modelStates_callback, this);
+  pub_localization = n.advertise<std_msgs::Float32MultiArray>("LocalizationData", 1);
+  pub_gear = n.advertise<dbw_mkz_msgs::GearCmd>("gear_cmd", 1);
+
+
   // Publishers
   pub_throttle_ = n.advertise<dbw_mkz_msgs::ThrottleCmd>("throttle_cmd", 1);
   pub_brake_ = n.advertise<dbw_mkz_msgs::BrakeCmd>("brake_cmd", 1);
@@ -84,17 +97,80 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   control_timer_ = n.createTimer(ros::Duration(control_period_), &TwistControllerNode::controlCallback, this);
 }
 
+// ed: /gazebo/model_states를 섭스크라이브하는 콜백함수 추가
+void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelStates::ConstPtr& msg){
+  double localization[4] = {0};
+  double yaw, pitch, roll;
+  tf::Transform getYPR;
+
+  // ed: yaw 값을 구하기 위한 코드
+  getYPR.setRotation(tf::Quaternion(msg->pose[1].orientation.x,
+                                 msg->pose[1].orientation.y,
+                                 msg->pose[1].orientation.z,
+                                 msg->pose[1].orientation.w));
+  getYPR.setOrigin(tf::Vector3(msg->pose[1].position.x,
+                            msg->pose[1].position.y,
+                            msg->pose[1].position.z));
+
+  getYPR.getBasis().getEulerYPR(yaw, pitch, roll);
+
+
+  // ed: 실제 차량에서 나오는 LocalizationData의 yaw값과 일치하려면 아래의 코드를 적용해야한다
+  yaw += 1.57;
+  if(yaw < 0 && yaw > -1.57)
+    yaw += 6.28;
+
+
+  // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 수정해야한다)
+  localization[0] = msg->pose[1].position.x - 40;
+  localization[1] = msg->pose[1].position.y;
+  localization[2] = yaw;                    // ed: yaw [rad]
+  localization[3] = msg->twist[1].linear.x;  // ed: velocity [m/s]
+
+
+  std_msgs::Float32MultiArray pub_local;
+
+  // ed: loam_velodyne의 좌표축이 (x,y) ==> (-y,x)로 틀어져있으므로 이에 따라 수정해준다. 이렇게해야 motion_planner에서 0903map.bag파일을 돌릴 때 정상적으로 인식된다
+  //pub_local.data.push_back(localization[0]);
+  //pub_local.data.push_back(localization[1]);
+  pub_local.data.push_back(-localization[1]);
+  pub_local.data.push_back(localization[0]);
+
+  pub_local.data.push_back(localization[2]);  // ed: theta
+  pub_local.data.push_back(localization[3]);  //     velocity
+
+  pub_localization.publish(pub_local);
+}
+
+
+// ed: /SteerAngleData를 섭스크라이브하는 콜백함수 추가
+void TwistControllerNode::SteeringAngle_callback(const std_msgs::Float32MultiArray::ConstPtr& msg){
+  // ed: 해당 토픽의 데이터가 들어오면 flag를 true로 변환한다
+  sub_steering_ang = true;
+
+  // ed: steering_cmd2에 스티어링값을 넣어준다
+  m_steer = -msg->data.at(0);
+  steering_cmd2.enable = true;
+  steering_cmd2.steering_wheel_angle_cmd = m_steer;
+
+
+  //dbw_mkz_msgs::GearCmd gc;
+  //gc.cmd.gear = 4; // ed: 1 : Park, 4 : Drive
+  // ed: /gear_cmd로 퍼블리시
+  //pub_gear.publish(gc);
+}
+
 
 void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
-
-  if ((event.current_real - cmd_stamp_).toSec() > (10.0 * control_period_)) {
-    speed_pid_.resetIntegrator();
-    accel_pid_.resetIntegrator();
-    return;
-  }
-
+  //if ((event.current_real - cmd_stamp_).toSec() > (10.0 * control_period_)) {
+  //  speed_pid_.resetIntegrator();
+  //  accel_pid_.resetIntegrator();
+  //  return;
+  //}
   double vehicle_mass = cfg_.vehicle_mass + lpf_fuel_.get() / 100.0 * cfg_.fuel_capacity * GAS_DENSITY;
   double vel_error = cmd_vel_.twist.linear.x - actual_.linear.x;
+
+  cout << cmd_vel_.twist.linear.x  << ", " << vel_error << endl;
 
   if ((fabs(cmd_vel_.twist.linear.x) < mphToMps(1.0)) || !cfg_.pub_pedals) {
     speed_pid_.resetIntegrator();
@@ -109,7 +185,9 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
 
   double accel_cmd = speed_pid_.step(vel_error, control_period_);
 
-  const double MIN_SPEED = mphToMps(5.0);
+  // ed: 여기서 Gear를 Drive에 놨을 때 최저속도 5 mile per hour ==> 2.2352 m/s가 나왔다. 이를 생략하고 m/s로 입력한다
+  //const double MIN_SPEED = mphToMps(5.0);
+  const double MIN_SPEED = 1.66; // ed: [m/s]
 
   if (cmd_vel_.twist.linear.x <= (double)1e-2) {
     accel_cmd = std::min(accel_cmd, -530 / vehicle_mass / cfg_.wheel_radius);
@@ -150,7 +228,9 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     }
 
     steering_cmd.enable = true;
-    steering_cmd.steering_wheel_angle_cmd = yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x, cmd_vel_.twist.angular.z, actual_.linear.x) + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
+    steering_cmd.steering_wheel_angle_cmd =
+        yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x, cmd_vel_.twist.angular.z, actual_.linear.x)
+        + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
 
     if (cfg_.pub_pedals) {
       pub_throttle_.publish(throttle_cmd);
@@ -159,6 +239,11 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
 
     if (cfg_.pub_steering) {
       pub_steering_.publish(steering_cmd);
+    }
+
+    // ed: 코드 추가
+    if(sub_steering_ang){
+      pub_steering_.publish(steering_cmd2);
     }
   }
   else {
@@ -178,6 +263,7 @@ void TwistControllerNode::reconfig(ControllerConfig& config, uint32_t level){
   lpf_accel_.setParams(cfg_.accel_tau, 0.02);
 }
 
+// ed: /cmd_vel를 섭스크라이브하는 콜백함수
 void TwistControllerNode::recvTwist(const geometry_msgs::Twist::ConstPtr& msg){
   cmd_vel_.twist = *msg;
   cmd_vel_.accel_limit = 0;
@@ -185,24 +271,26 @@ void TwistControllerNode::recvTwist(const geometry_msgs::Twist::ConstPtr& msg){
   cmd_stamp_ = ros::Time::now();
 }
 
-void TwistControllerNode::recvTwist2(const dbw_mkz_msgs::TwistCmd::ConstPtr& msg)
-{
+// ed: /cmd_vel_with_limits를 섭스크라이브하는 콜백함수
+void TwistControllerNode::recvTwist2(const dbw_mkz_msgs::TwistCmd::ConstPtr& msg){
   cmd_vel_ = *msg;
   cmd_stamp_ = ros::Time::now();
 }
 
-void TwistControllerNode::recvTwist3(const geometry_msgs::TwistStamped::ConstPtr& msg)
-{
+// ed: /cmd_vel_stamped를 섭스크라이브하는 콜백함수
+void TwistControllerNode::recvTwist3(const geometry_msgs::TwistStamped::ConstPtr& msg){
   cmd_vel_.twist = msg->twist;
   cmd_vel_.accel_limit = 0;
   cmd_vel_.decel_limit = 0;
   cmd_stamp_ = ros::Time::now();
 }
 
+// ed: /fuel_level_report를 섭스크라이브하는 콜백함수
 void TwistControllerNode::recvFuel(const dbw_mkz_msgs::FuelLevelReport::ConstPtr& msg){
   lpf_fuel_.filt(msg->fuel_level);
 }
 
+// ed: /steering_report를 섭스크라이브하는 콜백함수
 void TwistControllerNode::recvSteeringReport(const dbw_mkz_msgs::SteeringReport::ConstPtr& msg){
   double raw_accel = 50.0 * (msg->speed - actual_.linear.x);
   lpf_accel_.filt(raw_accel);
@@ -214,10 +302,12 @@ void TwistControllerNode::recvSteeringReport(const dbw_mkz_msgs::SteeringReport:
   actual_.linear.x = msg->speed;
 }
 
+// ed: /imu/data_raw를 섭스크라이브하는 콜백함수
 void TwistControllerNode::recvImu(const sensor_msgs::Imu::ConstPtr& msg){
   actual_.angular.z = msg->angular_velocity.z;
 }
 
+// ed /dbw_enabled를 섭스크라이브하는 콜백함수
 void TwistControllerNode::recvEnable(const std_msgs::Bool::ConstPtr& msg){
   sys_enable_ = msg->data;
 }

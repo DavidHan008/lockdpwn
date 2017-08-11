@@ -49,6 +49,12 @@
 #include <dbw_mkz_msgs/TwistCmd.h>
 #include <geometry_msgs/TwistStamped.h>
 
+// ed: motion_planner 연동하기 위한 헤더 추가
+#include <std_msgs/Float32MultiArray.h>
+#include <dbw_mkz_msgs/GearCmd.h>
+#include <gazebo_msgs/ModelStates.h>
+#include <tf/tf.h>
+
 // Debug message
 #include <std_msgs/Float64.h>
 
@@ -64,9 +70,9 @@
 namespace dbw_mkz_twist_controller {
 
 class TwistControllerNode{
-public:
+ public:
   TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn);
-private:
+ private:
   void reconfig(ControllerConfig& config, uint32_t level);
   void controlCallback(const ros::TimerEvent& event);
   void recvTwist(const geometry_msgs::Twist::ConstPtr& msg);
@@ -76,6 +82,11 @@ private:
   void recvImu(const sensor_msgs::Imu::ConstPtr& msg);
   void recvEnable(const std_msgs::Bool::ConstPtr& msg);
   void recvFuel(const dbw_mkz_msgs::FuelLevelReport::ConstPtr& msg);
+
+  // ed: steeringAngleData를 섭스크라이브하는 콜백함수
+  void SteeringAngle_callback(const std_msgs::Float32MultiArray::ConstPtr& msg);
+  void Gazebo_modelStates_callback(const gazebo_msgs::ModelStates::ConstPtr& msg);
+
 
   ros::Publisher pub_throttle_;
   ros::Publisher pub_brake_;
@@ -90,6 +101,13 @@ private:
   ros::Subscriber sub_twist3_;
   ros::Subscriber sub_fuel_level_;
   ros::Timer control_timer_;
+
+  // ed: motion_planner와 연동하기 위한 퍼블리셔, 섭스크라이버 추가
+  ros::Subscriber sub_motion_planner;
+  ros::Subscriber sub_gazebo_model_states;
+  ros::Publisher pub_localization;
+  ros::Publisher pub_gear;
+
 
   dbw_mkz_msgs::TwistCmd cmd_vel_;
   geometry_msgs::Twist actual_;
@@ -110,8 +128,14 @@ private:
   double acker_track_;
   double steering_ratio_;
 
+  // ed: 스티어링각도용 멤버변수 추가;
+  double m_steer;
+  bool sub_steering_ang;
+  dbw_mkz_msgs::SteeringCmd steering_cmd2;
+
+
   static const double GAS_DENSITY = 2.858; // kg/gal
-  static double mphToMps(double mph) { return mph * 0.44704; }
+  static double mphToMps(double mph) { return mph * 0.44704; }  // ed: mile per hour ==> m/s 로 변환해주는 코드
 };
 
 }

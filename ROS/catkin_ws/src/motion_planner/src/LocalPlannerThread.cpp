@@ -88,6 +88,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
         waypt.pose.position.x = path[i][1];
         waypt.pose.position.y = -path[i][0];
         waypt.pose.position.z = 0;
+
         waypoints.push_back(waypt);
 
         fout << path[i][0] << " " << path[i][1] << endl;
@@ -101,7 +102,8 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
         msg.poses[i] = waypoints[i];
     }
 
-    // ed: msg를 최종적으로 퍼블리시한다
+    // ed: /LocalPathData 토픽으로 퍼블리시
+    //      초록색 선을 퍼블리시하는 코드
     msgpub.publish(msg);
 }
 
@@ -141,7 +143,11 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
         m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0] ;//+ m_overall*sin(th);
+
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시
         msgpub_Look_orig.publish(m_model_orig);
+
+
 
         //Velodyne to car rearwheel
         //m_pos[0] -= m_len_c2r*cos(car_heading);
@@ -307,7 +313,11 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
         m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
+
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시
         msgpub_Look_orig.publish(m_model_orig);
+
+
 
         //Error
         //cross-track
@@ -446,30 +456,28 @@ double LocalPlannerThread::cur_rad(double x1, double y1,
 }
 
 void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx){
-
-    double heading_Err = 0.0; //JW 16.07.11.
-    double cross_track_Err = 0.0;//JW 16.07.11.
+    double heading_Err = 0.0;      //JW 16.07.11.
+    double cross_track_Err = 0.0;  //JW 16.07.11.
 
     if (m_LocalSplinePath.size() > 1){
         double minDist = 99999;
         int car_waypoint = -1;
+
         //for(int i = 0 ; i < m_switch_idx; i++)
-        for(int i = 0 ; i < m_LocalSplinePath.size(); i++)
-        {
+        for(int i = 0 ; i < m_LocalSplinePath.size(); i++) {
             double x2 = m_LocalSplinePath[i][0] - m_pos[0];
             x2 *= x2;
             double y2 = m_LocalSplinePath[i][1] - m_pos[1];
             y2 *= y2;
             double dist = sqrt(x2+y2);//distŽÂ
-            if ( dist < minDist )
-            {
+            if ( dist < minDist ) {
                 minDist = dist;
                 car_waypoint = i;
             }
         }
 
         carIdx = car_waypoint;
-        cout << "car_waypoint : " << car_waypoint <<endl;
+        //cout << "car_waypoint : " << car_waypoint <<endl;
         m_pre_waypoint = car_waypoint;
         //JW 17.01.09 car pose marker
         m_model_orig.header.stamp = ros::Time::now();
@@ -479,6 +487,8 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
         m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
+
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시
         msgpub_Look_orig.publish(m_model_orig);
 
         m_CrossTrack_ERR = minDist;
@@ -735,11 +745,11 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     // ed: rviz상에 초록색선을 표시하는 퍼블리셔
     msgpub = n.advertise<nav_msgs::Path>("LocalPathData", 10);
 
-    msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);//real use data
-    msgpub_Look_JW_exp = n.advertise<visualization_msgs::Marker>("LookAheadPos", 10);//real use data
-    msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);//just visualization
-    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);     //car_pos_ visualization
-    msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );  //err_
+    msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);     //real use data
+    msgpub_Look_JW_exp = n.advertise<visualization_msgs::Marker>("LookAheadPos", 10);     //real use data
+    msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);  //just visualization
+    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);                  //car_pos_ visualization
+    msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );      //err_
     msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );  //err_
 
     msgpub3 = n.advertise<std_msgs::Float32MultiArray>("ControlData", 1 );
@@ -974,7 +984,7 @@ void LocalPlannerThread::Compute(){
 
             //if(a_ > a_thresh)
 
-            // ed: 현재 forward 버튼이 눌린 경우에만 publish를 하는듯하다. 아래 else if문에는 pub이 없네
+            // ed: /LookAheadPos_exp로 퍼블리시
             msgpub_Look_JW.publish(m_model_jw);
         }
 
@@ -1013,11 +1023,10 @@ void LocalPlannerThread::Compute(){
 
     std_msgs::Float32MultiArray msg;
 
-    // ed: 여기서 스티어링각도가 설정된다 deg
-    msg.data.push_back(steer);
-    // ed: 이 부분 dyros_simulator와 연동해보기
-    //     vel publisher만들어서 1,2는 엑셀,브레이크로 정해져있고 3,4를 속도, gear값을 추가해서 테스트해보기
-
+    // ed: 여기서 스티어링각도가 설정된다. radian으로 변환해서 퍼블리시
+    msg.data.push_back(steer * _DEG2RAD);
+    //msg.data.push_back(2);  // ed: velocity [m/s]
+    //     velocity용 publisher만들어서 1,2는 엑셀,브레이크로 정해져있고 3,4를 속도, gear값을 추가해서 테스트해보기
 
     // msg.data.push_back(500);
 
@@ -1036,21 +1045,20 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[2]);
 
     // ed: 단위는 m/s
-    float targetVel = 0.5;
+    float targetVel = 2;
 
     // ed: targetVel을 설정하는 코드인듯하다
     if( resdist == -1)
         m_msg.data.push_back(0);
     else
-        // ed: 2.81은 바퀴의 각속도 rad/s --> 차량의 속도 m/s로 변환하기 위한 값이다
-        m_msg.data.push_back(targetVel * 2.81);
+        m_msg.data.push_back(2);  // ed: [m/s] 단위
 
 
     // ed: ControlData 토픽으로 퍼블리시한다
     msgpub3.publish(m_msg);
 
-    // ed: 제대로 작동하는지 속도 보기
-    printf("target : %lf m/s\n current : %lf m/s\n", targetVel , m_vel);
+    // ed: 제대로 작동하는지 속도를 보는 코드
+    //printf("target : %lf m/s\n current : %lf m/s\n", targetVel , m_vel);
 
     m_model_jw_exp.header.stamp = ros::Time::now();
 
@@ -1082,6 +1090,7 @@ void LocalPlannerThread::Compute(){
     geometry_msgs::Quaternion m_CarPos_odom_quat = tf::createQuaternionMsgFromYaw(heading);
     m_CarPos.pose.orientation = m_CarPos_odom_quat;
 
+    // ed: /Car_Pos 토픽으로 퍼블리시
     msgpub_car.publish(m_CarPos);
 
     static int pub_cnt;
@@ -1094,8 +1103,12 @@ void LocalPlannerThread::Compute(){
         pub_cnt=0;
     }
 
+    // ed: /LookAheadPos_exp 토픽으로 퍼블리시
     msgpub_Look_JW.publish(m_model_jw_exp_line);
+    // ed: /Car_Pos 토픽으로 퍼블리시
     msgpub_car.publish(m_line_strip);
+
+
     //JW 16.07.08
     ////////////////////////////////////////////////////////////////
 }
@@ -1204,7 +1217,7 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx){
     //cout << heading << " " << tmp_th << endl;
     if(heading_Err > m_limit_steerAngle) heading_Err = m_limit_steerAngle;
 
-    cout << "steer_Radius : " << steer_Radius << ", heading_Err : " << heading_Err <<endl;
+    // cout << "steer_Radius : " << steer_Radius << ", heading_Err : " << heading_Err <<endl;
     return Steer_Radius = steer_Radius + heading_Err;
 }
 

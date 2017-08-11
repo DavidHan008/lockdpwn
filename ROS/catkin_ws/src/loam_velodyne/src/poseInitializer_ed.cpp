@@ -148,7 +148,6 @@ class PoseInitializer_ed{
 
     // Cloud
     cropBoxFilter.filter (cloud_out);
-
     cloud_out_ptr = cloud_out.makeShared();
     pcl::io::savePCDFile("good.pcd",*cloud_out_ptr);
 

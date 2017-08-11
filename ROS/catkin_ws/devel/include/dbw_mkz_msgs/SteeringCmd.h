@@ -168,7 +168,7 @@ struct Definition< ::dbw_mkz_msgs::SteeringCmd_<ContainerAllocator> >
   static const char* value()
   {
     return "# Steering Wheel\n\
-float32 steering_wheel_angle_cmd        # rad, range -8.2 to 8.2\n\
+float32 steering_wheel_angle_cmd        # rad, range -8.2 to 8.2 ==> -470 ~ +470 deg\n\
 float32 steering_wheel_angle_velocity   # rad/s, range 0 to 8.7, 0 = maximum\n\
 \n\
 # Enable\n\

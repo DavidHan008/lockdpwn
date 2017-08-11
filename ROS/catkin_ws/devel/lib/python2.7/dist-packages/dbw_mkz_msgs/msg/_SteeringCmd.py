@@ -11,7 +11,7 @@ class SteeringCmd(genpy.Message):
   _type = "dbw_mkz_msgs/SteeringCmd"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# Steering Wheel
-float32 steering_wheel_angle_cmd        # rad, range -8.2 to 8.2
+float32 steering_wheel_angle_cmd        # rad, range -8.2 to 8.2 ==> -470 ~ +470 deg
 float32 steering_wheel_angle_velocity   # rad/s, range 0 to 8.7, 0 = maximum
 
 # Enable

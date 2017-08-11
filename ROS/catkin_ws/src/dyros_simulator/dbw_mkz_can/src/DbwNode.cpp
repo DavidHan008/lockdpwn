@@ -35,6 +35,8 @@
 #include "DbwNode.h"
 #include <dbw_mkz_can/dispatch.h>
 
+using namespace std;
+
 namespace dbw_mkz_can{
 
 static const struct {float pedal; float torque;} BRAKE_TABLE[] = {
@@ -823,13 +825,20 @@ void DbwNode::recvThrottleCmd(const dbw_mkz_msgs::ThrottleCmd::ConstPtr& msg){
 
 void DbwNode::recvSteeringCmd(const dbw_mkz_msgs::SteeringCmd::ConstPtr& msg){
   dataspeed_can_msgs::CanMessage out;
+
   out.id = ID_STEERING_CMD;
   out.extended = false;
   out.dlc = sizeof(MsgSteeringCmd);
+
   MsgSteeringCmd *ptr = (MsgSteeringCmd*)out.data.elems;
+
   memset(ptr, 0x00, sizeof(*ptr));
+
   if (enabled()) {
-    ptr->SCMD = std::max((float)-4700, std::min((float)4700, (float)(msg->steering_wheel_angle_cmd * (180 / M_PI * 10))));
+    // ed: 이 코드가 Steering 각도가 들어가서 CAN 통신으로 변환되는 코드인듯하다
+    ptr->SCMD = std::max((float)-5400, std::min((float)5400, (float)(msg->steering_wheel_angle_cmd * (180 / M_PI * 10))));
+    //ptr->SCMD = std::max((float)-4700, std::min((float)4700, (float)(msg->steering_wheel_angle_cmd * (180 / M_PI * 10))));
+
     if (fabsf(msg->steering_wheel_angle_velocity) > 0) {
       ptr->SVEL = std::max((float)1, std::min((float)254, (float)roundf(fabsf(msg->steering_wheel_angle_velocity) * 180 / M_PI / 2)));
     }
