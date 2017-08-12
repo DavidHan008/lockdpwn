@@ -160,12 +160,15 @@
 
 
 
-	17. simplescreenrecorder & geek  : 동영상 녹화 프로그램 (geek은 gif파일로 해준다)
+	17. simplescreenrecorder & peek  : 동영상 녹화 프로그램 (peek은 gif파일로 해준다)
 		
 		sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
 		sudo apt-get update
 		sudo apt-get install simplescreenrecorder
 
+		sudo add-apt-repository ppa:peek-developers/stable
+		sudo apt-get update
+		sudo apt-get install peek
 
 
 

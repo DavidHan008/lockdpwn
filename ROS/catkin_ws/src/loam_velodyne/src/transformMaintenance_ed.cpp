@@ -177,10 +177,13 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   pubLaserOdometry2Pointer->publish(laserOdometry2);
 
   laserOdometryTrans2.stamp_ = laserOdometry->header.stamp;
-  laserOdometryTrans2.setRotation(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w));
+
+  // ed: roll, pitch를 없애기 위해 아래처럼 설정한다.
+  //laserOdometryTrans2.setRotation(tf::Quaternion(geoQuat.x, geoQuat.y, geoQuat.z, geoQuat.w));
+  laserOdometryTrans2.setRotation(tf::Quaternion(0, 0, geoQuat.z, geoQuat.w));
   laserOdometryTrans2.setOrigin(tf::Vector3(transformMapped[3], transformMapped[4], transformMapped[5]));
 
-  // ed: /camera tf를 broadcast한다
+  // ed: /dyros/base_footprint tf를 broadcast한다
   tfBroadcaster2Pointer->sendTransform(laserOdometryTrans2);
 
   if(myPoseEnabled){

@@ -23,6 +23,10 @@ pcl/kdtree/kdtree_flann.h
 -
 pcl/filters/crop_box.h
 -
+std_msgs/Float32MultiArray.h
+-
+geometry_msgs/Vector3Stamped.h
+-
 tf/tf.h
 -
 tf2/utils.h
@@ -30,8 +34,6 @@ tf2/utils.h
 tf/transform_broadcaster.h
 -
 eigen3/Eigen/Dense
--
-std_msgs/Float32MultiArray.h
 -
 sensor_msgs/PointCloud2.h
 -

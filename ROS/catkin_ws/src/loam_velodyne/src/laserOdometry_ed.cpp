@@ -78,6 +78,7 @@ float imuRollLast = 0, imuPitchLast = 0, imuYawLast = 0;
 float imuShiftFromStartX = 0, imuShiftFromStartY = 0, imuShiftFromStartZ = 0;
 float imuVeloFromStartX = 0, imuVeloFromStartY = 0, imuVeloFromStartZ = 0;
 
+
 void TransformToStart(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float s = 10 * (pi->intensity - int(pi->intensity));
 
@@ -101,6 +102,7 @@ void TransformToStart(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   po->z = sin(ry) * x2 + cos(ry) * z2;
   po->intensity = pi->intensity;
 }
+
 
 void TransformToEnd(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   float s = 10 * (pi->intensity - int(pi->intensity));
@@ -171,8 +173,9 @@ void TransformToEnd(pcl::PointXYZI *pi, pcl::PointXYZI *po){
   po->intensity = int(pi->intensity);
 }
 
-void PluginIMURotation(float bcx, float bcy, float bcz, float blx, float bly, float blz, 
-                       float alx, float aly, float alz, float &acx, float &acy, float &acz)
+// ed: IMU 값을 통해 acx, acy, acz의 값을 보정하는 함수
+void PluginIMURotation(float bcx, float bcy, float bcz, float blx, float bly, float blz,  float alx, float aly, float alz,
+                       float &acx, float &acy, float &acz)
 {
   float sbcx = sin(bcx);
   float cbcx = cos(bcx);
@@ -231,7 +234,8 @@ void PluginIMURotation(float bcx, float bcy, float bcz, float blx, float bly, fl
   acz = atan2(srzcrx / cos(acx), crzcrx / cos(acx));
 }
 
-void AccumulateRotation(float cx, float cy, float cz, float lx, float ly, float lz, 
+
+void AccumulateRotation(float cx, float cy, float cz, float lx, float ly, float lz,
                         float &ox, float &oy, float &oz)
 {
   float srx = cos(lx)*cos(cx)*sin(ly)*sin(cz) - cos(cx)*cos(cz)*sin(lx) - cos(lx)*cos(ly)*sin(cx);
@@ -250,6 +254,7 @@ void AccumulateRotation(float cx, float cy, float cz, float lx, float ly, float 
   oz = atan2(srzcrx / cos(ox), crzcrx / cos(ox));
 }
 
+// ed: /laser_cloud_sharp를 섭스크라이브하는 콜백함수
 void laserCloudSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsSharp2){
   timeCornerPointsSharp = cornerPointsSharp2->header.stamp.toSec();
 
@@ -259,6 +264,7 @@ void laserCloudSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPoints
   newCornerPointsSharp = true;
 }
 
+// ed: /laser_cloud_less_sharp를 섭스크라이브하는 콜백함수
 void laserCloudLessSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPointsLessSharp2){
   timeCornerPointsLessSharp = cornerPointsLessSharp2->header.stamp.toSec();
 
@@ -268,6 +274,7 @@ void laserCloudLessSharpHandler(const sensor_msgs::PointCloud2ConstPtr& cornerPo
   newCornerPointsLessSharp = true;
 }
 
+// ed: /laser_cloud_flat를 섭스크라이브하는 콜백함수
 void laserCloudFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsFlat2){
   timeSurfPointsFlat = surfPointsFlat2->header.stamp.toSec();
 
@@ -277,6 +284,7 @@ void laserCloudFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsFla
   newSurfPointsFlat = true;
 }
 
+// ed: /laser_cloud_less_flat를 섭스크라이브하는 콜백함수
 void laserCloudLessFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPointsLessFlat2){
   timeSurfPointsLessFlat = surfPointsLessFlat2->header.stamp.toSec();
 
@@ -374,8 +382,8 @@ int main(int argc, char** argv){
         fabs(timeCornerPointsLessSharp - timeSurfPointsLessFlat) < 0.005 &&
         fabs(timeSurfPointsFlat - timeSurfPointsLessFlat) < 0.005 &&
         fabs(timeLaserCloudFullRes - timeSurfPointsLessFlat) < 0.005 &&
-        fabs(timeImuTrans - timeSurfPointsLessFlat) < 0.005) {
-
+        fabs(timeImuTrans - timeSurfPointsLessFlat) < 0.005)
+    {
       newCornerPointsSharp = false;
       newCornerPointsLessSharp = false;
       newSurfPointsFlat = false;
@@ -442,6 +450,22 @@ int main(int argc, char** argv){
             TransformToStart(&cornerPointsSharp->points[i], &pointSel);
 
             if (iterCount % 5 == 0) {
+              /* ed: nearestKSearch() 함수의 구조
+                template<typename PointT, typename Dist >
+                int pcl::KdTreeFLANN< PointT, Dist >::nearestKSearch(const PointT & point,
+                                                                     int k,
+                                                                     std::vector< int > & 	k_indices,
+                                                                     std::vector< float > & 	k_sqr_distances
+                                                                     )const
+
+
+                [in] point              a given valid (i.e., finite) query point
+                [in] k                  the number of neighbors to search for
+                [out] k_indices	        the resultant indices of the neighboring points (must be resized to k a priori!)
+                [out] k_sqr_distances   the resultant squared distances to the neighboring points (must be resized to k a priori!)
+
+               */
+
               kdtreeCornerLast->nearestKSearch(pointSel, 1, pointSearchInd, pointSearchSqDis);
               int closestPointInd = -1, minPointInd2 = -1;
 
@@ -802,8 +826,11 @@ int main(int argc, char** argv){
       }
 
       float rx, ry, rz, tx, ty, tz;
+
+      // ed: transformSum[0,1,2]와 transform[0,1,2]를 통해 rx, ry, rz를 구한다
       AccumulateRotation(transformSum[0], transformSum[1], transformSum[2], 
                          -transform[0], -transform[1] * 1.05, -transform[2], rx, ry, rz);
+
 
       float x1 = cos(rz) * (transform[3] - imuShiftFromStartX) 
                  - sin(rz) * (transform[4] - imuShiftFromStartY);
@@ -819,12 +846,14 @@ int main(int argc, char** argv){
       ty = transformSum[4] - y2;
       tz = transformSum[5] - (-sin(ry) * x2 + cos(ry) * z2);
 
+      // ed: IMU값을 통해 rx, ry, rz를 보정하는 코드
       PluginIMURotation(rx, ry, rz, imuRollStart, imuPitchStart, imuYawStart, 
                         imuRollLast, imuPitchLast, imuYawLast, rx, ry, rz);
 
       transformSum[0] = rx;
       transformSum[1] = ry;
       transformSum[2] = rz;
+
       transformSum[3] = tx;
       transformSum[4] = ty;
       transformSum[5] = tz;
@@ -910,8 +939,6 @@ int main(int argc, char** argv){
         // ed: /velodyne_cloud_3 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);
       }
-
-
 
       /*sensor_msgs::PointCloud2 pc12;
         pcl::toROSMsg(*pointSearchCornerLast, pc12);

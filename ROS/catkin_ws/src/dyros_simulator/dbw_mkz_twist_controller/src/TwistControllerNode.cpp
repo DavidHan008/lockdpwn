@@ -170,7 +170,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
   double vehicle_mass = cfg_.vehicle_mass + lpf_fuel_.get() / 100.0 * cfg_.fuel_capacity * GAS_DENSITY;
   double vel_error = cmd_vel_.twist.linear.x - actual_.linear.x;
 
-  cout << cmd_vel_.twist.linear.x  << ", " << vel_error << endl;
+  cout << "current vel : " << cmd_vel_.twist.linear.x  << ", vel_error : " << vel_error << endl;
 
   if ((fabs(cmd_vel_.twist.linear.x) < mphToMps(1.0)) || !cfg_.pub_pedals) {
     speed_pid_.resetIntegrator();
@@ -187,7 +187,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
 
   // ed: 여기서 Gear를 Drive에 놨을 때 최저속도 5 mile per hour ==> 2.2352 m/s가 나왔다. 이를 생략하고 m/s로 입력한다
   //const double MIN_SPEED = mphToMps(5.0);
-  const double MIN_SPEED = 1.66; // ed: [m/s]
+  const double MIN_SPEED = 0.5; // ed: [m/s]
 
   if (cmd_vel_.twist.linear.x <= (double)1e-2) {
     accel_cmd = std::min(accel_cmd, -530 / vehicle_mass / cfg_.wheel_radius);

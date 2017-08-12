@@ -357,7 +357,7 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
 
   cout << "cubeI : " << cubeI << ", cubeJ :" << cubeJ << ", cubeK : " << cubeK <<", " << cubeInd << endl;  // ed: cubeInd 거의 항상 2425
 
-  // ed: 코드 추가
+  // ed: 모든 포인트 클라우드 데이터 전체를 저장하기 위해 아래 코드를 추가한다
   pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
   for (int i = 0 ; i < laserCloudNum ; i++){
     //cout << i << endl;
@@ -368,7 +368,6 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
   // ed: 코드 수정
   //pcl::io::savePCDFileASCII(str->data, *laserCloudSurfArray[cubeInd] + *laserCloudCornerArray[cubeInd]);
   pcl::io::savePCDFileASCII(str->data, *laserCloudSum_ed);
-
 }
 
 
