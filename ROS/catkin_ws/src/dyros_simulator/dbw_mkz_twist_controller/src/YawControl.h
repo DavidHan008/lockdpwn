@@ -50,11 +50,14 @@ public:
   void setSteeringWheelAngleMax(double val) { radius_control_.setSteeringWheelAngleMax(val); }
   void setSpeedMin(double val) { speed_min_ = fabs(val); }
   void setLateralAccelMax(double val) { lateral_accel_max_ = fabs(val); }
+
   double getSteeringWheelAngle(double cmd_vx, double cmd_wz, double speed) {
 #if 0
     cmd_wz = fabs(cmd_vx) > 0 ? cmd_wz * speed / cmd_vx : 0.0;
+
     if (fabs(speed) > 0.1) {
       double max_yaw_rate = fabs(lateral_accel_max_ / speed);
+
       if (cmd_wz > max_yaw_rate) {
         cmd_wz = max_yaw_rate;
       } else if (cmd_wz < -max_yaw_rate) {

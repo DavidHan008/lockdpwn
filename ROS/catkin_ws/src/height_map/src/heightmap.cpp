@@ -34,12 +34,12 @@
 //#include <MathParam.h>
 //#include <GeometricUtils.h>
 
-
 namespace velodyne_height_map {
 
 #define MIN(x,y) ((x) < (y) ? (x) : (y))
 #define MAX(x,y) ((x) > (y) ? (x) : (y))
 
+// ed: /LocalizationData를 섭스크라이브하는 콜백함수
 //add 1706
 void HeightMap::SubTopicProcess(const std_msgs::Float32MultiArray::ConstPtr& msg){
   //if(!m_bSubTopicUpdated)
@@ -53,7 +53,7 @@ void HeightMap::SubTopicProcess(const std_msgs::Float32MultiArray::ConstPtr& msg
 } // added by shinsh - 151001
 
 
-/// ed: height_map 생성자
+/// ed: Height_map 생성자
 HeightMap::HeightMap(ros::NodeHandle node, ros::NodeHandle priv_nh){
   // get parameters using private node handle
   priv_nh.param("cell_size", m_per_cell_, 0.5);

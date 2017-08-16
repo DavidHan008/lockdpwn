@@ -487,7 +487,7 @@ ControllerConfig::GroupDescription<ControllerConfig::DEFAULT, ControllerConfig> 
 //#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.steer_kp = 100.0;
 //#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __default__.steer_kp = 0.0;
+      __default__.steer_kp = 50.0;
 //#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ControllerConfig::AbstractParamDescriptionConstPtr(new ControllerConfig::ParamDescription<double>("steer_kp", "double", 0, "Steering feedback using gyro", "", &ControllerConfig::steer_kp)));
 //#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"

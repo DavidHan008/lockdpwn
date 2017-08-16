@@ -6,7 +6,7 @@
   <param name="decel_max" type="double" value="3.0" />
   <param name="accel_max" type="double" value="3.0" />
   <param name="max_lat_accel" type="double" value="8.0" />
-  <param name="steer_kp" type="double" value="0.0" />
+  <param name="steer_kp" type="double" value="50.0" />
   <param name="wheel_radius" type="double" value="0.33" />
   <param name="vehicle_mass" type="double" value="1736.35" />
   <param name="fuel_capacity" type="double" value="13.5" />

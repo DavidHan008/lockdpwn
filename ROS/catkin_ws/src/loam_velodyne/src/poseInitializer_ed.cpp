@@ -157,13 +157,17 @@ class PoseInitializer_ed{
     cropBoxFilter_source.setInputCloud (previousMap_);
     cropBoxFilter_target.setInputCloud (currentMapFiltered_);
 
+    // ed: 자를 영역을 설정하는 변수들
     Eigen::Vector4f min_pt (-50.0f, -50.0f, -50.0f, 50.0f);
     Eigen::Vector4f max_pt (50.0f, 50.0f, 50.0f, 50.0f);
 
     // Cropbox slighlty bigger then bounding box of points
     cropBoxFilter_source.setMin (min_pt);
     cropBoxFilter_source.setMax (max_pt);
+
+    // ed: GPS의 데이터를 사용해 특정지역에서 Crop하기 위해 아래 코드를 추가한다
     cropBoxFilter_source.setTranslation (translate_pt);
+
 
     cropBoxFilter_target.setMin (min_pt);
     cropBoxFilter_target.setMax (max_pt);
@@ -185,7 +189,7 @@ class PoseInitializer_ed{
 
     std::cout << "has converged:" << gicp.hasConverged() << " score: " << gicp.getFitnessScore() << std::endl;
 
-    // ed: 이 코드에서 최종적인 변환행렬을 얻어 initTF_에 저장하는듯
+    // ed: 이 코드에서 최종적인 변환행렬을 얻어 initTF_에 저장한다
     initTf_ = gicp.getFinalTransformation();
     std::cout << initTf_ << std::endl;
 

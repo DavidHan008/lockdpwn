@@ -21,9 +21,9 @@
 // ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
 void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
-    m_pos[0] = msg->data.at(0);
-    m_pos[1] = msg->data.at(1);
-    m_pos[2] = msg->data.at(2);
+    m_pos[0] = msg->data.at(0);  // ed: x
+    m_pos[1] = msg->data.at(1);  //     y
+    m_pos[2] = msg->data.at(2);  //     theta
 
     //    printf("good");
     m_vel = msg->data.at(3); // m/s
@@ -56,6 +56,7 @@ void LocalPlannerThread::SubTopicProcess2(const nav_msgs::Path::ConstPtr& msg){
     //m_LocalSplinePath = nodeVec;
 
     cout << m_LocalSplinePath.size() <<endl;
+
     // Publish for Visualization
     publish_local_path(m_LocalSplinePath);
     m_dir_mode = 1;
@@ -71,7 +72,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
     ofstream fout;
 
     // ed: rviz에 초록색선을 그리고 해당 좌표파일을 저장한다
-    fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
+    //fout.open("/home/dyros-vehicle/Documents/00_DATA/bag/map/MAP170705_spline.txt");
 
     //////////////////////////////////////////
     // POSE STAMPED
@@ -101,6 +102,7 @@ void LocalPlannerThread::publish_local_path(vector<Vector2d> path){
     for(unsigned int i=0; i < waypoints.size(); i++){
         msg.poses[i] = waypoints[i];
     }
+
 
     // ed: /LocalPathData 토픽으로 퍼블리시
     //      초록색 선을 퍼블리시하는 코드
@@ -160,7 +162,8 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
         if(cross_track_Err > FR_V_MAX)	cross_track_Err = FR_V_MAX;//prohibit the cross-track err overflow
 
         ////////////////////////////////////////////////////////////////////
-        car_heading = m_pos[2];//range 0 ~ M_PI*2
+        car_heading = m_pos[2]; //range 0 ~ M_PI*2
+
         //car_dir diff
         double tmp_dir = atan2((m_LocalSplinePath[car_waypoint][1] - m_LocalSplinePath[car_waypoint+1][1]),
                                (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
@@ -828,7 +831,11 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/MAP170118.txt");//17.01.12 parking for+rev ver3 //far
     //fin.open("/home/dyros-vehicle/00_DATA/bag/map/path_seho.txt");//circle+lane change
 
-    fin.open("/home/dyros-vehicle/bag_files/0903map.txt");//circle+lane change
+
+    // ed: /LocalizationData 데이터를 기록한 웨이포인트 데이터를 읽어온다
+    //                     rostopic echo /LocalizationData > waypoints.txt
+    //fin.open("/home/dyros-vehicle/bag_files/0903map.txt");  //circle+lane change
+    fin.open("/home/dyros-vehicle/bag_files/waypoints.txt");  //circle+lane change
 
 
     // ed: 이 루프를 통해 nodeVec에 들어가는 X, Y 값이 rviz에서 초록색선을 나타낸다
@@ -836,7 +843,8 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     while(fin != NULL){
         _cnt++;
 
-        fin >> garbage1>> garbage2 >> garbage3 >> garbage4 >>garbage5 >> garbage6 >>char1 >> X >>garbage8 >> Y>>garbage9 >> th >>garbage10 >> vel >>char2 >> garbage11;
+        // ed: map file로부터 x,y, theta, vel 값을 읽어온다
+        fin >> garbage1>> garbage2 >> garbage3 >> garbage4 >>garbage5 >> garbage6 >> char1 >> X >> garbage8 >> Y >> garbage9 >> th >> garbage10 >> vel >> char2 >> garbage11;
 
         if ( vel == 9999) {
             m_switch_X = X;
@@ -845,7 +853,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
 
-        if (_cnt % MAP_RESOL == 0){ // forward push back
+        if (_cnt % MAP_RESOL == 0){  // forward push back
             nodeVec.push_back(Vector2d(X, Y));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
@@ -862,7 +870,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
     vector<Vector2d> curvePath = spline.PathToCurve( nodeVec, 1, SPLINE_RESOL);
     m_LocalSplinePath = curvePath;
 
-    cout << ", m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
+    cout << "m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
 
     for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++){
         if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
@@ -1154,8 +1162,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
 
         return steerAngle;
     }
-    else if(resdist < 0.0)//reverse
-    {
+    else if(resdist < 0.0){  //reverse
         // Pure Pursuit Algorithm
         //m_pos[0] = m_pos[0] - 2*m_len_c2r*cos(heading*_DEG2RAD);
         // m_pos[1] = m_pos[1] - 2*m_len_c2r*sin(heading*_DEG2RAD);

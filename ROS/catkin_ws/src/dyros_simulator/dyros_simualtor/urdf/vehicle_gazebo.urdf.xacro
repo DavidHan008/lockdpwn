@@ -2,7 +2,8 @@
 
 <robot name="mkz_gazebo" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="wheel_friction" value="12" />
+  <!-- ed: 1.2 is a proper value not to move unnaturally when steering -->
+  <xacro:property name="wheel_friction" value="1.2" />
   <xacro:arg name="pub_odom" default="false"/>
   <xacro:arg name="pub_tf" default="false"/>
 

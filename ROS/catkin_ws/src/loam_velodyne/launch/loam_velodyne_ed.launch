@@ -10,7 +10,7 @@
   <!-- ed: poseInitializerVelo 사용 -->
   <node pkg="loam_velodyne" type="poseInitializer_ed" name="poseInitializer_ed" output="screen">
     <param name="enable_init_map" type="bool" value="true" />
-    <param name="map_file" type="string" value="edward10.pcd" /> <!-- change here ! /-->
+    <param name="map_file" type="string" value="edward.pcd" /> <!-- change here ! /-->
     <param name="init_map_record_time" type="double" value="1.0" />
     <param name="file_debug" type="bool" value="true" />
   </node>

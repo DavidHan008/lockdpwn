@@ -329,6 +329,7 @@ void DbwNode::recvDisable(const std_msgs::Empty::ConstPtr& msg){
   disableSystem();
 }
 
+// ed: /can_rx를 섭스크라이브하는 콜백함수
 void DbwNode::recvCAN(const dataspeed_can_msgs::CanMessageStamped::ConstPtr& msg){
   sync_imu_.processMsg(msg);
   sync_gps_.processMsg(msg);
@@ -402,6 +403,7 @@ void DbwNode::recvCAN(const dataspeed_can_msgs::CanMessageStamped::ConstPtr& msg
           faultSteeringCal(ptr->FLTCAL);
           faultWatchdog(ptr->FLTWDC);
           overrideSteering(ptr->OVERRIDE);
+
           dbw_mkz_msgs::SteeringReport out;
           out.header.stamp = msg->header.stamp;
           out.steering_wheel_angle     = (float)ptr->ANGLE * (0.1 * M_PI / 180);
@@ -416,7 +418,10 @@ void DbwNode::recvCAN(const dataspeed_can_msgs::CanMessageStamped::ConstPtr& msg
           out.fault_bus2 = ptr->FLTBUS2 ? true : false;
           out.fault_calibration = ptr->FLTCAL ? true : false;
           out.fault_connector = ptr->FLTCON ? true : false;
+
+          // ed: /steering_report 토픽으로 퍼블리시
           pub_steering_.publish(out);
+
           geometry_msgs::TwistStamped twist;
           twist.header.stamp = out.header.stamp;
           twist.header.frame_id = frame_id_;
@@ -823,6 +828,7 @@ void DbwNode::recvThrottleCmd(const dbw_mkz_msgs::ThrottleCmd::ConstPtr& msg){
   pub_can_.publish(out);
 }
 
+// ed: /steering_cmd를 섭스크라이브하는 콜백함수
 void DbwNode::recvSteeringCmd(const dbw_mkz_msgs::SteeringCmd::ConstPtr& msg){
   dataspeed_can_msgs::CanMessage out;
 

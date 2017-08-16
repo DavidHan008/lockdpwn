@@ -138,7 +138,8 @@
       <parent link="base_link"/>
       <child link="steer_fl"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-0.6" upper="0.6" effort="0" velocity="0"/>
+      <!-- ed: 0.6 ==> 0.52 modifed -->
+      <limit lower="-0.52" upper="0.52" effort="0" velocity="0"/>
     </joint>
 
     <joint name="steer_fr" type="revolute">
@@ -146,7 +147,7 @@
       <parent link="base_link"/>
       <child link="steer_fr"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-0.6" upper="0.6" effort="0" velocity="0"/>
+      <limit lower="-0.52" upper="0.52" effort="0" velocity="0"/>
     </joint>
 
     <joint name="wheel_fl" type="continuous">

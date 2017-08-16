@@ -44,19 +44,20 @@ CTRL-C to quit
 """
 
 moveBindings = {
-		'i':(1,0,0,0),
-		'o':(1,0,0,-1),
 		'j':(0,0,0,1),
+	    'k':(0,0,0,0),
 		'l':(0,0,0,-1),
-		'k':(0,0,0,0),
+
 		'u':(1,0,0,1),
+	    'i':(1,0,0,0),
+		'o':(1,0,0,-1),
 
 ## ed: 후진용 코드 수정
 		',':(1,0,0,0),
 		'.':(1,0,0,-1),
 		'm':(1,0,0,1),
 
-
+## ed: not used codes
 		'O':(1,-1,0,0),
 		'I':(1,0,0,0),
 		'J':(0,1,0,0),
@@ -70,10 +71,15 @@ moveBindings = {
 	       }
 
 speedBindings={
+	## ed: 속도, 각도를 둘 다 변화시킨다
 		'q':(1.1,1.1),
 		'z':(.9,.9),
+
+	## ed: 속도변화량만 변화시킨다
 		'w':(1.1,1),
 		'x':(.9,1),
+
+	## ed: 각도변화량만 변화시킨다
 		'e':(1,1.1),
 		'c':(1,.9),
 	      }
@@ -138,6 +144,7 @@ if __name__=="__main__":
 				turn = turn * speedBindings[key][1]
 
 				print vels(speed,turn)
+
 				if (status == 14):
 					print msg
 				status = (status + 1) % 15
@@ -161,8 +168,11 @@ if __name__=="__main__":
 
 
 			twist = Twist()
+
 			twist.linear.x = x*speed; twist.linear.y = y*speed; twist.linear.z = z*speed;
 			twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = th*turn
+
+			## ed: /dyros/cmd_vel 토픽으로 퍼블리시
 			pub.publish(twist)
 			pub_gear.publish(gc)
 

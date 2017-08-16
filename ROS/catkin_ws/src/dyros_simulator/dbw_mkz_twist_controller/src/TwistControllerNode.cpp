@@ -60,7 +60,7 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   //steering_ratio_ = 14.8;
   steering_ratio_ = 18.6; // for grandeur
 
-  pn.getParam("ackermann_wheelbase", acker_wheelbase_);
+    pn.getParam("ackermann_wheelbase", acker_wheelbase_);
   pn.getParam("ackermann_track", acker_track_);
   pn.getParam("steering_ratio", steering_ratio_);
 
@@ -121,8 +121,10 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
     yaw += 6.28;
 
 
-  // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 수정해야한다)
+  // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 x + 40로 수정해야한다)
   localization[0] = msg->pose[1].position.x - 40;
+
+  //localization[0] = msg->pose[1].position.x;
   localization[1] = msg->pose[1].position.y;
   localization[2] = yaw;                    // ed: yaw [rad]
   localization[3] = msg->twist[1].linear.x;  // ed: velocity [m/s]
@@ -139,6 +141,8 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
   pub_local.data.push_back(localization[2]);  // ed: theta
   pub_local.data.push_back(localization[3]);  //     velocity
 
+
+  // ed: /LocalizationData 토픽으로 퍼블리시
   pub_localization.publish(pub_local);
 }
 
@@ -170,7 +174,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
   double vehicle_mass = cfg_.vehicle_mass + lpf_fuel_.get() / 100.0 * cfg_.fuel_capacity * GAS_DENSITY;
   double vel_error = cmd_vel_.twist.linear.x - actual_.linear.x;
 
-  cout << "current vel : " << cmd_vel_.twist.linear.x  << ", vel_error : " << vel_error << endl;
+  cout << "target vel : " << cmd_vel_.twist.linear.x  << ", vel_error : " << vel_error << endl;
 
   if ((fabs(cmd_vel_.twist.linear.x) < mphToMps(1.0)) || !cfg_.pub_pedals) {
     speed_pid_.resetIntegrator();
@@ -188,6 +192,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
   // ed: 여기서 Gear를 Drive에 놨을 때 최저속도 5 mile per hour ==> 2.2352 m/s가 나왔다. 이를 생략하고 m/s로 입력한다
   //const double MIN_SPEED = mphToMps(5.0);
   const double MIN_SPEED = 0.5; // ed: [m/s]
+
 
   if (cmd_vel_.twist.linear.x <= (double)1e-2) {
     accel_cmd = std::min(accel_cmd, -530 / vehicle_mass / cfg_.wheel_radius);
@@ -228,9 +233,16 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
     }
 
     steering_cmd.enable = true;
-    steering_cmd.steering_wheel_angle_cmd =
-        yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x, cmd_vel_.twist.angular.z, actual_.linear.x)
-        + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
+
+    // ed: 코드 추가, (not used)
+    //cfg_.steer_kp = 50.0;
+    //cout << "steer_kp : " << cfg_.steer_kp << endl;
+
+    steering_cmd.steering_wheel_angle_cmd = yaw_control_.getSteeringWheelAngle(cmd_vel_.twist.linear.x,
+                                                                               cmd_vel_.twist.angular.z,
+                                                                               actual_.linear.x)
+                                            + cfg_.steer_kp * (cmd_vel_.twist.angular.z - actual_.angular.z);
+
 
     if (cfg_.pub_pedals) {
       pub_throttle_.publish(throttle_cmd);
@@ -241,7 +253,7 @@ void TwistControllerNode::controlCallback(const ros::TimerEvent& event){
       pub_steering_.publish(steering_cmd);
     }
 
-    // ed: 코드 추가
+    // ed: /SteerAngleData 토픽용 코드 추가
     if(sub_steering_ang){
       pub_steering_.publish(steering_cmd2);
     }
