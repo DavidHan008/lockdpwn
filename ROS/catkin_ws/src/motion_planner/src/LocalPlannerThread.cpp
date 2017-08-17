@@ -994,8 +994,9 @@ void LocalPlannerThread::Compute(){
             m_model_jw.pose.position.y = -x;
 
             steer_Purepursuit = SteeringAng_PurePursuit(x, y, resdist);
-
             steer_Radius = ((steer_Purepursuit >= 0) ? 1 : (steer_Purepursuit < 0) ? -1 :0) * SteeringAng_Radius(carIdx);
+
+            // ed: 위 두 변수를 필터링해서 steer 변수에 저장하는 코드
             steer = a_*steer_Purepursuit + (1.0-a_)*steer_Radius*0.9;
 
             //steer = steer_Radius;
@@ -1032,8 +1033,7 @@ void LocalPlannerThread::Compute(){
             //
             steer_Purepursuit = SteeringAng_PurePursuit(x, y, resdist);
             //
-            steer_Radius = ((steer_Purepursuit >= 0) ? 1 : (steer_Purepursuit < 0) ? -1 :0)
-                           *SteeringAng_Radius(carIdx);
+            steer_Radius = ((steer_Purepursuit >= 0) ? 1 : (steer_Purepursuit < 0) ? -1 :0) * SteeringAng_Radius(carIdx);
             //
             //steer = a_*steer_Purepursuit + (1.0-a_)*steer_Radius*0.8;
             steer = steer_Radius;
@@ -1056,12 +1056,13 @@ void LocalPlannerThread::Compute(){
 
     // ed: 여기서 스티어링각도가 설정된다. radian으로 변환해서 퍼블리시
     msg.data.push_back(steer * _DEG2RAD);
-    //msg.data.push_back(2);  // ed: velocity [m/s]
-    //     velocity용 publisher만들어서 1,2는 엑셀,브레이크로 정해져있고 3,4를 속도, gear값을 추가해서 테스트해보기
+
+    // msg.data.push_back(2);  // ed: velocity [m/s]
+    // velocity용 publisher만들어서 1,2는 엑셀,브레이크로 정해져있고 3,4를 속도, gear값을 추가해서 테스트해보기
 
     // msg.data.push_back(500);
 
-    // ed: msg_steer, SteeringAngleData 토픽으로 퍼블리시한다
+    // ed: /SteeringAngleData 토픽으로 퍼블리시
     msg_steer.publish(msg);
 
 
@@ -1099,7 +1100,7 @@ void LocalPlannerThread::Compute(){
     m_model_jw_exp.pose.position.x = y;
     m_model_jw_exp.pose.position.y = -x;
 
-    // ed: msgpub_Look_JW_exp, LookAheadPos 토픽으로 퍼블리시한다
+    // ed: /LookAheadPos 토픽으로 퍼블리시
     msgpub_Look_JW_exp.publish(m_model_jw_exp);
 
     //JW 16.07.07
@@ -1126,19 +1127,19 @@ void LocalPlannerThread::Compute(){
 
     static int pub_cnt;
     pub_cnt++;
+
     //cout << pub_cnt <<endl;
     if(pub_cnt == 55){
         //JW 16.07.08 Trajectory Red
         m_line_strip.points.push_back(m_CarPos.pose.position);
         m_model_jw_exp_line.points.push_back(m_model_jw.pose.position);
-        pub_cnt=0;
+        pub_cnt = 0;
     }
 
     // ed: /LookAheadPos_exp 토픽으로 퍼블리시
     msgpub_Look_JW.publish(m_model_jw_exp_line);
     // ed: /Car_Pos 토픽으로 퍼블리시
     msgpub_car.publish(m_line_strip);
-
 
     //JW 16.07.08
     ////////////////////////////////////////////////////////////////
