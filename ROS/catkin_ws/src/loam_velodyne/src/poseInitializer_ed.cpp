@@ -208,7 +208,10 @@ class PoseInitializer_ed{
       gicp.align(*alignedMap_);
 
       cout << "[+] gicp FitnessScore : "<< gicp.getFitnessScore() << endl;
-      if(gicp.getFitnessScore() < 2.0f) break;
+
+      // ed: 특정 점수 이하로 내려갈 때까지 무한루프를 돌면서 계속 GICP를 수행한다
+      //     1 or 1.5 이하로 내려가야지 어느정도 정확히 맞는다
+      if(gicp.getFitnessScore() < 1.5f) break;
     }
 
     // ed: source_cropped.pcd로 특정영역만 저장된 파일을 저장한다

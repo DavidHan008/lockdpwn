@@ -333,9 +333,11 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
 
         ////////////////////////////////////////////////////////////////////
         car_heading = m_pos[2];//range 0 ~ M_PI*2
+
         //car_dir diff
         double tmp_dir = atan2((m_LocalSplinePath[car_waypoint][1] - m_LocalSplinePath[car_waypoint+1][1]),
                                (m_LocalSplinePath[car_waypoint][0] - m_LocalSplinePath[car_waypoint+1][0]))-M_PI;
+
         if(tmp_dir < 0)	tmp_dir = M_PI*2 + tmp_dir;
         m_TH_ERR = abs(car_heading - tmp_dir);
         //cout << "tmp_dir : " << tmp_dir << ", car_heading : " << car_heading<<endl;
@@ -463,7 +465,7 @@ double LocalPlannerThread::cur_rad(double x1, double y1,
     return rad = sqrt(pow((x1-c_x),2)+pow(y1-c_y,2));
 }
 
-
+// ed: foward 방향에서 LookAheadPt를 구하는 함수
 void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx) {
     double heading_Err = 0.0;      //JW 16.07.11.
     double cross_track_Err = 0.0;  //JW 16.07.11.
@@ -482,6 +484,8 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
 
             double dist = sqrt(x2+y2); //distŽÂ
 
+            // ed: 루프를 돌면서 자신의 waypoint 위치를 알아낸 후 car_waypoint에 저장하고
+            //     minDist 값에 현재 차량(red arrow)과 waypoint(green line)의 거리가 저장된다
             if ( dist < minDist ) {
                 minDist = dist;
                 car_waypoint = i;
@@ -548,6 +552,7 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
 
                 // ed: /err_JW로 퍼블리시
                 msgpub_err_JW.publish(m_err);
+
                 break;
             }
         }
@@ -595,7 +600,7 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
         m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
         m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
 
-        // ed: msgpub_Look_orig, LookAheadPos_orig 토픽으로 퍼블리시한다
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시한다
         msgpub_Look_orig.publish(m_model_orig);
 
         m_CrossTrack_ERR = minDist;
@@ -762,10 +767,10 @@ LocalPlannerThread::LocalPlannerThread(int argc, char** argv)
     // ed: rviz상에 초록색선을 표시하는 퍼블리셔
     msgpub = n.advertise<nav_msgs::Path>("LocalPathData", 10);
 
-    msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);     //real use data
+    msgpub_Look_JW = n.advertise<visualization_msgs::Marker>("LookAheadPos_exp", 10);     //real use data (green ball)
     msgpub_Look_JW_exp = n.advertise<visualization_msgs::Marker>("LookAheadPos", 10);     //real use data
-    msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);  //just visualization
-    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);                  //car_pos_ visualization
+    msgpub_Look_orig = n.advertise<visualization_msgs::Marker>("LookAheadPos_oirg", 10);  //just visualization (blue ball)
+    msgpub_car = n.advertise<visualization_msgs::Marker>("Car_Pos", 10);                  //car_pos_ visualization (red arrow)
     msgpub_err_JW = n.advertise<std_msgs::Float32MultiArray>("err_JW", 5 );      //err_
     msgpub_err_Orig = n.advertise<std_msgs::Float32MultiArray>("err_Orig", 5 );  //err_
 
@@ -951,28 +956,23 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 //JW 16.07.11.test1
 void LocalPlannerThread::Compute(){
     //printf("Car_x : %lf, Car_y : %lf\n",m_pos[0],m_pos[1]);
-    //printf("good555\n");
-
     int carIdx;
     double vel_orig, x, y, resdist;
     double steer_Purepursuit = 0.0, steer_Radius = 0.0;
     double steer = 0.0;
 
     if (m_LocalSplinePath.size() > 1){
-
         // ed: 라디오버튼이 forward인 경우
         if (m_dir_mode == 1) {           //m_switch_flag
 
-
             // ed: 아래 코드에서 x, y, resdist, carIdx를 구한다
-            if( m_vel > 5.0 * 0.278 ) {
+            if( m_vel > 5.0 * 0.278 ) {  // ed: m_vel > 1.39
                 //printf("%lf\n",m_vel);
                 GetLookAheadPt_For(2.24*m_vel, x, y, resdist, carIdx);
             }
-            else{
+            else{  // m_vel < 1.39
                 GetLookAheadPt_For(3.3, x, y, resdist, carIdx);
             }
-
 
             //cout << "FORWARD" <<endl;
             //cout << "CrossTrack_ERR: " << m_CrossTrack_ERR <<endl;
@@ -982,8 +982,12 @@ void LocalPlannerThread::Compute(){
 
             ///////
             double a_ = 0.0;
+
+            // ed: m_CrossTrack_ERR : waypoint(green line)과 현재 차량(red arrow)의 거리가 0.5m보다 큰지 아닌지 검사한다
+            //     a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
             else a_ = m_CrossTrack_ERR/dist_thresh;
+
 
             m_model_jw.header.stamp = ros::Time::now();
 
@@ -1016,7 +1020,7 @@ void LocalPlannerThread::Compute(){
 
             //if(a_ > a_thresh)
 
-            // ed: /LookAheadPos_exp로 퍼블리시
+            // ed: /LookAheadPos_exp (green ball)로 퍼블리시
             msgpub_Look_JW.publish(m_model_jw);
         }
 
@@ -1076,21 +1080,15 @@ void LocalPlannerThread::Compute(){
     m_msg.data.push_back(m_pos[1]);
     m_msg.data.push_back(m_pos[2]);
 
-    // ed: 단위는 m/s
-    float targetVel = 2;
-
     // ed: targetVel을 설정하는 코드인듯하다
     if( resdist == -1)
         m_msg.data.push_back(0);
     else
         m_msg.data.push_back(2);  // ed: [m/s] 단위
 
-
-    // ed: ControlData 토픽으로 퍼블리시한다
+    // ed: /ControlData 토픽으로 퍼블리시
     msgpub3.publish(m_msg);
 
-    // ed: 제대로 작동하는지 속도를 보는 코드
-    //printf("target : %lf m/s\n current : %lf m/s\n", targetVel , m_vel);
 
     m_model_jw_exp.header.stamp = ros::Time::now();
 
@@ -1122,13 +1120,15 @@ void LocalPlannerThread::Compute(){
     geometry_msgs::Quaternion m_CarPos_odom_quat = tf::createQuaternionMsgFromYaw(heading);
     m_CarPos.pose.orientation = m_CarPos_odom_quat;
 
-    // ed: /Car_Pos 토픽으로 퍼블리시
+    // ed: /Car_Pos (red arrow) 토픽으로 퍼블리시
     msgpub_car.publish(m_CarPos);
 
     static int pub_cnt;
     pub_cnt++;
 
     //cout << pub_cnt <<endl;
+
+    // ed: 상당히 자주 실행되는 함수군
     if(pub_cnt == 55){
         //JW 16.07.08 Trajectory Red
         m_line_strip.points.push_back(m_CarPos.pose.position);
@@ -1136,9 +1136,9 @@ void LocalPlannerThread::Compute(){
         pub_cnt = 0;
     }
 
-    // ed: /LookAheadPos_exp 토픽으로 퍼블리시
+    // ed: /LookAheadPos_exp (green ball) 토픽으로 퍼블리시
     msgpub_Look_JW.publish(m_model_jw_exp_line);
-    // ed: /Car_Pos 토픽으로 퍼블리시
+    // ed: /Car_Pos (red arrow) 토픽으로 퍼블리시
     msgpub_car.publish(m_line_strip);
 
     //JW 16.07.08
@@ -1160,6 +1160,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
 
         ////eta
         double m_LookAhead_vec = atan2((lookY - m_pos[1]), (lookX - m_pos[0]));
+
         if(m_LookAhead_vec < 0)	m_LookAhead_vec = M_PI*2 + m_LookAhead_vec;
         // cout << "m_LookAhead_vec : " << m_LookAhead_vec*_RAD2DEG << endl;
         // cout << "heading : " << heading << endl;

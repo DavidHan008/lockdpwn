@@ -823,6 +823,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "all_in_one/CMakeFiles/velodyne_pointcloud_gencfg.dir/DependInfo.cmake"
   "all_in_one/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "all_in_one/CMakeFiles/distanceEstimator.dir/DependInfo.cmake"
+  "all_in_one/CMakeFiles/velodyne_driver_gencfg.dir/DependInfo.cmake"
   "all_in_one/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "all_in_one/CMakeFiles/allinonegazebo.dir/DependInfo.cmake"
   "all_in_one/CMakeFiles/velodyne_msgs_generate_messages_py.dir/DependInfo.cmake"
