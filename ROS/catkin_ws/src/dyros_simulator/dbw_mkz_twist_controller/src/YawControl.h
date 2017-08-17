@@ -64,6 +64,7 @@ public:
         cmd_wz = -max_yaw_rate;
       }
     }
+
     return radius_control_.getSteeringWheelAngle(std::max(speed, speed_min_) / cmd_wz);
 #else
     if (fabsf(cmd_wz) > 1e-6) {

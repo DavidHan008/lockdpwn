@@ -110,6 +110,7 @@ dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/Twi
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/tf/LinearMath/Matrix3x3.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/tf/LinearMath/MinMax.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/TwistControllerNode.cpp.o: /opt/ros/indigo/include/tf/LinearMath/QuadWord.h
@@ -244,6 +245,7 @@ dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twi
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/tf/LinearMath/Matrix3x3.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/tf/LinearMath/MinMax.h
 dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twist_controller_node.cpp.o: /opt/ros/indigo/include/tf/LinearMath/QuadWord.h

@@ -257,6 +257,14 @@ geometry_msgs/TwistStamped.h
 -
 std_msgs/Float32MultiArray.h
 -
+std_msgs/String.h
+-
+iostream
+-
+fstream
+-
+string
+-
 dbw_mkz_msgs/GearCmd.h
 -
 gazebo_msgs/ModelStates.h
@@ -1538,6 +1546,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 std_msgs/MultiArrayDimension.h
+-
+
+/opt/ros/indigo/include/std_msgs/String.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/indigo/include/tf/LinearMath/Matrix3x3.h

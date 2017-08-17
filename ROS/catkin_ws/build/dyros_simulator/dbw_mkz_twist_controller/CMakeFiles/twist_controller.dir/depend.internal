@@ -111,6 +111,7 @@ dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/Twi
  /opt/ros/indigo/include/std_msgs/Header.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+ /opt/ros/indigo/include/std_msgs/String.h
  /opt/ros/indigo/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/indigo/include/tf/LinearMath/MinMax.h
  /opt/ros/indigo/include/tf/LinearMath/QuadWord.h
@@ -245,6 +246,7 @@ dyros_simulator/dbw_mkz_twist_controller/CMakeFiles/twist_controller.dir/src/twi
  /opt/ros/indigo/include/std_msgs/Header.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+ /opt/ros/indigo/include/std_msgs/String.h
  /opt/ros/indigo/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/indigo/include/tf/LinearMath/MinMax.h
  /opt/ros/indigo/include/tf/LinearMath/QuadWord.h

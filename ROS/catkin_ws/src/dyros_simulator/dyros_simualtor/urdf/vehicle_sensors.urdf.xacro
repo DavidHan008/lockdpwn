@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="mkz_sensors" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:macro name="dbw_mkz_camera" params="name parent_link x y z roll pitch yaw" >
-
     <link name="${name}" >
       <visual>
         <geometry>
@@ -79,7 +78,7 @@
         <geometry>
           <cylinder radius="0.1" length="0.05" />
         </geometry>
-        <material name="white" >
+        <material name="black" >
           <color rgba="1 1 1 1" />
         </material>
       </visual>
@@ -95,22 +94,27 @@
         <inertia ixx="0.037227" ixy="0" ixz="0" iyy="0.037227" iyz="0" izz="0.063878"/>
       </inertial>
     </link>
+
     <joint name="${name}" type="fixed" >
       <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
       <parent link="${parent_link}" />
       <child link="${name}" />
     </joint>
+
     <gazebo>
       <plugin name="gps_plugin" filename="libdbw_mkz_gazebo_gps.so" >
         <link_name>${name}</link_name>
         <update_rate>${rate}</update_rate>
         <ref_lat>${ref_lat}</ref_lat>
         <ref_lon>${ref_lon}</ref_lon>
-        <ant_offset_x>${x}</ant_offset_x>
-        <ant_offset_y>${y}</ant_offset_y>
+
+        <!-- ed: GPS distance estimation error code -->
+        <ant_offset_x>${x-.5}</ant_offset_x>
+        <ant_offset_y>${y+.5}</ant_offset_y>
         <ant_offset_z>${z}</ant_offset_z>
       </plugin>
     </gazebo>
+
   </xacro:macro>
 
   <!-- ed: Velodyne sensor added -->

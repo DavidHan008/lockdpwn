@@ -51,9 +51,14 @@
 
 // ed: motion_planner 연동하기 위한 헤더 추가
 #include <std_msgs/Float32MultiArray.h>
+#include <std_msgs/String.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 #include <dbw_mkz_msgs/GearCmd.h>
 #include <gazebo_msgs/ModelStates.h>
 #include <tf/tf.h>
+
 
 // Debug message
 #include <std_msgs/Float64.h>
@@ -66,6 +71,7 @@
 #include "YawControl.h"
 #include "PidControl.h"
 #include "LowPass.h"
+
 
 namespace dbw_mkz_twist_controller {
 
@@ -82,6 +88,9 @@ class TwistControllerNode{
   void recvImu(const sensor_msgs::Imu::ConstPtr& msg);
   void recvEnable(const std_msgs::Bool::ConstPtr& msg);
   void recvFuel(const dbw_mkz_msgs::FuelLevelReport::ConstPtr& msg);
+
+  // ed: save waypoint
+  void saveWaypoint(const std_msgs::String::ConstPtr& map_name);
 
   // ed: steeringAngleData를 섭스크라이브하는 콜백함수
   void SteeringAngle_callback(const std_msgs::Float32MultiArray::ConstPtr& msg);
@@ -101,6 +110,9 @@ class TwistControllerNode{
   ros::Subscriber sub_twist3_;
   ros::Subscriber sub_fuel_level_;
   ros::Timer control_timer_;
+
+  // ed: save waypoint
+  ros::Subscriber sub_save_localization_data;
 
   // ed: motion_planner와 연동하기 위한 퍼블리셔, 섭스크라이버 추가
   ros::Subscriber sub_motion_planner;

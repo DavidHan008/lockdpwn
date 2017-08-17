@@ -45,11 +45,17 @@ class PoseInitializer_ed{
     // ed: map_file을 불러와 previousMap_이 가리키도록한다
     loadPrevMap();
 
+    // ed: for debugging code added
+    justOnce = true;
+    justOnce2 = true;
 
     // ed: 토픽 수정, /velodyne_points <==> /laser_cloud_surround
     subLaser_ = nh_.subscribe< PointCloud >("/velodyne_points", 2, &PoseInitializer_ed::laserCloudCallback, this);
     // ed: gps 데이터를 받는 섭스크라이버 추가
     sub_gps = nh_.subscribe<geometry_msgs::Vector3Stamped>("/dyros/gps/utm", 1, &PoseInitializer_ed::gps_callback, this);
+
+    // ed: 실제위치와 예측위치를 비교하기 위해 섭스크라이버 추가
+    sub_local = nh_.subscribe<std_msgs::Float32MultiArray>("/LocalizationData", 1, &PoseInitializer_ed::local_callback, this);
 
     pubPose_ = nh_.advertise<std_msgs::Float32MultiArray>("/init_pose", 1);
     pubPose2D_ = nh_.advertise<geometry_msgs::Pose2D>("/my_pose", 5);
@@ -59,6 +65,10 @@ class PoseInitializer_ed{
  private:  // VARIABLE
   ros::NodeHandle nh_;
 
+  // ed: for debugging code added
+  bool justOnce;
+  bool justOnce2;
+  double real_pnt[2];
 
   // nh.param
   bool enable_init_map;
@@ -70,8 +80,11 @@ class PoseInitializer_ed{
   ros::Subscriber subOriginalMap_;
   ros::Subscriber subOriginalOdometry_;
 
-  // ed: gps 섭스크라이버 추가
+
+  // ed: gps, localization 섭스크라이버 추가
   ros::Subscriber sub_gps;
+  ros::Subscriber sub_local;
+
 
   ros::Publisher pubPose_;  // DEPRECATE
   ros::Publisher pubAdjustedMap_;
@@ -133,7 +146,7 @@ class PoseInitializer_ed{
 
 
   void match() {
-    ROS_INFO("Matching Start");
+    ROS_INFO("Matching...");
 
     // ed: ICP 알고리즘을 사용할 객체 생성
     pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
@@ -142,12 +155,12 @@ class PoseInitializer_ed{
     // Set the max correspondence distance to 5cm (e.g., correspondences with higher distances will be ignored)
     gicp.setMaxCorrespondenceDistance (500);
     // Set the maximum number of iterations (criterion 1)
-    gicp.setMaximumIterations (5000);
+    gicp.setMaximumIterations (10000);
     // Set the transformation epsilon (criterion 2)
     gicp.setTransformationEpsilon (1e-8);
     // Set the euclidean distance difference epsilon (criterion 3)
-    gicp.setEuclideanFitnessEpsilon (1e-5);
-    gicp.setRANSACOutlierRejectionThreshold(1e-5);
+    gicp.setEuclideanFitnessEpsilon (1e-8);
+    gicp.setRANSACOutlierRejectionThreshold(1e-8);
 
 
     // ed: CropBox 코드 추가. PointCloud를 원하는 영역만큼 잘라서 사용할 수 있다
@@ -158,40 +171,60 @@ class PoseInitializer_ed{
     cropBoxFilter_target.setInputCloud (currentMapFiltered_);
 
     // ed: 자를 영역을 설정하는 변수들
-    Eigen::Vector4f min_pt (-50.0f, -50.0f, -50.0f, 50.0f);
-    Eigen::Vector4f max_pt (50.0f, 50.0f, 50.0f, 50.0f);
+    Eigen::Vector4f min_pt (-50.0f, -50.0f, -50.0f, 0.0f);
+    Eigen::Vector4f max_pt (50.0f, 50.0f, 50.0f, 0.0f);
 
-    // Cropbox slighlty bigger then bounding box of points
-    cropBoxFilter_source.setMin (min_pt);
-    cropBoxFilter_source.setMax (max_pt);
+    // ed: 예측의 정확도가 높아질 때까지 무한루프를 돌아서 맞춘다
+    while(true) {
+      min_pt(0) += 1.0f;
+      min_pt(1) += 1.0f;
+      min_pt(2) += 1.0f;
 
-    // ed: GPS의 데이터를 사용해 특정지역에서 Crop하기 위해 아래 코드를 추가한다
-    cropBoxFilter_source.setTranslation (translate_pt);
+      max_pt(0) -= 1.0f;
+      max_pt(1) -= 1.0f;
+      max_pt(2) -= 1.0f;
 
+      //translate_pt[0] += 0.5;
+      //translate_pt[1] += 0.5;
 
-    cropBoxFilter_target.setMin (min_pt);
-    cropBoxFilter_target.setMax (max_pt);
+      // Cropbox slighlty bigger then bounding box of points
+      cropBoxFilter_source.setMin (min_pt);
+      cropBoxFilter_source.setMax (max_pt);
+      cropBoxFilter_target.setMin (min_pt);
+      cropBoxFilter_target.setMax (max_pt);
 
-    // Cloud
-    cropBoxFilter_source.filter (cloud_out_source);
-    cropBoxFilter_target.filter (cloud_out_target);
+      // ed: GPS의 데이터를 사용해 특정지역에서 Crop하기 위해 아래 코드를 추가한다
+      cropBoxFilter_source.setTranslation (translate_pt);
 
-    cloud_out_ptr_source = cloud_out_source.makeShared();
-    cloud_out_ptr_target = cloud_out_target.makeShared();
+      // Cloud
+      cropBoxFilter_source.filter (cloud_out_source);
+      cropBoxFilter_target.filter (cloud_out_target);
+
+      cloud_out_ptr_source = cloud_out_source.makeShared();
+      cloud_out_ptr_target = cloud_out_target.makeShared();
+
+      gicp.setInputSource(cloud_out_ptr_target);
+      gicp.setInputTarget(cloud_out_ptr_source);
+      gicp.align(*alignedMap_);
+
+      cout << "[+] gicp FitnessScore : "<< gicp.getFitnessScore() << endl;
+      if(gicp.getFitnessScore() < 2.0f) break;
+    }
 
     // ed: source_cropped.pcd로 특정영역만 저장된 파일을 저장한다
     pcl::io::savePCDFile("source_cropped.pcd",*cloud_out_ptr_source);
     pcl::io::savePCDFile("target_cropped.pcd",*cloud_out_ptr_target);
 
-    gicp.setInputSource(cloud_out_ptr_target);
-    gicp.setInputTarget(cloud_out_ptr_source);
-    gicp.align(*alignedMap_);
-
     std::cout << "has converged:" << gicp.hasConverged() << " score: " << gicp.getFitnessScore() << std::endl;
+
 
     // ed: 이 코드에서 최종적인 변환행렬을 얻어 initTF_에 저장한다
     initTf_ = gicp.getFinalTransformation();
     std::cout << initTf_ << std::endl;
+
+    // ed: 실제위치와 예측위치를 비교하기 위해 추가한 코드
+    cout << "translate_pt (GPS) : " << translate_pt[0] << ", " << translate_pt[1] << endl;
+    cout << "Localization (REAL) : " << real_pnt[1] << ", " << -real_pnt[0] << endl;
 
     // ed: Rotationnal Matrix 3x3 성분들을 입력한다
     initTfROS_.setBasis(tf::Matrix3x3(initTf_(0,0), initTf_(0,1), initTf_(0,2),
@@ -216,6 +249,9 @@ class PoseInitializer_ed{
     initTfInv_(3,1) = 0;
     initTfInv_(3,2) = 0;
     initTfInv_(3,3) = 1;
+
+
+
 
     // ed: PointCloud 파일을 저장한다
     if (file_debug) {
@@ -268,6 +304,16 @@ class PoseInitializer_ed{
 
  private:  // CALLBACK
 
+  // ed: 디버깅용 LocalizationData 데이터를 섭스크라이브하는 콜백함수 추가
+  void local_callback(const std_msgs::Float32MultiArray::ConstPtr& msg) {
+    if(justOnce2){
+      // ed: 현재 motion_planner와 연동하기 위해 (x,y) ==> (-y,x)로 좌표축이 틀어져있으므로 이를 반영해준다
+      real_pnt[0] = msg->data[0];
+      real_pnt[1] = msg->data[1];
+      justOnce2 = false;
+    }
+  }
+
   // ed: gps 데이터를 섭스크라이브하는 콜백함수 추가
   void gps_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg) {
     // ed: x : 500000
@@ -275,8 +321,6 @@ class PoseInitializer_ed{
 
     translate_pt(0) =  msg->vector.x - 500000;
     translate_pt(1) =  msg->vector.y - 4982950;
-
-    //cout << translate_pt(0) << ", " << translate_pt(1) << endl;
   }
 
 
@@ -387,7 +431,6 @@ class PoseInitializer_ed{
     odomTrans3_.setRotation(gh.getRotation());
 
 
-
     // ed: /camera_init tf <==> /dyros/base_footprint tf를 broadcast하는 코드
     tfBroadcaster3.sendTransform(odomTrans3_);
 
@@ -410,6 +453,12 @@ class PoseInitializer_ed{
     if(yaw < 0) pose2DMsg_.theta += 2.0 * M_PI;
     else { //Mypose.theta += 0.5 * PI;
          }
+
+    // ed: 실제위치와 예측위치를 비교하기 위해 추가한 코드
+    if(justOnce){
+      cout << "my_pose (PREDICTED) : " << pose2DMsg_.x << ", " << pose2DMsg_.y << endl;
+      justOnce = false;
+    }
 
 
     // ed: /my_pose로 퍼블리시

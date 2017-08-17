@@ -36,9 +36,13 @@
 
 using namespace std;
 
-
 namespace dbw_mkz_twist_controller {
 
+// ed: hz를 줄이기 위한 코드 추가
+int hzReducer = 0;
+double localization[4] = {0};
+
+// ed: 생성자 함수
 TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn) : srv_(pn){
   lpf_fuel_.setParams(60.0, 0.1);
   accel_pid_.setRange(0.0, 1.0);
@@ -60,7 +64,7 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   //steering_ratio_ = 14.8;
   steering_ratio_ = 18.6; // for grandeur
 
-    pn.getParam("ackermann_wheelbase", acker_wheelbase_);
+  pn.getParam("ackermann_wheelbase", acker_wheelbase_);
   pn.getParam("ackermann_track", acker_track_);
   pn.getParam("steering_ratio", steering_ratio_);
 
@@ -76,6 +80,10 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   sub_imu_ = n.subscribe("imu/data_raw", 1, &TwistControllerNode::recvImu, this);
   sub_enable_ = n.subscribe("dbw_enabled", 1, &TwistControllerNode::recvEnable, this);
   sub_fuel_level_ = n.subscribe("fuel_level_report", 1, &TwistControllerNode::recvFuel, this);
+
+
+   // ed: /LocalizationData 토픽 데이터를 저장해서 웨이포인트를 만드는 섭스크라이버 추가
+  sub_save_localization_data = n.subscribe("waypoint_save", 1, &TwistControllerNode::saveWaypoint, this);
 
   // ed: motion_planner와 연동하기 위한 퍼블리셔, 섭스크라이버 추가
   sub_motion_planner = n.subscribe("SteerAngleData", 1, &TwistControllerNode::SteeringAngle_callback, this);
@@ -97,9 +105,9 @@ TwistControllerNode::TwistControllerNode(ros::NodeHandle &n, ros::NodeHandle &pn
   control_timer_ = n.createTimer(ros::Duration(control_period_), &TwistControllerNode::controlCallback, this);
 }
 
-// ed: /gazebo/model_states를 섭스크라이브하는 콜백함수 추가
+
+// ed: /gazebo/model_states를 섭스크라이브하는 콜백함수 추가. 1000 Hz
 void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelStates::ConstPtr& msg){
-  double localization[4] = {0};
   double yaw, pitch, roll;
   tf::Transform getYPR;
 
@@ -122,9 +130,9 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
 
 
   // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 x + 40로 수정해야한다)
-  localization[0] = msg->pose[1].position.x - 40;
+  //localization[0] = msg->pose[1].position.x - 40;
 
-  //localization[0] = msg->pose[1].position.x;
+  localization[0] = msg->pose[1].position.x;
   localization[1] = msg->pose[1].position.y;
   localization[2] = yaw;                    // ed: yaw [rad]
   localization[3] = msg->twist[1].linear.x;  // ed: velocity [m/s]
@@ -142,8 +150,26 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
   pub_local.data.push_back(localization[3]);  //     velocity
 
 
-  // ed: /LocalizationData 토픽으로 퍼블리시
-  pub_localization.publish(pub_local);
+  hzReducer++;
+
+  // ed: 1000 hz인 섭스크라이브 함수를 10 hz로 낮춘다
+  if(hzReducer > 10){
+    hzReducer = 0;
+
+    // ed: /LocalizationData 토픽으로 퍼블리시
+    pub_localization.publish(pub_local);
+  }
+
+}
+
+// ed: /LocalizationData 토픽의 데이터를 저장하기 위한 섭스크라이브 콜백함수 추가
+//     시작할 때 : $ rostopic pub -r 10 /dyros/waypoint_save std_msgs/String "mapname.map"
+void TwistControllerNode::saveWaypoint(const std_msgs::String::ConstPtr& map_name){
+  ofstream fout;
+
+  fout.open(map_name->data.c_str(), ios::app);
+  fout << localization[0] << ", " << localization[1] << ", " << localization[2] << ", " << localization[3] <<  endl;
+  fout.close();
 }
 
 
