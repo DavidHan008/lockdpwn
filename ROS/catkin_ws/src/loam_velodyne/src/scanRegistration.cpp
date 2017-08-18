@@ -20,6 +20,8 @@
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/kdtree/kdtree_flann.h>
 
+using namespace std;
+
 const double PI = 3.1415926;
 
 const float scanPeriod = 0.1;
@@ -411,8 +413,10 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudIn2){
     //printf("i: %d, %d\n", i, laserCloudScans[i]->size());
   }
 
+
   cloudSize = laserCloud->points.size();   //JH
   //printf("%d\n",cloudSize);
+  //cout << "cloud_size is : " << cloudSize << endl;
 
   int scanCount = -1;
   for (int i = 5; i < cloudSize - 5; i++) {

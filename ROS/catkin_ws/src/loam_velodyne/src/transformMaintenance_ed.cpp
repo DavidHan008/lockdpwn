@@ -243,7 +243,7 @@ void odomAftMappedHandler(const nav_msgs::Odometry::ConstPtr& odomAftMapped){
   transformBefMapped[5] = odomAftMapped->twist.twist.linear.z;
 }
 
-// ed: /odom_Offset을 섭스크라이브하는 콜백함수
+// ed: /odom_Offset을 섭스크라이브하는 콜백함수 (not used)
 void setOdomOffsetHandler(const geometry_msgs::Pose2D::ConstPtr& offset){
   in_offset = true;  
   transformoffset[0] += 0;
@@ -286,7 +286,6 @@ int main(int argc, char** argv){
   else{
     ROS_INFO("Use Global 2D Pose with Previous Map");
   }
-
 
   tf::TransformBroadcaster tfBroadcaster2;
   tfBroadcaster2Pointer = &tfBroadcaster2;

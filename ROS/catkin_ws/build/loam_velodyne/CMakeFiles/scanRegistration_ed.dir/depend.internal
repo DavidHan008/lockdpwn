@@ -25,6 +25,7 @@ loam_velodyne/CMakeFiles/scanRegistration_ed.dir/src/scanRegistration_ed.cpp.o
  /opt/ros/indigo/include/pcl_msgs/PointIndices.h
  /opt/ros/indigo/include/pcl_msgs/PolygonMesh.h
  /opt/ros/indigo/include/pcl_msgs/Vertices.h
+ /opt/ros/indigo/include/pcl_ros/point_cloud.h
  /opt/ros/indigo/include/ros/advertise_options.h
  /opt/ros/indigo/include/ros/advertise_service_options.h
  /opt/ros/indigo/include/ros/assert.h
@@ -113,6 +114,7 @@ loam_velodyne/CMakeFiles/scanRegistration_ed.dir/src/scanRegistration_ed.cpp.o
  /opt/ros/indigo/include/tf2_ros/transform_broadcaster.h
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
+ /usr/include/eigen3/Eigen/Dense
  /usr/include/eigen3/Eigen/Eigen2Support
  /usr/include/eigen3/Eigen/Eigenvalues
  /usr/include/eigen3/Eigen/Geometry
@@ -322,21 +324,34 @@ loam_velodyne/CMakeFiles/scanRegistration_ed.dir/src/scanRegistration_ed.cpp.o
  /usr/include/pcl-1.7/pcl/PointIndices.h
  /usr/include/pcl-1.7/pcl/PolygonMesh.h
  /usr/include/pcl-1.7/pcl/Vertices.h
+ /usr/include/pcl-1.7/pcl/cloud_iterator.h
+ /usr/include/pcl-1.7/pcl/common/centroid.h
  /usr/include/pcl-1.7/pcl/common/common.h
  /usr/include/pcl-1.7/pcl/common/concatenate.h
+ /usr/include/pcl-1.7/pcl/common/eigen.h
+ /usr/include/pcl-1.7/pcl/common/impl/centroid.hpp
  /usr/include/pcl-1.7/pcl/common/impl/common.hpp
+ /usr/include/pcl-1.7/pcl/common/impl/eigen.hpp
  /usr/include/pcl-1.7/pcl/common/impl/io.hpp
+ /usr/include/pcl-1.7/pcl/common/impl/transforms.hpp
  /usr/include/pcl-1.7/pcl/common/io.h
  /usr/include/pcl-1.7/pcl/common/point_tests.h
+ /usr/include/pcl-1.7/pcl/common/transforms.h
  /usr/include/pcl-1.7/pcl/console/print.h
  /usr/include/pcl-1.7/pcl/conversions.h
+ /usr/include/pcl-1.7/pcl/correspondence.h
  /usr/include/pcl-1.7/pcl/exceptions.h
  /usr/include/pcl-1.7/pcl/filters/boost.h
+ /usr/include/pcl-1.7/pcl/filters/crop_box.h
  /usr/include/pcl-1.7/pcl/filters/filter.h
+ /usr/include/pcl-1.7/pcl/filters/filter_indices.h
+ /usr/include/pcl-1.7/pcl/filters/impl/crop_box.hpp
  /usr/include/pcl-1.7/pcl/filters/impl/filter.hpp
+ /usr/include/pcl-1.7/pcl/filters/impl/filter_indices.hpp
  /usr/include/pcl-1.7/pcl/filters/impl/voxel_grid.hpp
  /usr/include/pcl-1.7/pcl/filters/voxel_grid.h
  /usr/include/pcl-1.7/pcl/for_each_type.h
+ /usr/include/pcl-1.7/pcl/impl/cloud_iterator.hpp
  /usr/include/pcl-1.7/pcl/impl/pcl_base.hpp
  /usr/include/pcl-1.7/pcl/impl/point_types.hpp
  /usr/include/pcl-1.7/pcl/io/boost.h

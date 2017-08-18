@@ -196,7 +196,7 @@ class PoseInitializer_ed{
       // ed: GPS의 데이터를 사용해 특정지역에서 Crop하기 위해 아래 코드를 추가한다
       cropBoxFilter_source.setTranslation (translate_pt);
 
-      // Cloud
+      // ed : 위의 제약조건에 의해 필터링된 포인트클라우드를 생성한다
       cropBoxFilter_source.filter (cloud_out_source);
       cropBoxFilter_target.filter (cloud_out_target);
 

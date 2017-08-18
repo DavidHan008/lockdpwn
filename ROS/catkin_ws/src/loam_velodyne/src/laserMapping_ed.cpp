@@ -383,10 +383,8 @@ int main(int argc, char** argv){
   ros::Subscriber subSaveMapCmd = nh.subscribe<std_msgs::String>("/loam_map_save", 1, mapSaveHandler);
   //  ros::Subscriber subImu = nh.subscribe<sensor_msgs::Imu> ("/imu/data", 50, imuHandler);
 
-
-  // ed: 섭스크라이버 추가
+  // ed: /velodyne_points 섭스크라이버 추가
   ros::Subscriber subVelodynePoints = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 2, velo_pnts_callback);
-
 
   // ed: 현재 아래 3개의 토픽만 퍼블리시한다
   ros::Publisher pubLaserCloudSurround = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_surround", 1);
@@ -891,7 +889,9 @@ int main(int argc, char** argv){
                   matA0.at<float>(j, 0) = laserCloudSurfFromMap->points[pointSearchInd[j]].x;
                   matA0.at<float>(j, 1) = laserCloudSurfFromMap->points[pointSearchInd[j]].y;
                   matA0.at<float>(j, 2) = laserCloudSurfFromMap->points[pointSearchInd[j]].z;
-                }
+                }                               \
+
+                // ed: bool solve(InputArray src1, InputArray src2, OutputArray dst, int flags=DECOMP_LU)
                 cv::solve(matA0, matB0, matX0, cv::DECOMP_QR);
 
                 float pa = matX0.at<float>(0, 0);
@@ -964,6 +964,7 @@ int main(int argc, char** argv){
             cv::Mat matB(laserCloudSelNum, 1, CV_32F, cv::Scalar::all(0));
             cv::Mat matAtB(6, 1, CV_32F, cv::Scalar::all(0));
             cv::Mat matX(6, 1, CV_32F, cv::Scalar::all(0));
+
             for (int i = 0; i < laserCloudSelNum; i++) {
               pointOri = laserCloudOri->points[i];
               coeff = coeffSel->points[i];
@@ -987,11 +988,15 @@ int main(int argc, char** argv){
               matA.at<float>(i, 3) = coeff.x;
               matA.at<float>(i, 4) = coeff.y;
               matA.at<float>(i, 5) = coeff.z;
+
               matB.at<float>(i, 0) = -coeff.intensity;
             }
             cv::transpose(matA, matAt);
+
             matAtA = matAt * matA;
             matAtB = matAt * matB;
+
+            // ed: bool solve(InputArray src1, InputArray src2, OutputArray dst, int flags=DECOMP_LU)
             cv::solve(matAtA, matAtB, matX, cv::DECOMP_QR);
 
             if (iterCount == 0) {
@@ -1004,13 +1009,15 @@ int main(int argc, char** argv){
 
               isDegenerate = false;
               float eignThre[6] = {100, 100, 100, 100, 100, 100};
+
               for (int i = 5; i >= 0; i--) {
                 if (matE.at<float>(0, i) < eignThre[i]) {
                   for (int j = 0; j < 6; j++) {
                     matV2.at<float>(i, j) = 0;
                   }
                   isDegenerate = true;
-                } else {
+                }
+                else {
                   break;
                 }
               }
@@ -1107,9 +1114,7 @@ int main(int argc, char** argv){
           laserCloudSurfArray2[ind] = laserCloudTemp;
         }
 
-        // ed: 코드 수정
-        mapFrameCount += 5;
-        // mapFrameCount++;
+        mapFrameCount++;
 
         if (mapFrameCount >= mapFrameNum) {
           mapFrameCount = 0;
@@ -1118,6 +1123,7 @@ int main(int argc, char** argv){
 
           for (int i = 0; i < laserCloudSurroundNum; i++) {
             int ind = laserCloudSurroundInd[i];
+
             *laserCloudSurround2 += *laserCloudCornerArray[ind];
             *laserCloudSurround2 += *laserCloudSurfArray[ind];
           }
@@ -1130,8 +1136,8 @@ int main(int argc, char** argv){
           pcl::toROSMsg(*laserCloudSurround, laserCloudSurround3);
           laserCloudSurround3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
 
-          //laserCloudSurround3.header.frame_id = "/camera_init";
-          laserCloudSurround3.header.frame_id = "/dyros/base_footprint";
+          laserCloudSurround3.header.frame_id = "/camera_init";
+          //laserCloudSurround3.header.frame_id = "/dyros/base_footprint";
 
           // ed: /laser_cloud_surround 토픽으로 퍼블리시한다
           pubLaserCloudSurround.publish(laserCloudSurround3);
@@ -1147,8 +1153,8 @@ int main(int argc, char** argv){
         pcl::toROSMsg(*laserCloudFullRes, laserCloudFullRes3);
         laserCloudFullRes3.header.stamp = ros::Time().fromSec(timeLaserOdometry);
 
-        //laserCloudFullRes3.header.frame_id = "/camera_init";
-        laserCloudFullRes3.header.frame_id = "/dyros/base_footprint";
+        laserCloudFullRes3.header.frame_id = "/camera_init";
+        //laserCloudFullRes3.header.frame_id = "/dyros/base_footprint";
 
         // ed: /velodyne_cloud_registered 토픽으로 퍼블리시한다
         pubLaserCloudFullRes.publish(laserCloudFullRes3);
