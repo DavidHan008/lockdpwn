@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: dbw_mkz_joystick_demo
+Description: Description of dbw_mkz_joystick_demo
+Version: 1.0.6
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: 

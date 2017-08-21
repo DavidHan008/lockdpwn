@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: torcs_ros_client
+Description: Description of torcs_ros_client
+Version: 0.0.0
+Cflags: -I/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/torcs_ros/torcs_ros_client/include
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs torcs_msgs

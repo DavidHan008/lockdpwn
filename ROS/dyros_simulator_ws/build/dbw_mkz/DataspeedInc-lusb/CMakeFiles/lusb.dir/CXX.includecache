@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/DataspeedInc-lusb/include/lusb/UsbDevice.h
+stdexcept
+-
+string
+-
+boost/function.hpp
+-
+boost/thread.hpp
+-
+
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/DataspeedInc-lusb/src/UsbDevice.cpp
+lusb/UsbDevice.h
+/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dbw_mkz/DataspeedInc-lusb/src/lusb/UsbDevice.h
+libusb-1.0/libusb.h
+-
+
