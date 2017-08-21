@@ -145,11 +145,11 @@ void LocalPlannerThread::GetLookAheadPt_JW_rev(int &carIdx,double& x, double& y,
         // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
         //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*// comments(th);
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1] ;//+ m_overall*sin(th);
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0] ;//+ m_overall*sin(th);
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0] ;//+ m_overall*sin(th);
 
-        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시
-        msgpub_Look_orig.publish(m_model_orig);
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시 (사용안하는건 주석처리)
+        //msgpub_Look_orig.publish(m_model_orig);
 
 
 
@@ -317,11 +317,11 @@ void LocalPlannerThread::GetLookAheadPt_DE_for(int &carIdx,double& x, double& y,
         // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
         //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
 
-        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시
-        msgpub_Look_orig.publish(m_model_orig);
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시 (사용안하는건 주석처리)
+        // msgpub_Look_orig.publish(m_model_orig);
 
 
 
@@ -466,6 +466,8 @@ double LocalPlannerThread::cur_rad(double x1, double y1,
 }
 
 // ed: foward 방향에서 LookAheadPt를 구하는 함수
+//     (x,y) : green ball의 좌표
+//     resdist : blue <==> green ball의 거리
 void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, double& y, double &resdist, int &carIdx) {
     double heading_Err = 0.0;      //JW 16.07.11.
     double cross_track_Err = 0.0;  //JW 16.07.11.
@@ -484,7 +486,7 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
 
             double dist = sqrt(x2+y2); //distŽÂ
 
-            // ed: 루프를 돌면서 자신의 waypoint 위치를 알아낸 후 car_waypoint에 저장하고
+            // ed: 루프를 돌면서 자신의 waypoint(green line) 위치를 알아낸 후 car_waypoint에 저장하고
             //     minDist 값에 현재 차량(red arrow)과 waypoint(green line)의 거리가 저장된다
             if ( dist < minDist ) {
                 minDist = dist;
@@ -525,7 +527,7 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
             if( lookAheadDist <= dist) {
                 m_lookAheadIndex = i;
 
-                // ed: x, y, resdist를 업데이트한다
+                // ed: green ball의 (x,y)와 resdist를 업데이트한다
                 x = m_LocalSplinePath[i][0];
                 y = m_LocalSplinePath[i][1];
                 resdist = dist;
@@ -597,11 +599,11 @@ void LocalPlannerThread::GetLookAheadPt_Rev(double lookAheadDist,double& x, doub
         // ed: motion_planner의 좌표축을 회전하기 위해 아래와 같이 코드를 수정했다
         //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][0];//+ m_overall*cos(th);
         //m_model_orig.pose.position.y = m_LocalSplinePath[car_waypoint][1];//+ m_overall*sin(th);
-        m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
-        m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
+        //m_model_orig.pose.position.x = m_LocalSplinePath[car_waypoint][1];//+ m_overall*cos(th);
+        //m_model_orig.pose.position.y = -m_LocalSplinePath[car_waypoint][0];//+ m_overall*sin(th);
 
-        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시한다
-        msgpub_Look_orig.publish(m_model_orig);
+        // ed: /LookAheadPos_oirg (blue ball) 토픽으로 퍼블리시한다(사용안하는건 주석처리)
+        //      msgpub_Look_orig.publish(m_model_orig);
 
         m_CrossTrack_ERR = minDist;
 
@@ -963,16 +965,17 @@ void LocalPlannerThread::Compute(){
 
     if (m_LocalSplinePath.size() > 1){
         // ed: 라디오버튼이 forward인 경우
-        if (m_dir_mode == 1) {           //m_switch_flag
+        if (m_dir_mode == 1) {   //m_switch_flag
 
-            // ed: 아래 코드에서 x, y, resdist, carIdx를 구한다
-            if( m_vel > 5.0 * 0.278 ) {  // ed: m_vel > 1.39
+            // ed: 아래 코드에서 차량의 속도에 따른 x, y, resdist, carIdx를 구한다
+            if( m_vel > 5.0 * 0.278 ) {  // ed: m_vel > 1.39 m/s
                 //printf("%lf\n",m_vel);
                 GetLookAheadPt_For(2.24*m_vel, x, y, resdist, carIdx);
             }
-            else{  // m_vel < 1.39
+            else{  // m_vel < 1.39 m/s
                 GetLookAheadPt_For(3.3, x, y, resdist, carIdx);
             }
+
 
             //cout << "FORWARD" <<endl;
             //cout << "CrossTrack_ERR: " << m_CrossTrack_ERR <<endl;
@@ -984,7 +987,11 @@ void LocalPlannerThread::Compute(){
             double a_ = 0.0;
 
             // ed: m_CrossTrack_ERR : waypoint(green line)과 현재 차량(red arrow)의 거리가 0.5m보다 큰지 아닌지 검사한다
+<<<<<<< HEAD
             //                        > 0.5 : a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
+=======
+            //                        > 0.5 m :  a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
+>>>>>>> 082eb2fb9bb965857d360fc0e1ce9b9cd8b6d712
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
             else a_ = m_CrossTrack_ERR/dist_thresh;
 
@@ -1145,6 +1152,7 @@ void LocalPlannerThread::Compute(){
     ////////////////////////////////////////////////////////////////
 }
 
+// ed: PurePursuit 알고리즘을 구현한 함수
 double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, double resdist){
     double steerAngle = 0.0;
     double heading = m_pos[2]*_RAD2DEG;
@@ -1253,7 +1261,11 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx){
 
     if ( heading > M_PI )  heading = heading - M_PI * 2;
 
+<<<<<<< HEAD
     double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2 * th_err_range);
+=======
+    double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2*th_err_range);
+>>>>>>> 082eb2fb9bb965857d360fc0e1ce9b9cd8b6d712
 
     //cout << heading << " " << tmp_th << endl;
     if(heading_Err > m_limit_steerAngle) heading_Err = m_limit_steerAngle;

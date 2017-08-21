@@ -1,0 +1,348 @@
+#-----------------------------------------------------------
+# first line
+#-----------------------------------------------------------
+- mkz:
+    x: 8.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: {r: 0.8, g: 0.1, b: 0.0}
+- mkz1:
+    x: 11.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz2:
+    x: 14.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: red
+- mkz3:
+    x: 17.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: blue
+- mkz4:
+    x: 20.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz5:
+    x: 23.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: black
+- mkz6:
+    x: 26.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz7:
+    x: 29.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: silver
+- mkz8:
+    x: 32.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: red
+- mkz9:
+    x: 35.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz10:
+    x: 38.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: blue
+- mkz11:
+    x: 41.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz12:
+    x: 44.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz13:
+    x: 47.0
+    y: -8.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+
+
+#-----------------------------------------------------------
+# second line
+#-----------------------------------------------------------
+- mkz14:
+    x: 8.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: {r: 0.8, g: 0.1, b: 0.0}
+- mkz15:
+    x: 11.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: green
+- mkz16:
+    x: 14.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: red
+- mkz17:
+    x: 17.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: blue
+- mkz18:
+    x: 20.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+- mkz19:
+    x: 23.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: black
+- mkz20:
+    x: 26.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+- mkz21:
+    x: 29.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: silver
+- mkz22:
+    x: 32.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: red
+- mkz23:
+    x: 35.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: green
+- mkz24:
+    x: 38.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: blue
+- mkz25:
+    x: 41.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+- mkz26:
+    x: 44.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: green
+- mkz27:
+    x: 47.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+- mkz28:
+    x: 50.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+- mkz29:
+    x: 53.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: green
+- mkz30:
+    x: 56.0
+    y: -19.0
+    z: 0.0
+    yaw: 1.57
+    model: mkz
+    color: white
+
+#-----------------------------------------------------------
+# third line
+#-----------------------------------------------------------
+- mkz31:
+    x: 8.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: {r: 0.8, g: 0.1, b: 0.0}
+- mkz32:
+    x: 11.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz33:
+    x: 14.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: red
+- mkz34:
+    x: 17.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: blue
+- mkz35:
+    x: 20.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz36:
+    x: 23.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: black
+- mkz37:
+    x: 26.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz38:
+    x: 32.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: red
+- mkz39:
+    x: 35.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz40:
+    x: 38.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: blue
+- mkz41:
+    x: 41.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz42:
+    x: 44.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz43:
+    x: 47.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz44:
+    x: 50.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz45:
+    x: 53.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: green
+- mkz46:
+    x: 56.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: white
+- mkz47:
+    x: 29.0
+    y: -26.0
+    z: 0.0
+    yaw: -1.57
+    model: mkz
+    color: silver

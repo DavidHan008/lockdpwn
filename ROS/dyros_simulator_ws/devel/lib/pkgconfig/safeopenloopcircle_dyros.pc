@@ -1,0 +1,8 @@
+prefix=/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel
+
+Name: safeopenloopcircle_dyros
+Description: Description of safeopenloopcircle_dyros
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/devel/lib 
+Requires: geometry_msgs roscpp std_msgs

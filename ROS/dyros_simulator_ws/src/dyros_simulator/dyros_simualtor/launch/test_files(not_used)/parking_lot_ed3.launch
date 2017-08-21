@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="vehicle_ns" default="vehicle" />
+ 
+  <group ns="$(arg vehicle_ns)" >
+     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find dbw_mkz_parking_lot)/urdf/mkz_13_parking_lot_ed.urdf.xacro" />
+  </group>
+ 
+</launch>
