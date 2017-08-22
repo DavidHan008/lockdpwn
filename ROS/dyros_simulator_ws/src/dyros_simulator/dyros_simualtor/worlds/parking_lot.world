@@ -68,7 +68,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/dyros-vehicle/catkin_ws/src/dyros_simulator/dyros_simualtor/meshes/parking_lot/parking_lot.dae</uri>
+              <uri>file:///home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dyros_simualtor/meshes/parking_lot/parking_lot.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -90,7 +90,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/dyros-vehicle/catkin_ws/src/dyros_simulator/dyros_simualtor/meshes/parking_lot/parking_lot.dae</uri>
+              <uri>file:///home/dyros-vehicle/gitrepo/lockdpwn/ROS/catkin_ws/src/dyros_simulator/dyros_simualtor/meshes/parking_lot/parking_lot.dae</uri>
             </mesh>
           </geometry>
         </visual>

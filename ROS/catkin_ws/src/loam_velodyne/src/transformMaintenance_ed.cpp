@@ -186,7 +186,7 @@ void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry){
   laserOdometryTrans2.setOrigin(tf::Vector3(transformMapped[3], transformMapped[4], transformMapped[5]));
 
   // ed: /dyros/base_footprint tf를 broadcast한다
-  tfBroadcaster2Pointer->sendTransform(laserOdometryTrans2);
+  //tfBroadcaster2Pointer->sendTransform(laserOdometryTrans2);
 
   if(myPoseEnabled){
     // ed: laserOdometry2 ==> /my_pose, /test 토픽으로 좌표를 변환하는 코드
@@ -245,7 +245,7 @@ void odomAftMappedHandler(const nav_msgs::Odometry::ConstPtr& odomAftMapped){
   transformBefMapped[5] = odomAftMapped->twist.twist.linear.z;
 
   // ed: 코드 추가
-  cout << transformAftMapped[3] << ", " << transformAftMapped[4] << ", " << transformAftMapped[5] << endl;
+  //cout << transformAftMapped[3] << ", " << transformAftMapped[4] << ", " << transformAftMapped[5] << endl;
 }
 
 // ed: /odom_Offset을 섭스크라이브하는 콜백함수 (not used)

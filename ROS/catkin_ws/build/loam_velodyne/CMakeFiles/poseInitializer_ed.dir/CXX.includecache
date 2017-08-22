@@ -29,6 +29,8 @@ std_msgs/Float64.h
 -
 geometry_msgs/Vector3Stamped.h
 -
+Eigen/Geometry
+-
 tf/tf.h
 -
 tf2/utils.h
@@ -2435,6 +2437,8 @@ ParametrizedLine.h
 /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Hyperplane.h
 
 /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/ParametrizedLine.h
+
+/usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Quaternion.h
 
 /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Rotation2D.h
 
