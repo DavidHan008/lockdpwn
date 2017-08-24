@@ -156,6 +156,7 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/AngleAxis.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Hyperplane.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/ParametrizedLine.h
+ /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Quaternion.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Rotation2D.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/RotationBase.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/Geometry/Scaling.h

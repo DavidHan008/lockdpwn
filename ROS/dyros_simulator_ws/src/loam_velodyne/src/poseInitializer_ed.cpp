@@ -12,6 +12,7 @@
 #include <std_msgs/Float32MultiArray.h>
 #include <std_msgs/Float64.h>
 #include <geometry_msgs/Vector3Stamped.h>
+#include <Eigen/Geometry>
 
 #include <tf/tf.h>
 #include <tf2/utils.h>
@@ -32,11 +33,11 @@ typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
 
 class PoseInitializer_ed{
  public:
-  // ed: PoseInitializer 생성자
+  // ed: 생성자
   PoseInitializer_ed() : nh_("~"), recordStart_(false), isRecordFinished_(false),
-                      previousMap_(new PointCloud), currentMap_(new PointCloud),
-                      currentMapFiltered_(new PointCloud), alignedMap_(new PointCloud),
-                      transformedMap_ (new PointCloud) {
+                         previousMap_(new PointCloud), currentMap_(new PointCloud),
+                         currentMapFiltered_(new PointCloud), alignedMap_(new PointCloud),
+                         transformedMap_ (new PointCloud) {
 
     nh_.param<bool>("enable_init_map", enable_init_map, false);
     nh_.param<std::string>("map_file", map_file, "init.pcd");
@@ -49,6 +50,7 @@ class PoseInitializer_ed{
     // ed: for debugging code added
     justOnce = true;
     justOnce2 = true;
+    justOnce3 = true;
 
     // ed: 토픽 수정, /velodyne_points <==> /laser_cloud_surround
     subLaser_ = nh_.subscribe< PointCloud >("/velodyne_points", 2, &PoseInitializer_ed::laserCloudCallback, this);
@@ -70,6 +72,8 @@ class PoseInitializer_ed{
   // ed: for debugging code added
   bool justOnce;
   bool justOnce2;
+  bool justOnce3;
+
   double real_pnt[2];
 
   // nh.param
@@ -104,13 +108,17 @@ class PoseInitializer_ed{
   PointCloud cloud_out_target;
   PointCloud::Ptr cloud_out_ptr_source;
   PointCloud::Ptr cloud_out_ptr_target;
+  PointCloud::Ptr cloud_out_ptr_target_final;
+
+  // ed: gps heading 보정용 회전행렬추가
+  Eigen::Matrix3f rotation_matrix;
 
   Eigen::Matrix4f initTf_;
   Eigen::Matrix4f initTfInv_;
 
   // ed: gps 데이터용 코드 추가
   Eigen::Vector3f translate_pt;
-  double rotation_yaw;
+  Eigen::Vector3f rotation_yaw;
 
   // Repeater
   PointCloud::Ptr transformedMap_;  ///< A sum of init map and newer map
@@ -160,11 +168,17 @@ class PoseInitializer_ed{
     gicp.setMaxCorrespondenceDistance (500);
     // Set the maximum number of iterations (criterion 1)
     gicp.setMaximumIterations (10000);
-    // Set the transformation epsilon (criterion 2)
-    gicp.setTransformationEpsilon (1e-8);
-    // Set the euclidean distance difference epsilon (criterion 3)
-    gicp.setEuclideanFitnessEpsilon (1e-8);
-    gicp.setRANSACOutlierRejectionThreshold(1e-8);
+
+    //Set the transformation epsilon (maximum allowable difference between two consecutive transformations) in order for an optimization to be considered as having converged to the final solution.
+    gicp.setTransformationEpsilon (1e-10);
+
+    // Set the maximum allowed Euclidean error between two consecutive steps in the ICP loop, before the algorithm is considered to have converged.
+    // The error is estimated as the sum of the differences between correspondences in an Euclidean sense, divided by the number of correspondences.
+    gicp.setEuclideanFitnessEpsilon (0.5);
+
+    // Set the inlier distance threshold for the internal RANSAC outlier rejection loop.
+    // The method considers a point to be an inlier, if the distance between the target data index and the transformed source index is smaller than the given inlier distance threshold. The value is set by default to 0.05m.
+    //gicp.setRANSACOutlierRejectionThreshold(1e-10);
 
 
     // ed: CropBox 코드 추가. PointCloud를 원하는 영역만큼 잘라서 사용할 수 있다
@@ -178,18 +192,20 @@ class PoseInitializer_ed{
     Eigen::Vector4f min_pt (-50.0f, -50.0f, -50.0f, 0.0f);
     Eigen::Vector4f max_pt (50.0f, 50.0f, 50.0f, 0.0f);
 
+
     // ed: 예측의 정확도가 높아질 때까지 무한루프를 돌아서 맞춘다
     while(true) {
-      min_pt(0) += 1.0f;
-      min_pt(1) += 1.0f;
-      min_pt(2) += 1.0f;
+      min_pt(0) += .5f;
+      min_pt(1) += .5f;
+      min_pt(2) += .5f;
 
-      max_pt(0) -= 1.0f;
-      max_pt(1) -= 1.0f;
-      max_pt(2) -= 1.0f;
+      max_pt(0) -= .5f;
+      max_pt(1) -= .5f;
+      max_pt(2) -= .5f;
 
       //translate_pt[0] += 0.5;
       //translate_pt[1] += 0.5;
+      //rotation_yaw(2) += 0.1;
 
       // Cropbox slighlty bigger then bounding box of points
       cropBoxFilter_source.setMin (min_pt);
@@ -199,6 +215,8 @@ class PoseInitializer_ed{
 
       // ed: GPS의 데이터를 사용해 특정지역에서 Crop하기 위해 아래 코드를 추가한다
       cropBoxFilter_source.setTranslation (translate_pt);
+      cropBoxFilter_target.setRotation (rotation_yaw);
+      //cout << "rotation : " << rotation_yaw(2) << endl;
 
       // ed : 위의 제약조건에 의해 필터링된 포인트클라우드를 생성한다
       cropBoxFilter_source.filter (cloud_out_source);
@@ -206,6 +224,16 @@ class PoseInitializer_ed{
 
       cloud_out_ptr_source = cloud_out_source.makeShared();
       cloud_out_ptr_target = cloud_out_target.makeShared();
+
+      // ed: Current Velodyne PointCloud (target)를 회전시키는 코드
+      //     한번만 실행되는 코드
+      if(justOnce3){
+        Eigen::Affine3f transform = Eigen::Affine3f::Identity();
+        transform.rotate (Eigen::AngleAxisf (-rotation_yaw(2) /* radian*/, Eigen::Vector3f::UnitZ ()));
+        pcl::transformPointCloud (*cloud_out_ptr_target, *cloud_out_ptr_target, transform);
+
+        justOnce3 = false;
+      }
 
       gicp.setInputSource(cloud_out_ptr_target);
       gicp.setInputTarget(cloud_out_ptr_source);
@@ -227,7 +255,19 @@ class PoseInitializer_ed{
 
     // ed: 이 코드에서 최종적인 변환행렬을 얻어 initTF_에 저장한다
     initTf_ = gicp.getFinalTransformation();
+
+
+    // ed: 코드 추가, gps 헤딩값을 통해 GICP를 수행하였으므로 gicp.getFinalTransformation()에는 rotation_yaw각도 만큼의 회전성분이 안들어가 있다.
+    //               따라서 추가해줘야한다
+    rotation_matrix = Eigen::AngleAxisf(0, Eigen::Vector3f::UnitX())
+                      * Eigen::AngleAxisf(0,  Eigen::Vector3f::UnitY())
+                      * Eigen::AngleAxisf(-rotation_yaw(2), Eigen::Vector3f::UnitZ());
+
+    initTf_.block<3,3>(0,0) *= rotation_matrix;
+
     std::cout << initTf_ << std::endl;
+
+
 
     // ed: 실제위치와 예측위치를 비교하기 위해 추가한 코드
     cout << "translate_pt (GPS) : " << translate_pt[0] << ", " << translate_pt[1] << endl;
@@ -236,10 +276,11 @@ class PoseInitializer_ed{
     // ed: Rotationnal Matrix 3x3 성분들을 입력한다
     initTfROS_.setBasis(tf::Matrix3x3(initTf_(0,0), initTf_(0,1), initTf_(0,2),
                                       initTf_(1,0), initTf_(1,1), initTf_(1,2),
-                                      initTf_(2,0), initTf_(2,1), initTf_(2,2)));
+                                      initTf_(2,0), initTf_(2,1) , initTf_(2,2)));
 
     // ed: Transitional Vector3 성분을 입력한다
     initTfROS_.setOrigin(tf::Vector3(initTf_(0,3), initTf_(1,3), initTf_(3,3)));
+
     Eigen::Matrix3f mRot;
     Eigen::Vector3f vOri;
 
@@ -258,44 +299,21 @@ class PoseInitializer_ed{
     initTfInv_(3,3) = 1;
 
 
-
-
-    // ed: PointCloud 파일을 저장한다
     if (file_debug) {
-      pcl::io::savePCDFile("source_orig.pcd",  *previousMap_);
-      pcl::io::savePCDFile("target_orig.pcd",  *currentMapFiltered_);
-      pcl::io::savePCDFile("aligned.pcd",  *alignedMap_);
+      pcl::io::savePCDFile("source_orig.pcd", *previousMap_);
+      pcl::io::savePCDFile("target_orig.pcd", *currentMapFiltered_);
+      pcl::io::savePCDFile("aligned.pcd", *alignedMap_);
     }
-    /*
-      tf ::Matrix3x3 tfMat(eigTfMat(0,0), eigTfMat(0,1), eigTfMat(0,2),
-      eigTfMat(1,0), eigTfMat(1,1), eigTfMat(1,2),
-      eigTfMat(2,0), eigTfMat(2,1), eigTfMat(2,2));
-
-      Eigen::Vector3d ypr;
-      tfMat.getEulerYPR(ypr(0),ypr(1),ypr(2));
-      ROS_INFO("Matrix T' = %lf \t%lf \t%lf \t%lf \t%lf \t %lf",
-      eigTfMat(0,3),eigTfMat(1,3),eigTfMat(2,3),
-      ypr(2),ypr(1),ypr(0));
-
-      std_msgs::Float32MultiArray msg;
-      msg.data.push_back(eigTfMat(0,3));
-      msg.data.push_back(eigTfMat(1,3));
-      msg.data.push_back(eigTfMat(2,3));
-      msg.data.push_back(ypr(2));
-      msg.data.push_back(ypr(1));
-      msg.data.push_back(ypr(0));
-
-      pubPose_.publish(msg);
-    */
   }
 
-  // ed: /velodyne_cloud 섭스크라이브 콜백함수에서 호출되는 함수
+
+  // ed: /velodyne_points 섭스크라이브 콜백함수에서 호출되는 함수
   void initMessageHandlerStart() {
     odomMsg_.header.frame_id = "/camera_init";
     odomTrans3_.frame_id_ = "/camera_init";
 
     // ed: 코드 수정
-    //odomMsg_.child_frame_id = "/dyros/base_footprint";
+    //odomMsg_.child_frame_id = "/camera";
     //odomTrans3_.child_frame_id_ = "/camera";
     odomMsg_.child_frame_id = "/dyros/base_footprint";
     odomTrans3_.child_frame_id_ = "/dyros/base_footprint";
@@ -330,6 +348,7 @@ class PoseInitializer_ed{
     translate_pt(1) =  msg->vector.y - 4982950;
   }
 
+
   // ed: /dyros/gps/heading 데이터를 섭스크라이브하는 콜백함수 추가
   void gps_heading_callback(const std_msgs::Float64::ConstPtr& msg) {
     double deg2rad = 0.0174;  // ed: 3.14 / 180
@@ -343,7 +362,12 @@ class PoseInitializer_ed{
       filtered_yaw -= 540;
     }
 
-    rotation_yaw =  -filtered_yaw * deg2rad;
+    // ed: cropbox.setRotation 함수에 맞게 사용하기 위해 90을 더해줘야 한다
+    filtered_yaw += 90;
+
+    rotation_yaw(0) = 0;
+    rotation_yaw(1) = 0;
+    rotation_yaw(2) = filtered_yaw * deg2rad; //     yaw
   }
 
 
@@ -404,6 +428,7 @@ class PoseInitializer_ed{
     tf::Transform g;
     tf::Transform h;
 
+    // match_simple();
     // ed: match()함수를 통해 구한 initTfROS_ 값을 g에 대입하는듯
     g = initTfROS_;
 
@@ -426,8 +451,8 @@ class PoseInitializer_ed{
                              0));
 
 
-    // ed: 차량의 Pitch 방향으로 좌표계가 기울이지지 않도록 y축 회전량을 0으로 설정한다
-    gh.setRotation(tf::Quaternion(gh.getRotation().getX(),
+    // ed: 차량의 Pitch, Roll 방향으로 좌표계가 기울이지지 않도록 x,y축 회전량을 0으로 설정한다
+    gh.setRotation(tf::Quaternion(0,
                                   0,
                                   gh.getRotation().getZ(),
                                   gh.getRotation().getW()));
@@ -446,13 +471,11 @@ class PoseInitializer_ed{
     // ed: /vehicle_from_global_frame으로 퍼블리시
     pubAdjustedOdometry_.publish(odomMsg_);
 
-
     odomTrans3_.stamp_ = msg->header.stamp;
 
     odomTrans3_.setBasis(gh.getBasis());
     odomTrans3_.setOrigin(gh.getOrigin());
     odomTrans3_.setRotation(gh.getRotation());
-
 
     // ed: /camera_init tf <==> /dyros/base_footprint tf를 broadcast하는 코드
     tfBroadcaster3.sendTransform(odomTrans3_);
@@ -475,14 +498,13 @@ class PoseInitializer_ed{
 
     if(yaw < 0) pose2DMsg_.theta += 2.0 * M_PI;
     else { //Mypose.theta += 0.5 * PI;
-         }
+    }
 
     // ed: 실제위치와 예측위치를 비교하기 위해 추가한 코드
     if(justOnce){
       cout << "my_pose (PREDICTED) : " << pose2DMsg_.x << ", " << pose2DMsg_.y << endl;
       justOnce = false;
     }
-
 
     // ed: /my_pose로 퍼블리시
     pubPose2D_.publish(pose2DMsg_);
@@ -491,18 +513,18 @@ class PoseInitializer_ed{
 };
 
 /*
-vector<PointXYZ> SearchNodeByRadius(PointXYZ searchPoint, float radius){
-    vector<int> pointIdxRadiusSearch;
-    vector<float> pointRadiusSquaredDistance;
-    vector<PointXYZ> pvNode;
+  vector<PointXYZ> SearchNodeByRadius(PointXYZ searchPoint, float radius){
+  vector<int> pointIdxRadiusSearch;
+  vector<float> pointRadiusSquaredDistance;
+  vector<PointXYZ> pvNode;
 
-    if( m_kdTree.radiusSearch(searchPoint, radius, pointIdxRadiusSearch, pointRadiusSquaredDistance ) > 0) {
-        for (size_t i = 0; i < pointIdxRadiusSearch.size (); ++i) {
-            pvNode.push_back(m_pTree->points[pointIdxRadiusSearch[i]]);
-        }
-    }
-    return pvNode;
-}
+  if( m_kdTree.radiusSearch(searchPoint, radius, pointIdxRadiusSearch, pointRadiusSquaredDistance ) > 0) {
+  for (size_t i = 0; i < pointIdxRadiusSearch.size (); ++i) {
+  pvNode.push_back(m_pTree->points[pointIdxRadiusSearch[i]]);
+  }
+  }
+  return pvNode;
+  }
 */
 
 int main(int argc, char** argv){
