@@ -336,7 +336,7 @@ void imuHandler(const sensor_msgs::Imu::ConstPtr& imuIn){
 }
 
 
-// ed: 함수 추가
+// ed: 함수 추가 (not used)
 void velo_pnts_callback(const sensor_msgs::PointCloud2ConstPtr& velodyne_pnts){
   // pcl::fromROSMsg(*velodyne_pnts, *velo_points);
   // velo_points_array[ii] = velo_points;
@@ -357,7 +357,8 @@ void mapSaveHandler(const std_msgs::String::ConstPtr& str){
 
   cout << "cubeI : " << cubeI << ", cubeJ :" << cubeJ << ", cubeK : " << cubeK <<", " << cubeInd << endl;  // ed: cubeInd 거의 항상 2425
 
-  // ed: 모든 포인트 클라우드 데이터 전체를 저장하기 위해 아래 코드를 추가한다
+  // ed: 코드 추가
+  //     모든 포인트 클라우드 데이터 전체를 저장하기 위해 아래 코드를 추가한다
   pcl::PointCloud<pcl::PointXYZI>::Ptr laserCloudSum_ed(new pcl::PointCloud<pcl::PointXYZI>());
   for (int i = 0 ; i < laserCloudNum ; i++){
     //cout << i << endl;
