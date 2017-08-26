@@ -998,10 +998,6 @@ void LocalPlannerThread::Compute(){
             double a_ = 0.0;
 
             // ed: m_CrossTrack_ERR : waypoint(green line)과 현재 차량(red arrow)의 거리가 0.5m보다 큰지 아닌지 검사한다
-<<<<<<< HEAD
-            //                        > 0.5 : a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
-=======
->>>>>>> 60629198dfa2a5e2e33fdeab00824c4c382e2dda
             //                        > 0.5 m :  a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
             else a_ = m_CrossTrack_ERR/dist_thresh;
