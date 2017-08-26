@@ -257,7 +257,7 @@ class PoseInitializer_ed{
     initTf_ = gicp.getFinalTransformation();
 
 
-    // ed: 코드 추가, gps 헤딩값을 통해 GICP를 수행하였으므로 gicp.getFinalTransformation()에는 rotation_yaw각도 만큼의 회전성분이 안들어가 있다.
+    // ed: 코드 추가, gps 헤딩값을 통해 GICP를 수행하였으므로 gicp.getFinalTransformation()에는 rotation_yaw각도 만큼의 회전성분이 안 들어가 있다.
     //               따라서 추가해줘야한다
     rotation_matrix = Eigen::AngleAxisf(0, Eigen::Vector3f::UnitX())
                       * Eigen::AngleAxisf(0,  Eigen::Vector3f::UnitY())

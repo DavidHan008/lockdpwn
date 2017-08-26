@@ -21,12 +21,23 @@
 // ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
 void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
-    m_pos[0] = msg->data.at(0);  // ed: x
-    m_pos[1] = msg->data.at(1);  //     y
-    m_pos[2] = msg->data.at(2);  //     theta
 
-    //    printf("good");
+    // ed: 아래 코드 부분을 수정해야 한다. 좌표계 변환을 위해
+    //     구현된 motion_planner 기준으로 좌표계를 변환했음
+    //------------------------------------------------------------------------------
+    double yaw;
+
+    m_pos[0] = -msg->data.at(1);  // ed: x
+    m_pos[1] = msg->data.at(0);  //     y
+
+    // ed: 실제 차량에서 나오는 LocalizationData의 yaw값과 일치하려면 아래의 코드를 적용해야한다
+    yaw += msg->data.at(2) + 1.57;
+    if(yaw < 0 && yaw > -1.57)
+        yaw += 6.28;
+
+    m_pos[2] = yaw;  //     theta
     m_vel = msg->data.at(3); // m/s
+    //------------------------------------------------------------------------------
 
     //    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
     //    if(switch_dist < 0.9)
@@ -987,7 +998,10 @@ void LocalPlannerThread::Compute(){
             double a_ = 0.0;
 
             // ed: m_CrossTrack_ERR : waypoint(green line)과 현재 차량(red arrow)의 거리가 0.5m보다 큰지 아닌지 검사한다
+<<<<<<< HEAD
             //                        > 0.5 : a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
+=======
+>>>>>>> 60629198dfa2a5e2e33fdeab00824c4c382e2dda
             //                        > 0.5 m :  a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
             else a_ = m_CrossTrack_ERR/dist_thresh;
