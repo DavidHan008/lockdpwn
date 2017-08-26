@@ -987,6 +987,7 @@ void LocalPlannerThread::Compute(){
             double a_ = 0.0;
 
             // ed: m_CrossTrack_ERR : waypoint(green line)과 현재 차량(red arrow)의 거리가 0.5m보다 큰지 아닌지 검사한다
+            //                        > 0.5 : a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
             //                        > 0.5 m :  a_ = 1.0인 경우 PurePursuit의 steer 값만 사용한다
             if (m_CrossTrack_ERR > dist_thresh) a_ = 1.0;
             else a_ = m_CrossTrack_ERR/dist_thresh;
@@ -1231,6 +1232,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
 }
 
 double LocalPlannerThread::SteeringAng_Radius(int carIdx){
+    // ed: Radius_points = 4
     //radius
     double Steer_Radius = 0.0;
     double Radius = cur_rad(m_LocalSplinePath[carIdx-Radius_points][1], m_LocalSplinePath[carIdx-Radius_points][0],
@@ -1254,9 +1256,9 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx){
     //if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
     double heading = m_pos[2];
 
-    if ( heading > M_PI )  heading = heading - M_PI*2;
+    if ( heading > M_PI )  heading = heading - M_PI * 2;
 
-    double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2*th_err_range);
+    double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2 * th_err_range);
 
     //cout << heading << " " << tmp_th << endl;
     if(heading_Err > m_limit_steerAngle) heading_Err = m_limit_steerAngle;
