@@ -122,7 +122,6 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /opt/ros/indigo/include/tf2_ros/buffer.h
  /opt/ros/indigo/include/tf2_ros/buffer_interface.h
  /opt/ros/indigo/include/tf2_ros/transform_broadcaster.h
- /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
  /usr/include/eigen3/Eigen/Eigen2Support
@@ -134,9 +133,6 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /usr/include/eigen3/Eigen/QR
  /usr/include/eigen3/Eigen/SVD
  /usr/include/eigen3/Eigen/StdVector
- /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h
- /usr/include/eigen3/Eigen/src/Cholesky/LLT.h
- /usr/include/eigen3/Eigen/src/Cholesky/LLT_MKL.h
  /usr/include/eigen3/Eigen/src/Core/Array.h
  /usr/include/eigen3/Eigen/src/Core/ArrayBase.h
  /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h
@@ -263,25 +259,9 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /usr/include/eigen3/Eigen/src/Eigen2Support/SVD.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/TriangularSolver.h
  /usr/include/eigen3/Eigen/src/Eigen2Support/VectorBlock.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/./ComplexSchur.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/./HessenbergDecomposition.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/./RealSchur.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/./Tridiagonalization.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h
  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur_MKL.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h
  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur_MKL.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
  /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_MKL.h
- /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h
  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h
  /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h
  /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h
@@ -307,10 +287,7 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h
  /usr/include/eigen3/Eigen/src/LU/PartialPivLU_MKL.h
  /usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h
- /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h
  /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR_MKL.h
- /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h
- /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h
  /usr/include/eigen3/Eigen/src/QR/HouseholderQR_MKL.h
  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h
  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD_MKL.h
@@ -440,3 +417,39 @@ loam_velodyne/CMakeFiles/poseInitializer_ed.dir/src/poseInitializer_ed.cpp.o
  /usr/include/pcl-1.7/pcl/search/impl/search.hpp
  /usr/include/pcl-1.7/pcl/search/kdtree.h
  /usr/include/pcl-1.7/pcl/search/search.h
+ /usr/local/include/eigen3/Eigen/Cholesky
+ /usr/local/include/eigen3/Eigen/Dense
+ /usr/local/include/eigen3/Eigen/Eigenvalues
+ /usr/local/include/eigen3/Eigen/Geometry
+ /usr/local/include/eigen3/Eigen/QR
+ /usr/local/include/eigen3/Eigen/src/Cholesky/LDLT.h
+ /usr/local/include/eigen3/Eigen/src/Cholesky/LLT.h
+ /usr/local/include/eigen3/Eigen/src/Cholesky/LLT_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/./ComplexSchur.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/./HessenbergDecomposition.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/./RealSchur.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/./Tridiagonalization.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h
+ /usr/local/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h
+ /usr/local/include/eigen3/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+ /usr/local/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h
+ /usr/local/include/eigen3/Eigen/src/QR/HouseholderQR.h
+ /usr/local/include/eigen3/Eigen/src/QR/HouseholderQR_LAPACKE.h
+ /usr/local/include/eigen3/Eigen/src/misc/RealSvd2x2.h
+ /usr/local/include/eigen3/Eigen/src/misc/lapacke.h
+ /usr/local/include/eigen3/Eigen/src/misc/lapacke_mangling.h
