@@ -21,12 +21,23 @@
 // ed: LocalizationData 섭스크라이브용 콜백함수
 // From Localization Module
 void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::ConstPtr& msg){
-    m_pos[0] = msg->data.at(0);  // ed: x
-    m_pos[1] = msg->data.at(1);  //     y
-    m_pos[2] = msg->data.at(2);  //     theta
 
-    //    printf("good");
+    // ed: 아래 코드 부분을 수정해야 한다. 좌표계 변환을 위해
+    //     구현된 motion_planner 기준으로 좌표계를 변환했음
+    //------------------------------------------------------------------------------
+    double yaw;
+
+    m_pos[0] = -msg->data.at(1);  // ed: x
+    m_pos[1] = msg->data.at(0);  //     y
+
+    // ed: 실제 차량에서 나오는 LocalizationData의 yaw값과 일치하려면 아래의 코드를 적용해야한다
+    yaw += msg->data.at(2) + 1.57;
+    if(yaw < 0 && yaw > -1.57)
+        yaw += 6.28;
+
+    m_pos[2] = yaw;  //     theta
     m_vel = msg->data.at(3); // m/s
+    //------------------------------------------------------------------------------
 
     //    double switch_dist = sqrt(pow(m_switch_X - msg->data.at(0),2) + pow(m_switch_Y - msg->data.at(1),2));
     //    if(switch_dist < 0.9)
@@ -1231,6 +1242,7 @@ double LocalPlannerThread::SteeringAng_PurePursuit(double lookX, double lookY, d
 }
 
 double LocalPlannerThread::SteeringAng_Radius(int carIdx){
+    // ed: Radius_points = 4
     //radius
     double Steer_Radius = 0.0;
     double Radius = cur_rad(m_LocalSplinePath[carIdx-Radius_points][1], m_LocalSplinePath[carIdx-Radius_points][0],
@@ -1254,9 +1266,9 @@ double LocalPlannerThread::SteeringAng_Radius(int carIdx){
     //if(tmp_th < 0)	tmp_th = M_PI*2 + tmp_th;
     double heading = m_pos[2];
 
-    if ( heading > M_PI )  heading = heading - M_PI*2;
+    if ( heading > M_PI )  heading = heading - M_PI * 2;
 
-    double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2*th_err_range);
+    double heading_Err = abs(abs(heading) - abs(tmp_th)) * _RAD2DEG * m_limit_steerAngle / (2 * th_err_range);
 
     //cout << heading << " " << tmp_th << endl;
     if(heading_Err > m_limit_steerAngle) heading_Err = m_limit_steerAngle;

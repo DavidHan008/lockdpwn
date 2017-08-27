@@ -122,11 +122,11 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
 
   getYPR.getBasis().getEulerYPR(yaw, pitch, roll);
 
-
   // ed: 실제 차량에서 나오는 LocalizationData의 yaw값과 일치하려면 아래의 코드를 적용해야한다
-  yaw += 1.57;
   if(yaw < 0 && yaw > -1.57)
     yaw += 6.28;
+  // ed: 코드 추가 0~360 deg로 변환하는 코드. #include <AngleUtils.h>
+  //yaw = AngleUtils::toRange(yaw);
 
 
   // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 x + 40로 수정해야한다)
@@ -140,19 +140,15 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
 
   std_msgs::Float32MultiArray pub_local;
 
-  // ed: loam_velodyne의 좌표축이 (x,y) ==> (-y,x)로 틀어져있으므로 이에 따라 수정해준다. 이렇게해야 motion_planner에서 0903map.bag파일을 돌릴 때 정상적으로 인식된다
-  //pub_local.data.push_back(localization[0]);
-  //pub_local.data.push_back(localization[1]);
-  pub_local.data.push_back(-localization[1]);
   pub_local.data.push_back(localization[0]);
-
+  pub_local.data.push_back(localization[1]);
   pub_local.data.push_back(localization[2]);  // ed: theta
   pub_local.data.push_back(localization[3]);  //     velocity
 
 
   hzReducer++;
 
-  // ed: 1000 hz인 섭스크라이브 함수를 10 hz로 낮춘다
+  // ed: 1000 hz인 섭스크라이브 함수를 100 hz로 낮춘다
   if(hzReducer > 10){
     hzReducer = 0;
 
