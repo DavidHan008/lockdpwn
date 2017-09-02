@@ -25,7 +25,7 @@ add_executable(twist_controller src/twist_controller_node.cpp src/TwistControlle
 add_dependencies(twist_controller dbw_mkz_msgs_gencpp)
 add_dependencies(twist_controller ${PROJECT_NAME}_gencfg)
 target_link_libraries(twist_controller
-  ${catkin_LIBRARIES}
+                      ${catkin_LIBRARIES}
 )
 
 add_executable(twist_tester src/twist_tester.cpp)
