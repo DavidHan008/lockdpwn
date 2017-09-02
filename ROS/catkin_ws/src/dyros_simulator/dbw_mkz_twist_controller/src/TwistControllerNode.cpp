@@ -131,7 +131,6 @@ void TwistControllerNode::Gazebo_modelStates_callback(const gazebo_msgs::ModelSt
 
   // ed: 0903map.bag 파일로 테스트하는 경우 시작지점이 다르므로 x - 40 처럼 좌표를 변경해야한다 (+ dyros.yaml 파일에서 spawn지점도 x + 40로 수정해야한다)
   //localization[0] = msg->pose[1].position.x - 40;
-
   localization[0] = msg->pose[1].position.x;
   localization[1] = msg->pose[1].position.y;
   localization[2] = yaw;                    // ed: yaw [rad]

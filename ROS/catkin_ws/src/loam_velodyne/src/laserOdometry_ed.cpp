@@ -294,6 +294,8 @@ void laserCloudLessFlatHandler(const sensor_msgs::PointCloud2ConstPtr& surfPoint
   newSurfPointsLessFlat = true;
 }
 
+
+// ed: /velodyne_cloud_2를 섭스크라이브하는 콜백함수
 void laserCloudFullResHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudFullRes2){
   timeLaserCloudFullRes = laserCloudFullRes2->header.stamp.toSec();
 

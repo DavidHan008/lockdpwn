@@ -27,8 +27,8 @@ void LocalPlannerThread::SubTopicProcess1(const std_msgs::Float32MultiArray::Con
     //------------------------------------------------------------------------------
     double yaw;
 
-    m_pos[0] = -msg->data.at(1);  // ed: x
-    m_pos[1] = msg->data.at(0);  //     y
+    m_pos[0] = -msg->data.at(1);  // ed:  x
+    m_pos[1] = msg->data.at(0);  //      y
 
     // ed: 실제 차량에서 나오는 LocalizationData의 yaw값과 일치하려면 아래의 코드를 적용해야한다
     yaw += msg->data.at(2) + 1.57;
@@ -538,9 +538,11 @@ void LocalPlannerThread::GetLookAheadPt_For(double lookAheadDist,double& x, doub
             if( lookAheadDist <= dist) {
                 m_lookAheadIndex = i;
 
-                // ed: green ball의 (x,y)와 resdist를 업데이트한다
-                x = m_LocalSplinePath[i][0];
-                y = m_LocalSplinePath[i][1];
+                // ed: green ball의 (x,y)와 resdist를 업데이트한다. 코드 수정!
+		x = m_LocalSplinePath[i][0];
+		y = m_LocalSplinePath[i][1];
+                //x = -m_LocalSplinePath[i][1];
+                //y = m_LocalSplinePath[i][0];
                 resdist = dist;
 
                 //range 0 ~ M_PI*2
@@ -867,8 +869,8 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     // ed: /LocalizationData 데이터를 기록한 웨이포인트 데이터를 읽어온다
     //                     rostopic echo /LocalizationData > waypoints.txt
-    //fin.open("/home/dyros-vehicle/bag_files/0903map.txt");  //circle+lane change
-    fin.open("/home/dyros-vehicle/bag_files/waypoints/parking_lot_ed.map");
+    fin.open("/home/dyros-vehicle/bag_files/waypoints/waypoints_for_parking.map");  //circle+lane change
+    //fin.open("/home/dyros-vehicle/bag_files/waypoints/parking_lot_ed.map");
 
 
     // ed: 이 루프를 통해 nodeVec에 들어가는 X, Y 값이 rviz에서 초록색선을 나타낸다
@@ -882,15 +884,21 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
         // ed: 아래 코드는 실행되지 않는것 같다. vel == 9999인 경우는 없는듯
         if ( vel == 9999) {
-            m_switch_X = X;
-            m_switch_Y = Y;
-            nodeVec.push_back(Vector2d(X, Y));
+            // ed: 코드 수정
+            //m_switch_X = X;
+            //m_switch_Y = Y;
+            //nodeVec.push_back(Vector2d(X, Y));
+            m_switch_X = -Y;
+            m_switch_Y = X;
+            nodeVec.push_back(Vector2d(-Y, X));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
 
 
         if (_cnt % MAP_RESOL == 0){  // forward push back
-            nodeVec.push_back(Vector2d(X, Y));
+            // ed: 코드 수정
+            //nodeVec.push_back(Vector2d(X, Y));
+            nodeVec.push_back(Vector2d(-Y, X));
             printf("[%d] X : %lf,  Y : %lf\n",map_cnt++,X,Y);
         }
 
@@ -898,7 +906,10 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     cout << "Finish" << endl;
     //    printf("good222");
-    nodeVec.push_back(Vector2d(X, Y));
+
+    // ed: 코드 수정!
+    //nodeVec.push_back(Vector2d(X, Y));
+    nodeVec.push_back(Vector2d(-Y, X));
     printf("[%d] X : %lf,  Y : %lf\n",map_cnt++, X, Y);
 
     // Generation of Interpolation Curve
@@ -911,6 +922,9 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     cout << "m_LocalSplinePath.size() : " << m_LocalSplinePath.size() << endl;
 
+    // ed: 코드 추가
+    m_switch_idx = 0;
+
     for(int i = 0 ; i < m_LocalSplinePath.size() ; i ++){
         if(m_LocalSplinePath[i][0] == m_switch_X && m_LocalSplinePath[i][1] == m_switch_Y)
             m_switch_idx = i;
@@ -918,7 +932,7 @@ void LocalPlannerThread::Pub_JWPathMsg(){
 
     cout << "m_switch_idx : " << m_switch_idx <<endl;
 
-    // ed: publish_local_path() 함수를 호출해서 해당 초록색 Path를 그린다
+    // ed: publish_local_path() 함수를 호출해서 해당 Green Path를 그린다
     // Publish for Visualization
     publish_local_path(m_LocalSplinePath);
 
